@@ -1,2 +1,2 @@
 # bible
-Main page with Bible topics
+Main page with Bible topics.
