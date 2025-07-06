@@ -1,108 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
 body {
-  background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
-  background-color: #fdf6e3;
-  font-family: 'Dancing Script', Georgia, serif;
-  color: #4b3621;
+  background-color: #f9f5e3;
+  font-family: 'Georgia', serif;
+  color: #3e2f1c;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.dark {
-  background-color: #2f2b25;
-  color: #e8e0c9;
-  background-image: none;
 }
 
 .container {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px;
-  background-color: rgba(255, 248, 220, 0.95);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 1px solid #c4b998;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fffaf0;
   border-radius: 12px;
-  transition: background-color 0.3s ease;
-}
-
-body.dark .container {
-  background-color: rgba(60, 52, 40, 0.95);
-  border-color: #837251;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
   font-size: 2.5em;
   margin-bottom: 30px;
   color: #5b4228;
   text-shadow: 1px 1px #ddd;
 }
 
-body.dark h1 {
-  color: #f4e8c1;
-  text-shadow: none;
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.verse {
-  margin-bottom: 30px;
+nav li {
+  margin: 20px 0;
 }
 
-.verse h2 {
-  font-size: 1.5em;
-  color: #5a3b1d;
-  border-bottom: 1px solid #d9c6a5;
-  padding-bottom: 5px;
-}
-
-body.dark .verse h2 {
-  color: #f6dca4;
-  border-color: #a08d65;
-}
-
-.verse p {
-  font-size: 1.2em;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 0.9em;
-  color: #7a6848;
-}
-
-body.dark footer {
-  color: #b9a886;
-}
-
-/* Buttons */
-button {
+nav a {
+  text-decoration: none;
+  font-size: 1.4em;
+  color: #5b4228;
+  transition: color 0.3s;
   display: block;
-  margin: 10px auto 30px;
-  padding: 10px 20px;
+}
+
+nav a:hover {
+  color: #b36b00;
+}
+
+.language-toggle {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.language-toggle button {
+  padding: 8px 16px;
   font-size: 1em;
-  font-family: inherit;
-  background-color: #e4d4b7;
-  color: #4b3621;
-  border: 1px solid #c1ac87;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-button:hover {
-  background-color: #d8c3a5;
-}
-
-body.dark button {
-  background-color: #6e5a3b;
-  color: #f2e6d4;
-  border-color: #9c8359;
-}
-
-body.dark button:hover {
-  background-color: #8a704a;
+  background-color: #f2e4c2;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
