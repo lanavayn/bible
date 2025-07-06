@@ -3,19 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bible Topics</title>
+  <title>Bible Topics – Темы из Библии</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>📖 Bible Topics</h1>
+    <div class="language-toggle">
+      <button onclick="toggleLanguage()">🌐 Русский</button>
+    </div>
+
+    <h1 class="lang-en">📖 Bible Topics</h1>
+    <h1 class="lang-ru">📖 Темы из Библии</h1>
+
     <nav>
       <ul>
-        <li><a href="https://lanavayn.github.io/golden-verses/">🌟 Golden Verses</a></li>
-        <li><a href="purpose.html">🎯 Purpose of Life</a></li>
-        <li><a href="10-commandments.html">🔟 10 Commandments</a></li>
+        <li>
+          <a class="lang-en" href="https://lanavayn.github.io/golden-verses/">🌟 Golden Verses</a>
+          <a class="lang-ru" href="https://lanavayn.github.io/golden-verses/">🌟 Золотые стихи</a>
+        </li>
+        <li>
+          <a class="lang-en" href="purpose.html">🎯 Purpose of Life</a>
+          <a class="lang-ru" href="purpose.html">🎯 Цель жизни</a>
+        </li>
+        <li>
+          <a class="lang-en" href="10-commandments.html">🔟 10 Commandments</a>
+          <a class="lang-ru" href="10-commandments.html">🔟 Десять заповедей</a>
+        </li>
       </ul>
     </nav>
   </div>
+
+  <script>
+    function toggleLanguage() {
+      const enItems = document.querySelectorAll('.lang-en');
+      const ruItems = document.querySelectorAll('.lang-ru');
+      const button = document.querySelector('.language-toggle button');
+
+      enItems.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+      ruItems.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+
+      button.textContent = button.textContent.includes('Русский') ? '🌐 English' : '🌐 Русский';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.lang-ru').forEach(el => el.style.display = 'none');
+    });
+  </script>
 </body>
 </html>
+
