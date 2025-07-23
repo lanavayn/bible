@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lord’s Prayer with Commentary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ <script>
+    function openPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+    function closePopup(id) {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+    function toggleHiddenVerses() {
+      const hidden = document.getElementById('hidden-verses');
+      const toggleBtn = document.getElementById('toggle-hidden');
+      const isVisible = hidden.style.display === 'block';
+      hidden.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
+    }
+  </script>
+  <style>
+  .popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    border: 2px solid #888;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .popup h2 {
+      color: darkblue;
+      margin-bottom: 10px;
+    }
+    .popup p {
+      margin-bottom: 10px;
+    }
+    .popup-buttons a {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: darkgreen;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .popup-buttons a:hover {
+      background-color: green;
+    }
+    .popup-buttons button,
+    .popup-buttons a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: darkgreen;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .popup-buttons button:hover,
+    .popup-buttons a:hover {
+      background-color: green;
+    }
+
+    .bible-button-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.bible-button {
+  display: inline-block;
+  background-color: #f0e68c;
+  color: #4b0082;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.bible-button:hover {
+  background-color: #ffe16b;
+  transform: scale(1.05);
+  box-shadow: 2px 6px 12px rgba(0,0,0,0.4);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+   <div class="top-buttons">
+       <a href="index.html">⬅ Назад</a>
+       <a href="prayFromBible.html">Перевести на русский</a>
+    </div>
+    
+    <h1>📜 The Lord’s Prayer - with Commentary</h1> 
+
+    <div class="bible-button-wrapper">
+    <a href="https://www.esv.org/Matthew+6/" target="_blank" class="bible-button">
+        📖 Read in the Bible — Gospel of Matthew 6:9-13
+    </a>
+    </div>
+
+    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+      📖 Click on <span style="color: #0d47a1; font-weight: bold;">the verse title</span> to see the interpretation or open it in the Bible..
+    </div>
+
+    <div class="verse">   
+      Pray then like this: “Our Father in heaven, hallowed be Your name;  
+      <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-pray1')">Matthew 6:9</a><br>  
+      Your Kingdom come; Your will be done, on earth as it is in heaven;  
+      <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-pray2')">Matthew 6:10</a><br>  
+      Give us this day our daily bread;  
+      <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-pray3')">Matthew 6:11</a><br>  
+      And forgive us our debts, as we also have forgiven our debtors;  
+      <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-pray4')">Matthew 6:12</a><br>  
+      And lead us not into temptation, but deliver us from the evil one.  
+      For Yours is the Kingdom and the power and the glory forever. Amen.”  
+      <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-pray5')">Matthew 6:13</a>  
+    </div>
+
+    <footer style="margin-top: 40px; font-size: 0.9em;">
+      © 2025 The Lord’s Prayer — with Commentary. All rights reserved.
+    </footer>
+
+    <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+
+    <!-- Interpretation Popup -->
+    <div id="popup-pray1" class="popup">
+      <h3>Our Father in heaven, hallowed be Your name — Interpretation</h3>
+      <p><strong>“Our Father in heaven”</strong> — we address God as our loving Father, acknowledging His authority, care, and holiness.</p>
+      <p><strong>“Hallowed be Your name”</strong> — a request that God’s name be glorified in our lives and in this world. May people come to know Him and honor Him as Holy.</p>
+      <p>The prayer begins with worship and recognition of God’s greatness.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-pray1')">Close</button>
+      </div>
+    </div>
+
+    <div id="popup-pray2" class="popup">
+      <h3>Your Kingdom come; Your will be done on earth as it is in heaven — Interpretation</h3>
+      <p><strong>“Your Kingdom come”</strong> — a prayer that God’s Kingdom would come into the hearts of people, into the world, and into our lives. It is a longing for justice, peace, and God’s love among us.</p>
+      <p><strong>“Your will be done”</strong> — acknowledging God’s authority and trusting His will. It’s a readiness to follow God’s commandments and accept His guidance in our lives.</p>
+      <p><strong>“On earth as it is in heaven”</strong> — a desire for the earth to reflect the heavenly order where only God’s will is fulfilled. We pray for God’s truth and love to reign on earth.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-pray2')">Close</button>
+      </div>
+    </div>
+
+    <div id="popup-pray3" class="popup">
+      <h3>Give us this day our daily bread — Interpretation</h3>
+      <p><strong>“Give us this day our daily bread”</strong> — a prayer asking God to provide for our daily needs: food, health, protection, wisdom. It is an expression of trust in God every day.</p>
+      <p>Bread is a symbol of both material blessings and spiritual nourishment for the soul.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-pray3')">Close</button>
+      </div>
+    </div>
+
+    <div id="popup-pray4" class="popup">
+      <h3>And forgive us our debts, as we also have forgiven our debtors — Interpretation</h3>
+      <p><strong>“And forgive us our debts”</strong> — a prayer asking God to forgive our sins and mistakes.</p>
+      <p><strong>“As we also have forgiven our debtors”</strong> — a reminder that we must forgive others in order to receive forgiveness ourselves. It teaches mercy, forgiveness, and freedom from resentment.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-pray4')">Close</button>
+      </div>
+    </div>
+
+    <div id="popup-pray5" class="popup">
+      <h3>And lead us not into temptation, but deliver us from the evil one. For Yours is the Kingdom and the power and the glory forever. Amen — Interpretation</h3>
+      <p><strong>“And lead us not into temptation”</strong> — a prayer asking God to protect us from evil and help us stand firm in trials.</p>
+      <p><strong>“But deliver us from the evil one”</strong> — a plea for protection from Satan and all evil, that God’s power would be our shield.</p>
+      <p><strong>“For Yours is the Kingdom and the power and the glory forever”</strong> — a declaration of God’s authority, power, and eternal glory. The prayer ends with words of praise.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-pray5')">Close</button>
+      </div>
+    </div>
+
+    <div id="popup-pray5" class="popup">
+      <h3>And lead us not into temptation, but deliver us from
+    </div>
+
+  <a href="#top" id="back-to-top" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1000;
+">
+  ↑ Back to Top
+</a>
+
+<script>
+ window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

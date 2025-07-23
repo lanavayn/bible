@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purpose of Life in the Bible</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+
+ <script>
+    function openPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+    function closePopup(id) {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+    function toggleHiddenVerses() {
+      const hidden = document.getElementById('hidden-verses');
+      const toggleBtn = document.getElementById('toggle-hidden');
+      const isVisible = hidden.style.display === 'block';
+      hidden.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
+    }
+  </script>
+<style>
+.popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: white;
+  border: 2px solid #888;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow: auto;
+}
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .popup h2 {
+    color: darkblue;
+    margin-bottom: 10px;
+  }
+  .popup p {
+    margin-bottom: 10px;
+  }
+  .popup-buttons a {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+
+  .popup-buttons a:hover {
+    background-color: green;
+  }
+  .popup-buttons button,
+  .popup-buttons a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .popup-buttons button:hover,
+  .popup-buttons a:hover {
+    background-color: green;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-buttons">
+      <a href="index-en.html">⬅ Back</a>
+      <a href="purpose.html">Перевести на русский</a>
+    </div>
+
+    <h1>💡 The Purpose of Life According to the Bible — Verses and Interpretation</h1>
+
+<div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+  📖 Click on <span style="color: #0d47a1; font-weight: bold;">the verse title</span> to see the interpretation or open it in the Bible.
+</div>
+    <p>The Bible teaches that the purpose of life is to know God, believe in Jesus Christ, and live in fellowship with Him.</p>
+
+<div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john17')">John 17:3</h2>
+      <p>"Now this is eternal life: that they know You, the only true God, and Jesus Christ, whom You have sent."</p>
+    </div>
+
+<div class="verse">
+  <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Proverbs 3:5–6</h2>
+  <p>Trust in the Lord with all your heart and lean not on your own understanding;  
+In all your ways submit to Him, and He will make your paths straight.</p>
+</div>
+
+    <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ecclesiastes12')">Ecclesiastes 12:13</h2>
+      <p>"Now all has been heard; here is the conclusion of the matter: Fear God and keep His commandments, for this is the duty of all mankind."</p>
+    </div>
+
+    <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-micah6')">Micah 6:8</h2>
+      <p>"He has shown you, O man, what is good. And what does the Lord require of you? To act justly, to love mercy, and to walk humbly with your God."</p>
+    </div>
+
+    <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-matthew22')">Matthew 22:37–39</h2>
+      <p>Jesus replied: "Love the Lord your God with all your heart and with all your soul and with all your mind. This is the first and greatest commandment. And the second is like it: Love your neighbor as yourself."</p>
+    </div>
+
+    <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john10')">John 10:10</h2>
+      <p>"The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full."</p>
+    </div>
+
+  <footer style="margin-top: 40px; font-size: 0.9em;">
+    © 2025 The Purpose of Life. All rights reserved.
+  </footer>
+  </div>
+  <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+
+<div id="popup-proverbs3" class="popup">
+  <h3>Proverbs 3:5–6 (Interpretation)</h3>
+  <p><strong>Trust in the Lord with all your heart</strong> — fully rely on God in every situation of your life.</p>
+  <p><strong>Lean not on your own understanding</strong> — do not depend solely on your logic or knowledge, seek God's wisdom and guidance.</p>
+  <p><strong>In all your ways submit to Him</strong> — involve God in every aspect of your life, seek His will and direction.</p>
+  <p><strong>And He will make your paths straight</strong> — God Himself will lead you and direct your steps on the right path.</p>
+  <div class="popup-buttons">
+    <button onclick="closePopup('popup-proverbs3')">Close</button>
+    <a href="https://www.esv.org/Proverbs+3/" target="_blank">📖 Read in Bible</a>
+  </div>
+</div>
+ 
+  <div id="popup-john17" class="popup">
+    <h3>John 17:3 (Interpretation)</h3>
+    <p><strong>Eternal life</strong> begins here and now when a person enters into a close relationship with God.</p>
+    <p><strong>Knowing God</strong> is the ultimate purpose and meaning of human life.</p>
+    <p><strong>Through faith in Jesus Christ</strong>, we gain access to the Father and to true life.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john17')">Close</button>
+      <a href="https://www.esv.org/John+17/" target="_blank">📖 Read in Bible</a>
+    </div>
+  </div>
+
+  <div id="popup-ecclesiastes12" class="popup">
+    <h3>Ecclesiastes 12:13 (Interpretation)</h3>
+    <p><strong>Fear God</strong> means to have reverent respect for Him, acknowledging His authority and living according to His will.</p>
+    <p><strong>Keep His commandments</strong> expresses faith and love, and is the basis for a righteous life.</p>
+    <p><strong>This is the duty of all mankind</strong> — the true meaning and purpose of life is to honor God and obey Him.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-ecclesiastes12')">Close</button>
+      <a href="https://www.esv.org/ecclesiastes+12/" target="_blank">📖 Read in Bible</a>
+    </div>
+  </div>
+
+  <div id="popup-micah6" class="popup">
+    <h3>Micah 6:8 (Interpretation)</h3>
+    <p><strong>Act justly</strong> — live with integrity, honesty, and fairness in relationships with others.</p>
+    <p><strong>Love mercy</strong> — show compassion, kindness, and help others sincerely.</p>
+    <p><strong>Walk humbly with your God</strong> — live with humility, acknowledging God’s authority, and strive to please Him.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-micah6')">Close</button>
+      <a href="https://www.esv.org/micah+6/" target="_blank">📖 Read in Bible</a>
+    </div>
+  </div>
+
+  <div id="popup-matthew22" class="popup">
+    <h3>Matthew 22:37–39 (Interpretation)</h3>
+    <p><strong>Love for God</strong> means dedicating your heart, soul, and mind to Him — placing God first, trusting Him, and seeking to do His will.</p>
+    <p><strong>Love for your neighbor</strong> is about genuine care, respect, kindness, and forgiveness — a reflection of true faith.</p>
+    <p>In these two commandments lies the foundation of our life and relationships with God and people.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-matthew22')">Close</button>
+      <a href="https://www.esv.org/matthew+22/" target="_blank">📖 Read in Bible</a>
+    </div>
+  </div>
+
+  <div id="popup-john10" class="popup">
+    <h3>John 10:10 (Interpretation)</h3>
+    <p><strong>The thief</strong> symbolizes those who destroy lives: false prophets, deceivers, and the enemy of souls. They steal, kill, and lead away from the truth.</p>
+    <p><strong>I have come</strong> — Jesus came to give true life — spiritual, meaningful, filled with peace and love.</p>
+    <p><strong>Have it to the full</strong> — the abundance of God’s blessings, inner peace, and joy in fellowship with God — both now and in eternity.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john10')">Close</button>
+      <a href="https://www.esv.org/john+10/" target="_blank">📖 Read in Bible</a>
+    </div>
+
+  </div>
+</div> <!-- Закрытие контейнера -->
+
+<a href="#top" id="back-to-top" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1000;
+">
+  ↑ Back to Top
+</a>
+
+<script>
+ window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

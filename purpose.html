@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Смысл жизни</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ <script>
+    function openPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+    function closePopup(id) {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+    function toggleHiddenVerses() {
+      const hidden = document.getElementById('hidden-verses');
+      const toggleBtn = document.getElementById('toggle-hidden');
+      const isVisible = hidden.style.display === 'block';
+      hidden.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
+    }
+  </script>
+<style>
+.popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: white;
+  border: 2px solid #888;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .popup h2 {
+    color: darkblue;
+    margin-bottom: 10px;
+  }
+  .popup p {
+    margin-bottom: 10px;
+  }
+  .popup-buttons a {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+
+  .popup-buttons a:hover {
+    background-color: green;
+  }
+  .popup-buttons button,
+  .popup-buttons a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .popup-buttons button:hover,
+  .popup-buttons a:hover {
+    background-color: green;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+
+    <div class="top-buttons">
+       <a href="index.html">⬅ Назад</a>
+       <a href="purpose-en.html">Translate to English</a>
+    </div>
+    
+    <h1>💡 Смысл жизни по Библии — Стихи и Толкование</h1>
+
+<div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+  📖 Нажмите на <span style="color: #0d47a1; font-weight: bold;">название стиха</span>, чтобы увидеть толкование или открыть в Библии.
+</div>
+
+    <p>Библия говорит, что смысл нашей жизни — познать Бога, поверить в Иисуса Христа и жить в общении с Ним.</p>
+
+  <div class="verse">
+    <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john17')">Иоанна 17:3</h2>
+    <p>Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.</p>
+  </div>
+
+   <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Притчи 3:5–6</h2>
+      <p>Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.</p>
+    </div>
+
+   <div class="verse">
+     <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john10')">Иоанна 10:10</h2>
+     <p>Вор приходит только для того, чтобы украсть, убить и погубить. Я пришёл для того, чтобы имели жизнь и имели с избытком.</p>
+   </div>
+
+<div class="verse">
+  <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john17-3')">Иоанна 17:2-3</h2>
+  <p>«Tак как Ты дал Ему власть над всякою плотью, да всему, что Ты дал Ему, даст Он жизнь вечную. Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.»</p>
+</div>
+
+<div class="verse">
+  <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ecclesiastes12')">Екклесиаст 12:13</h2>
+  <p>Выслушаем сущность всего: бойся Бога и заповеди Его соблюдай, потому что в этом всё для человека.</p>
+</div>
+
+<div class="verse">
+  <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-matthew22')">Матфея 22:37–39</h2>
+  <p>Иисус сказал ему: возлюби Господа Бога твоего всем сердцем твоим, и всею душою твоею, и всем разумением твоим;  
+Сия есть первая и наибольшая заповедь;  
+Вторая же, подобная ей: возлюби ближнего твоего, как самого себя.</p>
+</div>
+
+<div class="verse">
+  <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-micah6')">Михея 6:8</h2>
+  <p>О, человек! Сказано тебе, что добро и чего требует от тебя Господь:  
+действовать справедливо, любить дела милосердия и смиренно ходить пред Богом твоим.</p>
+</div>
+
+ <footer style="margin-top: 40px; font-size: 0.9em;">
+    © 2025 Purpose of Life from Bible. Все права защищены.
+  </footer>
+
+<div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+ <!-- Popups -->
+  <div id="popup-john17" class="popup">
+    <h3>Иоанна 17:3 (Толкование)</h3>
+     <p>Это ключевой текст о сути вечной жизни. Иисус в Своей молитве говорит, что вечная жизнь — это не просто существование после смерти, а живое, личное познание Бога и Иисуса Христа, посланного в мир.</p>
+     <p><strong>“Знать Тебя”</strong> — значит иметь близкие отношения, доверие, любовь и послушание.</p>
+     <p><strong>“Единого истинного Бога”</strong> — указывает, что Бог Отец — источник всего, нет иных истинных богов.</p>
+     <p><strong>“Иисуса Христа”</strong> — только через Христа возможно это познание, потому что Он — путь к Отцу.</p>
+     <div class="popup-buttons">
+      <button onclick="closePopup('popup-john17')">Закрыть</button>
+      <a href="https://bible.by/syn/43/17/#3" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-proverbs3" class="popup">
+    <h3>Притчи 3:5–6 (Толкование)</h3>
+    <p>Эти стихи учат нас полному доверию к Богу. Вместо того чтобы полагаться на собственные суждения, мы призваны искать Его водительства во всех аспектах жизни. Тогда Он направит наши шаги к истинному пути.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-proverbs3')">Закрыть</button>
+      <a href="https://bible.by/syn/20/3/#5" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+<div id="popup-john10" class="popup">
+  <h3>Иоанна 10:10 (Толкование)</h3>
+  <p><strong>Вор</strong> — это образ всех, кто разрушает жизнь людей: лже-пророки, обманщики, враг душ человеческих. Они крадут, губят и уводят от истины.</p>
+  <p><strong>Я пришёл</strong> — Иисус пришёл, чтобы дать людям настоящую жизнь — духовную, наполненную смыслом, миром и любовью.</p>
+  <p><strong>С избытком</strong> — это полнота Божьих благословений, внутреннее удовлетворение и радость в общении с Богом, как здесь на земле, так и в вечности.</p>
+  <div class="popup-buttons">
+    <button onclick="closePopup('popup-john10')">Закрыть</button>
+    <a href="https://bible.by/syn/43/10/#10" target="_blank">📖 Читать в Библии</a>
+  </div>
+</div>
+
+<div id="popup-john17-3" class="popup">
+  <h3>Иоанна 17:3 (Толкование)</h3>
+  <p><strong>Вечная жизнь</strong> начинается уже здесь, когда человек вступает в близкие отношения с Богом.</p>
+  <p><strong>Познание Бога</strong> — это цель и смысл человеческой жизни.</p>
+  <p><strong>Через веру в Иисуса Христа</strong> мы получаем доступ к Отцу и настоящую жизнь.</p>
+  <div class="popup-buttons">
+    <button onclick="closePopup('popup-john17-3')">Закрыть</button>
+    <a href="https://bible.by/syn/43/17/#2" target="_blank">📖 Читать в Библии</a>
+  </div>
+</div>
+
+<div id="popup-matthew22" class="popup">
+  <h3>Матфея 22:37–39 (Толкование)</h3>
+  <p><strong>Любовь к Богу</strong> — это посвящение Ему всего сердца, души и разума. Это значит ставить Бога на первое место в жизни, доверять Ему и стремиться исполнять Его волю.</p>
+  <p><strong>Любовь к ближнему</strong> — это искреннее желание добра другим, уважение, забота и прощение. Такая любовь является выражением истинной веры.</p>
+  <p>В этих двух заповедях заключен весь Закон Божий. Это основа нашей жизни и взаимоотношений с Богом и людьми.</p>
+  <div class="popup-buttons">
+    <button onclick="closePopup('popup-matthew22')">Закрыть</button>
+    <a href="https://bible.by/syn/40/22/#37" target="_blank">📖 Читать в Библии</a>
+  </div>
+</div>
+
+<div id="popup-ecclesiastes12" class="popup">
+  <h3>Екклесиаст 12:13 (Толкование)</h3>
+  <p><strong>Бойся Бога</strong> — это благоговейное уважение к Богу, признание Его власти и стремление жить по Его воле.</p>
+  <p><strong>Соблюдай заповеди Его</strong> — послушание заповедям — выражение любви и веры, основа праведной жизни.</p>
+  <p><strong>В этом всё для человека</strong> — смысл и предназначение человека заключены в том, чтобы жить в страхе Божием и послушании Ему.</p>
+  <div class="popup-buttons">
+    <button onclick="closePopup('popup-ecclesiastes12')">Закрыть</button>
+    <a href="https://bible.by/syn/21/12/#13" target="_blank">📖 Читать в Библии</a>
+  </div>
+</div>
+
+<div id="popup-micah6" class="popup">
+  <h3>Михея 6:8 (Толкование)</h3>
+  <p><strong>Действовать справедливо</strong> — жить по правде, быть честным и справедливым в делах и отношениях с людьми.</p>
+  <p><strong>Любить дела милосердия</strong> — проявлять доброту, сострадание и помогать другим от чистого сердца.</p>
+  <p><strong>Смиренно ходить пред Богом</strong> — жить в смирении, признавая Божью власть и стремясь угождать Ему.</p>
+  <div class="popup-buttons">
+    <button onclick="closePopup('popup-micah6')">Закрыть</button>
+    <a href="https://bible.by/syn/33/6/#8" target="_blank">📖 Читать в Библии</a>
+  </div>
+</div>
+</div> <!-- Закрытие контейнера -->
+
+<a href="#top" id="back-to-top" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1000;
+">
+  ↑ Вверх
+</a>
+
+<script>
+ window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

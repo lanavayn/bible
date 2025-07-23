@@ -1,0 +1,96 @@
+body {
+  background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  background-color: #fdf6e3;
+  font-family: 'Georgia', serif;
+  color: #4b3621;
+  margin: 0;
+  padding: 0;
+  font-size: 18px; /* Increased base font size for mobile readability */
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 248, 220, 0.95);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid #c4b998;
+  border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em; /* Slightly larger heading */
+  margin-bottom: 20px;
+  color: #5b4228;
+  text-shadow: 1px 1px #ddd;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.top-buttons a {
+  font-size: 1.1em; /* larger font for touch devices */
+  padding: 6px 12px;
+  color: indigo;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-buttons a:hover {
+  text-decoration: underline;
+}
+
+a {
+  font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 21px; /* Even larger text for small devices */
+    line-height: 1.6;
+  }
+
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+li {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .top-buttons a {
+    font-size: 18px;
+    padding: 8px 14px;
+  }
+.popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: white;
+    border: 2px solid #888;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
