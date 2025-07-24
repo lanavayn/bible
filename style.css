@@ -95,13 +95,96 @@ li {
   }
 
 }
-.container {
-  position: relative; /* Needed for absolute positioning of flags */
+.language-switcher {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px 0 0;
+  font-size: 18px;
+  font-family: Georgia, serif;
 }
 
-.lang-flag {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.lang {
+  display: inline-block;
+  min-width: 56px;
+  text-align: right;
+  text-decoration: underline;
+  transition: opacity 0.3s, color 0.3s;
+  line-height: 1;
+}
+
+.lang.active {
+  color: #0044cc;
+  opacity: 1;
+}
+
+.lang.active:hover {
+  opacity: 0.8;
+}
+
+.lang.inactive {
+  color: #aaa;
+  cursor: default;
+  text-decoration: none;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+  font-family: sans-serif;
+}
+
+.back-button {
+  text-decoration: none;
+  color: #3366cc;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
   display: inline-block;
 }
+
+.dropbtn {
+  background-color: #ffffff;
+  color: #3366cc;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 120px; /* делаем по размеру Language-кнопки */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 50%;
+transform: translateX(-50%);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center; /* выравнивание по центру */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
