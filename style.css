@@ -187,4 +187,45 @@ transform: translateX(-50%);
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.prayer-box {
+  background-color: #fdf6e3;
+  border: 2px solid #e0c48c;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+.prayer-box p {
+  margin: 10px 0;
+}
+.prayer-box a {
+  color: #0044cc;
+  text-decoration: none;
+}
+.prayer-box a:hover {
+  text-decoration: underline;
+}
 
+   .footnotes {
+  margin-top: 1.2em;
+  font-size: 0.92em;
+  color: #444;
+}
+.bible-link-note {
+  font-size: 1em;
+  text-align: center;
+  margin: 12px 0 6px;
+}
+.bible-link-note a {
+  color: #5b3d1f;
+  text-decoration: underline;
+}
+.bible-link-note a:hover {
+  color: #7a532a;
+}
+.bible-link-note {
+  margin-bottom: 0.5em;
+}
