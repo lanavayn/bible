@@ -31,6 +31,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <script>
+    function openPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+    function closePopup(id) {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+
 </head>
 <body>
   <div class="container">
@@ -46,20 +58,218 @@
   </div>
 </div>
 
-    <h1>📜 The 10 Commandments</h1>
+<h1>📜 The 10 Commandments — With Commentary</h1>
+
+    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+      📖 Click the <strong>verse link</strong> to view the interpretation or read in the Bible.
+    </div>
 
     <ol>
-      <li>You shall have no other gods before Me.</li>
-      <li>You shall not make for yourself a carved image.</li>
-      <li>You shall not take the name of the Lord your God in vain.</li>
-      <li>Remember the Sabbath day, to keep it holy.</li>
-      <li>Honor your father and your mother.</li>
-      <li>You shall not murder.</li>
-      <li>You shall not commit adultery.</li>
-      <li>You shall not steal.</li>
-      <li>You shall not bear false witness against your neighbor.</li>
-      <li>You shall not covet anything that belongs to your neighbor.</li>
+      <li>
+        I am the Lord your God, who brought you out of the land of Egypt, out of the house of slavery.  
+        You shall have no other gods before Me.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment1')">Exodus 20:2–3</a>
+      </li><br>
+      <li>
+        You shall not make for yourself a carved image or any likeness of anything that is in heaven above, or that is in the earth beneath, or that is in the water under the earth.  
+        You shall not bow down to them or serve them, for I the Lord your God am a jealous God,  
+        visiting the iniquity of the fathers on the children to the third and fourth generation of those who hate Me,  
+        but showing steadfast love to thousands of those who love Me and keep My commandments.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment2')">Exodus 20:4–6</a>
+      </li><br>
+      <li>
+        You shall not take the name of the Lord your God in vain,  
+        for the Lord will not hold him guiltless who takes His name in vain.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment3')">Exodus 20:7</a>
+      </li><br>
+      <li>
+        Remember the Sabbath day, to keep it holy. Six days you shall labor, and do all your work,  
+        but the seventh day is a Sabbath to the Lord your God.  
+        On it you shall not do any work, you, or your son, or your daughter, your male servant, or your female servant,  
+        or your livestock, or the sojourner who is within your gates.  
+        For in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.  
+        Therefore the Lord blessed the Sabbath day and made it holy.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment4')">Exodus 20:8–11</a>
+      </li><br>
+      <li>
+        Honor your father and your mother, that your days may be long in the land that the Lord your God is giving you.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment5')">Exodus 20:12</a>
+      </li><br>
+      <li>
+        You shall not murder.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment6')">Exodus 20:13</a>
+      </li><br>
+      <li>
+        You shall not commit adultery.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')">Exodus 20:14</a>
+      </li><br>
+      <li>
+        You shall not steal.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment8')">Exodus 20:15</a>
+      </li><br>
+      <li>
+        You shall not bear false witness against your neighbor.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment9')">Exodus 20:16</a>
+      </li><br>
+      <li>
+        You shall not covet your neighbor’s house;  
+        you shall not covet your neighbor’s wife, or his male servant, or his female servant,  
+        or his ox, or his donkey, or anything that is your neighbor’s.  
+        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment10')">Exodus 20:17</a>
+      </li>
     </ol>
-  </div>
+
+    <footer class="footer">
+      <div class="source-note">
+        <p><strong>📚 Sources:</strong></p>
+        <p>🔹 Commentaries are based on classic Christian sources (John Chrysostom, Matthew Henry, John Gill, and others).</p>
+        <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
+      </div>
+      © 2025 Bible for All. All rights reserved.
+    </footer>
+ </div> <!-- Закрытие контейнера -->
+ 
+    <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+
+    <!-- POPUPS -->
+    <div id="popup-commandment1" class="popup">
+      <h3>Commandment 1 — Interpretation</h3>
+      <p><strong>“I am the Lord your God…”</strong> — This is a reminder of God’s personal relationship with His people. He is not a distant deity, but the one who rescued them from slavery and established a covenant with them.</p>
+      <p><strong>“Who brought you out of the land of Egypt…”</strong> — This refers to the historical deliverance of Israel from physical bondage, which also symbolizes God’s power to free people from sin and spiritual slavery.</p>
+      <p><strong>“You shall have no other gods before Me.”</strong> — This is a call to absolute loyalty. God demands exclusive worship. No person, object, ideology, or desire should take His place in one’s heart.</p>
+      <p>This commandment is foundational — it sets the tone for all the others. True worship begins with recognizing and honoring the one true God above all else.</p>
+      <div class="popup-buttons">
+      <button onclick="closePopup('popup-commandment1')">Close</button>
+      <a href="https://www.esv.org/Exodus+20:2-3/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment2" class="popup">
+      <h3>Commandment 2 — Interpretation</h3>
+      <p><strong>“You shall not make for yourself a carved image…”</strong> — This warns against creating any physical representation of God. No image can truly capture His glory.</p>
+      <p><strong>“You shall not bow down to them or serve them…”</strong> — God desires worship in spirit and truth, not through man-made idols or icons.</p>
+      <p><strong>“I the Lord your God am a jealous God…”</strong> — God’s jealousy is rooted in love. He seeks undivided devotion.</p>
+      <p><strong>“Visiting the iniquity…”</strong> — This warns that sin affects generations, but God’s mercy extends to thousands who love Him.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment2')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:4-6/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment3" class="popup">
+      <h3>Commandment 3 — Interpretation</h3>
+      <p><strong>“You shall not take the name of the Lord your God in vain.”</strong> — God’s name represents His character, authority, and holiness. Using it casually, disrespectfully, or deceitfully dishonors Him.</p>
+      <p>This command reminds us to speak of God with reverence and to live in a way that honors His name in our words, promises, and behavior.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment3')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:7/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment4" class="popup">
+      <h3>Commandment 4 — Interpretation</h3>
+      <p><strong>“Remember the Sabbath day…”</strong> — The Sabbath is a gift of rest and spiritual renewal. God calls His people to pause from work and focus on Him.</p>
+      <p>It reflects God’s own rhythm of creation and rest. Honoring the Sabbath is an act of trust, showing that life does not depend on endless labor but on God's provision.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment4')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:8-11/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment5" class="popup">
+      <h3>Commandment 5 — Interpretation</h3>
+      <p><strong>“Honor your father and your mother…”</strong> — Respect for parents is foundational to a healthy society. It reflects a heart that values authority, wisdom, and heritage.</p>
+      <p>This commandment includes not only obedience in youth but also care and honor throughout life.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment5')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:12/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment6" class="popup">
+      <h3>Commandment 6 — Interpretation</h3>
+      <p><strong>“You shall not murder.”</strong> — Life is sacred because every person is made in the image of God. This command protects the dignity and value of human life.</p>
+      <p>It calls us to reject hatred, violence, and anything that destroys the peace and well-being of others.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment6')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:13/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment7" class="popup">
+      <h3>Commandment 7 — Interpretation</h3>
+      <p><strong>“You shall not commit adultery.”</strong> — This command protects the sacred covenant of marriage. Faithfulness reflects God’s own loyalty to His people.</p>
+      <p>It calls for purity, trust, and love within relationships, and warns against betrayal and broken commitments.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment7')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:14/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment8" class="popup">
+      <h3>Commandment 8 — Interpretation</h3>
+      <p><strong>“You shall not steal.”</strong> — This command defends the right to personal property and promotes honesty, trust, and fairness.</p>
+      <p>It reminds us that everything we have is a gift from God and that we are called to live with integrity in all our dealings.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment8')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:15/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment9" class="popup">
+      <h3>Commandment 9 — Interpretation</h3>
+      <p><strong>“You shall not bear false witness…”</strong> — Truth is essential to justice and community. This commandment protects against slander, lies, and deceit.</p>
+      <p>It calls us to speak with honesty, build trust, and protect the reputation of others.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment9')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:16/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+    <div id="popup-commandment10" class="popup">
+      <h3>Commandment 10 — Interpretation</h3>
+      <p><strong>“You shall not covet…”</strong> — This command speaks to the desires of the heart. Coveting leads to jealousy, resentment, and often to other sins.</p>
+      <p>God invites us to live with contentment and gratitude, trusting Him for our needs rather than longing for what belongs to others.</p>
+      <div class="popup-buttons">
+        <button onclick="closePopup('popup-commandment10')">Close</button>
+        <a href="https://www.esv.org/Exodus+20:17/" target="_blank">📖 Read in the Bible</a>
+      </div>
+    </div>
+
+
+
+<a href="#top" id="back-to-top" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1000;
+">
+  ↑ Back to Top
+</a>
+
+<script>
+ window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>  
+
+
+
+
+
+
+
 </body>
 </html>
+

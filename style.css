@@ -21,7 +21,7 @@ body {
 h1 {
   text-align: center;
   font-size: 2em; /* Slightly larger heading */
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem;
   color: #5b4228;
   text-shadow: 1px 1px #ddd;
 }
@@ -85,6 +85,23 @@ li {
     width: 80%;
     max-width: 600px;
   }
+  }
+  .popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: white;
+  border: 2px solid #888;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 70vh;
+  overflow: auto;
+}
   #overlay {
     display: none;
     position: fixed;
@@ -94,7 +111,7 @@ li {
     z-index: 999;
   }
 
-}
+
 .language-switcher {
   display: flex;
   justify-content: flex-end;
@@ -216,7 +233,7 @@ transform: translateX(-50%);
 }
 .bible-link-note {
   font-size: 1em;
-  text-align: center;
+  text-align: left;  /* выравниваем по левому краю */
   margin: 12px 0 6px;
 }
 .bible-link-note a {
@@ -229,3 +246,129 @@ transform: translateX(-50%);
 .bible-link-note {
   margin-bottom: 0.5em;
 }
+.topic-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+}
+
+.button-link {
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 0.7rem 1rem;
+  background-color: #fdf6e3;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: background-color 0.3s;
+}
+.button-link:hover {
+  background-color: #f4e9d8;
+}
+
+.highlight-title {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.source-note {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #555;
+  background-color: #fefefe;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+.footer .source-note {
+  background-color: #f9f7f3;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .popup h2 {
+    color: darkblue;
+    margin-bottom: 10px;
+  }
+  .popup p {
+    margin-bottom: 10px;
+  }
+  .popup-buttons a {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+
+  .popup-buttons a:hover {
+    background-color: green;
+  }
+  .popup-buttons button,
+  .popup-buttons a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: darkgreen;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .popup-buttons button:hover,
+  .popup-buttons a:hover {
+    background-color: green;
+  }
+  .popup {
+  position: fixed !important;
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 240px;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85em;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+

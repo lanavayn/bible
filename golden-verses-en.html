@@ -43,20 +43,19 @@
     .verse {
       margin-bottom: 30px;
     }
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 2px solid #888;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  z-index: 1000;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  box-sizing: border-box;
+   .popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: white;
+      border: 2px solid #888;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      z-index: 1000;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
     }
     .popup h3 {
       margin-top: 0;
@@ -71,31 +70,31 @@
       font-size: 1em;
       cursor: pointer;
     }
-.popup-buttons button,
-.popup-buttons a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: darkgreen;
-  color: white;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.popup-buttons button:hover,
-.popup-buttons a:hover {
-  background-color: green;
-}
-
     .popup-buttons a {
       text-decoration: none;
       background-color: #4CAF50;
       color: white;
       border-radius: 4px;
     }
+    .popup-buttons button,
+    .popup-buttons a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: darkgreen;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .popup-buttons button:hover,
+    .popup-buttons a:hover {
+      background-color: green;
+    }
+
     #overlay {
       display: none;
       position: fixed;
@@ -112,6 +111,7 @@
       padding: 10px 18px;
       font-size: 1em;
     }
+
   </style>
   <script>
     function openPopup(id) {
@@ -122,6 +122,13 @@
       document.getElementById('overlay').style.display = 'none';
       document.getElementById(id).style.display = 'none';
     }
+    function toggleHiddenVerses() {
+      const hidden = document.getElementById('hidden-verses');
+      const toggleBtn = document.getElementById('toggle-hidden');
+      const isVisible = hidden.style.display === 'block';
+      hidden.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
+    }
    
   </script>
 </head>
@@ -129,7 +136,7 @@
 <div class="container">
 
 <div class="top-bar">
-  <a class="back-button" href="index.html">← Back</a>
+  <a  href="index-en.html" class="back-button">← Back</a>
   <div class="dropdown">
     <button class="dropbtn">🌐 Language</button>
     <div class="dropdown-content">
@@ -139,7 +146,7 @@
   </div>
 </div>
   
-  <h1>📜 Golden Bible Verses with Interpretation</h1>
+  <h1>🌟 Golden Bible Verses with Interpretation</h1>
 
 <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
   📖 Click on <strong>the verse title</strong> to see the interpretation or open it in the Bible..
@@ -156,7 +163,7 @@
 
   <div class="verse">
     <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ephesians2')">Ephesians 2:8–9</h2>
-    <p>For by grace you have been saved through faith, and that not of yourselves; it is the gift of God.</p>
+    <p>For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.</p>
   </div>
 
     <div class="verse">
@@ -181,17 +188,24 @@
 
     <div class="verse">
       <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-isaiah41')">Isaiah 41:10</h2>
-      <p>Fear not, for I am with you; be not dismayed, for I am your God...</p>
+      <p>Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.</p>
     </div>
 
     <div class="verse">
       <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john14')">John 14:6</h2>
-      <p>I am the way, the truth, and the life. No one comes to the Father except through Me.</p>
+      <p>Jesus said to him, “I am the way, and the truth, and the life. No one comes to the Father except through me.</p>
     </div>
 
-  <footer style="margin-top: 40px; font-size: 0.9em;">
-    © 2025 Golden Verses. All rights reserved.
-  </footer>
+
+
+    <footer class="footer">
+      <div class="source-note">
+          <p><strong>📚 Sources:</strong></p>
+          <p>🔹 Commentaries are based on classic Christian sources (John Chrysostom, Matthew Henry, John Gill, and others).</p>
+          <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
+        </div>
+        © 2025 Golden Verses. All rights reserved.
+    </footer>
 
 </div>
 
@@ -203,7 +217,7 @@
     <p><strong>Interpretation:</strong> God's greatest love was shown through Jesus' sacrifice for humanity. Faith in Him grants eternal life.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-john3')">Close</button>
-      <a href="https://www.esv.org/John+3/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/John+3:16/" target="_blank" >📖 Read in Bible</a>
     </div>
   </div>
 
@@ -212,7 +226,7 @@
     <p><strong>Interpretation:</strong> The Scriptures point to Jesus Christ, who is the source of eternal life.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-john5')">Close</button>
-      <a href="https://www.esv.org/John+5/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/John+5:39/" target="_blank" >📖 Read in Bible</a>
     </div>
   </div>
 
@@ -221,7 +235,7 @@
     <p><strong>Interpretation:</strong> Salvation is a gift from God, not earned by works, but given by grace through faith.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-ephesians2')">Close</button>
-      <a href="https://www.esv.org/Ephesians+2/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/Ephesians+2:8-9/" target="_blank" >📖 Read in Bible</a>
     </div>
   </div>
 
@@ -230,7 +244,7 @@
     <p><strong>Interpretation:</strong> God lovingly cares for His people like a shepherd cares for his sheep. When we trust Him, He provides everything we truly need—guidance, protection, and peace.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-psalm23')">Close</button>
-      <a href="https://www.esv.org/Psalm+23/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/Psalm+23:1/" target="_blank" >📖 Read in Bible</a>
     </div>
    </div>
 
@@ -239,7 +253,7 @@
     <p><strong>Interpretation:</strong> And we know that all things work together for good to those who love God, to those who are called according to His purpose.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-romans8')">Close</button>
-      <a href="https://www.esv.org/Romans+8/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/Romans+8:28/" target="_blank" >📖 Read in Bible</a>
     </div>
    </div>
 
@@ -248,7 +262,7 @@
     <p><strong>Interpretation:</strong> With Jesus’ strength within us, we can endure any trial and accomplish anything God calls us to do. Our confidence comes from Him, not from ourselves.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-phil4')">Close</button>
-      <a href="https://www.esv.org/Philippians+4/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/Philippians+4:13/" target="_blank">📖 Read in Bible</a>
     </div>
    </div>
 
@@ -257,7 +271,7 @@
     <p><strong>Interpretation:</strong> We are called to fully trust God instead of relying on our limited wisdom. When we seek Him sincerely in every part of our lives, He promises to lead us in the right direction.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-proverbs3')">Close</button>
-      <a href="https://www.esv.org/Proverbs+3/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/Proverbs+3:5-6/" target="_blank" >📖 Read in Bible</a>
     </div>
    </div>
 
@@ -266,7 +280,7 @@
     <p><strong>Interpretation:</strong> God reassures us that we are never alone. His presence gives us courage, strength, and help, especially in times of fear and trouble.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-isaiah41')">Close</button>
-      <a href="https://www.esv.org/Isaiah+41/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/Isaiah+41:10/" target="_blank" >📖 Read in Bible</a>
     </div>
    </div>
 
@@ -275,7 +289,7 @@
     <p><strong>Interpretation:</strong> Jesus clearly declares that He is the only path to God the Father. Through Him, we find the true way to salvation, the truth about life, and eternal life itself.</p>
     <div class="popup-buttons">
       <button onclick="closePopup('popup-john14')">Close</button>
-      <a href="https://www.esv.org/John+14/" target="_blank">📖 Read in Bible</a>
+      <a href="https://www.esv.org/John+14:6/" target="_blank">📖 Read in Bible</a>
     </div>
 
 </div> <!-- Закрытие контейнера -->
@@ -294,6 +308,7 @@
 ">
   ↑ Back to Top
 </a>
+
 
 <script>
  window.addEventListener('scroll', function() {
