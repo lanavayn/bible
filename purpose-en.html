@@ -115,7 +115,8 @@
 <body>
   <div class="container">
 <div class="top-bar">
-  <a class="back-button" href="index-en.html">← Back</a>
+  <a href="index-en.html">🏠 Home</a>
+  <a href="about-en.html">📄 About</a>
   <div class="dropdown">
     <button class="dropbtn">🌐 Language</button>
     <div class="dropdown-content">
@@ -132,17 +133,28 @@
     📖 Click on <strong>the verse title</strong> to see the interpretation or open it in the Bible.
     </div>
 
-    <p>
-      <span class="tooltip-container">
-        📘
-        <span class="tooltip-text">This quote is from a Christian book, not a Bible verse.</span>
-      </span>
-      “Once you become aware that the main business that you are here for is to know God, most of life’s problems fall into place of their own accord.”
-      — J.I. Packer, <em>Knowing God</em>
-    </p>
+    <div class="key-idea-box"> 
+      <p><strong>📘 The Bible teaches that the purpose of our life is to know God, believe in Jesus Christ, and live in fellowship with Him.</strong></p>
+      <p class="verse-note">
+        This idea is especially clearly expressed in the verses:
+        <a href="#john3">John 3:16</a>,
+        <a href="#rom5">Romans 5:1</a>, and
+        <a href="#john17">John 17:2–3</a>.
+      </p>
+    </div>
 
     <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john17')">John 17:2-3</h2>
+      <h2 style="cursor:pointer; color:darkblue;" id="john3" onclick="openPopup('popup-john3')">John 3:16</h2>
+      <p>For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.</p>
+    </div>
+
+    <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" id="rom5" onclick="openPopup('popup-rom5')">Romans 5:1</h2>
+      <p>Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.</p>
+    </div>
+
+    <div class="verse">
+      <h2 style="cursor:pointer; color:darkblue;" id="john17" onclick="openPopup('popup-john17')">John 17:2-3</h2>
       <p>"Since you have given him authority over all flesh, to give eternal life to all whom you have given him. And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent."</p>
     </div>
 
@@ -193,7 +205,26 @@
       <a href="https://www.esv.org/Proverbs+3:5-6/" target="_blank">📖 Read in Bible</a>
     </div>
   </div>
- 
+
+  <div id="popup-rom5" class="popup">
+    <h3>Romans 5:1:</h3>
+    <p>This verse teaches that through <strong>faith in Jesus Christ</strong>, a person is <strong>justified</strong>—declared righteous before God. This justification is not earned by works but is a <strong>gift of grace</strong> received by believing in Christ.</p>
+    <p>As a result of this justification, the believer gains <strong>peace with God</strong>—not merely a feeling of inner calm, but a restored relationship with God. The hostility caused by sin is removed, and the person now stands in a state of <strong>reconciliation and favor</strong> with God, all made possible through Jesus.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-rom5')">Close</button>
+      <a href="https://www.esv.org/Romans+5:1/" target="_blank" >📖 Read in Bible</a>
+    </div>
+  </div>
+
+  <div id="popup-john3" class="popup">
+    <h3>John 3:16</h3>
+    <p><strong>Interpretation:</strong> God's greatest love was shown through Jesus' sacrifice for humanity. Faith in Him grants eternal life.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john3')">Close</button>
+      <a href="https://www.esv.org/John+3:16/" target="_blank" >📖 Read in Bible</a>
+    </div>
+  </div>
+
   <div id="popup-john17" class="popup">
     <h3>John 17:2-3 (Interpretation)</h3>
   <p><strong>“Since you have given him authority over all flesh…”</strong> — Jesus acknowledges the authority given to Him by the Father. This authority is universal — over all humanity — and it’s not for domination, but for giving eternal life.</p>
@@ -278,6 +309,33 @@
       backToTop.style.display = 'none';
     }
   });
+    function togglePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup.style.display === 'block') {
+      popup.style.display = 'none';
+    } else {
+      // Закрыть все открытые pop-up'ы
+      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+      // Показать выбранный
+      popup.style.display = 'block';
+      // Прокрутить страницу к pop-up'у, если он ниже
+      popup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function closePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) popup.style.display = 'none';
+  }
+    function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
 </script>
 
 </body>

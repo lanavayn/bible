@@ -119,7 +119,8 @@
   <div class="container">
 
 <div class="top-bar">
-  <a class="back-button" href="index.html">← Назад</a>
+      <a href="index.html">🏠 Главная</a>
+      <a href="about.html">📄 О сайте</a>
   <div class="dropdown">
     <button class="dropbtn">🌐 Language</button>
     <div class="dropdown-content">
@@ -135,17 +136,29 @@
       📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
     </div>
 
-    <p>
-      <span class="tooltip-container">
-        📘
-        <span class="tooltip-text">Это цитата из христианской книги, а не прямая цитата из Библии.</span>
-      </span>
-      «Смысл жизни — познать Бога, поверить в Иисуса Христа и жить в общении с Ним.»
-      — Дж. Ай. Пакер, <em>Познание Бога</em>
-    </p>
+  <div class="key-idea-box">
+  <p><strong>📘 Библия говорит, что смысл нашей жизни — познать Бога, поверить в Иисуса Христа и жить в общении с Ним.</strong></p>
+  <p class="verse-note">
+    Эта идея особенно ярко выражена в стихах:
+      <a href="#john3">Иоанна 3:16</a>, 
+      <a href="#rom5">Римлянам 5:1</a> и 
+      <a href="#john17">Иоанна 17:2–3</a>.
+
+  </p>
+</div>
+   
+  <div class="verse">
+    <h2 style="cursor:pointer; color:darkblue;" id="john3" onclick="openPopup('popup-john3')">Иоанна 3:16</h2>
+    <p>Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.</p>
+  </div>
 
   <div class="verse">
-    <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john17')">Иоанна 17:2-3</h2>
+    <h2 style="cursor:pointer; color:darkblue;" id="rom5" onclick="openPopup('popup-rom5')">Римлянам 5:1</h2>
+    <p>Итак, мы, оправдавшись верою, имеем мир с Богом через Господа нашего Иисуса Христа.</p>
+  </div>
+
+  <div class="verse">
+    <h2 style="cursor:pointer; color:darkblue;" id="john17" onclick="openPopup('popup-john17')">Иоанна 17:2-3</h2>
     <p>Tак как Ты дал Ему власть над всякою плотью, да всему, что Ты дал Ему, даст Он жизнь вечную. Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.</p>
   </div>
 
@@ -201,6 +214,30 @@
     <div class="popup-buttons">
       <button onclick="closePopup('popup-john17')">Закрыть</button>
       <a href="https://bible.by/syn/43/17/#2" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-rom5" class="popup">
+    <h3>Римлянам 5:1 (Толкование)</h3>
+    <h2>Толкование Римлянам 5:1</h2>
+  <p>
+    Этот стих учит, что через <strong>веру в Иисуса Христа</strong> человек получает <strong>оправдание</strong> — его признают праведным перед Богом. Это оправдание <strong>не зарабатывается делами</strong>, а является <strong>даром благодати</strong>, полученным через веру.
+  </p>
+  <p>
+    В результате этого оправдания верующий получает <strong>мир с Богом</strong> — не просто внутреннее спокойствие, а восстановленные отношения с Творцом. <strong>Вражда, вызванная грехом, устранена</strong>, и человек теперь находится в состоянии <strong>примирения и Божьего благоволения</strong> — всё это стало возможным благодаря Иисусу.
+  </p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-rom5')">Закрыть</button>
+        <a href="https://bible.by/syn/52/5/#1" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-john3" class="popup">
+    <h3>Иоанна 3:16 (Толкование)</h3>
+    <p>Это один из самых известных стихов, подчеркивающий любовь Бога и путь к вечной жизни через веру в Иисуса Христа.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john3')">Закрыть</button>
+      <a href="https://bible.by/syn/43/3/#16" target="_blank">📖 Читать в Библии</a>
     </div>
   </div>
 
@@ -293,7 +330,37 @@
       backToTop.style.display = 'none';
     }
   });
+
+  function togglePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup.style.display === 'block') {
+      popup.style.display = 'none';
+    } else {
+      // Закрыть все открытые pop-up'ы
+      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+      // Показать выбранный
+      popup.style.display = 'block';
+      // Прокрутить страницу к pop-up'у, если он ниже
+      popup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function closePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) popup.style.display = 'none';
+  }
+    function openPopup(id) {
+    document.getElementById(id).style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+
 </script>
+
 
 </body>
 </html>
