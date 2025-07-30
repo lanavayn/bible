@@ -237,22 +237,10 @@
       </div>
     </div>
 
-
-
-<a href="#top" id="back-to-top" style="
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  z-index: 1000;
-">
-  ↑ Back to Top
-</a>
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="images/up-arrow.png" alt="Back to top" />
+  </button>
+  <script src="scroll.js"></script>
 
 <script>
  window.addEventListener('scroll', function() {
@@ -264,12 +252,6 @@
     }
   });
 </script>  
-
-
-
-
-
-
 
 </body>
 </html>
