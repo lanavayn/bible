@@ -1,0 +1,21 @@
+{
+  "name": "Bible for Everyone",
+  "short_name": "Bible",
+  "description": "A bilingual Bible site for all — with verses, commentary, and purpose of life.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
