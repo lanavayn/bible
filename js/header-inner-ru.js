@@ -15,22 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="top-left">
         <a href="index.html">🏠 Главная</a>
       </div>
-       <div class="top-left">
+       <div class="top-centre">
         <a href="about.html">📄 О сайте</a>
       </div>
-      <div class="top-centre">
+      <div class="top-right">
         <a href="#" class="share-button" title="Поделиться">
-          <img src="images/share.png" alt="Поделиться" width="20"> Поделиться
+          <img src="images/share.png" alt="Поделиться" width="20"> 
         </a>
       </div>
-      <div class="top-right dropdown">
-        <button class="dropbtn">🌐 Language</button>
-        <div class="dropdown-content">
-          <a href="${Object.keys(pageMap).find(key => pageMap[key] === currentPage) || currentPage}" class="lang">English</a>
-          <a href="${russianVersion}" class="lang">Русский</a>
-        
-        </div>
-      </div>
+     
     </div>
   `;
 });
