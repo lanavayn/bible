@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Favicon -->
@@ -58,245 +59,95 @@
       toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
     }
   </script>
-  <style>
-  .popup {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: white;
-    border: 2px solid #888;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    z-index: 1000;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 70vh;
-    overflow: auto;
-  }
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    .popup h2 {
-      color: darkblue;
-      margin-bottom: 10px;
-    }
-    .popup p {
-      margin-bottom: 10px;
-    }
-    .popup-buttons a {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-    .popup-buttons button,
-    .popup-buttons a {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .popup-buttons button:hover,
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-
-    .bible-button-wrapper {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.bible-button {
-  display: inline-block;
-  background-color: #f0e68c;
-  color: #4b0082;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-
-.bible-button:hover {
-  background-color: #ffe16b;
-  transform: scale(1.05);
-  box-shadow: 2px 6px 12px rgba(0,0,0,0.4);
-}
-a {
-  color: #3b3b99;
-  text-decoration: none;
-}
- .popup-buttons a {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-    .popup-buttons button,
-    .popup-buttons a {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .popup-buttons button:hover,
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-
-  </style>
+ 
 </head>
 <body>
-  <div class="container">
+    <div class="container">
 
-    <div class="top-bar">
-      <a href="index.html">🏠 Главная</a>
-      <a href="about.html">📄 О сайте</a>
-      <div class="dropdown">
-        <button class="dropbtn">🌐 Language</button>
-        <div class="dropdown-content">
-          <a href="prayFromBible-en.html">English</a>
-          <a href="prayFromBible.html">Русский</a>
+    <div id="header"></div>
+    <main role="main">  
+      <h1>🕊 Молитва Господня <em>«Отче наш»</em> — с Толкованием</h1>
+
+        <p style="background-color: #fff9e6; padding: 0.5em 1em; border-left: 4px solid #f2b600; margin-bottom: 1em;">
+          📖 <strong>Нажмите на стих</strong>, чтобы прочитать толкование или открыть в Библии.
+        </p>  
+
+        <div class="pray-text" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+          <p style="margin-bottom: 0.8em;"><strong>📖 Текст молитвы:</strong></p>
+
+          <p>«Отче наш, сущий на небесах! да святится имя Твоё; <a href="javascript:void(0);" onclick="openPopup('popup-pray1')">От Матфея 6:9</a></p>
+          <p>да приидет Царствие Твоё; да будет воля Твоя и на земле, как на небе; <a href="javascript:void(0);" onclick="openPopup('popup-pray2')">От Матфея 6:10</a></p>
+          <p>хлеб наш насущный дай нам на сей день; <a href="javascript:void(0);" onclick="openPopup('popup-pray3')">От Матфея 6:11</a></p>
+          <p>и прости нам долги наши, как и мы прощаем должникам нашим; <a href="javascript:void(0);" onclick="openPopup('popup-pray4')">От Матфея 6:12</a></p>
+          <p>и не введи нас в искушение, но избавь нас от лукавого. Ибо Твоё есть Царство и сила и слава вовеки. Аминь» <a href="javascript:void(0);" onclick="openPopup('popup-pray5')">От Матфея 6:13</a></p>   
+        </div>
+    </main> 
+      <div id="footer"></div>
+
+      <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+
+      <!-- Popup толкование -->
+      <div id="popup-pray1" class="popup">
+        <h3>Отче наш, сущий на небесах! да святится имя Твоё — Толкование</h3>
+        <p><strong>«Отче наш, сущий на небесах»</strong> — мы обращаемся к Богу как к любящему Отцу, признавая Его власть, заботу и святость.</p>
+        <p><strong>«Да святится имя Твоё»</strong> — просьба, чтобы имя Бога было прославлено в нашей жизни и в этом мире. Пусть люди узнают Его и почитают как Святого.</p>
+        <p>Молитва начинается с поклонения и признания Божьего величия.</p>
+        <div class="popup-buttons">
+          <button onclick="closePopup('popup-pray1')">Закрыть</button>
+          <a href="https://bible.by/syn/40/6/#9" target="_blank">📖 Читать в Библии</a>
         </div>
       </div>
-</div>
-    
-  <h1>🕊 Молитва Господня <em>«Отче наш»</em> — с Толкованием</h1>
 
-      <p style="background-color: #fff9e6; padding: 0.5em 1em; border-left: 4px solid #f2b600; margin-bottom: 1em;">
-  📖 <strong>Нажмите на стих</strong>, чтобы прочитать толкование или открыть в Библии.
-    </p>  
-
-    <div class="pray-text" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
-      <p style="margin-bottom: 0.8em;"><strong>📖 Текст молитвы:</strong></p>
-
-      <p>«Отче наш, сущий на небесах! да святится имя Твоё; <a href="javascript:void(0);" onclick="openPopup('popup-pray1')">От Матфея 6:9</a></p>
-      <p>да приидет Царствие Твоё; да будет воля Твоя и на земле, как на небе; <a href="javascript:void(0);" onclick="openPopup('popup-pray2')">От Матфея 6:10</a></p>
-      <p>хлеб наш насущный дай нам на сей день; <a href="javascript:void(0);" onclick="openPopup('popup-pray3')">От Матфея 6:11</a></p>
-      <p>и прости нам долги наши, как и мы прощаем должникам нашим; <a href="javascript:void(0);" onclick="openPopup('popup-pray4')">От Матфея 6:12</a></p>
-      <p>и не введи нас в искушение, но избавь нас от лукавого. Ибо Твоё есть Царство и сила и слава вовеки. Аминь» <a href="javascript:void(0);" onclick="openPopup('popup-pray5')">От Матфея 6:13</a></p>
-  
-   
-    </div>
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Источники:</strong></p>
-        <p>🔹 Толкования основаны на классических христианских комментариях (Иоанн Златоуст, Matthew Henry, John Gill и др.).</p>
-        <p class="bible-link-note">🔹 Ссылки на тексты Библии: <a href="https://bible.by/syn/" target="_blank">bible.by/syn</a> — Синодальный перевод, Российское Библейское Общество, 1876 г.</p>
+      <div id="popup-pray2" class="popup">
+        <h3>да приидет Царствие Твоё; да будет воля Твоя и на земле, как на небе — Толкование</h3>
+        <p><strong>«Да приидет Царствие Твоё»</strong> — молитва о том, чтобы Божье Царство пришло в сердца людей, в мир и в нашу жизнь. Это ожидание справедливости, мира и любви Божьей среди нас.</p>
+        <p><strong>«Да будет воля Твоя»</strong> — признание Божьей власти и доверие Его воле. Это готовность исполнять Божьи заповеди и принимать Его решения в нашей жизни.</p>
+        <p><strong>«И на земле, как на небе»</strong> — желание, чтобы земля отражала небесный порядок, где исполняется только Божья воля. Мы молимся, чтобы Божья истина и любовь царили на земле.</p>
+        <div class="popup-buttons">
+          <button onclick="closePopup('popup-pray2')">Закрыть</button> 
+          <a href="https://bible.by/syn/40/6/#10" target="_blank">📖 Читать в Библии</a>
+        </div>
       </div>
-      © 2025 Молитва Господня «Отче наш» — с Толкованием. Все права защищены.
-    </footer>
 
-    <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
-
-    <!-- Popup толкование -->
-    <div id="popup-pray1" class="popup">
-      <h3>Отче наш, сущий на небесах! да святится имя Твоё — Толкование</h3>
-      <p><strong>«Отче наш, сущий на небесах»</strong> — мы обращаемся к Богу как к любящему Отцу, признавая Его власть, заботу и святость.</p>
-      <p><strong>«Да святится имя Твоё»</strong> — просьба, чтобы имя Бога было прославлено в нашей жизни и в этом мире. Пусть люди узнают Его и почитают как Святого.</p>
-      <p>Молитва начинается с поклонения и признания Божьего величия.</p>
-      <div class="popup-buttons">
-        <button onclick="closePopup('popup-pray1')">Закрыть</button>
-         <a href="https://bible.by/syn/40/6/#9" target="_blank">📖 Читать в Библии</a>
       </div>
-    </div>
+      <div id="popup-pray3" class="popup">
+        <h3>хлеб наш насущный дай нам на сей день — Толкование</h3>
+          <p><strong>«Хлеб наш насущный дай нам на сей день»</strong> — просьба к Богу об обеспечении наших ежедневных нужд: пищи, здоровья, защиты, мудрости. Это выражение доверия Богу на каждый день.</p>
+          <p>Хлеб — символ как материальных благ, так и духовной пищи, которая питает душу.</p>      
+        <div class="popup-buttons">
+          <button onclick="closePopup('popup-pray3')">Закрыть</button>
+          <a href="https://bible.by/syn/40/6/#11" target="_blank">📖 Читать в Библии</a> 
+        </div>
+      </div>
 
-    <div id="popup-pray2" class="popup">
-      <h3>да приидет Царствие Твоё; да будет воля Твоя и на земле, как на небе — Толкование</h3>
-      <p><strong>«Да приидет Царствие Твоё»</strong> — молитва о том, чтобы Божье Царство пришло в сердца людей, в мир и в нашу жизнь. Это ожидание справедливости, мира и любви Божьей среди нас.</p>
-      <p><strong>«Да будет воля Твоя»</strong> — признание Божьей власти и доверие Его воле. Это готовность исполнять Божьи заповеди и принимать Его решения в нашей жизни.</p>
-      <p><strong>«И на земле, как на небе»</strong> — желание, чтобы земля отражала небесный порядок, где исполняется только Божья воля. Мы молимся, чтобы Божья истина и любовь царили на земле.</p>
-      <div class="popup-buttons">
-        <button onclick="closePopup('popup-pray2')">Закрыть</button> 
-        <a href="https://bible.by/syn/40/6/#10" target="_blank">📖 Читать в Библии</a>
+      <div id="popup-pray4" class="popup">
+        <h3>и прости нам долги наши, как и мы прощаем должникам нашим — Толкование</h3>
+          <p><strong>«И прости нам долги наши»</strong> — просьба к Богу о прощении наших грехов и ошибок.</p>
+          <p><strong>«Как и мы прощаем должникам нашим»</strong> — напоминание, что мы должны прощать других, чтобы самим получать прощение. Это учит милости, прощению и свободе от обид.</p>
+        <div class="popup-buttons">
+          <button onclick="closePopup('popup-pray4')">Закрыть</button>
+          <a href="https://bible.by/syn/40/6/#12" target="_blank">📖 Читать в Библии</a> 
+        </div>
+      </div>
+
+      <div id="popup-pray5" class="popup">
+        <h3>и не введи нас в искушение, но избавь нас от лукавого. Ибо Твоё есть Царство и сила и слава вовеки. Аминь — Толкование</h3>
+          <p><strong>«И не введи нас в искушение»</strong> — просьба о том, чтобы Бог хранил нас от зла и помогал устоять в испытаниях.</p>
+          <p><strong>«Но избавь нас от лукавого»</strong> — молитва о защите от сатаны и всякого зла, чтобы Божья сила была нашей охраной.</p>
+          <p><strong>«Ибо Твоё есть Царство и сила и слава вовеки»</strong> — признание Божьей власти, силы и вечной славы. Завершение молитвы словом хвалы.</p>
+        <div class="popup-buttons">
+          <button onclick="closePopup('popup-pray5')">Закрыть</button>
+          <a href="https://bible.by/syn/40/6/#13" target="_blank">📖 Читать в Библии</a>          
+        </div>
       </div>
     </div>
 
-    </div>
-    <div id="popup-pray3" class="popup">
-      <h3>хлеб наш насущный дай нам на сей день — Толкование</h3>
-        <p><strong>«Хлеб наш насущный дай нам на сей день»</strong> — просьба к Богу об обеспечении наших ежедневных нужд: пищи, здоровья, защиты, мудрости. Это выражение доверия Богу на каждый день.</p>
-        <p>Хлеб — символ как материальных благ, так и духовной пищи, которая питает душу.</p>      
-      <div class="popup-buttons">
-        <button onclick="closePopup('popup-pray3')">Закрыть</button>
-        <a href="https://bible.by/syn/40/6/#11" target="_blank">📖 Читать в Библии</a> 
-      </div>
-    </div>
-
-    <div id="popup-pray4" class="popup">
-      <h3>и прости нам долги наши, как и мы прощаем должникам нашим — Толкование</h3>
-        <p><strong>«И прости нам долги наши»</strong> — просьба к Богу о прощении наших грехов и ошибок.</p>
-        <p><strong>«Как и мы прощаем должникам нашим»</strong> — напоминание, что мы должны прощать других, чтобы самим получать прощение. Это учит милости, прощению и свободе от обид.</p>
-      <div class="popup-buttons">
-        <button onclick="closePopup('popup-pray4')">Закрыть</button>
-        <a href="https://bible.by/syn/40/6/#12" target="_blank">📖 Читать в Библии</a> 
-      </div>
-    </div>
-
-    <div id="popup-pray5" class="popup">
-      <h3>и не введи нас в искушение, но избавь нас от лукавого. Ибо Твоё есть Царство и сила и слава вовеки. Аминь — Толкование</h3>
-        <p><strong>«И не введи нас в искушение»</strong> — просьба о том, чтобы Бог хранил нас от зла и помогал устоять в испытаниях.</p>
-        <p><strong>«Но избавь нас от лукавого»</strong> — молитва о защите от сатаны и всякого зла, чтобы Божья сила была нашей охраной.</p>
-        <p><strong>«Ибо Твоё есть Царство и сила и слава вовеки»</strong> — признание Божьей власти, силы и вечной славы. Завершение молитвы словом хвалы.</p>
-      <div class="popup-buttons">
-        <button onclick="closePopup('popup-pray5')">Закрыть</button>
-        <a href="https://bible.by/syn/40/6/#13" target="_blank">📖 Читать в Библии</a>          
-      </div>
-    </div>
-
-
-  </div>
-  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
       <img src="images/up-arrow.png" alt="Back to top" />
-  </button>
-  <script src="scroll.js"></script>
-
-<script>
- window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-</script>
+    </button>
+    <script src="js/scroll.js"></script>
+    <script src="js/header-inner-ru.js"></script>
+    <script src="js/footer-ru.js"></script>
+    <script src="js/share.js" defer></script>
 </body>
 </html>

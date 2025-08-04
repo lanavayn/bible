@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-LM7CCJ5HKX');
   </script>
   <meta charset="UTF-8">
@@ -17,14 +16,12 @@
     <meta name="description" content="Bible for All — inspirational verses with commentary. Available in English and Russian.">
     <meta name="keywords" content="Bible, Scripture, Golden Verses, Christianity, Russian Bible, English Bible">
     <meta name="author" content="Lana Vayner">
-
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Bible for All" />
     <meta property="og:description" content="Inspirational verses with commentary. Available in English and Russian." />
     <meta property="og:image" content="https://lana-bible-2025.netlify.app/og-image.png" />
     <meta property="og:url" content="https://lana-bible-2025.netlify.app/" />
     <meta property="og:type" content="website" />
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K74LJWQPLX"></script>
     <script>
@@ -51,51 +48,30 @@
 
 </head>
 <body>
-  
- 
-  <div class="container">
+    <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+        <div id="header"></div>
+        <main role="main"> 
+          <h1>📖 <span class="highlight-title">Библия для всех</span> — главная</h1>
+          <p>Добро пожаловать! Выберите одну из тем ниже:</p>
+          
+            <ul class="topic-list">
+              <li><a class="button-link" href="prayFromBible.html">🕊 Молитва Господня <em>«Отче наш»</em> c толкование</a></li>
+              <li><a class="button-link" href="golden-verses.html">🌟 Золотые стихи с толкованием</a></li>
+              <li><a class="button-link" href="10-commandments.html">📜 10 заповедей с толкованием</a></li>
+              <li><a class="button-link" href="purpose.html">🎯 Смысл жизни с толкованием</a></li>
+            </ul> 
+        </main> 
+        <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
 
-<div class="top-bar">
-  <div>
-    <a href="about.html">📄 О сайте</a>
-  </div> <!-- Placeholder on the left to align language right -->
-  <div class="dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a href="index-en.html">English</a>
-      <a href="index.html">Русский</a>
+        <div id="footer"></div> 
+         
     </div>
-  </div>
-</div>
-
-
- 
-    <h1>📖 <span class="highlight-title">Библия для всех</span> — главная</h1>
-    <p>Добро пожаловать! Выберите одну из тем ниже:</p>
-    <ul class="topic-list">
-      <li><a class="button-link" href="prayFromBible.html">🕊 Молитва Господня <em>«Отче наш»</em> c толкование</a></li>
-      <li><a class="button-link" href="golden-verses.html">🌟 Золотые стихи с толкованием</a></li>
-      <li><a class="button-link" href="10-commandments.html">📜 10 заповедей с толкованием</a></li>
-      <li><a class="button-link" href="purpose.html">🎯 Смысл жизни с толкованием</a></li>
-    </ul>
-    
-    <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Источники:</strong></p>
-        <p>🔹 Толкования основаны на классических христианских комментариях (Иоанн Златоуст, Matthew Henry, John Gill и др.).</p>
-        <p class="bible-link-note">🔹 Ссылки на тексты Библии: <a href="https://bible.by/syn/" target="_blank">bible.by/syn</a> — Синодальный перевод, Российское Библейское Общество, 1876 г.</p>
-      </div>
-      © 2025 Библия для всех. Все права защищены.
-    </footer>
-
-</div>
-
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
-  <img src="images/up-arrow.png" alt="Back to top" />
-</button>
-
-<script src="scroll.js"></script>
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="images/up-arrow.png" alt="Back to top" />
+    </button>
+    <script src="js/scroll.js"></script>
+    <script src="js/header-index-ru.js"></script>
+    <script src="js/footer-ru.js"></script>
+    <script src="js/share.js" defer></script>
 </body>
 </html>

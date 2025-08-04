@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Favicon -->
@@ -56,91 +57,73 @@
 <body>
   <div class="container">
 
-<div class="top-bar">
-  <a href="index-en.html">🏠 Home</a>
-  <a href="about-en.html">📄 About</a>
-  <div class="dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a href="10-commandments-en.html">English</a>
-      <a href="10-commandments.html">Русский</a>
-    </div>
-  </div>
-</div>
+  <div id="header"></div>
+  <main role="main">  
+    <h1>📜 The 10 Commandments — With Commentary</h1>
 
-<h1>📜 The 10 Commandments — With Commentary</h1>
-
-    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
-      📖 Click the <strong>verse link</strong> to view the interpretation or read in the Bible.
-    </div>
-
-    <ol>
-      <li>
-        I am the Lord your God, who brought you out of the land of Egypt, out of the house of slavery.  
-        You shall have no other gods before Me.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment1')">Exodus 20:2–3</a>
-      </li><br>
-      <li>
-        You shall not make for yourself a carved image or any likeness of anything that is in heaven above, or that is in the earth beneath, or that is in the water under the earth.  
-        You shall not bow down to them or serve them, for I the Lord your God am a jealous God,  
-        visiting the iniquity of the fathers on the children to the third and fourth generation of those who hate Me,  
-        but showing steadfast love to thousands of those who love Me and keep My commandments.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment2')">Exodus 20:4–6</a>
-      </li><br>
-      <li>
-        You shall not take the name of the Lord your God in vain,  
-        for the Lord will not hold him guiltless who takes His name in vain.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment3')">Exodus 20:7</a>
-      </li><br>
-      <li>
-        Remember the Sabbath day, to keep it holy. Six days you shall labor, and do all your work,  
-        but the seventh day is a Sabbath to the Lord your God.  
-        On it you shall not do any work, you, or your son, or your daughter, your male servant, or your female servant,  
-        or your livestock, or the sojourner who is within your gates.  
-        For in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.  
-        Therefore the Lord blessed the Sabbath day and made it holy.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment4')">Exodus 20:8–11</a>
-      </li><br>
-      <li>
-        Honor your father and your mother, that your days may be long in the land that the Lord your God is giving you.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment5')">Exodus 20:12</a>
-      </li><br>
-      <li>
-        You shall not murder.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment6')">Exodus 20:13</a>
-      </li><br>
-      <li>
-        You shall not commit adultery.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')">Exodus 20:14</a>
-      </li><br>
-      <li>
-        You shall not steal.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment8')">Exodus 20:15</a>
-      </li><br>
-      <li>
-        You shall not bear false witness against your neighbor.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment9')">Exodus 20:16</a>
-      </li><br>
-      <li>
-        You shall not covet your neighbor’s house;  
-        you shall not covet your neighbor’s wife, or his male servant, or his female servant,  
-        or his ox, or his donkey, or anything that is your neighbor’s.  
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment10')">Exodus 20:17</a>
-      </li>
-    </ol>
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Sources:</strong></p>
-        <p>🔹 Commentaries are based on classic Christian sources (John Chrysostom, Matthew Henry, John Gill, and others).</p>
-        <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
+      <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+        📖 Click the <strong>verse link</strong> to view the interpretation or read in the Bible.
       </div>
-      © 2025 Bible for All. All rights reserved.
-    </footer>
- </div> <!-- Закрытие контейнера -->
- 
-    <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+      <div style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+        <ol>
+          <li>
+            I am the Lord your God, who brought you out of the land of Egypt, out of the house of slavery.  
+            You shall have no other gods before Me.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment1')">Exodus 20:2–3</a>
+          </li><br>
+          <li>
+            You shall not make for yourself a carved image or any likeness of anything that is in heaven above, or that is in the earth beneath, or that is in the water under the earth.  
+            You shall not bow down to them or serve them, for I the Lord your God am a jealous God,  
+            visiting the iniquity of the fathers on the children to the third and fourth generation of those who hate Me,  
+            but showing steadfast love to thousands of those who love Me and keep My commandments.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment2')">Exodus 20:4–6</a>
+          </li><br>
+          <li>
+            You shall not take the name of the Lord your God in vain,  
+            for the Lord will not hold him guiltless who takes His name in vain.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment3')">Exodus 20:7</a>
+          </li><br>
+          <li>
+            Remember the Sabbath day, to keep it holy. Six days you shall labor, and do all your work,  
+            but the seventh day is a Sabbath to the Lord your God.  
+            On it you shall not do any work, you, or your son, or your daughter, your male servant, or your female servant,  
+            or your livestock, or the sojourner who is within your gates.  
+            For in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.  
+            Therefore the Lord blessed the Sabbath day and made it holy.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment4')">Exodus 20:8–11</a>
+          </li><br>
+          <li>
+            Honor your father and your mother, that your days may be long in the land that the Lord your God is giving you.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment5')">Exodus 20:12</a>
+          </li><br>
+          <li>
+            You shall not murder.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment6')">Exodus 20:13</a>
+          </li><br>
+          <li>
+            You shall not commit adultery.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')">Exodus 20:14</a>
+          </li><br>
+          <li>
+            You shall not steal.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment8')">Exodus 20:15</a>
+          </li><br>
+          <li>
+            You shall not bear false witness against your neighbor.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment9')">Exodus 20:16</a>
+          </li><br>
+          <li>
+            You shall not covet your neighbor’s house;  
+            you shall not covet your neighbor’s wife, or his male servant, or his female servant,  
+            or his ox, or his donkey, or anything that is your neighbor’s.  
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment10')">Exodus 20:17</a>
+          </li>
+        </ol>
+      </div>
 
+  </main> 
+    <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+    <div id="footer"></div>
     <!-- POPUPS -->
     <div id="popup-commandment1" class="popup">
       <h3>Commandment 1 — Interpretation</h3>
@@ -245,22 +228,14 @@
         <a href="https://www.esv.org/Exodus+20:17/" target="_blank">📖 Read in the Bible</a>
       </div>
     </div>
-
+  </div> <!-- Закрытие контейнера -->
   <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
       <img src="images/up-arrow.png" alt="Back to top" />
   </button>
-  <script src="scroll.js"></script>
-
-<script>
- window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-</script>  
+  <script src="js/header-inner-en.js"></script>
+  <script src="js/footer-en.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/share.js" defer></script>  
 
 </body>
 </html>

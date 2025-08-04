@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Favicon -->
@@ -41,88 +42,7 @@
   <!-- Mobile theme color -->
   <meta name="theme-color" content="#ffffff" />
 
-  <style>
-    body {
-      font-family: Georgia, serif;
-      background-color: #fdfaf3;
-      color: #1a0d00;
-      margin: 20px;
-    }
-    h1, h2 {
-      color: #2e0f3d;
-    }
-    .verse {
-      margin-bottom: 30px;
-    }
-    .popup {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      background-color: white;
-      border: 2px solid #888;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      z-index: 1000;
-      padding: 20px;
-      width: 80%;
-      max-width: 600px;
-    }
-    .popup h3 {
-      margin-top: 0;
-    }
-    .popup-buttons {
-      margin-top: 20px;
-      text-align: right;
-    }
-    .popup-buttons button, .popup-buttons a {
-      margin-left: 10px;
-      padding: 8px 14px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-    .popup-buttons a {
-      text-decoration: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 4px;
-    }
-.popup-buttons button,
-.popup-buttons a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: darkgreen;
-  color: white;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.popup-buttons button:hover,
-.popup-buttons a:hover {
-  background-color: green;
-}
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    #hidden-verses {
-      display: none;
-    }
-    #toggle-hidden {
-      margin-top: 20px;
-      padding: 10px 18px;
-      font-size: 1em;
-    }
-  </style>
+  
   <script>
     function openPopup(id) {
       document.getElementById('overlay').style.display = 'block';
@@ -142,84 +62,70 @@
   </script>
 </head>
 <body>
-<div class="container">
-<div class="top-bar">
-      <a href="index.html">🏠 Главная</a>
-      <a href="about.html">📄 О сайте</a>
-  <div class="dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a href="golden-verses-en.html">English</a>
-      <a href="golden-verses.html">Русский</a>
-    </div>
-  </div>
-</div>
- 
-  <h1>🌟 Золотые Стихи из Библии — с Толкованием</h1>
+  <div class="container">
+  <div id="header"></div>
+  <main role="main"> 
+    <h1>🌟 Золотые Стихи из Библии — с Толкованием</h1>
 
-<div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
-  📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
-</div>
-
-  <div class="verse">
-    <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john3')">Иоанна 3:16</h2>
-    <p>Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.</p>
-  </div>
-
-  <div class="verse">
-    <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john5')">Иоанна 5:39</h2>
-    <p>Исследуйте Писания, ибо вы думаете через них иметь жизнь вечную; а они свидетельствуют о Мне.</p>
-  </div>
-
-  <div class="verse">
-    <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ephesians2')">Ефесянам 2:8–9</h2>
-    <p>Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.</p>
-  </div>
-
-  <div id="hidden-verses">
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-psalm23')">Псалом 22:1</h2>
-      <p>Господь — Пастырь мой; я ни в чём не буду нуждаться.</p>
+    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+      📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
     </div>
 
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-romans8')">Римлянам 8:28</h2>
-      <p>Притом знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.</p>
-    </div>
+    <div style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
 
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-phil4')">Филиппийцам 4:13</h2>
-      <p>Всё могу в укрепляющем меня Иисусе Христе.</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Притчи 3:5–6</h2>
-      <p>Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-isaiah41')">Исаия 41:10</h2>
-      <p>Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя и помогу тебе, и поддержу тебя десницею правды Моей.</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john14')">Иоанна 14:6</h2>
-      <p>Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.</p>
-    </div>
- </div>
-
- <button id="toggle-hidden" onclick="toggleHiddenVerses()">Показать больше</button>
-
-     <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Источники:</strong></p>
-        <p>🔹 Толкования основаны на классических христианских комментариях (Иоанн Златоуст, Matthew Henry, John Gill и др.).</p>
-        <p class="bible-link-note">🔹 Ссылки на тексты Библии: <a href="https://bible.by/syn/" target="_blank">bible.by/syn</a> — Синодальный перевод, Российское Библейское Общество, 1876 г.</p>
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john3')">Иоанна 3:16</h2>
+        <p>Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.</p>
       </div>
-      © 2025 Золотые Стихи из Библии. Все права защищены.
-    </footer>
-   
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john5')">Иоанна 5:39</h2>
+        <p>Исследуйте Писания, ибо вы думаете через них иметь жизнь вечную; а они свидетельствуют о Мне.</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ephesians2')">Ефесянам 2:8–9</h2>
+        <p>Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.</p>
+      </div>
+
+      <div id="hidden-verses">
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-psalm23')">Псалом 22:1</h2>
+          <p>Господь — Пастырь мой; я ни в чём не буду нуждаться.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-romans8')">Римлянам 8:28</h2>
+          <p>Притом знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-phil4')">Филиппийцам 4:13</h2>
+          <p>Всё могу в укрепляющем меня Иисусе Христе.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Притчи 3:5–6</h2>
+          <p>Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-isaiah41')">Исаия 41:10</h2>
+          <p>Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя и помогу тебе, и поддержу тебя десницею правды Моей.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john14')">Иоанна 14:6</h2>
+          <p>Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <button id="toggle-hidden" onclick="toggleHiddenVerses()">Показать больше</button>
+  
   <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+
+  <div id="footer"></div>
 
   <!-- Popups -->
   <div id="popup-john3" class="popup">
@@ -304,21 +210,13 @@
   </div>
 </div> <!-- Закрытие контейнера -->
 
-  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
       <img src="images/up-arrow.png" alt="Back to top" />
-  </button>
-  <script src="scroll.js"></script>
-
-<script>
- window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-</script>
+    </button>
+    <script src="js/scroll.js"></script>
+    <script src="js/header-inner-ru.js"></script>
+    <script src="js/footer-ru.js"></script>
+    <script src="js/share.js" defer></script>
 
 </body>
 </html>

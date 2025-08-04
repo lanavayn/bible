@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Favicon -->
@@ -58,147 +59,41 @@
       toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
     }
   </script>
-  <style>
-  .popup {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: white;
-    border: 2px solid #888;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    z-index: 1000;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 70vh;
-    overflow: auto;
-  }
 
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    .popup h2 {
-      color: darkblue;
-      margin-bottom: 10px;
-    }
-    .popup p {
-      margin-bottom: 10px;
-    }
-    .popup-buttons a {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-    .popup-buttons button,
-    .popup-buttons a {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .popup-buttons button:hover,
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-
-    .bible-button-wrapper {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.bible-button {
-  display: inline-block;
-  background-color: #f0e68c;
-  color: #4b0082;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  box-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-
-.bible-button:hover {
-  background-color: #ffe16b;
-  transform: scale(1.05);
-  box-shadow: 2px 6px 12px rgba(0,0,0,0.4);
-}
-
-  </style>
 </head>
 <body>
   <div class="container">
 
-    <div class="top-bar">
-      <a href="index-en.html">🏠 Home</a>
-      <a href="about-en.html">📄 About</a>
-      <div class="dropdown">
-        <button class="dropbtn">🌐 Language</button>
-          <div class="dropdown-content">
-            <a href="prayFromBible-en.html" class="lang">English</a>
-            <a href="prayFromBible.html" class="lang">Русский</a>
-          </div>
+  <div id="header"></div>
+    <main role="main"> 
+      <h1>🕊 The Lord’s Prayer <span style="color:#5b4228; font-weight:bold;">“Our Father”</span> — with Commentary</h1> 
+
+      <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+        📖 Click on <strong>the verse title</strong> to see the interpretation.
       </div>
-    </div>
+
+      <div class="bible-link-note">
+        📖 <a href="https://www.esv.org/Matthew+6/" target="_blank">Read Matthew 6:9–13 in the Bible (ESV.org)</a>
+      </div>
+
+    <div class="pray-text" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+        <p style="margin-bottom: 0.8em;"><strong>📖 Prayer Text:</strong></p>
+
+        Pray then like this: “Our Father in heaven, hallowed be Your name;  
+        <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray1')">Matthew 6:9</a><br>  
+        Your Kingdom come; Your will be done, on earth as it is in heaven;  
+        <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray2')">Matthew 6:10</a><br>
+        Give us this day our daily bread;  
+        <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray3')">Matthew 6:11</a><br> 
+        And forgive us our debts, as we also have forgiven our debtors;  
+        <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray4')">Matthew 6:12</a><br>  
+        And lead us not into temptation, but deliver us from the evil one.  
+        For Yours is the Kingdom and the power and the glory forever. Amen.”  
+        <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray5')">Matthew 6:13</a>  
+      </div>
+    </main> 
+    <div id="footer"></div>
     
-    <h1>🕊 The Lord’s Prayer <span style="color:#5b4228; font-weight:bold;">“Our Father”</span> — with Commentary</h1> 
-
-     <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
-      📖 Click on <strong>the verse title</strong> to see the interpretation.
-    </div>
-
-    <div class="bible-link-note">
-      📖 <a href="https://www.esv.org/Matthew+6/" target="_blank">Read Matthew 6:9–13 in the Bible (ESV.org)</a>
-    </div>
-
-   <div class="pray-text" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
-      <p style="margin-bottom: 0.8em;"><strong>📖 Prayer Text:</strong></p>
-
-      Pray then like this: “Our Father in heaven, hallowed be Your name;  
-      <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray1')">Matthew 6:9</a><br>  
-      Your Kingdom come; Your will be done, on earth as it is in heaven;  
-      <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray2')">Matthew 6:10</a><br>
-      Give us this day our daily bread;  
-      <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray3')">Matthew 6:11</a><br> 
-      And forgive us our debts, as we also have forgiven our debtors;  
-      <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray4')">Matthew 6:12</a><br>  
-      And lead us not into temptation, but deliver us from the evil one.  
-      For Yours is the Kingdom and the power and the glory forever. Amen.”  
-      <a style="cursor:pointer; color:darkblue;" href="javascript:void(0);" onclick="openPopup('popup-pray5')">Matthew 6:13</a>  
-    </div>
-
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Sources:</strong></p>
-        <p>🔹 Commentaries are based on classic Christian sources (John Chrysostom, Matthew Henry, John Gill, and others).</p>
-        <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
-      </div>
-      © 2025 Bible for All. All rights reserved.
-    </footer>
-
     <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
 
     <!-- Interpretation Popup -->
@@ -257,17 +152,9 @@
   <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
       <img src="images/up-arrow.png" alt="Back to top" />
   </button>
-  <script src="scroll.js"></script>
-
-<script>
- window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-</script>
+  <script src="js/header-inner-en.js"></script>
+  <script src="js/footer-en.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/share.js" defer></script>  
 </body>
 </html>

@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Favicon -->
@@ -42,47 +43,28 @@
 
 </head>
 <body>
-     <div class="container">
-
-    <div class="top-bar">
-      <div>
-         <a href="about-en.html">📄 About</a>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">🌐 Language</button>
-        <div class="dropdown-content">
-          <a href="index-en.html">English</a>
-          <a href="index.html">Русский</a>
-        </div>
-      </div>
-      
-    </div>
-
-    <h1>📖 <span class="highlight-title">Bible for All</span> — Home</h1>
-    <p>Welcome! Please select one of the topics below:</p>
-    <ul class="topic-list">
-      <li><a class="button-link" href="prayFromBible-en.html">🕊 The Lord’s Prayer <em>“Our Father”</em> with commentary</a></li>
-      <li><a class="button-link" href="golden-verses-en.html">🌟 Golden Verses with commentary</a></li>
-      <li><a class="button-link" href="10-commandments-en.html">📜 10 Commandments with commentary</a></li>
-      <li><a class="button-link" href="purpose-en.html">🎯 Purpose of Life with commentary</a></li>
-    </ul>
-
+  <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+    <div id="header"></div>
+    <main role="main"> 
+      <h1>📖 <span class="highlight-title">Bible for All</span> — Home</h1>
+      <p>Welcome! Please select one of the topics below:</p>
+      <ul class="topic-list">
+        <li><a class="button-link" href="prayFromBible-en.html">🕊 The Lord’s Prayer <em>“Our Father”</em> with commentary</a></li>
+        <li><a class="button-link" href="golden-verses-en.html">🌟 Golden Verses with commentary</a></li>
+        <li><a class="button-link" href="10-commandments-en.html">📜 10 Commandments with commentary</a></li>
+        <li><a class="button-link" href="purpose-en.html">🎯 Purpose of Life with commentary</a></li>
+      </ul>
+    </main> 
     <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Sources:</strong></p>
-        <p>🔹 Commentaries are based on classic Christian sources (John Chrysostom, Matthew Henry, John Gill, and others).</p>
-        <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
-      </div>
-      © 2025 Bible for All. All rights reserved.
-    </footer>
+    <div id="footer"></div> 
 
   </div>
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
-  <img src="images/up-arrow.png" alt="Back to top" />
-</button>
-
-<script src="scroll.js"></script>
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+    <img src="images/up-arrow.png" alt="Back to top" />
+  </button>
+  <script src="js/header-index-en.js"></script>
+  <script src="js/footer-en.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/share.js" defer></script>
 </body>
 </html>

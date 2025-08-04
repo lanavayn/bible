@@ -23,6 +23,7 @@
     <meta property="og:description" content="Explore the purpose of life according to the Bible, with verses and interpretation." />
     <meta property="og:image" content="https://lana-bible-2025.netlify.app/og-image.png" />
     <meta property="og:url" content="https://lana-bible-2025.netlify.app/purpose-en.html" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
     <meta property="og:type" content="article" />
 
   <title>Purpose of Life in the Bible</title>
@@ -55,151 +56,71 @@
       toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
     }
   </script>
-<style>
-.popup {
-  display: none;
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-  background-color: white;
-  border: 2px solid #888;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  z-index: 1000;
-  padding: 20px;
-  width: 80%;
-  max-width: 600px;
-  max-height: 70vh;
-  overflow: auto;
-}
-  #overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-  .popup h2 {
-    color: darkblue;
-    margin-bottom: 10px;
-  }
-  .popup p {
-    margin-bottom: 10px;
-  }
-  .popup-buttons a {
-    display: inline-block;
-    padding: 6px 12px;
-    background-color: darkgreen;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
 
-  .popup-buttons a:hover {
-    background-color: green;
-  }
-  .popup-buttons button,
-  .popup-buttons a {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: darkgreen;
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .popup-buttons button:hover,
-  .popup-buttons a:hover {
-    background-color: green;
-  }
-
-</style>
 </head>
 <body>
   <div class="container">
-<div class="top-bar">
-  <a href="index-en.html">🏠 Home</a>
-  <a href="about-en.html">📄 About</a>
-  <div class="dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a href="purpose-en.html">English</a>
-      <a href="purpose.html">Русский</a>
-    </div>
-  </div>
-</div>
+    <div id="header"></div>
+    <main role="main"> 
 
+      <h1>🎯 The Purpose of Life According to the Bible — Verses and Interpretation</h1>
 
-    <h1>🎯 The Purpose of Life According to the Bible — Verses and Interpretation</h1>
-
-    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
-    📖 Click on <strong>the verse title</strong> to see the interpretation or open it in the Bible.
-    </div>
-
-    <div class="key-idea-box"> 
-      <p><strong>📘 The Bible teaches that the purpose of our life is to know God, believe in Jesus Christ, and live in fellowship with Him.</strong></p>
-      <p class="verse-note">
-        This idea is especially clearly expressed in the verses:
-        <a href="#john3">John 3:16</a>,
-        <a href="#rom5">Romans 5:1</a>, and
-        <a href="#john17">John 17:2–3</a>.
-      </p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" id="john3" onclick="openPopup('popup-john3')">John 3:16</h2>
-      <p>For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" id="rom5" onclick="openPopup('popup-rom5')">Romans 5:1</h2>
-      <p>Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" id="john17" onclick="openPopup('popup-john17')">John 17:2-3</h2>
-      <p>"Since you have given him authority over all flesh, to give eternal life to all whom you have given him. And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent."</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Proverbs 3:5–6</h2>
-      <p>"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ecclesiastes12')">Ecclesiastes 12:13</h2>
-      <p>"The end of the matter; all has been heard. Fear God and keep his commandments, for this is the whole duty of man."</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-micah6')">Micah 6:8</h2>
-      <p>"He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to gwalk humbly with your God?"</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-matthew22')">Matthew 22:37–39</h2>
-      <p>"And he said to him, “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And second is like it: You shall love your neighbor as yourself."</p>
-    </div>
-
-    <div class="verse">
-      <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john10')">John 10:10</h2>
-      <p>"The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full."</p>
-    </div>
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Sources:</strong></p>
-        <p>🔹 Commentaries are based on classic Christian sources (John Chrysostom, Matthew Henry, John Gill, and others).</p>
-        <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
+      <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+      📖 Click on <strong>the verse title</strong> to see the interpretation or open it in the Bible.
       </div>
-      © 2025 The Purpose of Life. All rights reserved.
-    </footer>
+
+      <div class="key-idea-box"> 
+        <p><strong>📘 The Bible teaches that the purpose of our life is to know God, believe in Jesus Christ, and live in fellowship with Him.</strong></p>
+        <p class="verse-note">
+          This idea is especially clearly expressed in the verses:
+          <a href="#john3">John 3:16</a>,
+          <a href="#rom5">Romans 5:1</a>, and
+          <a href="#john17">John 17:2–3</a>.
+        </p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" id="john3" onclick="openPopup('popup-john3')">John 3:16</h2>
+        <p>For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" id="rom5" onclick="openPopup('popup-rom5')">Romans 5:1</h2>
+        <p>Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" id="john17" onclick="openPopup('popup-john17')">John 17:2-3</h2>
+        <p>"Since you have given him authority over all flesh, to give eternal life to all whom you have given him. And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent."</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Proverbs 3:5–6</h2>
+        <p>"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ecclesiastes12')">Ecclesiastes 12:13</h2>
+        <p>"The end of the matter; all has been heard. Fear God and keep his commandments, for this is the whole duty of man."</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-micah6')">Micah 6:8</h2>
+        <p>"He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to gwalk humbly with your God?"</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-matthew22')">Matthew 22:37–39</h2>
+        <p>"And he said to him, “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And second is like it: You shall love your neighbor as yourself."</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john10')">John 10:10</h2>
+        <p>"The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full."</p>
+      </div>
+
+    </main> 
+    <div id="footer"></div>
 
   <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
 
@@ -297,17 +218,12 @@
   <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
       <img src="images/up-arrow.png" alt="Back to top" />
   </button>
-  <script src="scroll.js"></script>
+  <script src="js/header-inner-en.js"></script>
+  <script src="js/footer-en.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/share.js" defer></script>  
 
 <script>
- window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
     function togglePopup(id) {
     const popup = document.getElementById(id);
     if (popup.style.display === 'block') {

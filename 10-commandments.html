@@ -29,6 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
  
   <!-- Favicon -->
@@ -58,158 +59,76 @@
       toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
     }
   </script>
-  <style>
-  .popup {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: white;
-    border: 2px solid #888;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    z-index: 1000;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 70vh;
-    overflow: auto;
-  }
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    .popup h2 {
-      color: darkblue;
-      margin-bottom: 10px;
-    }
-    .popup p {
-      margin-bottom: 10px;
-    }
-    .popup-buttons a {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-    .popup-buttons button,
-    .popup-buttons a {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .popup-buttons button:hover,
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-  </style>
+ 
 </head>
 <body>
   <div class="container">
+    <div id="header"></div>
+    <main role="main"> 
+      <h1>📜 10 Заповедей — с Толкованием</h1>
 
-<div class="top-bar">
-      <a href="index.html">🏠 Главная</a>
-      <a href="about.html">📄 О сайте</a>
-  <div class="dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a href="10-commandments-en.html">English</a>
-      <a href="10-commandments.html">Русский</a>
-    </div>
-  </div>
-</div>
-   
-    <h1>📜 10 Заповедей — с Толкованием</h1>
-
-    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
-  📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
-    </div>
-
-    <ol>
-      <div class="verse">
-        <li>
-          Я Господь, Бог твой, Который вывел тебя из земли Египетской, из дома рабства;  
-          да не будет у тебя других богов пред лицем Моим.  
-          <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment1')">Исход 20:2-3</a> 
-        </li>
+      <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+        📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
       </div>
-      
-      <br>
-      <li>
-        Не делай себе кумира и никакого изображения того, что на небе вверху, и что на земле внизу, и что в воде ниже земли; не поклоняйся им и не служи им, ибо Я Господь, Бог твой, Бог ревнитель, наказывающий детей за вину отцов до третьего и четвёртого рода, ненавидящих Меня, и творящий милость до тысячи родов любящим Меня и соблюдающим заповеди Мои
-           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment2')">Исход 20:4-6</a>
-      </li>
-       <br>
-      <li>
-         Не произноси имени Господа, Бога твоего, напрасно, ибо Господь не оставит без наказания того, кто произносит имя Его напрасно.
-         <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment3')">Исход 20:7</a>
-      </li>
-       <br>
-      <li>
-         Помни день субботний, чтобы святить его; шесть дней работай и делай [в них] всякие дела твои, а день седьмой - суббота Господу, Богу твоему: не делай в оный никакого дела ни ты, ни сын твой, ни дочь твоя, ни раб твой, ни рабыня твоя, ни [вол твой, ни осел твой, ни всякий скот твой, ни пришлец, который в жилищах твоих; ибо в шесть дней создал Господь небо и землю, море и все, что в них, а в день седьмой почил; посему благословил Господь день субботний и освятил его.
-        <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment4')">Исход 20:8-11</a>
-      </li>
-       <br>
-      <li>
-          Почитай отца твоего и мать твою, чтобы продлились дни твои на земле, которую Господь, Бог твой, даёт тебе.
-          <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment5')">Исход 20:12</a>
-      </li>
-       <br>
-      <li> 
-          Не убивай.
-           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment6')">Исход 20:13</a>
-      </li>
-       <br>
-      <li> 
-          Не прелюбодействуй.
-           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')"">Исход 20:14</a>
-      </li>
-       <br>
-      <li>
-          Не кради.
-           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment8')">Исход 20:15</a>
-      </li>
-      <br>
-      <li>
-          Не произноси ложного свидетельства на ближнего твоего.
-           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment9')">Исход 20:16</a>
-      </li>
-       <br>
-      <li>
-	        Не желай дома ближнего твоего; не желай жены ближнего твоего, ни раба его, ни рабыни его, ни вола его, ни осла его, ни всего, что есть у ближнего твоего. 
-          <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment10')">Исход 20:17</a></li>
-    </ol>
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Источники:</strong></p>
-        <p>🔹 Толкования основаны на классических христианских комментариях (Иоанн Златоуст, Matthew Henry, John Gill и др.).</p>
-        <p class="bible-link-note">🔹 Ссылки на тексты Библии: <a href="https://bible.by/syn/" target="_blank">bible.by/syn</a> — Синодальный перевод, Российское Библейское Общество, 1876 г.</p>
+      <div style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+        <ol>
+          <div class="verse">
+            <li>
+              Я Господь, Бог твой, Который вывел тебя из земли Египетской, из дома рабства;  
+              да не будет у тебя других богов пред лицем Моим.  
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment1')">Исход 20:2-3</a> 
+            </li>
+          </div>    
+          <br>
+          <li>
+            Не делай себе кумира и никакого изображения того, что на небе вверху, и что на земле внизу, и что в воде ниже земли; не поклоняйся им и не служи им, ибо Я Господь, Бог твой, Бог ревнитель, наказывающий детей за вину отцов до третьего и четвёртого рода, ненавидящих Меня, и творящий милость до тысячи родов любящим Меня и соблюдающим заповеди Мои
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment2')">Исход 20:4-6</a>
+          </li>
+          <br>
+          <li>
+            Не произноси имени Господа, Бога твоего, напрасно, ибо Господь не оставит без наказания того, кто произносит имя Его напрасно.
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment3')">Исход 20:7</a>
+          </li>
+          <br>
+          <li>
+            Помни день субботний, чтобы святить его; шесть дней работай и делай [в них] всякие дела твои, а день седьмой - суббота Господу, Богу твоему: не делай в оный никакого дела ни ты, ни сын твой, ни дочь твоя, ни раб твой, ни рабыня твоя, ни [вол твой, ни осел твой, ни всякий скот твой, ни пришлец, который в жилищах твоих; ибо в шесть дней создал Господь небо и землю, море и все, что в них, а в день седьмой почил; посему благословил Господь день субботний и освятил его.
+            <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment4')">Исход 20:8-11</a>
+          </li>
+          <br>
+          <li>
+              Почитай отца твоего и мать твою, чтобы продлились дни твои на земле, которую Господь, Бог твой, даёт тебе.
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment5')">Исход 20:12</a>
+          </li>
+          <br>
+          <li> 
+              Не убивай.
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment6')">Исход 20:13</a>
+          </li>
+          <br>
+          <li> 
+              Не прелюбодействуй.
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')">Исход 20:14</a>
+          </li>
+          <br>
+          <li>
+              Не кради.
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment8')">Исход 20:15</a>
+          </li>
+          <br>
+          <li>
+              Не произноси ложного свидетельства на ближнего твоего.
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment9')">Исход 20:16</a>
+          </li>
+          <br>
+          <li>
+              Не желай дома ближнего твоего; не желай жены ближнего твоего, ни раба его, ни рабыни его, ни вола его, ни осла его, ни всего, что есть у ближнего твоего. 
+              <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment10')">Исход 20:17</a></li>
+        </ol>
       </div>
-      © 2025 10 Заповедей — с Толкованием. Все права защищены.
-    </footer>
-
+    </main> 
     <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+  
+    <div id="footer"></div>
 
     <!-- Popup толкование -->
     <div id="popup-commandment1" class="popup">
@@ -314,11 +233,13 @@
     </div>
 
   </div>
-  
-  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
-      <img src="images/up-arrow.png" alt="Back to top" />
-  </button>
-  <script src="scroll.js"></script>
 
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="images/up-arrow.png" alt="Back to top" />
+    </button>
+    <script src="js/scroll.js"></script>
+    <script src="js/header-inner-ru.js"></script>
+    <script src="js/footer-ru.js"></script>
+    <script src="js/share.js" defer></script>
 </body>
 </html>
