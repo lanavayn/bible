@@ -218,5 +218,19 @@
   <script src="js/scroll.js"></script>
   <script src="js/share.js" defer></script>  
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const popupId = location.hash?.replace('#', '');
+      const popup = document.getElementById(popupId);
+      if (popup && popup.classList.contains('popup')) {
+        document.getElementById('overlay').style.display = 'block';
+        popup.style.display = 'block';
+
+        // Optional: clear the hash from the address bar
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
+    });
+  </script>
+  
 </body>
 </html>

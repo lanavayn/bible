@@ -225,35 +225,49 @@
   <script src="js/scroll.js"></script>
   <script src="js/share.js" defer></script>  
 
-<script>
-    function togglePopup(id) {
-    const popup = document.getElementById(id);
-    if (popup.style.display === 'block') {
-      popup.style.display = 'none';
-    } else {
-      // Закрыть все открытые pop-up'ы
-      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-      // Показать выбранный
-      popup.style.display = 'block';
-      // Прокрутить страницу к pop-up'у, если он ниже
-      popup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  <script>
+      function togglePopup(id) {
+      const popup = document.getElementById(id);
+      if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+      } else {
+        // Закрыть все открытые pop-up'ы
+        document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+        // Показать выбранный
+        popup.style.display = 'block';
+        // Прокрутить страницу к pop-up'у, если он ниже
+        popup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
-  }
 
-  function closePopup(id) {
-    const popup = document.getElementById(id);
-    if (popup) popup.style.display = 'none';
-  }
-    function openPopup(id) {
-    document.getElementById(id).style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-  }
+    function closePopup(id) {
+      const popup = document.getElementById(id);
+      if (popup) popup.style.display = 'none';
+    }
+      function openPopup(id) {
+      document.getElementById(id).style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
 
-  function closePopup(id) {
-    document.getElementById(id).style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-  }
-</script>
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const popupId = location.hash?.replace('#', '');
+      const popup = document.getElementById(popupId);
+      if (popup && popup.classList.contains('popup')) {
+        document.getElementById('overlay').style.display = 'block';
+        popup.style.display = 'block';
+
+        // Optional: clear the hash from the address bar
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
+    });
+  </script>
 
 </body>
 </html>
