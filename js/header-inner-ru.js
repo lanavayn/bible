@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="top-left">
         <a href="index.html">🏠 Главная</a>
       </div>
-      <div>
+       <div class="top-left">
         <a href="about.html">📄 О сайте</a>
       </div>
-      <div class="top-center">
-        <a href="#" class="share-button" title="Поделиться"> 
-          <img src="images/share.png" alt="Поделиться" width="28">
+      <div class="top-centre">
+        <a href="#" class="share-button" title="Поделиться">
+          <img src="images/share.png" alt="Поделиться" width="20"> Поделиться
         </a>
       </div>
       <div class="top-right dropdown">
