@@ -12,18 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("header").innerHTML = `
     <div class="top-bar">
-      <div class="top-left">
-        <a href="index.html">🏠 Главная</a>
-      </div>
-       <div class="top-centre">
-        <a href="about.html">📄 О сайте</a>
-      </div>
-      <div class="top-right">
-        <a href="#" class="share-button" title="Поделиться">
-          <img src="images/share.png" alt="Поделиться" width="20"> 
-        </a>
-      </div>
-     
+      <div class="top-left dropdown">
+       <button class="dropbtn">☰ Выбрать </button>
+        <div class="dropdown-content">
+          <a href="index.html">🏠 Главная</a>
+          <a href="about.html">📄 О сайте</a>
+          <a href="#" class="share-button" title="Поделиться">📤 Поделиться</a>
+        </div>
+      </div>   
     </div>
   `;
 });
