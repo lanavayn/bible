@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
         </div> 
       </div> 
       <div class="top-right dropdown">
-        <button class="dropbtn">🌐 Language</button>
+        <button class="dropbtn">🌐 Lang</button>
         <div class="dropdown-content">
-          <a href="index-en.html">English</a>
-          <a href="index.html">Русский</a>
+          <a href="index-en.html">Eng</a>
+          <a href="index.html">Рус</a>
         </div>
       </div>
     </div>
