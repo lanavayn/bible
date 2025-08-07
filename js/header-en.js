@@ -3,19 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
     "golden-verses-en.html": "golden-verses.html",
-    "prayfrombible-en.html": "prayfrombible.html"
+    "prayfrombible-en.html": "prayfrombible.html",
+    "about-en.html": "about.html",
+    "index-en.html": "index.html"
   };
 
-  let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
-  if (!currentPage.endsWith('.html')) {
+    let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+
+    if (!currentPage || currentPage === '') {
+    currentPage = 'index_en.html';
+    } else if (!currentPage.endsWith('.html')) {
     currentPage += '.html';
-  }
+    }
 
   const russianVersion = pageMapToRussian[currentPage] || null;
 
-  //console.log("📄 Все страницы (pageMapToRussian):", pageMapToRussian);
-  //console.log("Current Page:", currentPage);
-  //console.log("Русская версия:", russianVersion);
+  console.log("📄 Все страницы (pageMapToRussian):", pageMapToRussian);
+  console.log("Current Page:", currentPage);
+  console.log("Русская версия:", russianVersion);
 
   const headerElement = document.getElementById("header");
   if (headerElement) {
@@ -24,9 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="top-left dropdown">
           <button class="dropbtn">☰ Select</button>
           <div class="dropdown-content">
-            <a href="index-en.html">🏠 Home</a>
-            <a href="about-en.html">📄 About</a>
+            ${currentPage === 'about-en.html'
+                ? `<a href="javascript:history.back()">← Back</a>`
+                : (currentPage !== 'index-en.html' ? `<a href="index-en.html">🏠 Home</a>` : '')}
+            <a href="comments-en.html">✍️ Notes</a>
             <a href="#" class="share-button" title="Share">📤 Share</a>
+            ${currentPage !== 'about-en.html' ? `<a href="about-en.html">ℹ️ Info</a>` : ''}
           </div>
         </div>
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave a Comments or Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Ссылка Домой вверху слева -->
+    <div class="top-buttons">
+      <a href="javascript:history.back()" class="back-button">🔙 Back</a>
+    </div>
+    <header>
+      <h1>✍️ Leave a Comment or Feedback</h1>
+    </header>
+
+    <section class="comments-form">
+      <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
+        <input type="hidden" name="form-name" value="comments">
+
+        <p style="display:none">
+          <label>Don’t fill this out: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email (optional):</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+          <small class="form-note">Your email will not be published.</small>
+        </div>
+      
+        <div class="form-group">
+          <label for="message">Your Comments:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+
+      <div id="confirmation" class="confirmation-message">
+        🎉 Thank you for your comments!
+      </div>
+    </section>
+    <footer class="footer">
+     © 2025 Bible for All. All rights reserved.
+    </footer>
+  </div>
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      const form = event.target;
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        form.style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+      })
+      .catch((error) => alert("Submission failed. Please try again."));
+    }
+  </script>
+</body>
+</html>
