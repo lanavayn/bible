@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "golden-verses.html": "golden-verses-en.html",
         "prayfrombible.html": "prayfrombible-en.html",
         "about.html": "about-en.html",
-        "index.html": "index-en.html"
+        "index.html": "index-en.html",
+        "comments.html": "comments-en.html"
     };
 
     let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
@@ -27,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <button class="dropbtn">☰ Выбрать</button>
             <div class="dropdown-content">
             ${currentPage === 'about.html'
-                ? `<a href="javascript:history.back()">← Назад</a>`
+                ? `<a href="javascript:history.back()">← Назад</a><a href="index.html">🏠 Домой</a>`
                 : (currentPage !== 'index.html' ? `<a href="index.html">🏠 Домой</a>` : '')}
-            <a href="comments.html">✍️ Отзыв</a>
+            ${currentPage !== 'comments.html' ? `<a href="comments.html">✍️ Отзыв</a>` : ''}
             <a href="#" class="share-button" title="Поделиться">📤 Ссылка</a>
             ${currentPage !== 'about.html' ? `<a href="about.html">ℹ️ О нас</a>` : ''}
             </div>
