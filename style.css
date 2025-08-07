@@ -28,8 +28,9 @@ h1 {
 
 .top-buttons {
   display: flex;
+  gap: 10px; /* or 12px */
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .top-buttons a {
@@ -139,27 +140,19 @@ li {
   pointer-events: none;
 }
 
-
 .back-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px; /* расстояние между иконкой и текстом */
-  padding: 8px 16px;
-  font-size: 1em;
-  color: #3366cc; /* тот самый синий, как у "Select" */
-  background-color: #f3f9ff;
-  border: 1px solid #aaccee;
-  border-radius: 8px;
+  background-color: #e8f0fe; /* same as Select dropdown? */
+  color: #1a73e8;            /* Google-style blue */
+  border: 1px solid #c6dafc;
+  padding: 6px 12px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
+  font-weight: 500;
+}
+.back-button:hover {
+  background-color: #d2e3fc;
 }
 
-.back-button:hover {
-  background-color: #d0e8ff;
-  color: #224499;
-}
 /* Если стрелка и слово "BACK" вставлены отдельно через <span>, можно усилить: */
 .back-button span,
 .back-button svg,
@@ -190,7 +183,7 @@ li {
   text-decoration: none;
   display: block;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   line-height: 1.4;
   white-space: nowrap; /* 🔹 не переносить строки */
@@ -468,8 +461,8 @@ li {
 .dropbtn {
   background-color: white;
   color: #3366cc;
-  font-size: 13px;
-  padding: 5px 10px;
+  font-size: 15px;
+  padding: 8px 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   cursor: pointer;
