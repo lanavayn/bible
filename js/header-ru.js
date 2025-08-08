@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const englishVersion = pageMapToEnglish[currentPage] || null;
 
-    console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
-    console.log("Current Page:", currentPage);
-    console.log("English version:", englishVersion);
+    //console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
+    //console.log("Current Page:", currentPage);
+    //console.log("English version:", englishVersion);
 
     document.getElementById("header").innerHTML = `
         <div class="top-bar">

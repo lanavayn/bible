@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const russianVersion = pageMapToRussian[currentPage] || null;
 
-  console.log("📄 Все страницы (pageMapToRussian):", pageMapToRussian);
-  console.log("Current Page:", currentPage);
-  console.log("Русская версия:", russianVersion);
+  //console.log("📄 Все страницы (pageMapToRussian):", pageMapToRussian);
+  //console.log("Current Page:", currentPage);
+  //console.log("Русская версия:", russianVersion);
 
   const headerElement = document.getElementById("header");
   if (headerElement) {

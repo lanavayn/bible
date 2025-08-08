@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM7CCJ5HKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LM7CCJ5HKX');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Оставьте комментарий или отзыв</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <<meta name="description" content="Поделитесь своими мыслями или отзывами о вдохновляющих стихах из Библии. Доступно на русском и английском.">
+  <meta name="keywords" content="Библия, отзывы, комментарии, Писание, стихи, христианство, русская Библия, английская Библия">
+  <meta name="author" content="Lana Vayner">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="images/favicon.png" sizes="192x192" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json" />
+    
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Bible for All" />
+  <meta property="og:description" content="Leave a comment about Bible verses. Available in English and Russian." />
+  <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
+  <meta property="og:url" content="https://bibleforall.ca/comments.html" />
+  <meta property="og:type" content="website" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bibleforall.ca/comments.html" />
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -73,6 +105,6 @@
       .catch((error) => alert("Submission failed. Please try again."));
     }
   </script>
-  <script src="js/header-ru.js"  defer></script>
+  <script src="js/header-ru.js" defer></script>
 </body>
 </html>
