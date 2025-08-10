@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ? `<a href="javascript:history.back()">← Назад</a><a href="index.html">🏠 Домой</a>`
                 : (currentPage !== 'index.html' ? `<a href="index.html">🏠 Домой</a>` : '')}
             ${currentPage !== 'comments.html' ? `<a href="comments.html">✍️ Отзыв</a>` : ''}
-            <a href="#" class="share-button" title="Поделиться">📤 Ссылка</a>
+            ${currentPage !== 'comments.html' ? `<a href="comments.html">📤 Ссылка</a>` : ''}
             ${currentPage !== 'about.html' ? `<a href="about.html">ℹ️ О нас</a>` : ''}
             </div>
         </div>
