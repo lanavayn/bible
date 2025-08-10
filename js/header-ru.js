@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="top-left dropdown">
             <button class="dropbtn">☰ Выбрать</button>
             <div class="dropdown-content">
-            ${currentPage === 'about.html'
+            ${currentPage === 'about.html' || currentPage === 'comments.html' 
                 ? `<a href="javascript:history.back()">← Назад</a><a href="index.html">🏠 Домой</a>`
                 : (currentPage !== 'index.html' ? `<a href="index.html">🏠 Домой</a>` : '')}
+            <a href="#" class="share-button" title="Share">📤 Ссылка</a>
             ${currentPage !== 'comments.html' ? `<a href="comments.html">✍️ Отзыв</a>` : ''}
-            ${currentPage !== 'comments.html' ? `<a href="comments.html">📤 Ссылка</a>` : ''}
             ${currentPage !== 'about.html' ? `<a href="about.html">ℹ️ О нас</a>` : ''}
             </div>
         </div>

@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="top-left dropdown">
           <button class="dropbtn">☰ Select</button>
           <div class="dropdown-content">
-            ${currentPage === 'about-en.html'
+            ${currentPage === 'about-en.html' || currentPage === 'comments-en.html' 
               ? `<a href="javascript:history.back()">← Back</a><a href="index-en.html">🏠 Home</a>`
               : (currentPage !== 'index-en.html' ? `<a href="index-en.html">🏠 Home</a>` : '')}
             <a href="#" class="share-button" title="Share">📤 Share</a>
