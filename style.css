@@ -609,3 +609,15 @@ table.book-dates th{ text-align:left; color:#6f5b34; font-weight:700; }
   background:#f6e7c1; cursor:pointer; font: inherit;
 }
 .book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
+/* Modal improvements (optional) */
+.bd-modal{
+  max-height: 85vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.bd-modal p{ margin: .45rem 0; }
+@media (max-width: 480px){
+  .bd-modal{ max-height: 88vh; }
+}

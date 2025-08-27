@@ -67,9 +67,17 @@
     const t = T();
     root.insertAdjacentHTML("beforeend", `
       <div class="bd-backdrop" id="bdBackdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.25);place-items:center;z-index:9999;">
-        <div class="bd-modal" role="dialog" aria-modal="true" style="width:min(720px,90vw);background:#fff;border:1px solid #eadfbe;border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.15);">
-          <h3 id="bdTitle" style="margin:0 0 10px;"></h3>
-          <div id="bdBody" style="line-height:1.6;"></div>
+      <div class="bd-modal" role="dialog" aria-modal="true"
+          style="width:min(720px,92vw);
+            max-height:85vh;                /* allow scrolling in modal */
+            overflow:auto;                  /* scrollable content */
+            -webkit-overflow-scrolling:touch; /* smooth iOS scroll */
+            background:#fff; color:#2b2b2b;
+            border:1px solid #eadfbe; border-radius:14px;
+            padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.15);
+            word-break:break-word; overflow-wrap:anywhere;">
+        <h3 id="bdTitle" style="margin:0 0 10px;"></h3>
+        <div id="bdBody" style="line-height:1.6;margin-top:.25rem;"></div>
           <div style="text-align:right;margin-top:12px;">
             <button id="bdClose" class="bd-close" style="padding:8px 12px;border:1px solid #eadfbe;background:#f6e7c1;border-radius:10px;">${t.close}</button>
           </div>
@@ -102,6 +110,7 @@
     if (anno)   rows.push(`<p><strong>${t.annoLabel}:</strong> ${anno}</p>`);
   
     document.getElementById("bdBody").innerHTML = rows.join("\n");
+    document.querySelector('.bd-modal').scrollTop = 0;
     document.getElementById("bdBackdrop").style.display = "grid";
   }
   
