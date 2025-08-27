@@ -6,11 +6,20 @@
       "book_en": "Genesis",
       "dates_ru": "X–V вв. до н.э.",
       "dates_en": "10th–5th c. BCE",
+    
+      "year_ru": "Традиц.: XV–XIII вв. до н.э.; критич.: X–V вв. до н.э.",
+      "year_en": "Trad.: 15th–13th c. BCE; critical: 10th–5th c. BCE",
+      "place_ru": "Иудея (Иерусалим); возможны послепленные редакции",
+      "place_en": "Judah (Jerusalem); possible post-exilic redaction",
       "ol": "he",
-      "author_ru": "Моисей (традиц.) / редакторы",
-      "author_en": "Moses (trad.) / editors",
+      "lang_detail_ru": "Древнееврейский (библейский иврит).",
+      "lang_detail_en": "Biblical Hebrew.",
+      "author_ru": "Моисей (традиц.) — традиционно приписывается Моисею; «редакторы» — часть учёных видит составление из нескольких источников/редакций.",
+      "author_en": "Moses (trad.) — traditional attribution; “editors” — many scholars see compilation from multiple sources/redactions.",
       "anno_ru": "Книга начал: творение, праотцы, завет.",
-      "anno_en": "Beginnings: creation, patriarchs, covenant."
+      "anno_en": "Beginnings: creation, patriarchs, covenant.",
+      "orig_ru": "Автографов нет; древнейшие фрагменты: Кумран (напр., 4QGen, II–I вв. до н.э.); полные масоретские кодексы: Ленинградский (1008/1009), Алеппский (~X в., частично).",
+      "orig_en": "No autographs; earliest fragments: Qumran (e.g., 4QGen, 2nd–1st c. BCE); complete Masoretic codices: Leningrad (1008/1009), Aleppo (~10th c., partly)."
     },
     {
       "id": "isa",

@@ -26,8 +26,12 @@
 
   let DATA = null; // весь JSON, чтобы искать книгу по id
 
-  const hasDetails = (b) =>
-    !!(b && (b.ol || b.author_ru || b.author_en || b.anno_ru || b.anno_en));
+  const hasDetails = (b) => !!(b && (
+    b.ol || b.author_ru || b.author_en || b.anno_ru || b.anno_en ||
+    b.year_ru || b.year_en || b.place_ru || b.place_en ||
+    b.lang_detail_ru || b.lang_detail_en || b.orig_ru || b.orig_en
+  ));
+  
 
   function rowHTML(b){
     const isRu = getLang()==="ru";
@@ -77,19 +81,30 @@
   function openModal(book){
     const isRu = getLang()==="ru";
     const t = T();
+  
+    const title   = isRu ? book.book_ru : book.book_en;
+    const year    = isRu ? (book.year_ru || book.dates_ru) : (book.year_en || book.dates_en);
+    const place   = isRu ? book.place_ru : book.place_en;
     const langStr = book.ol ? (t.langMap[book.ol] || book.ol) : "—";
+    const langDet = isRu ? book.lang_detail_ru : book.lang_detail_en;
     const author  = isRu ? (book.author_ru||"—") : (book.author_en||book.author_ru||"—");
     const anno    = isRu ? (book.anno_ru||"") : (book.anno_en||book.anno_ru||"");
-    const title   = isRu ? book.book_ru : book.book_en;
-
+    const orig    = isRu ? book.orig_ru : book.orig_en;
+  
     document.getElementById("bdTitle").textContent = title;
-    document.getElementById("bdBody").innerHTML = `
-      <p><strong>${t.langLabel}:</strong> ${langStr}</p>
-      <p><strong>${t.authorLabel}:</strong> ${author}</p>
-      ${anno ? `<p><strong>${t.annoLabel}:</strong> ${anno}</p>` : "" }
-    `;
+  
+    const rows = [];
+    if (year)   rows.push(`<p><strong>${isRu?'Годы/период':'Dates/period'}:</strong> ${year}</p>`);
+    if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
+    rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);
+    rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
+    if (orig)   rows.push(`<p><strong>${isRu?'Древнейшие списки':'Earliest witnesses'}:</strong> ${orig}</p>`);
+    if (anno)   rows.push(`<p><strong>${t.annoLabel}:</strong> ${anno}</p>`);
+  
+    document.getElementById("bdBody").innerHTML = rows.join("\n");
     document.getElementById("bdBackdrop").style.display = "grid";
   }
+  
 
   async function init(selector="#book-dates", jsonPath="data/bible-books.json"){
     const root = document.querySelector(selector);
