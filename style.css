@@ -603,3 +603,9 @@ button[type="submit"]:hover {
 table.book-dates{ width:100%; border-collapse:collapse; margin:12px 0; }
 table.book-dates th, table.book-dates td{ padding:8px 10px; border-bottom:1px solid #eadfbe; vertical-align:top; }
 table.book-dates th{ text-align:left; color:#6f5b34; font-weight:700; } 
+
+.book-dates .bd-actions .bd-info{
+  border:1px solid #eadfbe; border-radius:999px; padding:4px 8px;
+  background:#f6e7c1; cursor:pointer; font: inherit;
+}
+.book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
