@@ -1,7 +1,7 @@
 // /js/book-dates.js  (замените содержимое файла)
 (function(){
   const RU = {
-    title: "📚 Годы написания книг Библии (ориентировочно)",
+    title: "📚 Хронология Библии",
     search: "Найти книгу…",
     ot: "Ветхий Завет", nt: "Новый Завет",
     thBook: "Книга", thDate: "Датировка", thInfo: "",
@@ -10,7 +10,7 @@
     langMap: { he: "древнееврейский", ar: "арамейский", gr: "греческий" }
   };
   const EN = {
-    title: "📚 Approximate Dates of Bible Books",
+    title: "📚 Bible Timeline",
     search: "Search a book…",
     ot: "Old Testament", nt: "New Testament",
     thBook: "Book", thDate: "Date", thInfo: "",

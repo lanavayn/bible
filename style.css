@@ -720,3 +720,81 @@ table td:nth-child(3) {
   background: #f5f5f5;
   border: 1px solid #ccc;
 }
+/* 📱 Super-small phones: turn rows into cards */
+@media (max-width: 480px) {
+  .book-dates thead { display: none; }
+
+  .book-dates tbody tr {
+    display: block;
+    background: #fffdf5;
+    border: 1px solid #eadfbe;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+
+  .book-dates td {
+    display: block;
+    width: auto !important;
+    padding: 4px 0;
+  }
+
+  .book-dates td:nth-child(1) { 
+    font-weight: 700; 
+    font-size: 1.05em; 
+    margin-bottom: 4px;
+  }
+
+  .book-dates td:nth-child(2) { 
+    color: #5b4228;
+  }
+
+  .book-dates td:nth-child(3) { 
+    text-align: right; 
+    margin-top: 6px; 
+  }
+
+  /* компактная иконка ℹ︎ на маленьких телефонах */
+  .book-dates .bd-actions .bd-info {
+    width: 24px; height: 24px; line-height: 24px;
+  }
+}
+/* Заголовок и поиск внутри блока #book-dates */
+#book-dates h2 {
+  text-align: center;
+  margin: 0 0 8px 0;
+  color: #5b4228;
+  text-shadow: 1px 1px #ddd;
+}
+
+#book-dates .bd-search {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 14px;
+  border: 1px solid #eadfbe;
+  border-radius: 22px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Делаем summary (ВЗ/НЗ) более удобными для тапов */
+#book-dates details {
+  margin: 4px 0 10px;
+}
+#book-dates summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  background: #fffdf5;
+  border: 1px solid #eadfbe;
+  border-radius: 10px;
+  font-weight: 700;
+}
+#book-dates summary::-webkit-details-marker { display: none; }
+
+/* Мобильные правки заголовка */
+@media (max-width: 600px) {
+  #book-dates h2 { font-size: 1.4em; line-height: 1.25; }
+}
+
