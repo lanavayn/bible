@@ -887,8 +887,41 @@ section div:has(.info-btn) .years { margin: 0; }
   gap: 8px;                        /* немного воздуха между текстом и кнопкой */
 }
 
-/* убираем лишнюю ячейку для кнопки */
+/* убираем лишнюю ячейку для кнопки
 .book-dates td:nth-child(3) {
   display: none;
+} */
+
+/* Мобильная строка-карточка: title + ℹ в первой строке, даты ниже */
+@media (max-width: 480px) {
+  .book-dates tbody tr {
+    display: grid;
+    grid-template-columns: 1fr auto;  /* название растягивается, ℹ — справа */
+    grid-template-rows: auto auto;    /* 1-я строка: title+ℹ, 2-я: даты */
+    align-items: center;
+    padding: 6px 10px;
+    gap: 2px 8px;                     /* чуть воздуха между колонками */
+  }
+
+  /* убираем принудительный block-режим, заданный выше, и раскладываем по сетке */
+  .book-dates td { display: block; padding: 4px 0; }
+
+  .book-dates td:nth-child(1) {      /* Название книги */
+    grid-column: 1; 
+    grid-row: 1;
+    margin: 0;
+  }
+  .book-dates td:nth-child(3) {      /* Кнопка ℹ */
+    grid-column: 2; 
+    grid-row: 1;
+    text-align: right;
+    margin: 0;
+  }
+  .book-dates td:nth-child(2) {      /* Даты */
+    grid-column: 1 / span 2; 
+    grid-row: 2;
+    margin-top: 2px;
+    color: #5b4228;
+  }
 }
 
