@@ -13,7 +13,7 @@
     title: "📚 Bible Timeline",
     search: "Search a book…",
     ot: "Old Testament", nt: "New Testament",
-    thBook: "Book", thDate: "Date", thInfo: "",
+    thBook: "Book Title", thDate: "Years of Writing (approx.)", thInfo: "",
     more: "Details", close: "Close",
     langLabel: "Original language", authorLabel: "Author", annoLabel: "Annotation",
     langMap: { he: "Hebrew", ar: "Aramaic", gr: "Greek" }
