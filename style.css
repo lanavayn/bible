@@ -600,14 +600,72 @@ button[type="submit"]:hover {
   font-style: italic;
 }
 
-table.book-dates{ width:100%; border-collapse:collapse; margin:12px 0; }
-table.book-dates th, table.book-dates td{ padding:8px 10px; border-bottom:1px solid #eadfbe; vertical-align:top; }
-table.book-dates th{ text-align:left; color:#6f5b34; font-weight:700; } 
+/* Tighter base scoping (avoid touching other tables) */
+table.book-dates { table-layout: fixed; width: 100%; }
+table.book-dates th, 
+table.book-dates td { word-wrap: break-word; }
 
-.book-dates .bd-actions .bd-info{
-  border:1px solid #eadfbe; border-radius:999px; padding:4px 8px;
-  background:#f6e7c1; cursor:pointer; font: inherit;
+/* Default desktop/tablet widths */
+table.book-dates th:nth-child(1),
+table.book-dates td:nth-child(1) { width: 60%; } /* Book */
+table.book-dates th:nth-child(2),
+table.book-dates td:nth-child(2) { width: 30%; } /* Date */
+table.book-dates th:nth-child(3),
+table.book-dates td:nth-child(3) { width: 10%; text-align: center; } /* Info */
+
+/* 📱 Medium phones */
+@media (max-width: 640px) {
+  table.book-dates th, 
+  table.book-dates td { padding: 6px 8px; }
+
+  table.book-dates th:nth-child(1),
+  table.book-dates td:nth-child(1) { width: 55%; }
+
+  table.book-dates th:nth-child(2),
+  table.book-dates td:nth-child(2) { width: 35%; }
+
+  table.book-dates th:nth-child(3),
+  table.book-dates td:nth-child(3) { width: 10%; }
+
+  /* fit the ℹ︎ button */
+  .book-dates .bd-actions .bd-info {
+    width: 26px; height: 26px; line-height: 26px;
+  }
 }
+
+/* 📱 Small phones */
+@media (max-width: 400px) {
+  table.book-dates th, 
+  table.book-dates td { padding: 5px 7px; }
+
+  table.book-dates th:nth-child(1),
+  table.book-dates td:nth-child(1) { width: 52%; }
+
+  table.book-dates th:nth-child(2),
+  table.book-dates td:nth-child(2) { width: 38%; }
+
+  table.book-dates th:nth-child(3),
+  table.book-dates td:nth-child(3) { width: 10%; }
+
+  .book-dates .bd-actions .bd-info {
+    width: 24px; height: 24px; line-height: 24px;
+  }
+}
+
+
+.book-dates .bd-actions .bd-info {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-weight: bold;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
 .book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
 /* Modal improvements (optional) */
 .bd-modal{
@@ -620,4 +678,45 @@ table.book-dates th{ text-align:left; color:#6f5b34; font-weight:700; }
 .bd-modal p{ margin: .45rem 0; }
 @media (max-width: 480px){
   .bd-modal{ max-height: 88vh; }
+}
+/* Fix table layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* makes columns respect width */
+}
+
+table th, table td {
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+/* Column widths */
+table th:nth-child(1),
+table td:nth-child(1) {
+  width: 60%; /* Book name */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  width: 30%; /* Date */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+  width: 10%; /* Icon column */
+  text-align: center;
+}
+
+/* Make the info button fit */
+.info-btn {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-weight: bold;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
 }
