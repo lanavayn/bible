@@ -607,11 +607,11 @@ table.book-dates td { word-wrap: break-word; }
 
 /* Default desktop/tablet widths */
 table.book-dates th:nth-child(1),
-table.book-dates td:nth-child(1) { width: 60%; } /* Book */
+table.book-dates td:nth-child(1) { width: 40%; } /* Book */
 table.book-dates th:nth-child(2),
-table.book-dates td:nth-child(2) { width: 30%; } /* Date */
+table.book-dates td:nth-child(2) { width: 45%; } /* Date */
 table.book-dates th:nth-child(3),
-table.book-dates td:nth-child(3) { width: 10%; text-align: center; } /* Info */
+table.book-dates td:nth-child(3) { width: 15%; text-align: center; } /* Info */
 
 /* 📱 Medium phones */
 @media (max-width: 640px) {
