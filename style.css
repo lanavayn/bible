@@ -797,4 +797,26 @@ table td:nth-child(3) {
 @media (max-width: 600px) {
   #book-dates h2 { font-size: 1.4em; line-height: 1.25; }
 }
+/* Компактные карточки книг */
+.book-card{
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.book-card h3{           /* заголовок "Матфея", "Марка" и т.п. */
+  margin: 0 0 6px;
+  font-size: 1.25rem;    /* чуть меньше заголовок */
+}
+.book-card .years{       /* строка "70–90" */
+  margin: 0;
+  font-size: 1.05rem;
+}
+.book-card .info-btn{    /* кружок с i */
+  width: 34px; height: 34px;
+}
+
+@media (max-width: 480px){
+  .book-card{ padding: 6px 10px; margin: 8px 0; }
+  .book-card h3{ font-size: 1.18rem; }
+}
 
