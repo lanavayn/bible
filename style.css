@@ -614,6 +614,19 @@ table.book-dates td:nth-child(2) { width: 40%; } /* Date */
 table.book-dates th:nth-child(3),
 table.book-dates td:nth-child(3) { width: 15%; text-align: center; } /* Info */
 
+/* Align table headers to the start of each column */
+table.book-dates th { 
+  text-align: left;           /* left align all headers */
+  padding-left: 8px;          /* match td padding for nice alignment */
+  vertical-align: bottom;     /* optional: sits closer to the row content */
+}
+
+/* Keep the info column header centered */
+table.book-dates th:nth-child(3) {
+  text-align: center;
+  padding-left: 0;
+}
+
 /* 📱 Medium phones */
 @media (max-width: 640px) {
   table.book-dates th, 
