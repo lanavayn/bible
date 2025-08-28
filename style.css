@@ -819,4 +819,16 @@ table td:nth-child(3) {
   .book-card{ padding: 6px 10px; margin: 8px 0; }
   .book-card h3{ font-size: 1.18rem; }
 }
+/* Сжимаем карточки, где есть .info-btn */
+section div:has(.info-btn){
+  padding: 8px 12px !important;
+  margin: 10px 0 !important;
+  border-radius: 10px !important;
+}
+section div:has(.info-btn) h3{ margin: 0 0 6px; font-size: 1.25rem; }
+section div:has(.info-btn) .years{ margin: 0; font-size: 1.05rem; }
+
+@media (max-width: 480px){
+  section div:has(.info-btn){ padding: 6px 10px !important; margin: 8px 0 !important; }
+}
 
