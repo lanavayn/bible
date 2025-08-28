@@ -55,7 +55,7 @@ a {
   body {
     font-size: 21px; /* Even larger text for small devices */
     line-height: 1.6;
-    body { padding-top: 15px; }
+    body { padding-top: 10px; }
   }
 
   .container {
