@@ -629,8 +629,12 @@ table.book-dates td:nth-child(3) { width: 10%; text-align: center; } /* Info */
 
   /* fit the ℹ︎ button */
   .book-dates .bd-actions .bd-info {
-    width: 26px; height: 26px; line-height: 26px;
+    width: 34px;      /* было 28px */
+    height: 34px;     /* было 28px */
+    line-height: 34px;
+    font-size: 18px;  /* добавь, чтобы «i» стало крупнее */
   }
+ 
 }
 
 /* 📱 Small phones */
@@ -648,18 +652,18 @@ table.book-dates td:nth-child(3) { width: 10%; text-align: center; } /* Info */
   table.book-dates td:nth-child(3) { width: 10%; }
 
   .book-dates .bd-actions .bd-info {
-    width: 24px; height: 24px; line-height: 24px;
+    width: 34px; height: 34px; line-height: 34px;
   }
 }
 
 
 .book-dates .bd-actions .bd-info {
   display: inline-block;
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   text-align: center;
-  line-height: 28px;
+  line-height: 34px;
   font-weight: bold;
   background: #f5f5f5;
   border: 1px solid #ccc;
@@ -729,8 +733,8 @@ table td:nth-child(3) {
     background: #fffdf5;
     border: 1px solid #eadfbe;
     border-radius: 10px;
-    padding: 10px 12px;
-    margin-bottom: 10px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,.05);
   }
 
@@ -757,7 +761,7 @@ table td:nth-child(3) {
 
   /* компактная иконка ℹ︎ на маленьких телефонах */
   .book-dates .bd-actions .bd-info {
-    width: 24px; height: 24px; line-height: 24px;
+    width: 34px; height: 34px; line-height: 34px;
   }
 }
 /* Заголовок и поиск внутри блока #book-dates */
@@ -816,7 +820,7 @@ table td:nth-child(3) {
 }
 
 @media (max-width: 480px){
-  .book-card{ padding: 6px 10px; margin: 8px 0; }
+  .book-card{ padding: 6px 10px; margin: 6px 0; }
   .book-card h3{ font-size: 1.18rem; }
 }
 /* Сжимаем карточки, где есть .info-btn */
