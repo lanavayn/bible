@@ -106,7 +106,7 @@
     if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
     rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);
     rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
-    if (orig)   rows.push(`<p><strong>${isRu?'Древнейшие списки':'Earliest witnesses'}:</strong> ${orig}</p>`);
+    if (orig)   rows.push(`<p><strong>${isRu?'Древнейшие рукописи':'Ancient Manuscripts'}:</strong> ${orig}</p>`);
     if (anno)   rows.push(`<p><strong>${t.annoLabel}:</strong> ${anno}</p>`);
   
     document.getElementById("bdBody").innerHTML = rows.join("\n");
