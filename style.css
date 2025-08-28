@@ -879,3 +879,16 @@ section div:has(.info-btn) .years { margin: 0; }
   content: "▴";                      /* стрелка вверх (открыто) */
 }
 
+/* Выравниваем название книги и иконку ℹ в одну строку */
+.book-dates td:first-child {
+  display: flex;
+  justify-content: space-between;  /* название слева, иконка справа */
+  align-items: center;             /* по вертикали по центру */
+  gap: 8px;                        /* немного воздуха между текстом и кнопкой */
+}
+
+/* убираем лишнюю ячейку для кнопки */
+.book-dates td:nth-child(3) {
+  display: none;
+}
+
