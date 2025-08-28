@@ -835,4 +835,47 @@ section div:has(.info-btn) .years{ margin: 0; font-size: 1.05rem; }
 @media (max-width: 480px){
   section div:has(.info-btn){ padding: 6px 10px !important; margin: 8px 0 !important; }
 }
+/* === Compact book cards & headings === */
+#book-dates { line-height: 1.3; }                       /* общий межстрочный интервал поменьше */
+#book-dates h3, 
+#book-dates p { margin: 4px 0; }                        /* убираем лишние внешние отступы у текста */
+
+/* summary (Ветхий/Новый Завет) — чуть компактнее */
+#book-dates summary { padding: 8px 10px; }              /* было 10px 12px */
+
+/* карточки-строки в мобильном режиме: меньше внутренний отступ и зазор между карточками */
+@media (max-width: 480px) {
+  .book-dates tbody tr { 
+    padding: 4px 10px;                                  /* было 6px 10px */
+    margin-bottom: 4px;                                 /* было 6px */
+  }
+}
+
+/* секции, где есть .info-btn (текущие “карточки” с кнопкой i) — ещё компактнее */
+section div:has(.info-btn){
+  padding: 6px 10px !important;                         /* было 8px 12px */
+  margin: 8px 0 !important;                             /* было 10px 0 */
+}
+section div:has(.info-btn) h3 { margin: 2px 0 4px; }    /* вместо 0 0 6px */
+section div:has(.info-btn) .years { margin: 0; }
+
+/* arrows for details/summary */
+#book-dates summary {
+  position: relative;
+  padding-right: 28px;               /* место под стрелку справа */
+}
+
+#book-dates summary::after {
+  content: "▾";                      /* стрелка вниз (закрыто) */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: .8;
+}
+
+#book-dates details[open] summary::after {
+  content: "▴";                      /* стрелка вверх (открыто) */
+}
 
