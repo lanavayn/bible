@@ -106,6 +106,8 @@
     if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
     rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);
     rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
+    if (book.chapters) 
+      rows.push(`<p><strong>${isRu?'Главы':'Chapters'}:</strong> ${book.chapters}</p>`);
     if (orig)   rows.push(`<p><strong>${isRu?'Древнейшие рукописи':'Ancient Manuscripts'}:</strong> ${orig}</p>`);
     if (anno)   rows.push(`<p><strong>${t.annoLabel}:</strong> ${anno}</p>`);
   
