@@ -5,7 +5,7 @@ body {
   color: #4b3621;
   margin: 0;
   padding: 0;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 80px;
   font-size: 18px; /* Increased base font size for mobile readability */
 }
@@ -55,6 +55,7 @@ a {
   body {
     font-size: 21px; /* Even larger text for small devices */
     line-height: 1.6;
+    body { padding-top: 10px; }
   }
 
   .container {
@@ -210,7 +211,7 @@ li {
   max-width: 700px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   font-size: 1.1em;
-  line-height: 1.6;
+  line-height: 1.2;
 }
 .prayer-box p {
   margin: 10px 0;
@@ -403,7 +404,7 @@ li {
   border-radius: 8px;
   margin-bottom: 24px;
   font-size: 1.05em;
-  line-height: 1.6;
+  line-height: 1.2;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
@@ -598,5 +599,343 @@ button[type="submit"]:hover {
   margin-top: 1px;
   margin-bottom: 30px;
   font-style: italic;
+}
+
+/* Tighter base scoping (avoid touching other tables) */
+table.book-dates { table-layout: fixed; width: 100%; }
+table.book-dates th, 
+table.book-dates td { word-wrap: break-word; }
+
+/* Default desktop/tablet widths */
+table.book-dates th:nth-child(1),
+table.book-dates td:nth-child(1) { width: 45%; } /* Book */
+table.book-dates th:nth-child(2),
+table.book-dates td:nth-child(2) { width: 40%; } /* Date */
+table.book-dates th:nth-child(3),
+table.book-dates td:nth-child(3) { width: 15%; text-align: center; } /* Info */
+
+/* Align table headers to the start of each column */
+table.book-dates th { 
+  text-align: left;           /* left align all headers */
+  padding-left: 8px;          /* match td padding for nice alignment */
+  vertical-align: bottom;     /* optional: sits closer to the row content */
+}
+
+/* Keep the info column header centered */
+table.book-dates th:nth-child(3) {
+  text-align: center;
+  padding-left: 0;
+}
+
+/* 📱 Medium phones */
+@media (max-width: 640px) {
+  table.book-dates th, 
+  table.book-dates td { padding: 6px 8px; }
+
+  table.book-dates th:nth-child(1),
+  table.book-dates td:nth-child(1) { width: 55%; }
+
+  table.book-dates th:nth-child(2),
+  table.book-dates td:nth-child(2) { width: 35%; }
+
+  table.book-dates th:nth-child(3),
+  table.book-dates td:nth-child(3) { width: 10%; }
+
+  /* fit the ℹ︎ button */
+  .book-dates .bd-actions .bd-info {
+    width: 34px;      /* было 28px */
+    height: 34px;     /* было 28px */
+    line-height: 34px;
+    font-size: 18px;  /* добавь, чтобы «i» стало крупнее */
+  }
+ 
+}
+
+/* 📱 Small phones */
+@media (max-width: 400px) {
+  table.book-dates th, 
+  table.book-dates td { padding: 5px 7px; }
+
+  table.book-dates th:nth-child(1),
+  table.book-dates td:nth-child(1) { width: 52%; }
+
+  table.book-dates th:nth-child(2),
+  table.book-dates td:nth-child(2) { width: 38%; }
+
+  table.book-dates th:nth-child(3),
+  table.book-dates td:nth-child(3) { width: 10%; }
+
+  .book-dates .bd-actions .bd-info {
+    width: 34px; height: 34px; line-height: 34px;
+  }
+}
+
+
+.book-dates .bd-actions .bd-info {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34px;
+  font-weight: bold;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
+/* Modal improvements (optional) */
+.bd-modal{
+  max-height: 85vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.bd-modal p{ margin: .45rem 0; }
+@media (max-width: 480px){
+  .bd-modal{ max-height: 88vh; }
+}
+/* Fix table layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* makes columns respect width */
+}
+
+table th, table td {
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+/* Column widths */
+table th:nth-child(1),
+table td:nth-child(1) {
+  width: 60%; /* Book name */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  width: 30%; /* Date */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+  width: 10%; /* Icon column */
+  text-align: center;
+}
+
+/* Make the info button fit */
+.info-btn {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-weight: bold;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+}
+/* 📱 Super-small phones: turn rows into cards */
+@media (max-width: 480px) {
+  .book-dates thead { display: none; }
+
+  .book-dates tbody tr {
+    display: block;
+    background: #fffdf5;
+    border: 1px solid #eadfbe;
+    border-radius: 10px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+
+  .book-dates td {
+    display: block;
+    width: auto !important;
+    padding: 4px 0;
+  }
+
+  .book-dates td:nth-child(1) { 
+    font-weight: 700; 
+    font-size: 1.05em; 
+    margin-bottom: 4px;
+  }
+
+  .book-dates td:nth-child(2) { 
+    color: #5b4228;
+  }
+
+  .book-dates td:nth-child(3) { 
+    text-align: right; 
+    margin-top: 6px; 
+  }
+
+  /* компактная иконка ℹ︎ на маленьких телефонах */
+  .book-dates .bd-actions .bd-info {
+    width: 34px; height: 34px; line-height: 34px;
+  }
+}
+/* Заголовок и поиск внутри блока #book-dates */
+#book-dates h2 {
+  text-align: center;
+  margin: 0 0 8px 0;
+  color: #5b4228;
+  text-shadow: 1px 1px #ddd;
+}
+
+#book-dates .bd-search {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 14px;
+  border: 1px solid #eadfbe;
+  border-radius: 22px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Делаем summary (ВЗ/НЗ) более удобными для тапов */
+#book-dates details {
+  margin: 4px 0 10px;
+}
+#book-dates summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  background: #fffdf5;
+  border: 1px solid #eadfbe;
+  border-radius: 10px;
+  font-weight: 700;
+}
+#book-dates summary::-webkit-details-marker { display: none; }
+
+/* Мобильные правки заголовка */
+@media (max-width: 600px) {
+  #book-dates h2 { font-size: 1.4em; line-height: 1.25; }
+}
+/* Компактные карточки книг */
+.book-card{
+  padding: 8px 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+.book-card h3{           /* заголовок "Матфея", "Марка" и т.п. */
+  margin: 0 0 6px;
+  font-size: 1.25rem;    /* чуть меньше заголовок */
+}
+.book-card .years{       /* строка "70–90" */
+  margin: 0;
+  font-size: 1.05rem;
+}
+.book-card .info-btn{    /* кружок с i */
+  width: 34px; height: 34px;
+}
+
+@media (max-width: 480px){
+  .book-card{ padding: 6px 10px; margin: 6px 0; }
+  .book-card h3{ font-size: 1.18rem; }
+}
+/* Сжимаем карточки, где есть .info-btn */
+section div:has(.info-btn){
+  padding: 8px 12px !important;
+  margin: 10px 0 !important;
+  border-radius: 10px !important;
+}
+section div:has(.info-btn) h3{ margin: 0 0 6px; font-size: 1.25rem; }
+section div:has(.info-btn) .years{ margin: 0; font-size: 1.05rem; }
+
+@media (max-width: 480px){
+  section div:has(.info-btn){ padding: 6px 10px !important; margin: 8px 0 !important; }
+}
+/* === Compact book cards & headings === */
+#book-dates { line-height: 1.3; }                       /* общий межстрочный интервал поменьше */
+#book-dates h3, 
+#book-dates p { margin: 4px 0; }                        /* убираем лишние внешние отступы у текста */
+
+/* summary (Ветхий/Новый Завет) — чуть компактнее */
+#book-dates summary { padding: 8px 10px; }              /* было 10px 12px */
+
+/* карточки-строки в мобильном режиме: меньше внутренний отступ и зазор между карточками */
+@media (max-width: 480px) {
+  .book-dates tbody tr { 
+    padding: 4px 10px;                                  /* было 6px 10px */
+    margin-bottom: 4px;                                 /* было 6px */
+  }
+}
+
+/* секции, где есть .info-btn (текущие “карточки” с кнопкой i) — ещё компактнее */
+section div:has(.info-btn){
+  padding: 6px 10px !important;                         /* было 8px 12px */
+  margin: 8px 0 !important;                             /* было 10px 0 */
+}
+section div:has(.info-btn) h3 { margin: 2px 0 4px; }    /* вместо 0 0 6px */
+section div:has(.info-btn) .years { margin: 0; }
+
+/* arrows for details/summary */
+#book-dates summary {
+  position: relative;
+  padding-right: 28px;               /* место под стрелку справа */
+}
+
+#book-dates summary::after {
+  content: "▾";                      /* стрелка вниз (закрыто) */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: .8;
+}
+
+#book-dates details[open] summary::after {
+  content: "▴";                      /* стрелка вверх (открыто) */
+}
+
+/* Выравниваем название книги и иконку ℹ в одну строку */
+.book-dates td:first-child {
+  display: flex;
+  justify-content: space-between;  /* название слева, иконка справа */
+  align-items: center;             /* по вертикали по центру */
+  gap: 8px;                        /* немного воздуха между текстом и кнопкой */
+}
+
+/* убираем лишнюю ячейку для кнопки
+.book-dates td:nth-child(3) {
+  display: none;
+} */
+
+/* Мобильная строка-карточка: title + ℹ в первой строке, даты ниже */
+@media (max-width: 480px) {
+  .book-dates tbody tr {
+    display: grid;
+    grid-template-columns: 1fr auto;  /* название растягивается, ℹ — справа */
+    grid-template-rows: auto auto;    /* 1-я строка: title+ℹ, 2-я: даты */
+    align-items: center;
+    padding: 6px 10px;
+    gap: 2px 8px;                     /* чуть воздуха между колонками */
+  }
+
+  /* убираем принудительный block-режим, заданный выше, и раскладываем по сетке */
+  .book-dates td { display: block; padding: 4px 0; }
+
+  .book-dates td:nth-child(1) {      /* Название книги */
+    grid-column: 1; 
+    grid-row: 1;
+    margin: 0;
+  }
+  .book-dates td:nth-child(3) {      /* Кнопка ℹ */
+    grid-column: 2; 
+    grid-row: 1;
+    text-align: right;
+    margin: 0;
+  }
+  .book-dates td:nth-child(2) {      /* Даты */
+    grid-column: 1 / span 2; 
+    grid-row: 2;
+    margin-top: 2px;
+    color: #5b4228;
+  }
 }
 
