@@ -108,12 +108,12 @@
     
       // кастомные tooltip’ы: перенос строки через \n
       const tradTip = isRu
-        ? '<span class="tip" tabindex="0" data-tip="Традиционная датировка\n(церковная/раввинская традиция)">Традиц.</span>'
-        : '<span class="tip" tabindex="0" data-tip="Traditional dating\n(church/rabbinic tradition)">Trad.</span>';
+        ? '<span class="tip" tabindex="0" data-tip="Традиционная датировка\n(церковная/раввинская традиция)">Традиционная</span>'
+        : '<span class="tip" tabindex="0" data-tip="Traditional dating\n(church/rabbinic tradition)">Traditional</span>';
     
       const critTip = isRu
-        ? '<span class="tip" tabindex="0" data-tip="Критическая датировка\n(современный научный взгляд)">Критич.</span>'
-        : '<span class="tip" tabindex="0" data-tip="Critical dating\n(modern scholarly view)">Crit.</span>';
+        ? '<span class="tip" tabindex="0" data-tip="Критическая датировка\n(современный научный взгляд)">Критическая</span>'
+        : '<span class="tip" tabindex="0" data-tip="Critical dating\n(modern scholarly view)">Critical</span>';
     
       const yearText = year
         .replace(/Традиц\./, tradTip)
