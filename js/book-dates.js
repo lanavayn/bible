@@ -109,12 +109,12 @@
         : 'Dates of Writing ~';
     
       const tradTip = isRu 
-        ? '<abbr title="Взгляд церковной/раввинской традиции:">Традиц.</abbr>' 
-        : '<abbr title="Traditional dating">Trad.</abbr>';
+        ? '<abbr title="Традиционная датировка (церковная/раввинская традиция)">Традиц.</abbr>' 
+        : '<abbr title="Traditional dating (church/rabbinic tradition)">Trad.</abbr>';
     
       const critTip = isRu 
-        ? '<abbr title="Критическая датировка">Критич.</abbr>' 
-        : '<abbr title="Critical dating">Crit.</abbr>';
+        ? '<abbr title="Критическая датировка (современный научный взгляд)">Критич.</abbr>' 
+        : '<abbr title="Critical dating (modern scholarly view)">Crit.</abbr>';
     
       const yearText = year
         .replace(/Традиц\./, tradTip)
