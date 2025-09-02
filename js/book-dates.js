@@ -102,7 +102,7 @@
     document.getElementById("bdTitle").textContent = title;
   
     const rows = [];
-    if (year)   rows.push(`<p><strong>${isRu?'Годы/период':'Dates/period'}:</strong> ${year}</p>`);
+    if (year)   rows.push(`<p><strong>${isRu?'Годы написания (приблизительно)':'Dates of Writing (approx.)'}:</strong> ${year}</p>`);
     if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
     rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);
     rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
