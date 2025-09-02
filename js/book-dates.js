@@ -104,17 +104,16 @@
     const rows = [];
     //if (year)   rows.push(`<p><strong>${isRu?'Годы написания (приблизительно)':'Dates of Writing (approx.)'}:</strong> ${year}</p>`);
     if (year) {
-      const yearLabel = isRu 
-        ? 'Годы написания ~' 
-        : 'Dates of Writing ~';
+      const yearLabel = isRu ? 'Годы написания ~' : 'Dates of Writing ~';
     
-      const tradTip = isRu 
-        ? '<abbr title="Традиционная датировка (церковная/раввинская традиция)">Традиц.</abbr>' 
-        : '<abbr title="Traditional dating (church/rabbinic tradition)">Trad.</abbr>';
+      // кастомные tooltip’ы: перенос строки через \n
+      const tradTip = isRu
+        ? '<span class="tip" tabindex="0" data-tip="Традиционная датировка\n(церковная/раввинская традиция)">Традиц.</span>'
+        : '<span class="tip" tabindex="0" data-tip="Traditional dating\n(church/rabbinic tradition)">Trad.</span>';
     
-      const critTip = isRu 
-        ? '<abbr title="Критическая датировка (современный научный взгляд)">Критич.</abbr>' 
-        : '<abbr title="Critical dating (modern scholarly view)">Crit.</abbr>';
+      const critTip = isRu
+        ? '<span class="tip" tabindex="0" data-tip="Критическая датировка\n(современный научный взгляд)">Критич.</span>'
+        : '<span class="tip" tabindex="0" data-tip="Critical dating\n(modern scholarly view)">Crit.</span>';
     
       const yearText = year
         .replace(/Традиц\./, tradTip)
@@ -123,7 +122,7 @@
         .replace(/crit\./i, critTip);
     
       rows.push(`<p><strong>${yearLabel}:</strong> ${yearText}</p>`);
-    }
+    }  
     
     if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
     rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);

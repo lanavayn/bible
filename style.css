@@ -959,3 +959,38 @@ abbr[title]:focus::after {
   z-index: 10;
 }
 
+/* Кастомная подсказка для года (работает и в модалке) */
+.tip {
+  position: relative;
+  text-decoration: underline dotted;
+  cursor: help;
+}
+.tip:focus { outline: none; }
+
+/* Сам пузырёк */
+.tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  top: 1.35em;             /* ниже текста; можно подправить */
+  background: #333;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  line-height: 1.25;
+  white-space: pre-line;   /* ← перенос по \n */
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity .12s ease;
+  z-index: 1000;
+  max-width: 280px;
+}
+
+/* показываем по ховеру/фокусу (тап на мобиле даёт фокус) */
+.tip:hover::after,
+.tip:focus::after {
+  opacity: 1;
+}
