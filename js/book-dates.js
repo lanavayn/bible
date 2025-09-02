@@ -102,7 +102,29 @@
     document.getElementById("bdTitle").textContent = title;
   
     const rows = [];
-    if (year)   rows.push(`<p><strong>${isRu?'Годы написания (приблизительно)':'Dates of Writing (approx.)'}:</strong> ${year}</p>`);
+    //if (year)   rows.push(`<p><strong>${isRu?'Годы написания (приблизительно)':'Dates of Writing (approx.)'}:</strong> ${year}</p>`);
+    if (year) {
+      const yearLabel = isRu 
+        ? 'Годы написания (приблизительно)' 
+        : 'Dates of Writing (approx.)';
+    
+      const tradTip = isRu 
+        ? '<abbr title="Традиционная датировка">Традиц.</abbr>' 
+        : '<abbr title="Traditional dating">Trad.</abbr>';
+    
+      const critTip = isRu 
+        ? '<abbr title="Критическая датировка">Критич.</abbr>' 
+        : '<abbr title="Critical dating">Crit.</abbr>';
+    
+      const yearText = year
+        .replace(/Традиц\./, tradTip)
+        .replace(/критич\./i, critTip)
+        .replace(/Trad\./, tradTip)
+        .replace(/crit\./i, critTip);
+    
+      rows.push(`<p><strong>${yearLabel}:</strong> ${yearText}</p>`);
+    }
+    
     if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
     rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);
     rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
