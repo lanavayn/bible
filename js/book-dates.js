@@ -105,11 +105,11 @@
     //if (year)   rows.push(`<p><strong>${isRu?'Годы написания (приблизительно)':'Dates of Writing (approx.)'}:</strong> ${year}</p>`);
     if (year) {
       const yearLabel = isRu 
-        ? 'Годы написания (приблизительно)' 
-        : 'Dates of Writing (approx.)';
+        ? 'Годы написания ~' 
+        : 'Dates of Writing ~';
     
       const tradTip = isRu 
-        ? '<abbr title="Традиционная датировка">Традиц.</abbr>' 
+        ? '<abbr title="Взгляд церковной/раввинской традиции:">Традиц.</abbr>' 
         : '<abbr title="Traditional dating">Trad.</abbr>';
     
       const critTip = isRu 
