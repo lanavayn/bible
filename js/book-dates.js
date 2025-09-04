@@ -4,7 +4,7 @@
     title: "📚 Хронология Библии",
     search: "Найти книгу…",
     ot: "Ветхий Завет", nt: "Новый Завет",
-    thBook: "Название книги", thDate: "Годы написания (приблизительно)", thInfo: "",
+    thBook: "Название книги", thDate: "Годы написания (~)", thInfo: "",
     more: "Подробнее", close: "Закрыть",
     langLabel: "Исходный язык", authorLabel: "Автор", annoLabel: "Аннотация",
     langMap: { he: "древнееврейский", ar: "арамейский", gr: "греческий" }
@@ -13,7 +13,7 @@
     title: "📚 Bible Timeline",
     search: "Search a book…",
     ot: "Old Testament", nt: "New Testament",
-    thBook: "Book Title", thDate: "Years of Writing (approx.)", thInfo: "",
+    thBook: "Book Title", thDate: "Years of Writing (~)", thInfo: "",
     more: "Details", close: "Close",
     langLabel: "Original language", authorLabel: "Author", annoLabel: "Annotation",
     langMap: { he: "Hebrew", ar: "Aramaic", gr: "Greek" }
@@ -102,18 +102,19 @@
     document.getElementById("bdTitle").textContent = title;
   
     const rows = [];
+    rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
     //if (year)   rows.push(`<p><strong>${isRu?'Годы написания (приблизительно)':'Dates of Writing (approx.)'}:</strong> ${year}</p>`);
     if (year) {
       const yearLabel = isRu ? 'Годы написания ~' : 'Dates of Writing ~';
     
       // кастомные tooltip’ы: перенос строки через \n
       const tradTip = isRu
-        ? '<span class="tip" tabindex="0" data-tip="Традиционная датировка\n(церковная/раввинская традиция)">Традиционная</span>'
-        : '<span class="tip" tabindex="0" data-tip="Traditional dating\n(church/rabbinic tradition)">Traditional</span>';
+        ? '<span class="tip" tabindex="0" data-tip="Традиционная\n(церковная/раввинская традиция)">Традиционная</span>'
+        : '<span class="tip" tabindex="0" data-tip="Traditional\n(church/rabbinic tradition)">Traditional</span>';
     
       const critTip = isRu
-        ? '<span class="tip" tabindex="0" data-tip="Критическая датировка\n(современный научный взгляд)">Критическая</span>'
-        : '<span class="tip" tabindex="0" data-tip="Critical dating\n(modern scholarly view)">Critical</span>';
+        ? '<span class="tip" tabindex="0" data-tip="Критическая\n(современный научный взгляд)">Критическая</span>'
+        : '<span class="tip" tabindex="0" data-tip="Critical\n(modern scholarly view)">Critical</span>';
     
       const yearText = year
         .replace(/Традиц\./, tradTip)
@@ -126,12 +127,12 @@
     
     if (place)  rows.push(`<p><strong>${isRu?'Место написания':'Place'}:</strong> ${place}</p>`);
     rows.push(`<p><strong>${t.langLabel}:</strong> ${langStr}${langDet?(' — '+langDet):''}</p>`);
-    rows.push(`<p><strong>${t.authorLabel}:</strong> ${author}</p>`);
-    if (book.chapters) 
-      rows.push(`<p><strong>${isRu?'Главы':'Chapters'}:</strong> ${book.chapters}</p>`);
+   
+
     if (orig)   rows.push(`<p><strong>${isRu?'Древнейшие рукописи':'Ancient Manuscripts'}:</strong> ${orig}</p>`);
     if (anno)   rows.push(`<p><strong>${t.annoLabel}:</strong> ${anno}</p>`);
-  
+    if (book.chapters) 
+      rows.push(`<p><strong>${isRu?'Количество глав':'Number of Chapters'}:</strong> ${book.chapters}</p>`);
     document.getElementById("bdBody").innerHTML = rows.join("\n");
     document.querySelector('.bd-modal').scrollTop = 0;
     document.getElementById("bdBackdrop").style.display = "grid";
