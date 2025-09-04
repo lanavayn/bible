@@ -120,7 +120,12 @@
         .replace(/Традиц\./, tradTip)
         .replace(/критич\./i, critTip)
         .replace(/Trad\./, tradTip)
-        .replace(/crit\./i, critTip);
+        .replace(/crit\./i, critTip)
+        .replace(/Традиционная\./, tradTip)
+        .replace(/Критическая\./i, critTip)
+        .replace(/Traditional\./, tradTip)
+        .replace(/Critical\./i, critTip)       
+        ;
     
       rows.push(`<p><strong>${yearLabel}:</strong> ${yearText}</p>`);
     }  
