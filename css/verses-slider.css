@@ -65,3 +65,15 @@
   .verse-slider .actions button,
   .verse-slider .actions a.link{ font-size: 15px; padding: 8px 12px; }
 }
+/* 📌 Разносим кнопки и точки */
+.verse-slider .swiper-pagination {
+  position: relative;   /* чтобы не накладывалась поверх кнопок */
+  margin-bottom: 50px;  /* отступ вниз для точек */
+}
+
+.verse-slider .actions {
+  margin-top: 20px;     /* кнопки всегда ниже точек */
+  position: relative;
+  z-index: 10;          /* кнопки поверх точек */
+}
+
