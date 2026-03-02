@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM7CCJ5HKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LM7CCJ5HKX');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Added -->
+  <title>Библия для всех</title>
+  <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Bible for All — inspirational verses with commentary. Available in English and Russian.">
+    <meta name="keywords" content="Bible, Scripture, Golden Verses, Christianity, Russian Bible, English Bible">
+    <meta name="author" content="Lana Vayner">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/favicon.png" sizes="192x192" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Bible for All" />
+    <meta property="og:description" content="Inspirational verses with commentary. Available in English and Russian." />
+    <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
+    <meta property="og:url" content="https://bibleforall.ca/ru/" />
+    <meta property="og:type" content="website" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bibleforall.ca/ru/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/verses-slider.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Mobile theme color -->
+    <meta name="theme-color" content="#ffffff" />
+
+</head>
+<body>
+    <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+        <div id="header"></div>
+        <main role="main"> 
+          <h1>📖 <span class="highlight-title">Библия для всех</span> — главная</h1>
+          <p>Добро пожаловать! Выберите одну из тем ниже:</p>
+          
+            <ul class="topic-list">
+              <li><a class="button-link" href="/ru/prayFromBible.html">🕊 Молитва Господня <em>«Отче наш»</em> c толкованием</a></li>
+              <li><a class="button-link" href="/ru/golden-verses.html">🌟 Золотые стихи с толкованием</a></li>
+              <li><a class="button-link" href="/ru/10-commandments.html">📜 10 заповедей с толкованием</a></li>
+              <li><a class="button-link" href="/ru/purpose.html">🎯 Смысл жизни с толкованием</a></li>
+            </ul> 
+        </main> 
+        <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
+        <section id="verse-slider" data-use-global-lang="true"></section>
+        <section id="book-dates"></section>
+        <div id="footer"></div> 
+         
+    </div>
+    
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="/images/up-arrow.png" alt="Back to top" />
+    </button>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/header-ru.js"></script>
+    <script src="/js/footer-ru.js"></script>
+    <script src="/js/share.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/verses-slider.js"></script>
+    <script src="/js/book-dates.js"></script>
+</body>
+</html>

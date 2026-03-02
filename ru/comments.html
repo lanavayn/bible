@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM7CCJ5HKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LM7CCJ5HKX');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оставьте комментарий или отзыв</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <<meta name="description" content="Поделитесь своими мыслями или отзывами о вдохновляющих стихах из Библии. Доступно на русском и английском.">
+  <meta name="keywords" content="Библия, отзывы, комментарии, Писание, стихи, христианство, русская Библия, английская Библия">
+  <meta name="author" content="Lana Vayner">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/favicon.png" sizes="192x192" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+    
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Bible for All" />
+  <meta property="og:description" content="Leave a comment about Bible verses. Available in English and Russian." />
+  <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
+  <meta property="og:url" content="https://bibleforall.ca/ru/comments.html" />
+  <meta property="og:type" content="website" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bibleforall.ca/ru/comments.html" />
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div id="header"></div>
+    <main role="main"> 
+
+      <header>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h1>✍️ Оставьте комментарий или отзыв</h1>
+        </div>
+      </header>
+
+      <section class="comments-form">
+        <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
+          <input type="hidden" name="form-name" value="comments">
+
+          <p style="display:none">
+            <label>Don’t fill this out: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-group">
+            <label for="name">Ваше Имя:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Ваш Email (необязательно):</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <small class="form-note">Мы не публикуем ваш email.</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Оставьте комментарий или отзыв:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <div style="text-align: center; margin-top: 20px;">
+            <button type="submit">Отправить</button>
+          </div>
+        </form>
+
+      <div id="confirmation" class="confirmation-message">
+      🎉 Спасибо за ваш комментарий!
+      </div>
+    </section>
+    </main> 
+    <footer class="footer">
+      © 2025 Bible for All. Все права защищены.
+    </footer>
+  </div>
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      const form = event.target;
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        form.style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+      })
+      .catch((error) => alert("Submission failed. Please try again."));
+    }
+  </script>
+  <script src="/js/header-ru.js" defer></script>
+</body>
+</html>

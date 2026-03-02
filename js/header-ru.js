@@ -1,26 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
     const pageMapToEnglish = {
-        "10-commandments.html": "10-commandments-en.html",
-        "purpose.html": "purpose-en.html",
-        "golden-verses.html": "golden-verses-en.html",
-        "prayfrombible.html": "prayfrombible-en.html",
-        "about.html": "about-en.html",
-        "index.html": "index-en.html",
-        "comments.html": "comments-en.html"
+        "10-commandments.html": "10-commandments.html",
+        "purpose.html": "purpose.html",
+        "golden-verses.html": "golden-verses.html",
+        "prayfrombible.html": "prayfrombible.html",
+        "about.html": "about.html",
+        "index.html": "index.html",
+        "comments.html": "comments.html"
     };
 
     let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
-
+    currentPage = currentPage.toLowerCase();
     if (!currentPage || currentPage === '') {
     currentPage = 'index.html';
     } else if (!currentPage.endsWith('.html')) {
     currentPage += '.html';
     }
     const englishVersion = pageMapToEnglish[currentPage] || null;
-
-    //console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
-    //console.log("Current Page:", currentPage);
-    //console.log("English version:", englishVersion);
 
     document.getElementById("header").innerHTML = `
         <div class="top-bar">
@@ -38,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="top-right dropdown">
             <button class="dropbtn">🌐 Lang</button>
             <div class="dropdown-content">
-            ${englishVersion ? `<a href="${englishVersion}">Eng</a>` : `<span style="opacity: 0.5;">Eng</span>`}
+            ${englishVersion ? `<a href="/${englishVersion}">Eng</a>` : `<span style="opacity: 0.5;">Eng</span>`}
             <a href="${currentPage}">Рус</a>
             </div>
         </div>

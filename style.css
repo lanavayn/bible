@@ -1,5 +1,6 @@
 body {
-  background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+  background:
+    radial-gradient(circle at 20% 20%, #fdf6e3 0%, #f4e6c8 50%, #e9d7b3 100%);
   background-color: #fdf6e3;
   font-family: 'Georgia', serif;
   color: #4b3621;

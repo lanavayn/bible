@@ -144,7 +144,7 @@
   }
   
 
-  async function init(selector="#book-dates", jsonPath="data/bible-books.json"){
+  async function init(selector="#book-dates", jsonPath="/data/bible-books.json"){
     const root = document.querySelector(selector);
     if (!root) return;
 
