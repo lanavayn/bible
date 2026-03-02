@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM7CCJ5HKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LM7CCJ5HKX');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Золотые Стихи из Библии</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Золотые Стихи из Библии — вдохновляющие стихи с толкованиями. Доступны на русском и английском языках.">
+  <meta name="keywords" content="Библия, Писание, Золотые Стихи, Христианство, Стихи из Библии, Вера">
+  <meta name="author" content="Lana Vayner">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/images/favicon.png" sizes="192x192" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Золотые Стихи из Библии" />
+  <meta property="og:description" content="Вдохновляющие стихи с толкованиями. Доступны на русском и английском языках." />
+  <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
+  <meta property="og:url" content="https://bibleforall.ca/ru/golden-verses.html" />
+  <meta property="og:type" content="website" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bibleforall.ca/ru/golden-verses.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Mobile theme color -->
+  <meta name="theme-color" content="#ffffff" />
+
+  
+  <script>
+    function openPopup(id) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(id).style.display = 'block';
+    }
+    function closePopup(id) {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
+    }
+    function toggleHiddenVerses() {
+      const hidden = document.getElementById('hidden-verses');
+      const toggleBtn = document.getElementById('toggle-hidden');
+      const isVisible = hidden.style.display === 'block';
+      hidden.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+  <div id="header"></div>
+  <main role="main"> 
+    <h1>🌟 Золотые Стихи из Библии — с Толкованием</h1>
+
+    <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
+      📖 Нажмите на <strong>ссылку стиха</strong> ниже, чтобы прочитать толкование или открыть текст в Библии.
+    </div>
+
+    <div style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john3')">Иоанна 3:16</h2>
+        <p>Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john5')">Иоанна 5:39</h2>
+        <p>Исследуйте Писания, ибо вы думаете через них иметь жизнь вечную; а они свидетельствуют о Мне.</p>
+      </div>
+
+      <div class="verse">
+        <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-ephesians2')">Ефесянам 2:8–9</h2>
+        <p>Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.</p>
+      </div>
+
+      <div id="hidden-verses">
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-psalm23')">Псалом 22:1</h2>
+          <p>Господь — Пастырь мой; я ни в чём не буду нуждаться.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-romans8')">Римлянам 8:28</h2>
+          <p>Притом знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-phil4')">Филиппийцам 4:13</h2>
+          <p>Всё могу в укрепляющем меня Иисусе Христе.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-proverbs3')">Притчи 3:5–6</h2>
+          <p>Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-isaiah41')">Исаия 41:10</h2>
+          <p>Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя и помогу тебе, и поддержу тебя десницею правды Моей.</p>
+        </div>
+
+        <div class="verse">
+          <h2 style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-john14')">Иоанна 14:6</h2>
+          <p>Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <button id="toggle-hidden" onclick="toggleHiddenVerses()">Показать больше</button>
+  
+  <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
+
+  <div id="footer"></div>
+
+  <!-- Popups -->
+  <div id="popup-john3" class="popup">
+    <h3>Иоанна 3:16 (Толкование)</h3>
+    <p>Это один из самых известных стихов, подчеркивающий любовь Бога и путь к вечной жизни через веру в Иисуса Христа.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john3')">Закрыть</button>
+      <a href="https://bible.by/syn/43/3/#16" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-john5" class="popup">
+    <h3>Иоанна 5:39 (Толкование)</h3>
+    <p>Этот стих призывает к глубокому изучению Писания. Он показывает, что Писания указывают на Христа как на источник жизни вечной, а не просто как свод правил или знаний.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john5')">Закрыть</button>
+      <a href="https://bible.by/syn/43/5/#39" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-ephesians2" class="popup">
+    <h3>Ефесянам 2:8–9 (Толкование)</h3>
+    <p>Этот стих ясно говорит, что спасение — это не награда за добрые дела, а дар Бога, получаемый по благодати через веру. Никто не может заслужить спасение своими усилиями — это проявление любви и милости Бога. Он дает его даром, чтобы никто не мог гордиться собой, а только благодарить Бога.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-ephesians2')">Закрыть</button>
+      <a href="https://bible.by/syn/56/2/#8" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-psalm23" class="popup">
+    <h3>Псалом 22:1 (Толкование)</h3>
+    <p>Этот стих говорит о Божьем водительстве и обеспечении. Как Пастырь заботится о своей овце, так и Господь заботится о Своих детях.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-psalm23')">Закрыть</button>
+      <a href="https://bible.by/syn/19/22/#1" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-romans8" class="popup">
+    <h3>Римлянам 8:28 (Толкование)</h3>
+    <p>Стих ободряет верующих — даже трудные обстоятельства Бог обращает во благо тем, кто любит Его.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-romans8')">Закрыть</button>
+      <a href="https://bible.by/syn/52/8/#28" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-phil4" class="popup">
+    <h3>Филиппийцам 4:13 (Толкование)</h3>
+    <p>Стих вдохновляет нас на упование не на свои силы, а на силу, которую дает Иисус Христос. В Нём мы обретаем способность преодолевать любые трудности.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-phil4')">Закрыть</button>
+      <a href="https://bible.by/syn/57/4/#13" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-proverbs3" class="popup">
+    <h3>Притчи 3:5–6 (Толкование)</h3>
+    <p>Эти стихи учат нас полному доверию к Богу. Вместо того чтобы полагаться на собственные суждения, мы призваны искать Его водительства во всех аспектах жизни. Тогда Он направит наши шаги к истинному пути.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-proverbs3')">Закрыть</button>
+      <a href="https://bible.by/syn/20/3/#5" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-isaiah41" class="popup">
+    <h3>Исаия 41:10 (Толкование)</h3>
+    <p>Этот стих напоминает, что Бог рядом всегда — в страхе, нужде и борьбе. Он Сам поддерживает Своих детей и не оставляет их.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-isaiah41')">Закрыть</button>
+      <a href="https://bible.by/syn/23/41/#10" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+
+  <div id="popup-john14" class="popup">
+    <h3>Иоанна 14:6 (Толкование)</h3>
+    <p>Иисус утверждает, что только через Него можно прийти к Богу. Это не просто учение — это личные взаимоотношения с Христом. Истина и жизнь доступны тем, кто следует за Ним.</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup('popup-john14')">Закрыть</button>
+      <a href="https://bible.by/syn/43/14/#6" target="_blank">📖 Читать в Библии</a>
+    </div>
+  </div>
+</div> <!-- Закрытие контейнера -->
+
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="/images/up-arrow.png" alt="Back to top" />
+    </button>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/header-ru.js"></script>
+    <script src="/js/footer-ru.js"></script>
+    <script src="/js/share.js" defer></script>
+
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const popupId = location.hash?.replace('#', '');
+      const popup = document.getElementById(popupId);
+      if (popup && popup.classList.contains('popup')) {
+        document.getElementById('overlay').style.display = 'block';
+        popup.style.display = 'block';
+
+        // Optional: clear the hash from the address bar
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
+    });
+  </script>
+  
+</body>
+</html>
