@@ -19,6 +19,7 @@ body {
   border: 1px solid #c4b998;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  line-height: 1.6;
 }
 
 h1 {
@@ -1283,10 +1284,6 @@ abbr[title]:focus::after {
   
   .container h1, .container h2, .container h3 {
     line-height: 1.25;
-  }
-
-  .container p {
-    line-height: 1.65;
   }
   
   .container h1, .container h2, .container h3 {
