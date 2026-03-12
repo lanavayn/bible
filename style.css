@@ -1318,17 +1318,18 @@ abbr[title]:focus::after {
 
   media (max-width: 768px) {
 
-    body {
-      margin: 0;
-      padding: 0;
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
     }
   
     .container {
-      max-width: 100%;
-      margin: 0;
-      padding: 16px;
-      border-radius: 0;
-      font-size: 1.05rem;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 12px !important;
+      border-radius: 0 !important;
+      box-sizing: border-box !important;
     }
   
     .button-link {
