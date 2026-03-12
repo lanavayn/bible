@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "prayfrombible.html": "prayfrombible.html",
     "about.html": "about.html",
     "index.html": "index.html",
+    "salvation.html": "salvation.html",
     "comments.html": "comments.html"
   };
 
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     headerElement.innerHTML = `
       <div class="top-bar">
         <div class="top-left dropdown">
-          <button class="dropbtn">☰ Select</button>
+          <button class="dropbtn">☰</button>
           <div class="dropdown-content">
             ${currentPage === 'about.html' || currentPage === 'comments.html' 
               ? `<a href="javascript:history.back()">← Back</a><a href="index.html">🏠 Home</a>`
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
         <div class="top-right dropdown">
-          <button class="dropbtn">🌐 Lang</button>
+          <button class="dropbtn">🌐</button>
           <div class="dropdown-content">
             <a href="${currentPage}">Eng</a>
             <a href="${russianVersion === 'index.html' ? '/ru/' : '/ru/' + russianVersion}">Рус</a>
