@@ -281,21 +281,28 @@ function scrollToTop() {
 function scrollToDetails(detailsEl) {
     if (!detailsEl) return;
   
-    detailsEl.setAttribute("tabindex", "-1");
+    // ищем блок выше (где текст стиха и ссылка)
+    let verseBlock = detailsEl.previousElementSibling;
+  
+    // если структура сложнее — поднимаемся выше
+    while (verseBlock && !verseBlock.innerText?.includes("Romans") && !verseBlock.querySelector("a")) {
+      verseBlock = verseBlock.previousElementSibling;
+    }
+  
+    // если не нашли — fallback
+    if (!verseBlock) {
+      verseBlock = detailsEl;
+    }
   
     requestAnimationFrame(() => {
-      const rect = detailsEl.getBoundingClientRect();
+      const rect = verseBlock.getBoundingClientRect();
       const absoluteTop = window.pageYOffset + rect.top;
   
-      // Поднимаем экран чуть выше блока explanation,
-      // чтобы был виден и основной стих над ним
-      const offset = 140;
+      const offset = 80;
   
       window.scrollTo({
         top: Math.max(absoluteTop - offset, 0),
         behavior: "smooth"
       });
-  
-      detailsEl.focus({ preventScroll: true });
     });
   }
