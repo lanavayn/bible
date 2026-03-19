@@ -17,31 +17,29 @@
 <div class="container">
 
 <div id="header"></div>
-<h1>
-    Спасение — 
-    <span class="law-word">по делам закона</span> 
-    или 
-    <span class="grace-word">по благодати</span>?
-</h1>
-<p>
-    Что говорит Новый Завет Библии о спасении — через дела закона или по благодати? Ниже приведены стихи из Нового Завета.
-</p>
-<p class="scripture-note"><em>Пусть Писание объясняет Писание.</em></p>
 
-<div id="salvation-verses"></div>
+<div
+  id="scripture-page"
+  data-json="data/salvationData.json"
+  data-intro="Что говорит Новый Завет о спасении — через дела закона или по благодати? Ниже приведены стихи из Нового Завета."
+  data-note="Пусть Писание объясняет Писание."
+>
+  <h1 id="page-title">
+    Спасение —
+    <span class="law-word">по делам закона</span>
+    или
+    <span class="grace-word">по благодати</span>?
+  </h1>
+  <p id="page-intro" class="page-intro"></p>
+  <p id="page-note" class="page-note"></p>
+  <div id="verses-container"></div>
+</div>
+
 <div id="footer"></div>
 </div>
-
 <script src="../js/header-ru.js"></script>
 <script src="../js/footer-ru.js"></script>
-<script src="../js/salvation.js"></script>
-
-<div id="popup" class="salvation-popup">
-    <div class="salvation-popup-content">
-      <button class="salvation-popup-close" onclick="closePopup()" aria-label="Close popup">&times;</button>
-      <div id="popup-content"></div>
-    </div>
-</div>
+<script type="module" src="../js/common-page.js"></script>
 
 </body>
 </html>

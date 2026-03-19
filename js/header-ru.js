@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="top-right dropdown">
             <button class="dropbtn">🌐</button>
-            <div class="dropdown-content">
-            ${englishVersion ? `<a href="/${englishVersion}">Eng</a>` : `<span style="opacity: 0.5;">Eng</span>`}
-            <a href="${currentPage}">Рус</a>
+            <div class="dropdown-content lang-dropdown">
+            ${englishVersion ? `<a href="/${englishVersion}">English</a>` : `<span style="opacity: 0.5;">Eng</span>`}
+            <a href="${currentPage}">Русский</a>
             </div>
         </div>
         </div>

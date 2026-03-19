@@ -1,15 +1,18 @@
 {
     "verses": [
       {
-        "id": "john316",
+        "id": "romans320",
         "topic": "law",
         "reference_ru": "Римлянам 3:20",
         "reference_en": "Romans 3:20",
-        
         "text_ru": "потому что делами закона не оправдается пред Ним никакая плоть; ибо законом познаётся грех.",
         "text_en": "Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.",
-        
-        "interpretation_ru": "Закон показоткрывает грех.",
+        "verse_ref": {
+          "book": "romans",
+          "chapter": 3,
+          "verse": "20"
+        },       
+        "interpretation_ru": "Закон открывает грех.",
         "interpretation_en": "The law reveals sin.",
         
         "related": [
@@ -17,14 +20,24 @@
             "reference_ru": "Римлянам 3:28",
             "text_ru": "Ибо мы признаём, что человек оправдывается верою, независимо от дел закона",
             "reference_en": "Romans 3:28",
-            "text_en": "For we hold that one is justified by faith apart from works of the law."
+            "text_en": "For we hold that one is justified by faith apart from works of the law.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 3,
+              "verse": "28"
+            }
           },
           {
             "reference_ru": "Галатам 2:16",
             "text_ru": "однако же, узнав, что человек оправдывается не делами закона, а только верою в Иисуса Христа, и мы уверовали во Христа Иисуса, чтобы оправдаться верою во Христа, а не делами закона; ибо делами закона не оправдается никакая плоть.",
             "reference_en": "Galatians 2:16",
-            "text_en": "yet we know that a person is not justified by works of the law but through faith in Jesus Christ, so we also have believed in Christ Jesus, in order to be justified by faith in Christ and not by works of the law, because by works of the law no one will be justified."
+            "text_en": "yet we know that a person is not justified by works of the law but through faith in Jesus Christ, so we also have believed in Christ Jesus, in order to be justified by faith in Christ and not by works of the law, because by works of the law no one will be justified.",
+            "verse_ref": {
+              "book": "galatians",
+              "chapter": 2,
+              "verse": "16"         
           }
+        }
         ]
       },
   
@@ -35,7 +48,11 @@
         "reference_en": "Ephesians 2:8-9",  
         "text_ru": "8. Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: 9. не от дел, чтобы никто не хвалился.",              
         "text_en": "8. For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: 9. Not of works, lest any man should boast.",
-  
+        "verse_ref": {
+          "book": "ephesians",
+          "chapter": 2,
+          "verse": "8-9"
+        },         
         "interpretation_ru": "Спасение по благодати, а не по делам.",
         "interpretation_en": "Salvation is by grace, not by works.",
   
@@ -44,13 +61,23 @@
             "reference_ru": "Римлянам 3:24",
             "text_ru": "получая оправдание даром, по благодати Его, искуплением во Христе Иисусе",
             "reference_en": "Romans 3:24",
-            "text_en": "Being justified freely by his grace through the redemption that is in Christ Jesus"
+            "text_en": "Being justified freely by his grace through the redemption that is in Christ Jesus",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 3,
+              "verse": "24"
+            }  
           },
           {
             "reference_ru": "Титу 3:5",
             "text_ru": "Он спас нас не по делам праведности, которые бы мы сотворили, а по Своей милости, банею возрождения и обновления Святым Духом",
             "reference_en": "Titus 3:5",
-            "text_en": "Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost"
+            "text_en": "Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost",
+            "verse_ref": {
+              "book": "titus",
+              "chapter": 3,
+              "verse": "5"
+            } 
           }
         ]
       }

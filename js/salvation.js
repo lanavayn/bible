@@ -170,11 +170,14 @@ function toggleExplanation(id) {
         class="explanation-close"
         onclick="toggleExplanation('${id}')"
         aria-label="${isRu ? "Закрыть" : "Close"}"
-      >×</button>
+        type="button"
+        >
+        ${isRu ? '× Закрыть' : '× Close'}      
+      </button>
 
-      <p><strong>${isRu ? "Смысл —" : "Meaning —"}</strong> ${verse[`interpretation_${lang}`]}</p>
+      <p><strong>${isRu ? "Из этого стиха видно —" : "From this verse we see —"}</strong> ${verse[`interpretation_${lang}`]}</p>
 
-      <h4>${isRu ? "Другие стихи" : "Related verses"}</h4>
+      <h4>${isRu ? "Писание объясняет дальше:" : "Scripture explains further:"}</h4>
       <ul>${relatedHTML}</ul>
     </div>
   `;
