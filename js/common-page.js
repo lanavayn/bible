@@ -190,6 +190,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
     if (!isOpen) {
       target.style.display = "block";
+      scrollToDetails(target);
     }
   }
   
@@ -276,3 +277,18 @@ window.onscroll = function() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function scrollToDetails(detailsEl) {
+    if (!detailsEl) return;
+  
+    detailsEl.setAttribute("tabindex", "-1");
+  
+    requestAnimationFrame(() => {
+      detailsEl.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+  
+      detailsEl.focus({ preventScroll: true });
+    });
+  }
