@@ -284,9 +284,16 @@ function scrollToDetails(detailsEl) {
     detailsEl.setAttribute("tabindex", "-1");
   
     requestAnimationFrame(() => {
-      detailsEl.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+      const rect = detailsEl.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+  
+      // Поднимаем экран чуть выше блока explanation,
+      // чтобы был виден и основной стих над ним
+      const offset = 140;
+  
+      window.scrollTo({
+        top: Math.max(absoluteTop - offset, 0),
+        behavior: "smooth"
       });
   
       detailsEl.focus({ preventScroll: true });
