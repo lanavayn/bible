@@ -226,14 +226,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // === GLOBAL TOOLTIP ===
-function initGlobalTooltip() {
-    const tooltip = document.createElement("div");
-    tooltip.id = "global-tooltip";
-    tooltip.className = "global-tooltip";
-    document.body.appendChild(tooltip);
+  function initGlobalTooltip() {
+    let tooltip = document.getElementById("global-tooltip");
+  
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.id = "global-tooltip";
+      tooltip.className = "global-tooltip";
+      tooltip.style.display = "none";
+      document.body.appendChild(tooltip);
+    }
+  
+    function hideTooltip() {
+      tooltip.style.display = "none";
+    }
   
     document.querySelectorAll("[data-tooltip]").forEach(el => {
-      el.addEventListener("mouseenter", e => {
+      el.addEventListener("mouseenter", () => {
         tooltip.textContent = el.dataset.tooltip;
         tooltip.style.display = "block";
   
@@ -242,9 +251,16 @@ function initGlobalTooltip() {
         tooltip.style.top = rect.top - 10 + "px";
       });
   
-      el.addEventListener("mouseleave", () => {
-        tooltip.style.display = "none";
-      });
+      el.addEventListener("mouseleave", hideTooltip);
+      el.addEventListener("click", hideTooltip);
+      el.addEventListener("touchstart", hideTooltip, { passive: true });
+    });
+  
+    window.addEventListener("scroll", hideTooltip);
+    window.addEventListener("pageshow", hideTooltip);
+    window.addEventListener("pagehide", hideTooltip);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) hideTooltip();
     });
   }
 
