@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (navigator.clipboard) {
       try {
         await navigator.clipboard.writeText(window.location.href);
-        alert("Link copied!");
       } catch (error) {
         prompt("Copy this link:", window.location.href);
       }
