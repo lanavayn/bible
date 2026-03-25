@@ -1,0 +1,274 @@
+{
+    "verses": [
+      {
+        "id": "matt1128",
+        "topic": {
+          "ru": "Покой",
+          "en": "Rest"
+        },
+        "reference_ru": "Матфея 11:28-29",
+        "reference_en": "Matthew 11:28-29",
+        "text_ru": "28. Придите ко Мне, все труждающиеся и обременённые, и Я успокою вас; 29. возьмите иго Моё на себя и научитесь от Меня, ибо Я кроток и смирен сердцем, и найдёте покой душам вашим.",
+        "text_en": "28. Come unto me, all ye that labour and are heavy laden, and I will give you rest. 29. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.",
+        "verse_ref": {
+        "book": "matthew",
+        "chapter": 11,
+        "verse": "28-29"
+        },  
+        "interpretation_ru": "Истинный покой душа находит во Христе.",
+        "interpretation_en": "True rest for the soul is found in Christ.",
+  
+        "related": [
+          {
+            "reference_ru": "Евреям 4:3",
+            "text_ru": "А входим в покой мы уверовавшие...",
+            "reference_en": "Hebrews 4:3",
+            "text_en": "For we which have believed do enter into rest...",
+            "verse_ref": {
+            "book": "hebrews",
+            "chapter": 4,
+            "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 6:35",
+            "text_ru": "Иисус же сказал им: Я есмь хлеб жизни; приходящий ко Мне не будет алкать, и верующий в Меня не будет жаждать никогда.",
+            "reference_en": "John 6:35",
+            "text_en": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.",
+            "verse_ref": {
+            "book": "john",
+            "chapter": 6,
+            "verse": "35"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "col216",
+        "topic": {
+          "ru": "Свобода",
+          "en": "Freedom"
+        },
+        "reference_ru": "Колоссянам 2:16-17",
+        "reference_en": "Colossians 2:16-17",
+  
+        "text_ru": "16. Итак никто да не осуждает вас за пищу, или питие, или за какой-нибудь праздник, или новомесячие, или субботу: 17. это есть тень будущего, а тело — во Христе.",
+        "text_en": "16. Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: 17. Which are a shadow of things to come; but the body is of Christ.",
+        "verse_ref": {
+        "book": "colossians",
+        "chapter": 2,
+        "verse": "16-17"
+        },
+  
+        "interpretation_ru": "Новый Завет учит не осуждать друг друга из-за субботы или других обрядовых вопросов.",
+        "interpretation_en": "The New Testament teaches believers not to judge one another over sabbaths or ceremonial matters.",
+  
+        "related": [
+          {
+            "reference_ru": "Галатам 5:1",
+            "text_ru": "Итак стойте в свободе, которую даровал нам Христос, и не подвергайтесь опять игу рабства.",
+            "reference_en": "Galatians 5:1",
+            "text_en": "Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.",
+            "verse_ref": {
+            "book": "galatians",
+            "chapter": 5,
+            "verse": "1"
+            }
+          },
+          {
+            "reference_ru": "Ефесянам 2:15",
+            "text_ru": "упразднив вражду Плотию Своею, а закон заповедей учением, дабы из двух создать в Себе Самом одного нового человека, устрояя мир",
+            "reference_en": "Ephesians 2:15",
+            "text_en": "Having abolished in his flesh the enmity, even the law of commandments contained in ordinances...",
+            "verse_ref": {
+            "book": "ephesians",
+            "chapter": 2,
+            "verse": "15"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "rom145",
+        "topic": {
+          "ru": "Дни",
+          "en": "Days"
+        },
+        "reference_ru": "Римлянам 14:5-6",
+        "reference_en": "Romans 14:5-6",
+        "text_ru": "5. Иной отличает день от дня, а другой судит о всяком дне равно. Всякий поступай по удостоверению своего ума. 6. Кто различает дни, для Господа различает; и кто не различает дней, для Господа не различает...",
+        "text_en": "5. One man esteemeth one day above another: another esteemeth every day alike. Let every man be fully persuaded in his own mind. 6. He that regardeth the day, regardeth it unto the Lord; and he that regardeth not the day, to the Lord he doth not regard it...",
+        "verse_ref": {
+        "book": "romans",
+        "chapter": 14,
+        "verse": "5-6"
+        },
+        "interpretation_ru": "Вопрос дней не поставлен как обязательное условие для всех верующих.",
+        "interpretation_en": "The observance of days is not presented as a universal requirement for all believers.",
+  
+        "related": [
+          {
+            "reference_ru": "Галатам 5:6",
+            "text_ru": "Ибо во Христе Иисусе не имеет силы ни обрезание, ни необрезание, но вера, действующая любовью.",
+            "reference_en": "Galatians 5:6",
+            "text_en": "For in Jesus Christ neither circumcision availeth any thing, nor uncircumcision; but faith which worketh by love.",
+            "verse_ref": {
+            "book": "galatians",
+            "chapter": 5,
+            "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "1 Коринфянам 8:8",
+            "text_ru": "Пища не приближает нас к Богу: ибо едим ли мы, ничего не приобретаем; не едим ли, ничего не теряем.",
+            "reference_en": "1 Corinthians 8:8",
+            "text_en": "But meat commendeth us not to God: for neither, if we eat, are we the better; neither, if we eat not, are we the worse.",
+            "verse_ref": {
+            "book": "1-corinthians",
+            "chapter": 8,
+            "verse": "8"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "heb49",
+        "topic": {
+          "ru": "Покой",
+          "en": "Rest"
+        },
+        "reference_ru": "Евреям 4:9-10",
+        "reference_en": "Hebrews 4:9-10",
+  
+        "text_ru": "9. Посему для народа Божия ещё остаётся субботство. 10. Ибо кто вошёл в покой Его, тот и сам успокоился от дел своих, как и Бог от Своих.",
+        "text_en": "9. There remaineth therefore a rest to the people of God. 10. For he that is entered into his rest, he also hath ceased from his own works, as God did from his.",
+        "verse_ref": {
+        "book": "hebrews",
+        "chapter": 4,
+        "verse": "9-10"
+        },
+        "interpretation_ru": "Субботство показано как вхождение в Божий покой, а не просто как соблюдение календарного дня.",
+        "interpretation_en": "Sabbath-rest is presented as entering God's rest, not merely observing a calendar day.",
+  
+        "related": [
+          {
+            "reference_ru": "Евреям 4:3",
+            "text_ru": "А входим в покой мы уверовавшие...",
+            "reference_en": "Hebrews 4:3",
+            "text_en": "For we which have believed do enter into rest...",
+            "verse_ref": {
+            "book": "hebrews",
+            "chapter": 4,
+            "verse": "3"
+            }
+          
+          },
+          {
+            "reference_ru": "Евреям 4:11",
+            "text_ru": "Итак постараемся войти в покой оный, , чтобы кто по тому же примеру не впал в непокорность.",
+            "reference_en": "Hebrews 4:11",
+            "text_en": "Let us labour therefore to enter into that rest...",
+            "verse_ref": {
+            "book": "hebrews",
+            "chapter": 4,
+            "verse": "11"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "acts207",
+        "topic": {
+          "ru": "Собрание",
+          "en": "Gathering"
+        },
+        "reference_ru": "Деяния 20:7",
+        "reference_en": "Acts 20:7",
+  
+        "text_ru": "В первый же день недели, когда ученики собрались для преломления хлеба, Павел, намереваясь отправиться в следующий день, беседовал с ними и продолжил слово до полуночи.",
+        "text_en": "And upon the first day of the week, when the disciples came together to break bread, Paul preached unto them, ready to depart on the morrow; and continued his speech until midnight.",
+        "verse_ref": {
+        "book": "acts",
+        "chapter": 20,
+        "verse": "7"
+        },
+  
+        "interpretation_ru": "Верующие собирались и в первый день недели; Новый Завет не ограничивает общение с Богом одним днём.",
+        "interpretation_en": "Believers also gathered on the first day of the week; the New Testament does not limit fellowship with God to one day only.",
+  
+        "related": [
+          {
+            "reference_ru": "1 Коринфянам 16:2",
+            "text_ru": "В первый день недели каждый из вас пусть отлагает у себя и сберегает, сколько позволит ему состояние...",
+            "reference_en": "1 Corinthians 16:2",
+            "text_en": "Upon the first day of the week let every one of you lay by him in store, as God hath prospered him...",
+            "verse_ref": {
+            "book": "1-corinthians",
+            "chapter": 16,
+            "verse": "2"
+            }
+          },
+          {
+            "reference_ru": "Матфея 18:20",
+            "text_ru": "Ибо, где двое или трое собраны во имя Моё, там Я посреди них.",
+            "reference_en": "Matthew 18:20",
+            "text_en": "For where two or three are gathered together in my name, there am I in the midst of them.",
+            "verse_ref": {
+            "book": "matthew",
+            "chapter": 18,
+            "verse": "20"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "gal44",
+        "topic": {
+          "ru": "Христос",
+          "en": "Christ"
+        },
+        "reference_ru": "Галатам 4:9-11",
+        "reference_en": "Galatians 4:9-11",
+  
+        "text_ru": "9. Ныне же, познав Бога, или, лучше, получив познание от Бога, для чего возвращаетесь опять к немощным и бедным вещественным началам и хотите ещё снова поработить себя им? 10. Наблюдаете дни, месяцы, времена и годы. 11. Боюсь за вас, не напрасно ли я трудился у вас.",
+        "text_en": "9. But now, after that ye have known God, or rather are known of God, how turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage? 10. Ye observe days, and months, and times, and years. 11. I am afraid of you, lest I have bestowed upon you labour in vain.",
+        "verse_ref": {
+        "book": "galatians",
+        "chapter": 4,
+        "verse": "9-11"
+        },
+        "interpretation_ru": "Павел предупреждает не возвращаться к религиозному рабству и не строить веру на соблюдении дней.",
+        "interpretation_en": "Paul warns believers not to return to religious bondage by building faith on the observance of days.",
+  
+        "related": [
+          {
+            "reference_ru": "Галатам 2:16",
+            "text_ru": "человек оправдывается не делами закона, а только верою в Иисуса Христа...",
+            "reference_en": "Galatians 2:16",
+            "text_en": "A man is not justified by the works of the law, but by the faith of Jesus Christ...",
+            "verse_ref": {
+            "book": "galatians",
+            "chapter": 2,
+            "verse": "16"
+            }
+          },
+          {
+            "reference_ru": "Галатам 3:2-3",
+            "text_ru": "через дела ли закона вы получили Духа, или через наставление в вере?... начав духом, теперь оканчиваете плотью?",
+            "reference_en": "Galatians 3:2-3",
+            "text_en": "Received ye the Spirit by the works of the law, or by the hearing of faith?... having begun in the Spirit, are ye now made perfect by the flesh?",
+            "verse_ref": {
+            "book": "galatians",
+            "chapter": 3,
+            "verse": "2-3"
+            }
+          }
+        ]
+      }
+    ]
+  }

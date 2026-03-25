@@ -74,7 +74,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       verseBlock.innerHTML = `
         <h3 class="scripture-heading">
-          <span class="scripture-topic">${formatTopic(topic, lang)} — </span>
+          <span class="scripture-topic ${getTopicClass(topic, lang)}">
+            ${getTopicIcon(topic, lang)}${formatTopic(topic, lang)} —
+          </span>
           <a href="#"
             class="scripture-reference explain-link"
             id="${triggerId}" 
@@ -201,19 +203,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   
   function formatTopic(topic, lang) {
-    if (!topic) return lang === "ru" ? "Тема" : "Topic";
+    const fallback = lang === "ru" ? "Тема" : "Topic";
   
-    const topicMap = {
-      grace: { ru: "Благодать", en: "Grace" },
-      rest: { ru: "Покой", en: "Rest" },
-      freedom: { ru: "Свобода", en: "Freedom" },
-      salvation: { ru: "Спасение", en: "Salvation" },
-      faith: { ru: "Вера", en: "Faith" },
-      law: { ru: "Закон", en: "Law" },
-      christ: { ru: "Христос", en: "Christ" }
-    };
+    if (!topic) return fallback;
   
-    return topicMap[topic]?.[lang] || topic;
+    if (typeof topic === "object") {
+      return topic[lang] || topic.ru || topic.en || fallback;
+    }
+  
+    return topic;
   }
   
   function escapeHtml(text) {
@@ -280,26 +278,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-function scrollToDetails(detailsEl) {
+  function scrollToDetails(detailsEl) {
     if (!detailsEl) return;
   
-    // ищем блок выше (где текст стиха и ссылка)
-    let verseBlock = detailsEl.previousElementSibling;
-  
-    // если структура сложнее — поднимаемся выше
-    while (verseBlock && !verseBlock.innerText?.includes("Romans") && !verseBlock.querySelector("a")) {
-      verseBlock = verseBlock.previousElementSibling;
-    }
-  
-    // если не нашли — fallback
-    if (!verseBlock) {
-      verseBlock = detailsEl;
-    }
+    const verseBlock = detailsEl.closest(".scripture-item") || detailsEl;
   
     requestAnimationFrame(() => {
       const rect = verseBlock.getBoundingClientRect();
       const absoluteTop = window.pageYOffset + rect.top;
-  
       const offset = 80;
   
       window.scrollTo({
@@ -307,4 +293,26 @@ function scrollToDetails(detailsEl) {
         behavior: "smooth"
       });
     });
+  }
+
+  function getTopicClass(topic, lang) {
+    const value = typeof topic === "object"
+      ? (topic[lang] || topic.ru || topic.en || "").toLowerCase()
+      : String(topic || "").toLowerCase();
+  
+    if (value.includes("law") || value.includes("закон")) return "topic-law";
+    if (value.includes("grace") || value.includes("благодать")) return "topic-grace";
+  
+    return "";
+  }
+  
+  function getTopicIcon(topic, lang) {
+    const value = typeof topic === "object"
+      ? (topic[lang] || topic.ru || topic.en || "").toLowerCase()
+      : String(topic || "").toLowerCase();
+  
+    if (value.includes("law") || value.includes("закон")) return "⚖️ ";
+    if (value.includes("grace") || value.includes("благодать")) return "✝️ ";
+  
+    return "";
   }

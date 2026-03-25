@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "about.html": "about.html",
     "index.html": "index.html",
     "salvation.html": "salvation.html",
-    "comments.html": "comments.html"
+    "comments.html": "comments.html",
+    "sabbath.html": "sabbath.html"
   };
 
     let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ${currentPage !== 'about.html' ? `<a href="about.html">ℹ️ Info</a>` : ''}
           </div>
         </div>
-
+        <div class="top-title">Welcome to the Bible</div>
         <div class="top-right dropdown">
           <button class="dropbtn">🌐</button>
           <div class="dropdown-content lang-dropdown">

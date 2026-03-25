@@ -57,12 +57,12 @@
     <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.5;">
         <div id="header"></div>
         <main role="main"> 
-          <h1>📖 <span class="highlight-title">Библия для всех</span> — главная</h1>
-          <p>Добро пожаловать! Выберите одну из тем ниже:</p>
-          
+          <h1 class="hero-title">Исследуйте Священное Писание</h1>
+          <p>Выберите одну из тем ниже:</p>          
             <ul class="topic-list">                 
               <li><a class="button-link" href="/ru/purpose.html">🎯 Смысл жизни с толкованием</a></li>
               <li><a class="button-link" href="/ru/salvation.html">⚖️ Спасение — по делам закона или по благодати?</a></li>
+              <li><a class="button-link" href="/ru/sabbath.html"> ✨ Суббота — в Новом Завете</a></li>
               <li><a class="button-link" href="/ru/prayFromBible.html">🕊 Молитва Господня <em>«Отче наш»</em> c толкованием</a></li>
               <li><a class="button-link" href="/ru/golden-verses.html">🌟 Золотые стихи с толкованием</a></li>
               <li><a class="button-link" href="/ru/10-commandments.html">📜 10 заповедей с толкованием</a></li>
@@ -86,5 +86,12 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/verses-slider.js"></script>
     <script src="/js/book-dates.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/js/sw.js');
+      }
+    </script>
+
 </body>
 </html>
