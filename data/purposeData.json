@@ -1,0 +1,119 @@
+{
+    "verses": [
+      {
+        "id": "john173",
+        "topic": {
+          "ru": "Смысл жизни",
+          "en": "Purpose of Life"
+        },
+        "reference_ru": "Иоанна 17:2-3",
+        "reference_en": "John 17:2-3",
+        "text_ru": "Так как Ты дал Ему власть над всякою плотью, да всему, что Ты дал Ему, даст Он жизнь вечную. Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
+        "text_en": "Since you have given him authority over all flesh, to give eternal life to all whom you have given him. And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent.",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 17,
+          "verse": "2-3"
+        },
+        "interpretation_ru": "Смысл жизни — познать единого истинного Бога и Иисуса Христа, Которого Он послал. Вечная жизнь начинается уже сейчас, когда человек вступает в живые отношения с Богом через Христа.",
+        "interpretation_en": "The purpose of life is to know the only true God and Jesus Christ whom He has sent. Eternal life begins already now when a person enters into a living relationship with God through Christ.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 3:16",
+            "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
+            "reference_en": "John 3:16",
+            "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 3,
+              "verse": "16"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 5:1",
+            "text_ru": "Итак, мы, оправдавшись верою, имеем мир с Богом через Господа нашего Иисуса Христа.",
+            "reference_en": "Romans 5:1",
+            "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 5,
+              "verse": "1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "prov356",
+        "topic": {
+          "ru": "Как жить",
+          "en": "How to Live"
+        },
+        "reference_ru": "Притчи 3:5-6",
+        "reference_en": "Proverbs 3:5-6",
+        "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+        "text_en": "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+        "verse_ref": {
+          "book": "proverbs",
+          "chapter": 3,
+          "verse": "5-6"
+        },
+        "interpretation_ru": "Библия учит жить в доверии Богу: не полагаться только на собственный разум, а искать Его воли во всех путях. Когда человек ходит с Богом, Он Сам направляет его жизнь.",
+        "interpretation_en": "The Bible teaches us to live by trusting God: not relying only on our own understanding, but seeking His will in all our ways. When a person walks with God, He Himself directs that life.",
+        "related": [
+          {
+            "reference_ru": "Михея 6:8",
+            "text_ru": "О, человек! Сказано тебе, что добро и чего требует от тебя Господь: действовать справедливо, любить дела милосердия и смиренно ходить пред Богом твоим.",
+            "reference_en": "Micah 6:8",
+            "text_en": "He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?",
+            "verse_ref": {
+              "book": "micah",
+              "chapter": 6,
+              "verse": "8"
+            }
+          },
+          {
+            "reference_ru": "Матфея 22:37-39",
+            "text_ru": "Иисус сказал ему: возлюби Господа Бога твоего всем сердцем твоим, и всею душою твоею, и всем разумением твоим; сия есть первая и наибольшая заповедь; вторая же, подобная ей: возлюби ближнего твоего, как самого себя.",
+            "reference_en": "Matthew 22:37-39",
+            "text_en": "And he said to him, “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself.”",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 22,
+              "verse": "37-39"
+            }
+          }
+        ]
+      },
+      {
+        "id": "eccl1213",
+        "topic": {
+          "ru": "Итог жизни",
+          "en": "Meaning of Life"
+        },
+        "reference_ru": "Екклесиаст 12:13",
+        "reference_en": "Ecclesiastes 12:13",
+        "text_ru": "Выслушаем сущность всего: бойся Бога и заповеди Его соблюдай, потому что в этом всё для человека.",
+        "text_en": "The end of the matter; all has been heard. Fear God and keep his commandments, for this is the whole duty of man.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 12,
+          "verse": "13"
+        },
+        "interpretation_ru": "Истинный смысл и предназначение человека — жить в благоговении перед Богом и в послушании Его воле. Жизнь с Богом — не пустое существование, а полнота, которую даёт Христос.",
+        "interpretation_en": "The true meaning and purpose of human life is to live in reverence before God and in obedience to His will. Life with God is not empty existence, but the fullness that Christ gives.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 10:10",
+            "text_ru": "Вор приходит только для того, чтобы украсть, убить и погубить. Я пришёл для того, чтобы имели жизнь и имели с избытком.",
+            "reference_en": "John 10:10",
+            "text_en": "The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the full.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 10,
+              "verse": "10"
+            }
+          }
+        ]
+      }
+    ]
+  }
