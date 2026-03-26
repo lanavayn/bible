@@ -103,10 +103,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   
         <div class="scripture-details" id="${detailsId}" style="display: none;">
           <div class="scripture-note-box">
-            <button class="scripture-close" type="button" data-target="${detailsId}">
-              ${lang === "ru" ? "× Закрыть" : "× Close"}
-            </button>
-  
+            <div class="scripture-close-row">
+              <button class="scripture-close" type="button" data-target="${detailsId}">
+                ×
+              </button>
+            </div>
             <p class="scripture-interpretation">
               <strong>${lang === "ru" ? "Из этого стиха видно" : "This verse shows"} — </strong>
               ${escapeHtml(interpretation)}
