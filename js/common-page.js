@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               </button>
             </div>
             <p class="scripture-interpretation">
-              <strong>${lang === "ru" ? "Из этого стиха видно:" : "This verse shows:"}  </strong>
+              <strong>${lang === "ru" ? "Этот стих показывает:" : "This verse shows:"}  </strong>
               ${escapeHtml(interpretation)}
             </p>
   

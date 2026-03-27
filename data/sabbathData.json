@@ -61,8 +61,8 @@
         "verse": "16-17"
         },
   
-        "interpretation_ru": "Новый Завет учит не осуждать друг друга из-за субботы или других обрядовых вопросов.",
-        "interpretation_en": "The New Testament teaches believers not to judge one another over sabbaths or ceremonial matters.",
+        "interpretation_ru": "Не осуждать друг друга из-за субботы и обрядовых вопросов.",
+        "interpretation_en": "Do not judge one another over sabbaths or ceremonial matters.",
   
         "related": [
           {
@@ -105,7 +105,7 @@
         "chapter": 14,
         "verse": "5-6"
         },
-        "interpretation_ru": "Вопрос дней не поставлен как обязательное условие для всех верующих.",
+        "interpretation_ru": "Соблюдение дней не является обязательным для всех верующих.",
         "interpretation_en": "The observance of days is not presented as a universal requirement for all believers.",
   
         "related": [
@@ -150,8 +150,8 @@
         "chapter": 4,
         "verse": "9-10"
         },
-        "interpretation_ru": "Субботство показано как вхождение в Божий покой, а не просто как соблюдение календарного дня.",
-        "interpretation_en": "Sabbath-rest is presented as entering God's rest, not merely observing a calendar day.",
+        "interpretation_ru": "Субботство — это вхождение в Божий покой, а не соблюдение календарного дня.",
+        "interpretation_en": "Sabbath rest is entering God's rest, not merely observing a calendar day.",
   
         "related": [
           {
@@ -197,8 +197,8 @@
         "verse": "7"
         },
   
-        "interpretation_ru": "Верующие собирались и в первый день недели; Новый Завет не ограничивает общение с Богом одним днём.",
-        "interpretation_en": "Believers also gathered on the first day of the week; the New Testament does not limit fellowship with God to one day only.",
+        "interpretation_ru": "Верующие собирались и в первый день недели. Общение с Богом не ограничено одним днём.",
+        "interpretation_en": "Believers also gathered on the first day of the week. Fellowship with God is not limited to one day.",
   
         "related": [
           {
@@ -242,8 +242,8 @@
         "chapter": 4,
         "verse": "9-11"
         },
-        "interpretation_ru": "Павел предупреждает не возвращаться к религиозному рабству и не строить веру на соблюдении дней.",
-        "interpretation_en": "Paul warns believers not to return to religious bondage by building faith on the observance of days.",
+        "interpretation_ru": "Не возвращаться к религиозному рабству и не строить веру на соблюдении дней.",
+        "interpretation_en": "Do not return to religious bondage or build faith on the observance of days.",
   
         "related": [
           {
