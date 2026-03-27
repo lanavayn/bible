@@ -96,12 +96,14 @@
         body: new URLSearchParams(new FormData(form)).toString()
       })
       .then(() => {
-        form.style.display = "none";
+        form.remove();
         document.getElementById("confirmation").style.display = "block";
       })
       .catch((error) => alert("Submission failed. Please try again."));
     }
   </script>
   <script src="js/header-en.js"  defer></script>
+  <script src="js/menu.js" defer></script>
+
 </body>
 </html>
