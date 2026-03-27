@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!Array.isArray(verses)) {
         throw new Error("JSON format invalid: verses array not found");
       }
-  
+      if (verses.length <= 4) {
+        const nav = createTopNav(verses, lang);
+        versesContainer.parentElement.insertBefore(nav, versesContainer);
+      }
       renderVerses(verses, lang, versesContainer);
       bindVerseToggles();
       initGlobalTooltip();
@@ -71,6 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       const verseBlock = document.createElement("section");
       verseBlock.className = "scripture-item";
+      verseBlock.id = item.id;
   
       verseBlock.innerHTML = `
         <h3 class="scripture-heading">
@@ -109,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               </button>
             </div>
             <p class="scripture-interpretation">
-              <strong>${lang === "ru" ? "Из этого стиха видно" : "This verse shows"} — </strong>
+              <strong>${lang === "ru" ? "Из этого стиха видно:" : "This verse shows:"}  </strong>
               ${escapeHtml(interpretation)}
             </p>
   
@@ -316,4 +320,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (value.includes("grace") || value.includes("благодать")) return "✝️ ";
   
     return "";
+  }
+
+  function createTopNav(verses, lang) {
+    const nav = document.createElement("div");
+    nav.className = "top-nav";
+    if (verses.length === 3) {
+      nav.classList.add("top-nav-three");
+    }
+    verses.forEach(item => {
+      const link = document.createElement("a");
+      link.href = `#${item.id}`;
+      link.className = `top-nav-link ${getTopicClass(item.topic, lang)}`;
+      link.textContent = formatTopic(item.topic, lang);
+      nav.appendChild(link);
+    });
+  
+    return nav;
   }
