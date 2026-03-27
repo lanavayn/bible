@@ -1,3 +1,582 @@
+/* =========================================================
+   GLOBAL TYPOGRAPHY + SPACING SYSTEM
+   New base styles for current pages
+   Old styles can stay below for now
+========================================================= */
+
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  /* Typography */
+  --font-family-base: Georgia, serif;
+  --font-family-accent: "Dancing Script", cursive;
+
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 0.95rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.05rem;
+  --font-size-xl: 1.15rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2.2rem;
+
+  --line-height-tight: 1.25;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
+  --space-8: 2.5rem;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Layout */
+  --container-max: 45rem;
+
+  /* Colors */
+  --color-text: #4b3621;
+  --color-text-soft: #666;
+  --color-link: #5b3d1f;
+  --color-link-hover: #7a532a;
+
+  --color-bg-main: #fdf6e3;
+  --color-bg-grad-1: #fdf6e3;
+  --color-bg-grad-2: #f4e6c8;
+  --color-bg-grad-3: #e9d7b3;
+
+  --color-panel: #fffdf8;
+  --color-panel-soft: #fff9e6;
+  --color-border: #e0c48c;
+  --color-border-soft: #ece3d8;
+
+  --color-menu-bg: #fffdf5;
+  --color-menu-hover: #f4f4f4;
+
+  --color-law: #b22222;
+  --color-grace: #228b22;
+
+  --shadow-soft: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.06);
+  --shadow-menu: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Base ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 20%, var(--color-bg-grad-1) 0%, var(--color-bg-grad-2) 50%, var(--color-bg-grad-3) 100%);
+  background-color: var(--color-bg-main);
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5rem;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+/* ===== Main layout ===== */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+}
+
+.page-container {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) 3rem;
+}
+
+/* ===== Typography ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-tight);
+}
+
+.container p {
+  line-height: 1.65;
+}
+
+.container h1,
+.container h2,
+.container h3 {
+  line-height: var(--line-height-tight);
+}
+
+h1,
+.hero-title {
+  font-size: var(--font-size-3xl);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  text-align: center;
+  color: #7b3f00;
+}
+
+.top-title {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-family-base);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #5a351c;
+  letter-spacing: 0.01em;
+  flex: unset;
+  animation: none;
+  opacity: 1;
+}
+
+.page-intro {
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  margin-bottom: 1.125rem;
+}
+
+.page-note {
+  font-size: var(--font-size-md);
+  font-style: italic;
+  margin-bottom: 1.75rem;
+  color: var(--color-text-soft);
+}
+
+.grace-word {
+  color: var(--color-grace);
+}
+
+/* ===== Topic list / homepage links ===== */
+
+.topic-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: var(--space-4);
+}
+
+.topic-list li {
+  margin-bottom: 0.375rem;
+}
+
+.button-link {
+  display: inline-block;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  text-decoration: none;
+  border-radius: 0.625rem;
+}
+
+/* ===== Header / menu ===== */
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 3.75rem 1fr 3.75rem;
+  align-items: center;
+  gap: 0.75rem;
+
+  background: linear-gradient(180deg, rgba(255,253,248,0.96) 0%, rgba(255,249,238,0.96) 100%);
+  border: 1px solid rgba(224, 195, 140, 0.55);
+  border-radius: 0.875rem;
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.05);
+
+  padding: 0.75rem 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.top-left,
+.top-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-left {
+  justify-content: flex-start;
+}
+
+.top-right {
+  justify-content: flex-end;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+
+  font-size: 1.45rem;
+  line-height: 1;
+  color: #6d4a2a;
+
+  background: #fffdf8;
+  border: 1px solid rgba(224, 195, 140, 0.75);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.04);
+
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.dropbtn:hover {
+  background: #fff7ea;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.08);
+  transform: translateY(-0.0625rem);
+}
+
+.dropbtn:active {
+  transform: translateY(0);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  min-width: 11rem;
+  padding: 0.35rem;
+  z-index: 999;
+
+  background: rgba(255, 253, 248, 0.98);
+  border: 1px solid rgba(224, 195, 140, 0.7);
+  border-radius: 0.875rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-content a,
+.lang-dropdown a {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.625rem;
+
+  text-decoration: none;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #4b3621;
+
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.dropdown-content a:hover,
+.lang-dropdown a:hover {
+  background: #f6ecdc;
+  color: #6a3f1d;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.lang-dropdown {
+  right: 0;
+  left: auto;
+  min-width: 9rem;
+}
+
+.lang-dropdown a {
+  display: block;
+  padding: 0.625rem 1rem;
+  text-align: left;
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* ===== Footer ===== */
+
+.footer {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-md);
+}
+
+.source-note,
+.bible-link-note {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.bible-link-note {
+  margin: 0.75rem 0 0.375rem;
+}
+
+.bible-link-note a {
+  color: var(--color-link);
+  text-decoration: underline;
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+.bible-link-note a:hover {
+  color: var(--color-link-hover);
+}
+
+/* ===== Scroll to top ===== */
+
+#scrollTopBtn img {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ===== Scripture system ===== */
+
+.scripture-item {
+  margin-bottom: 1.75rem;
+}
+
+.scripture-heading {
+  margin-bottom: 0.625rem;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.scripture-topic {
+  font-weight: 700;
+}
+
+.topic-law {
+  color: var(--color-law);
+  font-weight: 700;
+}
+
+.topic-grace {
+  color: var(--color-grace);
+  font-weight: 700;
+}
+
+.scripture-reference {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.scripture-text {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.scripture-details {
+  margin-top: 0.625rem;
+}
+
+.scripture-note-box {
+  background: #f8f3fb;
+  border: 1px solid #e6dcef;
+  border-radius: var(--radius-lg);
+  padding: 0.5rem 0.75rem;
+  position: relative;
+}
+.scripture-note-box:hover {
+  box-shadow: 0 0.35rem 0.9rem rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+.scripture-note-box {
+  animation: noteFadeIn 0.28s ease-out;
+}
+
+@keyframes noteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.scripture-note-box > *:first-child {
+  margin-bottom: 0.7rem;
+}
+
+.scripture-close-row {
+  position: absolute;
+  top: 0.05rem;
+  right: 0.4rem;
+  margin-bottom: 0;
+}
+
+.scripture-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  font-size: 1.1rem;
+  opacity: 0.6;
+}
+
+.scripture-close:hover {
+  opacity: 1;
+}
+
+.scripture-interpretation {
+  margin: 0 0 0.75rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  padding-right: 0;
+  margin-top: 0.3rem;
+}
+
+.scripture-related-title {
+  font-size: 1rem;
+  margin-bottom: 0.375rem;
+}
+
+.scripture-related-list {
+  margin: 0;
+  padding-left: 1.125rem;
+}
+
+.scripture-related-item {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.scripture-related-ref {
+  font-weight: 700;
+}
+
+.scripture-related-text {
+  color: #444;
+  font-size: 0.98rem;
+}
+
+.main-book-link {
+  margin-left: 0.375rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.scripture-book-link {
+  display: inline-block;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  font-size: 1.05rem;
+  line-height: 1;
+  vertical-align: baseline;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: #4f6f8a;
+  transition: color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 48rem) {
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.75rem !important;
+    border-radius: 0 !important;
+  }
+
+  .button-link {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem !important;
+    padding: 0.875rem 1rem !important;
+  }
+
+  .container p,
+  .container li {
+    font-size: 1rem;
+  }
+
+  .container h1 {
+    font-size: 2.2rem;
+  }
+
+  .container h1.hero-title,
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .top-bar {
+    grid-template-columns: 3.25rem 1fr 3.25rem;
+    gap: 0.5rem;
+    padding: 0.65rem 0.7rem;
+    border-radius: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .top-title {
+    font-size: 0.95rem;
+    line-height: 1.18;
+  }
+
+  .dropbtn {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.3rem;
+    border-radius: 0.65rem;
+  }
+
+  .dropdown-content {
+    min-width: 10rem;
+  }
+
+  .dropdown-content a,
+  .lang-dropdown a {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.8rem;
+  }
+}
+
+/* =========================================================
+   Old styles can stay below for now
+========================================================= */
 body {
   background:
     radial-gradient(circle at 20% 20%, #fdf6e3 0%, #f4e6c8 50%, #e9d7b3 100%);
@@ -428,7 +1007,7 @@ li {
     bottom: 110%;
   }
 }
-
+/* LEGACY HEADER - old
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -441,7 +1020,7 @@ li {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-}
+}*/
 .key-idea-box {
   background-color: #fffaf2;
   border-left: 5px solid #ffcc80;
@@ -512,7 +1091,7 @@ li {
 .top-center button:hover {
   background-color: #f3f3f3;
 }
-
+/* LEGACY HEADER BUTTON
 .dropbtn {
   background-color: white;
   color: #3366cc;
@@ -522,7 +1101,7 @@ li {
   border-radius: 6px;
   cursor: pointer;
 }
-
+*/
 .icon-button {
   background: none;
   border: none;
@@ -1566,7 +2145,7 @@ abbr[title]:focus::after {
 
   display: none;
 }
-
+/* LEGACY TOP TITLE
 .top-title {
   flex: 1;
   text-align: center;
@@ -1578,7 +2157,7 @@ abbr[title]:focus::after {
   opacity: 0.95;
   animation: softGlow 3.8s ease-in-out infinite;
 }
-
+*/
 .hero-title {
   text-align: center;
   font-size: 1.5rem;
