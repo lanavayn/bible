@@ -269,7 +269,8 @@ h1,
 .dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% + 0.45rem);
+  top: calc(100% + 0.15rem);
+  left: 0;
   min-width: 11rem;
   padding: 0.35rem;
   z-index: 999;
@@ -278,6 +279,10 @@ h1,
   border: 1px solid rgba(224, 195, 140, 0.7);
   border-radius: 0.875rem;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.12);
+}
+
+.dropdown.is-open .dropdown-content {
+  display: block;
 }
 
 .dropdown-content a,
@@ -299,10 +304,6 @@ h1,
 .lang-dropdown a:hover {
   background: #f6ecdc;
   color: #6a3f1d;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 .lang-dropdown {
@@ -563,10 +564,6 @@ h1,
     border-radius: 0.65rem;
   }
 
-  .dropdown-content {
-    min-width: 10rem;
-  }
-
   .dropdown-content a,
   .lang-dropdown a {
     font-size: 0.98rem;
@@ -774,14 +771,22 @@ li {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: calc(100% + 0.15rem); /* важно */
+  left: 0;
+
   background-color: #fffdf5;
-  width: 150px; /* 🎯 задаём фиксированную ширину */
+  width: 150px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   z-index: 999;
   border-radius: 6px;
   padding: 4px 0;
   font-size: 14px;
 }
+
+.dropdown.is-open .dropdown-content {
+  display: block;
+}
+
 .dropdown-content a {
   color: #333;
   padding: 8px 14px;
@@ -803,9 +808,6 @@ li {
   border-radius: 6px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 .prayer-box {
   background-color: #fdf6e3;
   border: 2px solid #e0c48c;
