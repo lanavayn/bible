@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!Array.isArray(verses)) {
         throw new Error("JSON format invalid: verses array not found");
       }
-      if (verses.length <= 4) {
+      if (verses.length <= 6) {
         const nav = createTopNav(verses, lang);
         versesContainer.parentElement.insertBefore(nav, versesContainer);
       }

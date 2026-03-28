@@ -1,0 +1,181 @@
+{
+    "verses": [
+      {
+        "id": "pray1",
+        "topic": { "ru": "Отец и имя Бога", "en": "Father and God’s Name" },
+        "reference_ru": "От Матфея 6:9",
+        "reference_en": "Matthew 6:9",
+        "text_ru": "Отче наш, сущий на небесах! да святится имя Твоё",
+        "text_en": "Our Father in heaven, hallowed be Your name",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 6,
+          "verse": "9"
+        },
+        "interpretation_ru": "Бог — наш Отец, и Его имя свято.",
+        "interpretation_en": "God is our Father, and His name is holy.",
+        "related": [
+          {
+            "reference_ru": "Римлянам 8:15",
+            "text_ru": "…вы приняли Духа усыновления, Которым взываем: «Авва, Отче!»",
+            "reference_en": "Romans 8:15",
+            "text_en": "…you have received the Spirit of adoption as sons, by whom we cry, “Abba! Father!”",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 8,
+              "verse": "15"
+            }
+          },
+          {
+            "reference_ru": "Псалом 110:9",
+            "text_ru": "Свято и страшно имя Его",
+            "reference_en": "Psalm 111:9",
+            "text_en": "Holy and awesome is His name",
+            "verse_ref": {
+              "book": "psalms",
+              "chapter": 111,
+              "verse": "9"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "pray2",
+        "topic": { "ru": "Царство и воля Божия", "en": "Kingdom and God’s Will" },
+        "reference_ru": "От Матфея 6:10",
+        "reference_en": "Matthew 6:10",
+        "text_ru": "да приидет Царствие Твоё; да будет воля Твоя и на земле, как на небе",
+        "text_en": "Your Kingdom come, Your will be done, on earth as it is in heaven",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 6,
+          "verse": "10"
+        },
+        "interpretation_ru": "Царство Божие приходит, и Его воля исполняется.",
+        "interpretation_en": "God’s Kingdom comes, and His will is done.",
+        "related": [
+          {
+            "reference_ru": "Луки 17:21",
+            "text_ru": "Царствие Божие внутрь вас есть",
+            "reference_en": "Luke 17:21",
+            "text_en": "The kingdom of God is in the midst of you",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 17,
+              "verse": "21"
+            }
+          },
+          {
+            "reference_ru": "1 Иоанна 2:17",
+            "text_ru": "исполняющий волю Божию пребывает вовек",
+            "reference_en": "1 John 2:17",
+            "text_en": "whoever does the will of God abides forever",
+            "verse_ref": {
+              "book": "1-john",
+              "chapter": 2,
+              "verse": "17"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "pray3",
+        "topic": { "ru": "Насущный хлеб", "en": "Daily Bread" },
+        "reference_ru": "От Матфея 6:11",
+        "reference_en": "Matthew 6:11",
+        "text_ru": "хлеб наш насущный дай нам на сей день",
+        "text_en": "Give us this day our daily bread",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 6,
+          "verse": "11"
+        },
+        "interpretation_ru": "Бог даёт необходимое.",
+        "interpretation_en": "God provides what we need.",
+        "related": [
+          {
+            "reference_ru": "Филиппийцам 4:19",
+            "text_ru": "Бог мой да восполнит всякую нужду вашу",
+            "reference_en": "Philippians 4:19",
+            "text_en": "my God will supply every need of yours",
+            "verse_ref": {
+              "book": "philippians",
+              "chapter": 4,
+              "verse": "19"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "pray4",
+        "topic": { "ru": "Прощение", "en": "Forgiveness" },
+        "reference_ru": "От Матфея 6:12",
+        "reference_en": "Matthew 6:12",
+        "text_ru": "и прости нам долги наши, как и мы прощаем должникам нашим",
+        "text_en": "forgive us our debts, as we also have forgiven our debtors",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 6,
+          "verse": "12"
+        },
+        "interpretation_ru": "Бог прощает, и мы прощаем.",
+        "interpretation_en": "God forgives, and we forgive.",
+        "related": [
+          {
+            "reference_ru": "Ефесянам 4:32",
+            "text_ru": "прощайте друг друга, как и Бог во Христе простил вас",
+            "reference_en": "Ephesians 4:32",
+            "text_en": "forgiving one another, as God in Christ forgave you",
+            "verse_ref": {
+              "book": "ephesians",
+              "chapter": 4,
+              "verse": "32"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "pray5",
+        "topic": { "ru": "Искушение и избавление", "en": "Temptation and Deliverance" },
+        "reference_ru": "От Матфея 6:13",
+        "reference_en": "Matthew 6:13",
+        "text_ru": "и не введи нас в искушение, но избавь нас от лукавого. Ибо Твоё есть Царство и сила и слава вовеки. Аминь",
+        "text_en": "lead us not into temptation, but deliver us from the evil one",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 6,
+          "verse": "13"
+        },
+        "interpretation_ru": "Бог хранит и избавляет от зла.",
+        "interpretation_en": "God guards and delivers from evil.",
+        "related": [
+          {
+            "reference_ru": "1 Коринфянам 10:13",
+            "text_ru": "Бог верен… не попустит вам быть искушаемыми сверх сил",
+            "reference_en": "1 Corinthians 10:13",
+            "text_en": "God is faithful… He will not let you be tempted beyond your ability",
+            "verse_ref": {
+              "book": "1-corinthians",
+              "chapter": 10,
+              "verse": "13"
+            }
+          },
+          {
+            "reference_ru": "2 Фессалоникийцам 3:3",
+            "text_ru": "Господь… сохранит вас от лукавого",
+            "reference_en": "2 Thessalonians 3:3",
+            "text_en": "the Lord… will guard you against the evil one",
+            "verse_ref": {
+              "book": "2-thessalonians",
+              "chapter": 3,
+              "verse": "3"
+            }
+          }
+        ]
+      }
+    ]
+  }
