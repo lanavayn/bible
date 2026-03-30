@@ -58,6 +58,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     return "./";
   }
   
+  function getVerseRefByLang(item, lang) {
+    if (item?.verse_ref_lang && item.verse_ref_lang[lang]) {
+      return item.verse_ref_lang[lang];
+    }
+    return item?.verse_ref || null;
+  }
+
   function renderVerses(verses, lang, container) {
     container.innerHTML = "";
   
@@ -67,7 +74,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const interpretation = item[`interpretation_${lang}`] || "";
       const topic = item.topic || "";
       const related = Array.isArray(item.related) ? item.related : [];
-      const mainLink = buildBibleLink(item.verse_ref, lang);
+
+      const mainVerseRef = getVerseRefByLang(item, lang);
+      const mainLink = buildBibleLink(mainVerseRef, lang);
   
       const detailsId = `details-${index}`;
       const triggerId = `trigger-${index}`;
@@ -142,7 +151,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   function renderRelatedItem(rel, lang) {
     const ref = rel[`reference_${lang}`] || "";
     const text = rel[`text_${lang}`] || "";
-    const link = buildBibleLink(rel.verse_ref, lang);
+    const verseRef = getVerseRefByLang(rel, lang);
+    const link = buildBibleLink(verseRef, lang);
+
     const hasRealLink = link && link !== "#";
   
     return `
