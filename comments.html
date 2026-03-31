@@ -12,10 +12,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leave a Comments or Feedback</title>
+  <title>Leave a Review | Bible for All</title>
 
   <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Share your thoughts or feedback on inspiring Bible verses. Read, reflect, and connect. Available in English and Russian.">
+  <meta name="description" content="Share your review or feedback about Bible for All. Read, reflect, and connect through inspiring Bible verses.">
   <meta name="keywords" content="Bible, feedback, comments, scripture, verses, Christianity, English Bible, Russian Bible">
   <meta name="author" content="Lana Vayner">
 
@@ -43,9 +43,13 @@
   <div id="header"></div>
     <main role="main"> 
 
-    <header>
-      <h1>✍️ Leave a Comment or Feedback</h1>
-    </header>
+      <header class="comments-hero">
+        <div class="comments-badge">💛 Bible for All</div>
+        <h1 class="comments-title">Leave a Review</h1>
+        <p class="comments-subtitle">
+          Your feedback is very important. It helps make the site warmer, clearer, and more helpful.
+        </p>
+      </header>
 
     <section class="comments-form">
       <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
@@ -56,19 +60,19 @@
         </p>
 
         <div class="form-group">
-          <label for="name">Your Name:</label>
+          <label for="name">Your Name</label>
           <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
-          <label for="email">Your Email (optional):</label>
+          <label for="email">Your Email <span class="optional-text">(optional)</span></label>
           <input type="email" id="email" name="email" placeholder="you@example.com">
-          <small class="form-note">Your email will not be published.</small>
+          <small class="form-note">We do not publish your email.</small>
         </div>
       
         <div class="form-group">
-          <label for="message">Your Comments:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <label for="message">Your Comment or Review</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Share what was helpful to you or what especially resonated with you..."></textarea>
         </div>
 
         <div style="text-align: center; margin-top: 20px;">

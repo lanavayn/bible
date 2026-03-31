@@ -15,7 +15,7 @@
   <title>Оставьте комментарий или отзыв</title>
 
   <!-- ✅ SEO Meta Tags -->
-  <<meta name="description" content="Поделитесь своими мыслями или отзывами о вдохновляющих стихах из Библии. Доступно на русском и английском.">
+  <meta name="description" content="Поделитесь своими мыслями или отзывами о вдохновляющих стихах из Библии. Доступно на русском и английском.">
   <meta name="keywords" content="Библия, отзывы, комментарии, Писание, стихи, христианство, русская Библия, английская Библия">
   <meta name="author" content="Lana Vayner">
 
@@ -44,45 +44,52 @@
     <div id="header"></div>
     <main role="main"> 
 
-      <header>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h1>✍️ Оставьте комментарий или отзыв</h1>
+      <header class="comments-hero">
+        <!--<div class="comments-badge">💛 Bible for All</div>-->        
+        <div class="comments-badge">💛 Bible for All</div>
+        <h1 class="comments-title">Оставьте отзыв</h1>
+        <p class="comments-subtitle">
+          Ваше мнение очень важно. Оно помогает сделать сайт теплее, понятнее и полезнее.
+        </p>
+      
+      <section class="comments-form comments-form-modern">
+        <div class="comments-card">
+          <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
+            <input type="hidden" name="form-name" value="comments">
+      
+            <p style="display:none">
+              <label>Don’t fill this out: <input name="bot-field"></label>
+            </p>
+      
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+      
+            <div class="form-group">
+              <label for="email">Ваш Email <span class="optional-text">(необязательно)</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+              <small class="form-note">Мы не публикуем ваш email.</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Ваш комментарий или отзыв</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Поделитесь, что вам было полезно или особенно откликнулось..."></textarea>
+            </div>
+      
+            <button type="submit" class="comments-submit-btn">Отправить отзыв</button>
+          </form>
+      
+          <div id="confirmation" class="confirmation-message">
+            <div class="confirmation-icon">✨</div>
+            <div class="confirmation-title">Спасибо за ваш отзыв!</div>
+            <div class="confirmation-text">
+              Ваш комментарий успешно отправлен.
+            </div>
+          </div>
         </div>
-      </header>
+      </section>
 
-      <section class="comments-form">
-        <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
-          <input type="hidden" name="form-name" value="comments">
-
-          <p style="display:none">
-            <label>Don’t fill this out: <input name="bot-field"></label>
-          </p>
-
-          <div class="form-group">
-            <label for="name">Ваше Имя:</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Ваш Email (необязательно):</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com">
-            <small class="form-note">Мы не публикуем ваш email.</small>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Оставьте комментарий или отзыв:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-
-          <div style="text-align: center; margin-top: 20px;">
-            <button type="submit">Отправить</button>
-          </div>
-        </form>
-
-      <div id="confirmation" class="confirmation-message">
-      🎉 Спасибо за ваш комментарий!
-      </div>
-    </section>
     </main> 
     <footer class="footer">
       © 2025 Bible for All. Все права защищены.
