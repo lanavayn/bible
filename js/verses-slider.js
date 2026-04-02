@@ -16,10 +16,10 @@
   
     // ====== UTIL / I18N ======
     const I18N = {
-      ru: { title:'🌟 Стихи из Библии — слайдер', modalTitle:'Толкование', close:'Закрыть', prev:'Назад', next:'Вперёд', langLabel:'Язык',
-            btnInterp:'Толкование', btnFull:'Полный текст ↗' },
-      en: { title:'🌟 Bible Verses — Slider',   modalTitle:'Interpretation', close:'Close',  prev:'Previous', next:'Next', langLabel:'Language',
-            btnInterp:'Interpretation', btnFull:'Read full ↗' }
+      ru: { title:'📖 Стихи из Библии — слайдер', modalTitle:'Толкование', close:'Закрыть', prev:'Назад', next:'Вперёд', langLabel:'Язык',
+            btnFull:'Полный текст ↗' },
+      en: { title:'📖 Bible Verses — Slider',   modalTitle:'Interpretation', close:'Close',  prev:'Previous', next:'Next', langLabel:'Language',
+            btnFull:'Read full ↗' }
     };
     const $ = sel => document.querySelector(sel);
     const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -166,7 +166,6 @@
           <div class="ref">${esc(toLangRef(item.reference,currentLang))}</div>
           <div class="verse">${esc(verse)}</div>
           <div class="actions">
-            <button data-interp="${esc(interp)}">${esc(t.btnInterp)}</button>
             <a class="link" target="_blank" rel="noopener" href="${esc(link)}">${esc(t.btnFull)}</a>
           </div>`;
         slidesEl.appendChild(slide);
@@ -238,9 +237,7 @@
       }
   
       // modal
-      document.body.addEventListener('click', e=>{
-        if(e.target.matches('.actions button')){ modalText.textContent=e.target.dataset.interp||''; backdrop.style.display='grid'; }
-      });
+
       const hide=()=>{ backdrop.style.display='none'; };
       closeModal.addEventListener('click', hide);
       backdrop.addEventListener('click', e=>{ if(e.target===backdrop) hide(); });

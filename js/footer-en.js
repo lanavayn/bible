@@ -3,7 +3,8 @@ document.getElementById("footer").innerHTML = `
       <div class="source-note">
         <p><strong>📚 Sources:</strong></p>        
         <p class="bible-link-note">🔹 Bible text references: <a href="https://www.esv.org/" target="_blank">ESV.org</a> — English Standard Version (ESV), Crossway.</p>
-        <p>🔹 Some explanations are based on classic Christian commentaries (John Chrysostom, Matthew Henry, John Gill, and others).</p>
+        <p>🔹 All texts are presented according to the Synodal translation of the Bible.</p>
+        <p>🔹 The website features biblical texts and topics for reflection, so that everyone can personally turn to the Word of God.</p>
       </div>
       © 2025 Bible for All. All rights reserved.
     </footer>
