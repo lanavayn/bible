@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!Array.isArray(verses)) {
         throw new Error("JSON format invalid: verses array not found");
       }
-      if (verses.length <= 6) {
+      if (verses.length <= 10) {
         const nav = createTopNav(verses, lang);
         versesContainer.parentElement.insertBefore(nav, versesContainer);
       }
@@ -121,8 +121,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 ×
               </button>
             </div>
+            
             <p class="scripture-interpretation">
-              <strong>${lang === "ru" ? "Этот стих показывает:" : "This verse shows:"}  </strong>
+              <strong>${lang === "ru" ? "Этот стих показывает:" : "This verse shows:"}</strong>
               ${escapeHtml(interpretation)}
             </p>
   

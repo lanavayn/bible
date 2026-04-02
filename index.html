@@ -42,11 +42,10 @@
     <link rel="canonical" href="https://bibleforall.ca/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bible for Everyone</title>
+  <title>Bible for All</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" as="style">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/verses-slider.css">
   <link rel="stylesheet" href="style.css">
@@ -58,25 +57,65 @@
 <body>
   <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.5;">
     <div id="header"></div>
+
     <main role="main"> 
-      <h1 class="hero-title">Explore Bible Answers</h1>
-      <p>Start with one of these topics:</p>
-      <ul class="topic-list">
-        <li><a class="button-link" href="purpose.html">🎯 What is the purpose of life according to the Bible?</a></li>
-        <li><a class="button-link" href="salvation.html">⚖️ Salvation — Law or Grace?</a></li>  
-        <li><a class="button-link" href="sabbath.html">✨ Should we keep the Sabbath in the New Testament?</a></li>      
-        <li><a class="button-link" href="prayFromBible.html">🕊 What does the Lord’s Prayer teach?</a></li>
-        <li><a class="button-link" href="golden-verses.html">🌟 Golden Verses with commentary</a></li>
-        <li><a class="button-link" href="10-commandments.html">📜 10 Commandments with commentary</a></li>        
-      </ul>
-    </main> 
+      <h1 class="hero-title">Explore the Holy Scriptures</h1>
+      <div class="topics-toolbar">
+        <p class="topics-label">Choose a topic to explore:</p>
+        <button id="toggleAllCategoriesBtn" class="toggle-all-inline">
+          Show All<span class="toggle-icon">▾</span>
+        </button>
+      </div>
+
+      <div class="category" data-category="salvation">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🙏 Salvation and Faith</span>
+          <span class="toggle-arrow">▶</span>
+        </div>
+        <ul class="topic-list">
+          <li><a class="button-link" href="purpose.html" onclick="rememberCategory('salvation')">🎯 What is the meaning of life according to the Bible?</a></li>
+          <li><a class="button-link" href="salvation.html" onclick="rememberCategory('salvation')">⚖️ Is salvation by the works of the law or by grace?</a></li>
+        </ul>
+      </div>
+    
+      <div class="category" data-category="law">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>📜 God's Law</span>
+          <span class="toggle-arrow">▶</span>
+        </div>
+        <ul class="topic-list">
+          <li><a class="button-link" href="10-commandments.html" onclick="rememberCategory('law')">📜 What do the Ten Commandments say?</a></li>
+          <li><a class="button-link" href="sabbath.html" onclick="rememberCategory('law')">✨ Should we keep the Sabbath in the New Testament?</a></li>
+        </ul>
+      </div>
+    
+      <div class="category" data-category="prayer">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🙏 Prayer</span>
+          <span class="toggle-arrow">▶</span>
+        </div>
+        <ul class="topic-list">
+          <li><a class="button-link" href="prayFromBible.html" onclick="rememberCategory('prayer')">🕊 What does the Lord’s Prayer teach?</a></li>
+        </ul>
+      </div>
+    
+      <div class="category" data-category="golden">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🌟 Golden Verses</span>
+          <span class="toggle-arrow">▶</span>
+        </div>
+        <ul class="topic-list">
+          <li><a class="button-link" href="golden-verses.html" onclick="rememberCategory('golden')">⭐ Golden Verses — about God's love, salvation, and life with Him</a></li>
+        </ul>
+      </div>
+    </main>
     <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
     <section id="verse-slider" data-use-global-lang="true"></section>
     <section id="book-dates"></section>
     <div id="footer"></div> 
 
   </div>
-  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+  <button onclick="scrollToTop()" id="scrollTopBtn" title="Back to top">
     <img src="images/up-arrow.png" alt="Back to top" />
   </button>
   <script src="js/header-en.js"></script>
@@ -87,12 +126,13 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/verses-slider.js"></script>
   <script src="js/book-dates.js"></script>
+  <script src="js/index-categories.js"></script>
 
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/js/sw.js');
     }
-  </script>
+  </script>  
 
 </body>
 </html>

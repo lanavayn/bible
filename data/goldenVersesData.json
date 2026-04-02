@@ -1,0 +1,226 @@
+{
+    "verses": [
+      {
+        "id": "john316",
+        "topic": {
+          "ru": "Божья любовь",
+          "en": "God’s Love"
+        },
+        "reference_ru": "Иоанна 3:16",
+        "reference_en": "John 3:16",
+        "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
+        "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 3,
+          "verse": "16"
+        },
+        "interpretation_ru": "Бог дарует жизнь вечную через Сына.",
+        "interpretation_en": "God gives eternal life through His Son.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:6",
+            "text_ru": "Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.",
+            "reference_en": "John 14:6",
+            "text_en": "Jesus said to him, “I am the way, and the truth, and the life. No one comes to the Father except through me.”",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 14,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Ефесянам 2:8-9",
+            "text_ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.",
+            "reference_en": "Ephesians 2:8-9",
+            "text_en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.",
+            "verse_ref": {
+              "book": "ephesians",
+              "chapter": 2,
+              "verse": "8-9"
+            }
+          }
+        ]
+      },
+      {
+        "id": "john539",
+        "topic": {
+          "ru": "Писание и Христос",
+          "en": "Scripture and Christ"
+        },
+        "reference_ru": "Иоанна 5:39",
+        "reference_en": "John 5:39",
+        "text_ru": "Исследуйте Писания, ибо вы думаете через них иметь жизнь вечную; а они свидетельствуют о Мне.",
+        "text_en": "You search the Scriptures, for in them you think you have eternal life; and these are they which testify of Me.",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 5,
+          "verse": "39"
+        },
+        "interpretation_ru": "Писание указывает на Христа.",
+        "interpretation_en": "Scripture points to Christ.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:6",
+            "text_ru": "Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.",
+            "reference_en": "John 14:6",
+            "text_en": "Jesus said to him, “I am the way, and the truth, and the life. No one comes to the Father except through me.”",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 14,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 3:16",
+            "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
+            "reference_en": "John 3:16",
+            "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 3,
+              "verse": "16"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ephesians289",
+        "topic": {
+          "ru": "Спасение",
+          "en": "Salvation"
+        },
+        "reference_ru": "Ефесянам 2:8-9",
+        "reference_en": "Ephesians 2:8-9",
+        "text_ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.",
+        "text_en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.",
+        "verse_ref": {
+          "book": "ephesians",
+          "chapter": 2,
+          "verse": "8-9"
+        },
+        "interpretation_ru": "Спасение — дар благодати.",
+        "interpretation_en": "Salvation is a gift of grace.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 3:16",
+            "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
+            "reference_en": "John 3:16",
+            "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 3,
+              "verse": "16"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 14:6",
+            "text_ru": "Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.",
+            "reference_en": "John 14:6",
+            "text_en": "Jesus said to him, “I am the way, and the truth, and the life. No one comes to the Father except through me.”",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 14,
+              "verse": "6"
+            }
+          }
+        ]
+      },
+      {
+        "id": "proverbs356",
+        "topic": {
+          "ru": "Доверие Богу",
+          "en": "Trust in God"
+        },
+        "reference_ru": "Притчи 3:5-6",
+        "reference_en": "Proverbs 3:5-6",
+        "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+        "text_en": "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+        "verse_ref": {
+          "book": "proverbs",
+          "chapter": 3,
+          "verse": "5-6"
+        },
+        "interpretation_ru": "Доверяй Богу, и Он направит.",
+        "interpretation_en": "Trust God, and He will guide you.",
+        "related": [
+          {
+            "reference_ru": "Исаия 41:10",
+            "text_ru": "Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя и помогу тебе, и поддержу тебя десницею правды Моей.",
+            "reference_en": "Isaiah 41:10",
+            "text_en": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 41,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 8:28",
+            "text_ru": "Притом знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.",
+            "reference_en": "Romans 8:28",
+            "text_en": "And we know that for those who love God all things work together for good, for those who are called according to his purpose.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 8,
+              "verse": "28"
+            }
+          }
+        ]
+      },
+      {
+        "id": "psalm231",
+        "topic": {
+          "ru": "Божья забота",
+          "en": "God’s Care"
+        },
+        "reference_ru": "Псалом 22:1",
+        "reference_en": "Psalm 23:1",
+        "text_ru": "Господь — Пастырь мой; я ни в чём не буду нуждаться.",
+        "text_en": "The Lord is my Shepherd; I shall not want.",
+        "verse_ref": {
+          "book": "psalms",
+          "chapter": 23,
+          "verse": "1"
+        },
+        "verse_ref_lang": {
+          "ru": {
+            "book": "psalms",
+            "chapter": 22,
+            "verse": "1"
+          },
+          "en": {
+            "book": "psalms",
+            "chapter": 23,
+            "verse": "1"
+          }
+        },
+        "interpretation_ru": "Господь заботится о Своих.",
+        "interpretation_en": "The Lord cares for His people.",
+        "related": [
+          {
+            "reference_ru": "Исаия 41:10",
+            "text_ru": "Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя и помогу тебе, и поддержу тебя десницею правды Моей.",
+            "reference_en": "Isaiah 41:10",
+            "text_en": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 41,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 4:13",
+            "text_ru": "Всё могу в укрепляющем меня Иисусе Христе.",
+            "reference_en": "Philippians 4:13",
+            "text_en": "I can do all things through Christ who strengthens me.",
+            "verse_ref": {
+              "book": "philippians",
+              "chapter": 4,
+              "verse": "13"
+            }
+          }
+        ]
+      }
+    ]
+  }

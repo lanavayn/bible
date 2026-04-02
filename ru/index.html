@@ -58,16 +58,52 @@
         <div id="header"></div>
         <main role="main"> 
           <h1 class="hero-title">Исследуйте Священное Писание</h1>
-          <p>Выберите одну из тем ниже:</p>          
-            <ul class="topic-list">                 
-              <li><a class="button-link" href="/ru/purpose.html">🎯 В чём смысл жизни по Библии?</a></li>
-              <li><a class="button-link" href="/ru/salvation.html">⚖️ Спасение — по делам закона или по благодати?</a></li>
-              <li><a class="button-link" href="/ru/sabbath.html"> ✨ Нужно ли соблюдать субботу в Новом Завете?</a></li>
-              <li><a class="button-link" href="/ru/prayFromBible.html">🕊 Чему учит молитва «Отче наш»?</a></li>
-              <li><a class="button-link" href="/ru/golden-verses.html">🌟 Золотые стихи с толкованием</a></li>
-              <li><a class="button-link" href="/ru/10-commandments.html">📜 10 заповедей с толкованием</a></li>
-              
-            </ul> 
+          <div class="topics-toolbar">
+            <p class="topics-label">Выберите тему, чтобы узнать больше:</p>
+            <button id="toggleAllCategoriesBtn" class="toggle-all-inline">
+              Показать всё <span class="toggle-icon">▾</span>
+            </button>
+          </div>
+          <div class="category" data-category="salvation">
+            <div class="category-header" onclick="toggleCategory(this)">
+              <span>🙏 Спасение и вера</span>
+              <span class="toggle-arrow">▶</span>
+            </div>
+            <ul class="topic-list">
+              <li><a class="button-link" href="/ru/purpose.html" onclick="rememberCategory('salvation')">🎯 В чём смысл жизни по Библии?</a></li>
+              <li><a class="button-link" href="/ru/salvation.html" onclick="rememberCategory('salvation')">⚖️ Спасение — по делам закона или по благодати?</a></li>
+            </ul>
+          </div>
+         
+          <div class="category" data-category="law">
+              <div class="category-header" onclick="toggleCategory(this)">
+                <span>📜 Закон Божий</span>
+                <span class="toggle-arrow">▶</span>
+              </div>          
+            <ul class="topic-list">
+              <li><a class="button-link" href="/ru/10-commandments.html" onclick="rememberCategory('law')">📜 Что говорят 10 заповедей?</a></li>
+              <li><a class="button-link" href="/ru/sabbath.html" onclick="rememberCategory('law')">✨ Нужно ли соблюдать субботу в Новом Завете?</a></li>
+            </ul>
+          </div>
+          <div class="category" data-category="prayer">
+            <div class="category-header" onclick="toggleCategory(this)">
+              <span>🙏 Молитва</span>
+              <span class="toggle-arrow">▶</span>
+            </div>          
+            <ul class="topic-list">
+              <li><a class="button-link" href="/ru/prayFromBible.html" onclick="rememberCategory('prayer')">🕊 Чему учит молитва «Отче наш»?</a></li>
+            </ul>
+          </div>
+         
+          <div class="category" data-category="golden">
+            <div class="category-header" onclick="toggleCategory(this)">
+              <span>🌟 Золотые стихи</span>
+              <span class="toggle-arrow">▶</span>
+            </div>  
+          <ul class="topic-list">
+            <li><a class="button-link" href="/ru/golden-verses.html" onclick="rememberCategory('golden')">⭐ Золотые стихи — о любви, спасении и вере</a></li>
+          </ul>
+        </div>
         </main> 
         <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
         <section id="verse-slider" data-use-global-lang="true"></section>
@@ -87,12 +123,13 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/js/verses-slider.js"></script>
     <script src="/js/book-dates.js"></script>
+    <script src="/js/index-categories.js"></script>  
 
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/js/sw.js');
       }
-    </script>
+    </script>     
 
 </body>
 </html>
