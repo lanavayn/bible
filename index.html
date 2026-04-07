@@ -109,9 +109,26 @@
         </ul>
       </div>
     </main>
-    <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
-    <section id="verse-slider" data-use-global-lang="true"></section>
-    <section id="book-dates"></section>
+
+    <div class="category" data-category="verse-slider-block">
+      <div class="category-header" onclick="toggleVerseSliderCategory(this)">
+        <span>📖 Bible Verses — Slider</span>
+        <span class="toggle-arrow">▶</span>
+      </div>
+      <ul class="topic-list">
+        <li><section id="verse-slider" data-use-global-lang="true"></section></li>
+      </ul>
+    </div>
+    
+    <div class="category" data-category="book-dates-block">
+      <div class="category-header" onclick="toggleBookDatesCategory(this)">
+        <span>📚 Bible Timeline</span>
+        <span class="toggle-arrow">▶</span>
+      </div>
+      <ul class="topic-list">
+        <li><section id="book-dates"></section></li>
+      </ul>
+    </div>
     <div id="footer"></div> 
 
   </div>
@@ -127,6 +144,19 @@
   <script src="js/verses-slider.js"></script>
   <script src="js/book-dates.js"></script>
   <script src="js/index-categories.js"></script>
+  <script>
+    function toggleVerseSliderCategory(header) {
+      toggleCategory(header);
+  
+      setTimeout(() => {
+        document.dispatchEvent(new Event('verseSliderOpened'));
+      }, 350);
+    }
+  
+    function toggleBookDatesCategory(header) {
+      toggleCategory(header);
+    }
+  </script>
 
   <script>
     if ('serviceWorker' in navigator) {

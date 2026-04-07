@@ -39,13 +39,15 @@
     const dates = isRu ? b.dates_ru : b.dates_en;
     const showBtn = hasDetails(b);
     const btn = showBtn
-      ? `<button class="bd-info" data-id="${b.id}" aria-label="${T().more}">ℹ︎</button>`
+      ? `<button class="bd-info" type="button" data-id="${b.id}">i</button>`
       : "";
-    return `<tr id="book-${b.id}">
-      <td>${name}</td>
-      <td>${dates}</td>
-      <td class="bd-actions" style="text-align:right; white-space:nowrap;">${btn}</td>
-    </tr>`;
+      return `<tr id="book-${b.id}">
+        <td class="bd-book-cell">
+          ${btn}
+          <span class="bd-book-name">${name}</span>
+        </td>
+        <td>${dates}</td>
+      </tr>`;
   }
 
   function tableHTML(arr){
@@ -56,7 +58,6 @@
           <tr>
             <th>${t.thBook}</th>
             <th>${t.thDate}</th>
-            <th style="width:1%">${t.thInfo}</th>
           </tr>
         </thead>
         <tbody>${arr.map(rowHTML).join("")}</tbody>
@@ -150,11 +151,10 @@
 
     const t = T();
     root.innerHTML = `
-      <h2>${t.title}</h2>
-      <input type="search" class="bd-search" placeholder="${t.search}"
-             style="margin:.5rem 0; width:100%; max-width:420px; padding:.5rem .7rem; border:1px solid #eadfbe; border-radius:8px;">
-      <details open><summary><strong>${t.ot}</strong></summary><div class="bd-ot">Загрузка…</div></details>
-      <details><summary><strong>${t.nt}</strong></summary><div class="bd-nt">Загрузка…</div></details>
+        <input type="search" class="bd-search" placeholder="${t.search}"
+          style="margin:.5rem 0; width:100%; max-width:420px; padding:.5rem .7rem; border:1px solid #eadfbe; border-radius:8px;">
+        <details><summary><strong>${t.ot}</strong></summary><div class="bd-ot">Загрузка…</div></details>
+        <details open><summary><strong>${t.nt}</strong></summary><div class="bd-nt">Загрузка…</div></details>
     `;
     modalShell(root);
 
@@ -184,11 +184,16 @@
     // клики по "Подробнее" и закрытие модалки
     root.addEventListener("click", (e) => {
       const btn = e.target.closest(".bd-info");
-      if (btn) {
-        const id = btn.dataset.id;
-        const book = [...(DATA?.ot||[]), ...(DATA?.nt||[])].find(x => x.id===id);
-        if (book) openModal(book);
+      if (e.target.classList.contains("scripture-close")) {
+        const row = e.target.closest(".bd-inline");
+        if (row) row.remove();
+        return;
       }
+      if (!btn) return;
+    
+      const id = btn.dataset.id;
+      const book = [...(DATA?.ot || []), ...(DATA?.nt || [])].find(x => x.id === id);
+      if (book) toggleInlineDetails(btn, book);
     });
     root.querySelector("#bdClose").addEventListener("click", () =>
       (document.getElementById("bdBackdrop").style.display = "none")
@@ -196,6 +201,49 @@
     root.querySelector("#bdBackdrop").addEventListener("click", (e) => {
       if (e.target.id === "bdBackdrop") e.currentTarget.style.display = "none";
     });
+
+    function toggleInlineDetails(button, book) {
+      const tr = button.closest("tr");
+    
+      // если уже открыт — закрываем
+      const next = tr.nextElementSibling;
+      if (next && next.classList.contains("bd-inline")) {
+        next.remove();
+        return;
+      }
+    
+      // закрыть другие открытые
+      document.querySelectorAll(".bd-inline").forEach(el => el.remove());
+    
+      const isRu = getLang() === "ru";
+      const t = T();
+    
+      const title  = isRu ? book.book_ru : book.book_en;
+      const year   = isRu ? (book.year_ru || book.dates_ru) : (book.year_en || book.dates_en);
+      const place  = isRu ? book.place_ru : book.place_en;
+      const author = isRu ? (book.author_ru || "—") : (book.author_en || book.author_ru || "—");
+      const anno   = isRu ? (book.anno_ru || "") : (book.anno_en || book.anno_ru || "");
+    
+      const html = `
+        <tr class="bd-inline">
+          <td colspan="2">
+            <div class="bd-inline-box">
+              <strong>${title}</strong>
+              <div class="scripture-close-row">
+                <button class="scripture-close" type="button">×</button>
+              </div>
+              <br>
+              <strong>${t.authorLabel}:</strong> ${author}<br>
+              <strong>${isRu ? 'Годы' : 'Dates'}:</strong> ${year}<br>
+              ${place ? `<strong>${isRu ? 'Место' : 'Place'}:</strong> ${place}<br>` : ""}
+              ${anno ? `<strong>${t.annoLabel}:</strong> ${anno}` : ""}
+            </div>
+          </td>
+        </tr>
+      `;
+    
+      tr.insertAdjacentHTML("afterend", html);
+    }
   }
 
   document.addEventListener("keydown", (e) => {
@@ -203,3 +251,17 @@
   });
   document.addEventListener("DOMContentLoaded", () => init());
 })();
+
+setTimeout(() => {
+  const section = document.querySelector('#book-dates');
+  if (!section) return;
+
+  let parent = section.closest('.topic-list');
+
+  while (parent) {
+    if (parent.style.maxHeight) {
+      parent.style.maxHeight = parent.scrollHeight + 'px';
+    }
+    parent = parent.parentElement;
+  }
+}, 0);

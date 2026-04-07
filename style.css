@@ -192,12 +192,9 @@ h1,
 .topic-list {
   list-style: none;
   padding-left: 0;
-  margin-top: var(--space-4);
+  margin-top: none !important;
 }
 
-.topic-list li {
-  margin-bottom: 0.375rem;
-}
 
 .button-link {
   display: inline-block;
@@ -911,9 +908,7 @@ li {
   padding-left: 0;
   margin-top: 1rem;
 }
-.topic-list li {
-  margin-bottom: 6px;
-}
+
 
 .button-link {
   display: inline-block;
@@ -1314,6 +1309,41 @@ table.book-dates th:nth-child(3) {
   padding-left: 0;
 }
 
+.bd-book-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bd-book-name {
+  flex: 1;
+}
+
+.bd-info {
+  flex-shrink: 0;
+}
+
+.bd-info {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bd-inline-box {
+  position: relative;
+  background: #f8f3fb;
+  border: 1px solid #e6dcef;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* 📱 Medium phones */
 @media (max-width: 640px) {
   table.book-dates th, 
@@ -1359,16 +1389,21 @@ table.book-dates th:nth-child(3) {
 
 
 .book-dates .bd-actions .bd-info {
-  display: inline-block;
-  width: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
   height: 34px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 34px;
-  font-weight: bold;
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  cursor: pointer;
+  background: red;
+  color: white;
+  border: 2px solid blue;
+  padding: 0 8px;
+}
+
+.book-dates .bd-actions .bd-info-icon {
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
 }
 
 .book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
@@ -1580,19 +1615,6 @@ section div:has(.info-btn) .years { margin: 0; }
   content: "▴";                      /* стрелка вверх (открыто) */
 }
 
-/* Выравниваем название книги и иконку ℹ в одну строку */
-.book-dates td:first-child {
-  display: flex;
-  justify-content: space-between;  /* название слева, иконка справа */
-  align-items: center;             /* по вертикали по центру */
-  gap: 8px;                        /* немного воздуха между текстом и кнопкой */
-}
-
-/* убираем лишнюю ячейку для кнопки
-.book-dates td:nth-child(3) {
-  display: none;
-} */
-
 /* Мобильная строка-карточка: title + ℹ в первой строке, даты ниже */
 @media (max-width: 480px) {
   .book-dates tbody tr {
@@ -1762,7 +1784,7 @@ abbr[title]:focus::after {
   background: #f5f6ff;
   padding: 12px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 /* explanation title */
@@ -2605,10 +2627,14 @@ abbr[title]:focus::after {
 .category.open .topic-list li:nth-child(4) { transition-delay: 0.16s; }
 
 .category.open .topic-list {
-  max-height: 500px;
+  max-height: none;
   opacity: 1;
-  margin-top: 0.7rem;
+  margin-top: 0;
   transform: translateY(0);
+}
+
+#verse-slider .status:empty {
+  display: none;
 }
 
 .scripture-full-text {
@@ -2769,3 +2795,232 @@ abbr[title]:focus::after {
   line-height: 1.7;
   color: #4b3621;
 }
+
+.verse-details {
+  display: none;
+  margin-top: 16px;
+}
+
+.verse-note-box {
+  background: #f3eef5;
+  border: 1px solid #d8cfe0;
+  border-radius: 10px;
+  padding: 10px 10px 8px;
+}
+
+.verse-close-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.verse-close {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #8c858d;
+}
+
+.verse-reflection {
+  margin: 0 0 16px;
+}
+
+.verse-related-title {
+  margin: 0 0 8px;
+}
+
+.verse-related-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.verse-related-item {
+  margin: 8px 0;
+}
+
+.verse-related-ref {
+  text-decoration: underline;
+}
+
+/* ===== Verses slider improvements ===== */
+
+.verse-slider .swiper {
+  padding-bottom: 1.2rem;
+}
+
+.verse-slider .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.verse-slider .actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.3rem;
+}
+
+.verse-slider .swiper-pagination {
+  position: static !important;
+  margin: 0.2rem 0 0.9rem;
+  text-align: center;
+}
+
+.verse-slider .verse-details {
+  margin-top: 0;
+}
+
+.verse-slider .related-btn,
+.verse-slider .link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.verse-slider .related-btn {
+  background: #f7efe9;
+  border: 1px solid #e7d7cf;
+  color: #8b5e5e;
+}
+
+.verse-slider .related-btn:hover {
+  background: #f3e7df;
+  transform: translateY(-1px);
+}
+
+.verse-slider .link {
+  background: #f6e6eb;
+  border: 1px solid #e7cfd8;
+  color: #8a4d67;
+}
+
+.verse-slider .link:hover {
+  background: #f1dce3;
+  transform: translateY(-1px);
+}
+
+.verse-slider .verse-note-box {
+  background: #f8f3fb;
+  border: 1px solid #e6dcef;
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  position: relative;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
+}
+
+.verse-slider .verse-reflection {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.verse-slider .verse-related-title {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+}
+
+.verse-slider .verse-related-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.verse-slider .verse-related-item {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+.verse-slider .verse-close-row {
+  position: absolute;
+  top: 0;
+  right: 0.45rem;
+}
+
+.verse-slider .verse-close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #8c7c8c;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.verse-slider .verse-close:hover {
+  opacity: 1;
+}
+
+/* === Tighten space above Bible Verses slider === */
+.category[data-category="verse-slider-block"] .topic-list {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.category[data-category="verse-slider-block"].open .topic-list {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#verse-slider {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#verse-slider .status:empty {
+  display: none !important;
+}
+
+#verse-slider .verse-slider {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#verse-slider .swiper {
+  margin-top: 0 !important;
+}
+
+#verse-slider .swiper-slide {
+  margin-top: 0 !important;
+}
+
+/* ===== Homepage category spacing system ===== */
+.category {
+  margin-bottom: var(--category-gap);
+}
+
+.category:last-of-type {
+  margin-bottom: 0;
+}
+
+.category-header {
+  margin: 0;
+  padding: 0;
+}
+
+.category .topic-list {
+  margin-top: var(--category-inner-gap) !important;
+}
+
+.category .topic-list > li,
+.category .topic-list > .button-link,
+.category .topic-list > div,
+.category .topic-list > section {
+  margin-bottom: 8px;
+}
+
+.category .topic-list > *:last-child {
+  margin-bottom: 0;
+}
+
