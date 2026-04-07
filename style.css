@@ -1387,19 +1387,6 @@ table.book-dates th:nth-child(3) {
   }
 }
 
-
-.book-dates .bd-actions .bd-info {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 60px;
-  height: 34px;
-  background: red;
-  color: white;
-  border: 2px solid blue;
-  padding: 0 8px;
-}
-
 .book-dates .bd-actions .bd-info-icon {
   font-size: 16px;
   color: white;
@@ -1460,46 +1447,7 @@ table td:nth-child(3) {
   background: #f5f5f5;
   border: 1px solid #ccc;
 }
-/* 📱 Super-small phones: turn rows into cards */
-@media (max-width: 480px) {
-  .book-dates thead { display: none; }
 
-  .book-dates tbody tr {
-    display: block;
-    background: #fffdf5;
-    border: 1px solid #eadfbe;
-    border-radius: 10px;
-    padding: 6px 10px;
-    margin-bottom: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.05);
-  }
-
-  .book-dates td {
-    display: block;
-    width: auto !important;
-    padding: 4px 0;
-  }
-
-  .book-dates td:nth-child(1) { 
-    font-weight: 700; 
-    font-size: 1.05em; 
-    margin-bottom: 4px;
-  }
-
-  .book-dates td:nth-child(2) { 
-    color: #5b4228;
-  }
-
-  .book-dates td:nth-child(3) { 
-    text-align: right; 
-    margin-top: 6px; 
-  }
-
-  /* компактная иконка ℹ︎ на маленьких телефонах */
-  .book-dates .bd-actions .bd-info {
-    width: 34px; height: 34px; line-height: 34px;
-  }
-}
 /* Заголовок и поиск внутри блока #book-dates */
 #book-dates h2 {
   text-align: center;
@@ -1615,38 +1563,6 @@ section div:has(.info-btn) .years { margin: 0; }
   content: "▴";                      /* стрелка вверх (открыто) */
 }
 
-/* Мобильная строка-карточка: title + ℹ в первой строке, даты ниже */
-@media (max-width: 480px) {
-  .book-dates tbody tr {
-    display: grid;
-    grid-template-columns: 1fr auto;  /* название растягивается, ℹ — справа */
-    grid-template-rows: auto auto;    /* 1-я строка: title+ℹ, 2-я: даты */
-    align-items: center;
-    padding: 6px 10px;
-    gap: 2px 8px;                     /* чуть воздуха между колонками */
-  }
-
-  /* убираем принудительный block-режим, заданный выше, и раскладываем по сетке */
-  .book-dates td { display: block; padding: 4px 0; }
-
-  .book-dates td:nth-child(1) {      /* Название книги */
-    grid-column: 1; 
-    grid-row: 1;
-    margin: 0;
-  }
-  .book-dates td:nth-child(3) {      /* Кнопка ℹ */
-    grid-column: 2; 
-    grid-row: 1;
-    text-align: right;
-    margin: 0;
-  }
-  .book-dates td:nth-child(2) {      /* Даты */
-    grid-column: 1 / span 2; 
-    grid-row: 2;
-    margin-top: 2px;
-    color: #5b4228;
-  }
-}
 abbr[title] {
   text-decoration: underline dotted;
   cursor: help;
@@ -3328,4 +3244,18 @@ abbr[title]:focus::after {
 .verse-slider .swiper-button-prev.swiper-button-disabled,
 .verse-slider .swiper-button-next.swiper-button-disabled {
   display: none !important;
+}
+
+/* ===== Table headers — make lighter ===== */
+
+table.book-dates th {
+  font-size: 0.78rem;   /* меньше */
+  font-weight: 500;     /* не bold */
+  color: #8a7a6a;       /* мягкий цвет */
+  letter-spacing: 0.02em;
+}
+
+/* если хочешь ещё аккуратнее */
+table.book-dates th:nth-child(2) {
+  text-align: left; /* чтобы не было слишком далеко */
 }
