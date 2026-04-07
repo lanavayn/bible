@@ -359,11 +359,23 @@
     if (swiper) swiper.destroy(true, true);
 
     swiper = new Swiper('.swiper', {
-      loop:false,
-      pagination:{ el:'.swiper-pagination', clickable:true },
-      navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev' },
-      keyboard:{ enabled:true },
-      autoHeight:true
+      loop: false,
+      speed: 380,
+      spaceBetween: 16,
+      grabCursor: true,
+      centeredSlides: false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      keyboard: {
+        enabled: true
+      },
+      autoHeight: true
     });
 
     if (!keepIndex) {
