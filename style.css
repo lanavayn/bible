@@ -3233,4 +3233,5 @@ table.book-dates th {
 /* если хочешь ещё аккуратнее */
 table.book-dates th:nth-child(2) {
   text-align: left; /* чтобы не было слишком далеко */
+  white-space: nowrap;
 }
