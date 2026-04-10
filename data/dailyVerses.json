@@ -1,9 +1,107 @@
 {
     "verses": [
       {
+        "id": "daily-2026-04-05",
+        "date": "2026-04-05",
+        "day": 1,
+        "topic": {
+          "ru": "Воскресение",
+          "en": "Resurrection"
+        },
+      
+        "reference_ru": "Матфея 28:6",
+        "reference_en": "Matthew 28:6",
+      
+        "text_ru": "Его нет здесь — Он воскрес, как сказал. Подойдите, посмотрите место, где лежал Господь.",
+        "text_en": "He is not here, for He has risen, as He said. Come, see the place where the Lord lay.",
+      
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 28,
+          "verse": "6"
+        },
+      
+        "interpretation_ru": "Христос воскрес, и Его слово исполнилось.",
+        "interpretation_en": "Christ is risen, and His word was fulfilled.",
+      
+        "related": [
+          {
+            "reference_ru": "Луки 24:6-7",
+            "reference_en": "Luke 24:6-7",
+            "text_ru": "Его нет здесь: Он воскрес; вспомните, как Он говорил вам, когда был еще в Галилее.",
+            "text_en": "He is not here, but has risen. Remember how He told you, while He was still in Galilee.",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 24,
+              "verse": "6-7"
+            }
+          },
+          {
+            "reference_ru": "1 Коринфянам 15:20",
+            "reference_en": "1 Corinthians 15:20",
+            "text_ru": "Но Христос воскрес из мертвых, первенец из умерших.",
+            "text_en": "But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.",
+            "verse_ref": {
+              "book": "1-corinthians",
+              "chapter": 15,
+              "verse": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-04-06",
+        "date": "2026-04-06",
+        "day": 2,
+        "topic": {
+          "ru": "Новая жизнь",
+          "en": "New Life"
+        },
+      
+        "reference_ru": "Иоанна 11:25",
+        "reference_en": "John 11:25",
+      
+        "text_ru": "Иисус сказал ей: Я есмь воскресение и жизнь; верующий в Меня, если и умрет, оживет.",
+        "text_en": "Jesus said to her, I am the resurrection and the life. Whoever believes in Me, though he die, yet shall he live.",
+      
+        "verse_ref": {
+          "book": "john",
+          "chapter": 11,
+          "verse": "25"
+        },
+      
+        "interpretation_ru": "Во Христе — воскресение и новая жизнь.",
+        "interpretation_en": "In Christ there is resurrection and new life.",
+      
+        "related": [
+          {
+            "reference_ru": "Римлянам 10:9",
+            "reference_en": "Romans 10:9",
+            "text_ru": "Ибо если устами твоими будешь исповедовать Иисуса Господом и сердцем твоим веровать, что Бог воскресил Его из мертвых, то спасешься.",
+            "text_en": "Because, if you confess with your mouth that Jesus is Lord and believe in your heart that God raised Him from the dead, you will be saved.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 10,
+              "verse": "9"
+            }
+          },
+          {
+            "reference_ru": "1 Петра 1:3",
+            "reference_en": "1 Peter 1:3",
+            "text_ru": "Благословен Бог и Отец Господа нашего Иисуса Христа, по великой Своей милости возродивший нас воскресением Иисуса Христа из мертвых к упованию живому.",
+            "text_en": "Blessed be the God and Father of our Lord Jesus Christ. According to His great mercy, He has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead.",
+            "verse_ref": {
+              "book": "1-peter",
+              "chapter": 1,
+              "verse": "3"
+            }
+          }
+        ]
+      },
+      {
         "id": "daily-2026-04-07",
         "date": "2026-04-07",
-        "day": 1,
+        "day": 3,
         "topic": {
           "ru": "Божья любовь",
           "en": "God’s Love"
@@ -53,7 +151,7 @@
       {
         "id": "daily-2026-04-08",
         "date": "2026-04-08",
-        "day": 2,
+        "day": 4,
         "topic": {
           "ru": "Доверие Богу",
           "en": "Trust in God"
@@ -110,7 +208,7 @@
       {
         "id": "daily-2026-04-09",
         "date": "2026-04-09",
-        "day": 3,
+        "day": 5,
         "topic": {
           "ru": "Смысл жизни",
           "en": "Purpose of Life"
@@ -159,7 +257,7 @@
       {
         "id": "daily-2026-04-10",
         "date": "2026-04-10",
-        "day": 4,
+        "day": 6,
         "topic": {
           "ru": "Доверие Богу",
           "en": "Trust in God"
@@ -207,7 +305,7 @@
       {
         "id": "daily-2026-04-11",
         "date": "2026-04-11",
-        "day": 5,
+        "day": 7,
         "topic": {
           "ru": "Плод доверия",
           "en": "The Fruit of Trust"
@@ -256,7 +354,7 @@
       {
         "id": "daily-2026-04-12",
         "date": "2026-04-12",
-        "day": 6,
+        "day": 8,
         "topic": {
           "ru": "Покой во Христе",
           "en": "Rest in Christ"
