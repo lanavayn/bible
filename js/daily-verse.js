@@ -36,10 +36,7 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         return;
       }
   
-      const today = getTodayLocalISO();
-      let currentIndex = verses.findIndex(v => v.date === today);
-  
-      if (currentIndex === -1) currentIndex = 0;
+      let currentIndex = 0;
   
       function renderCard(index) {
         const verse = verses[index];
@@ -122,7 +119,7 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
 
             <div class="daily-verse-text-wrap">
             ${
-                verses.length > 1
+              verses.length > 1 && index > 0
                 ? `<button class="dv-arrow dv-left" type="button" aria-label="${ui[lang].prev}">‹</button>`
                 : ""
             }
@@ -130,7 +127,7 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
             ${text ? `<blockquote class="daily-verse-text">${escapeHtml(text)}</blockquote>` : ""}
 
             ${
-                verses.length > 1
+              verses.length > 1 && index < verses.length - 1
                 ? `<button class="dv-arrow dv-right" type="button" aria-label="${ui[lang].next}">›</button>`
                 : ""
             }
@@ -216,14 +213,14 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
 
         if (prevBtn) {
           prevBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + verses.length) % verses.length;
+            currentIndex = currentIndex - 1;
             renderCard(currentIndex);
           });
         }
   
         if (nextBtn) {
           nextBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % verses.length;
+            currentIndex = currentIndex + 1;
             renderCard(currentIndex);
           });
         }
