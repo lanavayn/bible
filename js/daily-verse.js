@@ -86,7 +86,7 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
                 type="button"
                 aria-label="${lang === 'ru' ? 'Закрыть' : 'Close'}"
                 title="${lang === 'ru' ? 'Закрыть' : 'Close'}"
-                >✕</button>
+                >×</button>
             </div>
             </div>
 
