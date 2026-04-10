@@ -259,45 +259,41 @@
         "date": "2026-04-10",
         "day": 6,
         "topic": {
-          "ru": "Доверие Богу",
-          "en": "Trust in God"
+          "ru": "Мир с Богом",
+          "en": "Peace with God"
         },
-      
-        "reference_ru": "Притчи 3:5-6",
-        "reference_en": "Proverbs 3:5-6",
-      
-        "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
-        "text_en": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to Him, and He will make your paths straight.",
-      
+        "reference_ru": "Римлянам 5:1",
+        "reference_en": "Romans 5:1",
+        "text_ru": "Итак, оправдавшись верою, мы имеем мир с Богом через Господа нашего Иисуса Христа.",
+        "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
         "verse_ref": {
-          "book": "proverbs",
-          "chapter": 3,
-          "verse": "5-6"
+          "book": "Romans",
+          "chapter": 5,
+          "verse": "1"
         },
-      
-        "interpretation_ru": "Доверяй Богу, и Он направит твой путь.",
-        "interpretation_en": "Trust God, and He will guide your path.",
-      
+        "interpretation_ru": "Через веру во Христа человек получает мир с Богом.",
+        "interpretation_en": "Through faith in Christ, a person receives peace with God.",
         "related": [
           {
-            "reference_ru": "Псалом 36:5",
-            "reference_en": "Psalm 37:5",
-            "text_ru": "Предай Господу путь твой и уповай на Него, и Он совершит.",
-            "text_en": "Commit your way to the Lord; trust in Him, and He will act.",
-            "verse_ref_lang": {
-              "ru": { "book": "psalm", "chapter": 36, "verse": "5" },
-              "en": { "book": "psalm", "chapter": 37, "verse": "5" }
+            "reference_ru": "Иоанна 14:27",
+            "reference_en": "John 14:27",
+            "text_ru": "Мир оставляю вам, мир Мой даю вам.",
+            "text_en": "Peace I leave with you; my peace I give to you.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 14,
+              "verse": "27"
             }
           },
           {
-            "reference_ru": "Исаия 26:4",
-            "reference_en": "Isaiah 26:4",
-            "text_ru": "Уповайте на Господа вовеки, ибо Господь Бог есть твердыня вечная.",
-            "text_en": "Trust in the Lord forever, for the Lord God is an everlasting rock.",
+            "reference_ru": "Филиппийцам 4:7",
+            "reference_en": "Philippians 4:7",
+            "text_ru": "И мир Божий, который превыше всякого ума, соблюдет сердца ваши и помышления ваши во Христе Иисусе.",
+            "text_en": "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.",
             "verse_ref": {
-              "book": "isaiah",
-              "chapter": 26,
-              "verse": "4"
+              "book": "Philippians",
+              "chapter": 4,
+              "verse": "7"
             }
           }
         ]
