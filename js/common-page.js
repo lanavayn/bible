@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
             
             <p class="scripture-interpretation">
-              <strong>${lang === "ru" ? "Этот стих показывает:" : "This verse shows:"}</strong>
+              <strong>${lang === "ru" ? "Размышление:" : "Reflection:"}</strong>
               ${escapeHtml(interpretation)}
             </p>
   
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 ? `
               <div class="scripture-related-block">
                 <p class="scripture-related-title">
-                  <strong>${lang === "ru" ? "Писание объясняет дальше:" : "Scripture explains further:"}</strong>
+                  <strong>${lang === "ru" ? "См. также в Писании:" : "See also in Scripture:"}</strong>
                 </p>
                 <ul class="scripture-related-list">
                   ${related.map(rel => renderRelatedItem(rel, lang)).join("")}

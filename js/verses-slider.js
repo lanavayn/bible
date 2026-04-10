@@ -24,7 +24,7 @@
       btnFull:'Полный текст ↗',
       btnRelated:'Размышление + ссылки',
       reflectionLabel:'Размышление',
-      relatedLabel:'См. также',
+      relatedLabel:'См. также в Писании',
       noExtra:'Нет дополнительных данных.',
       closeLabel:'Закрыть'
     },
@@ -35,7 +35,7 @@
       btnFull:'Read full ↗',
       btnRelated:'Reflection + links',
       reflectionLabel:'Reflection',
-      relatedLabel:'See also',
+      relatedLabel:'See also in Scripture',
       noExtra:'No additional data.',
       closeLabel:'Close'
     }
@@ -119,6 +119,8 @@
       .map(r => ({
         id: String(r.id || '').trim(),
         reference: String(r.reference || '').trim(),
+        topic_en: String(r.topic_en || '').trim(),
+        topic_ru: String(r.topic_ru || '').trim(),
         verse_en: String(r.verse_en || ''),
         verse_ru: String(r.verse_ru || ''),
         reflection_en: String(r.reflection_en || r.interp_en || ''),
@@ -153,6 +155,10 @@
     if (isHttpUrl(item.link_en)) return item.link_en;
     const ref = toLangRef(item.reference,'en').trim();
     return ref ? `https://www.esv.org/${encodeURIComponent(ref)}/` : 'https://www.esv.org/';
+  }
+
+  function getTopic(item, lang){
+    return String(lang === 'ru' ? item.topic_ru : item.topic_en || '').trim();
   }
 
   function compactRelatedReferences(refs, links){
@@ -323,35 +329,78 @@
     slidesEl.innerHTML = '';
     const t = I18N[currentLang] || I18N.ru;
 
-    for(const item of items){
+    for(const item of items) {
       const verse = currentLang === 'ru' ? item.verse_ru : item.verse_en;
       const link = computeLink(item, currentLang);
-
+      const topic = getTopic(item, currentLang);
+      const refText = toLangRef(item.reference, currentLang);
+    
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
       slide.innerHTML = `
-        <div class="ref">${esc(toLangRef(item.reference, currentLang))}</div>
-        <div class="verse">${esc(verse)}</div>
-
-        <div class="actions">
-          <button
-            type="button"
-            class="related-btn"
-            data-id="${esc(item.id)}"
-            data-target="details-${esc(item.id)}"
+        <section class="scripture-item verse-slide-item">
+          ${
+            topic
+              ? `
+                <h3 class="scripture-heading">
+                  <span class="scripture-topic">${esc(topic)} —</span>
+                  <span class="scripture-topic">${esc(refText)}</span>
+                  ${
+                    link
+                      ? `<a class="scripture-book-link main-book-link"
+                           href="${esc(link)}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-tooltip="${esc(currentLang === 'ru' ? 'Открыть в Библии' : 'Open in Bible')}"
+                           aria-label="${esc(currentLang === 'ru' ? 'Открыть в Библии' : 'Open in Bible')}"
+                           title="${esc(currentLang === 'ru' ? 'Открыть в Библии' : 'Open in Bible')}">
+                           <span class="book-icon">&#128214;</span>
+                         </a>`
+                      : ''
+                  }
+                </h3>
+              `
+              : `
+                <div class="ref-row">
+                  <div class="ref">${esc(refText)}</div>
+                  ${
+                    link
+                      ? `<a class="scripture-book-link main-book-link"
+                           href="${esc(link)}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-tooltip="${esc(currentLang === 'ru' ? 'Открыть в Библии' : 'Open in Bible')}"
+                           aria-label="${esc(currentLang === 'ru' ? 'Открыть в Библии' : 'Open in Bible')}"
+                           title="${esc(currentLang === 'ru' ? 'Открыть в Библии' : 'Open in Bible')}">
+                           <span class="book-icon">&#128214;</span>
+                         </a>`
+                      : ''
+                  }
+                </div>
+              `
+          }
+    
+          <div class="verse">${esc(verse)}</div>
+    
+          <div class="actions">
+            <button
+              type="button"
+              class="related-btn"
+              data-id="${esc(item.id)}"
+              data-target="details-${esc(item.id)}"
+            >
+              ${esc(t.btnRelated)}
+            </button>
+          </div>
+    
+          <div
+            class="verse-details"
+            id="details-${esc(item.id)}"
+            style="display:${keepDetailsOpen ? 'block' : 'none'};"
           >
-            ${esc(t.btnRelated)}
-          </button>
-          <a class="link" target="_blank" rel="noopener" href="${esc(link)}">${esc(t.btnFull)}</a>
-        </div>
-
-        <div
-           class="verse-details"
-           id="details-${esc(item.id)}"
-           style="display:${keepDetailsOpen ? 'block' : 'none'};"
-        >
-          ${buildDetailsContent(item, currentLang)}
-        </div>
+            ${buildDetailsContent(item, currentLang)}
+          </div>
+        </section>
       `;
       slidesEl.appendChild(slide);
     }
@@ -487,6 +536,8 @@
     } else {
       cachedItems = [{
         id:'matt-8-19',
+        topic_en:'Following Jesus',
+        topic_ru:'Следование за Иисусом',
         reference:'Matthew 8:19',
         verse_en:'And a scribe came up and said to him, “Teacher, I will follow you wherever you go.”',
         verse_ru:'Тогда один книжник, подойдя, сказал Ему: Учитель! я пойду за Тобою, куда бы Ты ни пошел.',

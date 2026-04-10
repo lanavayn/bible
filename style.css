@@ -381,17 +381,6 @@ h1,
 }
 
 /* ===== Scripture system ===== */
-
-.scripture-item {
-  margin-bottom: 1.75rem;
-}
-
-.scripture-heading {
-  margin-bottom: 0.625rem;
-  line-height: 1.5;
-  font-size: 1.1rem;
-}
-
 .scripture-topic {
   font-weight: 700;
 }
@@ -1087,13 +1076,6 @@ li {
   font-size: 0.95em;
   color: #5f5f5f;
   margin-top: 6px;
-}
-
-.verse {
-  background: rgba(255,255,255,0.8);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
 }
 
 #scrollTopBtn {
@@ -2687,88 +2669,63 @@ abbr[title]:focus::after {
   color: #4b3621;
 }
 
-.verse-details {
-  display: none;
-  margin-top: 16px;
-}
-
-.verse-note-box {
-  background: #f3eef5;
-  border: 1px solid #d8cfe0;
-  border-radius: 10px;
-  padding: 10px 10px 8px;
-}
-
-.verse-close-row {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0;
-}
-
-.verse-close {
-  border: none;
-  background: transparent;
-  font-size: 24px;
-  line-height: 1;
-  cursor: pointer;
-  color: #8c858d;
-}
-
-.verse-reflection {
-  margin: 0 0 16px;
-}
-
-.verse-related-title {
-  margin: 0 0 8px;
-}
-
-.verse-related-list {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.verse-related-item {
-  margin: 8px 0;
-}
-
-.verse-related-ref {
-  text-decoration: underline;
-}
-
-/* ===== Verses slider improvements ===== */
+/* ===== Verses Slider ===== */
 
 .verse-slider .swiper {
-  padding-bottom: 1.2rem;
+  margin-top: 0 !important;
+  padding-bottom: 0;
 }
 
 .verse-slider .swiper-slide {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.55rem;
 }
 
-.verse-slider .actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 0.35rem;
-  margin-bottom: 0.3rem;
+.verse-slider .swiper-slide:hover {
+  box-shadow: 0 0.65rem 1.5rem rgba(91, 61, 31, 0.11);
 }
 
-.verse-slider .swiper-pagination {
-  position: static !important;
-  margin: 0.2rem 0 0.9rem;
+.verse-slider .verse-slide-item {
+  margin-bottom: 0;
+}
+
+.verse-slider .scripture-heading {
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
   text-align: center;
 }
 
-.verse-slider .verse-details {
-  margin-top: 0;
+.verse-slider .ref-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
 }
 
-.verse-slider .related-btn,
-.verse-slider .link {
+.verse-slider .ref {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #8a6b59;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.verse-slider .verse {
+  margin-bottom: 0;
+}
+
+.verse-slider .actions {
+  margin: 0;
+}
+
+.verse-slider .related-btn {
   display: inline-flex;
+  margin-top: var(--space-3);
   align-items: center;
   justify-content: center;
   min-height: 2.5rem;
@@ -2780,9 +2737,6 @@ abbr[title]:focus::after {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.verse-slider .related-btn {
   background: #f7efe9;
   border: 1px solid #e7d7cf;
   color: #8b5e5e;
@@ -2793,214 +2747,77 @@ abbr[title]:focus::after {
   transform: translateY(-1px);
 }
 
-.verse-slider .link {
-  background: #f6e6eb;
-  border: 1px solid #e7cfd8;
-  color: #8a4d67;
+.verse-slider .swiper-pagination {
+  position: static !important;
+  bottom: 0 !important;
+  margin: 0.05rem 0 0;
+  text-align: center;
 }
 
-.verse-slider .link:hover {
-  background: #f1dce3;
-  transform: translateY(-1px);
-}
-
-.verse-slider .verse-note-box {
-  background: #f8f3fb;
-  border: 1px solid #e6dcef;
-  border-radius: 0.9rem;
-  padding: 1rem 1.1rem;
-  position: relative;
-  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
-}
-
-.verse-slider .verse-reflection {
-  margin: 0 0 0.9rem;
-  font-size: 1rem;
-  line-height: 1.65;
-}
-
-.verse-slider .verse-related-title {
-  margin: 0 0 0.3rem;
-  font-size: 1rem;
-}
-
-.verse-slider .verse-related-list {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.verse-slider .verse-related-item {
-  margin-bottom: 0.35rem;
-  line-height: 1.6;
-}
-
-.verse-slider .verse-close-row {
-  position: absolute;
-  top: 0;
-  right: 0.45rem;
-}
-
-.verse-slider .verse-close {
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  color: #8c7c8c;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.verse-slider .verse-close:hover {
+.verse-slider .swiper-pagination-bullet {
+  width: 0.42rem;
+  height: 0.42rem;
   opacity: 1;
+  background: #d7c7e3;
+  margin: 0 0.22rem !important;
 }
 
-/* === Tighten space above Bible Verses slider === */
-.category[data-category="verse-slider-block"] .topic-list {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+.verse-slider .swiper-pagination-bullet-active {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #8db5ff;
 }
 
-.category[data-category="verse-slider-block"].open .topic-list {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#verse-slider {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#verse-slider .status:empty {
-  display: none !important;
-}
-
-#verse-slider .verse-slider {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#verse-slider .swiper {
-  margin-top: 0 !important;
-}
-
-#verse-slider .swiper-slide {
-  margin-top: 0 !important;
-}
-
-/* ===== Homepage category spacing system ===== */
-.category {
-  margin-bottom: var(--category-gap);
-}
-
-.category:last-of-type {
-  margin-bottom: 0;
-}
-
-.category-header {
-  margin: 0;
-  padding: 0;
-}
-
-.category .topic-list {
-  margin-top: var(--category-inner-gap) !important;
-}
-
-.category .topic-list > li,
-.category .topic-list > .button-link,
-.category .topic-list > div,
-.category .topic-list > section {
-  margin-bottom: 8px;
-}
-
-.category .topic-list > *:last-child {
-  margin-bottom: 0;
-}
-
-/* =========================================================
-   VERSE SLIDER — APP STYLE
-========================================================= */
-
-.verse-slider {
-  margin: 0.5rem 0 1.25rem;
-}
-
-.verse-slider .swiper {
+.verse-slider .verse-book-link {
   position: relative;
-  padding: 0.25rem 0 2.2rem;
-}
-
-.verse-slider .swiper-slide {
-  background: linear-gradient(180deg, #fffdfb 0%, #fffaf6 100%);
-  border: 1px solid #eadfda;
-  border-radius: 1.1rem;
-  box-shadow: 0 0.45rem 1.2rem rgba(91, 61, 31, 0.08);
-  padding: 1.1rem 1rem 1rem;
-  min-height: 19rem;
-  transition: box-shadow 0.22s ease, transform 0.22s ease;
-}
-
-.verse-slider .swiper-slide:hover {
-  box-shadow: 0 0.65rem 1.5rem rgba(91, 61, 31, 0.11);
-}
-
-.verse-slider .ref {
-  text-align: center;
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #8a6b59;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.verse-slider .verse {
-  background: transparent;
-  margin: 0;
-  padding: 0 1.75rem;
-  text-align: center;
-  font-size: 1.45rem;
-  line-height: 1.55;
-  color: #5a3b2a;
-  min-height: 6.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.verse-slider .actions {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 1.15rem;
-  margin-bottom: 0.75rem;
-}
-
-.verse-slider .related-btn,
-.verse-slider .link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.7rem;
-  padding: 0.72rem 1rem;
-  border-radius: 999px;
-  border: 1px solid #ead8e6;
-  background: linear-gradient(180deg, #f6eaf3 0%, #efdfeb 100%);
-  color: #6a4661;
+  width: 1.9rem;
+  height: 1.9rem;
   text-decoration: none;
-  font-size: 1rem;
-  font-family: Georgia, serif;
-  font-weight: 700;
-  line-height: 1.2;
-  box-shadow: 0 0.15rem 0.4rem rgba(106, 70, 97, 0.08);
-  cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: #8a6f86;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  opacity: 0.85;
+  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
 }
 
-.verse-slider .related-btn:hover,
-.verse-slider .link:hover {
+.verse-slider .verse-book-link:hover,
+.verse-slider .verse-book-link:focus-visible {
+  color: #6f5470;
+  background: rgba(138, 111, 134, 0.08);
+  opacity: 1;
   transform: translateY(-1px);
-  box-shadow: 0 0.3rem 0.7rem rgba(106, 70, 97, 0.14);
-  opacity: 0.96;
+  outline: none;
+}
+
+.verse-slider .verse-book-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.35rem);
+  transform: translateX(-50%) translateY(4px);
+  background: #5f4a42;
+  color: #fff;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.45rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+
+.verse-slider .verse-book-link:hover::after,
+.verse-slider .verse-book-link:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .verse-slider .verse-details {
@@ -3012,8 +2829,8 @@ abbr[title]:focus::after {
   background: linear-gradient(180deg, #fbf7fd 0%, #f6eff9 100%);
   border: 1px solid #e8ddef;
   border-radius: 0.95rem;
-  padding: 0.95rem 1rem 0.9rem;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+  padding: 0.7rem 0.8rem 0.65rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .verse-slider .verse-close-row {
@@ -3076,24 +2893,6 @@ abbr[title]:focus::after {
   text-underline-offset: 2px;
 }
 
-.verse-slider .swiper-pagination {
-  bottom: 0 !important;
-}
-
-.verse-slider .swiper-pagination-bullet {
-  width: 0.42rem;
-  height: 0.42rem;
-  opacity: 1;
-  background: #d7c7e3;
-  margin: 0 0.22rem !important;
-}
-
-.verse-slider .swiper-pagination-bullet-active {
-  width: 0.5rem;
-  height: 0.5rem;
-  background: #8db5ff;
-}
-
 .verse-slider .swiper-button-prev,
 .verse-slider .swiper-button-next {
   top: 8.1rem !important;
@@ -3129,16 +2928,43 @@ abbr[title]:focus::after {
   right: 0.45rem;
 }
 
+.verse-slider .swiper-button-disabled {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.verse-slider .swiper-button-prev.swiper-button-disabled,
+.verse-slider .swiper-button-next.swiper-button-disabled {
+  display: none !important;
+}
+
+/* === Tighten space above Bible Verses slider === */
+.category[data-category="verse-slider-block"] .topic-list,
+.category[data-category="verse-slider-block"].open .topic-list,
+#verse-slider,
+#verse-slider .verse-slider {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#verse-slider .status:empty {
+  display: none !important;
+}
+
+#verse-slider .swiper-slide {
+  margin-top: 0 !important;
+}
+
 /* tablet */
 @media (max-width: 768px) {
   .verse-slider .swiper-slide {
     padding: 1rem 0.85rem 0.9rem;
-    min-height: 17.5rem;
+    min-height: auto;
   }
 
   .verse-slider .verse {
-    font-size: 1.28rem;
-    min-height: 5.8rem;
+    font-size: 1.1rem;
+    min-height: auto;
     padding: 0 1.45rem;
   }
 
@@ -3150,39 +2976,37 @@ abbr[title]:focus::after {
 
 /* mobile */
 @media (max-width: 600px) {
-  .verse-slider .swiper {
-    padding-bottom: 2rem;
-  }
-
   .verse-slider .swiper-slide {
     border-radius: 1rem;
-    padding: 0.95rem 0.8rem 0.85rem;
-    min-height: 16.5rem;
+    padding: 1rem 0.85rem 0.9rem;
+    min-height: auto;
+    gap: 0.5rem;
+  }
+
+  .verse-slider .scripture-heading {
+    margin-bottom: 0.25rem;
+    text-align: center;
   }
 
   .verse-slider .ref {
     font-size: 0.88rem;
-    margin-bottom: 0.8rem;
   }
 
   .verse-slider .verse {
-    font-size: 1.12rem;
-    line-height: 1.5;
-    min-height: 5.3rem;
-    padding: 0 1.35rem;
+    padding: 0 0.8rem;
+    min-height: auto;
   }
 
   .verse-slider .actions {
-    gap: 0.6rem;
-    margin-top: 1rem;
+    margin: 0;
   }
 
   .verse-slider .related-btn,
   .verse-slider .link {
     width: 100%;
     font-size: 0.98rem;
-    min-height: 2.55rem;
-    padding: 0.7rem 0.95rem;
+    min-height: auto;
+    padding: 0.1rem 0.2rem;
   }
 
   .verse-slider .verse-note-box {
@@ -3211,15 +3035,6 @@ abbr[title]:focus::after {
   }
 }
 
-.verse-slider .swiper-button-disabled {
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-.verse-slider .swiper-button-prev.swiper-button-disabled,
-.verse-slider .swiper-button-next.swiper-button-disabled {
-  display: none !important;
-}
 
 /* ===== Table headers — make lighter ===== */
 
@@ -3234,4 +3049,321 @@ table.book-dates th {
 table.book-dates th:nth-child(2) {
   text-align: left; /* чтобы не было слишком далеко */
   white-space: nowrap;
+}
+
+/* ===============================
+   DAILY VERSE (Home Page)
+================================ */
+
+#daily-verse {
+  margin: var(--space-6) 0;
+}
+
+.daily-verse-card {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border-soft);
+  border-left: 4px solid #e0c48c;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Header (title + date) */
+.daily-verse-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  column-gap: 0.5rem;
+}
+
+.daily-verse-label {
+  justify-self: start;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6a4a35;
+}
+
+.daily-verse-date-wrap {
+  justify-self: center;
+}
+
+.daily-verse-date {
+  font-size: 0.95rem;
+  color: #8b7a6a;
+  white-space: nowrap;
+}
+
+.daily-verse-header-right {
+  justify-self: end;
+}
+
+/* Topic */
+.daily-verse-topic {
+  font-size: var(--font-size-xl);
+  margin: 0 0 var(--space-2);
+  text-align: left;
+}
+
+.daily-verse-text {
+  margin: 0;
+  padding: 0 1.8rem;
+  border-left: none;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 100%;
+}
+
+.daily-verse-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+
+.daily-verse-related-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  background: #f7efe9;
+  border: 1px solid #e7d7cf;
+  color: #8b5e5e;
+}
+.daily-verse-related-btn:hover {
+  background: #f3e7df;
+  transform: translateY(-1px);
+}
+
+.daily-verse-details {
+  margin-top: 0.8rem;
+}
+
+.daily-verse-links {
+  margin-top: 0.35rem;
+}
+
+.daily-verse-open-link {
+  color: #6a4a35;
+  text-decoration: underline;
+  font-size: 0.98rem;
+}
+
+.daily-verse-open-link:hover {
+  color: #4d3423;
+}
+
+
+
+/* Interpretation */
+.daily-verse-interpretation {
+  font-size: var(--font-size-md);
+  color: var(--color-text-soft);
+  margin: 0;
+}
+
+/* Navigation buttons (optional) */
+.daily-verse-nav {
+  margin-top: var(--space-5);
+  display: flex;
+  gap: var(--space-3);
+}
+
+.daily-verse-btn {
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-panel-soft);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.daily-verse-btn:hover {
+  background: #f6ecdc;
+  transform: translateY(-1px);
+}
+
+/* Loading / empty */
+.daily-verse-loading,
+.daily-verse-empty {
+  padding: var(--space-4);
+  font-size: var(--font-size-md);
+  color: var(--color-text-soft);
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 48rem) {
+  .daily-verse-card {
+    padding: var(--space-4);
+    border-left: 4px solid #e0c48c;
+  }
+
+  .daily-verse-topic {
+    font-size: 1.2rem;
+  }
+
+  .daily-verse-text {
+    font-size: 1.05rem;
+  }
+}
+
+
+.daily-verse-title-inline {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: #5f4333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.daily-verse-title-text {
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  line-height: 1.35;
+  color: #5f4333;
+}
+
+.daily-verse-book-link {
+  margin-left: 0.15rem;
+}
+
+.daily-verse-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.dv-arrow,
+.dv-close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  color: #9a8a7a;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.dv-arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.dv-close {
+  font-size: 0.8rem;     /* меньше */
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #b7a8bb;
+}
+
+.dv-arrow:hover,
+.dv-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #6d5a49;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 48rem) {
+  .daily-verse-header {
+    grid-template-columns: 1fr auto auto;
+    row-gap: 0.35rem;
+  }
+
+  .daily-verse-date {
+    font-size: 0.85rem;
+  }
+
+
+  .daily-verse-title-inline {
+    font-size: 1rem;
+  }
+
+  .dv-arrow {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 1.25rem;
+  }
+
+  .dv-close {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 1rem;
+  }
+}
+
+.daily-verse-text-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* стрелки как overlay */
+.dv-left,
+.dv-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* стрелка СЛЕВА — между линиями */
+.dv-left {
+  position: absolute;
+  left: -0.99rem; /* 👈 ключевой момент */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* стрелка СПРАВА */
+.dv-right {
+  position: absolute;
+  right: -0.99rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* стиль как у слайдера */
+.dv-arrow {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #9fbfe8;
+  opacity: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dv-arrow:hover {
+  color: #6fa3e0;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.15);
 }

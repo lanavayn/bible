@@ -1,0 +1,160 @@
+{
+    "verses": [
+      {
+        "id": "daily-2026-04-07",
+        "date": "2026-04-07",
+  
+        "topic": {
+          "ru": "Божья любовь",
+          "en": "God’s Love"
+        },
+  
+        "reference_ru": "Иоанна 3:16",
+        "reference_en": "John 3:16",
+  
+        "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
+        "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
+  
+        "verse_ref": {
+          "book": "john",
+          "chapter": 3,
+          "verse": "16"
+        },
+  
+        "interpretation_ru": "Бог дарует жизнь вечную через Сына.",
+        "interpretation_en": "God gives eternal life through His Son."
+        ,
+        "related": [
+          {
+            "reference_ru": "Римлянам 5:8",
+            "reference_en": "Romans 5:8",
+            "text_ru": "Но Бог Свою любовь к нам доказывает тем, что Христос умер за нас, когда мы были еще грешниками.",
+            "text_en": "But God shows his love for us in that while we were still sinners, Christ died for us.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 5,
+              "verse": "8"
+            }
+          },
+          {
+            "reference_ru": "1 Иоанна 4:9",
+            "reference_en": "1 John 4:9",
+            "text_ru": "Любовь Божия к нам открылась в том, что Бог послал в мир Единородного Сына Своего, чтобы мы получили жизнь через Него.",
+            "text_en": "In this the love of God was made manifest among us, that God sent his only Son into the world, so that we might live through him.",
+            "verse_ref": {
+              "book": "1john",
+              "chapter": 4,
+              "verse": "9"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "daily-2026-04-08",
+        "date": "2026-04-08",
+  
+        "topic": {
+          "ru": "Доверие Богу",
+          "en": "Trust in God"
+        },
+  
+        "reference_ru": "Притчи 3:5-6",
+        "reference_en": "Proverbs 3:5-6",
+  
+        "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+        "text_en": "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+  
+        "verse_ref": {
+          "book": "proverbs",
+          "chapter": 3,
+          "verse": "5-6"
+        },
+  
+        "interpretation_ru": "Доверяй Богу, и Он направит.",
+        "interpretation_en": "Trust God, and He will guide you."
+        ,
+        "related": [
+          {
+            "reference_ru": "Псалом 36:5",
+            "reference_en": "Psalm 37:5",
+            "text_ru": "Предай Господу путь твой и уповай на Него, и Он совершит.",
+            "text_en": "Commit your way to the LORD; trust in him, and he will act.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalm",
+                "chapter": 36,
+                "verse": "5"
+              },
+              "en": {
+                "book": "psalm",
+                "chapter": 37,
+                "verse": "5"
+              }
+            }
+          },
+          {
+            "reference_ru": "Исаия 26:4",
+            "reference_en": "Isaiah 26:4",
+            "text_ru": "Уповайте на Господа вовеки, ибо Господь Бог есть твердыня вечная.",
+            "text_en": "Trust in the LORD forever, for the LORD GOD is an everlasting rock.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 26,
+              "verse": "4"
+            }
+          }
+        ]
+      },
+  
+      {
+        "id": "daily-2026-04-09",
+        "date": "2026-04-09",
+  
+        "topic": {
+          "ru": "Смысл жизни",
+          "en": "Purpose of Life"
+        },
+  
+        "reference_ru": "Иоанна 17:3",
+        "reference_en": "John 17:3",
+  
+        "text_ru": "Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
+        "text_en": "And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent.",
+  
+        "verse_ref": {
+          "book": "john",
+          "chapter": 17,
+          "verse": "3"
+        },
+  
+        "interpretation_ru": "Жизнь — это знать Бога и Христа.",
+        "interpretation_en": "Life is knowing God and Christ."
+        ,
+        "related": [
+          {
+            "reference_ru": "Иоанна 3:16",
+            "reference_en": "John 3:16",
+            "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
+            "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 3,
+              "verse": "16"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 5:1",
+            "reference_en": "Romans 5:1",
+            "text_ru": "Итак, оправдавшись верою, мы имеем мир с Богом через Господа нашего Иисуса Христа.",
+            "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 5,
+              "verse": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
