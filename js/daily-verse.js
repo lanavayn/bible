@@ -53,6 +53,12 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         const text = verse[`text_${lang}`] || "";
         const interpretation = verse[`interpretation_${lang}`] || "";
         const dateLabel = formatDateForDisplay(verse.date, lang);
+        const dayLabel = verse.day
+            ? (lang === "ru" ? `День ${verse.day}` : `Day ${verse.day}`)
+            : "";
+        const fullDateLabel = dayLabel && dateLabel
+            ? `${dayLabel} · ${dateLabel}`
+            : (dayLabel || dateLabel);
         const verseRef = verse?.verse_ref_lang?.[lang] || verse?.verse_ref || null;
         const bibleLink = buildBibleLink(verseRef, lang);
         const related = Array.isArray(verse.related) ? verse.related : [];
@@ -71,7 +77,7 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
             <div class="daily-verse-label">${ui[lang].title}</div>
 
             <div class="daily-verse-date-wrap">
-                ${dateLabel ? `<div class="daily-verse-date">${dateLabel}</div>` : ""}
+                ${fullDateLabel ? `<div class="daily-verse-date">${fullDateLabel}</div>` : ""}
             </div>
 
             <div class="daily-verse-header-right">

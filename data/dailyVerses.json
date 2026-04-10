@@ -3,7 +3,7 @@
       {
         "id": "daily-2026-04-07",
         "date": "2026-04-07",
-  
+        "day": 1,
         "topic": {
           "ru": "Божья любовь",
           "en": "God’s Love"
@@ -53,7 +53,7 @@
       {
         "id": "daily-2026-04-08",
         "date": "2026-04-08",
-  
+        "day": 2,
         "topic": {
           "ru": "Доверие Богу",
           "en": "Trust in God"
@@ -110,7 +110,7 @@
       {
         "id": "daily-2026-04-09",
         "date": "2026-04-09",
-  
+        "day": 3,
         "topic": {
           "ru": "Смысл жизни",
           "en": "Purpose of Life"
@@ -152,6 +152,152 @@
               "book": "romans",
               "chapter": 5,
               "verse": "1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-04-10",
+        "date": "2026-04-10",
+        "day": 4,
+        "topic": {
+          "ru": "Доверие Богу",
+          "en": "Trust in God"
+        },
+      
+        "reference_ru": "Притчи 3:5-6",
+        "reference_en": "Proverbs 3:5-6",
+      
+        "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+        "text_en": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to Him, and He will make your paths straight.",
+      
+        "verse_ref": {
+          "book": "proverbs",
+          "chapter": 3,
+          "verse": "5-6"
+        },
+      
+        "interpretation_ru": "Доверяй Богу, и Он направит твой путь.",
+        "interpretation_en": "Trust God, and He will guide your path.",
+      
+        "related": [
+          {
+            "reference_ru": "Псалом 36:5",
+            "reference_en": "Psalm 37:5",
+            "text_ru": "Предай Господу путь твой и уповай на Него, и Он совершит.",
+            "text_en": "Commit your way to the Lord; trust in Him, and He will act.",
+            "verse_ref_lang": {
+              "ru": { "book": "psalm", "chapter": 36, "verse": "5" },
+              "en": { "book": "psalm", "chapter": 37, "verse": "5" }
+            }
+          },
+          {
+            "reference_ru": "Исаия 26:4",
+            "reference_en": "Isaiah 26:4",
+            "text_ru": "Уповайте на Господа вовеки, ибо Господь Бог есть твердыня вечная.",
+            "text_en": "Trust in the Lord forever, for the Lord God is an everlasting rock.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 26,
+              "verse": "4"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-04-11",
+        "date": "2026-04-11",
+        "day": 5,
+        "topic": {
+          "ru": "Плод доверия",
+          "en": "The Fruit of Trust"
+        },
+      
+        "reference_ru": "Иеремия 17:7-8",
+        "reference_en": "Jeremiah 17:7-8",
+      
+        "text_ru": "Благословен человек, который надеется на Господа, и которого упование — Господь. Ибо он будет как дерево, посаженное при водах...",
+        "text_en": "Blessed is the one who trusts in the Lord, whose confidence is in Him. They will be like a tree planted by the water...",
+      
+        "verse_ref": {
+          "book": "jeremiah",
+          "chapter": 17,
+          "verse": "7-8"
+        },
+      
+        "interpretation_ru": "Доверие Богу приносит устойчивость и жизнь.",
+        "interpretation_en": "Trust in God brings stability and life.",
+      
+        "related": [
+          {
+            "reference_ru": "Псалом 1:3",
+            "reference_en": "Psalm 1:3",
+            "text_ru": "И будет он как дерево, посаженное при потоках вод...",
+            "text_en": "He is like a tree planted by streams of water...",
+            "verse_ref": {
+              "book": "psalm",
+              "chapter": 1,
+              "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Галатам 5:22",
+            "reference_en": "Galatians 5:22",
+            "text_ru": "Плод же духа: любовь, радость, мир...",
+            "text_en": "But the fruit of the Spirit is love, joy, peace...",
+            "verse_ref": {
+              "book": "galatians",
+              "chapter": 5,
+              "verse": "22"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-04-12",
+        "date": "2026-04-12",
+        "day": 6,
+        "topic": {
+          "ru": "Покой во Христе",
+          "en": "Rest in Christ"
+        },
+      
+        "reference_ru": "Матфея 11:28",
+        "reference_en": "Matthew 11:28",
+      
+        "text_ru": "Придите ко Мне все труждающиеся и обремененные, и Я успокою вас.",
+        "text_en": "Come to me, all you who are weary and burdened, and I will give you rest.",
+      
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 11,
+          "verse": "28"
+        },
+      
+        "interpretation_ru": "Христос даёт покой душе.",
+        "interpretation_en": "Christ gives rest to the soul.",
+      
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:27",
+            "reference_en": "John 14:27",
+            "text_ru": "Мир оставляю вам, мир Мой даю вам...",
+            "text_en": "Peace I leave with you; my peace I give you...",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 14,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Евреям 4:9",
+            "reference_en": "Hebrews 4:9",
+            "text_ru": "Посему для народа Божия еще остается субботство.",
+            "text_en": "So then, there remains a Sabbath rest for the people of God.",
+            "verse_ref": {
+              "book": "hebrews",
+              "chapter": 4,
+              "verse": "9"
             }
           }
         ]
