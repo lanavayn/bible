@@ -88,7 +88,24 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
             <div class="daily-verse-date-wrap">
                 <div class="daily-verse-date-row">
 
-                ${fullDateLabel ? `<div class="daily-verse-date">${fullDateLabel}</div>` : ""}
+                ${
+                  fullDateLabel
+                    ? `
+                    <div class="daily-verse-date">
+                      ${
+                        dayLabel
+                          ? `<span class="daily-day-badge">${escapeHtml(dayLabel)}</span>`
+                          : ""
+                      }
+                      ${
+                        dateLabel
+                          ? `<span class="daily-date-text">${escapeHtml(dateLabel)}</span>`
+                          : ""
+                      }
+                    </div>
+                    `
+                    : ""
+                }
 
                 ${
                   index !== START_INDEX

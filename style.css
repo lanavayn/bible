@@ -3111,6 +3111,31 @@ table.book-dates th:nth-child(2) {
   font-size: 0.95rem;
   color: #8b7a6a;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.daily-day-badge {
+  /* ❌ убираем "кнопку" */
+  border: none;
+  background: none;
+  box-shadow: none;
+
+  /* ✅ оставляем аккуратное выделение */
+  font-weight: 600;
+  color: var(--color-text);
+
+  /* чтобы точно не казалось кликабельным */
+  cursor: default;
+  pointer-events: none;
+}}
+
+.daily-date-text {
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+  opacity: 0.65;
 }
 
 .daily-verse-header-right {
@@ -3120,6 +3145,8 @@ table.book-dates th:nth-child(2) {
   margin: 0;
   z-index: 2;
 }
+
+
 
 /* Topic */
 .daily-verse-topic {
@@ -3195,19 +3222,26 @@ table.book-dates th:nth-child(2) {
 }
 
 .dv-jump-btn {
-  background: transparent;
-  border: 1px solid #d8c9f0;
+  padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  padding: 0.15rem 0.5rem;
-  color: #7a5ca3;
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--color-panel-soft);
+  border: 1px solid var(--color-border);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.18s ease;
 }
 
 .dv-jump-btn:hover {
-  background: #e9ddff;
+  background: #fff3dc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* active */
+.dv-jump-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .daily-verse-header-right {
