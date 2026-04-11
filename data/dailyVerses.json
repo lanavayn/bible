@@ -1,400 +1,465 @@
 {
-    "verses": [
-      {
-        "id": "daily-2026-04-05",
-        "date": "2026-04-05",
-        "day": 1,
-        "topic": {
-          "ru": "Воскресение",
-          "en": "Resurrection"
+  "verses": [
+    {
+      "id": "daily-2026-04-05",
+      "date": "2026-04-05",
+      "day": 1,
+      "topic": {
+        "ru": "Воскресение",
+        "en": "Resurrection"
+      },
+      "reference_ru": "Матфея 28:6",
+      "reference_en": "Matthew 28:6",
+      "text_ru": "Его нет здесь — Он воскрес, как сказал.",
+      "text_en": "He is not here, for he has risen, as he said.",
+      "verse_ref": {
+        "book": "Matthew",
+        "chapter": 28,
+        "verse": "6"
+      },
+      "interpretation_ru": "Христос воскрес, и это основа нашей надежды.",
+      "interpretation_en": "Christ is risen, and this is the foundation of our hope.",
+      "related": [
+        {
+          "reference_ru": "Луки 24:6",
+          "reference_en": "Luke 24:6",
+          "text_ru": "Его нет здесь: Он воскрес.",
+          "text_en": "He is not here, but has risen.",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 24,
+            "verse": "6"
+          }
         },
-      
-        "reference_ru": "Матфея 28:6",
-        "reference_en": "Matthew 28:6",
-      
-        "text_ru": "Его нет здесь — Он воскрес, как сказал. Подойдите, посмотрите место, где лежал Господь.",
-        "text_en": "He is not here, for He has risen, as He said. Come, see the place where the Lord lay.",
-      
-        "verse_ref": {
-          "book": "matthew",
-          "chapter": 28,
-          "verse": "6"
+        {
+          "reference_ru": "1 Коринфянам 15:20",
+          "reference_en": "1 Corinthians 15:20",
+          "text_ru": "Но Христос воскрес из мертвых, первенец из умерших.",
+          "text_en": "But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.",
+          "verse_ref": {
+            "book": "1-corinthians",
+            "chapter": 15,
+            "verse": "20"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-06",
+      "date": "2026-04-06",
+      "day": 2,
+      "topic": {
+        "ru": "Жизнь во Христе",
+        "en": "Life in Christ"
+      },
+      "reference_ru": "Иоанна 11:25",
+      "reference_en": "John 11:25",
+      "text_ru": "Я есмь воскресение и жизнь; верующий в Меня, если и умрет, оживет.",
+      "text_en": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live.",
+      "verse_ref": {
+        "book": "John",
+        "chapter": 11,
+        "verse": "25"
+      },
+      "interpretation_ru": "Во Христе есть воскресение и новая жизнь.",
+      "interpretation_en": "In Christ there is resurrection and new life.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 14:19",
+          "reference_en": "John 14:19",
+          "text_ru": "Я живу, и вы будете жить.",
+          "text_en": "Because I live, you also will live.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 14,
+            "verse": "19"
+          }
         },
-      
-        "interpretation_ru": "Христос воскрес, и Его слово исполнилось.",
-        "interpretation_en": "Christ is risen, and His word was fulfilled.",
-      
-        "related": [
-          {
-            "reference_ru": "Луки 24:6-7",
-            "reference_en": "Luke 24:6-7",
-            "text_ru": "Его нет здесь: Он воскрес; вспомните, как Он говорил вам, когда был еще в Галилее.",
-            "text_en": "He is not here, but has risen. Remember how He told you, while He was still in Galilee.",
-            "verse_ref": {
-              "book": "luke",
-              "chapter": 24,
-              "verse": "6-7"
-            }
-          },
-          {
-            "reference_ru": "1 Коринфянам 15:20",
-            "reference_en": "1 Corinthians 15:20",
-            "text_ru": "Но Христос воскрес из мертвых, первенец из умерших.",
-            "text_en": "But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.",
-            "verse_ref": {
-              "book": "1-corinthians",
-              "chapter": 15,
-              "verse": "20"
+        {
+          "reference_ru": "Римлянам 6:4",
+          "reference_en": "Romans 6:4",
+          "text_ru": "Так и нам ходить в обновленной жизни.",
+          "text_en": "So that we too might walk in newness of life.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 6,
+            "verse": "4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-07",
+      "date": "2026-04-07",
+      "day": 3,
+      "topic": {
+        "ru": "Спасение по благодати",
+        "en": "Saved by Grace"
+      },
+      "reference_ru": "Ефесянам 2:8-9",
+      "reference_en": "Ephesians 2:8-9",
+      "text_ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился",
+      "text_en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.",
+      "verse_ref": {
+        "book": "Ephesians",
+        "chapter": 2,
+        "verse": "8-9"
+      },
+      "interpretation_ru": "Спасение дается Богом как дар, а не за заслуги.",
+      "interpretation_en": "Salvation is given by God as a gift, not earned.",
+      "related": [
+        {
+          "reference_ru": "Титу 3:5",
+          "reference_en": "Titus 3:5",
+          "text_ru": "Он спас нас не по делам праведности, которые бы мы сотворили.",
+          "text_en": "He saved us, not because of works done by us in righteousness.",
+          "verse_ref": {
+            "book": "Titus",
+            "chapter": 3,
+            "verse": "5"
+          }
+        },
+        {
+          "reference_ru": "Римлянам 3:24",
+          "reference_en": "Romans 3:24",
+          "text_ru": "Получая оправдание даром, по благодати Его.",
+          "text_en": "And are justified by his grace as a gift.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 3,
+            "verse": "24"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-08",
+      "date": "2026-04-08",
+      "day": 4,
+      "topic": {
+        "ru": "Вера во Христа",
+        "en": "Faith in Christ"
+      },
+      "reference_ru": "Римлянам 10:9",
+      "reference_en": "Romans 10:9",
+      "text_ru": "Ибо если устами твоими будешь исповедовать Иисуса Господом и сердцем твоим веровать, что Бог воскресил Его из мертвых, то спасешься.",
+      "text_en": "If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.",
+      "verse_ref": {
+        "book": "Romans",
+        "chapter": 10,
+        "verse": "9"
+      },
+      "interpretation_ru": "Спасение приходит через веру в Иисуса Христа.",
+      "interpretation_en": "Salvation comes through faith in Jesus Christ.",
+      "related": [
+        {
+          "reference_ru": "Деяния 16:31",
+          "reference_en": "Acts 16:31",
+          "text_ru": "Веруй в Господа Иисуса Христа, и спасешься ты и весь дом твой.",
+          "text_en": "Believe in the Lord Jesus, and you will be saved, you and your household.",
+          "verse_ref": {
+            "book": "Acts",
+            "chapter": 16,
+            "verse": "31"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 20:31",
+          "reference_en": "John 20:31",
+          "text_ru": "Сие написано, дабы вы уверовали, что Иисус есть Христос, Сын Божий, и, веруя, имели жизнь во имя Его.",
+          "text_en": "But these are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 20,
+            "verse": "31"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-09",
+      "date": "2026-04-09",
+      "day": 5,
+      "topic": {
+        "ru": "Доверие Богу",
+        "en": "Trust in God"
+      },
+      "reference_ru": "Притчи 3:5-6",
+      "reference_en": "Proverbs 3:5-6",
+      "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+      "text_en": "Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
+      "verse_ref": {
+        "book": "Proverbs",
+        "chapter": 3,
+        "verse": "5-6"
+      },
+      "interpretation_ru": "Доверяй Богу, и Он поведет тебя.",
+      "interpretation_en": "Trust God, and He will guide you.",
+      "related": [
+        {
+          "reference_ru": "Псалом 36:5",
+          "reference_en": "Psalm 37:5",
+          "text_ru": "Предай Господу путь твой и уповай на Него, и Он совершит.",
+          "text_en": "Commit your way to the Lord; trust in him, and he will act.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 36,
+              "verse": "5"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 37,
+              "verse": "5"
             }
           }
-        ]
-      },
-      {
-        "id": "daily-2026-04-06",
-        "date": "2026-04-06",
-        "day": 2,
-        "topic": {
-          "ru": "Новая жизнь",
-          "en": "New Life"
         },
-      
-        "reference_ru": "Иоанна 11:25",
-        "reference_en": "John 11:25",
-      
-        "text_ru": "Иисус сказал ей: Я есмь воскресение и жизнь; верующий в Меня, если и умрет, оживет.",
-        "text_en": "Jesus said to her, I am the resurrection and the life. Whoever believes in Me, though he die, yet shall he live.",
-      
-        "verse_ref": {
-          "book": "john",
-          "chapter": 11,
-          "verse": "25"
-        },
-      
-        "interpretation_ru": "Во Христе — воскресение и новая жизнь.",
-        "interpretation_en": "In Christ there is resurrection and new life.",
-      
-        "related": [
-          {
-            "reference_ru": "Римлянам 10:9",
-            "reference_en": "Romans 10:9",
-            "text_ru": "Ибо если устами твоими будешь исповедовать Иисуса Господом и сердцем твоим веровать, что Бог воскресил Его из мертвых, то спасешься.",
-            "text_en": "Because, if you confess with your mouth that Jesus is Lord and believe in your heart that God raised Him from the dead, you will be saved.",
-            "verse_ref": {
-              "book": "romans",
-              "chapter": 10,
-              "verse": "9"
-            }
-          },
-          {
-            "reference_ru": "1 Петра 1:3",
-            "reference_en": "1 Peter 1:3",
-            "text_ru": "Благословен Бог и Отец Господа нашего Иисуса Христа, по великой Своей милости возродивший нас воскресением Иисуса Христа из мертвых к упованию живому.",
-            "text_en": "Blessed be the God and Father of our Lord Jesus Christ. According to His great mercy, He has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead.",
-            "verse_ref": {
-              "book": "1-peter",
-              "chapter": 1,
-              "verse": "3"
-            }
+        {
+          "reference_ru": "Исаия 26:4",
+          "reference_en": "Isaiah 26:4",
+          "text_ru": "Уповайте на Господа вовеки, ибо Господь Бог есть твердыня вечная.",
+          "text_en": "Trust in the Lord forever, for the Lord God is an everlasting rock.",
+          "verse_ref": {
+            "book": "Isaiah",
+            "chapter": 26,
+            "verse": "4"
           }
-        ]
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-10",
+      "date": "2026-04-10",
+      "day": 6,
+      "topic": {
+        "ru": "Мир с Богом",
+        "en": "Peace with God"
       },
-      {
-        "id": "daily-2026-04-07",
-        "date": "2026-04-07",
-        "day": 3,
-        "topic": {
-          "ru": "Божья любовь",
-          "en": "God’s Love"
-        },
-  
-        "reference_ru": "Иоанна 3:16",
-        "reference_en": "John 3:16",
-  
-        "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
-        "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
-  
-        "verse_ref": {
-          "book": "john",
-          "chapter": 3,
-          "verse": "16"
-        },
-  
-        "interpretation_ru": "Бог дарует жизнь вечную через Сына.",
-        "interpretation_en": "God gives eternal life through His Son."
-        ,
-        "related": [
-          {
-            "reference_ru": "Римлянам 5:8",
-            "reference_en": "Romans 5:8",
-            "text_ru": "Но Бог Свою любовь к нам доказывает тем, что Христос умер за нас, когда мы были еще грешниками.",
-            "text_en": "But God shows his love for us in that while we were still sinners, Christ died for us.",
-            "verse_ref": {
-              "book": "romans",
-              "chapter": 5,
-              "verse": "8"
-            }
-          },
-          {
-            "reference_ru": "1 Иоанна 4:9",
-            "reference_en": "1 John 4:9",
-            "text_ru": "Любовь Божия к нам открылась в том, что Бог послал в мир Единородного Сына Своего, чтобы мы получили жизнь через Него.",
-            "text_en": "In this the love of God was made manifest among us, that God sent his only Son into the world, so that we might live through him.",
-            "verse_ref": {
-              "book": "1-john",
-              "chapter": 4,
-              "verse": "9"
-            }
+      "reference_ru": "Римлянам 5:1",
+      "reference_en": "Romans 5:1",
+      "text_ru": "Итак, оправдавшись верою, мы имеем мир с Богом через Господа нашего Иисуса Христа.",
+      "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
+      "verse_ref": {
+        "book": "Romans",
+        "chapter": 5,
+        "verse": "1"
+      },
+      "interpretation_ru": "Через веру во Христа человек получает мир с Богом.",
+      "interpretation_en": "Through faith in Christ, a person receives peace with God.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 14:27",
+          "reference_en": "John 14:27",
+          "text_ru": "Мир оставляю вам, мир Мой даю вам.",
+          "text_en": "Peace I leave with you; my peace I give to you.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 14,
+            "verse": "27"
           }
-        ]
-      },
-  
-      {
-        "id": "daily-2026-04-08",
-        "date": "2026-04-08",
-        "day": 4,
-        "topic": {
-          "ru": "Доверие Богу",
-          "en": "Trust in God"
         },
-  
-        "reference_ru": "Притчи 3:5-6",
-        "reference_en": "Proverbs 3:5-6",
-  
-        "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
-        "text_en": "Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.",
-  
-        "verse_ref": {
-          "book": "proverbs",
-          "chapter": 3,
-          "verse": "5-6"
-        },
-  
-        "interpretation_ru": "Доверяй Богу, и Он направит.",
-        "interpretation_en": "Trust God, and He will guide you."
-        ,
-        "related": [
-          {
-            "reference_ru": "Псалом 36:5",
-            "reference_en": "Psalm 37:5",
-            "text_ru": "Предай Господу путь твой и уповай на Него, и Он совершит.",
-            "text_en": "Commit your way to the LORD; trust in him, and he will act.",
-            "verse_ref_lang": {
-              "ru": {
-                "book": "psalm",
-                "chapter": 36,
-                "verse": "5"
-              },
-              "en": {
-                "book": "psalm",
-                "chapter": 37,
-                "verse": "5"
-              }
-            }
-          },
-          {
-            "reference_ru": "Исаия 26:4",
-            "reference_en": "Isaiah 26:4",
-            "text_ru": "Уповайте на Господа вовеки, ибо Господь Бог есть твердыня вечная.",
-            "text_en": "Trust in the LORD forever, for the LORD GOD is an everlasting rock.",
-            "verse_ref": {
-              "book": "isaiah",
-              "chapter": 26,
-              "verse": "4"
-            }
+        {
+          "reference_ru": "Филиппийцам 4:7",
+          "reference_en": "Philippians 4:7",
+          "text_ru": "И мир Божий, который превыше всякого ума, соблюдет сердца ваши и помышления ваши во Христе Иисусе.",
+          "text_en": "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.",
+          "verse_ref": {
+            "book": "Philippians",
+            "chapter": 4,
+            "verse": "7"
           }
-        ]
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-11",
+      "date": "2026-04-11",
+      "day": 7,
+      "topic": {
+        "ru": "Божья любовь",
+        "en": "God's Love"
       },
-  
-      {
-        "id": "daily-2026-04-09",
-        "date": "2026-04-09",
-        "day": 5,
-        "topic": {
-          "ru": "Смысл жизни",
-          "en": "Purpose of Life"
-        },
-  
-        "reference_ru": "Иоанна 17:3",
-        "reference_en": "John 17:3",
-  
-        "text_ru": "Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
-        "text_en": "And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent.",
-  
-        "verse_ref": {
-          "book": "john",
-          "chapter": 17,
-          "verse": "3"
-        },
-  
-        "interpretation_ru": "Жизнь — это знать Бога и Христа.",
-        "interpretation_en": "Life is knowing God and Christ."
-        ,
-        "related": [
-          {
-            "reference_ru": "Иоанна 3:16",
-            "reference_en": "John 3:16",
-            "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий, верующий в Него, не погиб, но имел жизнь вечную.",
-            "text_en": "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life.",
-            "verse_ref": {
-              "book": "john",
-              "chapter": 3,
-              "verse": "16"
-            }
-          },
-          {
-            "reference_ru": "Римлянам 5:1",
-            "reference_en": "Romans 5:1",
-            "text_ru": "Итак, оправдавшись верою, мы имеем мир с Богом через Господа нашего Иисуса Христа.",
-            "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
-            "verse_ref": {
-              "book": "romans",
-              "chapter": 5,
-              "verse": "1"
-            }
+      "reference_ru": "Иоанна 3:16",
+      "reference_en": "John 3:16",
+      "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий верующий в Него не погиб, но имел жизнь вечную.",
+      "text_en": "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.",
+      "verse_ref": {
+        "book": "John",
+        "chapter": 3,
+        "verse": "16"
+      },
+      "interpretation_ru": "Любовь Бога открылась в Иисусе Христе.",
+      "interpretation_en": "God's love was revealed in Jesus Christ.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 5:8",
+          "reference_en": "Romans 5:8",
+          "text_ru": "Но Бог Свою любовь к нам доказывает тем, что Христос умер за нас, когда мы были еще грешниками.",
+          "text_en": "But God shows his love for us in that while we were still sinners, Christ died for us.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 5,
+            "verse": "8"
           }
-        ]
-      },
-      {
-        "id": "daily-2026-04-10",
-        "date": "2026-04-10",
-        "day": 6,
-        "topic": {
-          "ru": "Мир с Богом",
-          "en": "Peace with God"
         },
-        "reference_ru": "Римлянам 5:1",
-        "reference_en": "Romans 5:1",
-        "text_ru": "Итак, оправдавшись верою, мы имеем мир с Богом через Господа нашего Иисуса Христа.",
-        "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
-        "verse_ref": {
-          "book": "Romans",
-          "chapter": 5,
+        {
+          "reference_ru": "1 Иоанна 4:9",
+          "reference_en": "1 John 4:9",
+          "text_ru": "Любовь Божия к нам открылась в том, что Бог послал в мир Единородного Сына Своего, чтобы мы получили жизнь через Него.",
+          "text_en": "In this the love of God was made manifest among us, that God sent his only Son into the world, so that we might live through him.",
+          "verse_ref": {
+            "book": "1-john",
+            "chapter": 4,
+            "verse": "9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-12",
+      "date": "2026-04-12",
+      "day": 8,
+      "topic": {
+        "ru": "Господь ведет",
+        "en": "The Lord Leads"
+      },
+      "reference_ru": "Псалом 22:1",
+      "reference_en": "Psalm 23:1",
+      "text_ru": "Господь — Пастырь мой; я ни в чем не буду нуждаться.",
+      "text_en": "The Lord is my shepherd; I shall not want.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Psalms",
+          "chapter": 22,
           "verse": "1"
         },
-        "interpretation_ru": "Через веру во Христа человек получает мир с Богом.",
-        "interpretation_en": "Through faith in Christ, a person receives peace with God.",
-        "related": [
-          {
-            "reference_ru": "Иоанна 14:27",
-            "reference_en": "John 14:27",
-            "text_ru": "Мир оставляю вам, мир Мой даю вам.",
-            "text_en": "Peace I leave with you; my peace I give to you.",
-            "verse_ref": {
-              "book": "John",
-              "chapter": 14,
-              "verse": "27"
-            }
-          },
-          {
-            "reference_ru": "Филиппийцам 4:7",
-            "reference_en": "Philippians 4:7",
-            "text_ru": "И мир Божий, который превыше всякого ума, соблюдет сердца ваши и помышления ваши во Христе Иисусе.",
-            "text_en": "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.",
-            "verse_ref": {
-              "book": "Philippians",
-              "chapter": 4,
-              "verse": "7"
-            }
-          }
-        ]
+        "en": {
+          "book": "Psalms",
+          "chapter": 23,
+          "verse": "1"
+        }
       },
-      {
-        "id": "daily-2026-04-11",
-        "date": "2026-04-11",
-        "day": 7,
-        "topic": {
-          "ru": "Плод доверия",
-          "en": "The Fruit of Trust"
+      "interpretation_ru": "Господь заботится о Своих и ведет их.",
+      "interpretation_en": "The Lord cares for His people and leads them.",
+      "related": [
+        {
+          "reference_ru": "Исаия 40:11",
+          "reference_en": "Isaiah 40:11",
+          "text_ru": "Как пастырь Он будет пасти стадо Свое.",
+          "text_en": "He will tend his flock like a shepherd.",
+          "verse_ref": {
+            "book": "Isaiah",
+            "chapter": 40,
+            "verse": "11"
+          }
         },
-      
-        "reference_ru": "Иеремия 17:7-8",
-        "reference_en": "Jeremiah 17:7-8",
-      
-        "text_ru": "Благословен человек, который надеется на Господа, и которого упование — Господь. Ибо он будет как дерево, посаженное при водах...",
-        "text_en": "Blessed is the one who trusts in the Lord, whose confidence is in Him. They will be like a tree planted by the water...",
-      
-        "verse_ref": {
-          "book": "jeremiah",
-          "chapter": 17,
-          "verse": "7-8"
+        {
+          "reference_ru": "Иоанна 10:11",
+          "reference_en": "John 10:11",
+          "text_ru": "Я есмь пастырь добрый.",
+          "text_en": "I am the good shepherd.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 10,
+            "verse": "11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-13",
+      "date": "2026-04-13",
+      "day": 9,
+      "topic": {
+        "ru": "Не бойся",
+        "en": "Do Not Fear"
+      },
+      "reference_ru": "Исаия 41:10",
+      "reference_en": "Isaiah 41:10",
+      "text_ru": "Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя, и помогу тебе, и поддержу тебя десницею правды Моей.",
+      "text_en": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.",
+      "verse_ref": {
+        "book": "Isaiah",
+        "chapter": 41,
+        "verse": "10"
+      },
+      "interpretation_ru": "Бог рядом и укрепляет в страхе и трудностях.",
+      "interpretation_en": "God is near and strengthens us in fear and difficulty.",
+      "related": [
+        {
+          "reference_ru": "Второзаконие 31:6",
+          "reference_en": "Deuteronomy 31:6",
+          "text_ru": "Будьте тверды и мужественны, не бойтесь.",
+          "text_en": "Be strong and courageous. Do not fear.",
+          "verse_ref": {
+            "book": "Deuteronomy",
+            "chapter": 31,
+            "verse": "6"
+          }
         },
-      
-        "interpretation_ru": "Доверие Богу приносит устойчивость и жизнь.",
-        "interpretation_en": "Trust in God brings stability and life.",
-      
-        "related": [
-          {
-            "reference_ru": "Псалом 1:3",
-            "reference_en": "Psalm 1:3",
-            "text_ru": "И будет он как дерево, посаженное при потоках вод...",
-            "text_en": "He is like a tree planted by streams of water...",
-            "verse_ref": {
-              "book": "psalm",
-              "chapter": 1,
+        {
+          "reference_ru": "Псалом 55:4",
+          "reference_en": "Psalm 56:3",
+          "text_ru": "Когда я в страхе, на Тебя я уповаю.",
+          "text_en": "When I am afraid, I put my trust in you.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 55,
+              "verse": "4"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 56,
               "verse": "3"
             }
-          },
-          {
-            "reference_ru": "Галатам 5:22",
-            "reference_en": "Galatians 5:22",
-            "text_ru": "Плод же духа: любовь, радость, мир...",
-            "text_en": "But the fruit of the Spirit is love, joy, peace...",
-            "verse_ref": {
-              "book": "galatians",
-              "chapter": 5,
-              "verse": "22"
-            }
           }
-        ]
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-04-14",
+      "date": "2026-04-14",
+      "day": 10,
+      "topic": {
+        "ru": "Надежда и будущее",
+        "en": "Hope and Future"
       },
-      {
-        "id": "daily-2026-04-12",
-        "date": "2026-04-12",
-        "day": 8,
-        "topic": {
-          "ru": "Покой во Христе",
-          "en": "Rest in Christ"
-        },
-      
-        "reference_ru": "Матфея 11:28",
-        "reference_en": "Matthew 11:28",
-      
-        "text_ru": "Придите ко Мне все труждающиеся и обремененные, и Я успокою вас.",
-        "text_en": "Come to me, all you who are weary and burdened, and I will give you rest.",
-      
-        "verse_ref": {
-          "book": "matthew",
-          "chapter": 11,
-          "verse": "28"
-        },
-      
-        "interpretation_ru": "Христос даёт покой душе.",
-        "interpretation_en": "Christ gives rest to the soul.",
-      
-        "related": [
-          {
-            "reference_ru": "Иоанна 14:27",
-            "reference_en": "John 14:27",
-            "text_ru": "Мир оставляю вам, мир Мой даю вам...",
-            "text_en": "Peace I leave with you; my peace I give you...",
-            "verse_ref": {
-              "book": "john",
-              "chapter": 14,
-              "verse": "27"
-            }
-          },
-          {
-            "reference_ru": "Евреям 4:9",
-            "reference_en": "Hebrews 4:9",
-            "text_ru": "Посему для народа Божия еще остается субботство.",
-            "text_en": "So then, there remains a Sabbath rest for the people of God.",
-            "verse_ref": {
-              "book": "hebrews",
-              "chapter": 4,
-              "verse": "9"
-            }
+      "reference_ru": "Иеремия 29:11",
+      "reference_en": "Jeremiah 29:11",
+      "text_ru": "Ибо только Я знаю намерения, какие имею о вас, говорит Господь, намерения во благо, а не на зло, чтобы дать вам будущность и надежду.",
+      "text_en": "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+      "verse_ref": {
+        "book": "Jeremiah",
+        "chapter": 29,
+        "verse": "11"
+      },
+      "interpretation_ru": "У Бога есть надежда и будущее для тех, кто уповает на Него.",
+      "interpretation_en": "God has hope and a future for those who trust in Him.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 15:13",
+          "reference_en": "Romans 15:13",
+          "text_ru": "Бог же надежды да исполнит вас всякой радости и мира в вере...",
+          "text_en": "May the God of hope fill you with all joy and peace in believing.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 15,
+            "verse": "13"
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "reference_ru": "Плач Иеремии 3:24",
+          "reference_en": "Lamentations 3:24",
+          "text_ru": "Господь часть моя, говорит душа моя, итак буду надеяться на Него.",
+          "text_en": "The Lord is my portion, says my soul, therefore I will hope in him.",
+          "verse_ref": {
+            "book": "Lamentations",
+            "chapter": 3,
+            "verse": "24"
+          }
+        }
+      ]
+    }
+  ]
+}
