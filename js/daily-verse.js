@@ -391,8 +391,12 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
       if (absY > MAX_SWIPE_Y) return;
   
       if (deltaX > 0) {
+        const card = root.querySelector(".daily-verse-card");
+        if (!card || !card.querySelector(".dv-left")) return;
         animateChange(() => onPrev());
       } else {
+        const card = root.querySelector(".daily-verse-card");
+        if (!card || !card.querySelector(".dv-right")) return;
         animateChange(() => onNext());
       }
     });
