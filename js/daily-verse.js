@@ -345,7 +345,7 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
   }
 
   function initDailyVerseSwipe(root, onPrev, onNext) {
-    const swipeArea = root.querySelector(".daily-verse-text-wrap");
+    const swipeArea = root.querySelector(".daily-verse-card");
     if (!swipeArea) return;
   
     let startX = 0;
@@ -354,8 +354,8 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
     let endY = 0;
     let isTouching = false;
   
-    const MIN_SWIPE_X = 50;   // минимальная длина свайпа
-    const MAX_SWIPE_Y = 35;   // максимум вертикального отклонения
+    const MIN_SWIPE_X = 30;
+    const MAX_SWIPE_Y = 60;
   
     swipeArea.addEventListener("touchstart", (e) => {
       if (!e.touches || e.touches.length !== 1) return;
@@ -386,15 +386,14 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
       const absX = Math.abs(deltaX);
       const absY = Math.abs(deltaY);
   
-      // считаем только почти горизонтальный свайп
       if (absX < MIN_SWIPE_X) return;
+      if (absX <= absY) return;
       if (absY > MAX_SWIPE_Y) return;
-      if (absY >= absX) return;
   
       if (deltaX > 0) {
-        onPrev(); // свайп вправо
+        animateChange(() => onPrev());
       } else {
-        onNext(); // свайп влево
+        animateChange(() => onNext());
       }
     });
   }

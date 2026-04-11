@@ -3067,6 +3067,7 @@ table.book-dates th:nth-child(2) {
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   padding: 1rem 1rem 0.9rem;
   transition: opacity 0.25s ease, transform 0.25s ease;
+  touch-action: pan-y;
 }
 
 .dv-fade-out {
@@ -3259,6 +3260,7 @@ table.book-dates th:nth-child(2) {
     position: relative;
     padding: 0.75rem 0.85rem 0.8rem;
     border-radius: 12px;
+    touch-action: pan-y;
   }
 
   .daily-verse-header {
