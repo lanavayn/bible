@@ -3061,13 +3061,36 @@ table.book-dates th:nth-child(2) {
 
 .daily-verse-card {
   position: relative;
-  background: rgba(255, 248, 220, 0.96);
-  border: 1px solid #e0c48c;
+  background: #fffdf8;
+  border: 1px solid #e8dcc8;
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   padding: 1rem 1rem 0.9rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+.dv-fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.dv-fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.daily-verse-card:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.daily-verse-subtitle {
+  margin-top: 0.18rem;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  color: #b09d8b;
+  text-align: center;
+  font-style: italic;
+}
 
 /* Header (title + date) */
 .daily-verse-label {
@@ -3162,7 +3185,35 @@ table.book-dates th:nth-child(2) {
   color: #4d3423;
 }
 
+.daily-verse-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
 
+.dv-jump-btn {
+  background: transparent;
+  border: 1px solid #d8c9f0;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  color: #7a5ca3;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dv-jump-btn:hover {
+  background: #e9ddff;
+}
+
+.daily-verse-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
 
 /* Interpretation */
 .daily-verse-interpretation {
@@ -3217,6 +3268,7 @@ table.book-dates th:nth-child(2) {
   .daily-verse-label {
     font-size: 0.95rem;
     line-height: 1.05;
+    margin-bottom: 0.2rem;
   }
 
   .daily-verse-date {
@@ -3241,10 +3293,16 @@ table.book-dates th:nth-child(2) {
   }
 
   .daily-verse-text {
-    flex: 1;
-    max-width: 100% !important;
-    width: 100%;
-    text-align: center;
+    padding: 0 0.35rem;
+    min-height: auto;
+  }
+  
+  .dv-left {
+    left: -0.1rem;
+  }
+  
+  .dv-right {
+    right: -0.1rem;
   }
 
   .daily-verse-wrapper {
@@ -3276,6 +3334,15 @@ table.book-dates th:nth-child(2) {
     padding: 0.58rem 0.9rem;
     font-size: 0.95rem;
   }
+  .daily-verse-subtitle {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    color: #b09d8b;
+    text-align: center;
+    font-style: italic;
+  } 
+  
 }
 
 .daily-verse-title-inline {

@@ -30,13 +30,21 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
   
       const data = await response.json();
       const verses = Array.isArray(data?.verses) ? data.verses : [];
+
+      const START_INDEX = 0;
+
+      function getTodayIndex() {
+        const today = getTodayLocalISO();
+        return verses.findIndex(v => v.date === today);
+      }
+
+      const todayIndex = getTodayIndex();
+      let currentIndex = todayIndex >= 0 ? todayIndex : START_INDEX;
   
       if (!verses.length) {
         root.innerHTML = `<div class="daily-verse-empty">${ui[lang].empty}</div>`;
         return;
       }
-  
-      let currentIndex = 0;
   
       function renderCard(index) {
         const verse = verses[index];
@@ -56,6 +64,10 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         const fullDateLabel = dayLabel && dateLabel
             ? `${dayLabel} · ${dateLabel}`
             : (dayLabel || dateLabel);
+        const scriptureMotto =
+            lang === "ru"
+              ? "Пусть Писание объясняет Писание"
+              : "Let Scripture interpret Scripture";          
         const verseRef = verse?.verse_ref_lang?.[lang] || verse?.verse_ref || null;
         const bibleLink = buildBibleLink(verseRef, lang);
         const related = Array.isArray(verse.related) ? verse.related : [];
@@ -74,16 +86,38 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
             <div class="daily-verse-label">${ui[lang].title}</div>
 
             <div class="daily-verse-date-wrap">
+                <div class="daily-verse-date-row">
+
                 ${fullDateLabel ? `<div class="daily-verse-date">${fullDateLabel}</div>` : ""}
+
+                ${
+                  index !== START_INDEX
+                    ? `<button class="dv-jump-btn dv-jump-day1" type="button">
+                        ${lang === "ru" ? "День 1" : "Day 1"}
+                      </button>`
+                    : ""
+                }
+
+                ${
+                  todayIndex >= 0 && index !== todayIndex
+                    ? `<button class="dv-jump-btn dv-jump-today" type="button">
+                        ${lang === "ru" ? "Сегодня" : "Today"}
+                      </button>`
+                    : ""
+                }
+
+            </div>
+                <div class="daily-verse-subtitle">${escapeHtml(scriptureMotto)}</div>
             </div>
 
-            <div class="daily-verse-header-right">
+           <div class="daily-verse-header-right">
                 <button
-                class="dv-close"
-                type="button"
-                aria-label="${lang === 'ru' ? 'Закрыть' : 'Close'}"
-                title="${lang === 'ru' ? 'Закрыть' : 'Close'}"
+                  class="dv-close"
+                  type="button"
+                  aria-label="${lang === 'ru' ? 'Закрыть' : 'Close'}"
+                  title="${lang === 'ru' ? 'Закрыть' : 'Close'}"
                 >×</button>
+
             </div>
             </div>
 
@@ -188,8 +222,30 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         const prevBtn = root.querySelector('.dv-left');
         const nextBtn = root.querySelector('.dv-right');
         const closeBtn = root.querySelector('.dv-close');
+        const jumpDay1Btn = root.querySelector('.dv-jump-day1');
+        const jumpTodayBtn = root.querySelector('.dv-jump-today');
         const detailsBtn = root.querySelector('.daily-verse-related-btn');
         const detailsCloseBtn = root.querySelector('.dv-details-close');
+
+        if (jumpDay1Btn) {
+          jumpDay1Btn.addEventListener("click", () => {
+            currentIndex = START_INDEX;
+            animateChange(() => {
+            renderCard(currentIndex);
+            });
+          });
+        }
+        
+        if (jumpTodayBtn) {
+          jumpTodayBtn.addEventListener("click", () => {
+            if (todayIndex >= 0) {
+              currentIndex = todayIndex;
+              animateChange(() => {
+              renderCard(currentIndex);
+              });
+            }
+          });
+        }
         
         if (closeBtn) {
             closeBtn.addEventListener("click", () => {
@@ -214,20 +270,26 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         if (prevBtn) {
           prevBtn.addEventListener("click", () => {
             currentIndex = currentIndex - 1;
-            renderCard(currentIndex);
+            animateChange(() => {
+              renderCard(currentIndex);
+            });
           });
         }
   
         if (nextBtn) {
           nextBtn.addEventListener("click", () => {
             currentIndex = currentIndex + 1;
-            renderCard(currentIndex);
+            animateChange(() => {
+              renderCard(currentIndex);
+            });
           });
         }
         initDailyVerseTooltip(root);
       }
   
-      renderCard(currentIndex);
+      animateChange(() => {
+          renderCard(currentIndex);
+      });
     } catch (error) {
       console.error("Daily verse error:", error);
       root.innerHTML = `<div class="daily-verse-empty">${ui[lang].empty}</div>`;
@@ -346,6 +408,31 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
       .replace(/'/g, "&#39;");
   }
   
+  function animateChange(callback) {
+    const card = document.querySelector('.daily-verse-card');
+  
+    if (!card) {
+      callback();
+      return;
+    }
+  
+    card.classList.add('dv-fade-out');
+  
+    setTimeout(() => {
+      callback();
+  
+      const newCard = document.querySelector('.daily-verse-card');
+      if (!newCard) return;
+  
+      newCard.classList.add('dv-fade-in');
+  
+      setTimeout(() => {
+        newCard.classList.remove('dv-fade-in');
+      }, 50);
+  
+    }, 200);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     renderDailyVerse();
   });
