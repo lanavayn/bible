@@ -227,6 +227,20 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         const detailsBtn = root.querySelector('.daily-verse-related-btn');
         const detailsCloseBtn = root.querySelector('.dv-details-close');
 
+        const goPrev = () => {
+          if (currentIndex > 0) {
+            currentIndex = currentIndex - 1;
+            renderCard(currentIndex);
+          }
+        };
+        
+        const goNext = () => {
+          if (currentIndex < verses.length - 1) {
+            currentIndex = currentIndex + 1;
+            renderCard(currentIndex);
+          }
+        };
+
         if (jumpDay1Btn) {
           jumpDay1Btn.addEventListener("click", () => {
             currentIndex = START_INDEX;
@@ -268,22 +282,13 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
         }
 
         if (prevBtn) {
-          prevBtn.addEventListener("click", () => {
-            currentIndex = currentIndex - 1;
-            animateChange(() => {
-              renderCard(currentIndex);
-            });
-          });
+          prevBtn.addEventListener("click", goPrev);
         }
-  
+        
         if (nextBtn) {
-          nextBtn.addEventListener("click", () => {
-            currentIndex = currentIndex + 1;
-            animateChange(() => {
-              renderCard(currentIndex);
-            });
-          });
+          nextBtn.addEventListener("click", goNext);
         }
+        initDailyVerseSwipe(root, goPrev, goNext);
         initDailyVerseTooltip(root);
       }
   
@@ -337,6 +342,61 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
     const target = document.getElementById(targetId);
     if (!target) return;
     target.style.display = "none";
+  }
+
+  function initDailyVerseSwipe(root, onPrev, onNext) {
+    const swipeArea = root.querySelector(".daily-verse-text-wrap");
+    if (!swipeArea) return;
+  
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+    let isTouching = false;
+  
+    const MIN_SWIPE_X = 50;   // минимальная длина свайпа
+    const MAX_SWIPE_Y = 35;   // максимум вертикального отклонения
+  
+    swipeArea.addEventListener("touchstart", (e) => {
+      if (!e.touches || e.touches.length !== 1) return;
+  
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      endX = touch.clientX;
+      endY = touch.clientY;
+      isTouching = true;
+    }, { passive: true });
+  
+    swipeArea.addEventListener("touchmove", (e) => {
+      if (!isTouching || !e.touches || e.touches.length !== 1) return;
+  
+      const touch = e.touches[0];
+      endX = touch.clientX;
+      endY = touch.clientY;
+    }, { passive: true });
+  
+    swipeArea.addEventListener("touchend", () => {
+      if (!isTouching) return;
+      isTouching = false;
+  
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+  
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+  
+      // считаем только почти горизонтальный свайп
+      if (absX < MIN_SWIPE_X) return;
+      if (absY > MAX_SWIPE_Y) return;
+      if (absY >= absX) return;
+  
+      if (deltaX > 0) {
+        onPrev(); // свайп вправо
+      } else {
+        onNext(); // свайп влево
+      }
+    });
   }
   
   function initDailyVerseTooltip(root) {
