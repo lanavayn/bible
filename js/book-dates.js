@@ -156,6 +156,20 @@
         <details><summary><strong>${t.ot}</strong></summary><div class="bd-ot">Загрузка…</div></details>
         <details open><summary><strong>${t.nt}</strong></summary><div class="bd-nt">Загрузка…</div></details>
     `;
+    // Accordion поведение для Ветхий/Новый Завет
+    const allDetails = root.querySelectorAll("details");
+
+    allDetails.forEach(current => {
+      current.addEventListener("toggle", () => {
+        if (current.open) {
+          allDetails.forEach(other => {
+            if (other !== current) {
+              other.open = false;
+            }
+          });
+        }
+      });
+    });
     modalShell(root);
 
     try {
