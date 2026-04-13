@@ -99,7 +99,7 @@
       "reference_ru": "Ефесянам 2:8-9",
       "reference_en": "Ephesians 2:8-9",
       "text_ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился",
-      "text_en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.",
+      "text_en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.",
       "verse_ref": {
         "book": "Ephesians",
         "chapter": 2,
@@ -440,7 +440,7 @@
         {
           "reference_ru": "Римлянам 15:13",
           "reference_en": "Romans 15:13",
-          "text_ru": "Бог же надежды да исполнит вас всякой радости и мира в вере...",
+          "text_ru": "Бог же надежды да исполнит вас всякой радости и мира в вере, дабы вы, силою Духа Святого, обогатились надеждою.",
           "text_en": "May the God of hope fill you with all joy and peace in believing.",
           "verse_ref": {
             "book": "Romans",
@@ -527,8 +527,8 @@
         {
           "reference_ru": "Исаия 57:15",
           "reference_en": "Isaiah 57:15",
-          "text_ru": "Я живу… с сокрушенными и смиренными духом, чтобы оживлять дух смиренных…",
-          "text_en": "I dwell… with him who is of a contrite and lowly spirit, to revive the spirit of the lowly…",
+          "text_ru": "Ибо так говорит Высокий и Превознесенный, вечно Живущий, — Святый имя Его: Я живу на высоте небес и во святилище, и также с сокрушенными и смиренными духом, чтобы оживлять дух смиренных и оживлять сердца сокрушенных.",
+          "text_en": "For thus says the One who is high and lifted up, who inhabits eternity, whose name is Holy: I dwell in the high and holy place, and also with him who is of a contrite and lowly spirit, to revive the spirit of the lowly, and to revive the heart of the contrite.",
           "verse_ref": {
             "book": "Isaiah",
             "chapter": 57,
@@ -538,7 +538,7 @@
         {
           "reference_ru": "Псалом 50:19",
           "reference_en": "Psalm 51:17",
-          "text_ru": "Жертва Богу — дух сокрушенный; сердца сокрушенного и смиренного Ты не презришь…",
+          "text_ru": "Жертва Богу — дух сокрушенный; сердца сокрушенного и смиренного Ты не презришь, Боже.",
           "text_en": "The sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise.",
           "verse_ref_lang": {
             "ru": { "book": "Psalms", "chapter": 50, "verse": "19" },
@@ -570,8 +570,8 @@
         {
           "reference_ru": "Иоанна 16:33",
           "reference_en": "John 16:33",
-          "text_ru": "Сие сказал Я вам, чтобы вы имели во Мне мир…",
-          "text_en": "I have said these things to you, that in me you may have peace…",
+          "text_ru": "Сие сказал Я вам, чтобы вы имели во Мне мир. В мире будете иметь скорбь; но мужайтесь: Я победил мир.",
+          "text_en": "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world.",
           "verse_ref": {
             "book": "John",
             "chapter": 16,
@@ -581,8 +581,8 @@
         {
           "reference_ru": "2 Фессалоникийцам 3:16",
           "reference_en": "2 Thessalonians 3:16",
-          "text_ru": "Сам же Господь мира да даст вам мир всегда во всем…",
-          "text_en": "Now may the Lord of peace himself give you peace at all times in every way…",
+          "text_ru": "Сам же Господь мира да даст вам мир всегда во всем. Господь со всеми вами!",
+          "text_en": "Now may the Lord of peace himself give you peace at all times in every way. The Lord be with you all.",
           "verse_ref": {
             "book": "2-thessalonians",
             "chapter": 3,
@@ -613,8 +613,8 @@
         {
           "reference_ru": "Притчи 6:23",
           "reference_en": "Proverbs 6:23",
-          "text_ru": "Ибо заповедь есть светильник, и наставление — свет…",
-          "text_en": "For the commandment is a lamp and the teaching a light…",
+          "text_ru": "Ибо заповедь есть светильник, и наставление — свет, и назидательные поучения — путь к жизни.",
+          "text_en": "For the commandment is a lamp and the teaching a light, and the reproofs of discipline are the way of life.",
           "verse_ref": {
             "book": "Proverbs",
             "chapter": 6,
@@ -754,8 +754,8 @@
         {
           "reference_ru": "Псалом 15:11",
           "reference_en": "Psalm 16:11",
-          "text_ru": "Ты укажешь мне путь жизни: полнота радостей пред лицом Твоим.",
-          "text_en": "In your presence there is fullness of joy.",
+          "text_ru": "Ты укажешь мне путь жизни: полнота радостей пред лицом Твоим, блаженство в деснице Твоей вовек.",
+          "text_en": "You make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore.",
           "verse_ref_lang": {
             "ru": { "book": "Psalms", "chapter": 15, "verse": "11" },
             "en": { "book": "Psalms", "chapter": 16, "verse": "11" }
