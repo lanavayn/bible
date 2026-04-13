@@ -520,7 +520,7 @@
     });
   }
 
-  async function initInto(rootSelector){
+  window.initVerseSlider = async function initVerseSlider(rootSelector = '#verse-slider'){
     const root = document.querySelector(rootSelector);
     if (!root) return;
 
@@ -572,5 +572,8 @@
   });
 
   // Auto-mount into #verse-slider if present
-  document.addEventListener('DOMContentLoaded', ()=> initInto('#verse-slider'));
+  document.addEventListener('DOMContentLoaded', () => {
+    const root = document.querySelector('#verse-slider');
+    if (root) initVerseSlider('#verse-slider');
+  });
 })();

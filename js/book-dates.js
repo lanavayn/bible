@@ -145,7 +145,7 @@
   }
   
 
-  async function init(selector="#book-dates", jsonPath="/data/bible-books.json"){
+  window.initBookDates = async function initBookDates(selector = "#book-dates", jsonPath = "/data/bible-books.json") {
     const root = document.querySelector(selector);
     if (!root) return;
 
@@ -249,7 +249,10 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") document.getElementById("bdBackdrop").style.display = "none";
   });
-  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.querySelector("#book-dates");
+    if (root) initBookDates();
+  });
 })();
 
 setTimeout(() => {

@@ -3130,7 +3130,7 @@ table.book-dates th:nth-child(2) {
   /* чтобы точно не казалось кликабельным */
   cursor: default;
   pointer-events: none;
-}}
+}
 
 .daily-date-text {
   font-size: 0.78rem;

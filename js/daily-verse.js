@@ -1,5 +1,5 @@
 import { buildBibleLink } from "./bibleLinks.js";
-async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyVerses.json") {
+window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyVerses.json") {
     const root = document.getElementById(rootId);
     if (!root) return;
   
@@ -513,6 +513,3 @@ async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyV
     }, 200);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    renderDailyVerse();
-  });

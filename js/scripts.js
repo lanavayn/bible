@@ -1,5 +1,5 @@
-import "./header-ru.js";
+import "./header.js";
 import "./menu.js";
-import "./footer-ru.js";
+import "./footer.js";
 import "./share.js";
 import "./common-page.js";
