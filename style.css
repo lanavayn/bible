@@ -3180,7 +3180,7 @@ table.book-dates th:nth-child(2) {
 
 .daily-verse-subtitle-row {
   display: grid;
-  grid-template-columns: 0.5rem 1fr 0.5rem;
+  grid-template-columns: 0.1rem 1fr 0.1rem;
   align-items: center;
   gap: 0.2rem;
   width: 100%;
