@@ -953,6 +953,88 @@ li {
 .footer strong {
   color: #444;
 }
+.footer-intro {
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.footer-intro p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #5a4632;
+}
+
+.footer-help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  margin-left: 0;
+  margin-right: 0.25rem;
+  border: 1px solid #cdbb9a;
+  border-radius: 50%;
+  background: #f5f5f5;
+  color: #1a73e8;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.footer-help-btn:hover {
+  background: #ece7dc;
+}
+
+.footer-help-inline {
+  display: block;
+  margin-top: 0.45rem;
+}
+
+.footer-help-inline[hidden] {
+  display: none !important;
+}
+
+.footer-help-row {
+  margin: 0.35rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-help-row .footer-help-btn {
+  position: relative;
+  top: -1px;
+}
+
+.footer-help-box {
+  display: block;
+  position: relative;
+  background: #f8f3fb;
+  border: 1px solid #e6dcef;
+  border-radius: 10px;
+  padding: 0.7rem 2rem 0.7rem 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b3621;
+}
+
+.footer-help-close {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.45rem;
+  background: transparent;
+  border: none;
+  color: #777;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.footer-help-close:hover {
+  opacity: 1;
+}
 
   #overlay {
     display: none;
@@ -3505,4 +3587,56 @@ table.book-dates th:nth-child(2) {
   color: #6fa3e0;
   opacity: 1;
   transform: translateY(-50%) scale(1.15);
+}
+
+/* ===== About page: tighter spacing before Scripture block ===== */
+
+#what-is-bible .section-text:last-of-type {
+  margin-bottom: 0.35rem;
+}
+
+#scripture-about-itself {
+  margin-top: 0.15rem;
+}
+
+#scripture-about-itself .scripture-item:first-child {
+  margin-top: 0;
+}
+
+#scripture-about-itself .scripture-heading {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+}
+
+#scripture-about-itself .scripture-text {
+  margin-top: 0;
+}
+
+/* ===== About page: tighter paragraph spacing ===== */
+
+.about-section .section-text {
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+
+.section-text + .section-text {
+  margin-left: 0.5rem;
+  opacity: 0.9;
+}
+
+/* ===== About page markers ===== */
+.bullet {
+  position: relative;
+  padding-left: 1.2rem;
+  display: block;
+}
+
+.bullet::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  font-size: 0.7rem;
+  color: #1a73e8;
 }

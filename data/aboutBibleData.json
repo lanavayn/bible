@@ -1,0 +1,156 @@
+{
+  "page": {
+    "slug": "about-bible",
+    "title": {
+      "en": "About Scripture",
+      "ru": "О Писании"
+    },
+    "intro": {
+      "en": "",
+      "ru": ""
+    }
+  },
+
+  "sections": [
+
+    {
+      "type": "text_section",
+      "id": "what-is-bible",
+      "title": {
+        "en": "What is the Bible?",
+        "ru": "Что такое Библия?"
+      },
+      "paragraphs": {
+        "en": [
+          "<span class=\"bullet\">The Bible is a collection of books written over many centuries by different authors.</span>",
+          "<span class=\"bullet\">It consists of the Old Testament<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"More about the Old Testament\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Close\">×</button>The Old Testament tells about creation, the history of Israel, God’s law, the prophets, and the promises pointing to Christ.</span></span> and the New Testament<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"More about the New Testament\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Close\">×</button>The New Testament speaks about Jesus Christ, His life, death and resurrection, salvation by faith, and the life of the early church.</span></span>.</span>",
+          "<span class=\"bullet\">According to Scripture, it is given by God for teaching, correction, and hope.</span>",
+          "The Bible itself says this:"
+        ],
+        "ru": [
+          "<span class=\"bullet\">Библия — это собрание книг, написанных в разное время разными авторами.</span>",
+          "<span class=\"bullet\">Она состоит из Ветхого Завета<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"Подробнее о Ветхом Завете\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Закрыть\">×</button>Ветхий Завет рассказывает о сотворении мира, истории Израиля, законе Божьем, пророках и обетованиях, указывающих на Христа.</span></span> и Нового Завета<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"Подробнее о Новом Завете\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Закрыть\">×</button>Новый Завет говорит об Иисусе Христе, Его жизни, смерти и воскресении, о спасении по вере и жизни ранней церкви.</span></span>.</span>",
+          "<span class=\"bullet\">Согласно самому Писанию, она дана Богом для научения, исправления и ведёт человека к спасению.</span>",
+          "Писание раскрывает это так:"
+        ]
+      }
+    },
+
+    {
+      "type": "scripture_section",
+      "id": "scripture-about-itself",
+      "title": {
+        "en": "",
+        "ru": ""
+      },
+      "intro": {
+        "en": "",
+        "ru": ""
+      },
+      "verses": [
+        {
+          "id": "2tim316",
+          "topic_ru": "Писание от Бога",
+          "topic_en": "Scripture from God",
+          "reference_ru": "2 Тимофею 3:16",
+          "reference_en": "2 Timothy 3:16",
+          "text_ru": "16 Всё Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности.",
+          "text_en": "16 All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.",
+          "verse_ref_lang": {
+            "ru": { "book": "2-timothy", "chapter": 3, "verse": "16" },
+            "en": { "book": "2-timothy", "chapter": 3, "verse": "16" }
+          },
+          "interpretation_ru": "Писание дано Богом и полезно для научения, исправления и ведёт человека к спасению.",
+          "interpretation_en": "Scripture is given by God and is useful for teaching, correction, and leading a person to salvation.",
+          "related": [
+            {
+              "reference_ru": "2 Петра 1:21",
+              "reference_en": "2 Peter 1:21",
+              "text_ru": "21 Ибо никогда пророчество не было произносимо по воле человеческой, но изрекали его святые Божии человеки, будучи движимы Духом Святым.",
+              "text_en": "21 For no prophecy was ever produced by the will of man, but men spoke from God as they were carried along by the Holy Spirit.",
+              "verse_ref_lang": {
+                "ru": { "book": "2-peter", "chapter": 1, "verse": "21" },
+                "en": { "book": "2-peter", "chapter": 1, "verse": "21" }
+              }
+            },
+            {
+              "reference_ru": "Иоанна 5:39",
+              "reference_en": "John 5:39",
+              "text_ru": "39 Исследуйте Писания, ибо вы думаете через них иметь жизнь вечную; а они свидетельствуют о Мне.",
+              "text_en": "39 You search the Scriptures because you think that in them you have eternal life; and it is they that bear witness about me.",
+              "verse_ref_lang": {
+                "ru": { "book": "john", "chapter": 5, "verse": "39" },
+                "en": { "book": "john", "chapter": 5, "verse": "39" }
+              }
+            },
+            {
+              "reference_ru": "2 Тимофею 3:15",
+              "reference_en": "2 Timothy 3:15",
+              "text_ru": "15 Притом же ты из детства знаешь священные писания, которые могут умудрить тебя во спасение верою во Христа Иисуса.",
+              "text_en": "15 and how from childhood you have been acquainted with the sacred writings, which are able to make you wise for salvation through faith in Christ Jesus.",
+              "verse_ref_lang": {
+                "ru": { "book": "2-timothy", "chapter": 3, "verse": "15" },
+                "en": { "book": "2-timothy", "chapter": 3, "verse": "15" }
+              }
+            },
+            {
+              "reference_ru": "Римлянам 15:4",
+              "reference_en": "Romans 15:4",
+              "text_ru": "4 А всё, что писано было прежде, написано нам в наставление, чтобы мы терпением и утешением из Писаний сохраняли надежду.",
+              "text_en": "4 For whatever was written in former days was written for our instruction, that through endurance and through the encouragement of the Scriptures we might have hope.",
+              "verse_ref_lang": {
+                "ru": { "book": "romans", "chapter": 15, "verse": "4" },
+                "en": { "book": "romans", "chapter": 15, "verse": "4" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "text_section",
+      "id": "canonical-books",
+      "title": {
+        "en": "What do “canonical books” mean?",
+        "ru": "Что значит «канонические книги»?"
+      },
+      "paragraphs": {
+        "en": [
+          "<span class=\"bullet\">Canonical books are the books recognized as part of the Bible.</span>",
+          "<span class=\"bullet\">In the Jewish and Protestant tradition, the Bible consists of 66 books: 39 in the Old Testament and 27 in the New Testament.</span>",
+          "<span class=\"bullet\">In the Catholic and Orthodox traditions, the Old Testament also includes additional books.</span>",
+          "<span class=\"bullet\">The New Testament contains 27 books and is recognized across the main Christian traditions.</span>",
+          "<span class=\"bullet\">The Old Testament canon was formed gradually in the Jewish community long before the time of Christ.</span>",
+          "<span class=\"bullet\">The New Testament canon was recognized by the Church in the first centuries of Christianity.</span>"
+        ],
+        "ru": [
+          "<span class=\"bullet\">Канонические книги — это книги, признанные частью Священного Писания.</span>",
+          "<span class=\"bullet\">В еврейской и протестантской традиции Библия состоит из 66 книг: 39 книг Ветхого Завета и 27 книг Нового Завета.</span>",
+          "<span class=\"bullet\">В католической и православной традициях в состав Ветхого Завета входят также дополнительные книги.</span>",
+          "<span class=\"bullet\">Новый Завет включает 27 книг и признаётся во всех основных христианских традициях.</span>",
+          "<span class=\"bullet\">Канон Ветхого Завета складывался постепенно в еврейской среде задолго до времени Христа.</span>",
+          "<span class=\"bullet\">Канон Нового Завета был признан церковью в первые века христианства.</span>"
+        ]
+      }
+    }
+
+  ],
+
+  "topNav": [
+    {
+      "id": "what-is-bible",
+      "label": {
+        "en": "What is the Bible",
+        "ru": "Что такое Библия"
+      }
+    },
+    {
+      "id": "canonical-books",
+      "label": {
+        "en": "Canonical books",
+        "ru": "Канонические книги"
+      }
+    }
+  ]
+}

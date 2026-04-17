@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         home: "🏠 Home",
         share: "📤 Share",
         comments: "✍️ Notes",
-        about: "ℹ️ Info",
+        about: "ℹ️ About Scripture",
         english: "English",
         russian: "Русский"
       },
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         home: "🏠 Домой",
         share: "📤 Ссылка",
         comments: "✍️ Отзыв",
-        about: "ℹ️ О нас",
+        about: "ℹ️ О Писании",
         english: "English",
         russian: "Русский"
       }
