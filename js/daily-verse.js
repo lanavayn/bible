@@ -124,7 +124,23 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 }
 
             </div>
-                <div class="daily-verse-subtitle">${escapeHtml(scriptureMotto)}</div>
+                <div class="daily-verse-subtitle-row">
+
+                  ${
+                    verses.length > 1 && index > 0
+                      ? `<button class="dv-arrow dv-left dv-arrow-top" type="button" aria-label="${ui[lang].prev}">‹</button>`
+                      : `<span class="dv-arrow-placeholder"></span>`
+                  }
+
+                  <div class="daily-verse-subtitle">${escapeHtml(scriptureMotto)}</div>
+
+                  ${
+                    verses.length > 1 && index < verses.length - 1
+                      ? `<button class="dv-arrow dv-right dv-arrow-top" type="button" aria-label="${ui[lang].next}">›</button>`
+                      : `<span class="dv-arrow-placeholder"></span>`
+                  }
+
+                </div>
             </div>
 
            <div class="daily-verse-header-right">
@@ -169,19 +185,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             }
 
             <div class="daily-verse-text-wrap">
-            ${
-              verses.length > 1 && index > 0
-                ? `<button class="dv-arrow dv-left" type="button" aria-label="${ui[lang].prev}">‹</button>`
-                : ""
-            }
-
-            ${text ? `<blockquote class="daily-verse-text">${escapeHtml(text)}</blockquote>` : ""}
-
-            ${
-              verses.length > 1 && index < verses.length - 1
-                ? `<button class="dv-arrow dv-right" type="button" aria-label="${ui[lang].next}">›</button>`
-                : ""
-            }
+               ${text ? `<blockquote class="daily-verse-text">${escapeHtml(text)}</blockquote>` : ""}
             </div>
 
             <div class="daily-verse-actions">

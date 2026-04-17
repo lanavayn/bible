@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `,
       line3: `
         <span>
-          🔹 The Bible consists of 66 books (39 in the Old Testament and 27 in the New Testament).
+          🔹 The Bible consists of 66 books — 39 in the Old Testament and 27 in the New Testament.
         </span>
       `,
         copyright: "© 2025 Bible for All. All rights reserved."
