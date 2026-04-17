@@ -3187,6 +3187,22 @@ table.book-dates th:nth-child(2) {
   max-width: 100%;
 }
 
+.daily-verse-inline-toggle{
+  border:1px solid #d8c49a;
+  background:#fffaf0;
+  border-radius:999px;
+  padding:6px 14px;
+  font-size:.92rem;
+  color:#6b4b2a;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.daily-verse-inline-toggle:hover{
+  background:#f8eed8;
+}
+
 .dv-arrow-top {
   position: static !important;
   left: auto !important;
@@ -3572,32 +3588,78 @@ table.book-dates th:nth-child(2) {
   align-items: center;
   margin-bottom: 0.75rem;
   touch-action: pan-y;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
-/* стрелки как overlay 
-.dv-left,
-.dv-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-}*/
+.daily-verse-inline-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-top: 0.35rem;
+}
 
-/* стрелка СЛЕВА — между линиями
-.dv-left {
-  position: absolute;
-  left: -0.99rem; 
-  top: 50%;
-  transform: translateY(-50%);
-} */
 
-/* стрелка СПРАВА 
-.dv-right {
-  position: absolute;
-  right: -0.99rem;
-  top: 50%;
-  transform: translateY(-50%);
-}*/
+.daily-verse-preview {
+  margin: 0;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.daily-verse-inline-toggle:hover {
+  opacity: 0.85;
+}
+
+.daily-verse-full-text {
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .daily-verse-inline-row {
+    gap: 0.45rem;
+  }
+
+  .daily-verse-inline-toggle {
+    min-width: 4.3rem;
+    padding: 0.30rem 0.62rem;
+    font-size: 0.60rem;
+    position: relative;
+    top: -2px;
+  }
+}
+
+.daily-verse-inline-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.7rem;
+  padding: 0.34rem 0.72rem;
+  font-size: 0.70rem;
+  margin: 0;
+  border: 1px solid #d8c49a;
+  border-radius: 999px;
+  background: #fffaf0;
+  font: inherit;
+  font-weight: 550;
+  line-height: 1.0;
+  color: #6b4b2a;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative; 
+  top: -2px;
+}
+
+.daily-verse-inline-toggle:hover {
+  background: #f8eed8;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
 
 /* стиль как у слайдера */
 .dv-arrow {

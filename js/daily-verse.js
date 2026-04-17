@@ -40,6 +40,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
       const todayIndex = getTodayIndex();
       let currentIndex = todayIndex >= 0 ? todayIndex : START_INDEX;
+      let keepDetailsOpen = false;
   
       if (!verses.length) {
         root.innerHTML = `<div class="daily-verse-empty">${ui[lang].empty}</div>`;
@@ -77,8 +78,11 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         lang === "ru" ? "См. также в Писании:" : "See also in Scripture:";
         const detailsId = `dv-details-${escapeHtml(verse.id || index)}`;
         const openBibleLabel = lang === "ru" ? "Открыть в Библии" : "Open in Bible";
-        const reflectionBtnLabel = lang === "ru" ? "Размышление + ссылки" : "Reflection + links";
-        
+        const previewText = getVersePreview(text);
+        const expandBtnLabel = keepDetailsOpen
+          ? (lang === "ru" ? "Меньше" : "Less")
+          : (lang === "ru" ? "Подробнее" : "Open");
+        const detailsVerseTitle = lang === "ru" ? "Полный стих:" : "Full verse:";        
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
@@ -184,58 +188,70 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 : ""
             }
 
+          <div class="daily-verse-inline-row">
             <div class="daily-verse-text-wrap">
-               ${text ? `<blockquote class="daily-verse-text">${escapeHtml(text)}</blockquote>` : ""}
+              ${previewText ? `<blockquote class="daily-verse-text daily-verse-preview">${escapeHtml(previewText)}</blockquote>` : ""}
             </div>
 
-            <div class="daily-verse-actions">
             <button
-                type="button"
-                class="daily-verse-related-btn"
-                data-target="${detailsId}"
+              type="button"
+              class="daily-verse-inline-toggle"
+              data-target="${detailsId}"
             >
-                ${reflectionBtnLabel}
+              ${expandBtnLabel}
             </button>
+          </div>
+
+          <div class="daily-verse-details scripture-details" id="${detailsId}" style="display:${keepDetailsOpen ? "block" : "none"};">
+            <div class="scripture-note-box">
+              <div class="scripture-close-row">
+                <button
+                  class="scripture-close dv-details-close"
+                  type="button"
+                  data-target="${detailsId}"
+                  aria-label="${lang === 'ru' ? 'Закрыть' : 'Close'}"
+                  title="${lang === 'ru' ? 'Закрыть' : 'Close'}"
+                >×</button>
+              </div>
+
+              ${
+                text
+                  ? `
+                  <p class="scripture-interpretation daily-verse-full-text">
+                    <strong>${detailsVerseTitle}</strong>
+                    ${escapeHtml(text)}
+                  </p>
+                  `
+                  : ""
+              }
+
+              ${
+                interpretation
+                  ? `
+                  <p class="scripture-interpretation">
+                    <strong>${detailsTitle}</strong>
+                    ${escapeHtml(interpretation)}
+                  </p>
+                  `
+                  : ""
+              }
+
+              ${
+                related.length
+                  ? `
+                  <div class="scripture-related-block">
+                    <p class="scripture-related-title">
+                      <strong>${relatedTitle}</strong>
+                    </p>
+                    <ul class="scripture-related-list">
+                      ${related.map(rel => renderDailyRelatedItem(rel, lang)).join("")}
+                    </ul>
+                  </div>
+                  `
+                  : ""
+              }
             </div>
-            <div class="daily-verse-details scripture-details" id="${detailsId}" style="display:none;">
-                <div class="scripture-note-box">
-                    <div class="scripture-close-row">
-                    <button
-                        class="scripture-close dv-details-close"
-                        type="button"
-                        data-target="${detailsId}"
-                        aria-label="${lang === 'ru' ? 'Закрыть' : 'Close'}"
-                        title="${lang === 'ru' ? 'Закрыть' : 'Close'}"
-                    >×</button>
-                    </div>
-
-                    ${
-                    interpretation
-                        ? `
-                        <p class="scripture-interpretation">
-                        <strong>${detailsTitle}</strong>
-                        ${escapeHtml(interpretation)}
-                        </p>
-                        `
-                        : ""
-                    }
-
-                    ${
-                    related.length
-                        ? `
-                        <div class="scripture-related-block">
-                        <p class="scripture-related-title">
-                            <strong>${relatedTitle}</strong>
-                        </p>
-                        <ul class="scripture-related-list">
-                            ${related.map(rel => renderDailyRelatedItem(rel, lang)).join("")}
-                        </ul>
-                        </div>
-                        `
-                        : ""
-                    }
-                </div>
-                </div>
+          </div>
             
         </section>
         `;
@@ -245,7 +261,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const closeBtn = root.querySelector('.dv-close');
         const jumpDay1Btn = root.querySelector('.dv-jump-day1');
         const jumpTodayBtn = root.querySelector('.dv-jump-today');
-        const detailsBtn = root.querySelector('.daily-verse-related-btn');
+        const detailsBtn = root.querySelector('.daily-verse-inline-toggle');
         const detailsCloseBtn = root.querySelector('.dv-details-close');
 
         const goPrev = () => {
@@ -288,19 +304,27 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             });
           }
 
-        if (detailsBtn) {
+          if (detailsBtn) {
             detailsBtn.addEventListener("click", () => {
               const targetId = detailsBtn.dataset.target;
-              toggleDailyVerseDetails(targetId);
-            });
-        }
+              const target = document.getElementById(targetId);
+              if (!target) return;
           
-        if (detailsCloseBtn) {
+              const willOpen = target.style.display !== "block";
+              toggleDailyVerseDetails(targetId);
+              keepDetailsOpen = willOpen;
+              updateDailyVerseToggleLabel(detailsBtn, keepDetailsOpen, lang);
+            });
+          }
+          
+          if (detailsCloseBtn) {
             detailsCloseBtn.addEventListener("click", () => {
               const targetId = detailsCloseBtn.dataset.target;
               closeDailyVerseDetails(targetId);
+              keepDetailsOpen = false;
+              updateDailyVerseToggleLabel(detailsBtn, keepDetailsOpen, lang);
             });
-        }
+          }
 
         if (prevBtn) {
           prevBtn.addEventListener("click", goPrev);
@@ -343,6 +367,29 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     });
   }
 
+  function getVersePreview(text = "") {
+    const clean = String(text).replace(/\s+/g, " ").trim();
+    if (!clean) return "";
+  
+    const maxLength = 34;
+    if (clean.length <= maxLength) return clean;
+  
+    const shortened = clean.slice(0, maxLength);
+    const lastSpace = shortened.lastIndexOf(" ");
+  
+    if (lastSpace > 18) {
+      return shortened.slice(0, lastSpace).trim() + "...";
+    }
+  
+    return shortened.trim() + "...";
+  }
+
+  function updateDailyVerseToggleLabel(button, isOpen, lang) {
+    if (!button) return;
+    button.textContent = isOpen
+      ? (lang === "ru" ? "Меньше" : "Less")
+      : (lang === "ru" ? "Подробнее" : "Open");
+  }
   
   function toggleDailyVerseDetails(targetId) {
     const target = document.getElementById(targetId);
