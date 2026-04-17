@@ -3138,7 +3138,7 @@ table.book-dates th:nth-child(2) {
 ================================ */
 
 #daily-verse {
-  margin: var(--space-6) 0;
+  margin: 1rem 0 0.35rem;
 }
 
 .daily-verse-card {
@@ -3150,6 +3150,7 @@ table.book-dates th:nth-child(2) {
   padding: 1rem 1rem 0.9rem;
   transition: opacity 0.25s ease, transform 0.25s ease;
   touch-action: pan-y;
+  margin-bottom: 0.6rem;
 }
 
 .dv-fade-out {
@@ -3422,6 +3423,7 @@ table.book-dates th:nth-child(2) {
     padding: 0.75rem 0.85rem 0.8rem;
     border-radius: 12px;
     touch-action: pan-y;
+    margin-bottom: 0.1rem;
   }
 
   .daily-verse-header {
@@ -3442,7 +3444,7 @@ table.book-dates th:nth-child(2) {
   .daily-verse-title-inline {
     font-size: 1rem;
     line-height: 1.25;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
     gap: 0.25rem;
   }
 
@@ -3586,7 +3588,7 @@ table.book-dates th:nth-child(2) {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.1rem;
   touch-action: pan-y;
   flex: 1 1 auto;
   min-width: 0;
@@ -3597,7 +3599,7 @@ table.book-dates th:nth-child(2) {
   align-items: baseline;
   justify-content: space-between;
   gap: 0.7rem;
-  margin-top: 0.35rem;
+  margin-top: 0.1rem;
 }
 
 
