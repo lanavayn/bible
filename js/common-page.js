@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
       renderVerses(verses, lang, versesContainer);
       bindVerseToggles();
+      bindTopNavLinks();
       initGlobalTooltip();
     } catch (error) {
       console.error("Error loading page data:", error);
@@ -196,6 +197,29 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
   }
+
+  function bindTopNavLinks() {
+    document.querySelectorAll(".top-nav-link").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+  
+        closeAllDetails();
+  
+        const targetId = this.getAttribute("href")?.replace("#", "");
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+  
+        const rect = targetEl.getBoundingClientRect();
+        const absoluteTop = window.pageYOffset + rect.top;
+        const offset = 80;
+  
+        window.scrollTo({
+          top: Math.max(absoluteTop - offset, 0),
+          behavior: "smooth"
+        });
+      });
+    });
+  }
   
   function toggleDetails(targetId) {
     const target = document.getElementById(targetId);
@@ -217,6 +241,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const target = document.getElementById(targetId);
     if (!target) return;
     target.style.display = "none";
+  }
+
+  function closeAllDetails() {
+    document.querySelectorAll(".scripture-details").forEach(el => {
+      el.style.display = "none";
+    });
   }
   
   function formatTopic(topic, lang) {
