@@ -2,11 +2,11 @@
   "page": {
     "slug": "about-bible",
     "title": {
-      "en": "About Scripture",
-      "ru": "О Писании"
+      "en": "About the Bible",
+      "ru": "О Библия"
     },
     "intro": {
-      "en": "",
+      "en": "Simple explanations based on Scripture",
       "ru": ""
     }
   },
