@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Welcome to the Bible for All",
         back: "← Back",
         home: "🏠 Home",
-        share: "📤 Share",
-        comments: "✍️ Notes",
-        about: "ℹ️ About Scripture",
+        share: "📤 Share link",
+        comments: "✍️ Leave feedback",
+        about: "ℹ️ About the Bible",
         english: "English",
         russian: "Русский"
       },
@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Добро пожаловать в мир Библии",
         back: "← Назад",
         home: "🏠 Домой",
-        share: "📤 Ссылка",
-        comments: "✍️ Отзыв",
-        about: "ℹ️ О Писании",
+        share: "📤 Поделиться",
+        comments: "✍️ Оставить отзыв",
+        about: "ℹ️ О Библии",
         english: "English",
         russian: "Русский"
       }
