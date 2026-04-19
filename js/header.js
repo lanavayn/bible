@@ -87,14 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="top-right dropdown">
           <button class="dropbtn">🌐</button>
           <div class="dropdown-content lang-dropdown">
-            <a href="${enHref}">${t.english}</a>
-            <a href="${ruHref}">${t.russian}</a>
+            <a href="${enHref}" id="langEn">${t.english}</a>
+            <a href="${ruHref}" id="langRu">${t.russian}</a>
           </div>
         </div>
       </div>
     `;
-    const backBtn = document.getElementById("menuBack");
 
+    const backBtn = document.getElementById("menuBack");
     if (backBtn) {
       backBtn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -109,4 +109,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
+    
+    const langEn = document.getElementById("langEn");
+    const langRu = document.getElementById("langRu");
+    
+    if (langEn) {
+      langEn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.replace(enHref);
+      });
+    }
+    
+    if (langRu) {
+      langRu.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.replace(ruHref);
+      });
+    }
+
+
   });
