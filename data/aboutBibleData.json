@@ -3,11 +3,11 @@
     "slug": "about-bible",
     "title": {
       "en": "About the Bible",
-      "ru": "О Библия"
+      "ru": "О Библии"
     },
     "intro": {
-      "en": "Simple explanations based on Scripture",
-      "ru": "Простые объяснения, основанные на Писании"
+      "en": "Simple explanations rooted in Scripture",
+      "ru": "Простые объяснения с опорой на Писание"
     }
   },
 
@@ -23,15 +23,15 @@
       "paragraphs": {
         "en": [
           "<span class=\"bullet\">The Bible is a collection of books written over many centuries by different authors.</span>",
-          "<span class=\"bullet\">It consists of the Old Testament<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"More about the Old Testament\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Close\">×</button>The Old Testament tells about creation, the history of Israel, God’s law, the prophets, and the promises pointing to Christ.</span></span> and the New Testament<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"More about the New Testament\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Close\">×</button>The New Testament speaks about Jesus Christ, His life, death and resurrection, salvation by faith, and the life of the early church.</span></span>.</span>",
-          "<span class=\"bullet\">According to Scripture, it is given by God for teaching, correction, and hope.</span>",
-          "The Bible itself says this:"
+          "<span class=\"bullet\">It consists of the Old Testament<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"More about the Old Testament\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Close\">×</button>The Old Testament tells about creation, the history of Israel, God’s law, the prophets, and the promises that point to Christ.</span></span> and the New Testament<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"More about the New Testament\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Close\">×</button>The New Testament speaks about Jesus Christ, His life, death, and resurrection, salvation by faith, and the life of the early Church.</span></span>.</span>",
+          "<span class=\"bullet\">According to Scripture, it is given by God for teaching, correction, and guidance.</span>",
+          "Scripture itself says:"
         ],
         "ru": [
           "<span class=\"bullet\">Библия — это собрание книг, написанных в разное время разными авторами.</span>",
           "<span class=\"bullet\">Она состоит из Ветхого Завета<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"Подробнее о Ветхом Завете\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Закрыть\">×</button>Ветхий Завет рассказывает о сотворении мира, истории Израиля, законе Божьем, пророках и обетованиях, указывающих на Христа.</span></span> и Нового Завета<button class=\"footer-help-btn\" type=\"button\" aria-expanded=\"false\" aria-label=\"Подробнее о Новом Завете\">i</button><span class=\"footer-help-inline\" hidden><span class=\"footer-help-box\"><button class=\"footer-help-close\" type=\"button\" aria-label=\"Закрыть\">×</button>Новый Завет говорит об Иисусе Христе, Его жизни, смерти и воскресении, о спасении по вере и жизни ранней церкви.</span></span>.</span>",
-          "<span class=\"bullet\">Согласно самому Писанию, она дана Богом для научения, исправления и ведёт человека к спасению.</span>",
-          "Писание раскрывает это так:"
+          "<span class=\"bullet\">Согласно Писанию, она дана Богом для научения, исправления и ведёт человека к спасению.</span>",
+          "Само Писание говорит об этом так:"
         ]
       }
     },
@@ -119,7 +119,7 @@
         "en": [
           "<span class=\"bullet\">Canonical books are the books recognized as part of the Bible.</span>",
           "<span class=\"bullet\">In the Jewish and Protestant tradition, the Bible consists of 66 books: 39 in the Old Testament and 27 in the New Testament.</span>",
-          "<span class=\"bullet\">In the Catholic and Orthodox traditions, the Old Testament also includes additional books.</span>",
+          "<span class=\"bullet\">In some Christian traditions, the Old Testament also includes additional books.</span>",
           "<span class=\"bullet\">The New Testament contains 27 books and is recognized across the main Christian traditions.</span>",
           "<span class=\"bullet\">The Old Testament canon was formed gradually in the Jewish community long before the time of Christ.</span>",
           "<span class=\"bullet\">The New Testament canon was recognized by the Church in the first centuries of Christianity.</span>"
@@ -127,7 +127,7 @@
         "ru": [
           "<span class=\"bullet\">Канонические книги — это книги, признанные частью Священного Писания.</span>",
           "<span class=\"bullet\">В еврейской и протестантской традиции Библия состоит из 66 книг: 39 книг Ветхого Завета и 27 книг Нового Завета.</span>",
-          "<span class=\"bullet\">В католической и православной традициях в состав Ветхого Завета входят также дополнительные книги.</span>",
+          "<span class=\"bullet\">В некоторых христианских традициях в состав Ветхого Завета входят также дополнительные книги.</span>",
           "<span class=\"bullet\">Новый Завет включает 27 книг и признаётся во всех основных христианских традициях.</span>",
           "<span class=\"bullet\">Канон Ветхого Завета складывался постепенно в еврейской среде задолго до времени Христа.</span>",
           "<span class=\"bullet\">Канон Нового Завета был признан церковью в первые века христианства.</span>"

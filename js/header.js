@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="top-left dropdown">
           <button class="dropbtn">☰</button>
           <div class="dropdown-content">
-            ${showBack ? `<a href="javascript:history.back()">${t.back}</a>` : ""}
+          ${showBack ? `<a href="#" id="menuBack">${t.back}</a>` : ""}
             ${showHome ? `<a href="${homeHref}">${t.home}</a>` : ""}
             <a href="#" class="share-button" title="${t.share}">${t.share}</a>
             ${showComments ? `<a href="${commentsHref}">${t.comments}</a>` : ""}
@@ -93,4 +93,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `;
+    const backBtn = document.getElementById("menuBack");
+
+    if (backBtn) {
+      backBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const referrer = document.referrer;
+        const sameSite = referrer && new URL(referrer).origin === window.location.origin;
+
+        if (sameSite) {
+          history.back();
+        } else {
+          window.location.href = homeHref;
+        }
+      });
+    }
   });
