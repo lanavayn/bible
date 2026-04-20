@@ -3663,6 +3663,27 @@ table.book-dates th:nth-child(2) {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
 }
 
+.daily-verse-subtitle.easter-subtitle {
+  font-weight: 600;
+  color: #7b3f00;
+  letter-spacing: 0.02em;
+  animation: easterSubtitleFade 1.2s ease-out;
+}
+
+@keyframes easterSubtitleFade {
+  0% {
+    opacity: 0;
+    transform: translateY(0.3rem);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* стиль как у слайдера */
 .dv-arrow {
   border: none;
@@ -3678,6 +3699,13 @@ table.book-dates th:nth-child(2) {
   color: #6fa3e0;
   opacity: 1;
   transform: scale(1.12);
+}
+
+/* Easter subtitle highlight */
+.daily-verse-subtitle.easter-subtitle {
+  font-weight: 600;
+  color: #7b3f00; /* тёплый коричнево-золотой */
+  letter-spacing: 0.02em;
 }
 
 /* ===== About page: tighter spacing before Scripture block ===== */

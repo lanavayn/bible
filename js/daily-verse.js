@@ -1,4 +1,56 @@
 import { buildBibleLink } from "./bibleLinks.js";
+
+const easterDates = {
+  2026: "2026-04-05",
+  2027: "2027-03-28",
+  2028: "2028-04-16",
+  2029: "2029-04-01",
+  2030: "2030-04-21",
+  2031: "2031-04-13",
+  2032: "2032-03-28",
+  2033: "2033-04-17",
+  2034: "2034-04-09",
+  2035: "2035-03-25",
+  2036: "2036-04-13"
+};
+
+function parseLocalDate(dateString) {
+  const [y, m, d] = dateString.split("-").map(Number);
+  return new Date(y, m - 1, d);
+}
+
+function stripTime(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function getLastEaster(today = new Date()) {
+  const cleanToday = stripTime(today);
+  const year = cleanToday.getFullYear();
+  const thisEaster = parseLocalDate(easterDates[year]);
+
+  if (cleanToday >= thisEaster) return thisEaster;
+  return parseLocalDate(easterDates[year - 1]);
+}
+
+function getDayNumberFromEaster(today = new Date()) {
+  const cleanToday = stripTime(today);
+  const lastEaster = getLastEaster(cleanToday);
+
+  const diffMs = cleanToday - lastEaster;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  return diffDays + 1; // Пасха = Day 1
+}
+
+function getDateForDay(dayNumber, today = new Date()) {
+  const lastEaster = getLastEaster(today);
+
+  const date = new Date(lastEaster);
+  date.setDate(date.getDate() + (dayNumber - 1));
+
+  return date;
+}
+
 window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyVerses.json") {
     const root = document.getElementById(rootId);
     if (!root) return;
@@ -33,13 +85,17 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
       const START_INDEX = 0;
 
-      function getTodayIndex() {
-        const today = getTodayLocalISO();
-        return verses.findIndex(v => v.date === today);
+      const todayDayNumber = getDayNumberFromEaster();
+
+      let currentIndex = verses.findIndex(v => v.day === todayDayNumber);
+
+      // fallback если ещё нет такого дня в JSON
+      if (currentIndex === -1) {
+        currentIndex = START_INDEX;
       }
 
-      const todayIndex = getTodayIndex();
-      let currentIndex = todayIndex >= 0 ? todayIndex : START_INDEX;
+      const todayIndex = currentIndex;
+
       let keepDetailsOpen = false;
   
       if (!verses.length) {
@@ -58,17 +114,28 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const reference = verse[`reference_${lang}`] || "";
         const text = verse[`text_${lang}`] || "";
         const interpretation = verse[`interpretation_${lang}`] || "";
-        const dateLabel = formatDateForDisplay(verse.date, lang);
+
+        const computedDate = getDateForDay(verse.day);
+        const dateLabel = formatDateFromDateObj(computedDate, lang);
+
+        const isEasterDay = verse.day === 1;
+
         const dayLabel = verse.day
-            ? (lang === "ru" ? `День ${verse.day}` : `Day ${verse.day}`)
-            : "";
+          ? (lang === "ru"
+              ? `День ${verse.day}${isEasterDay ? " · Пасха" : ""}`
+              : `Day ${verse.day}${isEasterDay ? " · Easter" : ""}`)
+          : "";
         const fullDateLabel = dayLabel && dateLabel
             ? `${dayLabel} · ${dateLabel}`
             : (dayLabel || dateLabel);
-        const scriptureMotto =
-            lang === "ru"
-              ? "Пусть Писание объясняет Писание"
-              : "Let Scripture interpret Scripture";          
+
+        const scriptureMotto = isEasterDay
+            ? (lang === "ru"
+                ? "Воскресение Христа"
+                : "Resurrection of Christ")
+            : (lang === "ru"
+                ? "Пусть Писание объясняет Писание"
+                : "Let Scripture interpret Scripture");          
         const verseRef = verse?.verse_ref_lang?.[lang] || verse?.verse_ref || null;
         const bibleLink = buildBibleLink(verseRef, lang);
         const related = Array.isArray(verse.related) ? verse.related : [];
@@ -136,7 +203,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                       : `<span class="dv-arrow-placeholder"></span>`
                   }
 
-                  <div class="daily-verse-subtitle">${escapeHtml(scriptureMotto)}</div>
+                  <div class="daily-verse-subtitle ${isEasterDay ? 'easter-subtitle' : ''}">
+                    ${escapeHtml(scriptureMotto)}
+                  </div>
 
                   ${
                     verses.length > 1 && index < verses.length - 1
@@ -365,6 +434,19 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       month: "long",
       day: "numeric"
     });
+  }
+
+  function formatDateFromDateObj(date, lang = "en") {
+    if (!(date instanceof Date)) return "";
+  
+    return date.toLocaleDateString(
+      lang === "ru" ? "ru-RU" : "en-CA",
+      {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      }
+    );
   }
 
   function getVersePreview(text = "") {
