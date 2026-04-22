@@ -945,9 +945,16 @@
       "text_ru": "Если любите Меня, соблюдите Мои заповеди.",
       "text_en": "If you love me, you will keep my commandments.",
       "verse_ref": { "book": "John", "chapter": 14, "verse": "15" },
-      "interpretation_ru": "Любовь к Иисусу проявляется в послушании Ему — и это послушание, которое рождается в сердце и совершается через Святого Духа.",
+      "interpretation_ru": "Любовь к Иисусу проявляется в послушании Ему — послушании, которое рождается в сердце и совершается через Святого Духа.",
       "interpretation_en": "Love for Jesus is expressed in obedience to Him—an obedience that is born in the heart and lived out through the Holy Spirit.",
       "related": [
+        {
+          "reference_ru": "Евреям 10:16",
+          "reference_en": "Hebrews 10:16",
+          "text_ru": "16. Вот завет, который завещаю им после тех дней, говорит Господь: вложу законы Мои в сердца их и в мыслях их напишу их.",
+          "text_en": "16. This is the covenant that I will make with them after those days, declares the Lord: I will put my laws on their hearts, and write them on their minds.",
+          "verse_ref": { "book": "Hebrews", "chapter": 10, "verse": "16" }
+        },
         {
           "reference_ru": "Римлянам 8:14",
           "reference_en": "Romans 8:14",
@@ -961,14 +968,7 @@
           "text_ru": "16. Я говорю: поступайте по духу, и вы не будете исполнять вожделений плоти.",
           "text_en": "16. But I say, walk by the Spirit, and you will not gratify the desires of the flesh.",
           "verse_ref": { "book": "Galatians", "chapter": 5, "verse": "16" }
-        },
-        {
-          "reference_ru": "Евреям 10:16",
-          "reference_en": "Hebrews 10:16",
-          "text_ru": "16. Вот завет, который завещаю им после тех дней, говорит Господь: вложу законы Мои в сердца их и в мыслях их напишу их.",
-          "text_en": "16. This is the covenant that I will make with them after those days, declares the Lord: I will put my laws on their hearts, and write them on their minds.",
-          "verse_ref": { "book": "Hebrews", "chapter": 10, "verse": "16" }
-        }
+        }        
       ]
     },
     {
