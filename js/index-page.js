@@ -103,6 +103,7 @@ function getIndexLang() {
       <h1 class="hero-title">${t.heroTitle}</h1>
   
       <section id="daily-verse"></section>
+      <div id="daily-verse-reopen" class="dv-reopen-btn" style="display:none;"></div>
   
       <div class="topics-toolbar">
         <p class="topics-label">${t.topicsLabel}</p>

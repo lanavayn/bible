@@ -54,6 +54,17 @@ function getDateForDay(dayNumber, today = new Date()) {
 window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyVerses.json") {
     const root = document.getElementById(rootId);
     if (!root) return;
+    const reopenBtn = document.getElementById("daily-verse-reopen");
+
+    if (reopenBtn && !reopenBtn.dataset.bound) {
+      reopenBtn.dataset.bound = "true";
+
+      reopenBtn.addEventListener("click", () => {
+        root.style.display = "block";
+        reopenBtn.style.display = "none";
+        root.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   
     const lang = document.documentElement.lang?.startsWith("ru") ? "ru" : "en";
   
@@ -368,10 +379,16 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         }
         
         if (closeBtn) {
-            closeBtn.addEventListener("click", () => {
-              root.style.display = "none";
-            });
-          }
+          closeBtn.addEventListener("click", () => {
+            root.style.display = "none";
+        
+            const reopenBtn = document.getElementById("daily-verse-reopen");
+            if (reopenBtn) {
+              reopenBtn.textContent = lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse";
+              reopenBtn.style.display = "inline-block";
+            }
+          });
+        }
 
           if (detailsBtn) {
             detailsBtn.addEventListener("click", () => {

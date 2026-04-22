@@ -3142,6 +3142,7 @@ table.book-dates th:nth-child(2) {
 }
 
 .daily-verse-card {
+  animation: dvFadeIn 0.4s ease;
   position: relative;
   background: #fffdf8;
   border: 1px solid #e8dcc8;
@@ -3167,11 +3168,17 @@ table.book-dates th:nth-child(2) {
   box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
+/* ✨ subtitle (Let Scripture interpret Scripture) */
 .daily-verse-subtitle {
   margin-top: 0;
   flex: 0 1 auto;
   text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5b3d1f;
+  opacity: 1;
 }
+
 .dv-arrow-top,
 .dv-arrow-placeholder {
   width: 1.9rem;
@@ -3235,35 +3242,31 @@ table.book-dates th:nth-child(2) {
   width: 100%;
 }
 
+/* 📅 дата */
 .daily-verse-date {
   font-size: 0.95rem;
-  color: #8b7a6a;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  justify-content: center;
+  color: #6a4a35; /* теплее и темнее */
+  opacity: 0.95;
 }
 
+/* Day badge (Day 17 / День 17) */
 .daily-day-badge {
-  /* ❌ убираем "кнопку" */
-  border: none;
-  background: none;
-  box-shadow: none;
-
-  /* ✅ оставляем аккуратное выделение */
+  background: #f3e4c8;
+  color: #5b3d1f;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-text);
-
-  /* чтобы точно не казалось кликабельным */
+  border: none;
+  box-shadow: none;
   cursor: default;
   pointer-events: none;
 }
 
 .daily-date-text {
-  font-size: 0.78rem;
-  color: var(--color-text-soft);
-  opacity: 0.65;
+  font-size: 0.92rem;
+  color: #6a4a35;
+  opacity: 1;
 }
 
 .daily-verse-header-right {
@@ -3437,7 +3440,9 @@ table.book-dates th:nth-child(2) {
   }
 
   .daily-verse-date {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
+    color: #6a4a35; /* теплее и темнее */
+    opacity: 0.95;
     line-height: 1.2;
   }
 
@@ -3495,9 +3500,11 @@ table.book-dates th:nth-child(2) {
   }
   .daily-verse-subtitle {
     margin-top: 0.2rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 1.25;
-    color: #b09d8b;
+    color: #5b3d1f;
+    opacity: 1;  
     text-align: center;
     font-style: italic;
   } 
@@ -3708,6 +3715,12 @@ table.book-dates th:nth-child(2) {
   letter-spacing: 0.02em;
 }
 
+/* 🎉 Easter выделение */
+.easter-subtitle {
+  color: #b22222;
+  font-weight: 700;
+}
+
 /* ===== About page: tighter spacing before Scripture block ===== */
 
 #what-is-bible .section-text:last-of-type {
@@ -3758,4 +3771,95 @@ table.book-dates th:nth-child(2) {
   top: 0.35rem;
   font-size: 0.7rem;
   color: #1a73e8;
+}
+
+.dv-reopen-btn {
+  display: inline-block;
+  margin: 0.35rem 0 0.85rem;
+  padding: 0.42rem 0.9rem;
+
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: #6a3f1d;
+  background: #fffdf8;
+  border: 1px solid rgba(224, 195, 140, 0.72);
+  border-radius: 999px;
+  box-shadow: 0 0.15rem 0.45rem rgba(0, 0, 0, 0.05);
+
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dv-reopen-btn:hover {
+  background: #fff7ea;
+  transform: translateY(-1px);
+  box-shadow: 0 0.22rem 0.55rem rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 48rem) {
+  .dv-reopen-btn {
+    font-size: 0.95rem;
+    padding: 0.48rem 0.95rem;
+  }
+}
+
+/* ===== Daily Verse Card Enhancement ===== */
+
+#daily-verse > div,
+.daily-verse-card {
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+  
+  border-radius: 0.9rem;
+}
+
+/* Hover effect (очень мягкий) */
+#daily-verse > div:hover,
+.daily-verse-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.10);
+}
+
+/* Лёгкое свечение */
+#daily-verse > div::before,
+.daily-verse-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.35),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+#daily-verse > div:hover::before,
+.daily-verse-card:hover::before {
+  opacity: 1;
+}
+
+#daily-verse > div {
+  position: relative;
+  animation: dvFadeIn 0.6s ease;
+}
+
+@keyframes dvFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
