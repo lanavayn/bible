@@ -105,8 +105,8 @@
         "chapter": 2,
         "verse": "8-9"
       },
-      "interpretation_ru": "Спасение дается Богом как дар, а не за заслуги.",
-      "interpretation_en": "Salvation is given by God as a gift, not earned.",
+      "interpretation_ru": "Спасение — дар Божьей благодати, принимаемый верой.",
+      "interpretation_en": "Salvation is the gift of God's grace, received through faith.",
       "related": [
         {
           "reference_ru": "Титу 3:5",
@@ -193,8 +193,8 @@
         "chapter": 3,
         "verse": "5-6"
       },
-      "interpretation_ru": "Доверяй Богу, и Он поведет тебя.",
-      "interpretation_en": "Trust God, and He will guide you.",
+      "interpretation_ru": "Доверие Богу приносит мир и направление в жизни.",
+      "interpretation_en": "Trust in God brings peace and direction in life.",
       "related": [
         {
           "reference_ru": "Псалом 36:5",
@@ -339,8 +339,8 @@
           "verse": "1"
         }
       },
-      "interpretation_ru": "Господь заботится о Своих и ведет их.",
-      "interpretation_en": "The Lord cares for His people and leads them.",
+      "interpretation_ru": "Господь ведет Своих с заботой и верностью.",
+      "interpretation_en": "The Lord leads His people with care and faithfulness.",
       "related": [
         {
           "reference_ru": "Исаия 40:11",
@@ -383,8 +383,8 @@
         "chapter": 41,
         "verse": "10"
       },
-      "interpretation_ru": "Бог рядом и укрепляет в страхе и трудностях.",
-      "interpretation_en": "God is near and strengthens us in fear and difficulty.",
+      "interpretation_ru": "Бог укрепляет и поддерживает тех, кто уповает на Него.",
+      "interpretation_en": "God strengthens and upholds those who trust in Him.",
       "related": [
         {
           "reference_ru": "Второзаконие 31:6",
@@ -434,8 +434,8 @@
         "chapter": 29,
         "verse": "11"
       },
-      "interpretation_ru": "У Бога есть надежда и будущее для тех, кто уповает на Него.",
-      "interpretation_en": "God has hope and a future for those who trust in Him.",
+      "interpretation_ru": "Бог дает надежду и будущее тем, кто доверяет Ему.",
+      "interpretation_en": "God gives hope and a future to those who trust in Him.",
       "related": [
         {
           "reference_ru": "Римлянам 15:13",
@@ -564,8 +564,8 @@
         "chapter": 3,
         "verse": "15"
       },
-      "interpretation_ru": "Мир Божий должен управлять сердцем верующего.",
-      "interpretation_en": "God’s peace should rule in the believer’s heart.",
+      "interpretation_ru": "Мир Божий наполняет и хранит сердце верующего.",
+      "interpretation_en": "God’s peace fills and guards the believer’s heart.",
       "related": [
         {
           "reference_ru": "Иоанна 16:33",
@@ -607,8 +607,8 @@
         "ru": { "book": "Psalms", "chapter": 118, "verse": "105" },
         "en": { "book": "Psalms", "chapter": 119, "verse": "105" }
       },
-      "interpretation_ru": "Слово Божье освещает путь жизни.",
-      "interpretation_en": "God’s Word lights the path of life.",
+      "interpretation_ru": "Слово Божье освещает путь и направляет жизнь.",
+      "interpretation_en": "God’s Word lights the path and guides life.",
       "related": [
         {
           "reference_ru": "Притчи 6:23",
@@ -737,8 +737,8 @@
         "chapter": 4,
         "verse": "4"
       },
-      "interpretation_ru": "Радость в Господе — постоянное состояние верующего.",
-      "interpretation_en": "Joy in the Lord is a constant state for the believer.",
+      "interpretation_ru": "Радость в Господе укрепляет сердце верующего.",
+      "interpretation_en": "Joy in the Lord strengthens the believer’s heart.",
       "related": [
         {
           "reference_ru": "Неемия 8:10",
@@ -903,8 +903,8 @@
       "text_ru": "Я есмь лоза, а вы ветви; кто пребывает во Мне, и Я в нем, тот приносит много плода; ибо без Меня не можете делать ничего.",
       "text_en": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
       "verse_ref": { "book": "John", "chapter": 15, "verse": "5" },
-      "interpretation_ru": "Жизнь верующего зависит от пребывания во Христе.",
-      "interpretation_en": "The believer’s life depends on abiding in Christ.",
+      "interpretation_ru": "Жизнь верующего происходит через пребывание во Христе.",
+    "interpretation_en": "The believer’s life flows from abiding in Christ.",
       "related": [
         {
           "reference_ru": "Иоанна 15:4",
@@ -924,8 +924,8 @@
       "text_ru": "Слово Христово да вселяется в вас обильно, со всякою премудростью; научайте и вразумляйте друг друга псалмами, славословием и духовными песнями, во благодати воспевая в сердцах ваших Господу.",
       "text_en": "Let the word of Christ dwell in you richly.",
       "verse_ref": { "book": "Colossians", "chapter": 3, "verse": "16" },
-      "interpretation_ru": "Слово Божье должно жить в сердце верующего.",
-      "interpretation_en": "God’s Word should dwell in the believer’s heart.",
+      "interpretation_ru": "Слово Христово должно обитать в сердце верующего.",
+      "interpretation_en": "The word of Christ should dwell in the believer’s heart.",
       "related": [
         {
           "reference_ru": "Иисуса Навина 1:8",
@@ -1001,8 +1001,8 @@
       "text_ru": "Потому что Бог производит в вас и хотение и действие по Своему благоволению.",
       "text_en": "For it is God who works in you, both to will and to work for his good pleasure.",
       "verse_ref": { "book": "Philippians", "chapter": 2, "verse": "13" },
-      "interpretation_ru": "Бог изменяет сердце и направляет жизнь.",
-      "interpretation_en": "God changes the heart and directs life.",
+      "interpretation_ru": "Бог действует в сердце и направляет жизнь верующего.",
+      "interpretation_en": "God works in the heart and directs the believer’s life.",
       "related": [
         {
           "reference_ru": "Евреям 13:21",
@@ -1115,8 +1115,8 @@
       "text_ru": "Сердце человека обдумывает свой путь, но Господь управляет шествием его.",
       "text_en": "The heart of man plans his way, but the Lord establishes his steps.",
       "verse_ref": { "book": "Proverbs", "chapter": 16, "verse": "9" },
-      "interpretation_ru": "Человек планирует, но Бог направляет.",
-      "interpretation_en": "Man plans, but God directs.",
+      "interpretation_ru": "Человек планирует, но Бог направляет путь.",
+      "interpretation_en": "Man plans, but God directs the path.",
       "related": [
         {
           "reference_ru": "Иеремия 10:23",
