@@ -314,7 +314,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   ? `
                   <p class="scripture-interpretation daily-verse-full-text">
                     <strong>${detailsVerseTitle}</strong>
-                    ${escapeHtml(text)}
+                    ${addCreationHelp(text, lang)}
                   </p>
                   `
                   : ""
@@ -358,6 +358,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const jumpTodayBtn = root.querySelector('.dv-jump-today');
         const detailsBtn = root.querySelector('.daily-verse-inline-toggle');
         const detailsCloseBtn = root.querySelector('.dv-details-close');
+        const helpBtn = root.querySelector('.daily-help-btn');
+        const helpInline = root.querySelector('.daily-help-inline');
+        const helpClose = root.querySelector('.daily-help-close');
 
         const goPrev = () => {
           if (currentIndex > 0) {
@@ -424,6 +427,26 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
               closeDailyVerseDetails(targetId);
               keepDetailsOpen = false;
               updateDailyVerseToggleLabel(detailsBtn, keepDetailsOpen, lang);
+            });
+          }
+          if (helpBtn && helpInline) {
+            helpBtn.addEventListener("click", () => {
+              const isOpen = !helpInline.hasAttribute("hidden");
+          
+              if (isOpen) {
+                helpInline.setAttribute("hidden", "");
+                helpBtn.setAttribute("aria-expanded", "false");
+              } else {
+                helpInline.removeAttribute("hidden");
+                helpBtn.setAttribute("aria-expanded", "true");
+              }
+            });
+          }
+          
+          if (helpClose && helpInline && helpBtn) {
+            helpClose.addEventListener("click", () => {
+              helpInline.setAttribute("hidden", "");
+              helpBtn.setAttribute("aria-expanded", "false");
             });
           }
 
@@ -496,6 +519,27 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     }
   
     return shortened.trim() + "...";
+  }
+
+  function addCreationHelp(text, lang) {
+    if (!text || lang !== "ru") return escapeHtml(text);
+  
+    const target = "новое творение";
+  
+    const helpHtml = `
+      <button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «творение»">i</button>
+      <span class="footer-help-inline daily-help-inline" hidden>
+        <span class="footer-help-box daily-help-box">
+          <button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>
+          В Синодальном переводе здесь используется слово «тварь», которое в старом русском языке означает «творение».
+        </span>
+      </span>
+    `;
+  
+    return escapeHtml(text).replace(
+      target,
+      `${target}${helpHtml}`
+    );
   }
 
   function updateDailyVerseToggleLabel(button, isOpen, lang) {

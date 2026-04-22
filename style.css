@@ -969,19 +969,20 @@ li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.45rem;
-  height: 1.45rem;
-  margin-left: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: -0.25rem;
   margin-right: 0.25rem;
   border: 1px solid #cdbb9a;
   border-radius: 50%;
   background: #f5f5f5;
   color: #1a73e8;
-  font-size: 0.9rem;
+  font-size: 0.70rem;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
   vertical-align: middle;
+  opacity: 0.85;
 }
 
 .footer-help-btn:hover {
@@ -1034,6 +1035,24 @@ li {
 
 .footer-help-close:hover {
   opacity: 1;
+}
+
+.daily-help-btn {
+  margin-left: -0.08rem;
+  margin-right: 0;
+  transform: translateY(-1px);
+}
+
+.daily-help-inline {
+  display: inline-block;
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+.daily-help-box {
+  display: inline-block;
+  min-width: 16rem;
+  max-width: 28rem;
 }
 
   #overlay {
