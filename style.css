@@ -3174,7 +3174,7 @@ table.book-dates th:nth-child(2) {
   flex: 0 1 auto;
   text-align: center;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #5b3d1f;
   opacity: 1;
 }
@@ -3249,16 +3249,17 @@ table.book-dates th:nth-child(2) {
   opacity: 0.95;
 }
 
-/* Day badge (Day 17 / День 17) */
 .daily-day-badge {
-  background: #f3e4c8;
-  color: #5b3d1f;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  background: none;
   border: none;
   box-shadow: none;
+
+  padding: 0;
+  margin-right: 6px;
+
+  font-weight: 600;
+  color: #5b3d1f;
+
   cursor: default;
   pointer-events: none;
 }

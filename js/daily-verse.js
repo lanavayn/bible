@@ -159,7 +159,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const previewText = getVersePreview(text);
         const expandBtnLabel = keepDetailsOpen
           ? (lang === "ru" ? "Меньше" : "Less")
-          : (lang === "ru" ? "Подробнее" : "Open");
+          : (lang === "ru" ? "Подробнее" : "More");
         const detailsVerseTitle = lang === "ru" ? "Полный стих:" : "Full verse:";        
 
         root.innerHTML = `
