@@ -817,7 +817,7 @@
       },
       "reference_ru": "Иоанна 10:27-28",
       "reference_en": "John 10:27-28",
-      "text_ru": "Овцы Мои слушаются голоса Моего, и Я знаю их; и они идут за Мною. И Я даю им жизнь вечную, и не погибнут вовек.",
+      "text_ru": "Овцы Мои слушаются голоса Моего, и Я знаю их; и они идут за Мною. И Я даю им жизнь вечную, и не погибнут вовек; и никто не похитит их из руки Моей",
       "text_en": "My sheep hear my voice, and I know them, and they follow me. I give them eternal life, and they will never perish.",
       "verse_ref": {
         "book": "John",
@@ -945,15 +945,29 @@
       "text_ru": "Если любите Меня, соблюдите Мои заповеди.",
       "text_en": "If you love me, you will keep my commandments.",
       "verse_ref": { "book": "John", "chapter": 14, "verse": "15" },
-      "interpretation_ru": "Любовь к Богу проявляется в послушании.",
-      "interpretation_en": "Love for God is shown through obedience.",
+      "interpretation_ru": "Любовь к Иисусу проявляется в послушании Ему — и это послушание, которое рождается в сердце и совершается через Святого Духа.",
+      "interpretation_en": "Love for Jesus is expressed in obedience to Him—an obedience that is born in the heart and lived out through the Holy Spirit.",
       "related": [
         {
-          "reference_ru": "1 Иоанна 2:3",
-          "reference_en": "1 John 2:3",
-          "text_ru": "Что мы познали Его, узнаем из того, что соблюдаем Его заповеди.",
-          "text_en": "By this we know that we have come to know him, if we keep his commandments.",
-          "verse_ref": { "book": "1-john", "chapter": 2, "verse": "3" }
+          "reference_ru": "Римлянам 8:14",
+          "reference_en": "Romans 8:14",
+          "text_ru": "14. Ибо все, водимые Духом Божиим, суть сыны Божии.",
+          "text_en": "14. For all who are led by the Spirit of God are sons of God.",
+          "verse_ref": { "book": "Romans", "chapter": 8, "verse": "14" }
+        },
+        {
+          "reference_ru": "Галатам 5:16",
+          "reference_en": "Galatians 5:16",
+          "text_ru": "16. Я говорю: поступайте по духу, и вы не будете исполнять вожделений плоти.",
+          "text_en": "16. But I say, walk by the Spirit, and you will not gratify the desires of the flesh.",
+          "verse_ref": { "book": "Galatians", "chapter": 5, "verse": "16" }
+        },
+        {
+          "reference_ru": "Евреям 10:16",
+          "reference_en": "Hebrews 10:16",
+          "text_ru": "16. Вот завет, который завещаю им после тех дней, говорит Господь: вложу законы Мои в сердца их и в мыслях их напишу их.",
+          "text_en": "16. This is the covenant that I will make with them after those days, declares the Lord: I will put my laws on their hearts, and write them on their minds.",
+          "verse_ref": { "book": "Hebrews", "chapter": 10, "verse": "16" }
         }
       ]
     },
