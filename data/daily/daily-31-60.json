@@ -1,0 +1,171 @@
+{
+  "verses": [
+    {
+      "id": "daily-2026-05-05",
+      "day": 31,
+      "topic": {
+        "ru": "Понимание Писания",
+        "en": "Understanding Scripture"
+      },
+      "reference_ru": "Луки 24:45",
+      "reference_en": "Luke 24:45",
+      "text_ru": "Тогда отверз им ум к уразумению Писаний.",
+      "text_en": "Then he opened their minds to understand the Scriptures.",
+      "verse_ref": {
+        "book": "Luke",
+        "chapter": 24,
+        "verse": "45"
+      },
+      "interpretation_ru": "Христос Сам открывает человеку смысл Писания.",
+      "interpretation_en": "Christ Himself opens the meaning of Scripture to us.",
+      "related": [
+        {
+          "reference_ru": "Псалом 118:18",
+          "reference_en": "Psalm 119:18",
+          "text_ru": "Открой очи мои, и увижу чудеса закона Твоего.",
+          "text_en": "Open my eyes, that I may behold wondrous things out of your law.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 118,
+              "verse": "18"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": "18"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-05-06",
+      "day": 32,
+      "topic": {
+        "ru": "Христос с нами",
+        "en": "Christ Is With Us"
+      },
+      "reference_ru": "Матфея 28:20",
+      "reference_en": "Matthew 28:20",
+      "text_ru": "И се, Я с вами во все дни до скончания века.",
+      "text_en": "And behold, I am with you always, to the end of the age.",
+      "verse_ref": {
+        "book": "Matthew",
+        "chapter": 28,
+        "verse": "20"
+      },
+      "interpretation_ru": "Христос не оставляет Своих и пребывает с ними всегда.",
+      "interpretation_en": "Christ does not leave His people and remains with them always.",
+      "related": [
+        {
+          "reference_ru": "Евреям 13:5",
+          "reference_en": "Hebrews 13:5",
+          "text_ru": "Не оставлю тебя и не покину тебя.",
+          "text_en": "I will never leave you nor forsake you.",
+          "verse_ref": {
+            "book": "Hebrews",
+            "chapter": 13,
+            "verse": "5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-05-07",
+      "day": 33,
+      "topic": {
+        "ru": "Идите и научите",
+        "en": "Go and Make Disciples"
+      },
+      "reference_ru": "Матфея 28:19",
+      "reference_en": "Matthew 28:19",
+      "text_ru": "Итак идите, научите все народы, крестя их во имя Отца и Сына и Святого Духа.",
+      "text_en": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit.",
+      "verse_ref": {
+        "book": "Matthew",
+        "chapter": 28,
+        "verse": "19"
+      },
+      "interpretation_ru": "Христос посылает Своих учеников нести истину другим.",
+      "interpretation_en": "Christ sends His disciples to bring the truth to others.",
+      "related": [
+        {
+          "reference_ru": "Марка 16:15",
+          "reference_en": "Mark 16:15",
+          "text_ru": "Идите по всему миру и проповедуйте Евангелие всей твари.",
+          "text_en": "Go into all the world and proclaim the gospel to the whole creation.",
+          "verse_ref": {
+            "book": "Mark",
+            "chapter": 16,
+            "verse": "15"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-05-08",
+      "day": 34,
+      "topic": {
+        "ru": "Свидетели Христа",
+        "en": "Witnesses of Christ"
+      },
+      "reference_ru": "Деяния 1:8",
+      "reference_en": "Acts 1:8",
+      "text_ru": "Но вы примете силу, когда сойдет на вас Дух Святой; и будете Мне свидетелями.",
+      "text_en": "But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses.",
+      "verse_ref": {
+        "book": "Acts",
+        "chapter": 1,
+        "verse": "8"
+      },
+      "interpretation_ru": "Свидетельство о Христе совершается не человеческой силой, а Божьей.",
+      "interpretation_en": "Witnessing for Christ is done not by human strength, but by God’s power.",
+      "related": [
+        {
+          "reference_ru": "Луки 24:48",
+          "reference_en": "Luke 24:48",
+          "text_ru": "Вы же свидетели сему.",
+          "text_en": "You are witnesses of these things.",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 24,
+            "verse": "48"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-05-09",
+      "day": 35,
+      "topic": {
+        "ru": "Обетование Отца",
+        "en": "The Promise of the Father"
+      },
+      "reference_ru": "Луки 24:49",
+      "reference_en": "Luke 24:49",
+      "text_ru": "И Я пошлю обетование Отца Моего на вас; вы же оставайтесь в городе Иерусалиме, доколе не облечетесь силою свыше.",
+      "text_en": "And behold, I am sending the promise of my Father upon you. But stay in the city until you are clothed with power from on high.",
+      "verse_ref": {
+        "book": "Luke",
+        "chapter": 24,
+        "verse": "49"
+      },
+      "interpretation_ru": "Бог готовит Своих людей и призывает ждать силы свыше.",
+      "interpretation_en": "God prepares His people and calls them to wait for power from above.",
+      "related": [
+        {
+          "reference_ru": "Деяния 1:4-5",
+          "reference_en": "Acts 1:4-5",
+          "text_ru": "Не отлучайтесь из Иерусалима, но ждите обещанного от Отца.",
+          "text_en": "Do not depart from Jerusalem, but wait for the promise of the Father.",
+          "verse_ref": {
+            "book": "Acts",
+            "chapter": 1,
+            "verse": "4-5"
+          }
+        }
+      ]
+    } 
+  ]
+}

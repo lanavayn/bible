@@ -51,7 +51,7 @@ function getDateForDay(dayNumber, today = new Date()) {
   return date;
 }
 
-window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse", jsonPath = "/data/dailyVerses.json") {
+window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse") {
     const root = document.getElementById(rootId);
     if (!root) return;
     const reopenBtn = document.getElementById("daily-verse-reopen");
@@ -88,11 +88,23 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     root.innerHTML = `<div class="daily-verse-loading">${ui[lang].loading}</div>`;
   
     try {
-      const response = await fetch(jsonPath, { cache: "no-store" });
-      if (!response.ok) throw new Error(`Failed to load ${jsonPath}`);
-  
-      const data = await response.json();
-      const verses = Array.isArray(data?.verses) ? data.verses : [];
+      const jsonPaths = [
+        "/data/daily/daily-1-30.json",
+        "/data/daily/daily-31-60.json"     
+      ];
+      
+      let verses = [];
+      
+      for (const path of jsonPaths) {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Failed to load ${path}`);
+        }
+      
+        const data = await response.json();
+        const fileVerses = Array.isArray(data?.verses) ? data.verses : [];
+        verses = verses.concat(fileVerses);
+      }
 
       const START_INDEX = 0;
 
@@ -168,11 +180,18 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             <div class="daily-verse-label">${ui[lang].title}</div>
 
             <div class="daily-verse-date-wrap">
-                <div class="daily-verse-date-row">
+            <div class="daily-verse-date-row">
 
-                ${
-                  fullDateLabel
-                    ? `
+              ${
+                verses.length > 1 && index > 0
+                  ? `<button class="dv-arrow dv-left dv-arrow-date" type="button" aria-label="${ui[lang].prev}">‹</button>`
+                  : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
+              }
+
+              ${
+                fullDateLabel
+                  ? `
+                  <div class="daily-verse-date-center">
                     <div class="daily-verse-date">
                       ${
                         dayLabel
@@ -185,47 +204,43 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                           : ""
                       }
                     </div>
-                    `
-                    : ""
-                }
 
-                ${
-                  index !== START_INDEX
-                    ? `<button class="dv-jump-btn dv-jump-day1" type="button">
-                        ${lang === "ru" ? "День 1" : "Day 1"}
-                      </button>`
-                    : ""
-                }
+                    <div class="daily-verse-date-jumps">
+                      ${
+                        index !== START_INDEX
+                          ? `<button class="dv-jump-btn dv-jump-day1" type="button">
+                              ${lang === "ru" ? "День 1" : "Day 1"}
+                            </button>`
+                          : ""
+                      }
 
-                ${
-                  todayIndex >= 0 && index !== todayIndex
-                    ? `<button class="dv-jump-btn dv-jump-today" type="button">
-                        ${lang === "ru" ? "Сегодня" : "Today"}
-                      </button>`
-                    : ""
-                }
-
-            </div>
-                <div class="daily-verse-subtitle-row">
-
-                  ${
-                    verses.length > 1 && index > 0
-                      ? `<button class="dv-arrow dv-left dv-arrow-top" type="button" aria-label="${ui[lang].prev}">‹</button>`
-                      : `<span class="dv-arrow-placeholder"></span>`
-                  }
-
-                  <div class="daily-verse-subtitle ${isEasterDay ? 'easter-subtitle' : ''}">
-                    ${escapeHtml(scriptureMotto)}
+                      ${
+                        todayIndex >= 0 && index !== todayIndex
+                          ? `<button class="dv-jump-btn dv-jump-today" type="button">
+                              ${lang === "ru" ? "Сегодня" : "Today"}
+                            </button>`
+                          : ""
+                      }
+                    </div>
                   </div>
+                  `
+                  : ""
+              }
 
-                  ${
-                    verses.length > 1 && index < verses.length - 1
-                      ? `<button class="dv-arrow dv-right dv-arrow-top" type="button" aria-label="${ui[lang].next}">›</button>`
-                      : `<span class="dv-arrow-placeholder"></span>`
-                  }
+              ${
+                verses.length > 1 && index < verses.length - 1
+                  ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
+                  : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
+              }
 
-                </div>
             </div>
+
+            <div class="daily-verse-subtitle-row daily-verse-subtitle-row--plain">
+              <div class="daily-verse-subtitle ${isEasterDay ? 'easter-subtitle' : ''}">
+                ${escapeHtml(scriptureMotto)}
+              </div>
+            </div>
+          </div>
 
            <div class="daily-verse-header-right">
                 <button
