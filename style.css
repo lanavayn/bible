@@ -983,6 +983,7 @@ li {
   cursor: pointer;
   vertical-align: middle;
   opacity: 0.85;
+  transform: translateY(-0.45em);
 }
 
 .footer-help-btn:hover {
@@ -1037,10 +1038,16 @@ li {
   opacity: 1;
 }
 
-.daily-help-btn {
-  margin-left: -0.08rem;
+.daily-verse-full-text .daily-help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: -0.1rem;
   margin-right: 0;
-  transform: translateY(-1px);
+
+  vertical-align: text-top;
+  transform: translateY(-0.45em);
 }
 
 .daily-help-inline {
@@ -3196,6 +3203,13 @@ table.book-dates th:nth-child(2) {
   font-weight: 500;
   color: #5b3d1f;
   opacity: 1;
+}
+
+.daily-motto-help-btn {
+  margin-left: -0.15rem;
+  margin-right: 0;
+  position: relative;
+  transform: translateY(-0.45em);
 }
 
 .dv-arrow-date,

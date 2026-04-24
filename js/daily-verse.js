@@ -238,9 +238,34 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             <div class="daily-verse-subtitle-row daily-verse-subtitle-row--plain">
               <div class="daily-verse-subtitle ${isEasterDay ? 'easter-subtitle' : ''}">
                 ${escapeHtml(scriptureMotto)}
+                ${
+                  !isEasterDay
+                    ? `
+                    <button
+                      class="footer-help-btn daily-motto-help-btn"
+                      type="button"
+                      aria-expanded="false"
+                      aria-label="${lang === "ru" ? "Подробнее" : "More info"}"
+                    >i</button>
+                    <span class="footer-help-inline daily-motto-help-inline" hidden>
+                      <span class="footer-help-box daily-help-box">
+                        <button
+                          class="footer-help-close daily-motto-help-close"
+                          type="button"
+                          aria-label="${lang === "ru" ? "Закрыть" : "Close"}"
+                        >×</button>
+                        ${
+                          lang === "ru"
+                            ? "Простые и понятные библейские стихи с краткими размышлениями и связанными местами — чтобы шаг за шагом понимать Слово Божие. Читай, размышляй и укрепляйся в вере."
+                            : "Simple and clear Bible verses with short reflections and related passages — helping you understand the Word of God step by step. Read, reflect, and grow in faith."
+                        }
+                      </span>
+                    </span>
+                    `
+                    : ""
+                }
               </div>
             </div>
-          </div>
 
            <div class="daily-verse-header-right">
                 <button
@@ -361,6 +386,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const helpBtn = root.querySelector('.daily-help-btn');
         const helpInline = root.querySelector('.daily-help-inline');
         const helpClose = root.querySelector('.daily-help-close');
+        const mottoHelpBtn = root.querySelector('.daily-motto-help-btn');
+        const mottoHelpInline = root.querySelector('.daily-motto-help-inline');
+        const mottoHelpClose = root.querySelector('.daily-motto-help-close');
 
         const goPrev = () => {
           if (currentIndex > 0) {
@@ -447,6 +475,27 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             helpClose.addEventListener("click", () => {
               helpInline.setAttribute("hidden", "");
               helpBtn.setAttribute("aria-expanded", "false");
+            });
+          }
+
+          if (mottoHelpBtn && mottoHelpInline) {
+            mottoHelpBtn.addEventListener("click", () => {
+              const isOpen = !mottoHelpInline.hasAttribute("hidden");
+          
+              if (isOpen) {
+                mottoHelpInline.setAttribute("hidden", "");
+                mottoHelpBtn.setAttribute("aria-expanded", "false");
+              } else {
+                mottoHelpInline.removeAttribute("hidden");
+                mottoHelpBtn.setAttribute("aria-expanded", "true");
+              }
+            });
+          }
+          
+          if (mottoHelpClose && mottoHelpInline && mottoHelpBtn) {
+            mottoHelpClose.addEventListener("click", () => {
+              mottoHelpInline.setAttribute("hidden", "");
+              mottoHelpBtn.setAttribute("aria-expanded", "false");
             });
           }
 
