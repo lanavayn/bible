@@ -102,7 +102,11 @@ function getIndexLang() {
     root.innerHTML = `
       <h1 class="hero-title">${t.heroTitle}</h1>
   
-      <section id="daily-verse"></section>
+      <section id="daily-verse">
+        <button id="loadDailyVerseBtn" class="dv-reopen-btn" type="button">
+          ${lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse"}
+        </button>
+      </section>
       <div id="daily-verse-reopen" class="dv-reopen-btn" style="display:none;"></div>
   
       <div class="topics-toolbar">
@@ -199,16 +203,32 @@ function getIndexLang() {
       </div>
     `;
   
-    if (typeof renderDailyVerse === "function") {
-      renderDailyVerse();
-    }
-  
     if (typeof initVerseSlider === "function") {
       initVerseSlider();
     }
   
     if (typeof initBookDates === "function") {
       initBookDates();
+    }
+    const loadDailyVerseBtn = document.getElementById("loadDailyVerseBtn");
+
+    if (loadDailyVerseBtn) {
+      loadDailyVerseBtn.addEventListener("click", async () => {
+        loadDailyVerseBtn.textContent =
+          lang === "ru" ? "Загрузка..." : "Loading...";
+
+        try {
+          await import("/js/daily-verse.js");
+
+          if (typeof window.renderDailyVerse === "function") {
+            window.renderDailyVerse();
+          }
+        } catch (error) {
+          console.error("Daily verse lazy load error:", error);
+          loadDailyVerseBtn.textContent =
+            lang === "ru" ? "Стих не загрузился" : "Verse failed to load";
+        }
+      });
     }
   }
   

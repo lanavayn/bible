@@ -228,7 +228,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
               }
 
               ${
-                verses.length > 1 && index < verses.length - 1
+                verses.length > 1 && index < todayIndex
                   ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
                   : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
               }
@@ -398,7 +398,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         };
         
         const goNext = () => {
-          if (currentIndex < verses.length - 1) {
+          if (currentIndex < todayIndex) {
             currentIndex = currentIndex + 1;
             renderCard(currentIndex);
           }
