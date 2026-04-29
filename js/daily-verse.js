@@ -177,7 +177,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
             <div class="daily-verse-header">
-            <div class="daily-verse-label">${ui[lang].title}</div>
+           <!-- убрали заголовок -->
 
             <div class="daily-verse-date-wrap">
             <div class="daily-verse-date-row">
@@ -426,7 +426,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         
         if (closeBtn) {
           closeBtn.addEventListener("click", () => {
-            root.style.display = "none";
+            root.innerHTML = "";
         
             const reopenBtn = document.getElementById("daily-verse-reopen");
             if (reopenBtn) {

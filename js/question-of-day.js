@@ -64,31 +64,17 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
       root.innerHTML = `
       <div class="daily-verse-card">
-    
-        <div class="daily-verse-header">
-          <div class="daily-verse-label">
-            ${lang === "ru" ? "ВОПРОС ДНЯ" : "QUESTION OF THE DAY"}
-          </div>
-    
-            <div class="daily-verse-header-right">
-            <button
-                class="dv-close"
-                type="button"
-                aria-label="${lang === "ru" ? "Закрыть" : "Close"}"
-                title="${lang === "ru" ? "Закрыть" : "Close"}"
-            >×</button>
-            </div>
-        </div>
+
     
         <div class="daily-verse-date-row">
     
-        ${/*
+        ${
             index > 0
               ? `<button class="dv-arrow dv-left dv-arrow-date dv-prev" type="button">‹</button>`
               : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-          */""}
+          }
           
-          <button class="dv-arrow dv-left dv-arrow-date dv-prev" type="button">‹</button> 
+    
     
           <div class="daily-verse-date-center">
             <div class="daily-verse-date">
@@ -98,16 +84,20 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             </div>
           </div>
     
-        ${/*
+        ${
         index < todayIndex
             ? `<button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>`
             : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-        */""}
-
-        <button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>
-    
+        }
+  
         </div>
-    
+            <button
+                class="dv-close"
+                type="button"
+                aria-label="${lang === "ru" ? "Закрыть" : "Close"}"
+                title="${lang === "ru" ? "Закрыть" : "Close"}"
+        >×</button>
+        
         <div class="daily-verse-title-inline">
           <span class="daily-verse-title-text">
             ${question}
@@ -239,7 +229,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         }
         if (closeBtn) {
             closeBtn.addEventListener("click", () => {
-              root.style.display = "none";
+            root.innerHTML = "";
           
               const reopenBtn = document.getElementById("question-reopen");
               if (reopenBtn) {

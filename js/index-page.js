@@ -102,19 +102,19 @@ function getIndexLang() {
     root.innerHTML = `
       <h1 class="hero-title">${t.heroTitle}</h1>
   
-      <section id="daily-verse">
+      <section id="daily-verse-block">
         <button id="loadDailyVerseBtn" class="dv-reopen-btn" type="button">
           ${lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse"}
         </button>
+        <div id="daily-verse"></div>
       </section>
-      <div id="daily-verse-reopen" class="dv-reopen-btn" style="display:none;"></div>
 
-      <section id="question-of-day">
+      <section id="question-of-day-block">
         <button id="loadQuestionBtn" class="dv-reopen-btn" type="button">
           ${lang === "ru" ? "❓ Вопрос дня" : "❓ Question of the Day"}
         </button>
+        <div id="question-of-day"></div>
       </section>
-      <div id="question-reopen" class="dv-reopen-btn" style="display:none;"></div>
   
       <div class="topics-toolbar">
         <p class="topics-label">${t.topicsLabel}</p>
@@ -225,17 +225,23 @@ function getIndexLang() {
         loadDailyVerseBtn.textContent =
           lang === "ru" ? "Загрузка..." : "Loading...";
 
-        try {
-          await import("/js/daily-verse.js");
-
-          if (typeof window.renderDailyVerse === "function") {
-            window.renderDailyVerse();
+          try {
+            await import("/js/daily-verse.js");
+          
+            document.getElementById("question-of-day").innerHTML = "";
+          
+            if (typeof window.renderDailyVerse === "function") {
+              await window.renderDailyVerse();
+            }
+          
+            loadDailyVerseBtn.textContent =
+              lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse";
+          
+          } catch (error) {
+            console.error("Daily verse lazy load error:", error);
+            loadDailyVerseBtn.textContent =
+              lang === "ru" ? "Стих не загрузился" : "Verse failed to load";
           }
-        } catch (error) {
-          console.error("Daily verse lazy load error:", error);
-          loadDailyVerseBtn.textContent =
-            lang === "ru" ? "Стих не загрузился" : "Verse failed to load";
-        }
       });
     }
 
@@ -246,17 +252,23 @@ function getIndexLang() {
         loadQuestionBtn.textContent =
           lang === "ru" ? "Загрузка..." : "Loading...";
 
-        try {
-          await import("/js/question-of-day.js");
-
-          if (typeof window.renderQuestionOfDay === "function") {
-            window.renderQuestionOfDay();
+          try {
+            await import("/js/question-of-day.js");
+          
+            document.getElementById("daily-verse").innerHTML = "";
+          
+            if (typeof window.renderQuestionOfDay === "function") {
+              await window.renderQuestionOfDay();
+            }
+          
+            loadQuestionBtn.textContent =
+              lang === "ru" ? "❓ Вопрос дня" : "❓ Question of the Day";
+          
+          } catch (error) {
+            console.error(error);
+            loadQuestionBtn.textContent =
+              lang === "ru" ? "Ошибка" : "Error";
           }
-        } catch (error) {
-          console.error(error);
-          loadQuestionBtn.textContent =
-            lang === "ru" ? "Ошибка" : "Error";
-        }
       });
     }
   }
