@@ -163,7 +163,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const bibleLink = buildBibleLink(verseRef, lang);
         const related = Array.isArray(verse.related) ? verse.related : [];
         const detailsTitle =
-        lang === "ru" ? "Размышление:" : "Reflection";
+        lang === "ru" ? "Размышление:" : "Reflection:";
         const relatedTitle =
         lang === "ru" ? "См. также в Писании:" : "See also in Scripture:";
         const detailsId = `dv-details-${escapeHtml(verse.id || index)}`;

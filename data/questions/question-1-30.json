@@ -1,0 +1,94 @@
+{
+    "questions": [
+      {
+        "id": "question-day-1",
+        "day": 1,
+        "topic": {
+          "ru": "Библия",
+          "en": "The Bible"
+        },
+        "question_ru": "О чём вообще Библия?",
+        "question_en": "What is the Bible about?",
+        "reference_ru": "Иоанна 3:16",
+        "reference_en": "John 3:16",
+        "text_ru": "Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий верующий в Него не погиб, но имел жизнь вечную.",
+        "text_en": "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.",
+        "verse_ref": {
+          "book": "John",
+          "chapter": 3,
+          "verse": "16"
+        },
+        "answer_ru": "Библия говорит о Божьей любви к человеку и о спасении через Иисуса Христа.",
+        "answer_en": "The Bible is about God’s love for people and salvation through Jesus Christ.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 5:39",
+            "reference_en": "John 5:39",
+            "text_ru": "Исследуйте Писания, ибо вы думаете чрез них иметь жизнь вечную; а они свидетельствуют о Мне.",
+            "text_en": "You search the Scriptures because you think that in them you have eternal life; and it is they that bear witness about me.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 5,
+              "verse": "39"
+            }
+          },
+          {
+            "reference_ru": "2 Тимофею 3:16",
+            "reference_en": "2 Timothy 3:16",
+            "text_ru": "Всё Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности.",
+            "text_en": "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.",
+            "verse_ref": {
+              "book": "2-timothy",
+              "chapter": 3,
+              "verse": "16"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-2",
+        "day": 2,
+        "topic": {
+          "ru": "Вера",
+          "en": "Faith"
+        },
+        "question_ru": "Что такое вера по Библии?",
+        "question_en": "What is faith according to the Bible?",
+        "reference_ru": "Евреям 11:1",
+        "reference_en": "Hebrews 11:1",
+        "text_ru": "Вера же есть осуществление ожидаемого и уверенность в невидимом.",
+        "text_en": "Now faith is the assurance of things hoped for, the conviction of things not seen.",
+        "verse_ref": {
+          "book": "Hebrews",
+          "chapter": 11,
+          "verse": "1"
+        },
+        "answer_ru": "Вера — это доверие Божьему слову и уверенность в том, что Бог верен, даже когда мы ещё не видим всего своими глазами.",
+        "answer_en": "Faith is trusting God’s word and being assured that God is faithful, even when we do not yet see everything with our eyes.",
+        "related": [
+          {
+            "reference_ru": "Римлянам 10:17",
+            "reference_en": "Romans 10:17",
+            "text_ru": "Итак вера от слышания, а слышание от слова Божия.",
+            "text_en": "So faith comes from hearing, and hearing through the word of Christ.",
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 10,
+              "verse": "17"
+            }
+          },
+          {
+            "reference_ru": "Евреям 11:6",
+            "reference_en": "Hebrews 11:6",
+            "text_ru": "А без веры угодить Богу невозможно.",
+            "text_en": "And without faith it is impossible to please him.",
+            "verse_ref": {
+              "book": "Hebrews",
+              "chapter": 11,
+              "verse": "6"
+            }
+          }
+        ]
+      }
+    ]
+  }

@@ -108,6 +108,13 @@ function getIndexLang() {
         </button>
       </section>
       <div id="daily-verse-reopen" class="dv-reopen-btn" style="display:none;"></div>
+
+      <section id="question-of-day">
+        <button id="loadQuestionBtn" class="dv-reopen-btn" type="button">
+          ${lang === "ru" ? "❓ Вопрос дня" : "❓ Question of the Day"}
+        </button>
+      </section>
+      <div id="question-reopen" class="dv-reopen-btn" style="display:none;"></div>
   
       <div class="topics-toolbar">
         <p class="topics-label">${t.topicsLabel}</p>
@@ -210,6 +217,7 @@ function getIndexLang() {
     if (typeof initBookDates === "function") {
       initBookDates();
     }
+
     const loadDailyVerseBtn = document.getElementById("loadDailyVerseBtn");
 
     if (loadDailyVerseBtn) {
@@ -227,6 +235,27 @@ function getIndexLang() {
           console.error("Daily verse lazy load error:", error);
           loadDailyVerseBtn.textContent =
             lang === "ru" ? "Стих не загрузился" : "Verse failed to load";
+        }
+      });
+    }
+
+    const loadQuestionBtn = document.getElementById("loadQuestionBtn");
+
+    if (loadQuestionBtn) {
+      loadQuestionBtn.addEventListener("click", async () => {
+        loadQuestionBtn.textContent =
+          lang === "ru" ? "Загрузка..." : "Loading...";
+
+        try {
+          await import("/js/question-of-day.js");
+
+          if (typeof window.renderQuestionOfDay === "function") {
+            window.renderQuestionOfDay();
+          }
+        } catch (error) {
+          console.error(error);
+          loadQuestionBtn.textContent =
+            lang === "ru" ? "Ошибка" : "Error";
         }
       });
     }
