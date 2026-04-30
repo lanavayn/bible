@@ -4,6 +4,40 @@
         "id": "question-day-1",
         "day": 1,
         "topic": {
+          "ru": "Смысл жизни",
+          "en": "Purpose of Life"
+        },
+        "question_ru": "В чём смысл жизни?",
+        "question_en": "What is the purpose of life?",
+        "reference_ru": "Екклесиаст 12:13",
+        "reference_en": "Ecclesiastes 12:13",
+        "text_ru": "Выслушаем сущность всего: бойся Бога и заповеди Его соблюдай, потому что в этом всё для человека.",
+        "text_en": "Fear God and keep his commandments, for this is the whole duty of man.",
+        "verse_ref": {
+          "book": "Ecclesiastes",
+          "chapter": 12,
+          "verse": "13"
+        },
+        "answer_ru": "Смысл жизни — жить с Богом и исполнять Его волю.",
+        "answer_en": "The purpose of life is to live with God and follow His will.",
+        "related": [
+          {
+            "reference_ru": "Михей 6:8",
+            "reference_en": "Micah 6:8",
+            "text_ru": "О, человек! сказано тебе, что — добро и чего требует от тебя Господь: действовать справедливо, любить дела милосердия и смиренномудренно ходить пред Богом твоим.",
+            "text_en": "He has told you, O man, what is good.",
+            "verse_ref": {
+              "book": "Micah",
+              "chapter": 6,
+              "verse": "8"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-2",
+        "day": 2,
+        "topic": {
           "ru": "Библия",
           "en": "The Bible"
         },
@@ -18,8 +52,8 @@
           "chapter": 3,
           "verse": "16"
         },
-        "answer_ru": "Библия говорит о Божьей любви к человеку и о спасении через Иисуса Христа.",
-        "answer_en": "The Bible is about God’s love for people and salvation through Jesus Christ.",
+        "answer_ru": "О любви Бога к миру и даре вечной жизни.",
+        "answer_en": "About God’s love for the world and the gift of eternal life.",
         "related": [
           {
             "reference_ru": "Иоанна 5:39",
@@ -46,8 +80,222 @@
         ]
       },
       {
-        "id": "question-day-2",
-        "day": 2,
+        "id": "question-day-3",
+        "day": 3,
+        "topic": {
+          "ru": "Бог",
+          "en": "God"
+        },
+        "question_ru": "Кто такой Бог?",
+        "question_en": "Who is God?",
+        "reference_ru": "1 Иоанна 4:8",
+        "reference_en": "1 John 4:8",
+        "text_ru": "Кто не любит, тот не познал Бога, потому что Бог есть любовь.",
+        "text_en": "God is love.",
+        "verse_ref": {
+          "book": "1-john",
+          "chapter": 4,
+          "verse": "8"
+        },
+        "answer_ru": "Бог — Творец и любящий Отец.",
+        "answer_en": "God is the Creator and a loving Father.",
+        "related": [
+          {
+            "reference_ru": "Бытие 1:1",
+            "reference_en": "Genesis 1:1",
+            "text_ru": "В начале сотворил Бог небо и землю.",
+            "text_en": "In the beginning, God created the heavens and the earth.",
+            "verse_ref": {
+              "book": "Genesis",
+              "chapter": 1,
+              "verse": "1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-4",
+        "day": 4,
+        "topic": {
+          "ru": "Иисус Христос",
+          "en": "Jesus Christ"
+        },
+        "question_ru": "Кто такой Иисус Христос?",
+        "question_en": "Who is Jesus Christ?",
+        "reference_ru": "Иоанна 14:6",
+        "reference_en": "John 14:6",
+        "text_ru": "Я есмь путь и истина и жизнь.",
+        "text_en": "I am the way, and the truth, and the life.",
+        "verse_ref": {
+          "book": "John",
+          "chapter": 14,
+          "verse": "6"
+        },
+        "answer_ru": "Иисус — Сын Божий и единственный путь к Отцу.",
+        "answer_en": "Jesus is the Son of God and the only way to the Father.",
+        "related": [
+          {
+            "reference_ru": "Деяния 4:12",
+            "reference_en": "Acts 4:12",
+            "text_ru": "Нет другого имени, которым надлежало бы нам спастись.",
+            "text_en": "There is no other name... by which we must be saved.",
+            "verse_ref": {
+              "book": "Acts",
+              "chapter": 4,
+              "verse": "12"
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 1:15",
+            "reference_en": "Colossians 1:15",
+            "text_ru": "Который есть образ Бога невидимого, рождённый прежде всякой твари.",
+            "text_en": "He is the image of the invisible God.",
+            "verse_ref": {
+              "book": "Colossians",
+              "chapter": 1,
+              "verse": "15"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-5",
+        "day": 5,
+        "topic": {
+          "ru": "Грех",
+          "en": "Sin"
+        },
+        "question_ru": "Что такое грех?",
+        "question_en": "What is sin?",
+        "reference_ru": "Римлянам 3:23",
+        "reference_en": "Romans 3:23",
+        "text_ru": "Потому что все согрешили и лишены славы Божией.",
+        "text_en": "For all have sinned and fall short of the glory of God.",
+        "verse_ref": {
+          "book": "Romans",
+          "chapter": 3,
+          "verse": "23"
+        },
+        "answer_ru": "Грех — это когда человек знает добро, но не делает его.",
+        "answer_en": "Sin is knowing what is right but not doing it.",
+        "related": [
+          {
+            "reference_ru": "Иакова 4:17",
+            "reference_en": "James 4:17",
+            "text_ru": "Итак, кто разумеет делать добро и не делает, тому грех.",
+            "text_en": "So whoever knows the right thing to do and fails to do it, for him it is sin.",
+            "verse_ref": {
+              "book": "James",
+              "chapter": 4,
+              "verse": "17"
+            }
+          },
+          {
+            "reference_ru": "1 Иоанна 3:4",
+            "reference_en": "1 John 3:4",
+            "text_ru": "Всякий, делающий грех, делает и беззаконие; и грех есть беззаконие.",
+            "text_en": "Everyone who makes a practice of sinning also practices lawlessness; sin is lawlessness.",
+            "verse_ref": {
+              "book": "1-john",
+              "chapter": 3,
+              "verse": "4"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-6",
+        "day": 6,
+        "topic": {
+          "ru": "Покаяние",
+          "en": "Repentance"
+        },
+        "question_ru": "Что такое покаяние?",
+        "question_en": "What is repentance?",
+        "reference_ru": "Деяния 3:19",
+        "reference_en": "Acts 3:19",
+        "text_ru": "Итак покайтесь и обратитесь, чтобы загладились грехи ваши, чтобы нечестие не было вам преткновением.",
+        "text_en": "Repent therefore, and turn back, that your sins may be blotted out.",
+        "verse_ref": {
+          "book": "Acts",
+          "chapter": 3,
+          "verse": "19"
+        },
+        "answer_ru": "Покаяние — это оставить грех и обратиться к Богу.",
+        "answer_en": "Repentance is turning away from sin and turning to God.",
+        "related": [
+          {
+            "reference_ru": "Луки 13:3",
+            "reference_en": "Luke 13:3",
+            "text_ru": "Если не покаетесь, все так же погибнете.",
+            "text_en": "Unless you repent, you will all likewise perish.",
+            "verse_ref": {
+              "book": "Luke",
+              "chapter": 13,
+              "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Иезекииль 18:30",
+            "reference_en": "Ezekiel 18:30",
+            "text_ru": "Покайтесь и обратитесь от всех преступлений ваших, чтобы нечестие не было вам преткновением.",
+            "text_en": "Repent and turn from all your transgressions.",
+            "verse_ref": {
+              "book": "Ezekiel",
+              "chapter": 18,
+              "verse": "30"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-7",
+        "day": 7,
+        "topic": {
+          "ru": "Спасение",
+          "en": "Salvation"
+        },
+        "question_ru": "Как человек получает спасение?",
+        "question_en": "How does a person receive salvation?",
+        "reference_ru": "Ефесянам 2:8",
+        "reference_en": "Ephesians 2:8",
+        "text_ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар.",
+        "text_en": "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.",
+        "verse_ref": {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": "8"
+        },
+        "answer_ru": "Спасение — это дар Божий, который человек принимает верой, а не своими делами.",
+        "answer_en": "Salvation is a gift from God that a person receives by faith, not by works.",
+        "related": [
+          {
+            "reference_ru": "Ефесянам 2:9",
+            "reference_en": "Ephesians 2:9",
+            "text_ru": "Не от дел, чтобы никто не хвалился.",
+            "text_en": "Not a result of works, so that no one may boast.",
+            "verse_ref": {
+              "book": "Ephesians",
+              "chapter": 2,
+              "verse": "9"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 6:23",
+            "reference_en": "Romans 6:23",
+            "text_ru": "Ибо возмездие за грех — смерть, а дар Божий — жизнь вечная во Христе Иисусе, Господе нашем.",
+            "text_en": "For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.",
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 6,
+              "verse": "23"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-8",
+        "day": 8,
         "topic": {
           "ru": "Вера",
           "en": "Faith"
@@ -63,8 +311,8 @@
           "chapter": 11,
           "verse": "1"
         },
-        "answer_ru": "Вера — это доверие Божьему слову и уверенность в том, что Бог верен, даже когда мы ещё не видим всего своими глазами.",
-        "answer_en": "Faith is trusting God’s word and being assured that God is faithful, even when we do not yet see everything with our eyes.",
+        "answer_ru": "Вера — это уверенность в Боге, даже когда не видим.",
+        "answer_en": "Faith is confidence in God, even when we do not see.",
         "related": [
           {
             "reference_ru": "Римлянам 10:17",
@@ -80,12 +328,248 @@
           {
             "reference_ru": "Евреям 11:6",
             "reference_en": "Hebrews 11:6",
-            "text_ru": "А без веры угодить Богу невозможно.",
+            "text_ru": "А без веры угодить Богу невозможно; ибо надобно, чтобы приходящий к Богу веровал, что Он есть, и ищущим Его воздаёт.",
             "text_en": "And without faith it is impossible to please him.",
             "verse_ref": {
               "book": "Hebrews",
               "chapter": 11,
               "verse": "6"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-9",
+        "day": 9,
+        "topic": {
+          "ru": "Истина",
+          "en": "Truth"
+        },
+        "question_ru": "Можно ли доверять Библии?",
+        "question_en": "Can the Bible be trusted?",
+        "reference_ru": "Иоанна 17:17",
+        "reference_en": "John 17:17",
+        "text_ru": "Освяти их истиною Твоею; слово Твоё есть истина.",
+        "text_en": "Sanctify them in the truth; your word is truth.",
+        "verse_ref": {
+          "book": "John",
+          "chapter": 17,
+          "verse": "17"
+        },
+        "answer_ru": "Божье Слово истинно и чисто.",
+        "answer_en": "God’s word is true and pure.",
+        "related": [
+          {
+            "reference_ru": "Притчи 30:5",
+            "reference_en": "Proverbs 30:5",
+            "text_ru": "Всякое слово Бога чисто; Он — щит уповающим на Него.",
+            "text_en": "Every word of God proves true; he is a shield to those who take refuge in him.",
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 30,
+              "verse": "5"
+            }
+          },
+          {
+            "reference_ru": "Притчи 30:6",
+            "reference_en": "Proverbs 30:6",
+            "text_ru": "Не прибавляй к словам Его, чтобы Он не обличил тебя, и ты не оказался лжецом.",
+            "text_en": "Do not add to his words, lest he rebuke you and you be found a liar.",
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 30,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Откровение 22:18",
+            "reference_en": "Revelation 22:18",
+            "text_ru": "И я также свидетельствую всякому слышащему слова пророчества книги сей: если кто приложит что к ним, на того наложит Бог язвы, о которых написано в книге сей.",
+            "text_en": "If anyone adds to them, God will add to him the plagues described in this book.",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 22,
+              "verse": "18"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-10",
+        "day": 10,
+        "topic": {
+          "ru": "Слово Божье",
+          "en": "God’s Word"
+        },
+        "question_ru": "Почему важно читать Библию?",
+        "question_en": "Why is it important to read the Bible?",
+        "reference_ru": "Матфея 4:4",
+        "reference_en": "Matthew 4:4",
+        "text_ru": "Не хлебом одним будет жить человек, но всяким словом, исходящим из уст Божиих.",
+        "text_en": "Man shall not live by bread alone, but by every word that comes from the mouth of God.",
+        "verse_ref": {
+          "book": "Matthew",
+          "chapter": 4,
+          "verse": "4"
+        },
+        "answer_ru": "Божье Слово даёт жизнь, истину и направление.",
+        "answer_en": "God’s Word gives life, truth, and direction.",
+        "related": [
+          {
+            "reference_ru": "Псалом 118:105",
+            "reference_en": "Psalm 119:105",
+            "text_ru": "Слово Твоё — светильник ноге моей.",
+            "text_en": "Your word is a lamp to my feet.",
+            "verse_ref": {
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": "105"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 17:17",
+            "reference_en": "John 17:17",
+            "text_ru": "Слово Твоё есть истина.",
+            "text_en": "Your word is truth.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 17,
+              "verse": "17"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-11",
+        "day": 11,
+        "topic": {
+          "ru": "Молитва",
+          "en": "Prayer"
+        },
+        "question_ru": "Зачем нужна молитва?",
+        "question_en": "Why do we pray?",
+        "reference_ru": "Филиппийцам 4:6",
+        "reference_en": "Philippians 4:6",
+        "text_ru": "Не заботьтесь ни о чём, но всегда в молитве и прошении с благодарением открывайте свои желания пред Богом.",
+        "text_en": "In everything by prayer and supplication... let your requests be made known to God.",
+        "verse_ref": {
+          "book": "Philippians",
+          "chapter": 4,
+          "verse": "6"
+        },
+        "answer_ru": "Молитва — это общение с Богом и доверие Ему своей жизни.",
+        "answer_en": "Prayer is communicating with God and trusting Him with our lives.",
+        "related": [
+          {
+            "reference_ru": "Матфея 6:6",
+            "reference_en": "Matthew 6:6",
+            "text_ru": "Ты же, когда молишься, войди в комнату твою и, затворив дверь твою, помолись Отцу твоему, Который втайне; и Отец твой, видящий тайное, воздаст тебе явно.",
+            "text_en": "Pray to your Father who is in secret.",
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 6,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "1 Фессалоникийцам 5:17-18",
+            "reference_en": "1 Thessalonians 5:17-18",
+            "text_ru": "Непрестанно молитесь. За всё благодарите: ибо такова о вас воля Божия во Христе Иисусе.",
+            "text_en": "Pray without ceasing.",
+            "verse_ref": {
+              "book": "1-thessalonians",
+              "chapter": 5,
+              "verse": "17"
+            }
+          }
+        ]
+      },      
+      {
+        "id": "question-day-12",
+        "day": 12,
+        "topic": {
+          "ru": "Любовь",
+          "en": "Love"
+        },
+        "question_ru": "Что такое истинная любовь?",
+        "question_en": "What is true love?",
+        "reference_ru": "1 Иоанна 4:8",
+        "reference_en": "1 John 4:8",
+        "text_ru": "Кто не любит, тот не познал Бога, потому что Бог есть любовь.",
+        "text_en": "God is love.",
+        "verse_ref": {
+          "book": "1-john",
+          "chapter": 4,
+          "verse": "8"
+        },
+        "answer_ru": "Истинная любовь исходит от Бога и проявляется в заботе о других.",
+        "answer_en": "True love comes from God and is shown in caring for others.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 13:34",
+            "reference_en": "John 13:34",
+            "text_ru": "Заповедь новую даю вам, да любите друг друга; как Я возлюбил вас, так и вы да любите друг друга.",
+            "text_en": "Love one another: just as I have loved you.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 13,
+              "verse": "34"
+            }
+          },
+          {
+            "reference_ru": "1 Коринфянам 13:4",
+            "reference_en": "1 Corinthians 13:4",
+            "text_ru": "Любовь долготерпит, милосердствует, любовь не завидует, любовь не превозносится, не гордится.",
+            "text_en": "Love is patient and kind.",
+            "verse_ref": {
+              "book": "1-corinthians",
+              "chapter": 13,
+              "verse": "4"
+            }
+          }
+        ]
+      },   
+      {
+        "id": "question-day-13",
+        "day": 13,
+        "topic": {
+          "ru": "Жизнь вечная",
+          "en": "Eternal Life"
+        },
+        "question_ru": "Что такое жизнь вечная?",
+        "question_en": "What is eternal life?",
+        "reference_ru": "Иоанна 17:3",
+        "reference_en": "John 17:3",
+        "text_ru": "Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
+        "text_en": "And this is eternal life, that they know you, the only true God, and Jesus Christ whom you have sent.",
+        "verse_ref": {
+          "book": "John",
+          "chapter": 17,
+          "verse": "3"
+        },
+        "answer_ru": "Вечная жизнь — это знать Бога и жить с Ним вечно.",
+        "answer_en": "Eternal life is knowing God and living with Him forever.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 3:36",
+            "reference_en": "John 3:36",
+            "text_ru": "Верующий в Сына имеет жизнь вечную, а не верующий в Сына не увидит жизни, но гнев Божий пребывает на нём.",
+            "text_en": "Whoever believes in the Son has eternal life.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 3,
+              "verse": "36"
+            }
+          },
+          {
+            "reference_ru": "1 Иоанна 5:11",
+            "reference_en": "1 John 5:11",
+            "text_ru": "Свидетельство сие состоит в том, что Бог даровал нам жизнь вечную, и сия жизнь — в Сыне Его.",
+            "text_en": "God gave us eternal life.",
+            "verse_ref": {
+              "book": "1-john",
+              "chapter": 5,
+              "verse": "11"
             }
           }
         ]

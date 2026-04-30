@@ -1,6 +1,6 @@
 import { buildBibleLink } from "./bibleLinks.js";
 
-const START_DATE = "2026-04-28";
+const START_DATE = "2026-04-30";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -43,17 +43,16 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     const response = await fetch("/data/questions/question-1-30.json", { cache: "no-store" });
     const data = await response.json();
     const questions = data.questions || [];
-
+    
+    //PROD code
     const todayDay = getTodayIndex();
-
     let currentIndex = questions.findIndex(q => q.day === todayDay);
-
     if (currentIndex === -1) currentIndex = 0;
-
     const todayIndex = currentIndex;
 
     function renderCard(index) {
       const q = questions[index];
+      const isToday = index === todayIndex;
 
       const question = q[`question_${lang}`];
       const text = q[`text_${lang}`];
@@ -65,31 +64,35 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       root.innerHTML = `
       <div class="daily-verse-card">
 
-    
+        <div class="daily-verse-daily-note">
+          ${lang === "ru"
+            ? "Каждый день — новый вопрос из Писания"
+            : "A new question from Scripture every day"}
+        </div>
+
         <div class="daily-verse-date-row">
-    
-        ${
+          ${
             index > 0
               ? `<button class="dv-arrow dv-left dv-arrow-date dv-prev" type="button">‹</button>`
               : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
           }
-          
-    
-    
+
           <div class="daily-verse-date-center">
             <div class="daily-verse-date">
               <span class="daily-day-badge">
-                ${lang === "ru" ? "День " : "Day "}${q.day}
+                ${lang === "ru" 
+                  ? `День ${q.day}${isToday ? " · Сегодня" : ""}`
+                  : `Day ${q.day}${isToday ? " · Today" : ""}`
+                }
               </span>
             </div>
           </div>
-    
-        ${
-        index < todayIndex
-            ? `<button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>`
-            : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-        }
-  
+
+          ${
+            index < todayIndex
+              ? `<button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>`
+              : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
+          }
         </div>
             <button
                 class="dv-close"
@@ -97,7 +100,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                 aria-label="${lang === "ru" ? "Закрыть" : "Close"}"
                 title="${lang === "ru" ? "Закрыть" : "Close"}"
         >×</button>
-        
+
         <div class="daily-verse-title-inline">
           <span class="daily-verse-title-text">
             ${question}

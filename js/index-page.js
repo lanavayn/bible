@@ -122,7 +122,8 @@ function getIndexLang() {
           ${t.toggleAllText}<span class="toggle-icon">▾</span>
         </button>
       </div>
-  
+
+    <div class="categories-list">
       <div class="category" data-category="salvation">
         <div class="category-header" onclick="toggleCategory(this)">
           <span>${t.categories.salvation}</span>
@@ -208,6 +209,7 @@ function getIndexLang() {
           <li><section id="book-dates"></section></li>
         </ul>
       </div>
+    </div> <!-- categories-list --> 
     `;
   
     if (typeof initVerseSlider === "function") {

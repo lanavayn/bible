@@ -2576,7 +2576,7 @@ abbr[title]:focus::after {
 .category .topic-list {
   list-style: none;
   padding-left: 0;
-  margin-top: 0;
+  margin-top: -0.8rem;
 
   max-height: 0;
   opacity: 0;
@@ -3051,7 +3051,7 @@ abbr[title]:focus::after {
 .category[data-category="verse-slider-block"].open .topic-list,
 #verse-slider,
 #verse-slider .verse-slider {
-  margin-top: 0 !important;
+  margin-top: -0.5rem !important;
   padding-top: 0 !important;
 }
 
@@ -3861,7 +3861,7 @@ table.book-dates th:nth-child(2) {
 .dv-reopen-btn {
   display: inline-block;
   margin: 0.35rem 0 0.85rem;
-  margin-bottom: 2px;
+  margin-bottom: 2.2px;
   padding: 0.42rem 0.9rem;
 
   font-family: var(--font-family-base);
@@ -3979,5 +3979,31 @@ table.book-dates th:nth-child(2) {
 #question-of-day .daily-verse-date-row {
   margin-top: 0 !important;
   padding-top: 0 !important;
+}
+
+.daily-verse-daily-note {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  margin: 0.2rem auto 0.15rem;
+  opacity: 0.82;
+  white-space: nowrap;
+}
+
+/* Question of the Day: spacing between motto, reference, and verse */
+#question-of-day .daily-verse-subtitle-row {
+  margin-bottom: 0.35rem;
+}
+
+#question-of-day .daily-verse-subtitle-row + .daily-verse-title-inline {
+  margin-top: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: -0.7rem;
+  margin-bottom: 0.35rem;
 }
 
