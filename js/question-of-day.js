@@ -66,8 +66,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
         <div class="daily-verse-daily-note">
           ${lang === "ru"
-            ? "Каждый день — новый вопрос из Писания"
-            : "A new question from Scripture every day"}
+            ? "Каждый день — новый вопрос"
+            : "A new question every day"}
         </div>
 
         <div class="daily-verse-date-row">

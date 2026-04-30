@@ -3983,11 +3983,13 @@ table.book-dates th:nth-child(2) {
 
 .daily-verse-daily-note {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.25;
-  margin: 0.2rem auto 0.15rem;
-  opacity: 0.82;
-  white-space: nowrap;
+  margin: 0.2rem auto 0.2rem;
+
+  white-space: normal;      /* ВАЖНО */
+  word-break: break-word;   /* на всякий случай */
+  padding: 0 0.5rem;        /* чтобы не прилипало к краям */
 }
 
 /* Question of the Day: spacing between motto, reference, and verse */
