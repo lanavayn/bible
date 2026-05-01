@@ -176,6 +176,11 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
+          <div class="daily-verse-daily-note">
+            ${lang === "ru"
+              ? "Каждый день — новый стих"
+              : "A new verse every day"}
+          </div>
             <div class="daily-verse-header">
            <!-- убрали заголовок -->
 
@@ -308,43 +313,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 : ""
             }
 
-          <div class="daily-verse-inline-row">
-            <div class="daily-verse-text-wrap">
-              ${previewText ? `<blockquote class="daily-verse-text daily-verse-preview">${escapeHtml(previewText)}</blockquote>` : ""}
-            </div>
+            ${text ? `<blockquote class="daily-verse-text">${escapeHtml(text)}</blockquote>` : ""}
 
-            <button
-              type="button"
-              class="daily-verse-inline-toggle"
-              data-target="${detailsId}"
-            >
-              ${expandBtnLabel}
-            </button>
-          </div>
-
-          <div class="daily-verse-details scripture-details" id="${detailsId}" style="display:${keepDetailsOpen ? "block" : "none"};">
             <div class="scripture-note-box">
-              <div class="scripture-close-row">
-                <button
-                  class="scripture-close dv-details-close"
-                  type="button"
-                  data-target="${detailsId}"
-                  aria-label="${lang === 'ru' ? 'Закрыть' : 'Close'}"
-                  title="${lang === 'ru' ? 'Закрыть' : 'Close'}"
-                >×</button>
-              </div>
-
-              ${
-                text
-                  ? `
-                  <p class="scripture-interpretation daily-verse-full-text">
-                    <strong>${detailsVerseTitle}</strong>
-                    ${addCreationHelp(text, lang)}
-                  </p>
-                  `
-                  : ""
-              }
-
               ${
                 interpretation
                   ? `
@@ -355,7 +326,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   `
                   : ""
               }
-
+            
               ${
                 related.length
                   ? `
@@ -370,8 +341,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   `
                   : ""
               }
-            </div>
-          </div>
+            </div>  
             
         </section>
         `;
@@ -381,8 +351,6 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const closeBtn = root.querySelector('.dv-close');
         const jumpDay1Btn = root.querySelector('.dv-jump-day1');
         const jumpTodayBtn = root.querySelector('.dv-jump-today');
-        const detailsBtn = root.querySelector('.daily-verse-inline-toggle');
-        const detailsCloseBtn = root.querySelector('.dv-details-close');
         const helpBtn = root.querySelector('.daily-help-btn');
         const helpInline = root.querySelector('.daily-help-inline');
         const helpClose = root.querySelector('.daily-help-close');
@@ -436,27 +404,6 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           });
         }
 
-          if (detailsBtn) {
-            detailsBtn.addEventListener("click", () => {
-              const targetId = detailsBtn.dataset.target;
-              const target = document.getElementById(targetId);
-              if (!target) return;
-          
-              const willOpen = target.style.display !== "block";
-              toggleDailyVerseDetails(targetId);
-              keepDetailsOpen = willOpen;
-              updateDailyVerseToggleLabel(detailsBtn, keepDetailsOpen, lang);
-            });
-          }
-          
-          if (detailsCloseBtn) {
-            detailsCloseBtn.addEventListener("click", () => {
-              const targetId = detailsCloseBtn.dataset.target;
-              closeDailyVerseDetails(targetId);
-              keepDetailsOpen = false;
-              updateDailyVerseToggleLabel(detailsBtn, keepDetailsOpen, lang);
-            });
-          }
           if (helpBtn && helpInline) {
             helpBtn.addEventListener("click", () => {
               const isOpen = !helpInline.hasAttribute("hidden");
