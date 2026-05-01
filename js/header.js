@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const translations = {
       en: {
-        title: "Welcome to the Bible for All",
+        title: "Welcome to the Bible for Everyone",
         back: "← Back",
         home: "🏠 Home",
         share: "📤 Share link",
