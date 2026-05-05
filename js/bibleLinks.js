@@ -4,15 +4,22 @@
 // SOURCES
 // =========================
 const BIBLE_SOURCES = {
-    ru: {
-      buildUrl: ({ bookCode, chapter, verse }) =>
-        `https://bible.by/syn/${bookCode}/${chapter}/#${verse}`
-    },
-    en: {
-      buildUrl: ({ bookCode, chapter, verse }) =>
-        `https://www.esv.org/${bookCode}+${chapter}:${verse}/`
-    }
-  };
+  ru: {
+    primary: ({ book, chapter, verse }) =>
+      `https://www.bible.com/ru/bible/400/${book}.${chapter}.${verse}.SYNO`,
+
+    fallback: ({ bookCode, chapter, verse }) =>
+      `https://bible.by/syn/${bookCode}/${chapter}/#${verse}`
+  },
+
+  en: {
+    primary: ({ book, chapter, verse }) =>
+      `https://www.bible.com/bible/206/${book}.${chapter}.${verse}.WEBUS`,
+
+    fallback: ({ bookCode, chapter, verse }) =>
+      `https://www.esv.org/${bookCode}+${chapter}:${verse}/`
+  }
+};
   
   // =========================
   // BOOK MAPPING (YOUR NUMBERS)
@@ -48,7 +55,7 @@ const BIBLE_SOURCES = {
       ezekiel: { ru: "26", en: "Ezekiel" },
       daniel: { ru: "27", en: "Daniel" },    
       hosea: { ru: "28", en: "Hosea" },
-      joel: { ru: "39", en: "Joel" },
+      joel: { ru: "29", en: "Joel" },
       amos: { ru: "30", en: "Amos" },
       obadiah: { ru: "31", en: "Obadiah" },
       jonah: { ru: "32", en: "Jonah" },
@@ -90,6 +97,79 @@ const BIBLE_SOURCES = {
       revelation: { ru: "66", en: "Revelation" }
     };
 
+    // =========================
+// BIBLE.COM BOOK MAPPING
+// =========================
+const BIBLE_COM_BOOK_MAP = {
+  genesis: "GEN",
+  exodus: "EXO",
+  leviticus: "LEV",
+  numbers: "NUM",
+  deuteronomy: "DEU",
+  joshua: "JOS",
+  judges: "JDG",
+  ruth: "RUT",
+  "1-samuel": "1SA",
+  "2-samuel": "2SA",
+  "1-kings": "1KI",
+  "2-kings": "2KI",
+  "1-chronicles": "1CH",
+  "2-chronicles": "2CH",
+  ezra: "EZR",
+  nehemiah: "NEH",
+  esther: "EST",
+  job: "JOB",
+  psalms: "PSA",
+  proverbs: "PRO",
+  ecclesiastes: "ECC",
+  "song-of-solomon": "SNG",
+  isaiah: "ISA",
+  jeremiah: "JER",
+  lamentations: "LAM",
+  ezekiel: "EZK",
+  daniel: "DAN",
+  hosea: "HOS",
+  joel: "JOL",
+  amos: "AMO",
+  obadiah: "OBA",
+  jonah: "JON",
+  micah: "MIC",
+  nahum: "NAM",
+  habakkuk: "HAB",
+  zephaniah: "ZEP",
+  haggai: "HAG",
+  zechariah: "ZEC",
+  malachi: "MAL",
+
+  matthew: "MAT",
+  mark: "MRK",
+  luke: "LUK",
+  john: "JHN",
+  acts: "ACT",
+  romans: "ROM",
+  "1-corinthians": "1CO",
+  "2-corinthians": "2CO",
+  galatians: "GAL",
+  ephesians: "EPH",
+  philippians: "PHP",
+  colossians: "COL",
+  "1-thessalonians": "1TH",
+  "2-thessalonians": "2TH",
+  "1-timothy": "1TI",
+  "2-timothy": "2TI",
+  titus: "TIT",
+  philemon: "PHM",
+  hebrews: "HEB",
+  james: "JAS",
+  "1-peter": "1PE",
+  "2-peter": "2PE",
+  "1-john": "1JN",
+  "2-john": "2JN",
+  "3-john": "3JN",
+  jude: "JUD",
+  revelation: "REV"
+};
+
   // =========================
   // NORMALIZE INPUT
   // =========================
@@ -122,14 +202,31 @@ const BIBLE_SOURCES = {
     const source = BIBLE_SOURCES[lang];
     if (!source) return "";
   
-    const bookCode = getBookCode(normalized.book, lang);
-    if (!bookCode) return "";
+    // новый mapping
+    const book = BIBLE_COM_BOOK_MAP[normalized.book];
   
-    return source.buildUrl({
-      bookCode,
-      chapter: normalized.chapter,
-      verse: normalized.verse
-    });
+    // старый mapping
+    const bookCode = getBookCode(normalized.book, lang);
+  
+    // сначала пробуем новый
+    if (book) {
+      return source.primary({
+        book,
+        chapter: normalized.chapter,
+        verse: normalized.verse
+      });
+    }
+  
+    // если не получилось — fallback
+    if (bookCode) {
+      return source.fallback({
+        bookCode,
+        chapter: normalized.chapter,
+        verse: normalized.verse
+      });
+    }
+  
+    return "";
   }
   
   // =========================
@@ -142,4 +239,5 @@ const BIBLE_SOURCES = {
   // =========================
   // OPTIONAL EXPORTS (DEBUG)
   // =========================
-  export { BOOK_MAP, BIBLE_SOURCES };
+  //export { BOOK_MAP, BIBLE_SOURCES };
+  export { BOOK_MAP, BIBLE_COM_BOOK_MAP, BIBLE_SOURCES };

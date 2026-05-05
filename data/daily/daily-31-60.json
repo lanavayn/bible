@@ -110,14 +110,14 @@
         "ru": "Свидетели Христа",
         "en": "Witnesses of Christ"
       },
-      "reference_ru": "Деяния 1:8",
-      "reference_en": "Acts 1:8",
-      "text_ru": "Но вы примете силу, когда сойдет на вас Дух Святой; и будете Мне свидетелями.",
-      "text_en": "But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses.",
+      "reference_ru": "Матфея 28:19-20",
+      "reference_en": "Matthew 28:19-20",
+      "text_ru": "Итак идите, научите все народы, крестя их во имя Отца и Сына и Святого Духа, уча их соблюдать всё, что Я повелел вам; и се, Я с вами во все дни до скончания века. Аминь.",
+      "text_en": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age. Amen",
       "verse_ref": {
-        "book": "Acts",
-        "chapter": 1,
-        "verse": "8"
+        "book": "matthew",
+        "chapter": 28,
+        "verse": "19-20"
       },
       "interpretation_ru": "Свидетельство о Христе совершается не человеческой силой, а Божьей.",
       "interpretation_en": "Witnessing for Christ is done not by human strength, but by God’s power.",
@@ -157,8 +157,8 @@
         {
           "reference_ru": "Деяния 1:4-5",
           "reference_en": "Acts 1:4-5",
-          "text_ru": "Не отлучайтесь из Иерусалима, но ждите обещанного от Отца.",
-          "text_en": "Do not depart from Jerusalem, but wait for the promise of the Father.",
+          "text_ru": "Не отлучайтесь из Иерусалима, но ждите обещанного от Отца, ибо Иоанн крестил водою, а вы, через несколько дней после сего, будете крещены Духом Святым.",
+          "text_en": "And while staying with them he ordered them not to depart from Jerusalem, but to wait for the promise of the Father, which, he said, “you heard from me; for John baptized with water, but you will be baptized with the Holy Spirit not many days from now.”",
           "verse_ref": {
             "book": "Acts",
             "chapter": 1,
@@ -166,6 +166,491 @@
           }
         }
       ]
-    } 
+    },
+    {
+          "id": "daily-2026-05-10",
+          "day": 36,
+          "topic": {
+            "ru": "Обещание Утешителя",
+            "en": "The Promise of the Helper"
+          },
+          "reference_ru": "Иоанна 14:16",
+          "reference_en": "John 14:16",
+          "text_ru": "И Я умолю Отца, и даст вам другого Утешителя, да пребудет с вами вовек.",
+          "text_en": "And I will ask the Father, and he will give you another Helper, to be with you forever.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 14,
+            "verse": "16"
+          },
+          "interpretation_ru": "Бог обещает быть с верующими через Духа Святого.",
+          "interpretation_en": "God promises to be with believers through the Holy Spirit.",
+          "related": [
+            {
+              "reference_ru": "Иоанна 14:18",
+              "reference_en": "John 14:18",
+              "text_ru": "Не оставлю вас сиротами; приду к вам.",
+              "text_en": "I will not leave you as orphans; I will come to you.",
+              "verse_ref": {
+                "book": "John",
+                "chapter": 14,
+                "verse": "18"
+              }
+            }
+          ]
+        },
+        {
+          "id": "daily-2026-05-11",
+          "day": 37,
+          "topic": {
+            "ru": "Дух учит",
+            "en": "The Spirit Teaches"
+          },
+          "reference_ru": "Иоанна 14:26",
+          "reference_en": "John 14:26",
+          "text_ru": "Утешитель же, Дух Святый, Которого пошлет Отец во имя Мое, научит вас всему и напомнит вам все, что Я говорил вам.",
+          "text_en": "But the Helper, the Holy Spirit, whom the Father will send in my name, he will teach you all things and bring to your remembrance all that I have said to you.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 14,
+            "verse": "26"
+          },
+          "interpretation_ru": "Дух Святой открывает и напоминает слова Христа.",
+          "interpretation_en": "The Holy Spirit reveals and reminds us of Christ’s words.",
+          "related": [
+            {
+              "reference_ru": "1 Иоанна 2:27",
+              "reference_en": "1 John 2:27",
+              "text_ru": "Впрочем, помазание, которое вы получили от Него, в вас пребывает, и вы не имеете нужды, чтобы кто учил вас; но как самое сие помазание учит вас всему, и оно истинно и неложно, то, чему оно научило вас, в том пребывайте.",
+              "text_en": "As for you, the anointing which you received from him remains in you, and you don’t need for anyone to teach you. But as his anointing teaches you concerning all things, and is true, and is no lie, and even as it taught you, you will remain in him.",
+              "verse_ref": {
+                "book": "1-john",
+                "chapter": 2,
+                "verse": "27"
+              }
+            }
+          ]
+        },
+        {
+          "id": "daily-2026-05-12",
+          "day": 38,
+          "topic": {
+            "ru": "Дух свидетельствует",
+            "en": "The Spirit Testifies"
+          },
+          "reference_ru": "Иоанна 15:26",
+          "reference_en": "John 15:26",
+          "text_ru": "Когда же приидет Утешитель, Которого Я пошлю вам от Отца, Дух истины, Который от Отца исходит, Он будет свидетельствовать о Мне.",
+          "text_en": "When the Counselor has come, whom I will send to you from the Father, the Spirit of truth, who proceeds from the Father, he will testify about me.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 15,
+            "verse": "26"
+          },
+          "interpretation_ru": "Дух Святой открывает человеку Иисуса Христа.",
+          "interpretation_en": "The Holy Spirit reveals Jesus Christ to people.",
+          "related": [
+            {
+              "reference_ru": "Иоанна 16:14",
+              "reference_en": "John 16:14",
+              "text_ru": "Он прославит Меня, потому что от Моего возьмет и возвестит вам.",
+              "text_en": "He will glorify me, for he will take what is mine and declare it to you.",
+              "verse_ref": {
+                "book": "John",
+                "chapter": 16,
+                "verse": "14"
+              }
+            }
+          ]
+        },
+        {
+          "id": "daily-2026-05-13",
+          "day": 39,
+          "topic": {
+            "ru": "Дух истины",
+            "en": "The Spirit of Truth"
+          },
+          "reference_ru": "Иоанна 16:13",
+          "reference_en": "John 16:13",
+          "text_ru": "Когда же приидет Он, Дух истины, то наставит вас на всякую истину; ибо не от Себя говорить будет, но будет говорить, что услышит, и будущее возвестит вам.",
+          "text_en": "When the Spirit of truth comes, he will guide you into all the truth, for he will not speak on his own authority, but whatever he hears he will speak, and he will declare to you the things that are to come.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 16,
+            "verse": "13"
+          },
+          "interpretation_ru": "Дух Святой ведет человека к истине.",
+          "interpretation_en": "The Holy Spirit leads a person into truth.",
+          "related": [
+            {
+              "reference_ru": "Псалом 142:10",
+              "reference_en": "Psalm 143:10",
+              "text_ru": "Дух Твой благий да ведет меня в землю правды. Научи меня исполнять волю Твою, потому что Ты Бог мой.",
+              "text_en": "Teach me to do your will, for you are my God! Your Spirit is good. Lead me in the land of uprightness.",
+              "verse_ref_lang": {
+                "ru": { "book": "Psalms", "chapter": 142, "verse": "10" },
+                "en": { "book": "Psalms", "chapter": 143, "verse": "10" }
+              }
+            }
+          ]
+        },
+        {
+          "id": "daily-2026-05-14",
+          "day": 40,
+          "topic": {
+            "ru": "Ожидание обетования",
+            "en": "Waiting for the Promise"
+          },
+          "reference_ru": "Деяния 1:4",
+          "reference_en": "Acts 1:4",
+          "text_ru": "И, собрав их, Он повелел им: не отлучайтесь из Иерусалима, но ждите обещанного от Отца, о чем вы слышали от Меня.",
+          "text_en": "Being assembled together with them, he commanded them, “Don’t depart from Jerusalem, but wait for the promise of the Father, which you heard from me.",
+          "verse_ref": {
+            "book": "Acts",
+            "chapter": 1,
+            "verse": "4"
+          },
+          "interpretation_ru": "Бог учит ожидать исполнения Своего обещания.",
+          "interpretation_en": "God teaches us to wait for the fulfillment of His promise.",
+          "related": [
+            {
+              "reference_ru": "Псалом 26:14",
+              "reference_en": "Psalm 27:14",
+              "text_ru": "Надейся на Господа, мужайся, и да укрепляется сердце твоё, и надейся на Господа.",
+              "text_en": "Wait for the LORD; be strong, and let your heart take courage; wait for the LORD!",
+              "verse_ref_lang": {
+                "ru": { "book": "Psalms", "chapter": 26, "verse": "14" },
+                "en": { "book": "Psalms", "chapter": 27, "verse": "14" }
+              }
+            }
+          ]
+        },
+            {
+              "id": "daily-2026-05-15",
+              "day": 41,
+              "topic": {
+                "ru": "Обещание силы",
+                "en": "The Promise of Power"
+              },
+              "reference_ru": "Деяния 1:5",
+              "reference_en": "Acts 1:5",
+              "text_ru": "Ибо Иоанн крестил водою, а вы через несколько дней после сего будете крещены Духом Святым.",
+              "text_en": "For John baptized with water, but you will be baptized with the Holy Spirit not many days from now.",
+              "verse_ref": {
+                "book": "Acts",
+                "chapter": 1,
+                "verse": "5"
+              },
+              "interpretation_ru": "Бог обещает дать силу через Духа Святого.",
+              "interpretation_en": "God promises to give power through the Holy Spirit.",
+              "related": [
+              {
+                "reference_ru": "1 Коринфянам 12:13",
+                "reference_en": "1 Corinthians 12:13",
+                "text_ru": "Ибо все мы одним Духом крестились в одно тело, Иудеи или Еллины, рабы или свободные, и все напоены одним Духом.",
+                "text_en": "For in one Spirit we were all baptized into one body—Jews or Greeks, slaves or free—and all were made to drink of one Spirit.",
+                "verse_ref": {
+                  "book": "1-corinthians",
+                  "chapter": 12,
+                  "verse": "13"
+                }
+              }
+            ]
+            },
+            {
+              "id": "daily-2026-05-16",
+              "day": 42,
+              "topic": {
+                "ru": "Время Бога",
+                "en": "God’s Timing"
+              },
+              "reference_ru": "Деяния 1:7",
+              "reference_en": "Acts 1:7",
+              "text_ru": "Он же сказал им: не ваше дело знать времена или сроки, которые Отец положил в Своей власти.",
+              "text_en": "He said to them, “It is not for you to know times or seasons that the Father has fixed by his own authority.”",
+              "verse_ref": {
+                "book": "Acts",
+                "chapter": 1,
+                "verse": "7"
+              },
+              "interpretation_ru": "Бог действует в Свое время.",
+              "interpretation_en": "God acts in His perfect timing.",
+              "related": [
+                {
+                  "reference_ru": "Екклесиаст 3:1",
+                  "reference_en": "Ecclesiastes 3:1",
+                  "text_ru": "Всему свое время, и время всякой вещи под небом.",
+                  "text_en": "For everything there is a season, and a time for every matter under heaven.",
+                  "verse_ref": {
+                    "book": "Ecclesiastes",
+                    "chapter": 3,
+                    "verse": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-05-17",
+              "day": 43,
+              "topic": {
+                "ru": "Излияние Духа",
+                "en": "The Outpouring of the Spirit"
+              },
+              "reference_ru": "Исаия 32:15",
+              "reference_en": "Isaiah 32:15",
+              "text_ru": "Доколе не изольется на нас Дух свыше, и пустыня не сделается садом, и сад не будут считать лесом.",
+              "text_en": "Until the Spirit is poured upon us from on high, and the wilderness becomes a fruitful field, and the fruitful field is deemed a forest.",
+              "verse_ref": {
+                "book": "Isaiah",
+                "chapter": 32,
+                "verse": "15"
+              },
+              "interpretation_ru": "Дух Святой изменяет жизнь человека.",
+              "interpretation_en": "The Holy Spirit transforms a person’s life.",
+              "related": [
+                {
+                  "reference_ru": "Исаия 44:3",
+                  "reference_en": "Isaiah 44:3",
+                  "text_ru": "Ибо Я изолью воды на жаждущее и потоки на иссохшее; изолью дух Мой на племя твое и благословение Моё на потомков твоих.",
+                  "text_en": "For I will pour water on the thirsty land, and streams on the dry ground; I will pour my Spirit upon your offspring, and my blessing on your descendants.",
+                  "verse_ref": {
+                    "book": "Isaiah",
+                    "chapter": 44,
+                    "verse": "3"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-05-18",
+              "day": 44,
+              "topic": {
+                "ru": "Жажда Бога",
+                "en": "Seeking God"
+              },
+              "reference_ru": "Псалом 62:2",
+              "reference_en": "Psalm 63:1",
+              "text_ru": "Боже! Ты Бог мой, Тебя от ранней зари ищу я; Тебя жаждет душа моя, по Тебе томится плоть моя в земле пустой, иссохшей и безводной.",
+              "text_en": "O God, you are my God; earnestly I seek you; my soul thirsts for you; my flesh faints for you, as in a dry and weary land where there is no water.",
+              "verse_ref_lang": {
+                "ru": {
+                  "book": "Psalms",
+                  "chapter": 62,
+                  "verse": "2"
+                },
+                "en": {
+                  "book": "Psalms",
+                  "chapter": 63,
+                  "verse": "1"
+                }
+              },
+              "interpretation_ru": "Сердце человека жаждет Бога.",
+              "interpretation_en": "The human heart longs for God.",
+              "related": [
+                {
+                  "reference_ru": "Матфея 5:6",
+                  "reference_en": "Matthew 5:6",
+                  "text_ru": "Блаженны алчущие и жаждущие правды, ибо они насытятся.",
+                  "text_en": "Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.",
+                  "verse_ref": {
+                    "book": "Matthew",
+                    "chapter": 5,
+                    "verse": "6"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-05-19",
+              "day": 45,
+              "topic": {
+                "ru": "Единство в молитве",
+                "en": "Unity in Prayer"
+              },
+              "reference_ru": "Деяния 1:14",
+              "reference_en": "Acts 1:14",
+              "text_ru": "Все они единодушно пребывали в молитве и молении, с некоторыми женами и Мариею, Материю Иисуса, и с братьями Его.",
+              "text_en": "All these with one accord continued steadfastly in prayer and supplication, along with the women and Mary the mother of Jesus, and with his brothers.",
+              "verse_ref": {
+                "book": "Acts",
+                "chapter": 1,
+                "verse": "14"
+              },
+              "interpretation_ru": "Ожидание Бога соединяет людей в молитве.",
+              "interpretation_en": "Waiting on God unites people in prayer.",
+              "related": [
+                {
+                  "reference_ru": "Колоссянам 4:2",
+                  "reference_en": "Colossians 4:2",
+                  "text_ru": "Будьте постоянны в молитве, бодрствуя в ней с благодарением.",
+                  "text_en": "Continue steadfastly in prayer, being watchful in it with thanksgiving.",
+                  "verse_ref": {
+                    "book": "Colossians",
+                    "chapter": 4,
+                    "verse": "2"
+                  }
+                }
+              ]
+            },
+                {
+                  "id": "daily-2026-05-20",
+                  "day": 46,
+                  "topic": {
+                    "ru": "Дух силы",
+                    "en": "Spirit of Power"
+                  },
+                  "reference_ru": "2 Тимофею 1:7",
+                  "reference_en": "2 Timothy 1:7",
+                  "text_ru": "Ибо дал нам Бог духа не боязни, но силы и любви и целомудрия.",
+                  "text_en": "For God did not give us a spirit of fear, but of power, love, and self-control.",
+                  "verse_ref": {
+                    "book": "2-timothy",
+                    "chapter": 1,
+                    "verse": "7"
+                  },
+                  "interpretation_ru": "Бог даёт силу вместо страха.",
+                  "interpretation_en": "God gives power instead of fear.",
+                  "related": [
+                    {
+                      "reference_ru": "Римлянам 8:15",
+                      "reference_en": "Romans 8:15",
+                      "text_ru": "Потому что вы не приняли духа рабства, чтобы опять жить в страхе, но приняли Духа усыновления, Которым взываем: «Авва, Отче!».",
+                      "text_en": "For you didn’t receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, “Abba! Father!”.",
+                      "verse_ref": {
+                        "book": "Romans",
+                        "chapter": 8,
+                        "verse": "15"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-21",
+                  "day": 47,
+                  "topic": {
+                    "ru": "Сила Божья",
+                    "en": "God’s Power"
+                  },
+                  "reference_ru": "1 Коринфянам 2:4-5",
+                  "reference_en": "1 Corinthians 2:4-5",
+                  "text_ru": "И слово мое и проповедь моя не в убедительных словах человеческой мудрости, но в явлении духа и силы, чтобы вера ваша утверждалась не на мудрости человеческой, но на силе Божией.",
+                  "text_en": "My speech and my preaching were not in persuasive words of human wisdom, but in demonstration of the Spirit and of power, that your faith wouldn’t stand in the wisdom of men, but in the power of God.",
+                  "verse_ref": {
+                    "book": "1-corinthians",
+                    "chapter": 2,
+                    "verse": "4-5"
+                  },
+                  "interpretation_ru": "Вера утверждается силой Божьей.",
+                  "interpretation_en": "Faith is established by God’s power.",
+                  "related": [
+                    {
+                      "reference_ru": "2 Коринфянам 4:7",
+                      "reference_en": "2 Corinthians 4:7",
+                      "text_ru": "Но сокровище сие мы носим в глиняных сосудах, чтобы преизбыточная сила была приписываема Богу.",
+                      "text_en": "But we have this treasure in clay vessels, that the exceeding greatness of the power may be of God and not from ourselves.",
+                      "verse_ref": {
+                        "book": "2-corinthians",
+                        "chapter": 4,
+                        "verse": "7"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-22",
+                  "day": 48,
+                  "topic": {
+                    "ru": "Излияние Духа",
+                    "en": "Outpouring of the Spirit"
+                  },
+                  "reference_ru": "Исаия 44:3",
+                  "reference_en": "Isaiah 44:3",
+                  "text_ru": "Ибо Я изолью воды на жаждущее и потоки на иссохшее; изолью дух Мой на племя твое и благословение Мое на потомков твоих.",
+                  "text_en": "For I will pour water on the thirsty land, and streams on the dry ground; I will pour out my Spirit on your offspring.",
+                  "verse_ref": {
+                    "book": "Isaiah",
+                    "chapter": 44,
+                    "verse": "3"
+                  },
+                  "interpretation_ru": "Бог изливает Свой Дух на жаждущих.",
+                  "interpretation_en": "God pours His Spirit on the thirsty.",
+                  "related": [
+                    {
+                      "reference_ru": "Иоиль 2:28",
+                      "reference_en": "Joel 2:28",
+                      "text_ru": "И будет после того, изолью от Духа Моего на всякую плоть, и будут пророчествовать сыны ваши и дочери ваши; старцам вашим будут сниться сны, и юноши ваши будут видеть видения.",
+                      "text_en": "I will pour out my Spirit on all people.",
+                      "verse_ref": {
+                        "book": "Joel",
+                        "chapter": 2,
+                        "verse": "28"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-23",
+                  "day": 49,
+                  "topic": {
+                    "ru": "Божье время",
+                    "en": "God’s Timing"
+                  },
+                  "reference_ru": "Аввакум 2:3",
+                  "reference_en": "Habakkuk 2:3",
+                  "text_ru": "Ибо видение относится еще к определенному времени и говорит о конце и не обманет; и хотя бы и замедлило, жди его, ибо непременно сбудется, не отменится.",
+                  "text_en": "For the vision is yet for the appointed time, and it hurries toward the end, and won’t prove false. Though it takes time, wait for it, because it will surely come. It won’t delay",
+                  "verse_ref": {
+                    "book": "Habakkuk",
+                    "chapter": 2,
+                    "verse": "3"
+                  },
+                  "interpretation_ru": "Божьи обещания исполняются в своё время.",
+                  "interpretation_en": "God’s promises are fulfilled in His time.",
+                  "related": [
+                    {
+                      "reference_ru": "Екклесиаст 3:1",
+                      "reference_en": "Ecclesiastes 3:1",
+                      "text_ru": "Всему свое время, и время всякой вещи под небом.",
+                      "text_en": "For everything there is a season, and a time for every purpose under heaven.",
+                      "verse_ref": {
+                        "book": "Ecclesiastes",
+                        "chapter": 3,
+                        "verse": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-24",
+                  "day": 50,
+                  "topic": {
+                    "ru": "Пятидесятница",
+                    "en": "Pentecost"
+                  },
+                  "reference_ru": "Деяния 2:1-4",
+                  "reference_en": "Acts 2:1-4",
+                  "text_ru": "При наступлении дня Пятидесятницы все они были единодушно вместе. И внезапно сделался шум с неба, как бы от несущегося сильного ветра, и наполнил весь дом, где они находились. И явились им разделяющиеся языки, как бы огненные, и почили по одному на каждом из них. И исполнились все Духа Святого и начали говорить на иных языках, как Дух давал им провещевать.",
+                  "text_en": "Now when the day of Pentecost had come, they were all with one accord in one place. Suddenly there came from the sky a sound like the rushing of a mighty wind, and it filled all the house where they were sitting. Tongues like fire appeared and were distributed to them, and one sat on each of them. They were all filled with the Holy Spirit and began to speak with other languages, as the Spirit gave them the ability to speak.",
+                  "verse_ref": {
+                    "book": "Acts",
+                    "chapter": 2,
+                    "verse": "1-4"
+                  },
+                  "interpretation_ru": "Бог исполняет Своё обещание и даёт Духа Святого.",
+                  "interpretation_en": "God fulfills His promise and gives the Holy Spirit.",
+                  "related": [
+                    {
+                      "reference_ru": "Деяния 1:8",
+                      "reference_en": "Acts 1:8",
+                      "text_ru": "Вы примете силу, когда сойдет на вас Дух Святой.",
+                      "text_en": "You will receive power when the Holy Spirit comes on you.",
+                      "verse_ref": {
+                        "book": "Acts",
+                        "chapter": 1,
+                        "verse": "8"
+                      }
+                    }
+                  ]
+                }
   ]
 }

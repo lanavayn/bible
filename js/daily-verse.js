@@ -110,14 +110,23 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
       const todayDayNumber = getDayNumberFromEaster();
 
-      let currentIndex = verses.findIndex(v => v.day === todayDayNumber);
+      // production: показываем сегодняшний день,
+      // а если его ещё нет в JSON — последний доступный прошедший день
+      let todayIndex = -1;
 
-      // fallback если ещё нет такого дня в JSON
-      if (currentIndex === -1) {
-        currentIndex = START_INDEX;
+      for (let i = 0; i < verses.length; i++) {
+        const day = Number(verses[i].day);
+
+        if (day <= todayDayNumber) {
+          todayIndex = i;
+        }
       }
 
-      const todayIndex = currentIndex;
+      if (todayIndex === -1) {
+        todayIndex = START_INDEX;
+      }
+
+      let currentIndex = todayIndex;
 
       let keepDetailsOpen = false;
   
