@@ -322,7 +322,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 : ""
             }
 
-            ${text ? `<blockquote class="daily-verse-text">${escapeHtml(text)}</blockquote>` : ""}
+            ${text ? `<blockquote class="daily-verse-text">${addCreationHelp(text, lang)}</blockquote>` : ""}
 
             <div class="scripture-note-box">
               ${
@@ -360,9 +360,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const closeBtn = root.querySelector('.dv-close');
         const jumpDay1Btn = root.querySelector('.dv-jump-day1');
         const jumpTodayBtn = root.querySelector('.dv-jump-today');
-        const helpBtn = root.querySelector('.daily-help-btn');
-        const helpInline = root.querySelector('.daily-help-inline');
-        const helpClose = root.querySelector('.daily-help-close');
+        // creation/tvar helper buttons
         const mottoHelpBtn = root.querySelector('.daily-motto-help-btn');
         const mottoHelpInline = root.querySelector('.daily-motto-help-inline');
         const mottoHelpClose = root.querySelector('.daily-motto-help-close');
@@ -413,26 +411,32 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           });
         }
 
-          if (helpBtn && helpInline) {
-            helpBtn.addEventListener("click", () => {
-              const isOpen = !helpInline.hasAttribute("hidden");
-          
-              if (isOpen) {
-                helpInline.setAttribute("hidden", "");
-                helpBtn.setAttribute("aria-expanded", "false");
-              } else {
-                helpInline.removeAttribute("hidden");
-                helpBtn.setAttribute("aria-expanded", "true");
-              }
-            });
-          }
-          
-          if (helpClose && helpInline && helpBtn) {
-            helpClose.addEventListener("click", () => {
-              helpInline.setAttribute("hidden", "");
-              helpBtn.setAttribute("aria-expanded", "false");
-            });
-          }
+        root.querySelectorAll(".daily-help-btn").forEach(btn => {
+          const inline = btn.nextElementSibling;
+          if (!inline) return;
+        
+          btn.addEventListener("click", () => {
+            const isOpen = !inline.hasAttribute("hidden");
+        
+            if (isOpen) {
+              inline.setAttribute("hidden", "");
+              btn.setAttribute("aria-expanded", "false");
+            } else {
+              inline.removeAttribute("hidden");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+        
+        root.querySelectorAll(".daily-help-close").forEach(closeBtn => {
+          closeBtn.addEventListener("click", () => {
+            const inline = closeBtn.closest(".daily-help-inline");
+            const btn = inline?.previousElementSibling;
+        
+            if (inline) inline.setAttribute("hidden", "");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
 
           if (mottoHelpBtn && mottoHelpInline) {
             mottoHelpBtn.addEventListener("click", () => {
@@ -529,21 +533,13 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   function addCreationHelp(text, lang) {
     if (!text || lang !== "ru") return escapeHtml(text);
   
-    const target = "новое творение";
+    const safeText = escapeHtml(text);
   
-    const helpHtml = `
-      <button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «творение»">i</button>
-      <span class="footer-help-inline daily-help-inline" hidden>
-        <span class="footer-help-box daily-help-box">
-          <button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>
-          В Синодальном переводе здесь используется слово «тварь», которое в старом русском языке означает «творение».
-        </span>
-      </span>
-    `;
+    const helpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе слово «тварь» означает «творение».</span></span>`;
   
-    return escapeHtml(text).replace(
-      target,
-      `${target}${helpHtml}`
+    return safeText.replace(
+      /(тварь|твари|тварью|тварей|тварею|творение)/i,
+      match => `${match}${helpHtml}`
     );
   }
 
@@ -688,7 +684,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                  &#128214;
                </span>`
         }
-        <span class="scripture-related-text">— ${escapeHtml(text)}</span>
+        <span class="scripture-related-text">— ${addCreationHelp(text, lang)}</span>
       </li>
     `;
   }
@@ -725,5 +721,5 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       }, 50);
   
     }, 200);
-  }
 
+  }

@@ -1,6 +1,10 @@
 import { buildBibleLink } from "./bibleLinks.js";
 
+//
+// PROD date Anpril 30 2026
 const START_DATE = "2026-04-30";
+//test
+//const START_DATE = "2026-04-23";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -59,7 +63,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const answer = q[`answer_${lang}`];
       const reference = q[`reference_${lang}`];
 
-      const bibleLink = buildBibleLink(q.verse_ref, lang);
+      const verseRef = q?.verse_ref_lang?.[lang] || q?.verse_ref || null;
+      const bibleLink = buildBibleLink(verseRef, lang);
 
       root.innerHTML = `
       <div class="daily-verse-card">
@@ -155,7 +160,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         </div>
     
         <blockquote class="daily-verse-text">
-          ${text}
+          ${addQuestionCreationHelp(text, lang)}
         </blockquote>
     
         <div class="scripture-note-box">
@@ -175,7 +180,10 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                   ${q.related.map(rel => {
                     const ref = rel["reference_" + lang] || "";
                     const relText = rel["text_" + lang] || "";
-                    const link = buildBibleLink(rel.verse_ref, lang);
+                    const relVerseRef =
+                      rel?.verse_ref_lang?.[lang] || rel?.verse_ref || null;
+
+                    const link = buildBibleLink(relVerseRef, lang);
     
                     return `
                       <li class="scripture-related-item">
@@ -191,7 +199,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                               >📖</a>`
                             : ""
                         }
-                        <span class="scripture-related-text">— ${relText}</span>
+                        <span class="scripture-related-text">— ${addQuestionCreationHelp(relText, lang)}</span>
                       </li>
                     `;
                   }).join("")}
@@ -230,6 +238,34 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             mottoHelpBtn.setAttribute("aria-expanded", "false");
         });
         }
+
+        root.querySelectorAll(".question-creation-help-btn").forEach(btn => {
+          const inline = btn.nextElementSibling;
+          if (!inline) return;
+        
+          btn.addEventListener("click", () => {
+            const isOpen = !inline.hasAttribute("hidden");
+        
+            if (isOpen) {
+              inline.setAttribute("hidden", "");
+              btn.setAttribute("aria-expanded", "false");
+            } else {
+              inline.removeAttribute("hidden");
+              btn.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+        
+        root.querySelectorAll(".question-creation-help-close").forEach(closeBtn => {
+          closeBtn.addEventListener("click", () => {
+            const inline = closeBtn.closest(".question-creation-help-inline");
+            const btn = inline?.previousElementSibling;
+        
+            if (inline) inline.setAttribute("hidden", "");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+          });
+        });
+        
         if (closeBtn) {
             closeBtn.addEventListener("click", () => {
             root.innerHTML = "";
@@ -264,3 +300,32 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     console.error(e);
   }
 };
+
+function addQuestionCreationHelp(text, lang) {
+  if (!text || lang !== "ru") return escapeHtml(text);
+
+  const safeText = escapeHtml(text);
+
+  const helpHtml = `
+    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+      <span class="footer-help-box daily-help-box">
+        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+        В Синодальном переводе слово «тварь» означает «творение».
+      </span>
+    </span>
+  `;
+
+  return safeText.replace(
+    /(тварь|твари|тварью|тварей|тварею|творение)/i,
+    `$1${helpHtml}`
+  );
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}

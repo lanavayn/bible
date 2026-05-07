@@ -420,10 +420,9 @@
             "reference_en": "Psalm 119:105",
             "text_ru": "Слово Твоё — светильник ноге моей.",
             "text_en": "Your word is a lamp to my feet.",
-            "verse_ref": {
-              "book": "Psalms",
-              "chapter": 119,
-              "verse": "105"
+            "verse_ref_lang": {
+              "ru": { "book": "Psalms", "chapter": 118, "verse": "105" },
+              "en": { "book": "Psalms", "chapter": 119, "verse": "105" }
             }
           },
           {
@@ -570,6 +569,115 @@
               "book": "1-john",
               "chapter": 5,
               "verse": "11"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-14",
+        "day": 14,
+        "topic": {
+          "ru": "Страдания",
+          "en": "Suffering"
+        },
+        "question_ru": "Почему в мире так много страданий?",
+        "question_en": "Why is there so much suffering in the world?",
+        "reference_ru": "Римлянам 5:12",
+        "reference_en": "Romans 5:12",
+        "text_ru": "Посему, как одним человеком грех вошёл в мир, и грехом смерть, так и смерть перешла во всех человеков, потому что в нём все согрешили.",
+        "text_en": "Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned.",
+        "verse_ref": {
+          "book": "Romans",
+          "chapter": 5,
+          "verse": "12"
+        },
+        "answer_ru": "Страдания пришли в мир из-за греха.",
+        "answer_en": "Suffering came into the world because of sin.",
+        "related": [
+          {
+            "reference_ru": "Римлянам 8:22",
+            "reference_en": "Romans 8:22",
+            "text_ru": "Ибо знаем, что вся тварь совокупно стенает и мучится доныне.",
+            "text_en": "For we know that the whole creation has been groaning together in the pains of childbirth until now.",
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 8,
+              "verse": "22"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 16:33",
+            "reference_en": "John 16:33",
+            "text_ru": "Сие сказал Я вам, чтобы вы имели во Мне мир. В мире будете иметь скорбь; но мужайтесь: Я победил мир.",
+            "text_en": "I have told you these things, that in me you may have peace. In the world you have trouble; but cheer up! I have overcome the world.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 16,
+              "verse": "33"
+            }
+          },
+          {
+            "reference_ru": "Откровение 21:4",
+            "reference_en": "Revelation 21:4",
+            "text_ru": "И отрет Бог всякую слезу с очей их, и смерти не будет уже; ни плача, ни вопля, ни болезни уже не будет, ибо прежнее прошло.",
+            "text_en": "He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore. The first things have passed away.",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 21,
+              "verse": "4"
+            }
+          }
+        ]
+      },
+      {
+        "day": 15,
+        "topic_ru": "Войны и мир",
+        "topic_en": "Wars and Peace",
+        "question_ru": "Почему Бог допускает войны?",
+        "question_en": "Why does God allow wars?",
+        "reference_ru": "Матфея 24:6",
+        "reference_en": "Matthew 24:6",
+        "text_ru": "Также услышите о войнах и о военных слухах. Смотрите, не ужасайтесь, ибо надлежит всему тому быть, но это ещё не конец.",
+        "text_en": "You will hear of wars and rumors of wars. See that you aren’t troubled, for all this must happen, but the end is not yet.",
+        "verse_ref": {
+          "book": "Matthew",
+          "chapter": 24,
+          "verse": 6
+        },
+        "answer_ru": "Войны приходят от человеческого греха, но Бог обещает положить им конец.",
+        "answer_en": "Wars come from human sin, but God promises to bring them to an end.",
+        "related": [
+          {
+            "reference_ru": "Иакова 4:1",
+            "reference_en": "James 4:1",
+            "text_ru": "Откуда у вас вражды и распри? не отсюда ли, от вожделений ваших, воюющих в членах ваших?",
+            "text_en": "What causes quarrels and what causes fights among you? Is it not this, that your passions are at war within you?",
+            "verse_ref": {
+              "book": "James",
+              "chapter": 4,
+              "verse": 1
+            }
+          },
+          {
+            "reference_ru": "Исаия 2:4",
+            "reference_en": "Isaiah 2:4",
+            "text_ru": "И будет Он судить народы, и обличит многие племена; и перекуют мечи свои на орала, и копья свои — на серпы: не поднимет народ на народ меча, и не будут более учиться воевать.",
+            "text_en": "He shall judge between the nations, and shall decide disputes for many peoples; and they shall beat their swords into plowshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war anymore.",
+            "verse_ref": {
+              "book": "Isaiah",
+              "chapter": 2,
+              "verse": 4
+            }
+          },
+          {
+            "reference_ru": "Псалом 45:10",
+            "reference_en": "Psalm 46:9",
+            "text_ru": "Прекращая брани до края земли, сокрушил лук и переломил копьё, колесницы сжёг огнём.",
+            "text_en": "He makes wars cease to the end of the earth; he breaks the bow and shatters the spear; he burns the chariots with fire.",
+            "verse_ref_lang": {
+              "ru": { "book": "Psalms", "chapter": 45, "verse": "10" },
+              "en": { "book": "Psalms", "chapter": 46, "verse": "9" }
+          
             }
           }
         ]
