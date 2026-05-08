@@ -12,25 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
         `,
         sourcesTitle: "📚 Sources:",
         bibleLinkLabel: "🔹 Bible texts:",
-        bibleLinkHref: "https://www.esv.org/",
-        bibleLinkText: "ESV.org",
-        bibleLinkTail: "— English Standard Version (ESV).",
-        line2: `
-        <div class="footer-help-row">
-          <span>
-            🔹 All Scripture texts are from the English Standard Version (ESV).
-          </span>
-      
-          <button class="footer-help-btn" type="button" aria-expanded="false" aria-label="More about ESV">i</button>
-      
-          <div class="footer-help-inline" hidden>
-            <div class="footer-help-box">
-              <button class="footer-help-close" type="button" aria-label="Close">×</button>
-              The English Standard Version (ESV) is an English Bible translation first published in 2001 and widely used for reading and study.
-            </div>
-          </div>
-        </div>
-      `,
+        bibleLinkHref: "https://www.bible.com/bible/206/GEN.1.WEBUS",
+        bibleLinkText: "Bible.com",
+        bibleLinkTail: "— Bible texts and translations.",
+        line2: ``,
       line3: `
         <span>
           🔹 The Bible consists of 66 books — 39 in the Old Testament and 27 in the New Testament.
@@ -47,14 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `,
         sourcesTitle: "📚 Источники:",
-        bibleLinkLabel: "🔹 Ссылки на тексты Библии:",
-        bibleLinkHref: "https://bible.by/syn",
-        bibleLinkText: "bible.by/syn",
-        bibleLinkTail: "— Синодальный перевод Библии, 1876 г.",
+        bibleLinkLabel: "🔹",
+        bibleLinkHref: "https://www.bible.com/ru/bible/400/GEN.1.SYNO",
+        bibleLinkText: "Bible.com",
+        bibleLinkTail: "— тексты Библии и переводы.",
         line2: `
         <div class="footer-help-row">
         <span>
-          🔹 Все тексты приведены по Синодальному <button class="footer-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о Синодальном переводе">i</button> переводу Библии (66 книг: 39 Ветхого Завета и 27 Нового Завета).
+          🔹 Русские тексты Библии используются в Синодальном <button class="footer-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о Синодальном переводе">i</button> переводe Библии (66 книг: 39 Ветхого Завета и 27 Нового Завета).
         </span>      
 
         <div class="footer-help-inline" hidden>
