@@ -4039,8 +4039,6 @@ table.book-dates th:nth-child(2) {
   z-index: 3000;
   align-items: flex-start;
   justify-content: center;
-  padding: 20rem 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.45);
 }
 
 .daily-verse-search-modal {
@@ -4199,7 +4197,6 @@ table.book-dates th:nth-child(2) {
 @media (max-width: 600px) {
   .daily-verse-search-overlay {
     align-items: flex-start;
-    padding: 20rem 0.75rem 1rem;
   }
 
   .daily-verse-search-modal {
@@ -4290,4 +4287,56 @@ table.book-dates th:nth-child(2) {
   color: #8a3a3a;
 
   font-size: 0.92rem;
+}
+
+/* ===== Daily Verse Search Popup — mobile scroll fix ===== */
+
+.daily-verse-search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 6.5rem 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.45);
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+.daily-verse-search-modal {
+  position: relative;
+  width: min(42rem, 100%);
+  max-height: none;
+  overflow: visible;
+
+  background: #fffdf8;
+  border: 1px solid #e7d9cc;
+  border-radius: 1.1rem;
+  padding: 1rem;
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.daily-verse-search-results {
+  max-height: 20rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.daily-verse-search-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .daily-verse-search-overlay {
+    padding: 5.5rem 0.65rem 1rem;
+  }
+
+  .daily-verse-search-results {
+    max-height: 18rem;
+  }
 }
