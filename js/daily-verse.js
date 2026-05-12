@@ -498,6 +498,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const searchPlaceholder = lang === "ru"
           ? "Например: вера, любовь, Иоанна..."
           : "Example: faith, love, John...";
+
+
         const jumpLabel = lang === "ru" ? "Перейти к дню" : "Go to Day";
         const openLabel = lang === "ru" ? "Открыть" : "Open";
         const listLabel = lang === "ru" ? "Список стихов" : "List of verses";
@@ -594,9 +596,22 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       
         function openVerseByIndex(index) {
           currentIndex = index;
+        
           closeSearch();
+        
           animateChange(() => {
             renderCard(currentIndex);
+        
+            requestAnimationFrame(() => {
+              const dailyVerseCard = document.querySelector(".daily-verse-card");
+        
+              if (dailyVerseCard) {
+                dailyVerseCard.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center"
+                });
+              }
+            });
           });
         }
       
@@ -675,8 +690,49 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         });
 
         wordSearchBtn.addEventListener("click", () => {
-          renderResults(searchInput.value);
+          const query = searchInput.value.trim();
+        
+          if (!query) {
+            renderResults();
+            return;
+          }
+        
+          const hasMatches = availableVerses.some(({ verse }) => {
+            return getSearchText(verse).includes(query.toLowerCase());
+          });
+        
+          if (!hasMatches) {
+            showDailyVerseWarning(
+              lang === "ru"
+                ? "Такое слово не найдено."
+                : "This word was not found."
+            );
+        
+            searchInput.value = "";
+            renderResults();
+            return;
+          }
+        
+          renderResults(query);
         });
+
+        function showDailyVerseWarning(message) {
+          const existingWarning = overlay.querySelector(".daily-verse-warning");
+        
+          if (existingWarning) {
+            existingWarning.remove();
+          }
+        
+          const warning = document.createElement("div");
+          warning.className = "daily-verse-warning";
+          warning.textContent = message;
+        
+          resultsBox.parentNode.insertBefore(warning, resultsBox);
+        
+          setTimeout(() => {
+            warning.remove();
+          }, 2500);
+        }
       
         dayOpenBtn.addEventListener("click", () => {
           const dayNumber = Number(dayInput.value);

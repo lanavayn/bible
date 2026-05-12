@@ -4255,7 +4255,7 @@ table.book-dates th:nth-child(2) {
   overflow-y: auto;
   padding-right: 0.1rem;
   gap: 0.35rem;
-  max-height: 20rem;
+  max-height: 8rem;
   overflow-y: auto;
   margin-left: -0.25rem; /* чуть сдвинуть список влево */
 }
