@@ -4280,13 +4280,12 @@ table.book-dates th:nth-child(2) {
 .daily-verse-warning {
   margin: 0.45rem 0 0.7rem;
   padding: 0.55rem 0.75rem;
-
   border-radius: 0.7rem;
-
   background: #fff4f4;
   color: #8a3a3a;
-
   font-size: 0.92rem;
+  margin-top: 0.45rem;
+  margin-bottom: 0.55rem;
 }
 
 /* ===== Daily Verse Search Popup — mobile scroll fix ===== */

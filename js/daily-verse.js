@@ -503,7 +503,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const jumpLabel = lang === "ru" ? "Перейти к дню" : "Go to Day";
         const openLabel = lang === "ru" ? "Открыть" : "Open";
         const listLabel = lang === "ru" ? "Список стихов" : "List of verses";
-        const noResults = lang === "ru" ? "Ничего не найдено." : "No results found.";
+        
         const dayNotAvailable = lang === "ru"
           ? `Выберите день от 1 до ${availableVerses.length}.`
           : `Please select a day from 1 to ${availableVerses.length}.`;
@@ -633,13 +633,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           const filtered = availableVerses.filter(({ verse }) => {
             if (!cleanQuery) return true;
             return getSearchText(verse).includes(cleanQuery);
-          });
-      
-          if (!filtered.length) {
-            resultsBox.innerHTML = `<div class="daily-verse-no-results">${escapeHtml(noResults)}</div>`;
-            return;
-          }
-      
+          });   
+     
           resultsBox.innerHTML = filtered.map(({ verse, index }) => {
             const topic = verse.topic?.[lang] || "";
             const reference = verse[`reference_${lang}`] || "";
@@ -727,7 +722,11 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           warning.className = "daily-verse-warning";
           warning.textContent = message;
         
-          resultsBox.parentNode.insertBefore(warning, resultsBox);
+          const searchRow = overlay.querySelector(".daily-verse-input-row");
+
+          if (searchRow) {
+            searchRow.insertAdjacentElement("afterend", warning);
+          }
         
           setTimeout(() => {
             warning.remove();
