@@ -767,7 +767,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         });
       
         renderResults();
-        setTimeout(() => searchInput.focus(), 50);
+        //setTimeout(() => searchInput.focus(), 50);
       }
 
       animateChange(() => {
