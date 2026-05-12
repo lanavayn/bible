@@ -608,7 +608,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
               if (dailyVerseCard) {
                 dailyVerseCard.scrollIntoView({
                   behavior: "smooth",
-                  block: "center"
+                  block: "start"
                 });
               }
             });
