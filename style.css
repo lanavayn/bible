@@ -4333,10 +4333,14 @@ body.daily-verse-search-open {
 
 @media (max-width: 600px) {
   .daily-verse-search-overlay {
-    padding: 5.5rem 0.65rem 1rem;
+    padding: 4.5rem 0.65rem 3rem;
+  }
+
+  .daily-verse-search-modal {
+    margin-bottom: 3rem;
   }
 
   .daily-verse-search-results {
-    max-height: 18rem;
+    max-height: 14rem;
   }
 }
