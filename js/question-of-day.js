@@ -478,7 +478,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     
         setTimeout(() => {
           warning.remove();
-        }, 2500);
+        }, 4000);
       }
     
       function renderResults(query = "") {
@@ -622,9 +622,9 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 function addQuestionCreationHelp(text, lang) {
   if (!text || lang !== "ru") return escapeHtml(text);
 
-  const safeText = escapeHtml(text);
+  let safeText = escapeHtml(text);
 
-  const helpHtml = `
+  const creationHelpHtml = `
     <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
       <span class="footer-help-box daily-help-box">
         <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
@@ -633,10 +633,26 @@ function addQuestionCreationHelp(text, lang) {
     </span>
   `;
 
-  return safeText.replace(
+  safeText = safeText.replace(
     /(тварь|твари|тварью|тварей|тварею|творение)/i,
-    `$1${helpHtml}`
+    `$1${creationHelpHtml}`
   );
+
+  const pronounHelpHtml = `
+    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+      <span class="footer-help-box daily-help-box">
+        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+        В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.
+      </span>
+    </span>
+  `;
+
+  safeText = safeText.replace(
+    /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
+    `$1$2${pronounHelpHtml}`
+  );
+
+  return safeText;
 }
 
 function escapeHtml(str) {

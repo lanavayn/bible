@@ -737,7 +737,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         
           setTimeout(() => {
             warning.remove();
-          }, 2500);
+          }, 4000);
         }
       
         dayOpenBtn.addEventListener("click", () => {
@@ -839,14 +839,23 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   function addCreationHelp(text, lang) {
     if (!text || lang !== "ru") return escapeHtml(text);
   
-    const safeText = escapeHtml(text);
+    let safeText = escapeHtml(text);
   
-    const helpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе слово «тварь» означает «творение».</span></span>`;
+    const creationHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе слово «тварь» означает «творение».</span></span>`;
   
-    return safeText.replace(
+    safeText = safeText.replace(
       /(тварь|твари|тварью|тварей|тварею|творение)/i,
-      match => `${match}${helpHtml}`
+      match => `${match}${creationHelpHtml}`
     );
+  
+    const pronounHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.</span></span>`;
+  
+    safeText = safeText.replace(
+      /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
+      (match, before, word) => `${before}${word}${pronounHelpHtml}`
+    );
+  
+    return safeText;
   }
 
   function updateDailyVerseToggleLabel(button, isOpen, lang) {
