@@ -852,6 +852,65 @@
       },
       {
         "day": 19,
+        "topic_ru": "Болезнь и исцеление",
+        "topic_en": "Sickness and Healing",
+      
+        "question_ru": "Почему Бог допускает болезни?",
+        "question_en": "Why does God allow sickness?",
+      
+        "reference_ru": "Матфея 9:35",
+        "reference_en": "Matthew 9:35",
+      
+        "text_ru": "И ходил Иисус по всем городам и селениям, уча в синагогах их, проповедуя Евангелие Царствия и исцеляя всякую болезнь и всякую немощь в людях.",
+        "text_en": "And Jesus went throughout all the cities and villages, teaching in their synagogues and proclaiming the gospel of the kingdom and healing every disease and every affliction.",
+      
+        "verse_ref": {
+          "book": "Matthew",
+          "chapter": 9,
+          "verse": "35"
+        },
+      
+        "answer_ru": "Болезни есть в повреждённом грехом мире, но Иисус видит боль человека и зовёт прийти к Нему за помощью.",
+        "answer_en": "Sickness exists in a world broken by sin, but Jesus sees human pain and invites people to come to Him for help.",
+      
+        "related": [
+          {
+            "reference_ru": "Марка 2:17",
+            "reference_en": "Mark 2:17",
+            "text_ru": "Услышав сие, Иисус говорит им: не здоровые имеют нужду во враче, но больные; Я пришёл призвать не праведников, но грешников к покаянию.",
+            "text_en": "And when Jesus heard it, he said to them, “Those who are well have no need of a physician, but those who are sick. I came not to call the righteous, but sinners.”",
+            "verse_ref": {
+              "book": "Mark",
+              "chapter": 2,
+              "verse": "17"
+            }
+          },
+          {
+            "reference_ru": "Матфея 11:28",
+            "reference_en": "Matthew 11:28",
+            "text_ru": "Придите ко Мне, все труждающиеся и обременённые, и Я успокою вас.",
+            "text_en": "Come to me, all who labor and are heavy laden, and I will give you rest.",
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 11,
+              "verse": "28"
+            }
+          },
+          {
+            "reference_ru": "Иеремия 17:14",
+            "reference_en": "Jeremiah 17:14",
+            "text_ru": "Исцели меня, Господи, и исцелён буду; спаси меня, и спасён буду; ибо Ты хвала моя.",
+            "text_en": "Heal me, O LORD, and I shall be healed; save me, and I shall be saved, for you are my praise.",
+            "verse_ref": {
+              "book": "Jeremiah",
+              "chapter": 17,
+              "verse": "14"
+            }
+          }
+        ]
+      },
+      {
+        "day": 20,
         "topic_ru": "Отношение к людям",
         "topic_en": "Treating Others",
       
@@ -913,7 +972,7 @@
         ]
       },
       {
-        "day": 20,
+        "day": 21,
         "topic_ru": "Прощение",
         "topic_en": "Forgiveness",
       
@@ -975,7 +1034,7 @@
         ]
       },
       {
-        "day": 21,
+        "day": 22,
         "topic_ru": "Слова и речь",
         "topic_en": "Words and Speech",
       
@@ -1037,7 +1096,7 @@
         ]
       },
       {
-        "day": 22,
+        "day": 23,
         "topic_ru": "Страх",
         "topic_en": "Fear",
       
