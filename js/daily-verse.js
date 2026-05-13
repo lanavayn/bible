@@ -113,9 +113,14 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       // production: показываем сегодняшний день,
       // а если его ещё нет в JSON — последний доступный прошедший день
       let todayIndex = -1;
+      let realTodayIndex = -1;
 
       for (let i = 0; i < verses.length; i++) {
         const day = Number(verses[i].day);
+
+        if (day === todayDayNumber) {
+          realTodayIndex = i;
+        }
 
         if (day <= todayDayNumber) {
           todayIndex = i;
@@ -125,6 +130,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       if (todayIndex === -1) {
         todayIndex = START_INDEX;
       }
+
+      const hasRealToday = realTodayIndex !== -1;
 
       let currentIndex = todayIndex;
 
@@ -229,7 +236,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                       }
 
                       ${
-                        todayIndex >= 0 && index !== todayIndex
+                        hasRealToday && todayIndex >= 0 && index !== todayIndex
                           ? `<button class="dv-jump-btn dv-jump-today" type="button">
                               ${lang === "ru" ? "Сегодня" : "Today"}
                             </button>`

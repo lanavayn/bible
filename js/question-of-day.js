@@ -4,7 +4,7 @@ import { buildBibleLink } from "./bibleLinks.js";
 // PROD date Anpril 30 2026
 const START_DATE = "2026-04-30";
 //test
-//const START_DATE = "2026-04-20";
+//const START_DATE = "2026-03-20";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -50,13 +50,32 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     
     //PROD code
     const todayDay = getTodayIndex();
-    let currentIndex = questions.findIndex(q => q.day === todayDay);
-    if (currentIndex === -1) currentIndex = 0;
-    const todayIndex = currentIndex;
+
+    let todayIndex = -1;
+    let realTodayIndex = -1;
+
+    for (let i = 0; i < questions.length; i++) {
+      const day = Number(questions[i].day);
+
+      if (day === todayDay) {
+        realTodayIndex = i;
+      }
+
+      if (day <= todayDay) {
+        todayIndex = i;
+      }
+    }
+
+    if (todayIndex === -1) {
+      todayIndex = 0;
+    }
+
+    const hasRealToday = realTodayIndex !== -1;
+    let currentIndex = todayIndex;
 
     function renderCard(index) {
       const q = questions[index];
-      const isToday = index === todayIndex;
+      const isToday = hasRealToday && index === todayIndex;
 
       const question = q[`question_${lang}`];
       const text = q[`text_${lang}`];
@@ -91,6 +110,12 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                 }
               </span>
             </div>
+
+            <div class="daily-verse-date-jumps">
+              <button class="dv-jump-btn question-search-open" type="button">
+                🔍 ${lang === "ru" ? "Найти вопрос" : "Find a Question"}
+              </button>
+            </div>  
           </div>
 
           ${
@@ -214,6 +239,13 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     `;
 
       const closeBtn = root.querySelector(".dv-close");
+      const searchOpenBtn = root.querySelector(".question-search-open");
+
+      if (searchOpenBtn) {
+        searchOpenBtn.addEventListener("click", () => {
+          openQuestionSearch();
+        });
+      }
       const mottoHelpBtn = root.querySelector(".question-motto-help-btn");
         const mottoHelpInline = root.querySelector(".question-motto-help-inline");
         const mottoHelpClose = root.querySelector(".question-motto-help-close");
@@ -272,7 +304,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           
               const reopenBtn = document.getElementById("question-reopen");
               if (reopenBtn) {
-                reopenBtn.textContent = lang === "ru" ? "❓ Вопрос дня" : "❓ Question of the Day";
+                reopenBtn.textContent = lang === "ru" ? "💬 Вопрос дня" : "💬 Question of the Day";
                 reopenBtn.style.display = "inline-block";
               }
             });
@@ -292,8 +324,294 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         });
       }
     }
+    function openQuestionSearch() {
+      const availableQuestions = questions
+        .map((question, index) => ({ question, index }))
+        .filter(item => item.index <= todayIndex);
+    
+      let overlay = document.getElementById("question-search-overlay");
+    
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.id = "question-search-overlay";
+        overlay.className = "daily-verse-search-overlay";
+        document.body.appendChild(overlay);
+      }
+    
+      const title = lang === "ru" ? "Найти вопрос" : "Find a Question";
+      const searchLabel = lang === "ru" ? "Поиск по слову" : "Search by word";
+      const searchPlaceholder = lang === "ru"
+        ? "Например: вера, грех, молитва..."
+        : "Example: faith, sin, prayer...";
+    
+      const jumpLabel = lang === "ru" ? "Перейти к дню" : "Go to Day";
+      const openLabel = lang === "ru" ? "Открыть" : "Open";
+      const listLabel = lang === "ru" ? "Список вопросов" : "List of questions";
+    
+      const dayNotAvailable = lang === "ru"
+        ? `Выберите день от 1 до ${availableQuestions.length}.`
+        : `Please select a day from 1 to ${availableQuestions.length}.`;
+    
+      overlay.innerHTML = `
+        <div class="daily-verse-search-modal" role="dialog" aria-modal="true" aria-label="${escapeHtml(title)}">
+          <button class="daily-verse-search-close" type="button" aria-label="${lang === "ru" ? "Закрыть" : "Close"}">×</button>
+    
+          <h2 class="daily-verse-search-title">🔍 ${escapeHtml(title)}</h2>
+    
+          <label class="daily-verse-search-label" for="questionSearchInput">
+            ${escapeHtml(searchLabel)}
+          </label>
+    
+          <div class="daily-verse-input-row">
+            <input
+              id="questionSearchInput"
+              class="daily-verse-search-input"
+              type="search"
+              placeholder="${escapeHtml(searchPlaceholder)}"
+            >
+            <button
+              class="daily-verse-inline-search-btn question-word-search-btn"
+              type="button"
+              aria-label="${escapeHtml(searchLabel)}"
+              title="${escapeHtml(searchLabel)}"
+            >
+              🔍
+            </button>
+          </div>
+    
+          <div class="daily-verse-jump-box">
+            <label class="daily-verse-search-label" for="questionDayInput">
+              ${escapeHtml(jumpLabel)}
+            </label>
+    
+            <div class="daily-verse-input-row">
+              <input
+                id="questionDayInput"
+                class="daily-verse-day-input"
+                type="number"
+                min="1"
+                max="${escapeHtml(String(availableQuestions.length))}"
+                placeholder="${lang === "ru"
+                  ? `Выберите день 1–${availableQuestions.length}`
+                  : `Select day 1–${availableQuestions.length}`}"
+              >
+              <button
+                class="daily-verse-inline-search-btn question-day-open"
+                type="button"
+                aria-label="${escapeHtml(openLabel)}"
+                title="${escapeHtml(openLabel)}"
+              >
+                🔍
+              </button>
+            </div>
+          </div>
+    
+          <div class="daily-verse-search-list-title">${escapeHtml(listLabel)}</div>
+          <div class="daily-verse-search-results"></div>
+        </div>
+      `;
+    
+      overlay.style.display = "flex";
+    
+      const closeBtn = overlay.querySelector(".daily-verse-search-close");
+      const searchInput = overlay.querySelector("#questionSearchInput");
+      const dayInput = overlay.querySelector("#questionDayInput");
+      const dayOpenBtn = overlay.querySelector(".question-day-open");
+      const wordSearchBtn = overlay.querySelector(".question-word-search-btn");
+      const resultsBox = overlay.querySelector(".daily-verse-search-results");
+    
+      dayInput.value = "";
+      dayInput.min = "1";
+      dayInput.max = String(availableQuestions.length);
+    
+      function closeSearch() {
+        overlay.style.display = "none";
+      }
+    
+      function openQuestionByIndex(index) {
+        currentIndex = index;
+        closeSearch();
+    
+        renderCard(currentIndex);
+    
+        requestAnimationFrame(() => {
+          const card = document.querySelector("#question-of-day .daily-verse-card");
+    
+          if (card) {
+            card.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        });
+      }
+    
+      function getSearchText(q) {
+        return [
+          q.topic?.[lang],
+          q[`question_${lang}`],
+          q[`reference_${lang}`],
+          q[`text_${lang}`],
+          q[`answer_${lang}`]
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+      }
+    
+      function showQuestionWarning(message) {
+        const existingWarning = overlay.querySelector(".daily-verse-warning");
+    
+        if (existingWarning) {
+          existingWarning.remove();
+        }
+    
+        const warning = document.createElement("div");
+        warning.className = "daily-verse-warning";
+        warning.textContent = message;
+    
+        const searchRow = overlay.querySelector(".daily-verse-input-row");
+    
+        if (searchRow) {
+          searchRow.insertAdjacentElement("afterend", warning);
+        }
+    
+        setTimeout(() => {
+          warning.remove();
+        }, 2500);
+      }
+    
+      function renderResults(query = "") {
+        const cleanQuery = query.trim().toLowerCase();
+    
+        const filtered = availableQuestions.filter(({ question }) => {
+          if (!cleanQuery) return true;
+          return getSearchText(question).includes(cleanQuery);
+        });
+    
+        resultsBox.innerHTML = filtered.map(({ question, index }) => {
+          const questionText = question[`question_${lang}`] || "";
+          const reference = question[`reference_${lang}`] || "";
+          const dayText = `${question.day}`;
+          const todayText = hasRealToday && index === todayIndex
+            ? `<span class="daily-verse-today-pill">${lang === "ru" ? "Сегодня" : "Today"}</span>`
+            : "";
+    
+          return `
+            <button class="daily-verse-search-item" type="button" data-index="${index}">
+              <span class="daily-verse-search-line">
+                <strong>${escapeHtml(dayText)}</strong>
+                ${todayText}
+                <span>${escapeHtml(questionText)}</span>
+                <span class="daily-verse-search-colon">:</span>
+                <span>${escapeHtml(reference)}</span>
+              </span>
+            </button>
+          `;
+        }).join("");
+    
+        resultsBox.querySelectorAll(".daily-verse-search-item").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const index = Number(btn.dataset.index);
+    
+            if (!Number.isNaN(index)) {
+              openQuestionByIndex(index);
+            }
+          });
+        });
+      }
+    
+      closeBtn.addEventListener("click", closeSearch);
+    
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+          closeSearch();
+        }
+      });
+    
+      document.addEventListener("keydown", function handleEsc(event) {
+        if (event.key === "Escape" && overlay.style.display === "flex") {
+          closeSearch();
+          document.removeEventListener("keydown", handleEsc);
+        }
+      });
+    
+      searchInput.addEventListener("input", () => {
+        renderResults(searchInput.value);
+      });
+    
+      wordSearchBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim();
+    
+        if (!query) {
+          renderResults();
+          return;
+        }
+    
+        const hasMatches = availableQuestions.some(({ question }) => {
+          return getSearchText(question).includes(query.toLowerCase());
+        });
+    
+        if (!hasMatches) {
+          showQuestionWarning(
+            lang === "ru"
+              ? "Такое слово не найдено."
+              : "This word was not found."
+          );
+    
+          searchInput.value = "";
+          renderResults();
+          return;
+        }
+    
+        renderResults(query);
+      });
+    
+      dayInput.addEventListener("input", () => {
+        const value = Number(dayInput.value);
+    
+        if (value > availableQuestions.length) {
+          dayInput.value = String(availableQuestions.length);
+        }
+    
+        if (value < 1 && dayInput.value !== "") {
+          dayInput.value = "1";
+        }
+      });
+    
+      dayOpenBtn.addEventListener("click", () => {
+        const dayNumber = Number(dayInput.value);
+        const found = availableQuestions.find(({ question }) => Number(question.day) === dayNumber);
+    
+        if (found) {
+          openQuestionByIndex(found.index);
+          return;
+        }
+    
+        showQuestionWarning(dayNotAvailable);
+      });
+    
+      dayInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          dayOpenBtn.click();
+        }
+      });
+    
+      renderResults();
+    }
 
     renderCard(currentIndex);
+
+    requestAnimationFrame(() => {
+      const card = document.querySelector("#question-of-day .daily-verse-card");
+
+      if (card) {
+        card.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
 
   } catch (e) {
     root.innerHTML = "Error loading question";
