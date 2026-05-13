@@ -111,7 +111,7 @@ function getIndexLang() {
 
       <section id="question-of-day-block">
         <button id="loadQuestionBtn" class="dv-reopen-btn" type="button">
-          ${lang === "ru" ? "❓ Вопрос дня" : "❓ Question of the Day"}
+          ${lang === "ru" ? "💬 Вопрос дня" : "💬 Question of the Day"}
         </button>
         <div id="question-of-day"></div>
       </section>
@@ -264,7 +264,7 @@ function getIndexLang() {
             }
           
             loadQuestionBtn.textContent =
-              lang === "ru" ? "❓ Вопрос дня" : "❓ Question of the Day";
+              lang === "ru" ? "💬 Вопрос дня" : "💬 Question of the Day";
           
           } catch (error) {
             console.error(error);
