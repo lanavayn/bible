@@ -4433,7 +4433,8 @@ body.daily-verse-search-open {
   }
 
   #question-of-day .question-tomorrow-box {
-    transform: translateX(-65%) !important;
+    left: 50%;
+    transform: translateX(-48%) !important;
   }
 
 }
