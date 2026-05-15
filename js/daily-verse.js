@@ -188,7 +188,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const expandBtnLabel = keepDetailsOpen
           ? (lang === "ru" ? "Меньше" : "Less")
           : (lang === "ru" ? "Подробнее" : "More");
-        const detailsVerseTitle = lang === "ru" ? "Полный стих:" : "Full verse:";        
+        const detailsVerseTitle = lang === "ru" ? "Полный стих:" : "Full verse:";
+        const tomorrowVerse = index === todayIndex ? verses[index + 1] : null;
+        const tomorrowVerseText = tomorrowVerse?.[`text_${lang}`] || "";
+        const tomorrowVersePreview = getTomorrowPreview(tomorrowVerseText, 7);        
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
@@ -245,6 +248,50 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                       <button class="dv-jump-btn dv-search-open" type="button">
                         🔍 ${lang === "ru" ? "Найти стих" : "Find a Verse"}
                       </button>
+
+                      ${
+                        tomorrowVersePreview
+                          ? `
+                          <div class="daily-tomorrow-wrap">
+
+                            <button
+                              class="dv-jump-btn daily-tomorrow-btn"
+                              type="button"
+                              aria-expanded="false"
+                            >
+                              🔜 ${lang === "ru" ? "Завтра" : "Tomorrow"}
+                            </button>
+
+                            <span
+                              class="footer-help-inline daily-help-inline daily-tomorrow-box"
+                              hidden
+                            >
+                              <span class="footer-help-box daily-help-box tomorrow-help-box">
+
+                                <button
+                                  class="footer-help-close daily-tomorrow-close"
+                                  type="button"
+                                  aria-label="${lang === "ru" ? "Закрыть" : "Close"}"
+                                >
+                                  ×
+                                </button>
+
+                                <strong>
+                                  ${lang === "ru"
+                                    ? "Стих на завтра:"
+                                    : "Verse for tomorrow:"}
+                                </strong>
+                                <br>
+
+                                “${escapeHtml(tomorrowVersePreview)}”
+
+                              </span>
+                            </span>
+
+                          </div>
+                          `
+                          : ""
+                      }
                     </div>
                   </div>
                   `
@@ -473,6 +520,31 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             mottoHelpClose.addEventListener("click", () => {
               mottoHelpInline.setAttribute("hidden", "");
               mottoHelpBtn.setAttribute("aria-expanded", "false");
+            });
+          }
+
+          const tomorrowBtn = root.querySelector(".daily-tomorrow-btn");
+          const tomorrowBox = root.querySelector(".daily-tomorrow-box");
+          const tomorrowClose = root.querySelector(".daily-tomorrow-close");
+
+          if (tomorrowBtn && tomorrowBox) {
+            tomorrowBtn.addEventListener("click", () => {
+              const isOpen = !tomorrowBox.hasAttribute("hidden");
+
+              if (isOpen) {
+                tomorrowBox.setAttribute("hidden", "");
+                tomorrowBtn.setAttribute("aria-expanded", "false");
+              } else {
+                tomorrowBox.removeAttribute("hidden");
+                tomorrowBtn.setAttribute("aria-expanded", "true");
+              }
+            });
+          }
+
+          if (tomorrowClose && tomorrowBox && tomorrowBtn) {
+            tomorrowClose.addEventListener("click", () => {
+              tomorrowBox.setAttribute("hidden", "");
+              tomorrowBtn.setAttribute("aria-expanded", "false");
             });
           }
 
@@ -1004,6 +1076,16 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     `;
   }
   
+  function getTomorrowPreview(text = "", words = 7) {
+    const clean = String(text).replace(/\s+/g, " ").trim();
+    if (!clean) return "";
+
+    const parts = clean.split(" ");
+    if (parts.length <= words) return clean;
+
+    return parts.slice(0, words).join(" ") + "...";
+  }
+
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, "&amp;")

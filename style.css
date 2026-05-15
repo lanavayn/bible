@@ -4343,3 +4343,101 @@ body.daily-verse-search-open {
     max-height: 14rem;
   }
 }
+
+.tomorrow-preview-box {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1rem 2.2rem 1rem 1rem;
+  border: 1px solid rgba(90, 70, 100, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 6px 18px rgba(60, 45, 70, 0.08);
+}
+
+.tomorrow-preview-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.55rem;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tomorrow-preview-label {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.tomorrow-preview-text {
+  font-style: italic;
+}
+
+.daily-tomorrow-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.daily-tomorrow-box {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+
+  width: max-content;
+  max-width: min(280px, 88vw);
+}
+
+.tomorrow-help-box {
+  display: block;
+  width: 260px;
+  max-width: 80vw;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+#question-of-day .daily-tomorrow-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: auto !important;
+  height: auto !important;
+}
+
+#question-of-day .question-tomorrow-box {
+  position: absolute !important;
+  top: calc(100% + 0.45rem);
+  left: 50%;
+  transform: translateX(-48%);
+  z-index: 80;
+
+  display: inline-block !important;
+  width: max-content !important;
+  max-width: min(280px, 88vw) !important;
+  margin-top: 0 !important;
+}
+
+#question-of-day .question-tomorrow-btn {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border-radius: 999px !important;
+}
+
+@media (max-width: 480px) {
+  .daily-tomorrow-box {
+    left: 50%;
+    transform: translateX(-48%);
+  }
+
+  #question-of-day .question-tomorrow-box {
+    transform: translateX(-65%) !important;
+  }
+
+}
+
+#question-of-day .question-tomorrow-box[hidden] {
+  display: none !important;
+}

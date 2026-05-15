@@ -3,8 +3,8 @@ import { buildBibleLink } from "./bibleLinks.js";
 //
 // PROD date Anpril 30 2026
 const START_DATE = "2026-04-30";
-//test
-//const START_DATE = "2026-03-20";
+//test day 23
+//const START_DATE = "2026-04-24";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -85,6 +85,10 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const verseRef = q?.verse_ref_lang?.[lang] || q?.verse_ref || null;
       const bibleLink = buildBibleLink(verseRef, lang);
 
+      const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
+      const tomorrowQuestionText = tomorrowQuestion?.[`question_${lang}`] || "";
+      const tomorrowQuestionPreview = getTomorrowPreview(tomorrowQuestionText, 4);
+
       root.innerHTML = `
       <div class="daily-verse-card">
 
@@ -112,10 +116,56 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             </div>
 
             <div class="daily-verse-date-jumps">
-              <button class="dv-jump-btn question-search-open" type="button">
-                🔍 ${lang === "ru" ? "Найти вопрос" : "Find a Question"}
-              </button>
-            </div>  
+
+            <button class="dv-jump-btn question-search-open" type="button">
+              🔍 ${lang === "ru" ? "Найти вопрос" : "Find a Question"}
+            </button>
+
+            ${
+              tomorrowQuestionPreview
+                ? `
+                <div class="daily-tomorrow-wrap">
+
+                  <button
+                    class="dv-jump-btn question-tomorrow-btn"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    🔜 ${lang === "ru" ? "Завтра" : "Tomorrow"}
+                  </button>
+
+                  <span
+                    class="footer-help-inline question-tomorrow-box"
+                    hidden
+                  >
+                    <span class="footer-help-box daily-help-box tomorrow-help-box">
+
+                      <button
+                        class="footer-help-close question-tomorrow-close"
+                        type="button"
+                        aria-label="${lang === "ru" ? "Закрыть" : "Close"}"
+                      >
+                        ×
+                      </button>
+
+                      <strong>
+                        ${lang === "ru"
+                          ? "Вопрос на завтра:"
+                          : "Question for tomorrow:"}
+                      </strong>
+                      <br>
+
+                      ${escapeHtml(tomorrowQuestionPreview)}
+
+                    </span>
+                  </span>
+
+                </div>
+                `
+                : ""
+            }
+
+          </div>  
           </div>
 
           ${
@@ -269,6 +319,31 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             mottoHelpInline.setAttribute("hidden", "");
             mottoHelpBtn.setAttribute("aria-expanded", "false");
         });
+        }
+
+        const tomorrowBtn = root.querySelector(".question-tomorrow-btn");
+        const tomorrowBox = root.querySelector(".question-tomorrow-box");
+        const tomorrowClose = root.querySelector(".question-tomorrow-close");
+
+        if (tomorrowBtn && tomorrowBox) {
+          tomorrowBtn.addEventListener("click", () => {
+            const isOpen = !tomorrowBox.hasAttribute("hidden");
+
+            if (isOpen) {
+              tomorrowBox.setAttribute("hidden", "");
+              tomorrowBtn.setAttribute("aria-expanded", "false");
+            } else {
+              tomorrowBox.removeAttribute("hidden");
+              tomorrowBtn.setAttribute("aria-expanded", "true");
+            }
+          });
+        }
+
+        if (tomorrowClose && tomorrowBox && tomorrowBtn) {
+          tomorrowClose.addEventListener("click", () => {
+            tomorrowBox.setAttribute("hidden", "");
+            tomorrowBtn.setAttribute("aria-expanded", "false");
+          });
         }
 
         root.querySelectorAll(".question-creation-help-btn").forEach(btn => {
@@ -653,6 +728,20 @@ function addQuestionCreationHelp(text, lang) {
   );
 
   return safeText;
+}
+
+function getTomorrowPreview(text = "", words = 4) {
+  const clean = String(text).replace(/\s+/g, " ").trim();
+
+  if (!clean) return "";
+
+  const parts = clean.split(" ");
+
+  if (parts.length <= words) {
+    return clean;
+  }
+
+  return parts.slice(0, words).join(" ") + "...";
 }
 
 function escapeHtml(str) {
