@@ -1170,6 +1170,530 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-24",
+        "day": 24,
+        "topic_ru": "Страх и доверие",
+        "topic_en": "Fear and Trust",
+      
+        "question_ru": "Как преодолеть страх?",
+        "question_en": "How can we overcome fear?",
+      
+        "reference_ru": "Псалом 54:23",
+        "reference_en": "Psalm 55:22",
+      
+        "text_ru": "Возложи на Господа заботы твои, и Он поддержит тебя. Никогда не даст Он поколебаться праведнику.",
+        "text_en": "Cast your burden on the Lord, and he will sustain you. He will never allow the righteous to be moved.",
+      
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Psalms",
+            "chapter": 54,
+            "verse": "23"
+          },
+          "en": {
+            "book": "Psalms",
+            "chapter": 55,
+            "verse": "22"
+          }
+        },
+      
+        "answer_ru": "Бог призывает человека доверить Ему свои страхи и заботы.",
+        "answer_en": "God calls people to entrust their fears and worries to Him.",
+      
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:27",
+            "reference_en": "John 14:27",
+      
+            "text_ru": "Мир оставляю вам, мир Мой даю вам; не так, как мир даёт, Я даю вам. Да не смущается сердце ваше и да не устрашается.",
+            "text_en": "Peace I leave with you; my peace I give to you. Let not your hearts be troubled, neither let them be afraid.",
+      
+            "verse_ref": {
+              "book": "John",
+              "chapter": 14,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Псалом 117:6",
+            "reference_en": "Psalm 118:6",
+      
+            "text_ru": "Господь за меня — не устрашусь: что сделает мне человек?",
+            "text_en": "The Lord is on my side; I will not fear. What can man do to me?",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 117,
+                "verse": "6"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 118,
+                "verse": "6"
+              }
+            }
+          },
+          {
+            "reference_ru": "Иисус Навин 1:9",
+            "reference_en": "Joshua 1:9",
+      
+            "text_ru": "Будь твёрд и мужествен; не страшись и не ужасайся, ибо с тобою Господь Бог твой везде, куда ни пойдёшь.",
+            "text_en": "Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.",
+      
+            "verse_ref": {
+              "book": "Joshua",
+              "chapter": 1,
+              "verse": "9"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-25",
+        "day": 25,
+      
+        "topic_ru": "Мир и доверие",
+        "topic_en": "Peace and Trust",
+      
+        "question_ru": "Как обрести мир?",
+        "question_en": "How can we find peace?",
+      
+        "reference_ru": "Колоссянам 3:15",
+        "reference_en": "Colossians 3:15",
+      
+        "text_ru": "И да владычествует в сердцах ваших мир Божий, к которому вы и призваны в одном теле, и будьте дружелюбны.",
+        "text_en": "And let the peace of God rule in your hearts, to which also you were called in one body, and be thankful.",
+      
+        "verse_ref": {
+          "book": "Colossians",
+          "chapter": 3,
+          "verse": "15"
+        },
+      
+        "answer_ru": "Настоящий мир приходит через доверие Богу и близость к Нему.",
+        "answer_en": "True peace comes through trusting God and drawing near to Him.",
+      
+        "related": [
+          {
+            "reference_ru": "Римлянам 5:1",
+            "reference_en": "Romans 5:1",
+      
+            "text_ru": "Итак, оправдавшись верою, мы имеем мир с Богом через Господа нашего Иисуса Христа.",
+            "text_en": "Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.",
+      
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 5,
+              "verse": "1"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 4:7",
+            "reference_en": "Philippians 4:7",
+      
+            "text_ru": "И мир Божий, который превыше всякого ума, соблюдёт сердца ваши и помышления ваши во Христе Иисусе.",
+            "text_en": "And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.",
+      
+            "verse_ref": {
+              "book": "Philippians",
+              "chapter": 4,
+              "verse": "7"
+            }
+          },
+          {
+            "reference_ru": "Псалом 33:15",
+            "reference_en": "Psalm 34:14",
+      
+            "text_ru": "Уклоняйся от зла и делай добро; ищи мира и стремись к нему.",
+            "text_en": "Depart from evil, and do good. Seek peace, and pursue it.",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 33,
+                "verse": "15"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 34,
+                "verse": "14"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-26",
+        "day": 26,
+      
+        "topic_ru": "Божий план",
+        "topic_en": "God's Plan",
+      
+        "question_ru": "Есть ли у Бога план для моей жизни?",
+        "question_en": "Does God have a plan for my life?",
+      
+        "reference_ru": "Иеремия 29:11",
+        "reference_en": "Jeremiah 29:11",
+      
+        "text_ru": "Ибо только Я знаю намерения, какие имею о вас, говорит Господь, намерения во благо, а не на зло, чтобы дать вам будущность и надежду.",
+        "text_en": "For I know the thoughts that I think toward you,” says Lord, “thoughts of peace, and not of evil, to give you hope and a future.",
+      
+        "verse_ref": {
+          "book": "Jeremiah",
+          "chapter": 29,
+          "verse": "11"
+        },
+      
+        "answer_ru": "Бог знает путь человека и желает дать ему надежду и будущее.",
+        "answer_en": "God knows a person’s path and desires to give hope and a future.",
+      
+        "related": [
+          {
+            "reference_ru": "Притчи 3:5-6",
+            "reference_en": "Proverbs 3:5-6",
+      
+            "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+            "text_en": "Trust in the Lord with all your heart, and don’t lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.",
+      
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 3,
+              "verse": "5-6"
+            }
+          },
+          {
+            "reference_ru": "Псалом 31:8",
+            "reference_en": "Psalm 32:8",
+      
+            "text_ru": "Вразумлю тебя, наставлю тебя на путь, по которому тебе идти; буду руководить тебя, око Моё над тобою.",
+            "text_en": "I will instruct you and teach you in the way which you shall go. I will counsel you with my eye on you.",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 31,
+                "verse": "8"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 32,
+                "verse": "8"
+              }
+            }
+          },
+          {
+            "reference_ru": "Римлянам 8:28",
+            "reference_en": "Romans 8:28",
+      
+            "text_ru": "Притом знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.",
+            "text_en": "We know that all things work together for good for those who love God, for those who are called according to his purpose.",
+      
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 8,
+              "verse": "28"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-27",
+        "day": 27,
+      
+        "topic_ru": "Благодарность",
+        "topic_en": "Gratitude",
+      
+        "question_ru": "Как благодарить Бога?",
+        "question_en": "How can we thank God?",
+      
+        "reference_ru": "1 Фессалоникийцам 5:18",
+        "reference_en": "1 Thessalonians 5:18",
+      
+        "text_ru": "За всё благодарите: ибо такова о вас воля Божия во Христе Иисусе.",
+        "text_en": "In everything give thanks, for this is the will of God in Christ Jesus toward you.",
+      
+        "verse_ref": {
+          "book": "1-thessalonians",
+          "chapter": 5,
+          "verse": "18"
+        },
+      
+        "answer_ru": "Бог учит человека видеть добро и благодарить Его во всякое время.",
+        "answer_en": "God teaches people to see His goodness and give thanks at all times.",
+      
+        "related": [
+          {
+            "reference_ru": "Псалом 102:2",
+            "reference_en": "Psalm 103:2",
+      
+            "text_ru": "Благослови, душа моя, Господа и не забывай всех благодеяний Его.",
+            "text_en": "Praise the Lord, my soul, and don’t forget all his benefits.",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 102,
+                "verse": "2"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 103,
+                "verse": "2"
+              }
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 3:17",
+            "reference_en": "Colossians 3:17",
+      
+            "text_ru": "И всё, что вы делаете, словом или делом, всё делайте во имя Господа Иисуса Христа, благодаря через Него Бога и Отца.",
+            "text_en": "Whatever you do, in word or in deed, do all in the name of the Lord Jesus, giving thanks to God the Father through him.",
+      
+            "verse_ref": {
+              "book": "Colossians",
+              "chapter": 3,
+              "verse": "17"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 4:6",
+            "reference_en": "Philippians 4:6",
+      
+            "text_ru": "Не заботьтесь ни о чём, но всегда в молитве и прошении с благодарением открывайте свои желания пред Богом.",
+            "text_en": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God.",
+      
+            "verse_ref": {
+              "book": "Philippians",
+              "chapter": 4,
+              "verse": "6"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-28",
+        "day": 28,
+      
+        "topic_ru": "Одиночество",
+        "topic_en": "Loneliness",
+      
+        "question_ru": "Что делать, когда чувствуешь одиночество?",
+        "question_en": "What should we do when we feel alone?",
+      
+        "reference_ru": "Евреям 13:5",
+        "reference_en": "Hebrews 13:5",
+      
+        "text_ru": "Ибо Сам сказал: не оставлю тебя и не покину тебя.",
+        "text_en": "I will in no way leave you, neither will I in any way forsake you.",
+      
+        "verse_ref": {
+          "book": "Hebrews",
+          "chapter": 13,
+          "verse": "5"
+        },
+      
+        "answer_ru": "Бог обещает быть рядом даже тогда, когда человек чувствует себя одиноким.",
+        "answer_en": "God promises to stay near even when a person feels alone.",
+      
+        "related": [
+          {
+            "reference_ru": "Псалом 26:10",
+            "reference_en": "Psalm 27:10",
+      
+            "text_ru": "Ибо отец мой и мать моя оставили меня, но Господь примет меня.",
+            "text_en": "When my father and my mother forsake me, then the Lord will take me up.",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 26,
+                "verse": "10"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 27,
+                "verse": "10"
+              }
+            }
+          },
+          {
+            "reference_ru": "Матфея 28:20",
+            "reference_en": "Matthew 28:20",
+      
+            "text_ru": "И се, Я с вами во все дни до скончания века. Аминь.",
+            "text_en": "Behold, I am with you always, even to the end of the age.” Amen.",
+      
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 28,
+              "verse": "20"
+            }
+          },
+          {
+            "reference_ru": "Исаия 41:13",
+            "reference_en": "Isaiah 41:13",
+      
+            "text_ru": "Ибо Я Господь, Бог твой; держу тебя за правую руку твою, говорю тебе: не бойся, Я помогаю тебе.",
+            "text_en": "For I, the Lord your God, hold your right hand; saying to you, 'Don’t be afraid. I will help you.'",
+      
+            "verse_ref": {
+              "book": "Isaiah",
+              "chapter": 41,
+              "verse": "13"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-29",
+        "day": 29,
+      
+        "topic_ru": "Надежда",
+        "topic_en": "Hope",
+      
+        "question_ru": "Как Бог даёт надежду?",
+        "question_en": "How does God give hope?",
+      
+        "reference_ru": "Римлянам 15:13",
+        "reference_en": "Romans 15:13",
+      
+        "text_ru": "Бог же надежды да исполнит вас всякой радости и мира в вере, дабы вы, силою Духа Святого, обогатились надеждою.",
+        "text_en": "Now may the God of hope fill you with all joy and peace in believing, that you may abound in hope in the power of the Holy Spirit.",
+      
+        "verse_ref": {
+          "book": "Romans",
+          "chapter": 15,
+          "verse": "13"
+        },
+      
+        "answer_ru": "Бог даёт надежду через Своё присутствие, Слово и обещания.",
+        "answer_en": "God gives hope through His presence, His Word, and His promises.",
+      
+        "related": [
+          {
+            "reference_ru": "Плач Иеремии 3:21-23",
+            "reference_en": "Lamentations 3:21-23",
+      
+            "text_ru": "Вот что я отвечаю сердцу моему и потому уповаю: по милости Господа мы не исчезли, ибо милосердие Его не истощилось. Оно обновляется каждое утро; велика верность Твоя!",
+            "text_en": "This I recall to my mind; therefore I have hope. It is because of Yahweh’s loving kindnesses that we are not consumed, because his mercies don’t fail. They are new every morning. Great is your faithfulness.",
+      
+            "verse_ref": {
+              "book": "Lamentations",
+              "chapter": 3,
+              "verse": "21-23"
+            }
+          },
+          {
+            "reference_ru": "Псалом 61:6",
+            "reference_en": "Psalm 62:5",
+      
+            "text_ru": "Только в Боге успокаивайся, душа моя! ибо на Него надежда моя.",
+            "text_en": "My soul, wait in silence for God alone, for my expectation is from him.",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 61,
+                "verse": "6"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 62,
+                "verse": "5"
+              }
+            }
+          },
+          {
+            "reference_ru": "Евреям 10:23",
+            "reference_en": "Hebrews 10:23",
+      
+            "text_ru": "Будем держаться исповедания упования неуклонно, ибо верен Обещавший.",
+            "text_en": "Let us hold fast the confession of our hope without wavering, for he who promised is faithful.",
+      
+            "verse_ref": {
+              "book": "Hebrews",
+              "chapter": 10,
+              "verse": "23"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-30",
+        "day": 30,
+      
+        "topic_ru": "Покой",
+        "topic_en": "Rest",
+      
+        "question_ru": "Как найти настоящий покой?",
+        "question_en": "How can we find true rest?",
+      
+        "reference_ru": "Матфея 11:28",
+        "reference_en": "Matthew 11:28",
+      
+        "text_ru": "Придите ко Мне, все труждающиеся и обременённые, и Я успокою вас.",
+        "text_en": "Come to me, all you who labor and are heavily burdened, and I will give you rest.",
+      
+        "verse_ref": {
+          "book": "Matthew",
+          "chapter": 11,
+          "verse": "28"
+        },
+      
+        "answer_ru": "Настоящий покой приходит через близость к Иисусу и доверие Ему.",
+        "answer_en": "True rest comes through closeness to Jesus and trust in Him.",
+      
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:27",
+            "reference_en": "John 14:27",
+      
+            "text_ru": "Мир оставляю вам, мир Мой даю вам; не так, как мир даёт, Я даю вам. Да не смущается сердце ваше и да не устрашается.",
+            "text_en": "Peace I leave with you. My peace I give to you; not as the world gives, I give to you. Don’t let your heart be troubled, neither let it be fearful.",
+      
+            "verse_ref": {
+              "book": "John",
+              "chapter": 14,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Псалом 22:1-2",
+            "reference_en": "Psalm 23:1-2",
+      
+            "text_ru": "Господь — Пастырь мой; я ни в чём не буду нуждаться: Он покоит меня на злачных пажитях и водит меня к водам тихим.",
+            "text_en": "The Lord is my shepherd; I shall lack nothing. He makes me lie down in green pastures. He leads me beside still waters.",
+      
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 22,
+                "verse": "1-2"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 23,
+                "verse": "1-2"
+              }
+            }
+          },
+          {
+            "reference_ru": "Исаия 26:3",
+            "reference_en": "Isaiah 26:3",
+      
+            "text_ru": "Твёрдого духом Ты хранишь в совершенном мире, ибо на Тебя уповает он.",
+            "text_en": "You will keep whoever’s mind is steadfast in perfect peace, because he trusts in you.",
+      
+            "verse_ref": {
+              "book": "Isaiah",
+              "chapter": 26,
+              "verse": "3"
+            }
+          }
+        ]
       }
     ]
   }

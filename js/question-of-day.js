@@ -2,9 +2,15 @@ import { buildBibleLink } from "./bibleLinks.js";
 
 //
 // PROD date Anpril 30 2026
-const START_DATE = "2026-04-30";
-//test day 23
-//const START_DATE = "2026-04-24";
+//const START_DATE = "2026-04-30";
+
+//test day 24 as tomorrow 
+//const START_DATE = "2026-04-27";
+//test day 24 as today, day 25 as tomorrow   
+//const START_DATE = "2026-04-26";
+
+//test  
+const START_DATE = "2026-03-21";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -695,37 +701,55 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 };
 
 function addQuestionCreationHelp(text, lang) {
-  if (!text || lang !== "ru") return escapeHtml(text);
+  if (!text) return "";
 
   let safeText = escapeHtml(text);
 
-  const creationHelpHtml = `
-    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-      <span class="footer-help-box daily-help-box">
-        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-        В Синодальном переводе слово «тварь» означает «творение».
+  if (lang === "ru") {
+    const creationHelpHtml = `
+      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+        <span class="footer-help-box daily-help-box">
+          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+          В Синодальном переводе слово «тварь» означает «творение».
+        </span>
       </span>
-    </span>
-  `;
+    `;
 
-  safeText = safeText.replace(
-    /(тварь|твари|тварью|тварей|тварею|творение)/i,
-    `$1${creationHelpHtml}`
-  );
+    safeText = safeText.replace(
+      /(тварь|твари|тварью|тварей|тварею|творение)/i,
+      `$1${creationHelpHtml}`
+    );
 
-  const pronounHelpHtml = `
-    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-      <span class="footer-help-box daily-help-box">
-        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-        В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.
+    const pronounHelpHtml = `
+      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+        <span class="footer-help-box daily-help-box">
+          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+          В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.
+        </span>
       </span>
-    </span>
-  `;
+    `;
 
-  safeText = safeText.replace(
-    /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
-    `$1$2${pronounHelpHtml}`
-  );
+    safeText = safeText.replace(
+      /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
+      `$1$2${pronounHelpHtml}`
+    );
+  }
+
+  if (lang === "en") {
+    const lordHelpHtml = `
+      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="More about Lord">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+        <span class="footer-help-box daily-help-box">
+          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Close">×</button>
+          In the Old Testament, “Lord” often represents God’s personal name, Yahweh.
+        </span>
+      </span>
+    `;
+
+    safeText = safeText.replace(
+      /\b(Lord)\b/,
+      `$1${lordHelpHtml}`
+    );
+  }
 
   return safeText;
 }
