@@ -2,7 +2,7 @@ import { buildBibleLink } from "./bibleLinks.js";
 
 //
 // PROD date Anpril 30 2026
-//const START_DATE = "2026-04-30";
+const START_DATE = "2026-04-30";
 
 //test day 24 as tomorrow 
 //const START_DATE = "2026-04-27";
@@ -10,7 +10,7 @@ import { buildBibleLink } from "./bibleLinks.js";
 //const START_DATE = "2026-04-26";
 
 //test  
-const START_DATE = "2026-03-21";
+//const START_DATE = "2026-03-21";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
