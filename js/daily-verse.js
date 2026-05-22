@@ -387,7 +387,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   ? `
                   <p class="scripture-interpretation">
                     <strong>${detailsTitle}</strong>
-                    ${escapeHtml(interpretation)}
+                    ${addCreationHelp(interpretation, lang)}
                   </p>
                   `
                   : ""
@@ -909,23 +909,32 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   }
 
   function addCreationHelp(text, lang) {
-    if (!text || lang !== "ru") return escapeHtml(text);
-  
+    if (!text) return "";
+
     let safeText = escapeHtml(text);
-  
-    const creationHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе слово «тварь» означает «творение».</span></span>`;
+    if (lang === "ru") {
+        const creationHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе слово «тварь» означает «творение».</span></span>`;
+      
+        safeText = safeText.replace(
+          /(тварь|твари|тварью|тварей|тварею|творение)/i,
+          match => `${match}${creationHelpHtml}`
+        );
+      
+        const pronounHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.</span></span>`;
+      
+        safeText = safeText.replace(
+          /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
+          (match, before, word) => `${before}${word}${pronounHelpHtml}`
+        );
+  }
+  if (lang === "en") {
+    const lordHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="More about LORD">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Close">×</button>In the Old Testament, “LORD” often represents God’s personal name, Yahweh.</span></span>`;
   
     safeText = safeText.replace(
-      /(тварь|твари|тварью|тварей|тварею|творение)/i,
-      match => `${match}${creationHelpHtml}`
+      /\b(LORD|Lord)\b/g,
+      (match) => `${match}${lordHelpHtml}`
     );
-  
-    const pronounHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.</span></span>`;
-  
-    safeText = safeText.replace(
-      /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
-      (match, before, word) => `${before}${word}${pronounHelpHtml}`
-    );
+  }
   
     return safeText;
   }

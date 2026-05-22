@@ -746,8 +746,8 @@ function addQuestionCreationHelp(text, lang) {
     `;
 
     safeText = safeText.replace(
-      /\b(Lord)\b/,
-      `$1${lordHelpHtml}`
+      /\blord\b/gi,
+      (match) => `${match}${lordHelpHtml}`
     );
   }
 

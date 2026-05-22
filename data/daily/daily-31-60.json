@@ -651,6 +651,333 @@
                       }
                     }
                   ]
+                },
+                {
+                  "id": "daily-2026-05-25",
+                  "day": 51,
+                  "topic": {
+                    "ru": "Жизнь по Духу",
+                    "en": "Life in the Spirit"
+                  },
+                  "reference_ru": "Галатам 5:25",
+                  "reference_en": "Galatians 5:25",
+                  "text_ru": "Если мы живем духом, то по духу и поступать должны.",
+                  "text_en": "If we live by the Spirit, let us also walk by the Spirit.",
+                  "verse_ref": {
+                    "book": "Galatians",
+                    "chapter": 5,
+                    "verse": "25"
+                  },
+                  "interpretation_ru": "Бог призывает верующих жить под водительством Духа Святого.",
+                  "interpretation_en": "God calls believers to live under the guidance of the Holy Spirit.",
+                  "related": [
+                    {
+                      "reference_ru": "Римлянам 8:14",
+                      "reference_en": "Romans 8:14",
+                      "text_ru": "Ибо все, водимые Духом Божиим, суть сыны Божии.",
+                      "text_en": "For as many as are led by the Spirit of God, these are children of God.",
+                      "verse_ref": {
+                        "book": "Romans",
+                        "chapter": 8,
+                        "verse": "14"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-26",
+                  "day": 52,
+                  "topic": {
+                    "ru": "Плод Духа",
+                    "en": "Fruit of the Spirit"
+                  },
+                  "reference_ru": "Галатам 5:22-23",
+                  "reference_en": "Galatians 5:22-23",
+                  "text_ru": "Плод же духа: любовь, радость, мир, долготерпение, благость, милосердие, вера, кротость, воздержание. На таковых нет закона.",
+                  "text_en": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. Against such things there is no law.",
+                  "verse_ref": {
+                    "book": "Galatians",
+                    "chapter": 5,
+                    "verse": "22-23"
+                  },
+                  "interpretation_ru": "Дух Святой производит в человеке Божий характер.",
+                  "interpretation_en": "The Holy Spirit produces Godly character in a person.",
+                  "related": [
+                    {
+                      "reference_ru": "Иоанна 15:5",
+                      "reference_en": "John 15:5",
+                      "text_ru": "Я есмь лоза, а вы ветви; кто пребывает во Мне, и Я в нем, тот приносит много плода; ибо без Меня не можете делать ничего.",
+                      "text_en": "I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.",
+                      "verse_ref": {
+                        "book": "John",
+                        "chapter": 15,
+                        "verse": "5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-27",
+                  "day": 53,
+                  "topic": {
+                    "ru": "Мир Божий",
+                    "en": "Peace of God"
+                  },
+                  "reference_ru": "Филиппийцам 4:7",
+                  "reference_en": "Philippians 4:7",
+                  "text_ru": "И мир Божий, который превыше всякого ума, соблюдет сердца ваши и помышления ваши во Христе Иисусе.",
+                  "text_en": "And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
+                  "verse_ref": {
+                    "book": "Philippians",
+                    "chapter": 4,
+                    "verse": "7"
+                  },
+                  "interpretation_ru": "Божий мир хранит сердце человека среди тревог.",
+                  "interpretation_en": "God’s peace guards the human heart in the midst of anxiety.",
+                  "related": [
+                    {
+                      "reference_ru": "Иоанна 14:27",
+                      "reference_en": "John 14:27",
+                      "text_ru": "Мир оставляю вам, мир Мой даю вам.",
+                      "text_en": "Peace I leave with you. My peace I give to you.",
+                      "verse_ref": {
+                        "book": "John",
+                        "chapter": 14,
+                        "verse": "27"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-28",
+                  "day": 54,
+                  "topic": {
+                    "ru": "Свет миру",
+                    "en": "Light of the World"
+                  },
+                  "reference_ru": "Матфея 5:14",
+                  "reference_en": "Matthew 5:14",
+                  "text_ru": "Вы — свет мира. Не может укрыться город, стоящий на верху горы.",
+                  "text_en": "You are the light of the world. A city located on a hill can’t be hidden.",
+                  "verse_ref": {
+                    "book": "Matthew",
+                    "chapter": 5,
+                    "verse": "14"
+                  },
+                  "interpretation_ru": "Верующие призваны отражать свет Христа миру.",
+                  "interpretation_en": "Believers are called to reflect Christ’s light to the world.",
+                  "related": [
+                    {
+                      "reference_ru": "Филиппийцам 2:15",
+                      "reference_en": "Philippians 2:15",
+                      "text_ru": "Чтобы вам быть неукоризненными и чистыми, чадами Божиими непорочными среди строптивого и развращенного рода, в котором вы сияете, как светила в мире.",
+                      "text_en": "That you may become blameless and pure, children of God without defect in the midst of a crooked generation, among whom you shine as lights in the world.",
+                      "verse_ref": {
+                        "book": "Philippians",
+                        "chapter": 2,
+                        "verse": "15"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-29",
+                  "day": 55,
+                  "topic": {
+                    "ru": "Доверие Богу",
+                    "en": "Trusting God"
+                  },
+                  "reference_ru": "Притчи 3:5",
+                  "reference_en": "Proverbs 3:5",
+                  "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой.",
+                  "text_en": "Trust in the Lord with all your heart, and don’t lean on your own understanding.",
+                  "verse_ref": {
+                    "book": "Proverbs",
+                    "chapter": 3,
+                    "verse": "5"
+                  },
+                  "interpretation_ru": "Бог призывает доверять Ему больше, чем своим мыслям.",
+                  "interpretation_en": "God calls us to trust Him more than our own understanding.",
+                  "related": [
+                    {
+                      "reference_ru": "Псалом 36:5",
+                      "reference_en": "Psalm 37:5",
+                      "text_ru": "Предай Господу путь твой и уповай на Него, и Он совершит.",
+                      "text_en": "Commit your way to the Lord. Trust also in him, and he will do this.",
+                      "verse_ref_lang": {
+                        "ru": {
+                          "book": "Psalms",
+                          "chapter": 36,
+                          "verse": "5"
+                        },
+                        "en": {
+                          "book": "Psalms",
+                          "chapter": 37,
+                          "verse": "5"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-30",
+                  "day": 56,
+                  "topic": {
+                    "ru": "Божья мудрость",
+                    "en": "God’s Wisdom"
+                  },
+                  "reference_ru": "Иакова 1:5",
+                  "reference_en": "James 1:5",
+                  "text_ru": "Если же у кого из вас недостает мудрости, да просит у Бога, дающего всем просто и без упреков, — и дастся ему.",
+                  "text_en": "But if any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach; and it will be given to him.",
+                  "verse_ref": {
+                    "book": "James",
+                    "chapter": 1,
+                    "verse": "5"
+                  },
+                  "interpretation_ru": "Бог готов дать мудрость каждому, кто просит.",
+                  "interpretation_en": "God is ready to give wisdom to everyone who asks.",
+                  "related": [
+                    {
+                      "reference_ru": "Притчи 2:6",
+                      "reference_en": "Proverbs 2:6",
+                      "text_ru": "Ибо Господь дает мудрость; из уст Его — знание и разум.",
+                      "text_en": "For the LORD gives wisdom. Out of his mouth comes knowledge and understanding.",
+                      "verse_ref": {
+                        "book": "Proverbs",
+                        "chapter": 2,
+                        "verse": "6"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-05-31",
+                  "day": 57,
+                  "topic": {
+                    "ru": "Сила в слабости",
+                    "en": "Strength in Weakness"
+                  },
+                  "reference_ru": "2 Коринфянам 12:9",
+                  "reference_en": "2 Corinthians 12:9",
+                  "text_ru": "Довольно для тебя благодати Моей, ибо сила Моя совершается в немощи.",
+                  "text_en": "My grace is sufficient for you, for my power is made perfect in weakness.",
+                  "verse_ref": {
+                    "book": "2-corinthians",
+                    "chapter": 12,
+                    "verse": "9"
+                  },
+                  "interpretation_ru": "Божья сила особенно проявляется в человеческой слабости.",
+                  "interpretation_en": "God’s power is especially revealed in human weakness.",
+                  "related": [
+                    {
+                      "reference_ru": "Исаия 40:29",
+                      "reference_en": "Isaiah 40:29",
+                      "text_ru": "Он дает утомленному силу, и изнемогшему дарует крепость.",
+                      "text_en": "He gives power to the weak. He increases the strength of him who has no might.",
+                      "verse_ref": {
+                        "book": "Isaiah",
+                        "chapter": 40,
+                        "verse": "29"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-06-01",
+                  "day": 58,
+                  "topic": {
+                    "ru": "Верность Бога",
+                    "en": "God’s Faithfulness"
+                  },
+                  "reference_ru": "Плач Иеремии 3:22-23",
+                  "reference_en": "Lamentations 3:22-23",
+                  "text_ru": "По милости Господа мы не исчезли, ибо милосердие Его не истощилось. Оно обновляется каждое утро; велика верность Твоя!",
+                  "text_en": "It is because of the LORD’s loving kindnesses that we are not consumed, because his compassion doesn’t fail. They are new every morning. Great is your faithfulness.",
+                  "verse_ref": {
+                    "book": "Lamentations",
+                    "chapter": 3,
+                    "verse": "22-23"
+                  },
+                  "interpretation_ru": "Божья верность не прекращается каждый новый день.",
+                  "interpretation_en": "God’s faithfulness never ceases with each new day.",
+                  "related": [
+                    {
+                      "reference_ru": "1 Коринфянам 1:9",
+                      "reference_en": "1 Corinthians 1:9",
+                      "text_ru": "Верен Бог, Которым вы призваны в общение Сына Его Иисуса Христа.",
+                      "text_en": "God is faithful, through whom you were called into the fellowship of his Son, Jesus Christ our Lord.",
+                      "verse_ref": {
+                        "book": "1-corinthians",
+                        "chapter": 1,
+                        "verse": "9"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-06-02",
+                  "day": 59,
+                  "topic": {
+                    "ru": "Ожидание Христа",
+                    "en": "Waiting for Christ"
+                  },
+                  "reference_ru": "Титу 2:13",
+                  "reference_en": "Titus 2:13",
+                  "text_ru": "Ожидая блаженного упования и явления славы великого Бога и Спасителя нашего Иисуса Христа.",
+                  "text_en": "Looking for the blessed hope and appearing of the glory of our great God and Savior, Jesus Christ.",
+                  "verse_ref": {
+                    "book": "Titus",
+                    "chapter": 2,
+                    "verse": "13"
+                  },
+                  "interpretation_ru": "Верующие живут в ожидании возвращения Христа.",
+                  "interpretation_en": "Believers live in expectation of Christ’s return.",
+                  "related": [
+                    {
+                      "reference_ru": "Иоанна 14:3",
+                      "reference_en": "John 14:3",
+                      "text_ru": "И когда пойду и приготовлю вам место, приду опять и возьму вас к Себе, чтобы и вы были, где Я.",
+                      "text_en": "If I go and prepare a place for you, I will come again and will receive you to myself; that where I am, you may be there also.",
+                      "verse_ref": {
+                        "book": "John",
+                        "chapter": 14,
+                        "verse": "3"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "daily-2026-06-03",
+                  "day": 60,
+                  "topic": {
+                    "ru": "Новое небо и новая земля",
+                    "en": "New Heaven and New Earth"
+                  },
+                  "reference_ru": "Откровение 21:4",
+                  "reference_en": "Revelation 21:4",
+                  "text_ru": "И отрет Бог всякую слезу с очей их, и смерти не будет уже; ни плача, ни вопля, ни болезни уже не будет, ибо прежнее прошло.",
+                  "text_en": "He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain any more. The first things have passed away.",
+                  "verse_ref": {
+                    "book": "Revelation",
+                    "chapter": 21,
+                    "verse": "4"
+                  },
+                  "interpretation_ru": "Бог обещает новое творение без смерти и страдания.",
+                  "interpretation_en": "God promises a new creation without death and suffering.",
+                  "related": [
+                    {
+                      "reference_ru": "2 Петра 3:13",
+                      "reference_en": "2 Peter 3:13",
+                      "text_ru": "Впрочем мы, по обетованию Его, ожидаем нового неба и новой земли, на которых обитает правда.",
+                      "text_en": "But, according to his promise, we look for new heavens and a new earth, in which righteousness dwells.",
+                      "verse_ref": {
+                        "book": "2-peter",
+                        "chapter": 3,
+                        "verse": "13"
+                      }
+                    }
+                  ]
                 }
   ]
 }
