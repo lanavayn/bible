@@ -346,15 +346,19 @@ h1,
 /* ===== Footer ===== */
 
 .footer {
+  margin-top: 10px;
   font-size: 0.85rem;
-  line-height: 1.5;
-  padding: 0.625rem 0.875rem;
-  border-radius: var(--radius-md);
+  color: #666;
+  background-color: #fafafa;
+  padding: 10px 14px;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 8px;
+  opacity: 0.96;
 }
 
 .source-note,
 .bible-link-note {
-  font-size: 1rem;
+  font-size: 0.92rem;
   text-align: left;
 }
 
@@ -959,10 +963,11 @@ li {
 }
 
 .footer-intro p {
-  margin: 0.25rem 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #5a4632;
+  margin: 0.15rem 0 0.45rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #6a5846;
+  font-style: italic;
 }
 
 .footer-help-btn {
@@ -2576,7 +2581,7 @@ abbr[title]:focus::after {
 .category .topic-list {
   list-style: none;
   padding-left: 0;
-  margin-top: -0.8rem;
+  margin-top: 0.2rem;
 
   max-height: 0;
   opacity: 0;
@@ -4441,4 +4446,94 @@ body.daily-verse-search-open {
 
 #question-of-day .question-tomorrow-box[hidden] {
   display: none !important;
+}
+
+/* ===== Homepage topic tags ===== */
+
+#index-page {
+  text-align: center;
+}
+
+#daily-verse-block,
+#question-of-day-block {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.25rem 0.25rem 0.45rem;
+}
+
+.topic-toolbar-hidden {
+  display: none;
+}
+
+.topic-tags-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.35rem auto 0.8rem;
+}
+
+.topic-tag-category {
+  margin: 0;
+  padding: 0;
+}
+
+.topic-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 0.26rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #e7d7cf;
+  background: #fffdf8;
+  color: #6a3f1d;
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.1;
+  cursor: pointer;
+  box-shadow: 0 0.12rem 0.35rem rgba(91, 61, 31, 0.07);
+  min-width: 14rem;
+}
+
+.topic-tag .toggle-arrow {
+  display: none;
+}
+
+.category.open .topic-tag {
+  background: #f7efe9;
+  border-color: #d9c6bd;
+  color: #8b5e5e;
+}
+
+/* closed card — no empty space */
+.topic-tag-category .topic-card {
+  width: min(34rem, 92vw);
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* open card */
+.topic-tag-category.open .topic-card,
+.category.open .topic-card {
+  margin: 0.3rem auto 0.4rem !important;
+  padding: 0.55rem !important;
+  background: #fffdf8;
+  border: 1px solid #eadfbe;
+  border-radius: 0.9rem;
+  box-shadow: 0 0.2rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.topic-tag-category .topic-card .button-link {
+  width: 100%;
+  margin-bottom: 0.35rem;
+  background: #fff9e6;
+}
+
+.topic-tag-category .topic-card li:last-child .button-link {
+  margin-bottom: 0;
 }

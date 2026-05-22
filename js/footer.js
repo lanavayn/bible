@@ -5,12 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
       en: {
         intro: `
           <div class="footer-intro">
-            <p>✨ Verses. Short reflections. Meaning.</p>
-            <p>❖ No pressure. No imposed teachings.</p>
-            <p>▸ Simply the Word of God — for everyone seeking truth.</p>
+            <p>Let Scripture explain Scripture.</p>
           </div>
         `,
-        sourcesTitle: "📚 Sources:",
+        sourcesTitle: "Sources:",
         bibleLinkLabel: "🔹 Bible texts:",
         bibleLinkHref: "https://www.bible.com/bible/206/GEN.1.WEBUS",
         bibleLinkText: "Bible.com",
@@ -26,12 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ru: {
         intro: `
           <div class="footer-intro">
-            <p>✨ Стихи. Краткие размышления. Смысл.</p>
-            <p>❖ Без давления. Без навязывания учений.</p>
-            <p>▸ Просто Слово Божие — для каждого, кто ищет истину.</p>
+            <p>Пусть Писание объясняет Писание.</p>
           </div>
         `,
-        sourcesTitle: "📚 Источники:",
+        sourcesTitle: "Источники:",
         bibleLinkLabel: "🔹",
         bibleLinkHref: "https://www.bible.com/ru/bible/400/GEN.1.SYNO",
         bibleLinkText: "Bible.com",

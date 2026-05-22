@@ -116,100 +116,90 @@ function getIndexLang() {
         <div id="question-of-day"></div>
       </section>
   
-      <div class="topics-toolbar">
+      <div class="topics-toolbar topic-toolbar-hidden">
         <p class="topics-label">${t.topicsLabel}</p>
-        <button id="toggleAllCategoriesBtn" class="toggle-all-inline">
+        <button id="toggleAllCategoriesBtn" class="toggle-all-inline" type="button">
           ${t.toggleAllText}<span class="toggle-icon">▾</span>
         </button>
       </div>
 
-    <div class="categories-list">
-      <div class="category" data-category="salvation">
-        <div class="category-header" onclick="toggleCategory(this)">
-          <span>${t.categories.salvation}</span>
-          <span class="toggle-arrow">▶</span>
+      <div class="categories-list topic-tags-list">
+
+        <div class="category topic-tag-category" data-category="salvation">
+          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+            <span>${t.categories.salvation}</span>
+            <span class="toggle-arrow">▾</span>
+          </button>
+          <ul class="topic-list topic-card">
+            <li>
+              <a class="button-link" href="${t.links.purpose.href}" onclick="rememberCategory('salvation')">
+                ${t.links.purpose.text}
+              </a>
+            </li>
+            <li>
+              <a class="button-link" href="${t.links.salvation.href}" onclick="rememberCategory('salvation')">
+                ${t.links.salvation.text}
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="topic-list">
-          <li>
-            <a class="button-link" href="${t.links.purpose.href}" onclick="rememberCategory('salvation')">
-              ${t.links.purpose.text}
-            </a>
-          </li>
-          <li>
-            <a class="button-link" href="${t.links.salvation.href}" onclick="rememberCategory('salvation')">
-              ${t.links.salvation.text}
-            </a>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="category" data-category="law">
-        <div class="category-header" onclick="toggleCategory(this)">
-          <span>${t.categories.law}</span>
-          <span class="toggle-arrow">▶</span>
+
+        <div class="category topic-tag-category" data-category="law">
+          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+            <span>${t.categories.law}</span>
+            <span class="toggle-arrow">▾</span>
+          </button>
+          <ul class="topic-list topic-card">
+            <li>
+              <a class="button-link" href="${t.links.commandments.href}" onclick="rememberCategory('law')">
+                ${t.links.commandments.text}
+              </a>
+            </li>
+            <li>
+              <a class="button-link" href="${t.links.sabbath.href}" onclick="rememberCategory('law')">
+                ${t.links.sabbath.text}
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="topic-list">
-          <li>
-            <a class="button-link" href="${t.links.commandments.href}" onclick="rememberCategory('law')">
-              ${t.links.commandments.text}
-            </a>
-          </li>
-          <li>
-            <a class="button-link" href="${t.links.sabbath.href}" onclick="rememberCategory('law')">
-              ${t.links.sabbath.text}
-            </a>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="category" data-category="prayer">
-        <div class="category-header" onclick="toggleCategory(this)">
-          <span>${t.categories.prayer}</span>
-          <span class="toggle-arrow">▶</span>
+
+        <div class="category topic-tag-category" data-category="prayer">
+          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+            <span>${t.categories.prayer}</span>
+            <span class="toggle-arrow">▾</span>
+          </button>
+          <ul class="topic-list topic-card">
+            <li>
+              <a class="button-link" href="${t.links.prayer.href}" onclick="rememberCategory('prayer')">
+                ${t.links.prayer.text}
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="topic-list">
-          <li>
-            <a class="button-link" href="${t.links.prayer.href}" onclick="rememberCategory('prayer')">
-              ${t.links.prayer.text}
-            </a>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="category" data-category="golden">
-        <div class="category-header" onclick="toggleCategory(this)">
-          <span>${t.categories.golden}</span>
-          <span class="toggle-arrow">▶</span>
+
+        <div class="category topic-tag-category" data-category="golden">
+          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+            <span>${t.categories.golden}</span>
+            <span class="toggle-arrow">▾</span>
+          </button>
+          <ul class="topic-list topic-card">
+            <li>
+              <a class="button-link" href="${t.links.golden.href}" onclick="rememberCategory('golden')">
+                ${t.links.golden.text}
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="topic-list">
-          <li>
-            <a class="button-link" href="${t.links.golden.href}" onclick="rememberCategory('golden')">
-              ${t.links.golden.text}
-            </a>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="category" data-category="verse-slider-block">
-        <div class="category-header" onclick="toggleVerseSliderCategory(this)">
-          <span>${t.categories.slider}</span>
-          <span class="toggle-arrow">▶</span>
-        </div>
-        <ul class="topic-list">
-          <li><section id="verse-slider" data-use-global-lang="true"></section></li>
-        </ul>
-      </div>
-  
-      <div class="category" data-category="book-dates-block">
-        <div class="category-header" onclick="toggleBookDatesCategory(this)">
+        <div class="category topic-tag-category" data-category="book-dates-block">
+          <button class="category-header topic-tag" onclick="toggleBookDatesCategory(this)" type="button">
           <span>${t.categories.timeline}</span>
-          <span class="toggle-arrow">▶</span>
-        </div>
-        <ul class="topic-list">
+          <span class="toggle-arrow">▾</span>
+        </button>
+        <ul class="topic-list topic-card">
           <li><section id="book-dates"></section></li>
         </ul>
-      </div>
-    </div> <!-- categories-list --> 
+      </div>  
+    </div> 
     `;
   
     if (typeof initVerseSlider === "function") {
