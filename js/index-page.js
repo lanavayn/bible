@@ -131,6 +131,9 @@ function getIndexLang() {
             <span class="toggle-arrow">▾</span>
           </button>
           <ul class="topic-list topic-card">
+            <li class="topic-card-close-row">
+              <button class="topic-card-close" type="button" onclick="closeTopicCard(this)" aria-label="${lang === "ru" ? "Закрыть" : "Close"}">×</button>
+            </li>
             <li>
               <a class="button-link" href="${t.links.purpose.href}" onclick="rememberCategory('salvation')">
                 ${t.links.purpose.text}
@@ -150,6 +153,9 @@ function getIndexLang() {
             <span class="toggle-arrow">▾</span>
           </button>
           <ul class="topic-list topic-card">
+            <li class="topic-card-close-row">
+              <button class="topic-card-close" type="button" onclick="closeTopicCard(this)" aria-label="${lang === "ru" ? "Закрыть" : "Close"}">×</button>
+            </li> 
             <li>
               <a class="button-link" href="${t.links.commandments.href}" onclick="rememberCategory('law')">
                 ${t.links.commandments.text}
@@ -169,6 +175,9 @@ function getIndexLang() {
             <span class="toggle-arrow">▾</span>
           </button>
           <ul class="topic-list topic-card">
+            <li class="topic-card-close-row">
+              <button class="topic-card-close" type="button" onclick="closeTopicCard(this)" aria-label="${lang === "ru" ? "Закрыть" : "Close"}">×</button>
+            </li>
             <li>
               <a class="button-link" href="${t.links.prayer.href}" onclick="rememberCategory('prayer')">
                 ${t.links.prayer.text}
@@ -183,6 +192,9 @@ function getIndexLang() {
             <span class="toggle-arrow">▾</span>
           </button>
           <ul class="topic-list topic-card">
+            <li class="topic-card-close-row">
+              <button class="topic-card-close" type="button" onclick="closeTopicCard(this)" aria-label="${lang === "ru" ? "Закрыть" : "Close"}">×</button>
+            </li>
             <li>
               <a class="button-link" href="${t.links.golden.href}" onclick="rememberCategory('golden')">
                 ${t.links.golden.text}
@@ -196,6 +208,9 @@ function getIndexLang() {
           <span class="toggle-arrow">▾</span>
         </button>
         <ul class="topic-list topic-card">
+          <li class="topic-card-close-row">
+                  <button class="topic-card-close" type="button" onclick="closeTopicCard(this)" aria-label="${lang === "ru" ? "Закрыть" : "Close"}">×</button>
+          </li>
           <li><section id="book-dates"></section></li>
         </ul>
       </div>  
@@ -262,6 +277,18 @@ function getIndexLang() {
               lang === "ru" ? "Ошибка" : "Error";
           }
       });
+    }
+  }
+
+  function closeTopicCard(button) {
+    const category = button.closest(".category");
+    if (!category) return;
+  
+    category.classList.remove("open");
+  
+    const list = category.querySelector(".topic-list");
+    if (list) {
+      list.style.maxHeight = null;
     }
   }
   

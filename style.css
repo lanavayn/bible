@@ -4537,3 +4537,44 @@ body.daily-verse-search-open {
 .topic-tag-category .topic-card li:last-child .button-link {
   margin-bottom: 0;
 }
+
+.topic-card {
+  position: relative;
+}
+
+.category.open .topic-card {
+  padding-top: 1.4rem !important;
+}
+
+.topic-card-close-row {
+  position: absolute !important;
+  top: 0.25rem !important;
+  right: 0.35rem !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  z-index: 5 !important;
+}
+
+.topic-card-close {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: transparent;
+  border: none;
+  color: #8b7a6a;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.85;
+}
+
+.topic-card-close:hover {
+  opacity: 1;
+  color: #4b3621;
+}
