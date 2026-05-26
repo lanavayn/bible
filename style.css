@@ -4586,6 +4586,7 @@ body.daily-verse-search-open {
   gap: 6px;
   margin: 0.9rem auto 0.35rem;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 /* desktop / tablet buttons */
@@ -4623,7 +4624,7 @@ body.daily-verse-search-open {
 @media (max-width: 420px) {
   .daily-question-row {
     gap: 8px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
   }
 
   .daily-question-row .dv-reopen-btn {
