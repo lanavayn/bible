@@ -3965,7 +3965,7 @@ table.book-dates th:nth-child(2) {
 }
 
 #question-of-day {
-  margin-top: 0;
+  margin-top: 0.5;
   margin-bottom: 12px;
 }
 

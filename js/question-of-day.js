@@ -687,17 +687,6 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
     renderCard(currentIndex);
 
-    requestAnimationFrame(() => {
-      const card = document.querySelector("#question-of-day .daily-verse-card");
-
-      if (card) {
-        card.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
-
   } catch (e) {
     root.innerHTML = "Error loading question";
     console.error(e);
