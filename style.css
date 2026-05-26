@@ -4655,3 +4655,17 @@ body.daily-verse-search-open {
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   transform: translateY(-1px);
 }
+
+/* Extra-small phone fix: keep Daily Question inside the button */
+@media (max-width: 390px) {
+  html[lang="en"] .daily-question-row {
+    gap: 6px;
+  }
+
+  html[lang="en"] .daily-question-row .dv-reopen-btn {
+    font-size: 0.86rem;
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    letter-spacing: -0.02em;
+  }
+}
