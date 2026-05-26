@@ -380,16 +380,20 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         });
         
         if (closeBtn) {
-            closeBtn.addEventListener("click", () => {
+          closeBtn.addEventListener("click", () => {
             root.innerHTML = "";
-          
-              const reopenBtn = document.getElementById("question-reopen");
-              if (reopenBtn) {
-                reopenBtn.textContent = lang === "ru" ? "💬 Вопрос дня" : "💬 Question of the Day";
-                reopenBtn.style.display = "inline-block";
-              }
+        
+            document.querySelectorAll(".dv-reopen-btn").forEach(btn => {
+              btn.classList.remove("is-active", "is-muted");
             });
-          }
+        
+            const reopenBtn = document.getElementById("question-reopen");
+            if (reopenBtn) {
+              reopenBtn.textContent = lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question";
+              reopenBtn.style.display = "inline-block";
+            }
+          });
+        }
 
       const prevBtn = root.querySelector(".dv-prev");
       if (prevBtn) {

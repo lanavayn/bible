@@ -467,6 +467,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           closeBtn.addEventListener("click", () => {
             root.innerHTML = "";
         
+            document.querySelectorAll(".dv-reopen-btn").forEach(btn => {
+              btn.classList.remove("is-active", "is-muted");
+            });
+        
             const reopenBtn = document.getElementById("daily-verse-reopen");
             if (reopenBtn) {
               reopenBtn.textContent = lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse";

@@ -4578,3 +4578,79 @@ body.daily-verse-search-open {
   opacity: 1;
   color: #4b3621;
 }
+
+.daily-question-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 0.9rem auto 0.35rem;
+  width: 100%;
+}
+
+/* desktop / tablet buttons */
+.daily-question-row .dv-reopen-btn {
+  flex: 0 0 auto;
+  min-width: 170px;
+  max-width: none;
+  white-space: nowrap;
+  font-size: 1rem;
+  padding: 0.58rem 1.05rem;
+  margin: 0;
+}
+
+/* remove empty space when cards are closed */
+#daily-verse-block,
+#question-of-day-block {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 0;
+}
+
+#daily-verse:empty,
+#question-of-day:empty {
+  display: none;
+}
+
+/* bring topic buttons closer */
+.topic-tags-list {
+  margin-top: 0.45rem;
+}
+
+/* mobile */
+@media (max-width: 420px) {
+  .daily-question-row {
+    gap: 8px;
+    margin-bottom: 0.25rem;
+  }
+
+  .daily-question-row .dv-reopen-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 0.92rem;
+    padding: 0.56rem 0.45rem;
+  }
+}
+
+.dv-reopen-btn {
+  transition:
+    opacity 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* inactive button */
+.dv-reopen-btn.is-muted {
+  opacity: 0.45;
+  filter: grayscale(15%);
+}
+
+/* active button */
+.dv-reopen-btn.is-active {
+  background: #fffaf0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}

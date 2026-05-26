@@ -91,8 +91,43 @@ function getIndexLang() {
       }
     }[lang];
   }
+
+  function closeDailyAndQuestion() {
+    const daily = document.getElementById("daily-verse");
+    const question = document.getElementById("question-of-day");
+  
+    if (daily) daily.innerHTML = "";
+    if (question) question.innerHTML = "";
+  
+    document.querySelectorAll(".dv-reopen-btn").forEach(btn => {
+      btn.classList.remove("is-active", "is-muted");
+    });
+  }
+  
+  function closeAllTopicCards() {
+    document.querySelectorAll(".category.open").forEach(category => {
+      category.classList.remove("open");
+  
+      const list = category.querySelector(".topic-list");
+      if (list) {
+        list.style.maxHeight = null;
+      }
+    });
+  }
+  
+  function handleCategoryClick(button) {
+    closeDailyAndQuestion();
+    toggleCategory(button);
+  }
+  
+  function handleBookDatesClick(button) {
+    closeDailyAndQuestion();
+    toggleBookDatesCategory(button);
+  }
   
   function renderIndexPage() {
+    sessionStorage.removeItem("openCategory");
+
     const root = document.getElementById("index-page");
     if (!root) return;
   
@@ -101,21 +136,24 @@ function getIndexLang() {
   
     root.innerHTML = `
       <h1 class="hero-title">${t.heroTitle}</h1>
-  
-      <section id="daily-verse-block">
+      <div class="daily-question-row">
         <button id="loadDailyVerseBtn" class="dv-reopen-btn" type="button">
           ${lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse"}
         </button>
+
+        <button id="loadQuestionBtn" class="dv-reopen-btn" type="button">
+          ${lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question"}
+        </button>
+      </div>
+
+      <section id="daily-verse-block">
         <div id="daily-verse"></div>
       </section>
 
       <section id="question-of-day-block">
-        <button id="loadQuestionBtn" class="dv-reopen-btn" type="button">
-          ${lang === "ru" ? "💬 Вопрос дня" : "💬 Question of the Day"}
-        </button>
         <div id="question-of-day"></div>
       </section>
-  
+
       <div class="topics-toolbar topic-toolbar-hidden">
         <p class="topics-label">${t.topicsLabel}</p>
         <button id="toggleAllCategoriesBtn" class="toggle-all-inline" type="button">
@@ -126,7 +164,7 @@ function getIndexLang() {
       <div class="categories-list topic-tags-list">
 
         <div class="category topic-tag-category" data-category="salvation">
-          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+          <button class="category-header topic-tag" onclick="handleCategoryClick(this)" type="button">
             <span>${t.categories.salvation}</span>
             <span class="toggle-arrow">▾</span>
           </button>
@@ -148,7 +186,7 @@ function getIndexLang() {
         </div>
 
         <div class="category topic-tag-category" data-category="law">
-          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+          <button class="category-header topic-tag" onclick="handleCategoryClick(this)" type="button">
             <span>${t.categories.law}</span>
             <span class="toggle-arrow">▾</span>
           </button>
@@ -170,7 +208,7 @@ function getIndexLang() {
         </div>
 
         <div class="category topic-tag-category" data-category="prayer">
-          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+          <button class="category-header topic-tag" onclick="handleCategoryClick(this)" type="button">
             <span>${t.categories.prayer}</span>
             <span class="toggle-arrow">▾</span>
           </button>
@@ -187,7 +225,7 @@ function getIndexLang() {
         </div>
 
         <div class="category topic-tag-category" data-category="golden">
-          <button class="category-header topic-tag" onclick="toggleCategory(this)" type="button">
+          <button class="category-header topic-tag" onclick="handleCategoryClick(this)" type="button">
             <span>${t.categories.golden}</span>
             <span class="toggle-arrow">▾</span>
           </button>
@@ -203,7 +241,7 @@ function getIndexLang() {
           </ul>
         </div>
         <div class="category topic-tag-category" data-category="book-dates-block">
-          <button class="category-header topic-tag" onclick="toggleBookDatesCategory(this)" type="button">
+          <button class="category-header topic-tag" onclick="handleBookDatesClick(this)" type="button">
           <span>${t.categories.timeline}</span>
           <span class="toggle-arrow">▾</span>
         </button>
@@ -233,12 +271,18 @@ function getIndexLang() {
           lang === "ru" ? "Загрузка..." : "Loading...";
 
           try {
+            closeAllTopicCards();
             await import("/js/daily-verse.js");
           
             document.getElementById("question-of-day").innerHTML = "";
           
             if (typeof window.renderDailyVerse === "function") {
               await window.renderDailyVerse();
+              loadDailyVerseBtn.classList.add("is-active");
+              loadDailyVerseBtn.classList.remove("is-muted");
+
+              loadQuestionBtn.classList.remove("is-active");
+              loadQuestionBtn.classList.add("is-muted");
             }
           
             loadDailyVerseBtn.textContent =
@@ -260,16 +304,22 @@ function getIndexLang() {
           lang === "ru" ? "Загрузка..." : "Loading...";
 
           try {
+            closeAllTopicCards();
             await import("/js/question-of-day.js");
           
             document.getElementById("daily-verse").innerHTML = "";
           
             if (typeof window.renderQuestionOfDay === "function") {
               await window.renderQuestionOfDay();
+              loadQuestionBtn.classList.add("is-active");
+              loadQuestionBtn.classList.remove("is-muted");
+
+              loadDailyVerseBtn.classList.remove("is-active");
+              loadDailyVerseBtn.classList.add("is-muted");
             }
           
             loadQuestionBtn.textContent =
-              lang === "ru" ? "💬 Вопрос дня" : "💬 Question of the Day";
+              lang === "ru" ? "💬Вопрос дня" : "💬Daily Question";
           
           } catch (error) {
             console.error(error);
