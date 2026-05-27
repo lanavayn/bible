@@ -12,10 +12,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Share Your Thoughts | Bible for All</title>
+  <title>Ask a Question | Bible for All</title>
 
   <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Share your thoughts about Bible for All. Your feedback helps make the site clearer, warmer, and more helpful for others.">
+  <meta name="description" content="Ask a question about the Bible, faith, or life. Bible for All seeks to answer questions based on Scripture.">
   <meta name="keywords" content="Bible, feedback, comments, scripture, verses, Christianity, English Bible, Russian Bible">
   <meta name="author" content="Lana Vayner">
 
@@ -29,12 +29,12 @@
     
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Bible for All" />
-  <meta property="og:description" content="Share your thoughts about Bible for All. Your feedback helps make the site better." />
+  <meta property="og:description" content="Ask a question about the Bible, faith, or life." />
   <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
-  <meta property="og:url" content="https://bibleforall.ca/comments.html" />
+  <meta property="og:url" content="https://bibleforall.ca/ask-question.html" />
   <meta property="og:type" content="website" />
   <!-- Canonical -->
-  <link rel="canonical" href="https://bibleforall.ca/comments.html" />
+  <link rel="canonical" href="https://bibleforall.ca/ask-question.html" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,16 +45,16 @@
 
       <header class="comments-hero">
         <!--<div class="comments-badge">💛 Bible for All</div>-->
-        <h1 class="comments-title">Share Your Thoughts</h1>
+        <h1 class="comments-title">Ask a Question</h1>
         <p class="comments-subtitle">
-          Your feedback helps make Bible for All clearer, warmer, and more helpful for others.
+            You can ask a question about the Bible, faith, or life. We seek to answer questions based on Scripture.
         </p>
       </header>
 
       <section class="comments-form comments-form-modern">
         <div class="comments-card">
-          <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
-        <input type="hidden" name="form-name" value="comments">
+          <form name="bible-question" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
+        <input type="hidden" name="form-name" value="bible-question">
 
         <p style="display:none">
           <label>Don’t fill this out: <input name="bot-field"></label>
@@ -72,19 +72,19 @@
         </div>
       
         <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5" required placeholder="For example: which section was helpful, what was clear, or what you would like to see on the site..."></textarea>
+          <label for="message">Your Question</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Write your question about the Bible, faith, or life..."></textarea>
         </div>
 
-        <button type="submit" class="comments-submit-btn">Send Message</button>
+        <button type="submit" class="comments-submit-btn">Send Question</button>
 
       </form>
 
       <div id="confirmation" class="confirmation-message">
         <div class="confirmation-icon">✨</div>
-        <div class="confirmation-title">Thank you for your message!</div>
+        <div class="confirmation-title">Thank you for your question!</div>
         <div class="confirmation-text">
-          Your feedback has been sent successfully.
+            Your question has been sent successfully.
         </div>
       </div>
     </div>

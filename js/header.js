@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Welcome to the Bible for Everyone",
         back: "← Back",
         home: "🏠 Home",
-        share: "📤 Share link",
+        share: "📤 Share link",        
         comments: "✍️ Leave feedback",
+        askQuestion: "💬 Ask a Question",
         about: "ℹ️ About the Bible",
         english: "English",
         russian: "Русский"
@@ -14,8 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Добро пожаловать в мир Библии",
         back: "← Назад",
         home: "🏠 Домой",
-        share: "📤 Поделиться",
+        share: "📤 Поделиться",        
         comments: "✍️ Оставить отзыв",
+        askQuestion: "💬 Задать вопрос",
         about: "ℹ️ О Библии",
         english: "English",
         russian: "Русский"
@@ -31,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "index.html": "index.html",
       "salvation.html": "salvation.html",
       "comments.html": "comments.html",
+      "ask-question.html": "ask-question.html",
       "sabbath.html": "sabbath.html"
     };
   
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeHref = isRu ? "index.html" : "index.html";
     const aboutHref = isRu ? "about.html" : "about.html";
     const commentsHref = isRu ? "comments.html" : "comments.html";
+    const askQuestionHref = isRu ? "ask-question.html" : "ask-question.html";
   
     const enHref = lang === "en"
       ? currentPage
@@ -61,9 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
       ? currentPage
       : (pairedPage === "index.html" ? "/ru/" : `/ru/${pairedPage}`);
   
-    const showBack = currentPage === "about.html" || currentPage === "comments.html";
+    const showBack =
+      currentPage === "about.html" ||
+      currentPage === "comments.html" ||
+      currentPage === "ask-question.html";
     const showHome = currentPage !== "index.html";
     const showComments = currentPage !== "comments.html";
+    const showAskQuestion = currentPage !== "ask-question.html";
     const showAbout = currentPage !== "about.html";
   
     const headerElement = document.getElementById("header");
@@ -78,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ${showHome ? `<a href="${homeHref}">${t.home}</a>` : ""}
             <a href="#" class="share-button" title="${t.share}">${t.share}</a>
             ${showComments ? `<a href="${commentsHref}">${t.comments}</a>` : ""}
+            ${showAskQuestion ? `<a href="${askQuestionHref}">${t.askQuestion}</a>` : ""}
             ${showAbout ? `<a href="${aboutHref}">${t.about}</a>` : ""}
           </div>
         </div>

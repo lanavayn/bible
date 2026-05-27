@@ -280,7 +280,7 @@ h1,
   left: 0;
   min-width: 11rem;
   padding: 0.35rem;
-  z-index: 999;
+  z-index: 10000;
 
   background: rgba(255, 253, 248, 0.98);
   border: 1px solid rgba(224, 195, 140, 0.7);
@@ -564,6 +564,8 @@ h1,
     padding: 0.65rem 0.7rem;
     border-radius: 0.75rem;
     margin-bottom: 0.85rem;
+    position: relative;
+    z-index: 9998;
   }
 
   .top-title {
@@ -828,6 +830,7 @@ li {
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 9999;
 }
 
 

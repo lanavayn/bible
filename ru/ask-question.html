@@ -12,10 +12,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Поделитесь вашим впечатлением | Bible for All</title>
+  <title>Задать вопрос | Bible for All</title>
 
   <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="Поделитесь вашим впечатлением о сайте Bible for All. Ваш отзыв помогает сделать сайт понятнее, теплее и полезнее для других людей.">
+  <meta name="description" content="Задайте вопрос о Библии, вере или жизни. Bible for All стремится отвечать на вопросы на основании Священного Писания.">
   <meta name="keywords" content="Библия, отзывы, комментарии, Писание, стихи, христианство, русская Библия, английская Библия">
   <meta name="author" content="Lana Vayner">
 
@@ -29,12 +29,12 @@
     
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Bible for All" />
-  <meta property="og:description" content="Поделитесь вашим впечатлением о Bible for All. Ваш отзыв помогает сделать сайт лучше." />
+  <meta property="og:description" content="Задайте вопрос о Библии, вере или жизни." />
   <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
-  <meta property="og:url" content="https://bibleforall.ca/ru/comments.html" />
+  <meta property="og:url" content="https://bibleforall.ca/ru/ask-question.html" />
   <meta property="og:type" content="website" />
   <!-- Canonical -->
-  <link rel="canonical" href="https://bibleforall.ca/ru/comments.html" />
+  <link rel="canonical" href="https://bibleforall.ca/ru/ask-question.html" />
 
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -45,16 +45,16 @@
     <main role="main"> 
 
       <header class="comments-hero">
-        <!--<div class="comments-badge">💛 Bible for All</div>-->
-        <h1 class="comments-title">Поделитесь вашим впечатлением</h1>
+        <!--<div class="comments-badge">💛 Bible for All</div>-->        
+        <h1 class="comments-title">Задать вопрос</h1>
         <p class="comments-subtitle">
-          Ваш отзыв помогает сделать Bible for All понятнее, теплее и полезнее для других людей.
+            Вы можете задать вопрос о Библии, вере или жизни. Мы стараемся отвечать на вопросы на основании Священного Писания.
         </p>
       </header>
       <section class="comments-form comments-form-modern">
         <div class="comments-card">
-          <form name="comments" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
-            <input type="hidden" name="form-name" value="comments">
+          <form name="bible-question" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
+            <input type="hidden" name="form-name" value="bible-question">
       
             <p style="display:none">
               <label>Don’t fill this out: <input name="bot-field"></label>
@@ -72,18 +72,18 @@
             </div>
             
             <div class="form-group">
-              <label for="message">Ваше сообщение</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Поделитесь, что вам было полезно или особенно откликнулось..."></textarea>
+              <label for="message">Ваш вопрос</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Напишите ваш вопрос о Библии, вере или жизни..."></textarea>
             </div>
       
-            <button type="submit" class="comments-submit-btn">Отправить сообщение</button>
+            <button type="submit" class="comments-submit-btn">Отправить вопрос</button>
           </form>
       
           <div id="confirmation" class="confirmation-message">
             <div class="confirmation-icon">✨</div>
-            <div class="confirmation-title">Спасибо за ваше сообщение!</div>
+            <div class="confirmation-title">Спасибо за ваш вопрос!</div>
             <div class="confirmation-text">
-              Ваш отзыв успешно отправлен.
+                Ваш вопрос успешно отправлен.
             </div>
           </div>
         </div>
