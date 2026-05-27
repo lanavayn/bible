@@ -1,0 +1,193 @@
+{
+    "questions": [
+        {
+            "id": "question-day-31",
+            "day": 31,
+          
+            "topic_ru": "Божья благодать",
+            "topic_en": "God’s Grace",
+          
+            "question_ru": "Что такое Божья благодать?",
+            "question_en": "What is God's grace?",
+          
+            "reference_ru": "Ефесянам 2:8-9",
+            "reference_en": "Ephesians 2:8-9",
+          
+            "text_ru": "Ибо благодатью вы спасены через веру, и сие не от вас, Божий дар: не от дел, чтобы никто не хвалился.",
+            "text_en": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, that no one would boast.",
+          
+            "verse_ref": {
+              "book": "Ephesians",
+              "chapter": 2,
+              "verse": "8-9"
+            },
+          
+            "answer_ru": "Божья благодать — это незаслуженный дар спасения через Иисуса Христа.",
+            "answer_en": "God’s grace is the undeserved gift of salvation through Jesus Christ.",
+          
+            "related": [
+              {
+                "reference_ru": "Титу 2:11",
+                "reference_en": "Titus 2:11",
+          
+                "text_ru": "Ибо явилась благодать Божия, спасительная для всех человеков.",
+                "text_en": "For the grace of God has appeared, bringing salvation to all men.",
+          
+                "verse_ref": {
+                  "book": "Titus",
+                  "chapter": 2,
+                  "verse": "11"
+                }
+              },
+              {
+                "reference_ru": "Римлянам 6:14",
+                "reference_en": "Romans 6:14",
+          
+                "text_ru": "Грех не должен над вами господствовать, ибо вы не под законом, но под благодатью.",
+                "text_en": "For sin will not have dominion over you, for you are not under law, but under grace.",
+          
+                "verse_ref": {
+                  "book": "Romans",
+                  "chapter": 6,
+                  "verse": "14"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-32",
+            "day": 32,
+          
+            "topic_ru": "Божий закон",
+            "topic_en": "God’s Law",
+          
+            "question_ru": "Для чего Бог дал закон?",
+            "question_en": "Why did God give the law?",
+          
+            "reference_ru": "Римлянам 7:12",
+            "reference_en": "Romans 7:12",
+          
+            "text_ru": "Посему закон свят, и заповедь свята и праведна и добра.",
+            "text_en": "So then, the law is holy, and the commandment is holy, righteous, and good.",
+          
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 7,
+              "verse": "12"
+            },
+          
+            "answer_ru": "Бог дал закон как светлый путь, ведущий человека к добру и истине.",
+            "answer_en": "God gave the law to show people the path of goodness, truth, and love.",
+          
+            "related": [
+              {
+                "reference_ru": "Галатам 3:24",
+                "reference_en": "Galatians 3:24",
+          
+                "text_ru": "Итак закон был для нас детоводителем ко Христу, дабы нам оправдаться верою.",
+                "text_en": "So the law has become our tutor to bring us to Christ, that we might be justified by faith.",
+          
+                "verse_ref": {
+                  "book": "Galatians",
+                  "chapter": 3,
+                  "verse": "24"
+                }
+              },
+              {
+                "reference_ru": "Псалом 18:8",
+                "reference_en": "Psalm 19:7",
+          
+                "text_ru": "Закон Господа совершен, укрепляет душу; откровение Господа верно, умудряет простых.",
+                "text_en": "The Lord’s law is perfect, restoring the soul. The Lord’s covenant is sure, making wise the simple.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 18,
+                    "verse": "8"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 19,
+                    "verse": "7"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-33",
+            "day": 33,
+          
+            "topic_ru": "Сердце человека",
+            "topic_en": "The Human Heart",
+          
+            "question_ru": "Как Божий закон оказывается в сердце человека?",
+            "question_en": "How does God's law become written on a person's heart?",
+          
+            "reference_ru": "Иезекииль 36:26-27",
+            "reference_en": "Ezekiel 36:26-27",
+          
+            "text_ru": "И дам вам сердце новое, и дух новый дам вам; и возьму из плоти вашей сердце каменное, и дам вам сердце плотяное. Вложу внутрь вас дух Мой и сделаю то, что вы будете ходить в заповедях Моих.",
+            "text_en": "I will give you a new heart, and I will put a new spirit within you. I will take the stony heart out of your flesh, and I will give you a heart of flesh. I will put my Spirit within you and cause you to walk in my statutes.",
+          
+            "verse_ref": {
+              "book": "Ezekiel",
+              "chapter": 36,
+              "verse": "26-27"
+            },
+          
+            "answer_ru": "Бог меняет сердце человека через Своё присутствие, веру и действие Святого Духа.",
+            "answer_en": "God changes a person’s heart through His presence, faith, and the work of the Holy Spirit.",
+          
+            "related": [
+              {
+                "reference_ru": "Евреям 8:10",
+                "reference_en": "Hebrews 8:10",
+          
+                "text_ru": "Вложу законы Мои в мысли их и напишу их на сердцах их.",
+                "text_en": "I will put my laws into their mind, and write them on their hearts.",
+          
+                "verse_ref": {
+                  "book": "Hebrews",
+                  "chapter": 8,
+                  "verse": "10"
+                }
+              },
+              {
+                "reference_ru": "Псалом 39:9",
+                "reference_en": "Psalm 40:8",
+          
+                "text_ru": "Я желаю исполнить волю Твою, Боже мой, и закон Твой у меня в сердце.",
+                "text_en": "I delight to do your will, my God. Yes, your law is within my heart.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 39,
+                    "verse": "9"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 40,
+                    "verse": "8"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Иоанна 15:5",
+                "reference_en": "John 15:5",
+          
+                "text_ru": "Без Меня не можете делать ничего.",
+                "text_en": "Apart from me you can do nothing.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 15,
+                  "verse": "5"
+                }
+              }
+            ]
+          }
+    ]
+  }

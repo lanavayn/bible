@@ -50,9 +50,24 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
   root.innerHTML = `<div>Loading...</div>`;
 
   try {
-    const response = await fetch("/data/questions/question-1-30.json", { cache: "no-store" });
-    const data = await response.json();
-    const questions = data.questions || [];
+    const jsonPaths = [
+      "/data/questions/question-1-30.json",
+      "/data/questions/question-31-60.json"
+    ];
+    
+    let questions = [];
+    
+    for (const path of jsonPaths) {
+      const response = await fetch(path, { cache: "no-store" });
+    
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path}`);
+      }
+    
+      const data = await response.json();
+      const fileQuestions = Array.isArray(data?.questions) ? data.questions : [];
+      questions = questions.concat(fileQuestions);
+    }
     
     //PROD code
     const todayDay = getTodayIndex();
