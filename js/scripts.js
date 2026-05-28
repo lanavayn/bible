@@ -3,3 +3,4 @@ import "./menu.js";
 import "./footer.js";
 import "./share.js";
 import "./common-page.js";
+import "./book-dates.js";
