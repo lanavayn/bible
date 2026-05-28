@@ -122,6 +122,22 @@ function getIndexLang() {
   
   function handleBookDatesClick(button) {
     closeDailyAndQuestion();
+  
+    const footerTimelineBox = document.querySelector(".footer-timeline-box");
+    if (footerTimelineBox) {
+      footerTimelineBox.hidden = true;
+    }
+  
+    const footerHelpInline = document.querySelector(".footer-help-inline");
+    if (footerHelpInline) {
+      footerHelpInline.setAttribute("hidden", "");
+    }
+  
+    const footerHelpBtn = document.querySelector(".footer-help-btn");
+    if (footerHelpBtn) {
+      footerHelpBtn.setAttribute("aria-expanded", "false");
+    }
+  
     toggleBookDatesCategory(button);
   }
   
