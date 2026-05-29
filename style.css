@@ -1446,7 +1446,7 @@ table.book-dates td {
 
 table.book-dates th:nth-child(2),
 table.book-dates td:nth-child(2) {
-  padding-left: 14px;
+  padding-left: 6px;
 }
 
 .bd-book-cell {
@@ -4530,3 +4530,28 @@ body.daily-verse-search-open {
   }
 }
 
+/* Bible Timeline mobile fix */
+
+@media (max-width: 768px) {
+
+  table.book-dates {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table.book-dates td:first-child,
+  table.book-dates th:first-child {
+    width: 72%;
+  }
+
+  table.book-dates td:nth-child(2),
+  table.book-dates th:nth-child(2) {
+    width: 28%;
+    padding-left: 6px;
+  }
+
+  .bd-book-cell {
+    gap: 0.1rem;
+    padding-left: 6px;
+  }
+}
