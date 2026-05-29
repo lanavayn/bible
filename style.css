@@ -1411,12 +1411,13 @@ table.book-dates th:nth-child(3) {
 
 .bd-book-cell {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 0.45rem;
 }
 
 .bd-book-name {
   flex: 1;
+  white-space: nowrap;
 }
 
 .bd-info {
