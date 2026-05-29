@@ -446,13 +446,6 @@ h1,
   margin-bottom: 0.7rem;
 }
 
-.scripture-close-row {
-  position: absolute;
-  top: 0.05rem;
-  right: 0.4rem;
-  margin-bottom: 0;
-}
-
 .scripture-close {
   background: transparent;
   border: none;
@@ -1000,7 +993,8 @@ li {
 
 .footer-help-inline {
   display: block;
-  margin-top: 0.45rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .footer-help-inline[hidden] {
@@ -1020,6 +1014,7 @@ li {
 
 .footer-help-box {
   display: block;
+  margin-top: -1.5rem;
   position: relative;
   background: #f8f3fb;
   border: 1px solid #e6dcef;
@@ -1381,177 +1376,10 @@ button[type="submit"]:hover {
   font-style: italic;
 }
 
-/* Tighter base scoping (avoid touching other tables) */
-table.book-dates { table-layout: fixed; width: 100%; }
-table.book-dates th, 
-table.book-dates td { word-wrap: break-word; }
+/* ===== Bible Timeline / Book Dates ===== */
 
-/* Default desktop/tablet widths */
-table.book-dates th:nth-child(1),
-table.book-dates td:nth-child(1) { width: 45%; } /* Book */
-table.book-dates th:nth-child(2),
-table.book-dates td:nth-child(2) { width: 40%; } /* Date */
-table.book-dates th:nth-child(3),
-table.book-dates td:nth-child(3) { width: 15%; text-align: center; } /* Info */
-
-/* Align table headers to the start of each column */
-table.book-dates th { 
-  text-align: left;           /* left align all headers */
-  padding-left: 8px;          /* match td padding for nice alignment */
-  vertical-align: bottom;     /* optional: sits closer to the row content */
-}
-
-/* Keep the info column header centered */
-table.book-dates th:nth-child(3) {
-  text-align: center;
-  padding-left: 0;
-}
-
-.bd-book-cell {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.bd-book-name {
-  flex: 1;
-}
-
-.bd-info {
-  flex-shrink: 0;
-}
-
-.bd-info {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.bd-inline-box {
-  position: relative;
-  background: #f8f3fb;
-  border: 1px solid #e6dcef;
-  border-radius: 10px;
-  padding: 10px 12px;
-  margin: 6px 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* 📱 Medium phones */
-@media (max-width: 640px) {
-  table.book-dates th, 
-  table.book-dates td { padding: 6px 8px; }
-
-  table.book-dates th:nth-child(1),
-  table.book-dates td:nth-child(1) { width: 55%; }
-
-  table.book-dates th:nth-child(2),
-  table.book-dates td:nth-child(2) { width: 35%; }
-
-  table.book-dates th:nth-child(3),
-  table.book-dates td:nth-child(3) { width: 10%; }
-
-  /* fit the ℹ︎ button */
-  .book-dates .bd-actions .bd-info {
-    width: 34px;      /* было 28px */
-    height: 34px;     /* было 28px */
-    line-height: 34px;
-    font-size: 18px;  /* добавь, чтобы «i» стало крупнее */
-  }
- 
-}
-
-/* 📱 Small phones */
-@media (max-width: 400px) {
-  table.book-dates th, 
-  table.book-dates td { padding: 5px 7px; }
-
-  table.book-dates th:nth-child(1),
-  table.book-dates td:nth-child(1) { width: 52%; }
-
-  table.book-dates th:nth-child(2),
-  table.book-dates td:nth-child(2) { width: 38%; }
-
-  table.book-dates th:nth-child(3),
-  table.book-dates td:nth-child(3) { width: 10%; }
-
-  .book-dates .bd-actions .bd-info {
-    width: 34px; height: 34px; line-height: 34px;
-  }
-}
-
-.book-dates .bd-actions .bd-info-icon {
-  font-size: 16px;
-  color: white;
-  font-weight: 700;
-}
-
-.book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
-/* Modal improvements (optional) */
-.bd-modal{
-  max-height: 85vh;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}
-.bd-modal p{ margin: .45rem 0; }
-@media (max-width: 480px){
-  .bd-modal{ max-height: 88vh; }
-}
-/* Fix table layout */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed; /* makes columns respect width */
-}
-
-table th, table td {
-  padding: 8px;
-  word-wrap: break-word;
-}
-
-/* Column widths */
-table th:nth-child(1),
-table td:nth-child(1) {
-  width: 60%; /* Book name */
-}
-
-table th:nth-child(2),
-table td:nth-child(2) {
-  width: 30%; /* Date */
-}
-
-table th:nth-child(3),
-table td:nth-child(3) {
-  width: 10%; /* Icon column */
-  text-align: center;
-}
-
-/* Make the info button fit */
-.info-btn {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 28px;
-  font-weight: bold;
-  background: #f5f5f5;
-  border: 1px solid #ccc;
-}
-
-/* Заголовок и поиск внутри блока #book-dates */
-#book-dates h2 {
-  text-align: center;
-  margin: 0 0 8px 0;
-  color: #5b4228;
-  text-shadow: 1px 1px #ddd;
+#book-dates {
+  line-height: 1.25;
 }
 
 #book-dates .bd-search {
@@ -1564,133 +1392,80 @@ table td:nth-child(3) {
   box-sizing: border-box;
 }
 
-/* Делаем summary (ВЗ/НЗ) более удобными для тапов */
 #book-dates details {
   margin: 4px 0 10px;
 }
+
 #book-dates summary {
   list-style: none;
   cursor: pointer;
-  padding: 10px 12px;
+  padding: 8px 10px;
   background: #fffdf5;
   border: 1px solid #eadfbe;
   border-radius: 10px;
   font-weight: 700;
-}
-#book-dates summary::-webkit-details-marker { display: none; }
-
-/* Мобильные правки заголовка */
-@media (max-width: 600px) {
-  #book-dates h2 { font-size: 1.4em; line-height: 1.25; }
-}
-
-@media (max-width: 480px){
-  .book-card{ padding: 6px 10px; margin: 6px 0; }
-  .book-card h3{ font-size: 1.18rem; }
-}
-
-@media (max-width: 480px){
-  section div:has(.info-btn){ padding: 6px 10px !important; margin: 8px 0 !important; }
-}
-/* === Compact book cards & headings === */
-#book-dates { line-height: 1.3; }                       /* общий межстрочный интервал поменьше */
-#book-dates h3, 
-#book-dates p { margin: 4px 0; }                        /* убираем лишние внешние отступы у текста */
-
-/* summary (Ветхий/Новый Завет) — чуть компактнее */
-#book-dates summary { padding: 8px 10px; }              /* было 10px 12px */
-
-/* карточки-строки в мобильном режиме: меньше внутренний отступ и зазор между карточками */
-@media (max-width: 480px) {
-  .book-dates tbody tr { 
-    padding: 4px 10px;                                  /* было 6px 10px */
-    margin-bottom: 4px;                                 /* было 6px */
-  }
-}
-
-/* секции, где есть .info-btn (текущие “карточки” с кнопкой i) — ещё компактнее */
-section div:has(.info-btn){
-  padding: 6px 10px !important;                         /* было 8px 12px */
-  margin: 8px 0 !important;                             /* было 10px 0 */
-}
-section div:has(.info-btn) h3 { margin: 2px 0 4px; }    /* вместо 0 0 6px */
-section div:has(.info-btn) .years { margin: 0; }
-
-/* arrows for details/summary */
-#book-dates summary {
   position: relative;
-  padding-right: 28px;               /* место под стрелку справа */
+  padding-right: 28px;
+}
+
+#book-dates summary::-webkit-details-marker {
+  display: none;
 }
 
 #book-dates summary::after {
-  content: "▾";                      /* стрелка вниз (закрыто) */
+  content: "▾";
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  opacity: .8;
 }
 
 #book-dates details[open] summary::after {
-  content: "▴";                      /* стрелка вверх (открыто) */
+  content: "▴";
 }
 
-abbr[title] {
-  text-decoration: underline dotted;
-  cursor: help;
-  position: relative;
+table.book-dates {
+  width: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
 }
 
-abbr[title]:hover::after,
-abbr[title]:focus::after {
-  content: attr(title);
-  position: absolute;
-  background: #333;
-  color: #fff;
-  padding: 4px 6px;
-  border-radius: 4px;
-  font-size: 0.85em;
+table.book-dates th,
+table.book-dates td {
+  padding: 2px 6px;
+  vertical-align: top;
+  text-align: left;
   white-space: nowrap;
-  top: 120%;  /* ниже текста */
-  left: 0;
-  z-index: 10;
 }
 
-/* Кастомная подсказка для года (работает и в модалке) */
-.tip {
-  position: relative;
-  text-decoration: underline dotted;
-  cursor: help;
-}
-.tip:focus { outline: none; }
-
-/* Сам пузырёк */
-.tip::after {
-  content: attr(data-tip);
-  position: absolute;
-  left: 0;
-  top: 1.35em;             /* ниже текста; можно подправить */
-  background: #333;
-  color: #fff;
-  padding: 6px 8px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  line-height: 1.25;
-  white-space: pre-line;   /* ← перенос по \n */
-  box-shadow: 0 6px 18px rgba(0,0,0,.2);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(4px);
-  transition: opacity .12s ease;
-  z-index: 1000;
-  max-width: 280px;
+table.book-dates th:nth-child(2),
+table.book-dates td:nth-child(2) {
+  padding-left: 6px;
 }
 
-/* показываем по ховеру/фокусу (тап на мобиле даёт фокус) */
-.tip:hover::after,
-.tip:focus::after {
-  opacity: 1;
+.bd-book-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+  white-space: nowrap;
+}
+
+.bd-book-name {
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.bd-info {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 20px;
+  cursor: pointer;
 }
 
 /* ===== Salvation popup only ===== */
@@ -2080,6 +1855,21 @@ abbr[title]:focus::after {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1px;
+}
+
+.bd-inline-box {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 0.15rem;
+}
+
+.bd-inline-box strong {
+  white-space: nowrap;
+}
+
+.bd-inline-box .scripture-close-row {
+  margin-bottom: -0.5rem;
 }
 
 .scripture-close {
@@ -4671,4 +4461,169 @@ body.daily-verse-search-open {
     padding-right: 0.35rem;
     letter-spacing: -0.02em;
   }
+}
+
+.footer-timeline-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #4a6fdc;
+  text-decoration: underline;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-timeline-link:hover {
+  color: #1558b0;
+}
+
+.footer-timeline-box {
+  position: relative;
+  margin-top: -1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.85rem;
+  background: #fffdf8;
+  border: 1px solid #eadfbe;
+  border-radius: 12px;
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.06);
+  clear: both;
+}
+
+.footer-timeline-box #footer-book-dates {
+  display: block;
+  width: 100%;
+}
+
+.footer-timeline-box[hidden] {
+  display: none !important;
+}
+
+.footer-timeline-box #book-dates,
+.footer-timeline-box #footer-book-dates {
+  margin-top: 0;
+}
+
+.footer-timeline-box .bd-search {
+  margin-top: 0 !important;
+}
+
+.footer-timeline-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.55rem;
+  border: none;
+  background: transparent;
+  color: #777;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.footer-timeline-close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 1rem !important;
+  }
+
+  .container {
+    min-height: auto !important;
+  }
+
+  .footer {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Bible Timeline mobile fix */
+
+@media (max-width: 768px) {
+
+  table.book-dates {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table.book-dates td:first-child,
+  table.book-dates th:first-child {
+    width: 72%;
+  }
+
+  table.book-dates td:nth-child(2),
+  table.book-dates th:nth-child(2) {
+    width: 28%;
+    padding-left: 6px;
+  }
+
+  .bd-book-cell {
+    gap: 0.1rem;
+    padding-left: 6px;
+  }
+}
+
+/* ===== Bible Timeline mobile fix ===== */
+
+.bd-inline td {
+  padding: 0 !important;
+  white-space: normal !important;
+}
+
+.bd-inline-box {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+
+  background: #f8f3fb;
+  border: 1px solid #e6dcef;
+  border-radius: 10px;
+
+  padding: 10px 14px;
+  margin: 6px 0;
+
+  line-height: 1.45;
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.bd-inline-box strong {
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .bd-inline-box {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
+
+/* ===== Bible Timeline inline card close fix ===== */
+
+.bd-inline-box {
+  position: relative;
+  padding: 0.6rem 0.8rem 0.7rem;
+}
+
+.bd-inline-title {
+  margin: 0 1.4rem 0.35rem 0;
+}
+
+.bd-inline-close {
+  position: absolute;
+  top: -0.15rem;
+  right: -0.35rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #777;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.bd-inline-close:hover {
+  opacity: 1;
 }

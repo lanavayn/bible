@@ -153,8 +153,17 @@
     root.innerHTML = `
         <input type="search" class="bd-search" placeholder="${t.search}"
           style="margin:.5rem 0; width:100%; max-width:420px; padding:.5rem .7rem; border:1px solid #eadfbe; border-radius:8px;">
-        <details><summary><strong>${t.ot}</strong></summary><div class="bd-ot">Загрузка…</div></details>
-        <details open><summary><strong>${t.nt}</strong></summary><div class="bd-nt">Загрузка…</div></details>
+        <h1 class="hero-title">${t.title}</h1>
+
+          <details id="old-testament">
+            <summary><strong>${t.ot}</strong></summary>
+            <div class="bd-ot">Загрузка…</div>
+          </details>
+
+          <details id="new-testament">
+            <summary><strong>${t.nt}</strong></summary>
+            <div class="bd-nt">Загрузка…</div>
+          </details>
     `;
     // Accordion поведение для Ветхий/Новый Завет
     const allDetails = root.querySelectorAll("details");
@@ -198,7 +207,7 @@
     // клики по "Подробнее" и закрытие модалки
     root.addEventListener("click", (e) => {
       const btn = e.target.closest(".bd-info");
-      if (e.target.classList.contains("scripture-close")) {
+      if (e.target.classList.contains("bd-inline-close")) {
         const row = e.target.closest(".bd-inline");
         if (row) row.remove();
         return;
@@ -242,11 +251,12 @@
         <tr class="bd-inline">
           <td colspan="2">
             <div class="bd-inline-box">
-              <strong>${title}</strong>
-              <div class="scripture-close-row">
-                <button class="scripture-close" type="button">×</button>
+              <button class="bd-inline-close" type="button">×</button>
+      
+              <div class="bd-inline-title">
+                <strong>${title}</strong>
               </div>
-              <br>
+      
               <strong>${t.authorLabel}:</strong> ${author}<br>
               <strong>${isRu ? 'Годы' : 'Dates'}:</strong> ${year}<br>
               ${place ? `<strong>${isRu ? 'Место' : 'Place'}:</strong> ${place}<br>` : ""}
