@@ -446,13 +446,6 @@ h1,
   margin-bottom: 0.7rem;
 }
 
-.scripture-close-row {
-  position: absolute;
-  top: 0.05rem;
-  right: 0.4rem;
-  margin-bottom: 0;
-}
-
 .scripture-close {
   background: transparent;
   border: none;
@@ -1862,6 +1855,14 @@ table.book-dates td:nth-child(2) {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1px;
+}
+
+.bd-inline-box {
+  position: relative;
+}
+
+.bd-inline-box .scripture-close-row {
+  margin-bottom: 0.5rem;
 }
 
 .scripture-close {
@@ -4590,4 +4591,29 @@ body.daily-verse-search-open {
     font-size: 0.9rem;
     padding: 8px 10px;
   }
+}
+
+/* ===== Bible Timeline inline card close fix ===== */
+
+.bd-inline-box {
+  position: relative;
+  padding-top: 1.9rem;
+}
+
+.bd-inline-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.55rem;
+  border: none;
+  background: transparent;
+  color: #777;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.75;
+  padding: 0;
+}
+
+.bd-inline-close:hover {
+  opacity: 1;
 }

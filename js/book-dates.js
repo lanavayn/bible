@@ -207,7 +207,7 @@
     // клики по "Подробнее" и закрытие модалки
     root.addEventListener("click", (e) => {
       const btn = e.target.closest(".bd-info");
-      if (e.target.classList.contains("scripture-close")) {
+      if (e.target.classList.contains("bd-inline-close")) {
         const row = e.target.closest(".bd-inline");
         if (row) row.remove();
         return;
@@ -252,9 +252,7 @@
           <td colspan="2">
             <div class="bd-inline-box">
               <strong>${title}</strong>
-              <div class="scripture-close-row">
-                <button class="scripture-close" type="button">×</button>
-              </div>
+              <button class="bd-inline-close" type="button">×</button>
               <br>
               <strong>${t.authorLabel}:</strong> ${author}<br>
               <strong>${isRu ? 'Годы' : 'Dates'}:</strong> ${year}<br>
