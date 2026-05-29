@@ -251,9 +251,12 @@
         <tr class="bd-inline">
           <td colspan="2">
             <div class="bd-inline-box">
-              <strong>${title}</strong>
               <button class="bd-inline-close" type="button">×</button>
-              <br>
+      
+              <div class="bd-inline-title">
+                <strong>${title}</strong>
+              </div>
+      
               <strong>${t.authorLabel}:</strong> ${author}<br>
               <strong>${isRu ? 'Годы' : 'Dates'}:</strong> ${year}<br>
               ${place ? `<strong>${isRu ? 'Место' : 'Place'}:</strong> ${place}<br>` : ""}
