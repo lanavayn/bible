@@ -4555,3 +4555,39 @@ body.daily-verse-search-open {
     padding-left: 6px;
   }
 }
+
+/* ===== Bible Timeline mobile fix ===== */
+
+.bd-inline td {
+  padding: 0 !important;
+  white-space: normal !important;
+}
+
+.bd-inline-box {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+
+  background: #f8f3fb;
+  border: 1px solid #e6dcef;
+  border-radius: 10px;
+
+  padding: 10px 14px;
+  margin: 6px 0;
+
+  line-height: 1.45;
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.bd-inline-box strong {
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .bd-inline-box {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
