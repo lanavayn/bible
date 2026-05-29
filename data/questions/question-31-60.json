@@ -188,6 +188,140 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-34",
+            "day": 34,
+          
+            "topic_ru": "Любовь к Богу",
+            "topic_en": "Love for God",
+          
+            "question_ru": "Какая наибольшая заповедь в законе?",
+            "question_en": "What is the greatest commandment in the law?",
+          
+            "reference_ru": "Матфея 22:37-38",
+            "reference_en": "Matthew 22:37-38",
+          
+            "text_ru": "Иисус сказал ему: возлюби Господа Бога твоего всем сердцем твоим и всею душею твоею и всем разумением твоим: сия есть первая и наибольшая заповедь.",
+            "text_en": "Jesus said to him, 'You shall love the Lord your God with all your heart, with all your soul, and with all your mind.' This is the first and great commandment.",
+          
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 22,
+              "verse": "37-38"
+            },
+          
+            "answer_ru": "Наибольшая заповедь — любить Бога всем сердцем, всей душой и всем разумением.",
+            "answer_en": "The greatest commandment is to love God with all your heart, soul, and mind.",
+          
+            "related": [
+              {
+                "reference_ru": "Второзаконие 6:5",
+                "reference_en": "Deuteronomy 6:5",
+          
+                "text_ru": "И люби Господа Бога твоего всем сердцем твоим, и всею душею твоею, и всеми силами твоими.",
+                "text_en": "You shall love the Lord your God with all your heart, with all your soul, and with all your might.",
+          
+                "verse_ref": {
+                  "book": "Deuteronomy",
+                  "chapter": 6,
+                  "verse": "5"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 14:15",
+                "reference_en": "John 14:15",
+          
+                "text_ru": "Если любите Меня, соблюдите Мои заповеди.",
+                "text_en": "If you love me, keep my commandments.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 14,
+                  "verse": "15"
+                }
+              },
+              {
+                "reference_ru": "1 Иоанна 5:3",
+                "reference_en": "1 John 5:3",
+          
+                "text_ru": "Ибо это есть любовь к Богу, чтобы мы соблюдали заповеди Его; и заповеди Его не тяжки.",
+                "text_en": "For this is the love of God, that we keep his commandments. His commandments are not burdensome.",
+          
+                "verse_ref": {
+                  "book": "1-John",
+                  "chapter": 5,
+                  "verse": "3"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-35",
+            "day": 35,
+          
+            "topic_ru": "Любовь к ближнему",
+            "topic_en": "Love for Others",
+          
+            "question_ru": "Какая заповедь является второй по важности?",
+            "question_en": "What is the second greatest commandment?",
+          
+            "reference_ru": "Матфея 22:39",
+            "reference_en": "Matthew 22:39",
+          
+            "text_ru": "Вторая же подобная ей: возлюби ближнего твоего, как самого себя.",
+            "text_en": "A second likewise is this: 'You shall love your neighbor as yourself.'",
+          
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 22,
+              "verse": "39"
+            },
+          
+            "answer_ru": "Вторая по важности заповедь — любить ближнего как самого себя.",
+            "answer_en": "The second greatest commandment is to love your neighbor as yourself.",
+          
+            "related": [
+              {
+                "reference_ru": "Левит 19:18",
+                "reference_en": "Leviticus 19:18",
+          
+                "text_ru": "Не мсти и не имей злобы на сынов народа твоего, но люби ближнего твоего, как самого себя. Я Господь [Бог ваш].",
+                "text_en": "You shall not take vengeance, nor bear any grudge against the children of your people; but you shall love your neighbor as yourself. I am the Lord.",
+          
+                "verse_ref": {
+                  "book": "Leviticus",
+                  "chapter": 19,
+                  "verse": "18"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 13:34",
+                "reference_en": "John 13:34",
+          
+                "text_ru": "Заповедь новую даю вам, да любите друг друга; как Я возлюбил вас, так и вы да любите друг друга.",
+                "text_en": "A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 13,
+                  "verse": "34"
+                }
+              },
+              {
+                "reference_ru": "Римлянам 13:10",
+                "reference_en": "Romans 13:10",
+          
+                "text_ru": "Любовь не делает ближнему зла; итак любовь есть исполнение закона.",
+                "text_en": "Love does no harm to a neighbor. Therefore love is the fulfillment of the law.",
+          
+                "verse_ref": {
+                  "book": "Romans",
+                  "chapter": 13,
+                  "verse": "10"
+                }
+              }
+            ]
           }
     ]
   }
