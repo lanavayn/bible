@@ -1390,16 +1390,14 @@ table.book-dates td { word-wrap: break-word; }
 
 /* Default desktop/tablet widths */
 table.book-dates th:nth-child(1),
-table.book-dates td:nth-child(1) { width: 45%; } /* Book */
+table.book-dates td:nth-child(1) { width: 62%; } /* Book */
 table.book-dates th:nth-child(2),
-table.book-dates td:nth-child(2) { width: 40%; } /* Date */
-table.book-dates th:nth-child(3),
-table.book-dates td:nth-child(3) { width: 15%; text-align: center; } /* Info */
+table.book-dates td:nth-child(2) { width: 38%; } /* Date */
 
 /* Align table headers to the start of each column */
 table.book-dates th { 
   text-align: left;           /* left align all headers */
-  padding-left: 8px;          /* match td padding for nice alignment */
+  padding-left: 1px;          /* match td padding for nice alignment */
   vertical-align: bottom;     /* optional: sits closer to the row content */
 }
 
@@ -1417,7 +1415,8 @@ table.book-dates th:nth-child(3) {
 
 .bd-book-name {
   flex: 1;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .bd-info {
@@ -1448,24 +1447,15 @@ table.book-dates th:nth-child(3) {
 /* 📱 Medium phones */
 @media (max-width: 640px) {
   table.book-dates th, 
-  table.book-dates td { padding: 6px 8px; }
+  table.book-dates td { padding: 4px 4px; }
 
   table.book-dates th:nth-child(1),
-  table.book-dates td:nth-child(1) { width: 55%; }
+  table.book-dates td:nth-child(1) { width: 62%; }
 
   table.book-dates th:nth-child(2),
-  table.book-dates td:nth-child(2) { width: 35%; }
+  table.book-dates td:nth-child(2) { width: 38%; }
 
-  table.book-dates th:nth-child(3),
-  table.book-dates td:nth-child(3) { width: 10%; }
 
-  /* fit the ℹ︎ button */
-  .book-dates .bd-actions .bd-info {
-    width: 34px;      /* было 28px */
-    height: 34px;     /* было 28px */
-    line-height: 34px;
-    font-size: 18px;  /* добавь, чтобы «i» стало крупнее */
-  }
  
 }
 
@@ -1475,23 +1465,11 @@ table.book-dates th:nth-child(3) {
   table.book-dates td { padding: 5px 7px; }
 
   table.book-dates th:nth-child(1),
-  table.book-dates td:nth-child(1) { width: 52%; }
+  table.book-dates td:nth-child(1) { width: 62%; }
 
   table.book-dates th:nth-child(2),
   table.book-dates td:nth-child(2) { width: 38%; }
 
-  table.book-dates th:nth-child(3),
-  table.book-dates td:nth-child(3) { width: 10%; }
-
-  .book-dates .bd-actions .bd-info {
-    width: 34px; height: 34px; line-height: 34px;
-  }
-}
-
-.book-dates .bd-actions .bd-info-icon {
-  font-size: 16px;
-  color: white;
-  font-weight: 700;
 }
 
 .book-dates .bd-actions .bd-info:hover{ filter:brightness(.98); }
@@ -4749,4 +4727,52 @@ body.daily-verse-search-open {
   .footer {
     margin-bottom: 0 !important;
   }
+}
+
+/* === FIX: Bible chronology mobile/table layout === */
+
+table.book-dates {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.book-dates th,
+table.book-dates td {
+  padding: 3px 3px !important;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+table.book-dates th:nth-child(1),
+table.book-dates td:nth-child(1) {
+  width: 58% !important;
+}
+
+table.book-dates th:nth-child(2),
+table.book-dates td:nth-child(2) {
+  width: 42% !important;
+}
+
+.bd-book-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.bd-book-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+}
+
+.bd-book-cell .bd-info {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  line-height: 18px;
+  padding: 0;
+  font-size: 0.75rem;
 }
