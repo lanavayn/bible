@@ -423,15 +423,13 @@ h1,
   border-radius: var(--radius-lg);
   padding: 0.5rem 0.75rem;
   position: relative;
+  text-align: left;
+  animation: noteFadeIn 0.28s ease-out;
 }
 .scripture-note-box:hover {
   box-shadow: 0 0.35rem 0.9rem rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
 }
-.scripture-note-box {
-  animation: noteFadeIn 0.28s ease-out;
-}
-
 @keyframes noteFadeIn {
   from {
     opacity: 0;
@@ -470,11 +468,6 @@ h1,
 .scripture-related-title {
   font-size: 1rem;
   margin-bottom: 0.375rem;
-}
-
-.scripture-related-list {
-  margin: 0;
-  padding-left: 1.125rem;
 }
 
 .scripture-related-item {
@@ -1014,7 +1007,7 @@ li {
 
 .footer-help-box {
   display: block;
-  margin-top: -1.5rem;
+  margin-top: 0.1rem;
   position: relative;
   background: #f8f3fb;
   border: 1px solid #e6dcef;
@@ -1899,6 +1892,7 @@ table.book-dates td:nth-child(2) {
 .scripture-related-list {
   margin: 0;
   padding-left: 18px;
+  text-align: left;
 }
 
 .scripture-related-item {
@@ -3130,7 +3124,7 @@ table.book-dates th:nth-child(2) {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--color-text);
-  text-align: center;
+  text-align: left;
   max-width: 100%;
 }
 
@@ -3809,7 +3803,6 @@ table.book-dates th:nth-child(2) {
 
 @media (max-width: 600px) {
   .daily-help-inline,
-  .question-creation-help-inline,
   .daily-motto-help-inline,
   .question-motto-help-inline {
     display: block;
@@ -4626,4 +4619,72 @@ body.daily-verse-search-open {
 
 .bd-inline-close:hover {
   opacity: 1;
+}
+
+.question-creation-help-inline {
+  position: relative;
+  display: inline-block;
+}
+
+.question-creation-help-inline .footer-help-box {
+  position: absolute;
+  left: 0;
+  top: 1.4em;
+
+  width: 280px;
+  max-width: min(280px, calc(100vw - 40px));
+
+  z-index: 9999;
+  white-space: normal;
+}
+
+#question-of-day .question-creation-help-inline {
+  position: relative;
+  display: inline-block;
+}
+
+#question-of-day .question-creation-help-inline .footer-help-box {
+  position: absolute;
+  top: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  width: 260px;
+  max-width: 260px;
+
+  white-space: normal;
+  text-align: left;
+}
+
+#question-of-day .daily-verse-card,
+#question-of-day .scripture-note-box,
+#question-of-day .scripture-related-item {
+  overflow: visible;
+}
+
+#question-of-day .footer-help-inline[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  #question-of-day .question-creation-help-inline {
+    display: inline !important;
+    position: static !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  #question-of-day .question-creation-help-inline .footer-help-box {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: min(300px, calc(100vw - 32px)) !important;
+    max-width: calc(100vw - 32px) !important;
+
+    z-index: 99999 !important;
+    text-align: left;
+  }
 }

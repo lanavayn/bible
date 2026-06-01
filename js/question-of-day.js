@@ -2,7 +2,7 @@ import { buildBibleLink } from "./bibleLinks.js";
 
 //
 // PROD date Anpril 30 2026
-const START_DATE = "2026-04-30";
+//const START_DATE = "2026-04-30";
 
 //test day 24 as tomorrow 
 //const START_DATE = "2026-04-27";
@@ -10,7 +10,7 @@ const START_DATE = "2026-04-30";
 //const START_DATE = "2026-04-26";
 
 //test  
-//const START_DATE = "2026-03-21";
+const START_DATE = "2026-03-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -312,6 +312,34 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const closeBtn = root.querySelector(".dv-close");
       const searchOpenBtn = root.querySelector(".question-search-open");
 
+      function closeAllQuestionHelp(exceptInline = null) {
+        root.querySelectorAll(".footer-help-inline").forEach(inline => {
+          if (inline !== exceptInline) {
+            inline.setAttribute("hidden", "");
+          }
+        });
+      
+        root.querySelectorAll(".footer-help-btn, .question-tomorrow-btn").forEach(btn => {
+          btn.setAttribute("aria-expanded", "false");
+        });
+      }
+      
+      function toggleQuestionHelp(btn, inline) {
+        if (!btn || !inline) return;
+      
+        const willOpen = inline.hasAttribute("hidden");
+      
+        closeAllQuestionHelp(inline);
+      
+        if (willOpen) {
+          inline.removeAttribute("hidden");
+          btn.setAttribute("aria-expanded", "true");
+        } else {
+          inline.setAttribute("hidden", "");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      }
+
       if (searchOpenBtn) {
         searchOpenBtn.addEventListener("click", () => {
           openQuestionSearch();
@@ -322,17 +350,9 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         const mottoHelpClose = root.querySelector(".question-motto-help-close");
 
         if (mottoHelpBtn && mottoHelpInline) {
-        mottoHelpBtn.addEventListener("click", () => {
-            const isOpen = !mottoHelpInline.hasAttribute("hidden");
-
-            if (isOpen) {
-            mottoHelpInline.setAttribute("hidden", "");
-            mottoHelpBtn.setAttribute("aria-expanded", "false");
-            } else {
-            mottoHelpInline.removeAttribute("hidden");
-            mottoHelpBtn.setAttribute("aria-expanded", "true");
-            }
-        });
+          mottoHelpBtn.addEventListener("click", () => {
+            toggleQuestionHelp(mottoHelpBtn, mottoHelpInline);
+          });
         }
 
         if (mottoHelpClose && mottoHelpInline && mottoHelpBtn) {
@@ -348,15 +368,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
         if (tomorrowBtn && tomorrowBox) {
           tomorrowBtn.addEventListener("click", () => {
-            const isOpen = !tomorrowBox.hasAttribute("hidden");
-
-            if (isOpen) {
-              tomorrowBox.setAttribute("hidden", "");
-              tomorrowBtn.setAttribute("aria-expanded", "false");
-            } else {
-              tomorrowBox.removeAttribute("hidden");
-              tomorrowBtn.setAttribute("aria-expanded", "true");
-            }
+            toggleQuestionHelp(tomorrowBtn, tomorrowBox);
           });
         }
 
@@ -372,15 +384,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           if (!inline) return;
         
           btn.addEventListener("click", () => {
-            const isOpen = !inline.hasAttribute("hidden");
-        
-            if (isOpen) {
-              inline.setAttribute("hidden", "");
-              btn.setAttribute("aria-expanded", "false");
-            } else {
-              inline.removeAttribute("hidden");
-              btn.setAttribute("aria-expanded", "true");
-            }
+            toggleQuestionHelp(btn, inline);
           });
         });
         
@@ -727,6 +731,20 @@ function addQuestionCreationHelp(text, lang) {
       /(тварь|твари|тварью|тварей|тварею|творение)/i,
       `$1${creationHelpHtml}`
     );
+
+    const blessedHelpHtml = `
+    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «блажен»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+      <span class="footer-help-box daily-help-box">
+        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+        В Синодальном переводе слово «блажен» означает «счастлив» или «благословен Богом». Речь идёт о глубоком счастье, которое приходит от жизни с Богом.
+      </span>
+    </span>
+  `;
+
+  safeText = safeText.replace(
+    /(Блаженны|Блажен|блаженны|блажен)/,
+    `$1${blessedHelpHtml}`
+  );
 
     const pronounHelpHtml = `
       <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
