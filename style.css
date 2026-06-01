@@ -985,8 +985,9 @@ li {
 }
 
 .footer-help-inline {
-  display: block;
-  margin-top: 0.25rem;
+  display: center;
+  width: 100%;
+  margin-top: 0.35rem;
   margin-bottom: 0.35rem;
 }
 
@@ -4621,23 +4622,6 @@ body.daily-verse-search-open {
   opacity: 1;
 }
 
-.question-creation-help-inline {
-  position: relative;
-  display: inline-block;
-}
-
-.question-creation-help-inline .footer-help-box {
-  position: absolute;
-  left: 0;
-  top: 1.4em;
-
-  width: 280px;
-  max-width: min(280px, calc(100vw - 40px));
-
-  z-index: 9999;
-  white-space: normal;
-}
-
 #question-of-day .question-creation-help-inline {
   position: relative;
   display: inline-block;
@@ -4667,24 +4651,32 @@ body.daily-verse-search-open {
   display: none !important;
 }
 
+#question-of-day .question-creation-help-inline {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+#question-of-day .question-creation-help-inline .footer-help-box {
+  position: absolute;
+  top: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 260px;
+  max-width: min(260px, calc(100vw - 32px));
+
+  z-index: 9999;
+  white-space: normal;
+  text-align: left;
+}
+
 @media (max-width: 600px) {
-  #question-of-day .question-creation-help-inline {
-    display: inline !important;
-    position: static !important;
-    width: auto !important;
-    margin: 0 !important;
-  }
-
   #question-of-day .question-creation-help-inline .footer-help-box {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-
-    width: min(300px, calc(100vw - 32px)) !important;
-    max-width: calc(100vw - 32px) !important;
-
-    z-index: 99999 !important;
-    text-align: left;
+    left: 0;
+    transform: none;
+    width: min(260px, calc(100vw - 32px));
   }
 }
