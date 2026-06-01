@@ -479,6 +479,17 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           });
         }
 
+        function closeAllDailyHelp(exceptInline = null) {
+          document.querySelectorAll(".footer-help-inline").forEach(inline => {
+            if (inline !== exceptInline) {
+              inline.setAttribute("hidden", "");
+            }
+          });
+
+          document.querySelectorAll(".footer-help-btn, .daily-tomorrow-btn, .question-tomorrow-btn").forEach(btn => {
+            btn.setAttribute("aria-expanded", "false");
+          });
+        }
         root.querySelectorAll(".daily-help-btn").forEach(btn => {
           const inline = btn.nextElementSibling;
           if (!inline) return;
@@ -486,6 +497,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           btn.addEventListener("click", () => {
             const isOpen = !inline.hasAttribute("hidden");
         
+            closeAllDailyHelp(inline);
+
             if (isOpen) {
               inline.setAttribute("hidden", "");
               btn.setAttribute("aria-expanded", "false");
@@ -510,6 +523,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             mottoHelpBtn.addEventListener("click", () => {
               const isOpen = !mottoHelpInline.hasAttribute("hidden");
           
+              closeAllDailyHelp(mottoHelpInline);
+
               if (isOpen) {
                 mottoHelpInline.setAttribute("hidden", "");
                 mottoHelpBtn.setAttribute("aria-expanded", "false");
@@ -534,6 +549,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           if (tomorrowBtn && tomorrowBox) {
             tomorrowBtn.addEventListener("click", () => {
               const isOpen = !tomorrowBox.hasAttribute("hidden");
+
+              closeAllDailyHelp(tomorrowBox);
 
               if (isOpen) {
                 tomorrowBox.setAttribute("hidden", "");

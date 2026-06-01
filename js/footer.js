@@ -77,12 +77,30 @@ document.addEventListener("DOMContentLoaded", () => {
 const helpInline = footer.querySelector(".footer-help-inline");
 const helpClose = footer.querySelector(".footer-help-close");
 
+
+if (helpBtn && helpInline) {
+  helpBtn.insertAdjacentElement("afterend", helpInline);
+}
+function closeAllFooterHelp(exceptInline = null) {
+  document.querySelectorAll(".footer-help-inline").forEach((inline) => {
+    if (inline !== exceptInline) {
+      inline.setAttribute("hidden", "");
+    }
+  });
+
+  document.querySelectorAll(".footer-help-btn, .daily-tomorrow-btn, .question-tomorrow-btn").forEach((btn) => {
+    btn.setAttribute("aria-expanded", "false");
+  });
+}
+
 if (helpBtn && helpInline) {
   helpBtn.addEventListener("click", () => {
     const timelineBox = footer.querySelector(".footer-timeline-box");
     if (timelineBox) timelineBox.hidden = true;
 
     const isOpen = !helpInline.hasAttribute("hidden");
+
+    closeAllFooterHelp(helpInline);
 
     if (isOpen) {
       helpInline.setAttribute("hidden", "");

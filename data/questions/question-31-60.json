@@ -322,6 +322,80 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-36",
+            "day": 36,
+          
+            "topic_ru": "Счастье",
+            "topic_en": "True Happiness",
+          
+            "question_ru": "Что такое счастье?",
+            "question_en": "What is true happiness?",
+          
+            "reference_ru": "Псалом 143:15",
+            "reference_en": "Psalm 144:15",
+          
+            "text_ru": "Блажен народ, у которого это есть. Блажен народ, у которого Господь есть Бог.",
+            "text_en": "Happy are the people who are in such a situation. Happy are the people whose God is the Lord.",
+          
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 143,
+                "verse": "15"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 144,
+                "verse": "15"
+              }
+            },
+          
+            "answer_ru": "Настоящее счастье приходит от жизни с Богом и доверия Ему.",
+            "answer_en": "True happiness comes from living with God and trusting Him.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 1:1-2",
+                "reference_en": "Psalm 1:1-2",
+          
+                "text_ru": "Блажен муж, который не ходит на совет нечестивых и не стоит на пути грешных, и не сидит в собрании развратителей, но в законе Господа воля его, и о законе Его размышляет он день и ночь.",
+                "text_en": "Blessed is the man who does not walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers; but his delight is in the Lord’s law. On his law he meditates day and night.",
+          
+                "verse_ref": {
+                  "book": "Psalms",
+                  "chapter": 1,
+                  "verse": "1-2"
+                }
+              },
+              {
+                "reference_ru": "Луки 11:28",
+                "reference_en": "Luke 11:28",
+          
+                "text_ru": "А Он сказал: блаженны слышащие слово Божие и соблюдающие его.",
+                "text_en": "But he said, “On the contrary, blessed are those who hear the word of God and keep it.”",
+          
+                "verse_ref": {
+                  "book": "Luke",
+                  "chapter": 11,
+                  "verse": "28"
+                }
+              },
+              {
+                "reference_ru": "Притчи 16:20",
+                "reference_en": "Proverbs 16:20",
+          
+                "text_ru": "Кто ведет дело разумно, тот найдет благо, и кто надеется на Господа, тот блажен.",
+                "text_en": "He who heeds the Word finds prosperity. Whoever trusts in the Lord is blessed",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 16,
+                  "verse": "20"
+                }
+              }
+            ]
           }
     ]
   }
