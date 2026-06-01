@@ -985,10 +985,11 @@ li {
 }
 
 .footer-help-inline {
-  display: center;
+  display: block;
   width: 100%;
   margin-top: 0.35rem;
   margin-bottom: 0.35rem;
+  box-sizing: border-box;
 }
 
 .footer-help-inline[hidden] {
@@ -3805,7 +3806,8 @@ table.book-dates th:nth-child(2) {
 @media (max-width: 600px) {
   .daily-help-inline,
   .daily-motto-help-inline,
-  .question-motto-help-inline {
+  .question-motto-help-inline,
+  .question-creation-help-inline {
     display: block;
     width: 100%;
     margin: 0.45rem auto 0;
@@ -4623,20 +4625,14 @@ body.daily-verse-search-open {
 }
 
 #question-of-day .question-creation-help-inline {
-  position: relative;
   display: inline-block;
+  margin-left: 0;
+  vertical-align: middle;
 }
 
 #question-of-day .question-creation-help-inline .footer-help-box {
-  position: absolute;
-  top: 1.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-
-  width: 260px;
-  max-width: 260px;
-
+  min-width: 0;
+  max-width: 100%;
   white-space: normal;
   text-align: left;
 }
@@ -4649,34 +4645,4 @@ body.daily-verse-search-open {
 
 #question-of-day .footer-help-inline[hidden] {
   display: none !important;
-}
-
-#question-of-day .question-creation-help-inline {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  margin: 0;
-  vertical-align: baseline;
-}
-
-#question-of-day .question-creation-help-inline .footer-help-box {
-  position: absolute;
-  top: 1.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 260px;
-  max-width: min(260px, calc(100vw - 32px));
-
-  z-index: 9999;
-  white-space: normal;
-  text-align: left;
-}
-
-@media (max-width: 600px) {
-  #question-of-day .question-creation-help-inline .footer-help-box {
-    left: 0;
-    transform: none;
-    width: min(260px, calc(100vw - 32px));
-  }
 }

@@ -313,13 +313,13 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const searchOpenBtn = root.querySelector(".question-search-open");
 
       function closeAllQuestionHelp(exceptInline = null) {
-        root.querySelectorAll(".footer-help-inline").forEach(inline => {
+        document.querySelectorAll(".footer-help-inline").forEach(inline => {
           if (inline !== exceptInline) {
             inline.setAttribute("hidden", "");
           }
         });
       
-        root.querySelectorAll(".footer-help-btn, .question-tomorrow-btn").forEach(btn => {
+        document.querySelectorAll(".footer-help-btn, .question-tomorrow-btn").forEach(btn => {
           btn.setAttribute("aria-expanded", "false");
         });
       }
