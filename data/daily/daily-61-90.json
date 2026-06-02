@@ -1,7 +1,100 @@
 {
     "verses": [
-      { ... },
-      { ... },
-      { ... }
+      {
+        "id": "daily-2026-06-04",
+        "day": 61,
+        "topic": {
+          "ru": "Божья забота",
+          "en": "God's Care"
+        },
+        "reference_ru": "1 Петра 5:7",
+        "reference_en": "1 Peter 5:7",
+        "text_ru": "Все заботы ваши возложите на Него, ибо Он печется о вас.",
+        "text_en": "Casting all your worries on him, because he cares for you.",
+        "verse_ref": {
+          "book": "1-peter",
+          "chapter": 5,
+          "verse": "7"
+        },
+        "interpretation_ru": "Бог приглашает доверить Ему все наши заботы и тревоги.",
+        "interpretation_en": "God invites us to entrust all our cares and worries to Him.",
+        "related": [
+          {
+            "reference_ru": "Матфея 6:34",
+            "reference_en": "Matthew 6:34",
+            "text_ru": "Итак не заботьтесь о завтрашнем дне, ибо завтрашний сам будет заботиться о своем: довольно для каждого дня своей заботы.",
+            "text_en": "Therefore don't be anxious for tomorrow, for tomorrow will be anxious for itself. Each day's own evil is sufficient.",
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 6,
+              "verse": "34"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-05",
+        "day": 62,
+        "topic": {
+          "ru": "Жизнь с избытком",
+          "en": "Abundant Life"
+        },
+        "reference_ru": "Иоанна 10:10",
+        "reference_en": "John 10:10",
+        "text_ru": "Я пришел для того, чтобы имели жизнь и имели с избытком.",
+        "text_en": "I came that they may have life, and may have it abundantly.",
+        "verse_ref": {
+          "book": "John",
+          "chapter": 10,
+          "verse": "10"
+        },
+        "interpretation_ru": "Иисус пришел дать человеку полноценную жизнь в общении с Богом.",
+        "interpretation_en": "Jesus came to give people a full and abundant life in fellowship with God.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 17:3",
+            "reference_en": "John 17:3",
+            "text_ru": "Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
+            "text_en": "This is eternal life, that they should know you, the only true God, and him whom you sent, Jesus Christ.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 17,
+              "verse": "3"
+            }
+          }
+        ]
+      }, 
+      {
+        "id": "daily-2026-06-06",
+        "day": 63,
+        "topic": {
+          "ru": "Бог завершает начатое",
+          "en": "God Finishes What He Starts"
+        },
+        "reference_ru": "Филиппийцам 1:6",
+        "reference_en": "Philippians 1:6",
+        "text_ru": "Будучи уверен в том, что начавший в вас доброе дело будет совершать его даже до дня Иисуса Христа.",
+        "text_en": "Being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ.",
+        "verse_ref": {
+          "book": "Philippians",
+          "chapter": 1,
+          "verse": "6"
+        },
+        "interpretation_ru": "Бог не оставляет Свое дело незавершенным, но продолжает изменять человека.",
+        "interpretation_en": "God does not leave His work unfinished but continues transforming a person.",
+        "related": [
+          {
+            "reference_ru": "1 Фессалоникийцам 5:24",
+            "reference_en": "1 Thessalonians 5:24",
+            "text_ru": "Верен Призывающий вас, Который и сотворит сие.",
+            "text_en": "Faithful is he who calls you, who will also do it.",
+            "verse_ref": {
+              "book": "1-thessalonians",
+              "chapter": 5,
+              "verse": "24"
+            }
+          }
+        ]
+      }
     ]
   }
