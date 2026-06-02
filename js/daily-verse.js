@@ -90,7 +90,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     try {
       const jsonPaths = [
         "/data/daily/daily-1-30.json",
-        "/data/daily/daily-31-60.json"     
+        "/data/daily/daily-31-60.json",
+        "/data/daily/daily-61-90.json"     
       ];
       
       let verses = [];
