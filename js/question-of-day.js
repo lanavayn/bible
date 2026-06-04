@@ -759,6 +759,19 @@ function addQuestionCreationHelp(text, lang) {
       /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
       `$1$2${pronounHelpHtml}`
     );
+    const firmamentHelpHtml = `
+      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «твердь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+        <span class="footer-help-box daily-help-box">
+          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+          Твердь — небесный простор, видимое небо над землёй.
+        </span>
+      </span>
+    `;
+
+    safeText = safeText.replace(
+      /(^|[^А-Яа-яЁё])(твердь)(?=$|[^А-Яа-яЁё])/i,
+      `$1$2${firmamentHelpHtml}`
+    );
   }
 
   if (lang === "en") {
