@@ -4461,7 +4461,7 @@ body.daily-verse-search-open {
 
 .footer-timeline-box {
   position: relative;
-  margin-top: -1.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0.85rem;
   background: #fffdf8;
@@ -4577,7 +4577,7 @@ body.daily-verse-search-open {
   }
 
   .footer-timeline-box {
-    padding-top: -2.5rem;
+    padding-top: 0;
   }
 
   .footer-timeline-close {

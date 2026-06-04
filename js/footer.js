@@ -145,10 +145,11 @@ timelineButtons.forEach((btn) => {
       }
     }
 
+    const timelineLine = btn.closest(".footer-help-row") || btn.closest("span") || btn.parentElement;
     let box = footer.querySelector(".footer-timeline-box");
 
     if (!box) {
-      footer.insertAdjacentHTML("beforeend", `
+      timelineLine.insertAdjacentHTML("afterend", `
         <div class="footer-timeline-box">
           <button class="footer-timeline-close" type="button" aria-label="Close">×</button>
           <div id="footer-book-dates"></div>
@@ -160,6 +161,8 @@ timelineButtons.forEach((btn) => {
       if (window.initBookDates) {
         await window.initBookDates("#footer-book-dates");
       }
+    } else if (timelineLine && box.previousElementSibling !== timelineLine) {
+      timelineLine.insertAdjacentElement("afterend", box);
     }
 
     box.hidden = false;
