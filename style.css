@@ -4595,14 +4595,16 @@ body.daily-verse-search-open {
 
   table.book-dates td:first-child,
   table.book-dates th:first-child {
-    width: 72%;
-    padding-left: 2px;
+    width: 80%;
+    padding-left: 1px;
+    padding-right: 2px;
   }
 
   table.book-dates td:nth-child(2),
   table.book-dates th:nth-child(2) {
-    width: 28%;
-    padding-left: 4px;
+    width: 20%;
+    padding-left: 2px;
+    padding-right: 1px;
   }
 
   table.book-dates th:first-child,
@@ -4634,11 +4636,18 @@ body.daily-verse-search-open {
   table.book-dates td:nth-child(2) {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .bd-book-cell {
     gap: 0.08rem;
     padding-left: 0;
+    white-space: normal;
+  }
+
+  .bd-book-name {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .bd-inline-box {
