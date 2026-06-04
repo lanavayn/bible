@@ -4577,7 +4577,7 @@ body.daily-verse-search-open {
   }
 
   .footer-timeline-box {
-    padding-top: 0;
+    padding: 0 0.45rem 0.85rem;
   }
 
   .footer-timeline-close {
