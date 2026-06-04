@@ -1852,21 +1852,6 @@ table.book-dates td:nth-child(2) {
   margin-bottom: 1px;
 }
 
-.bd-inline-box {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  padding-top: 0.15rem;
-}
-
-.bd-inline-box strong {
-  white-space: nowrap;
-}
-
-.bd-inline-box .scripture-close-row {
-  margin-bottom: -0.5rem;
-}
-
 .scripture-close {
   background: transparent;
   border: none;
@@ -4534,33 +4519,7 @@ body.daily-verse-search-open {
   }
 }
 
-/* Bible Timeline mobile fix */
-
-@media (max-width: 768px) {
-
-  table.book-dates {
-    width: 100%;
-    table-layout: fixed;
-  }
-
-  table.book-dates td:first-child,
-  table.book-dates th:first-child {
-    width: 72%;
-  }
-
-  table.book-dates td:nth-child(2),
-  table.book-dates th:nth-child(2) {
-    width: 28%;
-    padding-left: 6px;
-  }
-
-  .bd-book-cell {
-    gap: 0.1rem;
-    padding-left: 6px;
-  }
-}
-
-/* ===== Bible Timeline mobile fix ===== */
+/* ===== Bible Timeline inline details ===== */
 
 .bd-inline td {
   padding: 0 !important;
@@ -4568,19 +4527,16 @@ body.daily-verse-search-open {
 }
 
 .bd-inline-box {
+  position: relative;
   width: 100%;
   max-width: 420px;
   box-sizing: border-box;
-
   background: #f8f3fb;
   border: 1px solid #e6dcef;
   border-radius: 10px;
-
-  padding: 10px 14px;
+  padding: 0.6rem 0.8rem 0.7rem;
   margin: 6px 0;
-
   line-height: 1.45;
-
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -4588,21 +4544,6 @@ body.daily-verse-search-open {
 .bd-inline-box strong {
   white-space: normal;
 }
-
-@media (max-width: 768px) {
-  .bd-inline-box {
-    font-size: 0.9rem;
-    padding: 8px 10px;
-  }
-}
-
-/* ===== Bible Timeline inline card close fix ===== */
-
-.bd-inline-box {
-  position: relative;
-  padding: 0.6rem 0.8rem 0.7rem;
-}
-
 .bd-inline-title {
   margin: 0 1.4rem 0.35rem 0;
 }
@@ -4622,6 +4563,88 @@ body.daily-verse-search-open {
 
 .bd-inline-close:hover {
   opacity: 1;
+}
+
+/* ===== Bible Timeline mobile ===== */
+
+@media (max-width: 768px) {
+  .category[data-category="book-dates-block"].open .topic-card {
+    padding-top: 1.65rem !important;
+  }
+
+  .category[data-category="book-dates-block"] .topic-card-close-row {
+    top: 0 !important;
+  }
+
+  .footer-timeline-box {
+    padding-top: 1.45rem;
+  }
+
+  .footer-timeline-close {
+    top: 0.1rem;
+  }
+
+  .footer-timeline-box .bd-search {
+    margin-top: 0.35rem !important;
+  }
+
+  table.book-dates {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table.book-dates td:first-child,
+  table.book-dates th:first-child {
+    width: 72%;
+    padding-left: 2px;
+  }
+
+  table.book-dates td:nth-child(2),
+  table.book-dates th:nth-child(2) {
+    width: 28%;
+    padding-left: 4px;
+  }
+
+  table.book-dates th:first-child,
+  table.book-dates th:nth-child(2) {
+    font-size: 0;
+  }
+
+  table.book-dates th:first-child::after,
+  table.book-dates th:nth-child(2)::after {
+    font-size: 0.78rem;
+  }
+
+  html[lang="en"] table.book-dates th:first-child::after {
+    content: "Book";
+  }
+
+  html[lang="en"] table.book-dates th:nth-child(2)::after {
+    content: "Years";
+  }
+
+  html[lang="ru"] table.book-dates th:first-child::after {
+    content: "Книга";
+  }
+
+  html[lang="ru"] table.book-dates th:nth-child(2)::after {
+    content: "Годы";
+  }
+
+  table.book-dates td:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bd-book-cell {
+    gap: 0.08rem;
+    padding-left: 0;
+  }
+
+  .bd-inline-box {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
 }
 
 #question-of-day .question-creation-help-inline {
