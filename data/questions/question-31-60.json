@@ -396,6 +396,73 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-37",
+            "day": 37,
+          
+            "topic_ru": "Библия",
+            "topic_en": "The Bible",
+          
+            "question_ru": "Кто написал Библию?",
+            "question_en": "Who wrote the Bible?",
+          
+            "reference_ru": "2 Тимофею 3:16",
+            "reference_en": "2 Timothy 3:16",
+          
+            "text_ru": "Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности.",
+            "text_en": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness.",
+          
+            "verse_ref": {
+              "book": "2-Timothy",
+              "chapter": 3,
+              "verse": "16"
+            },
+          
+            "answer_ru": "Библия была написана многими людьми, но её истинным Автором является Бог, Который вдохновлял писателей через Святого Духа.",
+            "answer_en": "The Bible was written by many human authors, but its ultimate Author is God, who inspired them through the Holy Spirit.",
+          
+            "related": [
+              {
+                "reference_ru": "2 Петра 1:21",
+                "reference_en": "2 Peter 1:21",
+          
+                "text_ru": "Ибо никогда пророчество не было произносимо по воле человеческой, но изрекали его святые Божии человеки, будучи движимы Духом Святым.",
+                "text_en": "For no prophecy ever came by the will of man, but holy men of God spoke as they were moved by the Holy Spirit.",
+          
+                "verse_ref": {
+                  "book": "2-Peter",
+                  "chapter": 1,
+                  "verse": "21"
+                }
+              },
+              {
+                "reference_ru": "Исход 24:4",
+                "reference_en": "Exodus 24:4",
+          
+                "text_ru": "И написал Моисей все слова Господни.",
+                "text_en": "Moses wrote all the words of the Lord.",
+          
+                "verse_ref": {
+                  "book": "Exodus",
+                  "chapter": 24,
+                  "verse": "4"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 20:31",
+                "reference_en": "John 20:31",
+          
+                "text_ru": "Сие же написано, дабы вы уверовали, что Иисус есть Христос, Сын Божий, и, веруя, имели жизнь во имя Его.",
+                "text_en": "But these are written that you may believe that Jesus is the Christ, the Son of God, and that believing you may have life in his name.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 20,
+                  "verse": "31"
+                }
+              }
+            ]
           }
     ]
   }
