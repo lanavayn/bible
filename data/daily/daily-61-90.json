@@ -217,6 +217,257 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-09",
+        "day": 66,
+        "topic": {
+          "ru": "Основание семьи",
+          "en": "Foundation of the Family"
+        },
+        "reference_ru": "Бытие 2:24",
+        "reference_en": "Genesis 2:24",
+        "text_ru": "Потому оставит человек отца своего и мать свою и прилепится к жене своей; и будут одна плоть.",
+        "text_en": "Therefore a man will leave his father and his mother, and will join with his wife, and they will be one flesh.",
+        "verse_ref": {
+          "book": "genesis",
+          "chapter": 2,
+          "verse": "24"
+        },
+        "interpretation_ru": "Бог установил брак для единства, поддержки и жизни с Ним.",
+        "interpretation_en": "God established marriage for unity, support, and life with Him.",
+        "related": [
+          {
+            "reference_ru": "Матфея 19:5-6",
+            "reference_en": "Matthew 19:5-6",
+            "text_ru": "И сказал: посему оставит человек отца и мать и прилепится к жене своей, и будут два одною плотью, так что они уже не двое, но одна плоть. Итак, что Бог сочетал, того человек да не разлучает.",
+            "text_en": "For this cause a man shall leave his father and mother, and shall be joined to his wife; and the two shall become one flesh. So that they are no more two, but one flesh. What therefore God has joined together, don't let man tear apart.",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 19,
+              "verse": "5-6"
+            }
+          },
+          {
+            "reference_ru": "Екклесиаст 4:9-10",
+            "reference_en": "Ecclesiastes 4:9-10",
+            "text_ru": "Двоим лучше, нежели одному; потому что у них есть доброе вознаграждение в труде их: ибо если упадет один, то другой поднимет товарища своего. Но горе одному, когда упадет, а другого нет, который поднял бы его.",
+            "text_en": "Two are better than one, because they have a good reward for their labor. For if they fall, the one will lift up his fellow; but woe to him who is alone when he falls, and doesn’t have another to lift him up.",
+            "verse_ref": {
+              "book": "ecclesiastes",
+              "chapter": 4,
+              "verse": "9-10"
+            }
+          },
+          {
+            "reference_ru": "Псалом 126:1",
+            "reference_en": "Psalm 127:1",
+            "text_ru": "Если Господь не созиждет дома, напрасно трудятся строящие его; если Господь не охранит города, напрасно бодрствует страж.",
+            "text_en": "Unless the Lord builds the house, they labor in vain who build it. Unless the Lord watches over the city, the watchman guards it in vain.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 126,
+                "verse": "1"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 127,
+                "verse": "1"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-10",
+        "day": 67,
+        "topic": {
+          "ru": "Любовь мужа",
+          "en": "A Husband's Love"
+        },
+        "reference_ru": "Ефесянам 5:25",
+        "reference_en": "Ephesians 5:25",
+        "text_ru": "Мужья, любите своих жен, как и Христос возлюбил Церковь и предал Себя за нее.",
+        "text_en": "Husbands, love your wives, even as Christ also loved the assembly and gave himself up for her.",
+        "verse_ref": {
+          "book": "ephesians",
+          "chapter": 5,
+          "verse": "25"
+        },
+        "interpretation_ru": "Любовь мужа должна быть жертвенной, заботливой и верной.",
+        "interpretation_en": "A husband's love should be sacrificial, caring, and faithful.",
+        "related": [
+          {
+            "reference_ru": "Колоссянам 3:19",
+            "reference_en": "Colossians 3:19",
+            "text_ru": "Мужья, любите своих жен и не будьте к ним суровы.",
+            "text_en": "Husbands, love your wives, and don't be bitter against them.",
+            "verse_ref": {
+              "book": "colossians",
+              "chapter": 3,
+              "verse": "19"
+            }
+          },
+          {
+            "reference_ru": "1 Петра 3:7",
+            "reference_en": "1 Peter 3:7",
+            "text_ru": "Также и вы, мужья, обращайтесь благоразумно с женами, как с немощнейшим сосудом, оказывая им честь, как сонаследницам благодатной жизни, дабы не было вам препятствия в молитвах.",
+            "text_en": "You husbands, in the same way, live with your wives according to knowledge, giving honor to the woman as the weaker vessel, as being also joint heirs of the grace of life, that your prayers may not be hindered.",
+            "verse_ref": {
+              "book": "1-peter",
+              "chapter": 3,
+              "verse": "7"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-11",
+        "day": 68,
+        "topic": {
+          "ru": "Добродетельная жена",
+          "en": "A Virtuous Wife"
+        },
+        "reference_ru": "Притчи 31:10",
+        "reference_en": "Proverbs 31:10",
+        "text_ru": "Кто найдет добродетельную жену? цена ее выше жемчугов.",
+        "text_en": "Who can find a worthy woman? For her value is far above rubies.",
+        "verse_ref": {
+          "book": "proverbs",
+          "chapter": 31,
+          "verse": "10"
+        },
+        "interpretation_ru": "Мудрая и добрая жена является большим благословением для семьи.",
+        "interpretation_en": "A wise and kind wife is a great blessing to the family.",
+        "related": [
+          {
+            "reference_ru": "Притчи 19:14",
+            "reference_en": "Proverbs 19:14",
+            "text_ru": "Дом и имение — наследство от родителей, а разумная жена — от Господа.",
+            "text_en": "House and riches are an inheritance from fathers, but a prudent wife is from the Lord.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 19,
+              "verse": "14"
+            }
+          },
+          {
+            "reference_ru": "Притчи 14:1",
+            "reference_en": "Proverbs 14:1",
+            "text_ru": "Мудрая жена устроит дом свой, а глупая разрушит его своими руками.",
+            "text_en": "Every wise woman builds her house, but the foolish one tears it down with her own hands.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 14,
+              "verse": "1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-12",
+        "day": 69,
+        "topic": {
+          "ru": "Дети и родители",
+          "en": "Children and Parents"
+        },
+        "reference_ru": "Ефесянам 6:1",
+        "reference_en": "Ephesians 6:1",
+        "text_ru": "Дети, повинуйтесь своим родителям в Господе, ибо сего требует справедливость.",
+        "text_en": "Children, obey your parents in the Lord, for this is right.",
+        "verse_ref": {
+          "book": "ephesians",
+          "chapter": 6,
+          "verse": "1"
+        },
+        "interpretation_ru": "Бог призывает детей почитать родителей и жить в уважении и любви.",
+        "interpretation_en": "God calls children to honor their parents and to live with respect and love.",
+        "related": [
+          {
+            "reference_ru": "Ефесянам 6:2-3",
+            "reference_en": "Ephesians 6:2-3",
+            "text_ru": "Почитай отца твоего и мать, это первая заповедь с обетованием: да будет тебе благо, и будешь долголетен на земле.",
+            "text_en": "\"Honor your father and mother,\" which is the first commandment with a promise: \"that it may be well with you, and you may live long on the earth.\"",
+            "verse_ref": {
+              "book": "ephesians",
+              "chapter": 6,
+              "verse": "2-3"
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 3:21",
+            "reference_en": "Colossians 3:21",
+            "text_ru": "Отцы, не раздражайте детей ваших, дабы они не унывали.",
+            "text_en": "Fathers, don't provoke your children, so that they won't be discouraged.",
+            "verse_ref": {
+              "book": "colossians",
+              "chapter": 3,
+              "verse": "21"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-13",
+        "day": 70,
+        "topic": {
+          "ru": "Родители и дети",
+          "en": "Parents and Children"
+        },
+        "reference_ru": "Ефесянам 6:4",
+        "reference_en": "Ephesians 6:4",
+        "text_ru": "И вы, отцы, не раздражайте детей ваших, но воспитывайте их в учении и наставлении Господнем.",
+        "text_en": "You fathers, don't provoke your children to wrath, but nurture them in the discipline and instruction of the Lord.",
+        "verse_ref": {
+          "book": "ephesians",
+          "chapter": 6,
+          "verse": "4"
+        },
+        "interpretation_ru": "Бог призывает родителей мудро воспитывать детей.",
+        "interpretation_en": "God calls parents to wisely raise their children.",
+        "related": [
+          {
+            "reference_ru": "Притчи 22:6",
+            "reference_en": "Proverbs 22:6",
+            "text_ru": "Наставь юношу при начале пути его: он не уклонится от него, когда и состарится.",
+            "text_en": "Train up a child in the way he should go, and when he is old he will not depart from it.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 22,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Второзаконие 6:6-7",
+            "reference_en": "Deuteronomy 6:6-7",
+            "text_ru": "И да будут слова сии, которые Я заповедую тебе сегодня, в сердце твоем. И внушай их детям твоим и говори о них, сидя в доме твоем и идя дорогою, и ложась и вставая.",
+            "text_en": "These words, which I command you today, shall be on your heart; and you shall teach them diligently to your children, and shall talk of them when you sit in your house, when you walk by the way, when you lie down, and when you rise up.",
+            "verse_ref": {
+              "book": "deuteronomy",
+              "chapter": 6,
+              "verse": "6-7"
+            }
+          },
+          {
+            "reference_ru": "Псалом 102:13",
+            "reference_en": "Psalm 103:13",
+            "text_ru": "Как отец милует сынов, так милует Господь боящихся Его.",
+            "text_en": "Like a father has compassion on his children, so the Lord has compassion on those who fear him.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 102,
+                "verse": "13"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 103,
+                "verse": "13"
+              }
+            }
+          }
+        ]
       }
     ]
   }
