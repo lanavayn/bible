@@ -95,6 +95,128 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-07",
+        "day": 64,
+        "topic": {
+          "ru": "Ищите Бога всем сердцем",
+          "en": "Seek God with All Your Heart"
+        },
+        "reference_ru": "Иеремия 29:13",
+        "reference_en": "Jeremiah 29:13",
+        "text_ru": "И взыщете Меня и найдете, если взыщете Меня всем сердцем вашим.",
+        "text_en": "You shall seek me, and find me, when you search for me with all your heart.",
+        "verse_ref": {
+          "book": "jeremiah",
+          "chapter": 29,
+          "verse": "13"
+        },
+        "interpretation_ru": "Бог обещает открыться тем, кто искренне ищет Его всем сердцем.",
+        "interpretation_en": "God promises to reveal Himself to those who sincerely seek Him with all their heart.",
+        "related": [
+          {
+            "reference_ru": "Второзаконие 4:29",
+            "reference_en": "Deuteronomy 4:29",
+            "text_ru": "Но когда ты взыщешь там Господа, Бога твоего, то найдешь Его, если будешь искать Его всем сердцем твоим и всею душею твоею.",
+            "text_en": "But from there you shall seek the Lord your God, and you shall find him when you search after him with all your heart and with all your soul.",
+            "verse_ref": {
+              "book": "deuteronomy",
+              "chapter": 4,
+              "verse": "29"
+            }
+          },
+          {
+            "reference_ru": "Матфея 7:7-8",
+            "reference_en": "Matthew 7:7-8",
+            "text_ru": "Просите, и дано будет вам; ищите, и найдёте; стучите, и отворят вам; ибо всякий просящий получает, и ищущий находит, и стучащему отворят.",
+            "text_en": "Ask, and it will be given you. Seek, and you will find. Knock, and it will be opened for you. For everyone who asks receives. He who seeks finds. To him who knocks it will be opened.",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 7,
+              "verse": "7-8"
+            }
+          },
+          {
+            "reference_ru": "Псалом 104:4",
+            "reference_en": "Psalm 105:4",
+            "text_ru": "Ищите Господа и силы Его, ищите лица Его всегда.",
+            "text_en": "Seek the Lord and his strength. Seek his face forever more.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 104,
+                "verse": "4"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 105,
+                "verse": "4"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-08",
+        "day": 65,
+        "topic": {
+          "ru": "Призывайте Господа",
+          "en": "Call Upon the Lord"
+        },
+        "reference_ru": "Исаия 55:6",
+        "reference_en": "Isaiah 55:6",
+        "text_ru": "Ищите Господа, когда можно найти Его; призывайте Его, когда Он близко.",
+        "text_en": "Seek Yahweh while he may be found. Call on him while he is near.",
+        "verse_ref": {
+          "book": "isaiah",
+          "chapter": 55,
+          "verse": "6"
+        },
+        "interpretation_ru": "Пока длится время Божьей благодати, каждый человек может обратиться к Господу и найти Его помощь и спасение.",
+        "interpretation_en": "While God's grace is available, every person can turn to the Lord and find His help and salvation.",
+        "related": [
+          {
+            "reference_ru": "Иакова 4:8",
+            "reference_en": "James 4:8",
+            "text_ru": "Приблизьтесь к Богу, и приблизится к вам; очистите руки, грешники, исправьте сердца, двоедушные.",
+            "text_en": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners. Purify your hearts, you double-minded.",
+            "verse_ref": {
+              "book": "james",
+              "chapter": 4,
+              "verse": "8"
+            }
+          },
+          {
+            "reference_ru": "Деяния 17:27",
+            "reference_en": "Acts 17:27",
+            "text_ru": "Дабы они искали Бога, не ощутят ли Его и не найдут ли, хотя Он и недалеко от каждого из нас.",
+            "text_en": "That they should seek the Lord, if perhaps they might reach out for him and find him, though he is not far from each one of us.",
+            "verse_ref": {
+              "book": "acts",
+              "chapter": 17,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Псалом 144:18",
+            "reference_en": "Psalm 145:18",
+            "text_ru": "Близок Господь ко всем призывающим Его, ко всем призывающим Его в истине.",
+            "text_en": "The Lord is near to all those who call on him, to all who call on him in truth.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 144,
+                "verse": "18"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 145,
+                "verse": "18"
+              }
+            }
+          }
+        ]
       }
     ]
   }

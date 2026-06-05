@@ -685,6 +685,221 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-41",
+            "day": 41,
+          
+            "topic_ru": "Истина",
+            "topic_en": "Truth",
+          
+            "question_ru": "Что такое истина?",
+            "question_en": "What is truth?",
+          
+            "reference_ru": "Иоанна 17:17",
+            "reference_en": "John 17:17",
+          
+            "text_ru": "Освяти их истиною Твоею; слово Твое есть истина.",
+            "text_en": "Sanctify them in your truth. Your word is truth.",
+          
+            "verse_ref": {
+              "book": "John",
+              "chapter": 17,
+              "verse": "17"
+            },
+          
+            "answer_ru": "Божье Слово является надежным источником истины и открывает людям Божью волю.",
+            "answer_en": "God's Word is a reliable source of truth and reveals God's will to people.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 118:160",
+                "reference_en": "Psalm 119:160",
+          
+                "text_ru": "Основание слова Твоего истинно, и вечен всякий суд правды Твоей.",
+                "text_en": "All of your words are truth. Every one of your righteous ordinances endures forever.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 118,
+                    "verse": "160"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 119,
+                    "verse": "160"
+                  }
+                }
+              },
+              {
+                "reference_ru": "2 Тимофею 3:16",
+                "reference_en": "2 Timothy 3:16",
+          
+                "text_ru": "Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности.",
+                "text_en": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness",
+          
+                "verse_ref": {
+                  "book": "2-Timothy",
+                  "chapter": 3,
+                  "verse": "16"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 5:39",
+                "reference_en": "John 5:39",
+          
+                "text_ru": "Исследуйте Писания, ибо вы думаете чрез них иметь жизнь вечную; а они свидетельствуют о Мне.",
+                "text_en": "You search the Scriptures because you think that in them you have eternal life; and these are they which testify about me.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 5,
+                  "verse": "39"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-42",
+            "day": 42,
+          
+            "topic_ru": "Поиск истины",
+            "topic_en": "Finding Truth",
+          
+            "question_ru": "Как найти истину?",
+            "question_en": "How can I find the truth?",
+          
+            "reference_ru": "Иоанна 8:31-32",
+            "reference_en": "John 8:31-32",
+          
+            "text_ru": "Если пребудете в слове Моем, то вы истинно Мои ученики, и познаете истину, и истина сделает вас свободными.",
+            "text_en": "If you remain in my word, then you are truly my disciples. You will know the truth, and the truth will make you free.",
+          
+            "verse_ref": {
+              "book": "John",
+              "chapter": 8,
+              "verse": "31-32"
+            },
+          
+            "answer_ru": "Истину можно найти, изучая Божье Слово и следуя учению Иисуса Христа.",
+            "answer_en": "Truth can be found by studying God's Word and following the teachings of Jesus Christ.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 24:5",
+                "reference_en": "Psalm 25:5",
+          
+                "text_ru": "Направь меня на истину Твою и научи меня, ибо Ты Бог спасения моего; на Тебя надеюсь всякий день.",
+                "text_en": "Guide me in your truth, and teach me, for you are the God of my salvation. I wait for you all day long.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 24,
+                    "verse": "5"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 25,
+                    "verse": "5"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Притчи 3:5-6",
+                "reference_en": "Proverbs 3:5-6",
+          
+                "text_ru": "Надейся на Господа всем сердцем твоим, и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+                "text_en": "Trust in the Lord with all your heart, and don’t lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 3,
+                  "verse": "5-6"
+                }
+              },
+              {
+                "reference_ru": "Матфея 7:7",
+                "reference_en": "Matthew 7:7",
+          
+                "text_ru": "Просите, и дано будет вам; ищите, и найдете; стучите, и отворят вам.",
+                "text_en": "Ask, and it will be given you. Seek, and you will find. Knock, and it will be opened for you.",
+          
+                "verse_ref": {
+                  "book": "Matthew",
+                  "chapter": 7,
+                  "verse": "7"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-43",
+            "day": 43,
+          
+            "topic_ru": "Иисус Христос",
+            "topic_en": "Jesus Christ",
+          
+            "question_ru": "Кто есть истина?",
+            "question_en": "Who is the truth?",
+          
+            "reference_ru": "Иоанна 14:6",
+            "reference_en": "John 14:6",
+          
+            "text_ru": "Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.",
+            "text_en": "Jesus said to him, “I am the way, the truth, and the life. No one comes to the Father, except through me.",
+          
+            "verse_ref": {
+              "book": "John",
+              "chapter": 14,
+              "verse": "6"
+            },
+          
+            "answer_ru": "Иисус Христос является совершенным откровением Божьей истины и путем к Отцу.",
+            "answer_en": "Jesus Christ is the perfect revelation of God's truth and the way to the Father.",
+          
+            "related": [
+              {
+                "reference_ru": "Иоанна 1:14",
+                "reference_en": "John 1:14",
+          
+                "text_ru": "И Слово стало плотию, и обитало с нами, полное благодати и истины; и мы видели славу Его, славу, как Единородного от Отца",
+                "text_en": "The Word became flesh and lived among us. We saw his glory, such glory as of the only born Son of the Father, full of grace and truth.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 1,
+                  "verse": "14"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 1:17",
+                "reference_en": "John 1:17",
+          
+                "text_ru": "ибо закон дан чрез Моисея; благодать же и истина произошли чрез Иисуса Христа.",
+                "text_en": "For the law was given through Moses. Grace and truth were realized through Jesus Christ.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 1,
+                  "verse": "17"
+                }
+              },
+              {
+                "reference_ru": "Колоссянам 2:3",
+                "reference_en": "Colossians 2:3",
+          
+                "text_ru": "В Котором сокрыты все сокровища премудрости и ведения.",
+                "text_en": "In whom all the treasures of wisdom and knowledge are hidden.",
+          
+                "verse_ref": {
+                  "book": "Colossians",
+                  "chapter": 2,
+                  "verse": "3"
+                }
+              }
+            ]
           }      
     ]
   }
