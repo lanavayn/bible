@@ -900,6 +900,355 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-44",
+            "day": 44,
+          
+            "topic_ru": "Смысл жизни",
+            "topic_en": "The Meaning of Life",
+          
+            "question_ru": "Для чего живёт человек?",
+            "question_en": "What does a person live for?",
+          
+            "reference_ru": "Екклесиаст 1:3",
+            "reference_en": "Ecclesiastes 1:3",
+          
+            "text_ru": "Что пользы человеку от всех трудов его, которыми трудится он под солнцем?",
+            "text_en": "What does man gain from all his labor in which he labors under the sun?",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 1,
+              "verse": "3"
+            },
+          
+            "answer_ru": "Человек находит смысл жизни в отношениях с Богом.",
+            "answer_en": "The meaning of life is found in a relationship with God.",
+          
+            "related": [
+              {
+                "reference_ru": "Деяния 17:27",
+                "reference_en": "Acts 17:27",
+          
+                "text_ru": "Дабы они искали Бога, не ощутят ли Его и не найдут ли, хотя Он и недалеко от каждого из нас.",
+                "text_en": "That they should seek God, if perhaps they might reach out for him and find him, though he is not far from each one of us.",
+          
+                "verse_ref": {
+                  "book": "Acts",
+                  "chapter": 17,
+                  "verse": "27"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 17:3",
+                "reference_en": "John 17:3",
+          
+                "text_ru": "Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
+                "text_en": "This is eternal life, that they should know you, the only true God, and him whom you sent, Jesus Christ.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 17,
+                  "verse": "3"
+                }
+              },
+              {
+                "reference_ru": "Колоссянам 1:16",
+                "reference_en": "Colossians 1:16",
+          
+                "text_ru": "ибо Им создано всё, что на небесах и что на земле, видимое и невидимое: престолы ли, господства ли, начальства ли, власти ли, — всё Им и для Него создано.",
+                "text_en": "For by him all things were created in the heavens and on the earth, visible things and invisible things, whether thrones or dominions or principalities or powers. All things have been created through him and for him.",
+          
+                "verse_ref": {
+                  "book": "Colossians",
+                  "chapter": 1,
+                  "verse": "16"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-45",
+            "day": 45,
+          
+            "topic_ru": "Суета",
+            "topic_en": "Vanity",
+          
+            "question_ru": "Что означает «суета сует»?",
+            "question_en": "What does 'vanity of vanities' mean?",
+          
+            "reference_ru": "Екклесиаст 1:2",
+            "reference_en": "Ecclesiastes 1:2",
+          
+            "text_ru": "Суета сует, сказал Екклесиаст, суета сует, — всё суета.",
+            "text_en": "Vanity of vanities, says the Preacher; vanity of vanities, all is vanity.",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 1,
+              "verse": "2"
+            },
+          
+            "answer_ru": "«Суета сует» означает поиск смысла жизни без Бога.",
+            "answer_en": "“Vanity of vanities” means seeking the meaning of life without God.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 38:6",
+                "reference_en": "Psalm 39:5",
+          
+                "text_ru": "Вот, Ты дал мне дни, как пяди, и век мой как ничто пред Тобою. Подлинно, совершенная суета — всякий человек живущий.",
+                "text_en": "Surely every man stands as a breath. Surely every man walks like a shadow.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 38,
+                    "verse": "6"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 39,
+                    "verse": "5"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Иакова 4:14",
+                "reference_en": "James 4:14",
+          
+                "text_ru": "Ибо что такое жизнь ваша? Пар, являющийся на малое время, а потом исчезающий.",
+                "text_en": "For what is your life? For you are a vapor that appears for a little time, and then vanishes away.",
+          
+                "verse_ref": {
+                  "book": "James",
+                  "chapter": 4,
+                  "verse": "14"
+                }
+              },
+              {
+                "reference_ru": "Псалом 143:4",
+                "reference_en": "Psalm 144:4",
+          
+                "text_ru": "Человек подобен дуновению; дни его — как уклоняющаяся тень.",
+                "text_en": "Man is like a breath. His days are like a shadow that passes away.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 143,
+                    "verse": "4"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 144,
+                    "verse": "4"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-46",
+            "day": 46,
+          
+            "topic_ru": "Томление духа",
+            "topic_en": "Chasing After the Wind",
+          
+            "question_ru": "Что такое томление духа?",
+            "question_en": "What is a chasing after the wind?",
+          
+            "reference_ru": "Екклесиаст 1:14",
+            "reference_en": "Ecclesiastes 1:14",
+          
+            "text_ru": "Видел я все дела, какие делаются под солнцем, и вот, всё — суета и томление духа.",
+            "text_en": "I have seen all the works that are done under the sun; and behold, all is vanity and a chasing after the wind.",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 1,
+              "verse": "14"
+            },
+          
+            "answer_ru": "Томление духа — это поиск удовлетворения без Бога.",
+            "answer_en": "A chasing after the wind is seeking satisfaction apart from God.",
+          
+            "related": [
+              {
+                "reference_ru": "Притчи 14:13",
+                "reference_en": "Proverbs 14:13",
+          
+                "text_ru": "И при смехе иногда болит сердце, и концом радости бывает печаль.",
+                "text_en": "Even in laughter the heart may be sorrowful, and the end of mirth may be heaviness.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 14,
+                  "verse": "13"
+                }
+              },
+              {
+                "reference_ru": "Исаия 55:2",
+                "reference_en": "Isaiah 55:2",
+          
+                "text_ru": "Для чего вам отвешивать серебро за то, что не хлеб, и трудовое свое за то, что не насыщает? Послушайте Меня внимательно и вкушайте благо, и душа ваша да насладится туком",
+                "text_en": "Why do you spend money for that which is not bread, and your labor for that which does not satisfy? Listen diligently to me, and eat that which is good, and let your soul delight itself in abundance.",
+          
+                "verse_ref": {
+                  "book": "Isaiah",
+                  "chapter": 55,
+                  "verse": "2"
+                }
+              },
+              {
+                "reference_ru": "Матфея 11:28",
+                "reference_en": "Matthew 11:28",
+          
+                "text_ru": "Придите ко Мне все труждающиеся и обремененные, и Я успокою вас.",
+                "text_en": "Come to me, all you who labor and are heavily burdened, and I will give you rest.",
+          
+                "verse_ref": {
+                  "book": "Matthew",
+                  "chapter": 11,
+                  "verse": "28"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-47",
+            "day": 47,
+          
+            "topic_ru": "Богатство",
+            "topic_en": "Wealth",
+          
+            "question_ru": "Почему богатство не приносит полного счастья?",
+            "question_en": "Why doesn't wealth bring complete happiness?",
+          
+            "reference_ru": "Екклесиаст 5:10",
+            "reference_en": "Ecclesiastes 5:10",
+          
+            "text_ru": "Кто любит серебро, тот не насытится серебром, и кто любит богатство, тому нет пользы от того. И это — суета!",
+            "text_en": "He who loves silver shall not be satisfied with silver; nor he who loves abundance, with increase. This also is vanity.",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 5,
+              "verse": "10"
+            },
+          
+            "answer_ru": "Богатство даёт комфорт, но не смысл жизни.",
+            "answer_en": "Wealth provides comfort, but not the meaning of life.",
+          
+            "related": [
+              {
+                "reference_ru": "Марка 8:36",
+                "reference_en": "Mark 8:36",
+          
+                "text_ru": "Ибо какая польза человеку, если он приобретет весь мир, а душе своей повредит?",
+                "text_en": "For what does it profit a man, to gain the whole world, and forfeit his life?",
+          
+                "verse_ref": {
+                  "book": "Mark",
+                  "chapter": 8,
+                  "verse": "36"
+                }
+              },
+              {
+                "reference_ru": "Матфея 6:19-21",
+                "reference_en": "Matthew 6:19-21",
+          
+                "text_ru": "Не собирайте себе сокровищ на земле... но собирайте себе сокровища на небе. Ибо где сокровище ваше, там будет и сердце ваше.",
+                "text_en": "Don't lay up treasures for yourselves on the earth... but lay up for yourselves treasures in heaven. For where your treasure is, there your heart will be also.",
+          
+                "verse_ref": {
+                  "book": "Matthew",
+                  "chapter": 6,
+                  "verse": "19-21"
+                }
+              },
+              {
+                "reference_ru": "1 Тимофею 6:9-10",
+                "reference_en": "1 Timothy 6:9-10",
+          
+                "text_ru": "А желающие обогащаться впадают в искушение и в сеть и во многие безрассудные и вредные похоти, которые погружают людей в бедствие и пагубу; ибо корень всех зол есть сребролюбие, которому предавшись, некоторые уклонились от веры и сами себя подвергли многим скорбям.",
+                "text_en": "But those who are determined to be rich fall into a temptation, a snare, and many foolish and harmful lusts, such as drown men in ruin and destruction. For the love of money is a root of all kinds of evil. Some have been led astray from the faith in their greed, and have pierced themselves through with many sorrows.",
+          
+                "verse_ref": {
+                  "book": "1-Timothy",
+                  "chapter": 6,
+                  "verse": "9-10"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-48",
+            "day": 48,
+          
+            "topic_ru": "Вечные ценности",
+            "topic_en": "Eternal Values",
+          
+            "question_ru": "Что действительно имеет вечную ценность?",
+            "question_en": "What truly has eternal value?",
+          
+            "reference_ru": "Матфея 6:20",
+            "reference_en": "Matthew 6:20",
+          
+            "text_ru": "Но собирайте себе сокровища на небе, где ни моль, ни ржа не истребляют и где воры не подкапывают и не крадут.",
+            "text_en": "But lay up for yourselves treasures in heaven, where neither moth nor rust destroy, and where thieves don't break through and steal.",
+          
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 6,
+              "verse": "20"
+            },
+          
+            "answer_ru": "Всё земное временно, но Божьи сокровища остаются навсегда.",
+            "answer_en": "Earthly things are temporary, but God's treasures last forever.",
+          
+            "related": [
+              {
+                "reference_ru": "Колоссянам 3:2",
+                "reference_en": "Colossians 3:2",
+          
+                "text_ru": "О горнем помышляйте, а не о земном.",
+                "text_en": "Set your mind on the things that are above, not on the things that are on the earth.",
+          
+                "verse_ref": {
+                  "book": "Colossians",
+                  "chapter": 3,
+                  "verse": "2"
+                }
+              },
+              {
+                "reference_ru": "1 Петра 1:24-25",
+                "reference_en": "1 Peter 1:24-25",
+          
+                "text_ru": "Ибо всякая плоть — как трава, и всякая слава человеческая — как цвет на траве: засохла трава, и цвет ее опал; но слово Господне пребывает вовек; а это есть то слово, которое вам проповедано.",
+                "text_en": "For, All flesh is like grass, and all of man’s glory like the flower in the grass. The grass withers, and its flower falls; but the Lord’s word endures forever. This is the word of Good News which was preached to you.",
+          
+                "verse_ref": {
+                  "book": "1-Peter",
+                  "chapter": 1,
+                  "verse": "24-25"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 6:27",
+                "reference_en": "John 6:27",
+          
+                "text_ru": "Старайтесь не о пище тленной, но о пище, пребывающей в жизнь вечную, которую даст вам Сын Человеческий, ибо на Нем положил печать Свою Отец, Бог.",
+                "text_en": "Don’t work for the food which perishes, but for the food which remains to eternal life, which the Son of Man will give to you. For God the Father has sealed him.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 6,
+                  "verse": "27"
+                }
+              }
+            ]
           }      
     ]
   }
