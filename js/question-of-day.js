@@ -772,6 +772,22 @@ function addQuestionCreationHelp(text, lang) {
       /(^|[^А-Яа-яЁё])(твердь)(?=$|[^А-Яа-яЁё])/i,
       `$1$2${firmamentHelpHtml}`
     );
+
+    const tukHelpHtml = `
+    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тук»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
+      <span class="footer-help-box daily-help-box">
+        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
+        Изобилие и полное удовлетворение от Божьих благословений.
+      </span>
+    </span>
+  `;
+
+  safeText = safeText.replace(
+    /(^|[^А-Яа-яЁё])(туком|тук)(?=$|[^А-Яа-яЁё])/i,
+    `$1$2${tukHelpHtml}`
+  );
+
+
   }
 
   if (lang === "en") {
