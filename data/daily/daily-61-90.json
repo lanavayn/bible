@@ -468,6 +468,61 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-14",
+        "day": 71,
+        "topic": {
+          "ru": "Помогайте друг другу",
+          "en": "Help One Another"
+        },
+        "reference_ru": "Галатам 6:2",
+        "reference_en": "Galatians 6:2",
+        "text_ru": "Носите бремена друг друга, и таким образом исполните закон Христов.",
+        "text_en": "Bear one another’s burdens, and so fulfill the law of Christ.",
+        "verse_ref": {
+          "book": "galatians",
+          "chapter": 6,
+          "verse": "2"
+        },
+        "interpretation_ru": "Бог призывает нас поддерживать друг друга в трудностях.",
+        "interpretation_en": "God calls us to support one another in difficulties.",
+        "related": 
+        [
+          {
+            "reference_ru": "Римлянам 12:15",
+            "reference_en": "Romans 12:15",
+            "text_ru": "Радуйтесь с радующимися и плачьте с плачущими.",
+            "text_en": "Rejoice with those who rejoice. Weep with those who weep.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 12,
+              "verse": "15"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 2:4",
+            "reference_en": "Philippians 2:4",
+            "text_ru": "Не о себе только каждый заботься, но каждый и о других.",
+            "text_en": "Each of you not just looking to his own things, but each of you also to the things of others.",
+            "verse_ref": {
+              "book": "philippians",
+              "chapter": 2,
+              "verse": "4"
+            }
+          },
+          {
+            "reference_ru": "1 Фессалоникийцам 5:11",
+            "reference_en": "1 Thessalonians 5:11",
+            "text_ru": "Посему увещевайте друг друга и назидайте один другого.",
+            "text_en": "Therefore exhort one another, and build each other up.",
+            "verse_ref": {
+              "book": "1-thessalonians",
+              "chapter": 5,
+              "verse": "11"
+            }
+          }
+        ]
       }
     ]
   }

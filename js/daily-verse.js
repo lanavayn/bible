@@ -941,6 +941,13 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           /(тварь|твари|тварью|тварей|тварею|творение)/i,
           match => `${match}${creationHelpHtml}`
         );
+
+        const burdensHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «бремена»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>Бремена — это жизненные трудности, заботы и переживания, в которых мы можем поддерживать друг друга.</span></span>`;
+      
+        safeText = safeText.replace(
+          /(^|[^А-Яа-яЁё])(Бремена|бремена)/i,
+          match => `${match}${burdensHelpHtml}`
+        );
       
         const pronounHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.</span></span>`;
       
@@ -955,6 +962,13 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     safeText = safeText.replace(
       /\b(LORD|Lord)\b/g,
       (match) => `${match}${lordHelpHtml}`
+    );
+
+    const burdenHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="More about burdens">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Close">×</button>Burdens are the difficulties, cares, and struggles of life that we can help one another carry.</span></span>`;
+  
+    safeText = safeText.replace(
+      /\b(Burdens|burdens)\b/g,
+      (match) => `${match}${burdenHelpHtml}`
     );
   }
   
