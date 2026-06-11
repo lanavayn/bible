@@ -890,27 +890,27 @@
                     "ru": "Верность Бога",
                     "en": "God’s Faithfulness"
                   },
-                  "reference_ru": "Плач Иеремии 3:22-23",
-                  "reference_en": "Lamentations 3:22-23",
-                  "text_ru": "По милости Господа мы не исчезли, ибо милосердие Его не истощилось. Оно обновляется каждое утро; велика верность Твоя!",
-                  "text_en": "It is because of the LORD’s loving kindnesses that we are not consumed, because his compassion doesn’t fail. They are new every morning. Great is your faithfulness.",
+                  "reference_ru": "1 Коринфянам 1:9",
+                  "reference_en": "1 Corinthians 1:9",
+                  "text_ru": "Верен Бог, Которым вы призваны в общение Сына Его Иисуса Христа, Господа нашего.",
+                  "text_en": "God is faithful, through whom you were called into the fellowship of his Son, Jesus Christ our Lord.",
                   "verse_ref": {
-                    "book": "Lamentations",
-                    "chapter": 3,
-                    "verse": "22-23"
+                    "book": "1-corinthians",
+                    "chapter": 1,
+                    "verse": "9"
                   },
-                  "interpretation_ru": "Божья верность не прекращается каждый новый день.",
-                  "interpretation_en": "God’s faithfulness never ceases with each new day.",
+                  "interpretation_ru": "Бог верен и призывает нас к общению со Христом.",
+                  "interpretation_en": "God is faithful and calls us into fellowship with Christ.",
                   "related": [
                     {
-                      "reference_ru": "1 Коринфянам 1:9",
-                      "reference_en": "1 Corinthians 1:9",
-                      "text_ru": "Верен Бог, Которым вы призваны в общение Сына Его Иисуса Христа.",
-                      "text_en": "God is faithful, through whom you were called into the fellowship of his Son, Jesus Christ our Lord.",
+                      "reference_ru": "2 Фессалоникийцам 3:3",
+                      "reference_en": "2 Thessalonians 3:3",
+                      "text_ru": "Но верен Господь, Который утвердит вас и сохранит от лукавого.",
+                      "text_en": "But the Lord is faithful, who will establish you and guard you from the evil one.",
                       "verse_ref": {
-                        "book": "1-corinthians",
-                        "chapter": 1,
-                        "verse": "9"
+                        "book": "2-thessalonians",
+                        "chapter": 3,
+                        "verse": "3"
                       }
                     }
                   ]
