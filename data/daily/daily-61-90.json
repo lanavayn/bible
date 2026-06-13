@@ -523,6 +523,114 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-15",
+        "day": 72,
+        "topic": {
+          "ru": "Доброта и прощение",
+          "en": "Kindness and Forgiveness"
+        },
+        "reference_ru": "Ефесянам 4:32",
+        "reference_en": "Ephesians 4:32",
+        "text_ru": "Но будьте друг ко другу добры, сострадательны, прощайте друг друга, как и Бог во Христе простил вас.",
+        "text_en": "And be kind to one another, tender hearted, forgiving each other, just as God also in Christ forgave you.",
+        "verse_ref": {
+          "book": "ephesians",
+          "chapter": 4,
+          "verse": "32"
+        },
+        "interpretation_ru": "Будьте добры друг к другу и прощайте, как Бог простил нас.",
+        "interpretation_en": "Be kind to one another and forgive as God forgave us.",
+        "related": [
+          {
+            "reference_ru": "Колоссянам 3:13",
+            "reference_en": "Colossians 3:13",
+            "text_ru": "Снисходя друг другу и прощая взаимно, если кто на кого имеет жалобу: как Христос простил вас, так и вы.",
+            "text_en": "Bearing with one another and forgiving each other, if any man has a complaint against any; even as Christ forgave you, so you also do.",
+            "verse_ref": {
+              "book": "colossians",
+              "chapter": 3,
+              "verse": "13"
+            }
+          },
+          {
+            "reference_ru": "Луки 6:37",
+            "reference_en": "Luke 6:37",
+            "text_ru": "Не судите, и не будете судимы; не осуждайте, и не будете осуждены; прощайте, и прощены будете;",
+            "text_en": "Don’t judge, and you won’t be judged. Don’t condemn, and you won’t be condemned. Set free, and you will be set free.",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 6,
+              "verse": "37"
+            }
+          },
+          {
+            "reference_ru": "Матфея 6:14",
+            "reference_en": "Matthew 6:14",
+            "text_ru": "Ибо если вы будете прощать людям согрешения их, то простит и вам Отец ваш Небесный.",
+            "text_en": "For if you forgive men their trespasses, your heavenly Father will also forgive you.",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 6,
+              "verse": "14"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-16",
+        "day": 73,
+        "topic": {
+          "ru": "Служите с любовью",
+          "en": "Serve with Love"
+        },
+        "reference_ru": "Иоанна 13:34-35",
+          "reference_en": "John 13:34-35",
+          "text_ru": "Да любите друг друга; как Я возлюбил вас, так и вы да любите друг друга. По тому узнают все, что вы Мои ученики, если будете иметь любовь между собою.",
+          "text_en": "Love one another. Just as I have loved you, you also love one another. By this everyone will know that you are my disciples, if you have love for one another.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 13,
+            "verse": "34-35"
+        },
+        "interpretation_ru": "Настоящее служение другим начинается с любви.",
+        "interpretation_en": "True service to others begins with love.",
+        "related": [
+          {
+            "reference_ru": "1 Петра 4:10",
+            "reference_en": "1 Peter 4:10",
+            "text_ru": "Служите друг другу, каждый тем даром, какой получил, как добрые домостроители многоразличной благодати Божией.",
+            "text_en": "As each has received a gift, employ it in serving one another, as good managers of the grace of God in its various forms.",
+            "verse_ref": {
+              "book": "1-peter",
+              "chapter": 4,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 12:10",
+            "reference_en": "Romans 12:10",
+            "text_ru": "Будьте братолюбивы друг к другу с нежностью; в почтительности друг друга предупреждайте.",
+            "text_en": "In love of the brothers be tenderly affectionate one to another; in honor preferring one another.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 12,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Галатам 5:13",
+            "reference_en": "Galatians 5:13",
+            "text_ru": "К свободе призваны вы, братия, только бы свобода ваша не была поводом к угождению плоти, но любовью служите друг другу.",
+            "text_en": "For you, brothers, were called for freedom. Only don’t use your freedom as an opportunity for the flesh, but through love be servants to one another.",
+            "verse_ref": {
+              "book": "galatians",
+              "chapter": 5,
+              "verse": "13"
+          }
+        }
+        ]
       }
     ]
   }
