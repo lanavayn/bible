@@ -1249,6 +1249,80 @@
                 }
               }
             ]
-          }      
+          },
+          {
+            "id": "question-day-49",
+            "day": 49,
+          
+            "topic_ru": "Божье время",
+            "topic_en": "God's Timing",
+          
+            "question_ru": "Почему в жизни есть своё время для всего?",
+            "question_en": "Why is there a time for everything in life?",
+          
+            "reference_ru": "Екклесиаст 3:1",
+            "reference_en": "Ecclesiastes 3:1",
+          
+            "text_ru": "Всему своё время, и время всякой вещи под небом.",
+            "text_en": "For everything there is a season, and a time for every purpose under heaven.",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 3,
+              "verse": "1"
+            },
+          
+            "answer_ru": "Бог управляет временем и знает лучший момент для каждого события.",
+            "answer_en": "God directs time and knows the best moment for every event.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 30:16",
+                "reference_en": "Psalm 31:15",
+          
+                "text_ru": "В Твоей руке дни мои; избавь меня от руки врагов моих и от гонителей моих.",
+                "text_en": "My times are in your hand. Deliver me from the hand of my enemies, and from those who persecute me.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 30,
+                    "verse": "16"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 31,
+                    "verse": "15"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Римлянам 8:28",
+                "reference_en": "Romans 8:28",
+          
+                "text_ru": "Притом знаем, что любящим Бога, призванным по Его изволению, всё содействует ко благу.",
+                "text_en": "We know that all things work together for good for those who love God, to those who are called according to his purpose.",
+          
+                "verse_ref": {
+                  "book": "Romans",
+                  "chapter": 8,
+                  "verse": "28"
+                }
+              },
+              {
+                "reference_ru": "Исаия 55:8-9",
+                "reference_en": "Isaiah 55:8-9",
+          
+                "text_ru": "Мои мысли — не ваши мысли, ни ваши пути — пути Мои, говорит Господь. Но как небо выше земли, так пути Мои выше путей ваших, и мысли Мои выше мыслей ваших.",
+                "text_en": "For my thoughts are not your thoughts, and your ways are not my ways, says the Lord. For as the heavens are higher than the earth, so are my ways higher than your ways, and my thoughts than your thoughts.",
+          
+                "verse_ref": {
+                  "book": "Isaiah",
+                  "chapter": 55,
+                  "verse": "8-9"
+                }
+              }
+            ]
+          }
     ]
   }

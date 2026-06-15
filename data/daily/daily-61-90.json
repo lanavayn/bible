@@ -631,6 +631,175 @@
           }
         }
         ]
+      },
+      {
+        "id": "daily-2026-06-17",
+        "day": 74,
+        "topic": {
+          "ru": "Поддерживайте друг друга",
+          "en": "Support One Another"
+        },
+        "reference_ru": "Екклесиаст 4:9",
+        "reference_en": "Ecclesiastes 4:9",
+        "text_ru": "Двоим лучше, нежели одному; потому что у них есть доброе вознаграждение в труде их.",
+        "text_en": "Two are better than one, because they have a good reward for their labor.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 4,
+          "verse": "9"
+        },
+        "interpretation_ru": "Бог создал людей поддерживать друг друга.",
+        "interpretation_en": "God created us to support one another.",
+        "related": [
+          {
+            "reference_ru": "Притчи 17:17",
+            "reference_en": "Proverbs 17:17",
+            "text_ru": "Друг любит во всякое время и, как брат, явится во время несчастья.",
+            "text_en": "A friend loves at all times; and a brother is born for adversity.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 17,
+              "verse": "17"
+            }
+          },
+          {
+            "reference_ru": "Евреям 10:24",
+            "reference_en": "Hebrews 10:24",
+            "text_ru": "Будем внимательны друг ко другу, поощряя к любви и добрым делам.",
+            "text_en": "Let us consider how to provoke one another to love and good works.",
+            "verse_ref": {
+              "book": "hebrews",
+              "chapter": 10,
+              "verse": "24"
+            }
+          },
+          {
+            "reference_ru": "1 Фессалоникийцам 5:11",
+            "reference_en": "1 Thessalonians 5:11",
+            "text_ru": "Посему увещевайте друг друга и назидайте один другого.",
+            "text_en": "Therefore exhort one another, and build each other up.",
+            "verse_ref": {
+              "book": "1-thessalonians",
+              "chapter": 5,
+              "verse": "11"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-18",
+        "day": 75,
+        "topic": {
+          "ru": "Всему своё время",
+          "en": "Everything Has Its Time"
+        },
+        "reference_ru": "Екклесиаст 3:1",
+        "reference_en": "Ecclesiastes 3:1",
+        "text_ru": "Всему своё время, и время всякой вещи под небом.",
+        "text_en": "For everything there is a season, and a time for every purpose under heaven.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "1"
+        },
+        "interpretation_ru": "Бог знает лучшее время для всего в нашей жизни.",
+        "interpretation_en": "God knows the best time for everything in our lives.",
+        "related": [
+          {
+            "reference_ru": "Псалом 30:16",
+            "reference_en": "Psalm 31:15",
+            "text_ru": "В Твоей руке дни мои; избавь меня от руки врагов моих и от гонителей моих.",
+            "text_en": "My times are in your hand. Deliver me from the hand of my enemies, and from those who persecute me.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 30,
+                "verse": "16"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 31,
+                "verse": "15"
+              }
+            }
+          },
+          {
+            "reference_ru": "Галатам 6:9",
+            "reference_en": "Galatians 6:9",
+            "text_ru": "Делая добро, да не унываем, ибо в своё время пожнём, если не ослабеем.",
+            "text_en": "Let us not be weary in doing good, for we will reap in due season if we don't give up.",
+            "verse_ref": {
+              "book": "galatians",
+              "chapter": 6,
+              "verse": "9"
+            }
+          },
+          {
+            "reference_ru": "Аввакум 2:3",
+            "reference_en": "Habakkuk 2:3",
+            "text_ru": "ибо видение относится еще к определенному времени и говорит о конце и не обманет; и хотя бы и замедлило, жди его, ибо непременно сбудется, не отменится.",
+            "text_en": "Though it delays, wait for it, because it will surely come. It won't delay.",
+            "verse_ref": {
+              "book": "habakkuk",
+              "chapter": 2,
+              "verse": "3"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-19",
+        "day": 76,
+        "topic": {
+          "ru": "Время разбрасывать и время собирать",
+          "en": "A Time to Scatter and a Time to Gather"
+        },
+        "reference_ru": "Екклесиаст 3:5",
+        "reference_en": "Ecclesiastes 3:5",
+        "text_ru": "Время разбрасывать камни, и время собирать камни.",
+        "text_en": "A time to cast away stones, and a time to gather stones together.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "5"
+        },
+        "interpretation_ru": "Бог учит мудро различать время для разных действий.",
+        "interpretation_en": "God teaches us to wisely discern the right time for different actions.",
+        "related": [
+          {
+            "reference_ru": "Притчи 3:5-6",
+            "reference_en": "Proverbs 3:5-6",
+            "text_ru": "Надейся на Господа всем сердцем твоим и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+            "text_en": "Trust in the Lord with all your heart, and don't lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 3,
+              "verse": "5-6"
+            }
+          },
+          {
+            "reference_ru": "Иакова 1:5",
+            "reference_en": "James 1:5",
+            "text_ru": "Если же у кого из вас недостает мудрости, да просит у Бога, дающего всем просто и без упреков, — и дастся ему.",
+            "text_en": "But if any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach, and it will be given to him.",
+            "verse_ref": {
+              "book": "james",
+              "chapter": 1,
+              "verse": "5"
+            }
+          },
+          {
+            "reference_ru": "Ефесянам 5:15-16",
+            "reference_en": "Ephesians 5:15-16",
+            "text_ru": "Итак, смотри́те, поступайте осторожно, не как неразумные, но как мудрые, дорожа временем, потому что дни лукавы.",
+            "text_en": "Therefore watch carefully how you walk, not as unwise, but as wise, redeeming the time, because the days are evil.",
+            "verse_ref": {
+              "book": "ephesians",
+              "chapter": 5,
+              "verse": "15-16"
+            }
+          }
+        ]
       }
     ]
   }
