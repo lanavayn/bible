@@ -1323,6 +1323,80 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-50",
+            "day": 50,
+          
+            "topic_ru": "Божья власть",
+            "topic_en": "God's Sovereignty",
+          
+            "question_ru": "Кто управляет временем и историей?",
+            "question_en": "Who controls time and history?",
+          
+            "reference_ru": "Даниил 2:21",
+            "reference_en": "Daniel 2:21",
+          
+            "text_ru": "Он изменяет времена и лета, низлагает царей и поставляет царей; даёт мудрость мудрым и разумение разумным.",
+            "text_en": "He changes the times and the seasons. He removes kings and sets up kings. He gives wisdom to the wise and knowledge to those who have understanding.",
+          
+            "verse_ref": {
+              "book": "Daniel",
+              "chapter": 2,
+              "verse": "21"
+            },
+          
+            "answer_ru": "Бог управляет временем, историей и событиями мира, исполняя Свой замысел в назначенный срок.",
+            "answer_en": "God governs time, history, and the events of the world, carrying out His purpose at the appointed time.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 103:19",
+                "reference_en": "Psalm 104:19",
+          
+                "text_ru": "Он сотворил луну для указания времён.",
+                "text_en": "He appointed the moon for seasons.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 103,
+                    "verse": "19"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 104,
+                    "verse": "19"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Галатам 4:4",
+                "reference_en": "Galatians 4:4",
+          
+                "text_ru": "Но когда пришла полнота времени, Бог послал Сына Своего Единородного.",
+                "text_en": "But when the fullness of the time came, God sent out His Son.",
+          
+                "verse_ref": {
+                  "book": "Galatians",
+                  "chapter": 4,
+                  "verse": "4"
+                }
+              },
+              {
+                "reference_ru": "Деяния 1:7",
+                "reference_en": "Acts 1:7",
+          
+                "text_ru": "Не ваше дело знать времена или сроки, которые Отец положил в Своей власти.",
+                "text_en": "It isn't for you to know times or seasons which the Father has set within His own authority.",
+          
+                "verse_ref": {
+                  "book": "Acts",
+                  "chapter": 1,
+                  "verse": "7"
+                }
+              }
+            ]
           }
     ]
   }
