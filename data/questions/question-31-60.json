@@ -1354,8 +1354,8 @@
                 "reference_ru": "Псалом 103:19",
                 "reference_en": "Psalm 104:19",
           
-                "text_ru": "Он сотворил луну для указания времён.",
-                "text_en": "He appointed the moon for seasons.",
+                "text_ru": "Он сотворил луну для указания времён, солнце знает свой запад.",
+                "text_en": "He appointed the moon for seasons. The sun knows when to set.",
           
                 "verse_ref_lang": {
                   "ru": {
@@ -1394,6 +1394,362 @@
                   "book": "Acts",
                   "chapter": 1,
                   "verse": "7"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-51",
+            "day": 51,
+          
+            "topic_ru": "Вечность в сердце",
+            "topic_en": "Eternity in the Heart",
+          
+            "question_ru": "Что Бог вложил в сердце человека?",
+            "question_en": "What has God placed in the human heart?",
+          
+            "reference_ru": "Екклесиаст 3:11",
+            "reference_en": "Ecclesiastes 3:11",
+          
+            "text_ru": "Всё соделал Он прекрасным в своё время и вложил мир в сердце их, хотя человек не может постигнуть дел, которые Бог делает, от начала до конца.",
+            "text_en": "He has made everything beautiful in its time. He has also set eternity in their hearts, yet man can't fathom the work that God has done from the beginning even to the end.",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 3,
+              "verse": "11"
+            },
+          
+            "answer_ru": "Бог вложил в сердце человека стремление к вечности и желание искать Его.",
+            "answer_en": "God has placed in the human heart a longing for eternity and a desire to seek Him.",
+          
+            "related": [
+              {
+                "reference_ru": "Деяния 17:27",
+                "reference_en": "Acts 17:27",
+          
+                "text_ru": "Дабы они искали Бога, не ощутят ли Его и не найдут ли, хотя Он и недалеко от каждого из нас.",
+                "text_en": "That they should seek God, if perhaps they might reach out for him and find him, though he is not far from each one of us.",
+          
+                "verse_ref": {
+                  "book": "Acts",
+                  "chapter": 17,
+                  "verse": "27"
+                }
+              },
+              {
+                "reference_ru": "Псалом 41:2",
+                "reference_en": "Psalm 42:1",
+          
+                "text_ru": "Как лань желает к потокам воды, так желает душа моя к Тебе, Боже.",
+                "text_en": "As the deer pants for the water brooks, so my soul pants after you, God.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 41,
+                    "verse": "2"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 42,
+                    "verse": "1"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Иоанна 17:3",
+                "reference_en": "John 17:3",
+              
+                "text_ru": "Сия же есть жизнь вечная, да знают Тебя, единого истинного Бога, и посланного Тобою Иисуса Христа.",
+                "text_en": "This is eternal life, that they should know you, the only true God, and him whom you sent, Jesus Christ.",
+              
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 17,
+                  "verse": "3"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-52",
+            "day": 52,
+          
+            "topic_ru": "Истинные ценности",
+            "topic_en": "True Values",
+          
+            "question_ru": "Что важнее богатства?",
+            "question_en": "What is more important than wealth?",
+          
+            "reference_ru": "Притчи 22:1",
+            "reference_en": "Proverbs 22:1",
+          
+            "text_ru": "Доброе имя лучше большого богатства, и добрая слава лучше серебра и золота.",
+            "text_en": "A good name is more desirable than great riches, and loving favor is better than silver and gold.",
+          
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 22,
+              "verse": "1"
+            },
+          
+            "answer_ru": "Характер и доброе имя ценнее денег и материальных богатств.",
+            "answer_en": "Character and a good name are more valuable than money and material wealth.",
+          
+            "related": [
+              {
+                "reference_ru": "Матфея 6:33",
+                "reference_en": "Matthew 6:33",
+          
+                "text_ru": "Ищите же прежде Царства Божия и правды Его, и это всё приложится вам.",
+                "text_en": "But seek first God's Kingdom and his righteousness; and all these things will be given to you as well.",
+          
+                "verse_ref": {
+                  "book": "Matthew",
+                  "chapter": 6,
+                  "verse": "33"
+                }
+              },
+              {
+                "reference_ru": "1 Тимофею 6:6",
+                "reference_en": "1 Timothy 6:6",
+          
+                "text_ru": "Великое приобретение — быть благочестивым и довольным.",
+                "text_en": "But godliness with contentment is great gain.",
+          
+                "verse_ref": {
+                  "book": "1-Timothy",
+                  "chapter": 6,
+                  "verse": "6"
+                }
+              },
+              {
+                "reference_ru": "Притчи 15:16",
+                "reference_en": "Proverbs 15:16",
+              
+                "text_ru": "Лучше немногое при страхе Господнем, нежели большое сокровище и при нём тревога.",
+                "text_en": "Better is little, with the fear of the Lord, than great treasure with trouble.",
+              
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 15,
+                  "verse": "16"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-53",
+            "day": 53,
+          
+            "topic_ru": "Божья мудрость",
+            "topic_en": "God's Wisdom",
+          
+            "question_ru": "Что помогает принимать правильные решения?",
+            "question_en": "What helps us make the right decisions?",
+          
+            "reference_ru": "Иакова 1:5",
+            "reference_en": "James 1:5",
+          
+            "text_ru": "Если же у кого из вас недостаёт мудрости, да просит у Бога, дающего всем просто и без упрёков, — и дастся ему.",
+            "text_en": "But if any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach; and it will be given to him.",
+          
+            "verse_ref": {
+              "book": "James",
+              "chapter": 1,
+              "verse": "5"
+            },
+          
+            "answer_ru": "Бог направляет человека, который ищет Его воли и не полагается на своё понимание.",
+            "answer_en": "God guides those who seek His will and do not rely on their own understanding.",
+          
+            "related": [
+              {
+                "reference_ru": "Притчи 3:5-6",
+                "reference_en": "Proverbs 3:5-6",
+          
+                "text_ru": "Надейся на Господа всем сердцем твоим, и не полагайся на разум твой. Во всех путях твоих познавай Его, и Он направит стези твои.",
+                "text_en": "Trust in the Lord with all your heart, and don't lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 3,
+                  "verse": "5-6"
+                }
+              },
+              {
+                "reference_ru": "Псалом 31:8",
+                "reference_en": "Psalm 32:8",
+          
+                "text_ru": "Вразумлю тебя, наставлю тебя на путь, по которому тебе идти; буду руководить тебя, око Моё над тобою.",
+                "text_en": "I will instruct you and teach you in the way which you shall go. I will counsel you with my eye on you.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 31,
+                    "verse": "8"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 32,
+                    "verse": "8"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Исаия 30:21",
+                "reference_en": "Isaiah 30:21",
+          
+                "text_ru": "И уши твои будут слышать слово, говорящее позади тебя: «Вот путь, идите по нему», если бы вы уклонились направо и если бы вы уклонились налево.",
+                "text_en": "Your ears will hear a word behind you, saying, 'This is the way. Walk in it,' whenever you turn to the right hand or whenever you turn to the left.",
+          
+                "verse_ref": {
+                  "book": "Isaiah",
+                  "chapter": 30,
+                  "verse": "21"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-54",
+            "day": 54,
+          
+            "topic_ru": "Христос — центр жизни",
+            "topic_en": "Christ at the Center",
+          
+            "question_ru": "Что является главным в жизни человека?",
+            "question_en": "What is most important in a person's life?",
+          
+            "reference_ru": "Колоссянам 3:4",
+            "reference_en": "Colossians 3:4",
+          
+            "text_ru": "Когда же явится Христос, жизнь ваша, тогда и вы явитесь с Ним во славе.",
+            "text_en": "When Christ, our life, is revealed, then you will also be revealed with him in glory.",
+          
+            "verse_ref": {
+              "book": "Colossians",
+              "chapter": 3,
+              "verse": "4"
+            },
+          
+            "answer_ru": "Христос должен быть центром жизни человека.",
+            "answer_en": "Christ should be the center of a person's life.",
+          
+            "related": [
+              {
+                "reference_ru": "Филиппийцам 1:21",
+                "reference_en": "Philippians 1:21",
+          
+                "text_ru": "Ибо для меня жизнь — Христос, и смерть — приобретение.",
+                "text_en": "For to me to live is Christ, and to die is gain.",
+          
+                "verse_ref": {
+                  "book": "Philippians",
+                  "chapter": 1,
+                  "verse": "21"
+                }
+              },
+              {
+                "reference_ru": "Галатам 2:20",
+                "reference_en": "Galatians 2:20",
+          
+                "text_ru": "И уже не я живу, но живет во мне Христос. А что ныне живу во плоти, то живу верою в Сына Божия, возлюбившего меня и предавшего Себя за меня.",
+                "text_en": "I have been crucified with Christ, and it is no longer I who live, but Christ lives in me. That life which I now live in the flesh, I live by faith in the Son of God, who loved me and gave himself up for me.",
+          
+                "verse_ref": {
+                  "book": "Galatians",
+                  "chapter": 2,
+                  "verse": "20"
+                }
+              },
+              {
+                "reference_ru": "Иоанна 15:5",
+                "reference_en": "John 15:5",
+          
+                "text_ru": "Я есмь виноградная лоза, а вы ветви; кто пребывает во Мне, и Я в нём, тот приносит много плода; ибо без Меня не можете делать ничего.",
+                "text_en": "I am the vine. You are the branches. He who remains in me, and I in him, bears much fruit, for apart from me you can do nothing.",
+          
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 15,
+                  "verse": "5"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-55",
+            "day": 55,
+          
+            "topic_ru": "Доброе имя",
+            "topic_en": "A Good Name",
+          
+            "question_ru": "Что остаётся после человека?",
+            "question_en": "What remains after a person is gone?",
+          
+            "reference_ru": "Екклесиаст 7:1",
+            "reference_en": "Ecclesiastes 7:1",
+          
+            "text_ru": "Доброе имя лучше дорогой масти, и день смерти — дня рождения.",
+            "text_en": "A good name is better than fine perfume; and the day of death than the day of one's birth.",
+          
+            "verse_ref": {
+              "book": "Ecclesiastes",
+              "chapter": 7,
+              "verse": "1"
+            },
+          
+            "answer_ru": "В день рождения ещё неизвестно, каким станет человек. В день смерти виден результат всей его жизни.",
+            "answer_en": "At birth, it is not yet known what kind of person someone will become. At death, the result of their life can be seen.",
+          
+            "related": [
+              {
+                "reference_ru": "Притчи 10:7",
+                "reference_en": "Proverbs 10:7",
+          
+                "text_ru": "Память праведника пребудет благословенна, а имя нечестивых омерзеет.",
+                "text_en": "The memory of the righteous is blessed, but the name of the wicked will rot.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 10,
+                  "verse": "7"
+                }
+              },
+              {
+                "reference_ru": "Псалом 111:6",
+                "reference_en": "Psalm 112:6",
+          
+                "text_ru": "Он вовек не поколеблется; в вечной памяти будет праведник.",
+                "text_en": "The righteous will be remembered forever.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 111,
+                    "verse": "6"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 112,
+                    "verse": "6"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Откровение 14:13",
+                "reference_en": "Revelation 14:13",
+          
+                "text_ru": "И услышал я голос с неба, говорящий мне: напиши: отныне блаженны мертвые, умирающие в Господе; ей, говорит Дух, они успокоятся от трудов своих, и дела их идут вслед за ними.",
+                "text_en": "Blessed are the dead who die in the Lord from now on. Yes, says the Spirit, that they may rest from their labors; for their works follow with them.",
+          
+                "verse_ref": {
+                  "book": "Revelation",
+                  "chapter": 14,
+                  "verse": "13"
                 }
               }
             ]
