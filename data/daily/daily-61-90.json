@@ -800,6 +800,67 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-20",
+        "day": 77,
+        "topic": {
+          "ru": "Время плакать и время смеяться",
+          "en": "A Time to Weep and a Time to Laugh"
+        },
+        "reference_ru": "Екклесиаст 3:4",
+        "reference_en": "Ecclesiastes 3:4",
+        "text_ru": "Время плакать, и время смеяться; время сетовать, и время плясать.",
+        "text_en": "A time to weep, and a time to laugh; a time to mourn, and a time to dance.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "4"
+        },
+        "interpretation_ru": "Каждое время в жизни имеет своё место в Божьем плане.",
+        "interpretation_en": "Every season of life has its place in God's plan.",
+        "related": [
+          {
+            "reference_ru": "Псалом 29:6",
+            "reference_en": "Psalm 30:5",
+            "text_ru": "ибо на мгновение гнев Его, на всю жизнь благоволение Его: вечером водворяется плач, а на утро радость.",
+            "text_en": "For his anger is but for a moment. His favor is for a lifetime. Weeping may stay for the night, but joy comes in the morning.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 29,
+                "verse": "6"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 30,
+                "verse": "5"
+              }
+            }
+          },
+          {
+            "reference_ru": "Римлянам 12:15",
+            "reference_en": "Romans 12:15",
+            "text_ru": "Радуйтесь с радующимися и плачьте с плачущими.",
+            "text_en": "Rejoice with those who rejoice. Weep with those who weep.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 12,
+              "verse": "15"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 16:20",
+            "reference_en": "John 16:20",
+            "text_ru": "Вы восплачете и возрыдаете, а мир возрадуется; вы печальны будете, но печаль ваша в радость будет.",
+            "text_en": "You will weep and lament, but your sorrow will be turned into joy.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 16,
+              "verse": "20"
+            }
+          }
+        ]
       }
     ]
   }
