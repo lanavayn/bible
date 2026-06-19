@@ -861,6 +861,405 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-21",
+        "day": 78,
+        "topic": {
+          "ru": "Время искать и время терять",
+          "en": "A Time to Seek and a Time to Lose"
+        },
+        "reference_ru": "Екклесиаст 3:6",
+        "reference_en": "Ecclesiastes 3:6",
+        "text_ru": "Время искать, и время терять; время сберегать, и время бросать.",
+        "text_en": "A time to seek, and a time to lose; a time to keep, and a time to cast away.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "6"
+        },
+        "interpretation_ru": "Бог учит нас искать вечное, а не только временное.",
+        "interpretation_en": "God teaches us to seek what is eternal, not only what is temporary.",
+        "related": [
+          {
+            "reference_ru": "Матфея 6:33",
+            "reference_en": "Matthew 6:33",
+            "text_ru": "Ищите же прежде Царства Божия и правды Его, и это всё приложится вам.",
+            "text_en": "But seek first God's Kingdom and his righteousness; and all these things will be given to you as well.",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 6,
+              "verse": "33"
+            }
+          },
+          {
+            "reference_ru": "Луки 15:4",
+            "reference_en": "Luke 15:4",
+            "text_ru": "Кто из вас, имея сто овец и потеряв одну из них, не оставит девяноста девяти в пустыне и не пойдет за пропавшею, пока не найдет ее?",
+            "text_en": "What man among you, if he has one hundred sheep and has lost one of them, doesn't leave the ninety-nine in the wilderness and go after the one that was lost until he finds it?",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 15,
+              "verse": "4"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 3:8",
+            "reference_en": "Philippians 3:8",
+            "text_ru": "Да и все почитаю тщетою ради превосходства познания Христа Иисуса, Господа моего: для Него я от всего отказался, и все почитаю за сор, чтобы приобрести Христа",
+            "text_en": "Yes most certainly, and I count all things to be a loss for the excellency of the knowledge of Christ Jesus, my Lord, for whom I suffered the loss of all things, and count them nothing but refuse, that I may gain Christ",
+            "verse_ref": {
+              "book": "philippians",
+              "chapter": 3,
+              "verse": "8"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-22",
+        "day": 79,
+        "topic": {
+          "ru": "Время молчать и время говорить",
+          "en": "A Time to Keep Silence and a Time to Speak"
+        },
+        "reference_ru": "Екклесиаст 3:7",
+        "reference_en": "Ecclesiastes 3:7",
+        "text_ru": "... Время молчать, и время говорить.",
+        "text_en": "... A time to keep silence, and a time to speak.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "7"
+        },
+        "interpretation_ru": "Бог даёт мудрость знать, когда говорить, а когда молчать.",
+        "interpretation_en": "God gives wisdom to know when to speak and when to remain silent.",
+        "related": [
+          {
+            "reference_ru": "Иакова 1:19",
+            "reference_en": "James 1:19",
+            "text_ru": "Итак, братия мои возлюбленные, всякий человек да будет скор на слышание, медлен на слова, медлен на гнев.",
+            "text_en": "So then, my beloved brothers, let every man be swift to hear, slow to speak, and slow to anger.",
+            "verse_ref": {
+              "book": "james",
+              "chapter": 1,
+              "verse": "19"
+            }
+          },
+          {
+            "reference_ru": "Притчи 17:28",
+            "reference_en": "Proverbs 17:28",
+            "text_ru": "И глупец, когда молчит, может показаться мудрым, и затворяющий уста свои — благоразумным.",
+            "text_en": "Even a fool, when he keeps silent, is counted wise. When he shuts his lips, he is thought to be discerning.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 17,
+              "verse": "28"
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 4:6",
+            "reference_en": "Colossians 4:6",
+            "text_ru": "Слово ваше да будет всегда с благодатию, приправлено солью, дабы вы знали, как отвечать каждому.",
+            "text_en": "Let your speech always be with grace, seasoned with salt, that you may know how you ought to answer each one.",
+            "verse_ref": {
+              "book": "colossians",
+              "chapter": 4,
+              "verse": "6"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-23",
+        "day": 80,
+        "topic": {
+          "ru": "Время раздирать и время сшивать",
+          "en": "A Time to Tear and a Time to Sew"
+        },
+        "reference_ru": "Екклесиаст 3:7",
+        "reference_en": "Ecclesiastes 3:7",
+        "text_ru": "Время раздирать, и время сшивать...",
+        "text_en": "A time to tear, and a time to sew...",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "7"
+        },
+        "interpretation_ru": "Бог может исцелить то, что было сокрушено.",
+        "interpretation_en": "God can heal what has been broken.",
+        "related": [
+          {
+            "reference_ru": "Иоиль 2:13",
+            "reference_en": "Joel 2:13",
+            "text_ru": "Раздирайте сердца ваши, а не одежды ваши, и обратитесь к Господу Богу вашему; ибо Он благ и милосерд, долготерпелив и многомилостив.",
+            "text_en": "Tear your heart, and not your garments, and turn to the Lord your God; for he is gracious and merciful, slow to anger, and abundant in loving kindness.",
+            "verse_ref": {
+              "book": "joel",
+              "chapter": 2,
+              "verse": "13"
+            }
+          },
+          {
+            "reference_ru": "Псалом 146:3",
+            "reference_en": "Psalm 147:3",
+            "text_ru": "Он исцеляет сокрушенных сердцем и врачует скорби их.",
+            "text_en": "He heals the broken in heart, and binds up their wounds.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 146,
+                "verse": "3"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 147,
+                "verse": "3"
+              }
+            }
+          },
+          {
+            "reference_ru": "Иеремия 31:4",
+            "reference_en": "Jeremiah 31:4",
+            "text_ru": "Я снова устрою тебя, и будешь устроена, дева Израилева; снова будешь украшаться тимпанами твоими и выходить в хороводе веселящихся.",
+            "text_en": "Again I will build you, and you will be built, O virgin of Israel. Again you will be adorned with your tambourines, and will go out in the dances of those who make merry.",
+            "verse_ref": {
+              "book": "jeremiah",
+              "chapter": 31,
+              "verse": "4"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-24",
+        "day": 81,
+        "topic": {
+          "ru": "Время любить и время ненавидеть",
+          "en": "A Time to Love and a Time to Hate"
+        },
+        "reference_ru": "Екклесиаст 3:8",
+        "reference_en": "Ecclesiastes 3:8",
+        "text_ru": "Время любить, и время ненавидеть; время войне, и время миру...",
+        "text_en": "A time to love, and a time to hate...",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "8"
+        },
+        "interpretation_ru": "Бог учит нас любить добро и отвергать зло.",
+        "interpretation_en": "God teaches us to love what is good and reject what is evil.",
+        "related": [
+          {
+            "reference_ru": "Псалом 96:10",
+            "reference_en": "Psalm 97:10",
+            "text_ru": "Любящие Господа, ненавидьте зло! Он хранит души святых Своих; из руки нечестивых избавляет их.",
+            "text_en": "You who love the Lord, hate evil! He preserves the souls of his saints. He delivers them out of the hand of the wicked.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 96,
+                "verse": "10"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 97,
+                "verse": "10"
+              }
+            }
+          },
+          {
+            "reference_ru": "Римлянам 12:9",
+            "reference_en": "Romans 12:9",
+            "text_ru": "Любовь да будет непритворна; отвращайтесь зла, прилепляйтесь к добру.",
+            "text_en": "Let love be without hypocrisy. Abhor that which is evil. Cling to that which is good.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 12,
+              "verse": "9"
+            }
+          },
+          {
+            "reference_ru": "Амос 5:15",
+            "reference_en": "Amos 5:15",
+            "text_ru": "Возненавидьте зло и возлюбите добро, и восстановите у ворот правосудие; может быть, Господь Бог Саваоф помилует остаток Иосифов.",
+            "text_en": "Hate evil, love good, and establish justice in the courts. It may be that the Lord, the God of Armies, will be gracious to the remnant of Joseph.",
+            "verse_ref": {
+              "book": "amos",
+              "chapter": 5,
+              "verse": "15"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-25",
+        "day": 82,
+        "topic": {
+          "ru": "Время войне и время миру",
+          "en": "A Time for War and a Time for Peace"
+        },
+        "reference_ru": "Екклесиаст 3:8",
+        "reference_en": "Ecclesiastes 3:8",
+        "text_ru": "Время войне, и время миру.",
+        "text_en": "A time for war, and a time for peace.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "8"
+        },
+        "interpretation_ru": "Даже среди тревог и конфликтов Бог ведёт нас к миру.",
+        "interpretation_en": "Even amid troubles and conflicts, God leads us toward peace.",
+        "related": [
+          {
+            "reference_ru": "Матфея 24:6",
+            "reference_en": "Matthew 24:6",
+            "text_ru": "Также услышите о войнах и о военных слухах; смотрите, не ужасайтесь, ибо надлежит всему тому быть, но это еще не конец.",
+            "text_en": "You will hear of wars and rumors of wars. See that you aren’t troubled, for all this must happen, but the end is not yet.",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 24,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 3:15",
+            "reference_en": "Colossians 3:15",
+            "text_ru": "И да владычествует в сердцах ваших мир Божий, к которому вы и призваны в одном теле; и будьте дружелюбны.",
+            "text_en": "And let the peace of God rule in your hearts, to which also you were called in one body; and be thankful.",
+            "verse_ref": {
+              "book": "colossians",
+              "chapter": 3,
+              "verse": "15"
+            }
+          },
+          {
+            "reference_ru": "Псалом 45:10",
+            "reference_en": "Psalm 46:9",
+            "text_ru": "Прекращая брани до края земли, сокрушит лук и переломит копье, колесницы сожжет огнем.",
+            "text_en": "He makes wars cease to the end of the earth. He breaks the bow, and shatters the spear. He burns the chariots in the fire.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 45,
+                "verse": "10"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 46,
+                "verse": "9"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-26",
+        "day": 83,
+        "topic": {
+          "ru": "Время разрушать и время строить",
+          "en": "A Time to Break Down and a Time to Build Up"
+        },
+        "reference_ru": "Екклесиаст 3:3",
+        "reference_en": "Ecclesiastes 3:3",
+        "text_ru": "Время разрушать, и время строить.",
+        "text_en": "A time to break down, and a time to build up.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "3"
+        },
+        "interpretation_ru": "Иногда Бог убирает старое, чтобы создать новое.",
+        "interpretation_en": "Sometimes God removes the old to build something new.",
+        "related": [
+          {
+            "reference_ru": "Иеремия 1:10",
+            "reference_en": "Jeremiah 1:10",
+            "text_ru": "Смотри, Я поставил тебя в сей день над народами и царствами, чтобы искоренять и разорять, губить и разрушать, созидать и насаждать.",
+            "text_en": "See, I have today set you over the nations and over the kingdoms, to uproot and to break down, to destroy and to overthrow, to build and to plant.",
+            "verse_ref": {
+              "book": "jeremiah",
+              "chapter": 1,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Исаия 58:12",
+            "reference_en": "Isaiah 58:12",
+            "text_ru": "И застроятся потомками твоими пустыни вековые: ты восстановишь основания многих поколений, и будут называть тебя восстановителем развалин, возобновителем путей для населения.",
+            "text_en": "Those who shall be of you shall build the old waste places. You shall raise up the foundations of many generations; and you shall be called Repairer of the Breach, Restorer of Paths with Dwellings.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 58,
+              "verse": "12"
+            }
+          },
+          {
+            "reference_ru": "1 Коринфянам 3:9",
+            "reference_en": "1 Corinthians 3:9",
+            "text_ru": "Ибо мы соработники у Бога, а вы Божия нива, Божие строение.",
+            "text_en": "For we are God's fellow workers. You are God's farming, God's building.",
+            "verse_ref": {
+              "book": "1-corinthians",
+              "chapter": 3,
+              "verse": "9"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-27",
+        "day": 84,
+        "topic": {
+          "ru": "Время врачевать",
+          "en": "A Time to Heal"
+        },
+        "reference_ru": "Екклесиаст 3:3",
+        "reference_en": "Ecclesiastes 3:3",
+        "text_ru": "Время врачевать.",
+        "text_en": "A time to heal.",
+        "verse_ref": {
+          "book": "ecclesiastes",
+          "chapter": 3,
+          "verse": "3"
+        },
+        "interpretation_ru": "Бог приносит исцеление и восстановление в нашу жизнь.",
+        "interpretation_en": "God brings healing and restoration into our lives.",
+        "related": [
+          {
+            "reference_ru": "Исход 15:26",
+            "reference_en": "Exodus 15:26",
+            "text_ru": "Ибо Я Господь, целитель твой.",
+            "text_en": "For I am Yahweh who heals you.",
+            "verse_ref": {
+              "book": "exodus",
+              "chapter": 15,
+              "verse": "26"
+            }
+          },
+          {
+            "reference_ru": "Иеремия 30:17",
+            "reference_en": "Jeremiah 30:17",
+            "text_ru": "Я обложу тебя пластырем и исцелю тебя от ран твоих, говорит Господь.",
+            "text_en": "For I will restore health to you, and I will heal you of your wounds, says Yahweh.",
+            "verse_ref": {
+              "book": "jeremiah",
+              "chapter": 30,
+              "verse": "17"
+            }
+          },
+          {
+            "reference_ru": "Марка 2:17",
+            "reference_en": "Mark 2:17",
+            "text_ru": "Не здоровые имеют нужду во враче, но больные; Я пришёл призвать не праведников, а грешников к покаянию.",
+            "text_en": "Those who are healthy have no need for a physician, but those who are sick. I came not to call the righteous, but sinners to repentance.",
+            "verse_ref": {
+              "book": "mark",
+              "chapter": 2,
+              "verse": "17"
+            }
+          }
+        ]
       }
     ]
   }
