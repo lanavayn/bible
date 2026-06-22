@@ -228,6 +228,14 @@ const BIBLE_COM_BOOK_MAP = {
   
     return "";
   }
+
+  export function isOldTestamentBook(ref) {
+    const normalized = normalizeVerseRef(ref);
+    if (!normalized) return false;
+  
+    const bookNumber = Number(BOOK_MAP[normalized.book]?.ru);
+    return bookNumber >= 1 && bookNumber <= 39;
+  }
   
   // =========================
   // CHECK LINK EXISTS

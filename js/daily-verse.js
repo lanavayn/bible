@@ -1,4 +1,4 @@
-import { buildBibleLink } from "./bibleLinks.js";
+import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 
 const easterDates = {
   2026: "2026-04-05",
@@ -381,7 +381,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 : ""
             }
 
-            ${text ? `<blockquote class="daily-verse-text">${addCreationHelp(text, lang)}</blockquote>` : ""}
+            ${text ? `<blockquote class="daily-verse-text">${addCreationHelp(text, lang, verseRef)}</blockquote>` : ""}
 
             <div class="scripture-note-box">
               ${
@@ -389,7 +389,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   ? `
                   <p class="scripture-interpretation">
                     <strong>${detailsTitle}</strong>
-                    ${addCreationHelp(interpretation, lang)}
+                    ${addCreationHelp(interpretation, lang, verseRef)}
                   </p>
                   `
                   : ""
@@ -931,7 +931,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     return shortened.trim() + "...";
   }
 
-  function addCreationHelp(text, lang) {
+  function addCreationHelp(text, lang, verseRef = null) {
     if (!text) return "";
 
     let safeText = escapeHtml(text);
@@ -957,7 +957,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           (match, before, word) => `${before}${word}${pronounHelpHtml}`
         );
   }
-  if (lang === "en") {
+  if (lang === "en" && isOldTestamentBook(verseRef)) {
     const lordHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="More about LORD">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Close">×</button>In the Old Testament, “LORD” often represents God’s personal name, Yahweh.</span></span>`;
   
     safeText = safeText.replace(
@@ -1117,7 +1117,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                  &#128214;
                </span>`
         }
-        <span class="scripture-related-text">— ${addCreationHelp(text, lang)}</span>
+        <span class="scripture-related-text">— ${addCreationHelp(text, lang, verseRef)}</span>
       </li>
     `;
   }
