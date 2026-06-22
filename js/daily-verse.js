@@ -964,7 +964,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       /\b(LORD|Lord)\b/g,
       (match) => `${match}${lordHelpHtml}`
     );
+  }
 
+  if (lang === "en") {
     const burdenHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="More about burdens">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Close">×</button>Burdens are the difficulties, cares, and struggles of life that we can help one another carry.</span></span>`;
   
     safeText = safeText.replace(
