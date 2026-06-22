@@ -1,4 +1,4 @@
-import { buildBibleLink } from "./bibleLinks.js";
+import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 
 //
 // PROD date Anpril 30 2026
@@ -250,7 +250,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         </div>
     
         <blockquote class="daily-verse-text">
-          ${addQuestionCreationHelp(text, lang)}
+          ${addQuestionCreationHelp(text, lang, verseRef)}
         </blockquote>
     
         <div class="scripture-note-box">
@@ -289,7 +289,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                               >📖</a>`
                             : ""
                         }
-                        <span class="scripture-related-text">— ${addQuestionCreationHelp(relText, lang)}</span>
+                        <span class="scripture-related-text">— ${addQuestionCreationHelp(relText, lang, relVerseRef)}</span>
                       </li>
                     `;
                   }).join("")}
@@ -706,7 +706,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
   }
 };
 
-function addQuestionCreationHelp(text, lang) {
+function addQuestionCreationHelp(text, lang, verseRef = null) {
   if (!text) return "";
 
   let safeText = escapeHtml(text);
@@ -784,7 +784,7 @@ function addQuestionCreationHelp(text, lang) {
 
   }
 
-  if (lang === "en") {
+  if (lang === "en" && isOldTestamentBook(verseRef)) {
     const lordHelpHtml = `
       <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="More about Lord">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
         <span class="footer-help-box daily-help-box">
