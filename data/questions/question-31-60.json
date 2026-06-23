@@ -1753,6 +1753,366 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-56",
+            "day": 56,
+          
+            "topic_ru": "Правильный путь",
+            "topic_en": "The Right Path",
+          
+            "question_ru": "Как знать, что мы на правильном пути?",
+            "question_en": "How can we know we are on the right path?",
+          
+            "reference_ru": "Иоанна 10:27",
+            "reference_en": "John 10:27",
+          
+            "text_ru": "Овцы Мои слушаются голоса Моего, и Я знаю их; и они идут за Мною.",
+            "text_en": "My sheep hear my voice, and I know them, and they follow me.",
+          
+            "verse_ref": {
+              "book": "John",
+              "chapter": 10,
+              "verse": "27"
+            },
+          
+            "answer_ru": "Мы на правильном пути, когда слушаем голос Христа и следуем за Ним.",
+            "answer_en": "We are on the right path when we listen to Christ's voice and follow Him.",
+          
+            "related": [
+              {
+                "reference_ru": "Псалом 24:12",
+                "reference_en": "Psalm 25:12",
+          
+                "text_ru": "Кто есть человек, боящийся Господа? Ему укажет Он путь, который избрать.",
+                "text_en": "What man is he who fears the Lord? He shall instruct him in the way that he shall choose.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 24,
+                    "verse": "12"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 25,
+                    "verse": "12"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Притчи 16:9",
+                "reference_en": "Proverbs 16:9",
+          
+                "text_ru": "Сердце человека обдумывает свой путь, но Господь управляет шествием его.",
+                "text_en": "A man's heart plans his course, but the Lord directs his steps.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 16,
+                  "verse": "9"
+                }
+              },
+              {
+                "reference_ru": "Колоссянам 2:6",
+                "reference_en": "Colossians 2:6",
+          
+                "text_ru": "Посему, как вы приняли Христа Иисуса Господа, так и ходите в Нём.",
+                "text_en": "As therefore you received Christ Jesus, the Lord, walk in Him.",
+          
+                "verse_ref": {
+                  "book": "Colossians",
+                  "chapter": 2,
+                  "verse": "6"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-57",
+            "day": 57,
+          
+            "topic_ru": "Божье предупреждение",
+            "topic_en": "God's Warning",
+          
+            "question_ru": "Как Бог предупреждает нас о неправильном пути?",
+            "question_en": "How does God warn us about the wrong path?",
+          
+            "reference_ru": "Откровение 3:19",
+            "reference_en": "Revelation 3:19",
+          
+            "text_ru": "Кого Я люблю, тех обличаю и наказываю. Итак будь ревностен и покайся.",
+            "text_en": "As many as I love, I reprove and chasten. Be zealous therefore, and repent.",
+          
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 3,
+              "verse": "19"
+            },
+          
+            "answer_ru": "Бог предупреждает нас через обличение и призыв к покаянию.",
+            "answer_en": "God warns us through correction and a call to repentance.",
+          
+            "related": [
+              {
+                "reference_ru": "Притчи 28:13",
+                "reference_en": "Proverbs 28:13",
+          
+                "text_ru": "Скрывающий свои преступления не будет иметь успеха; а кто сознаётся и оставляет их, тот будет помилован.",
+                "text_en": "He who conceals his sins doesn't prosper, but whoever confesses and renounces them finds mercy.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 28,
+                  "verse": "13"
+                }
+              },
+              {
+                "reference_ru": "Псалом 31:3-5",
+                "reference_en": "Psalm 32:3-5",
+          
+                "text_ru": "Когда я молчал, обветшали кости мои от вседневного стенания моего, ибо день и ночь тяготела надо мною рука Твоя; свежесть моя исчезла, как в летнюю засуху. Но я открыл Тебе грех мой и не скрыл беззакония моего; я сказал: «исповедаю Господу преступления мои», и Ты снял с меня вину греха моего.",
+                "text_en": "When I kept silence, my bones wasted away through my groaning all day long. For day and night your hand was heavy on me. My strength was sapped in the heat of summer. I acknowledged my sin to you. I didn't hide my iniquity. I said, I will confess my transgressions to the Lord, and you forgave the iniquity of my sin.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 31,
+                    "verse": "3-5"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 32,
+                    "verse": "3-5"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Деяния 3:19",
+                "reference_en": "Acts 3:19",
+              
+                "text_ru": "Итак покайтесь и обратитесь, чтобы загладились грехи ваши.",
+              
+                "text_en": "Repent therefore, and turn again, that your sins may be blotted out.",
+              
+                "verse_ref": {
+                  "book": "Acts",
+                  "chapter": 3,
+                  "verse": "19"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-58",
+            "day": 58,
+          
+            "topic_ru": "Прощение",
+            "topic_en": "Forgiveness",
+          
+            "question_ru": "Что делать, если мы поняли, что ошиблись?",
+            "question_en": "What should we do if we realize we were wrong?",
+          
+            "reference_ru": "1 Иоанна 1:9",
+            "reference_en": "1 John 1:9",
+          
+            "text_ru": "Если исповедуем грехи наши, то Он, будучи верен и праведен, простит нам грехи наши и очистит нас от всякой неправды.",
+            "text_en": "If we confess our sins, he is faithful and righteous to forgive us the sins, and to cleanse us from all unrighteousness.",
+          
+            "verse_ref": {
+              "book": "1-John",
+              "chapter": 1,
+              "verse": "9"
+            },
+          
+            "answer_ru": "Бог готов простить каждого, кто искренне признаёт свои ошибки и обращается к Нему.",
+            "answer_en": "God is ready to forgive everyone who sincerely acknowledges their mistakes and turns to Him.",
+          
+            "reflection_ru": "Покаяние открывает путь к прощению, а прощение — к новой жизни.",
+            "reflection_en": "Repentance opens the way to forgiveness, and forgiveness opens the way to a new life.",
+          
+            "related": [
+              {
+                "reference_ru": "Исаия 1:18",
+                "reference_en": "Isaiah 1:18",
+          
+                "text_ru": "Тогда придите — и рассудим, говорит Господь. Если будут грехи ваши как багряное, — как снег убелю; если будут красны, как пурпур, — как волну убелю.",
+                "text_en": "“Come now, and let us reason together,” says the Lord. “Though your sins are as scarlet, they shall be as white as snow. Though they are red like crimson, they shall be as wool.”",
+          
+                "verse_ref": {
+                  "book": "Isaiah",
+                  "chapter": 1,
+                  "verse": "18"
+                }
+              },
+              {
+                "reference_ru": "Псалом 102:12",
+                "reference_en": "Psalm 103:12",
+          
+                "text_ru": "Как далеко восток от запада, так удалил Он от нас беззакония наши.",
+                "text_en": "As far as the east is from the west, so far has he removed our transgressions from us.",
+          
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 102,
+                    "verse": "12"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 103,
+                    "verse": "12"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Луки 15:7",
+                "reference_en": "Luke 15:7",
+          
+                "text_ru": "Сказываю вам, что так на небесах более радости будет об одном грешнике кающемся, нежели о девяноста девяти праведниках, не имеющих нужды в покаянии.",
+                "text_en": "I tell you that even so there will be more joy in heaven over one sinner who repents, than over ninety-nine righteous people who need no repentance.",
+          
+                "verse_ref": {
+                  "book": "Luke",
+                  "chapter": 15,
+                  "verse": "7"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-59",
+            "day": 59,
+          
+            "topic_ru": "Будущее без страха",
+            "topic_en": "Facing the Future Without Fear",
+          
+            "question_ru": "Почему не нужно тревожиться о будущем?",
+            "question_en": "Why shouldn't we worry about the future?",
+          
+            "reference_ru": "Матфея 6:34",
+            "reference_en": "Matthew 6:34",
+          
+            "text_ru": "Итак не заботьтесь о завтрашнем дне, ибо завтрашний сам будет заботиться о своём: довольно для каждого дня своей заботы.",
+            "text_en": "Therefore don't be anxious for tomorrow, for tomorrow will be anxious for itself. Each day's own evil is sufficient.",
+          
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 6,
+              "verse": "34"
+            },
+          
+            "answer_ru": "Бог призывает нас жить сегодняшним днём и доверять Ему завтрашний.",
+            "answer_en": "God calls us to live one day at a time and trust Him with tomorrow.",
+          
+            "related": [
+              {
+                "reference_ru": "1 Петра 5:7",
+                "reference_en": "1 Peter 5:7",
+          
+                "text_ru": "Все заботы ваши возложите на Него, ибо Он печётся о вас.",
+                "text_en": "Casting all your worries on him, because he cares for you.",
+          
+                "verse_ref": {
+                  "book": "1-Peter",
+                  "chapter": 5,
+                  "verse": "7"
+                }
+              },
+              {
+                "reference_ru": "Наум 1:7",
+                "reference_en": "Nahum 1:7",
+          
+                "text_ru": "Благ Господь, убежище в день скорби, и знает надеющихся на Него.",
+                "text_en": "The Lord is good, a stronghold in the day of trouble; and he knows those who take refuge in him.",
+          
+                "verse_ref": {
+                  "book": "Nahum",
+                  "chapter": 1,
+                  "verse": "7"
+                }
+              },
+              {
+                "reference_ru": "Софония 3:17",
+                "reference_en": "Zephaniah 3:17",
+          
+                "text_ru": "Господь Бог твой среди тебя, Он силён спасти тебя; возвеселится о тебе радостью, будет милостив по любви Своей, будет торжествовать о тебе с ликованием.",
+                "text_en": "The Lord, your God, is among you, a mighty one who will save. He will rejoice over you with gladness. He will calm you in his love. He will rejoice over you with singing.",
+          
+                "verse_ref": {
+                  "book": "Zephaniah",
+                  "chapter": 3,
+                  "verse": "17"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-60",
+            "day": 60,
+          
+            "topic_ru": "Выбор и последствия",
+            "topic_en": "Choices and Consequences",
+          
+            "question_ru": "Влияют ли наши решения на будущее?",
+            "question_en": "Do our decisions affect the future?",
+          
+            "reference_ru": "Галатам 6:7",
+            "reference_en": "Galatians 6:7",
+          
+            "text_ru": "Не обманывайтесь: Бог поругаем не бывает. Что посеет человек, то и пожнёт.",
+            "text_en": "Don't be deceived. God is not mocked, for whatever a man sows, that he will also reap.",
+          
+            "verse_ref": {
+              "book": "Galatians",
+              "chapter": 6,
+              "verse": "7"
+            },
+          
+            "answer_ru": "Бог дал человеку свободу выбора, и наши решения имеют последствия.",
+            "answer_en": "God has given people freedom of choice, and our decisions have consequences.",
+          
+            "related": [
+              {
+                "reference_ru": "Притчи 14:12",
+                "reference_en": "Proverbs 14:12",
+          
+                "text_ru": "Есть пути, которые кажутся человеку прямыми; но конец их — путь к смерти.",
+                "text_en": "There is a way which seems right to a man, but in the end it leads to death.",
+          
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 14,
+                  "verse": "12"
+                }
+              },
+              {
+                "reference_ru": "Второзаконие 30:19",
+                "reference_en": "Deuteronomy 30:19",
+          
+                "text_ru": "Во свидетели пред вами призываю сегодня небо и землю: жизнь и смерть предложил я тебе, благословение и проклятие. Избери жизнь, дабы жил ты и потомство твоё.",
+                "text_en": "I call heaven and earth to witness against you today, that I have set before you life and death, the blessing and the curse. Therefore choose life, that you may live, you and your descendants.",
+          
+                "verse_ref": {
+                  "book": "Deuteronomy",
+                  "chapter": 30,
+                  "verse": "19"
+                }
+              },
+              {
+                "reference_ru": "Осия 10:12",
+                "reference_en": "Hosea 10:12",
+          
+                "text_ru": "Сейте себе в правду, и пожнёте милость; распахивайте у себя новину, ибо время взыскать Господа, чтобы Он, когда придёт, дождём пролил на вас правду.",
+                "text_en": "Sow to yourselves in righteousness, reap according to kindness. Break up your fallow ground; for it is time to seek the Lord, until he comes and rains righteousness on you.",
+          
+                "verse_ref": {
+                  "book": "Hosea",
+                  "chapter": 10,
+                  "verse": "12"
+                }
+              }
+            ]
           }
     ]
   }
