@@ -1260,6 +1260,114 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-06-28",
+        "day": 85,
+        "topic": {
+          "ru": "Христос пришёл спасти грешников",
+          "en": "Christ Came to Save Sinners"
+        },
+        "reference_ru": "1 Тимофею 1:15",
+        "reference_en": "1 Timothy 1:15",
+        "text_ru": "Верно и всякого принятия достойно слово, что Христос Иисус пришёл в мир спасти грешников, из которых я первый.",
+        "text_en": "The saying is faithful and worthy of all acceptance, that Christ Jesus came into the world to save sinners; of whom I am chief.",
+        "verse_ref": {
+          "book": "1-timothy",
+          "chapter": 1,
+          "verse": "15"
+        },
+        "interpretation_ru": "Все люди согрешили и нуждаются в Спасителе. Христос пришёл в этот мир, чтобы дать каждому человеку прощение и новую жизнь.",
+        "interpretation_en": "All people have sinned and need a Savior. Christ came into the world to offer forgiveness and new life to everyone.",
+        "related": [
+          {
+            "reference_ru": "Луки 19:10",
+            "reference_en": "Luke 19:10",
+            "text_ru": "Ибо Сын Человеческий пришёл взыскать и спасти погибшее.",
+            "text_en": "For the Son of Man came to seek and to save that which was lost.",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 19,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Иезекииль 33:11",
+            "reference_en": "Ezekiel 33:11",
+            "text_ru": "Скажи им: живу Я, говорит Господь Бог: не хочу смерти грешника, но чтобы грешник обратился от пути своего и жив был. Обратитесь, обратитесь от злых путей ваших; для чего умирать вам, дом Израилев?",
+            "text_en": "Tell them, 'As I live,' says the Lord GOD, 'I have no pleasure in the death of the wicked, but that the wicked turn from his way and live. Turn back, turn back from your evil ways; for why will you die, house of Israel?'",
+            "verse_ref": {
+              "book": "ezekiel",
+              "chapter": 33,
+              "verse": "11"
+            }
+          },
+          {
+            "reference_ru": "2 Петра 3:9",
+            "reference_en": "2 Peter 3:9",
+            "text_ru": "Не медлит Господь исполнением обетования, как некоторые почитают то медлением; но долготерпит нас, не желая, чтобы кто погиб, но чтобы все пришли к покаянию.",
+            "text_en": "The Lord is not slow concerning his promise, as some count slowness; but is patient with us, not wishing that any should perish, but that all should come to repentance.",
+            "verse_ref": {
+              "book": "2-peter",
+              "chapter": 3,
+              "verse": "9"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-06-29",
+        "day": 86,
+        "topic": {
+          "ru": "Вера во Христа дарит жизнь вечную",
+          "en": "Faith in Christ Brings Eternal Life"
+        },
+        "reference_ru": "Иоанна 5:24",
+        "reference_en": "John 5:24",
+        "text_ru": "Истинно, истинно говорю вам: слушающий слово Мое и верующий в Пославшего Меня имеет жизнь вечную, и на суд не приходит, но перешел от смерти в жизнь.",
+        "text_en": "Most certainly I tell you, he who hears my word and believes him who sent me has eternal life, and doesn't come into judgment, but has passed out of death into life.",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 5,
+          "verse": "24"
+        },
+        "interpretation_ru": "Вечная жизнь начинается тогда, когда человек слышит слово Божье и верит в Иисуса Христа.",
+        "interpretation_en": "Eternal life begins when a person hears God's Word and believes in Jesus Christ.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 11:25-26",
+            "reference_en": "John 11:25-26",
+            "text_ru": "Иисус сказал ей: Я есмь воскресение и жизнь; верующий в Меня, если и умрет, оживет. И всякий, живущий и верующий в Меня, не умрет вовек. Веришь ли сему?",
+            "text_en": "Jesus said to her, \"I am the resurrection and the life. He who believes in me will still live, even if he dies. Whoever lives and believes in me will never die. Do you believe this?\"",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 11,
+              "verse": "25-26"
+            }
+          },
+          {
+            "reference_ru": "1 Иоанна 5:13",
+            "reference_en": "1 John 5:13",
+            "text_ru": "Сие написал я вам, верующим во имя Сына Божия, дабы вы знали, что вы, веруя в Сына Божия, имеете жизнь вечную.",
+            "text_en": "These things I have written to you who believe in the name of the Son of God, that you may know that you have eternal life, and that you may continue to believe in the name of the Son of God.",
+            "verse_ref": {
+              "book": "1-john",
+              "chapter": 5,
+              "verse": "13"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 6:40",
+            "reference_en": "John 6:40",
+            "text_ru": "Воля Пославшего Меня есть та, чтобы всякий, видящий Сына и верующий в Него, имел жизнь вечную; и Я воскрешу его в последний день.",
+            "text_en": "For this is the will of my Father, that everyone who sees the Son and believes in him should have eternal life; and I will raise him up at the last day.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 6,
+              "verse": "40"
+            }
+          }
+        ]
       }
     ]
   }

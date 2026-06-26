@@ -1,0 +1,159 @@
+{
+  "questions": [
+    {
+      "id": "question-day-61",
+      "day": 61,
+
+      "topic_ru": "Надежда",
+      "topic_en": "Hope",
+
+      "question_ru": "Как не потерять надежду, когда ничего не получается?",
+      "question_en": "How can I keep hope when nothing seems to work out?",
+
+      "reference_ru": "Плач Иеремии 3:25-26",
+      "reference_en": "Lamentations 3:25-26",
+
+      "text_ru": "Благ Господь к надеющимся на Него, к душе, ищущей Его. Благо тому, кто терпеливо ожидает спасения от Господа.",
+      "text_en": "The Lord is good to those who wait for him, to the soul who seeks him. It is good that a man should hope and quietly wait for the salvation of the Lord.",
+
+      "verse_ref": {
+        "book": "Lamentations",
+        "chapter": 3,
+        "verse": "25-26"
+      },
+
+      "answer_ru": "Когда ничего не получается, Бог призывает нас не терять надежду, а искать Его и терпеливо ожидать Его помощи.",
+      "answer_en": "When nothing seems to work out, God calls us not to lose hope, but to seek Him and patiently wait for His help.",
+
+      "related": [
+        {
+          "reference_ru": "Псалом 61:9",
+          "reference_en": "Psalm 62:8",
+
+          "text_ru": "Народ! надейтесь на Него во всякое время; изливайте пред Ним сердце ваше: Бог нам прибежище.",
+          "text_en": "Trust in him at all times, you people. Pour out your heart before him. God is a refuge for us.",
+
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 61,
+              "verse": "9"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 62,
+              "verse": "8"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 142:8",
+          "reference_en": "Psalm 143:8",
+
+          "text_ru": "Даруй мне рано услышать милость Твою, ибо я на Тебя уповаю. Укажи мне путь, по которому мне идти, ибо к Тебе возношу я душу мою.",
+          "text_en": "Cause me to hear your loving kindness in the morning, for I trust in you. Cause me to know the way in which I should walk, for I lift up my soul to you.",
+
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 142,
+              "verse": "8"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 143,
+              "verse": "8"
+            }
+          }
+        },
+        {
+          "reference_ru": "Римлянам 15:4",
+          "reference_en": "Romans 15:4",
+
+          "text_ru": "А всё, что писано было прежде, написано нам в наставление, чтобы мы терпением и утешением из Писаний сохраняли надежду.",
+          "text_en": "For whatever things were written before were written for our learning, that through perseverance and through encouragement of the Scriptures we might have hope.",
+
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 15,
+            "verse": "4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-62",
+      "day": 62,
+
+      "topic_ru": "Божий мир",
+      "topic_en": "God's Peace",
+
+      "question_ru": "Как обрести мир, когда на душе неспокойно?",
+      "question_en": "How can I find peace when my heart is troubled?",
+
+      "reference_ru": "Филиппийцам 4:6-7",
+      "reference_en": "Philippians 4:6-7",
+
+      "text_ru": "Не заботьтесь ни о чём, но всегда в молитве и прошении с благодарением открывайте свои желания пред Богом, и мир Божий, который превыше всякого ума, соблюдёт сердца ваши и помышления ваши во Христе Иисусе.",
+      "text_en": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. The peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
+
+      "verse_ref": {
+        "book": "Philippians",
+        "chapter": 4,
+        "verse": "6-7"
+      },
+
+      "answer_ru": "Бог даёт мир сердцу, когда человек открывает Ему свои переживания в молитве и доверяет Ему.",
+      "answer_en": "God gives peace to the heart when a person brings their worries to Him in prayer and trusts Him.",
+
+      "related": [
+        {
+          "reference_ru": "Псалом 93:19",
+          "reference_en": "Psalm 94:19",
+
+          "text_ru": "При умножении скорбей моих в сердце моём утешения Твои услаждают душу мою.",
+          "text_en": "In the multitude of my thoughts within me, your comforts delight my soul.",
+
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 93,
+              "verse": "19"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 94,
+              "verse": "19"
+            }
+          }
+        },
+        {
+          "reference_ru": "Исаия 26:12",
+          "reference_en": "Isaiah 26:12",
+
+          "text_ru": "Господи! Ты даруешь нам мир, ибо и все дела наши Ты устрояешь для нас.",
+          "text_en": "Lord, you will ordain peace for us, for you have also done all our work for us.",
+
+          "verse_ref": {
+            "book": "Isaiah",
+            "chapter": 26,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "2 Фессалоникийцам 3:16",
+          "reference_en": "2 Thessalonians 3:16",
+
+          "text_ru": "Сам же Господь мира да даст вам мир всегда во всём. Господь со всеми вами!",
+          "text_en": "Now may the Lord of peace himself give you peace at all times in every way. The Lord be with you all.",
+
+          "verse_ref": {
+            "book": "2-Thessalonians",
+            "chapter": 3,
+            "verse": "16"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 // PROD date Anpril 30 2026
 const START_DATE = "2026-04-30";
 //test  
-//const START_DATE = "2026-03-01";
+//const START_DATE = "2026-02-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -46,7 +46,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
   try {
     const jsonPaths = [
       "/data/questions/question-1-30.json",
-      "/data/questions/question-31-60.json"
+      "/data/questions/question-31-60.json",
+      "/data/questions/question-61-90.json"      
     ];
     
     let questions = [];
