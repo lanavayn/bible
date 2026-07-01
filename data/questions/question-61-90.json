@@ -154,6 +154,216 @@
           }
         }
       ]
-    }
-  ]
+    },
+    
+      {
+        "id": "question-day-63",
+        "day": 63,
+    
+        "topic_ru": "Христианская жизнь",
+        "topic_en": "Christian Life",
+    
+        "question_ru": "Что Бог ожидает от человека после того, как он уверовал?",
+        "question_en": "What does God expect from a person after they believe?",
+    
+        "reference_ru": "Ефесянам 2:10",
+        "reference_en": "Ephesians 2:10",
+    
+        "text_ru": "Ибо мы — Его творение, созданы во Христе Иисусе на добрые дела, которые Бог предназначил нам исполнять.",
+        "text_en": "For we are his workmanship, created in Christ Jesus for good works, which God prepared before that we would walk in them.",
+    
+        "verse_ref": {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": "10"
+        },
+    
+        "answer_ru": "Вера меняет жизнь человека. Бог ожидает, что мы будем жить по Его воле, возрастая в любви, послушании и добрых делах.",
+        "answer_en": "Faith changes a person's life. God expects us to live according to His will, growing in love, obedience, and good works.",
+    
+        "related": [
+          {
+            "reference_ru": "Второзаконие 10:12",
+            "reference_en": "Deuteronomy 10:12",
+    
+            "text_ru": "Итак, Израиль, чего требует от тебя Господь, Бог твой? Только того, чтобы ты боялся Господа, Бога твоего, ходил всеми путями Его, любил Его и служил Господу, Богу твоему, от всего сердца твоего и от всей души твоей.",
+            "text_en": "Now, Israel, what does Yahweh your God require of you, but to fear Yahweh your God, to walk in all his ways, to love him, and to serve Yahweh your God with all your heart and with all your soul?",
+    
+            "verse_ref": {
+              "book": "Deuteronomy",
+              "chapter": 10,
+              "verse": "12"
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 1:10",
+            "reference_en": "Colossians 1:10",
+    
+            "text_ru": "Чтобы поступали достойно Бога, во всём угождая Ему, принося плод во всяком добром деле и возрастая в познании Бога.",
+            "text_en": "That you may walk worthily of the Lord, to please him in all respects, bearing fruit in every good work and increasing in the knowledge of God.",
+    
+            "verse_ref": {
+              "book": "Colossians",
+              "chapter": 1,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "Титу 2:11-12",
+            "reference_en": "Titus 2:11-12",
+    
+            "text_ru": "Ибо явилась благодать Божия, спасительная для всех человеков, научающая нас, чтобы мы, отвергнув нечестие и мирские похоти, целомудренно, праведно и благочестиво жили в нынешнем веке.",
+            "text_en": "For the grace of God has appeared, bringing salvation to all men, instructing us to the intent that, denying ungodliness and worldly lusts, we would live soberly, righteously, and godly in this present age.",
+    
+            "verse_ref": {
+              "book": "Titus",
+              "chapter": 2,
+              "verse": "11-12"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-64",
+        "day": 64,
+    
+        "topic_ru": "Библия",
+        "topic_en": "God's Word",
+    
+        "question_ru": "Почему важно читать Библию каждый день?",
+        "question_en": "Why is it important to read the Bible every day?",
+    
+        "reference_ru": "Деяния 17:11",
+        "reference_en": "Acts 17:11",
+    
+        "text_ru": "Они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так.",
+        "text_en": "Now these were more noble than those in Thessalonica, in that they received the word with all readiness of mind, examining the Scriptures daily to see whether these things were so.",
+    
+        "verse_ref": {
+          "book": "Acts",
+          "chapter": 17,
+          "verse": "11"
+        },
+    
+        "answer_ru": "Ежедневное чтение Библии помогает узнавать Божью волю, укрепляет веру и направляет жизнь человека.",
+        "answer_en": "Reading the Bible every day helps us know God's will, strengthens our faith, and guides our lives.",
+    
+        "related": [
+          {
+            "reference_ru": "Псалом 118:11",
+            "reference_en": "Psalm 119:11",
+    
+            "text_ru": "В сердце моём сокрыл я слово Твоё, чтобы не грешить пред Тобою.",
+            "text_en": "I have hidden your word in my heart, that I might not sin against you.",
+    
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 118,
+                "verse": "11"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 119,
+                "verse": "11"
+              }
+            }
+          },
+          {
+            "reference_ru": "Иакова 1:22",
+            "reference_en": "James 1:22",
+    
+            "text_ru": "Будьте же исполнители слова, а не слышатели только, обманывающие самих себя.",
+            "text_en": "But be doers of the word, and not only hearers, deluding your own selves.",
+    
+            "verse_ref": {
+              "book": "James",
+              "chapter": 1,
+              "verse": "22"
+            }
+          },
+          {
+            "reference_ru": "1 Петра 2:2",
+            "reference_en": "1 Peter 2:2",
+    
+            "text_ru": "Как новорождённые младенцы, возлюбите чистое словесное молоко, дабы от него возрасти вам во спасение.",
+            "text_en": "As newborn babies, long for the pure milk of the Word, that you may grow thereby.",
+    
+            "verse_ref": {
+              "book": "1-Peter",
+              "chapter": 2,
+              "verse": "2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-65",
+        "day": 65,
+    
+        "topic_ru": "Новая жизнь",
+        "topic_en": "New Life",
+    
+        "question_ru": "Как Бог изменяет человека?",
+        "question_en": "How does God change a person?",
+    
+        "reference_ru": "Римлянам 12:2",
+        "reference_en": "Romans 12:2",
+    
+        "text_ru": "И не сообразуйтесь с веком сим, но преобразуйтесь обновлением ума вашего, чтобы вам познавать, что есть воля Божия, благая, угодная и совершенная.",
+        "text_en": "Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
+    
+        "verse_ref": {
+          "book": "Romans",
+          "chapter": 12,
+          "verse": "2"
+        },
+    
+        "answer_ru": "Бог изменяет человека изнутри. Через Своё Слово и действие Святого Духа Он обновляет мышление, характер и образ жизни.",
+        "answer_en": "God changes a person from the inside. Through His Word and the work of the Holy Spirit, He renews our mind, character, and way of life.",
+    
+        "related": [
+          {
+            "reference_ru": "Ефесянам 4:22-24",
+            "reference_en": "Ephesians 4:22-24",
+    
+            "text_ru": "Отложить прежний образ жизни ветхого человека... а обновиться духом ума вашего и облечься в нового человека.",
+            "text_en": "Put away, as concerning your former way of life, the old man... and be renewed in the spirit of your mind, and put on the new man.",
+    
+            "verse_ref": {
+              "book": "Ephesians",
+              "chapter": 4,
+              "verse": "22-24"
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 3:9-10",
+            "reference_en": "Colossians 3:9-10",
+    
+            "text_ru": "Совлекшись ветхого человека с делами его и облекшись в нового, который обновляется в познании по образу Создавшего его.",
+            "text_en": "Seeing that you have put off the old man with his doings, and have put on the new man, who is being renewed in knowledge after the image of his Creator.",
+    
+            "verse_ref": {
+              "book": "Colossians",
+              "chapter": 3,
+              "verse": "9-10"
+            }
+          },
+          {
+            "reference_ru": "1 Фессалоникийцам 5:23",
+            "reference_en": "1 Thessalonians 5:23",
+    
+            "text_ru": "Сам же Бог мира да освятит вас во всей полноте; и ваш дух и душа и тело во всей целости да сохранится без порока в пришествие Господа нашего Иисуса Христа.",
+            "text_en": "May the God of peace himself sanctify you completely. May your whole spirit, soul, and body be preserved blameless at the coming of our Lord Jesus Christ.",
+    
+            "verse_ref": {
+              "book": "1-Thessalonians",
+              "chapter": 5,
+              "verse": "23"
+            }
+          }
+        ]
+      }
+    
+  ] 
 }
