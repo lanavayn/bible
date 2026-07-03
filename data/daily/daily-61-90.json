@@ -1544,6 +1544,67 @@
             }
           }
         ]
-      }
+      },
+      {
+        "id": "daily-2026-07-04",
+        "day": 90,
+        "topic": {
+          "ru": "Взывай к Богу",
+          "en": "Call on God"
+        },
+        "reference_ru": "Иеремия 33:3",
+        "reference_en": "Jeremiah 33:3",
+        "text_ru": "Воззови ко Мне — и Я отвечу тебе, покажу тебе великое и недоступное, чего ты не знаешь.",
+        "text_en": "Call to me, and I will answer you, and will show you great and difficult things, which you don't know.",
+        "verse_ref": {
+          "book": "jeremiah",
+          "chapter": 33,
+          "verse": "3"
+        },
+        "interpretation_ru": "Когда не знаешь, что делать, прежде всего обратись к Богу. Он слышит молитву и открывает путь.",
+        "interpretation_en": "When you don't know what to do, turn to God first. He hears prayer and shows the way.",
+        "related": [
+          {
+            "reference_ru": "Псалом 115:1-2",
+            "reference_en": "Psalm 116:1-2",
+            "text_ru": "Люблю Господа, ибо Он услышал голос мой, моление мое; приклонил ко мне ухо Свое, и потому буду призывать Его во все дни мои.",
+            "text_en": "I love Yahweh, because he listens to my voice, and my cries for mercy. Because he has turned his ear to me, therefore I will call on him as long as I live.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 115,
+                "verse": "1-2"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 116,
+                "verse": "1-2"
+              }
+            }
+          },
+          {
+            "reference_ru": "Иоанна 16:24",
+            "reference_en": "John 16:24",
+            "text_ru": "Доныне вы ничего не просили во имя Мое; просите, и получите, чтобы радость ваша была совершенна.",
+            "text_en": "Until now, you have asked nothing in my name. Ask, and you will receive, that your joy may be made full.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 16,
+              "verse": "24"
+            }
+          },
+          {
+            "reference_ru": "Псалом 66:19-20",
+            "reference_en": "Psalm 66:19-20",
+            "text_ru": "Но Бог услышал, внял гласу моления моего. Благословен Бог, Который не отверг молитвы моей и не отвратил от меня милости Своей.",
+            "text_en": "But most certainly, God has listened. He has heard the voice of my prayer. Blessed be God, who has not turned away my prayer, nor his loving kindness from me.",
+            "verse_ref": {
+              "book": "psalms",
+              "chapter": 66,
+              "verse": "19-20"
+            }
+          }
+        ]
+      }      
     ]
   }

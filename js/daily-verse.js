@@ -2,7 +2,7 @@ import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 
 const easterDates = {
   2026: "2026-04-05",
-  //2026: "2026-03-05",
+  //2026: "2026-01-05",
   2027: "2027-03-28",
   2028: "2028-04-16",
   2029: "2029-04-01",
@@ -92,7 +92,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       const jsonPaths = [
         "/data/daily/daily-1-30.json",
         "/data/daily/daily-31-60.json",
-        "/data/daily/daily-61-90.json"     
+        "/data/daily/daily-61-90.json",
+        "/data/daily/daily-91-120.json"       
       ];
       
       let verses = [];
