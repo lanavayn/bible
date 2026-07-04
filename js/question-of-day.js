@@ -1,4 +1,5 @@
 import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
+import "./bible-chronology.js";
 
 //
 // PROD date Anpril 30 2026
@@ -233,7 +234,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     
         <div class="daily-verse-title-inline">
           <span class="daily-verse-title-text">
-            ${reference}
+            ${renderChronologyReference(reference, verseRef, lang)}
           </span>
           ${
             bibleLink
@@ -273,12 +274,14 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                     const relText = rel["text_" + lang] || "";
                     const relVerseRef =
                       rel?.verse_ref_lang?.[lang] || rel?.verse_ref || null;
+                    const { firstPart, remainingPart } = splitQuestionRelatedVerseLine(relText);
 
                     const link = buildBibleLink(relVerseRef, lang);
     
                     return `
                       <li class="scripture-related-item">
-                        <span class="scripture-related-ref">${ref}</span>
+                        <span class="scripture-related-line-anchor">
+                        <span class="scripture-related-ref">${renderChronologyReference(ref, relVerseRef, lang)}</span>
                         ${
                           link
                             ? `<a
@@ -290,7 +293,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                               >📖</a>`
                             : ""
                         }
-                        <span class="scripture-related-text">— ${addQuestionCreationHelp(relText, lang, relVerseRef)}</span>
+                        <span class="scripture-related-text">— ${addQuestionCreationHelp(firstPart, lang, relVerseRef)}</span>
+                        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addQuestionCreationHelp(remainingPart, lang, relVerseRef)}</span>` : ""}
                       </li>
                     `;
                   }).join("")}
@@ -306,6 +310,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
       const closeBtn = root.querySelector(".dv-close");
       const searchOpenBtn = root.querySelector(".question-search-open");
+      bindQuestionChronologyReferences(root);
 
       function closeAllQuestionHelp(exceptInline = null) {
         document.querySelectorAll(".footer-help-inline").forEach(inline => {
@@ -706,6 +711,64 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     console.error(e);
   }
 };
+
+function renderChronologyReference(reference = "", verseRef = null, lang = "ru") {
+  return window.BibleChronology?.renderReference(reference, verseRef, { lang }) || escapeHtml(reference);
+}
+
+function bindQuestionChronologyReferences(root) {
+  if (!root.dataset.chronologyCloseBound) {
+    root.dataset.chronologyCloseBound = "true";
+    root.addEventListener("click", (event) => {
+      if (window.BibleChronology?.closeFromEvent(event)) return;
+    });
+  }
+
+  root.querySelectorAll(".bible-chronology-book-link").forEach((bookName) => {
+    const openChronology = async () => {
+      if (!window.BibleChronology) return;
+
+      const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
+      const titleAnchor = bookName.closest(".daily-verse-title-inline");
+      const relatedAnchor = bookName.closest(".scripture-related-line-anchor");
+      const target = bookName.closest(".scripture-related-ref") || bookName.closest(".daily-verse-title-text") || bookName;
+      await window.BibleChronology.showReferenceDetails(reference, target, {
+        insertAfter: titleAnchor || relatedAnchor || target
+      });
+    };
+
+    bookName.addEventListener("click", openChronology);
+    bookName.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openChronology();
+    });
+  });
+}
+
+function splitQuestionRelatedVerseLine(text = "") {
+  const clean = String(text).replace(/\s+/g, " ").trim();
+  if (!clean) return { firstPart: "", remainingPart: "" };
+
+  const punctuationMatch = clean.match(/[,;.!?](?=\s|$)/);
+  if (punctuationMatch && punctuationMatch.index >= 0) {
+    const splitAt = punctuationMatch.index + punctuationMatch[0].length;
+    return {
+      firstPart: clean.slice(0, splitAt).trim(),
+      remainingPart: clean.slice(splitAt).trim()
+    };
+  }
+
+  const words = clean.split(" ");
+  if (words.length <= 8) {
+    return { firstPart: clean, remainingPart: "" };
+  }
+
+  return {
+    firstPart: words.slice(0, 8).join(" "),
+    remainingPart: words.slice(8).join(" ")
+  };
+}
 
 function addQuestionCreationHelp(text, lang, verseRef = null) {
   if (!text) return "";
