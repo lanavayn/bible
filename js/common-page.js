@@ -211,7 +211,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     document.querySelectorAll("a.scripture-book-link").forEach(link => {
-      link.addEventListener("click", closeAllDetails);
+      link.addEventListener("click", () => {
+        window.BibleChronology?.closeOpenDetails();
+        closeAllDetails();
+      });
     });
   }
 

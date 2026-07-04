@@ -267,6 +267,7 @@ function createText(text) {
 
     root.querySelectorAll("a.scripture-book-link").forEach(link => {
       link.addEventListener("click", () => {
+        window.BibleChronology?.closeOpenDetails();
         document.querySelectorAll(".scripture-details").forEach(el => {
           el.style.display = "none";
         });

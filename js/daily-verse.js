@@ -1132,6 +1132,12 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         openChronology();
       });
     });
+
+    root.querySelectorAll("a.scripture-book-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        window.BibleChronology?.closeOpenDetails();
+      });
+    });
   }
   function renderDailyRelatedItem(rel, lang) {
     const ref = rel[`reference_${lang}`] || "";

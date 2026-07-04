@@ -474,6 +474,12 @@
         closeVerseDetails(targetId);
       });
     });
+
+    slidesEl.querySelectorAll('a.scripture-book-link').forEach(link => {
+      link.addEventListener('click', () => {
+        window.BibleChronology?.closeOpenDetails();
+      });
+    });
   }
 
   function toggleVerseDetails(targetId){
