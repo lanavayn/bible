@@ -4535,6 +4535,10 @@ body.daily-verse-search-open {
   white-space: normal !important;
 }
 
+.scripture-related-item > .bd-inline {
+  margin-left: -18px;
+}
+
 .bd-inline-box {
   position: relative;
   width: 100%;

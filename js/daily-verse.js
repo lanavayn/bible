@@ -1117,8 +1117,12 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         if (!window.BibleChronology) return;
 
         const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
+        const titleAnchor = bookName.closest(".daily-verse-title-inline");
+        const relatedAnchor = bookName.closest(".scripture-related-line-anchor");
         const target = bookName.closest(".scripture-related-ref") || bookName.closest(".daily-verse-title-text") || bookName;
-        await window.BibleChronology.showReferenceDetails(reference, target);
+        await window.BibleChronology.showReferenceDetails(reference, target, {
+          insertAfter: titleAnchor || relatedAnchor || target
+        });
       };
 
       bookName.addEventListener("click", openChronology);
@@ -1135,9 +1139,11 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     const verseRef = rel?.verse_ref_lang?.[lang] || rel?.verse_ref || null;
     const link = buildBibleLink(verseRef, lang);
     const hasRealLink = !!link;
+    const { firstPart, remainingPart } = splitRelatedVerseLine(text);
   
     return `
       <li class="scripture-related-item">
+        <span class="scripture-related-line-anchor">
         <span class="scripture-related-ref">${renderChronologyReference(ref, verseRef, lang)}</span>
         ${
           hasRealLink
@@ -1153,9 +1159,34 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                  &#128214;
                </span>`
         }
-        <span class="scripture-related-text">— ${addCreationHelp(text, lang, verseRef)}</span>
+        <span class="scripture-related-text">— ${addCreationHelp(firstPart, lang, verseRef)}</span>
+        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addCreationHelp(remainingPart, lang, verseRef)}</span>` : ""}
       </li>
     `;
+  }
+
+  function splitRelatedVerseLine(text = "") {
+    const clean = String(text).replace(/\s+/g, " ").trim();
+    if (!clean) return { firstPart: "", remainingPart: "" };
+
+    const punctuationMatch = clean.match(/[,;.!?](?=\s|$)/);
+    if (punctuationMatch && punctuationMatch.index >= 0) {
+      const splitAt = punctuationMatch.index + punctuationMatch[0].length;
+      return {
+        firstPart: clean.slice(0, splitAt).trim(),
+        remainingPart: clean.slice(splitAt).trim()
+      };
+    }
+
+    const words = clean.split(" ");
+    if (words.length <= 8) {
+      return { firstPart: clean, remainingPart: "" };
+    }
+
+    return {
+      firstPart: words.slice(0, 8).join(" "),
+      remainingPart: words.slice(8).join(" ")
+    };
   }
   
   function getTomorrowPreview(text = "", words = 7) {
