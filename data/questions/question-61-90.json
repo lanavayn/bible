@@ -3,36 +3,27 @@
     {
       "id": "question-day-61",
       "day": 61,
-
       "topic_ru": "Надежда",
       "topic_en": "Hope",
-
       "question_ru": "Как не потерять надежду, когда ничего не получается?",
       "question_en": "How can I keep hope when nothing seems to work out?",
-
       "reference_ru": "Плач Иеремии 3:25-26",
       "reference_en": "Lamentations 3:25-26",
-
       "text_ru": "Благ Господь к надеющимся на Него, к душе, ищущей Его. Благо тому, кто терпеливо ожидает спасения от Господа.",
       "text_en": "The Lord is good to those who wait for him, to the soul who seeks him. It is good that a man should hope and quietly wait for the salvation of the Lord.",
-
       "verse_ref": {
         "book": "Lamentations",
         "chapter": 3,
         "verse": "25-26"
       },
-
       "answer_ru": "Когда ничего не получается, Бог призывает нас не терять надежду, а искать Его и терпеливо ожидать Его помощи.",
       "answer_en": "When nothing seems to work out, God calls us not to lose hope, but to seek Him and patiently wait for His help.",
-
       "related": [
         {
           "reference_ru": "Псалом 61:9",
           "reference_en": "Psalm 62:8",
-
           "text_ru": "Народ! надейтесь на Него во всякое время; изливайте пред Ним сердце ваше: Бог нам прибежище.",
           "text_en": "Trust in him at all times, you people. Pour out your heart before him. God is a refuge for us.",
-
           "verse_ref_lang": {
             "ru": {
               "book": "Psalms",
@@ -49,10 +40,8 @@
         {
           "reference_ru": "Псалом 142:8",
           "reference_en": "Psalm 143:8",
-
           "text_ru": "Даруй мне рано услышать милость Твою, ибо я на Тебя уповаю. Укажи мне путь, по которому мне идти, ибо к Тебе возношу я душу мою.",
           "text_en": "Cause me to hear your loving kindness in the morning, for I trust in you. Cause me to know the way in which I should walk, for I lift up my soul to you.",
-
           "verse_ref_lang": {
             "ru": {
               "book": "Psalms",
@@ -69,10 +58,8 @@
         {
           "reference_ru": "Римлянам 15:4",
           "reference_en": "Romans 15:4",
-
           "text_ru": "А всё, что писано было прежде, написано нам в наставление, чтобы мы терпением и утешением из Писаний сохраняли надежду.",
           "text_en": "For whatever things were written before were written for our learning, that through perseverance and through encouragement of the Scriptures we might have hope.",
-
           "verse_ref": {
             "book": "Romans",
             "chapter": 15,
@@ -84,36 +71,27 @@
     {
       "id": "question-day-62",
       "day": 62,
-
       "topic_ru": "Божий мир",
       "topic_en": "God's Peace",
-
       "question_ru": "Как обрести мир, когда на душе неспокойно?",
       "question_en": "How can I find peace when my heart is troubled?",
-
       "reference_ru": "Филиппийцам 4:6-7",
       "reference_en": "Philippians 4:6-7",
-
       "text_ru": "Не заботьтесь ни о чём, но всегда в молитве и прошении с благодарением открывайте свои желания пред Богом, и мир Божий, который превыше всякого ума, соблюдёт сердца ваши и помышления ваши во Христе Иисусе.",
       "text_en": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. The peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
-
       "verse_ref": {
         "book": "Philippians",
         "chapter": 4,
         "verse": "6-7"
       },
-
       "answer_ru": "Бог даёт мир сердцу, когда человек открывает Ему свои переживания в молитве и доверяет Ему.",
       "answer_en": "God gives peace to the heart when a person brings their worries to Him in prayer and trusts Him.",
-
       "related": [
         {
           "reference_ru": "Псалом 93:19",
           "reference_en": "Psalm 94:19",
-
           "text_ru": "При умножении скорбей моих в сердце моём утешения Твои услаждают душу мою.",
           "text_en": "In the multitude of my thoughts within me, your comforts delight my soul.",
-
           "verse_ref_lang": {
             "ru": {
               "book": "Psalms",
@@ -130,10 +108,8 @@
         {
           "reference_ru": "Исаия 26:12",
           "reference_en": "Isaiah 26:12",
-
           "text_ru": "Господи! Ты даруешь нам мир, ибо и все дела наши Ты устрояешь для нас.",
           "text_en": "Lord, you will ordain peace for us, for you have also done all our work for us.",
-
           "verse_ref": {
             "book": "Isaiah",
             "chapter": 26,
@@ -143,10 +119,8 @@
         {
           "reference_ru": "2 Фессалоникийцам 3:16",
           "reference_en": "2 Thessalonians 3:16",
-
           "text_ru": "Сам же Господь мира да даст вам мир всегда во всём. Господь со всеми вами!",
           "text_en": "Now may the Lord of peace himself give you peace at all times in every way. The Lord be with you all.",
-
           "verse_ref": {
             "book": "2-Thessalonians",
             "chapter": 3,
@@ -155,215 +129,513 @@
         }
       ]
     },
-    
-      {
-        "id": "question-day-63",
-        "day": 63,
-    
-        "topic_ru": "Христианская жизнь",
-        "topic_en": "Christian Life",
-    
-        "question_ru": "Что Бог ожидает от человека после того, как он уверовал?",
-        "question_en": "What does God expect from a person after they believe?",
-    
-        "reference_ru": "Ефесянам 2:10",
-        "reference_en": "Ephesians 2:10",
-    
-        "text_ru": "Ибо мы — Его творение, созданы во Христе Иисусе на добрые дела, которые Бог предназначил нам исполнять.",
-        "text_en": "For we are his workmanship, created in Christ Jesus for good works, which God prepared before that we would walk in them.",
-    
-        "verse_ref": {
-          "book": "Ephesians",
-          "chapter": 2,
-          "verse": "10"
+    {
+      "id": "question-day-63",
+      "day": 63,
+      "topic_ru": "Христианская жизнь",
+      "topic_en": "Christian Life",
+      "question_ru": "Что Бог ожидает от человека после того, как он уверовал?",
+      "question_en": "What does God expect from a person after they believe?",
+      "reference_ru": "Ефесянам 2:10",
+      "reference_en": "Ephesians 2:10",
+      "text_ru": "Ибо мы — Его творение, созданы во Христе Иисусе на добрые дела, которые Бог предназначил нам исполнять.",
+      "text_en": "For we are his workmanship, created in Christ Jesus for good works, which God prepared before that we would walk in them.",
+      "verse_ref": {
+        "book": "Ephesians",
+        "chapter": 2,
+        "verse": "10"
+      },
+      "answer_ru": "Вера меняет жизнь человека. Бог ожидает, что мы будем жить по Его воле, возрастая в любви, послушании и добрых делах.",
+      "answer_en": "Faith changes a person's life. God expects us to live according to His will, growing in love, obedience, and good works.",
+      "related": [
+        {
+          "reference_ru": "Второзаконие 10:12",
+          "reference_en": "Deuteronomy 10:12",
+          "text_ru": "Итак, Израиль, чего требует от тебя Господь, Бог твой? Только того, чтобы ты боялся Господа, Бога твоего, ходил всеми путями Его, любил Его и служил Господу, Богу твоему, от всего сердца твоего и от всей души твоей.",
+          "text_en": "Now, Israel, what does the Lord your God require of you, but to fear the Lord your God, to walk in all his ways, to love him, and to serve the Lord your God with all your heart and with all your soul?",
+          "verse_ref": {
+            "book": "Deuteronomy",
+            "chapter": 10,
+            "verse": "12"
+          }
         },
-    
-        "answer_ru": "Вера меняет жизнь человека. Бог ожидает, что мы будем жить по Его воле, возрастая в любви, послушании и добрых делах.",
-        "answer_en": "Faith changes a person's life. God expects us to live according to His will, growing in love, obedience, and good works.",
-    
-        "related": [
-          {
-            "reference_ru": "Второзаконие 10:12",
-            "reference_en": "Deuteronomy 10:12",
-    
-            "text_ru": "Итак, Израиль, чего требует от тебя Господь, Бог твой? Только того, чтобы ты боялся Господа, Бога твоего, ходил всеми путями Его, любил Его и служил Господу, Богу твоему, от всего сердца твоего и от всей души твоей.",
-            "text_en": "Now, Israel, what does Yahweh your God require of you, but to fear Yahweh your God, to walk in all his ways, to love him, and to serve Yahweh your God with all your heart and with all your soul?",
-    
-            "verse_ref": {
-              "book": "Deuteronomy",
-              "chapter": 10,
+        {
+          "reference_ru": "Колоссянам 1:10",
+          "reference_en": "Colossians 1:10",
+          "text_ru": "Чтобы поступали достойно Бога, во всём угождая Ему, принося плод во всяком добром деле и возрастая в познании Бога.",
+          "text_en": "That you may walk worthily of the Lord, to please him in all respects, bearing fruit in every good work and increasing in the knowledge of God.",
+          "verse_ref": {
+            "book": "Colossians",
+            "chapter": 1,
+            "verse": "10"
+          }
+        },
+        {
+          "reference_ru": "Титу 2:11-12",
+          "reference_en": "Titus 2:11-12",
+          "text_ru": "Ибо явилась благодать Божия, спасительная для всех человеков, научающая нас, чтобы мы, отвергнув нечестие и мирские похоти, целомудренно, праведно и благочестиво жили в нынешнем веке.",
+          "text_en": "For the grace of God has appeared, bringing salvation to all men, instructing us to the intent that, denying ungodliness and worldly lusts, we would live soberly, righteously, and godly in this present age.",
+          "verse_ref": {
+            "book": "Titus",
+            "chapter": 2,
+            "verse": "11-12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-64",
+      "day": 64,
+      "topic_ru": "Библия",
+      "topic_en": "God's Word",
+      "question_ru": "Почему важно читать Библию каждый день?",
+      "question_en": "Why is it important to read the Bible every day?",
+      "reference_ru": "Деяния 17:11",
+      "reference_en": "Acts 17:11",
+      "text_ru": "Они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так.",
+      "text_en": "Now these were more noble than those in Thessalonica, in that they received the word with all readiness of mind, examining the Scriptures daily to see whether these things were so.",
+      "verse_ref": {
+        "book": "Acts",
+        "chapter": 17,
+        "verse": "11"
+      },
+      "answer_ru": "Ежедневное чтение Библии помогает узнавать Божью волю, укрепляет веру и направляет жизнь человека.",
+      "answer_en": "Reading the Bible every day helps us know God's will, strengthens our faith, and guides our lives.",
+      "related": [
+        {
+          "reference_ru": "Псалом 118:11",
+          "reference_en": "Psalm 119:11",
+          "text_ru": "В сердце моём сокрыл я слово Твоё, чтобы не грешить пред Тобою.",
+          "text_en": "I have hidden your word in my heart, that I might not sin against you.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 118,
+              "verse": "11"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": "11"
+            }
+          }
+        },
+        {
+          "reference_ru": "Иакова 1:22",
+          "reference_en": "James 1:22",
+          "text_ru": "Будьте же исполнители слова, а не слышатели только, обманывающие самих себя.",
+          "text_en": "But be doers of the word, and not only hearers, deluding your own selves.",
+          "verse_ref": {
+            "book": "James",
+            "chapter": 1,
+            "verse": "22"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 2:2",
+          "reference_en": "1 Peter 2:2",
+          "text_ru": "Как новорождённые младенцы, возлюбите чистое словесное молоко, дабы от него возрасти вам во спасение.",
+          "text_en": "As newborn babies, long for the pure milk of the Word, that you may grow thereby.",
+          "verse_ref": {
+            "book": "1-Peter",
+            "chapter": 2,
+            "verse": "2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-65",
+      "day": 65,
+      "topic_ru": "Новая жизнь",
+      "topic_en": "New Life",
+      "question_ru": "Как Бог изменяет человека?",
+      "question_en": "How does God change a person?",
+      "reference_ru": "Римлянам 12:2",
+      "reference_en": "Romans 12:2",
+      "text_ru": "И не сообразуйтесь с веком сим, но преобразуйтесь обновлением ума вашего, чтобы вам познавать, что есть воля Божия, благая, угодная и совершенная.",
+      "text_en": "Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
+      "verse_ref": {
+        "book": "Romans",
+        "chapter": 12,
+        "verse": "2"
+      },
+      "answer_ru": "Бог изменяет человека изнутри. Через Своё Слово и действие Святого Духа Он обновляет мышление, характер и образ жизни.",
+      "answer_en": "God changes a person from the inside. Through His Word and the work of the Holy Spirit, He renews our mind, character, and way of life.",
+      "related": [
+        {
+          "reference_ru": "Ефесянам 4:22-24",
+          "reference_en": "Ephesians 4:22-24",
+          "text_ru": "Отложить прежний образ жизни ветхого человека... а обновиться духом ума вашего и облечься в нового человека.",
+          "text_en": "Put away, as concerning your former way of life, the old man... and be renewed in the spirit of your mind, and put on the new man.",
+          "verse_ref": {
+            "book": "Ephesians",
+            "chapter": 4,
+            "verse": "22-24"
+          }
+        },
+        {
+          "reference_ru": "Колоссянам 3:9-10",
+          "reference_en": "Colossians 3:9-10",
+          "text_ru": "Совлекшись ветхого человека с делами его и облекшись в нового, который обновляется в познании по образу Создавшего его.",
+          "text_en": "Seeing that you have put off the old man with his doings, and have put on the new man, who is being renewed in knowledge after the image of his Creator.",
+          "verse_ref": {
+            "book": "Colossians",
+            "chapter": 3,
+            "verse": "9-10"
+          }
+        },
+        {
+          "reference_ru": "1 Фессалоникийцам 5:23",
+          "reference_en": "1 Thessalonians 5:23",
+          "text_ru": "Сам же Бог мира да освятит вас во всей полноте; и ваш дух и душа и тело во всей целости да сохранится без порока в пришествие Господа нашего Иисуса Христа.",
+          "text_en": "May the God of peace himself sanctify you completely. May your whole spirit, soul, and body be preserved blameless at the coming of our Lord Jesus Christ.",
+          "verse_ref": {
+            "book": "1-Thessalonians",
+            "chapter": 5,
+            "verse": "23"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-66",
+      "day": 66,
+      "topic_ru": "Жизнь с Богом каждый день",
+      "topic_en": "Daily Walk with God",
+      "question_ru": "Почему важно начинать день с Богом?",
+      "question_en": "Why is it important to start the day with God?",
+      "reference_ru": "Псалом 5:4",
+      "reference_en": "Psalm 5:3",
+      "text_ru": "Господи! рано услышь голос мой, — рано предстану пред Тобою, и буду ожидать.",
+      "text_en": "The Lord, in the morning you will hear my voice. In the morning I will lay my requests before you, and will watch expectantly.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Psalms",
+          "chapter": 5,
+          "verse": "4"
+        },
+        "en": {
+          "book": "Psalms",
+          "chapter": 5,
+          "verse": "3"
+        }
+      },
+      "answer_ru": "Начинать день с Богом важно, потому что молитва помогает доверить Ему свои заботы и ожидать Его руководства.",
+      "answer_en": "Starting the day with God matters because prayer helps us entrust our cares to Him and wait for His guidance.",
+      "reflection_ru": "День становится спокойнее, когда сердце сначала обращается к Богу.",
+      "reflection_en": "The day becomes calmer when the heart turns to God first.",
+      "related": [
+        {
+          "reference_ru": "Марка 1:35",
+          "reference_en": "Mark 1:35",
+          "text_ru": "А утром, встав весьма рано, вышел и удалился в пустынное место, и там молился.",
+          "text_en": "Early in the morning, while it was still dark, he rose up and went out, and departed into a deserted place, and prayed there.",
+          "verse_ref": {
+            "book": "Mark",
+            "chapter": 1,
+            "verse": "35"
+          }
+        },
+        {
+          "reference_ru": "Псалом 89:14",
+          "reference_en": "Psalm 90:14",
+          "text_ru": "Рано насыти нас милостью Твоею, и мы будем радоваться и веселиться во все дни наши.",
+          "text_en": "Satisfy us in the morning with your loving kindness, that we may rejoice and be glad all our days.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 89,
+              "verse": "14"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 90,
+              "verse": "14"
+            }
+          }
+        },
+        {
+          "reference_ru": "Исаия 50:4",
+          "reference_en": "Isaiah 50:4",
+          "text_ru": "Господь Бог дал Мне язык мудрых, чтобы Я мог словом подкреплять изнемогающего; каждое утро Он пробуждает, пробуждает ухо Моё, чтобы Я слушал, подобно учащимся.",
+          "text_en": "The Lord Yahweh has given me the tongue of those who are taught, that I may know how to sustain with words him who is weary. He awakens morning by morning, he awakens my ear to hear as those who are taught.",
+          "verse_ref": {
+            "book": "Isaiah",
+            "chapter": 50,
+            "verse": "4"
+          }
+        }
+      ],
+      "verse_ref": {
+        "book": "Psalms",
+        "chapter": 5,
+        "verse": "4"
+      }
+    },
+    {
+      "id": "question-day-67",
+      "day": 67,
+      "topic_ru": "Благодарность",
+      "topic_en": "Gratitude",
+      "question_ru": "Почему важно благодарить Бога за каждый дар?",
+      "question_en": "Why is it important to thank God for every good gift?",
+      "reference_ru": "Иакова 1:17",
+      "reference_en": "James 1:17",
+      "text_ru": "Всякое даяние доброе и всякий дар совершенный нисходит свыше, от Отца светов, у Которого нет изменения и ни тени перемены.",
+      "text_en": "Every good gift and every perfect gift is from above, coming down from the Father of lights, with whom can be no variation nor turning shadow.",
+      "verse_ref": {
+        "book": "James",
+        "chapter": 1,
+        "verse": "17"
+      },
+      "answer_ru": "Мы благодарим Бога, потому что всё доброе в нашей жизни приходит от Него, а Его любовь и верность не меняются.",
+      "answer_en": "We thank God because every good thing in our life comes from Him, and His love and faithfulness do not change.",
+      "reflection_ru": "Благодарность учит видеть не случайность, а Божью доброту.",
+      "reflection_en": "Gratitude teaches us to see not coincidence, but God's goodness.",
+      "related": [
+        {
+          "reference_ru": "Псалом 106:8",
+          "reference_en": "Psalm 107:8",
+          "text_ru": "Да славят Господа за милость Его и за чудные дела Его для сынов человеческих.",
+          "text_en": "Let them praise the Lord for his loving kindness, for his wonderful deeds to the children of men!",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 106,
+              "verse": "8"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 107,
+              "verse": "8"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 115:3",
+          "reference_en": "Psalm 116:12",
+          "text_ru": "Что воздам Господу за все благодеяния Его ко мне?",
+          "text_en": "What will I give to the Lord for all his benefits toward me?",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 115,
+              "verse": "3"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 116,
               "verse": "12"
             }
-          },
-          {
-            "reference_ru": "Колоссянам 1:10",
-            "reference_en": "Colossians 1:10",
-    
-            "text_ru": "Чтобы поступали достойно Бога, во всём угождая Ему, принося плод во всяком добром деле и возрастая в познании Бога.",
-            "text_en": "That you may walk worthily of the Lord, to please him in all respects, bearing fruit in every good work and increasing in the knowledge of God.",
-    
-            "verse_ref": {
-              "book": "Colossians",
-              "chapter": 1,
+          }
+        },
+        {
+          "reference_ru": "Луки 17:15-16",
+          "reference_en": "Luke 17:15-16",
+          "text_ru": "Один же из них, видя, что исцелён, возвратился, громким голосом прославляя Бога, и пал ниц к ногам Его, благодаря Его.",
+          "text_en": "One of them, when he saw that he was healed, turned back, glorifying God with a loud voice. He fell on his face at Jesus' feet, giving him thanks; and he was a Samaritan.",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 17,
+            "verse": "15-16"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-68",
+      "day": 68,
+      "topic_ru": "Божьи благословения",
+      "topic_en": "God's Blessings",
+      "question_ru": "Как научиться замечать Божьи благословения?",
+      "question_en": "How can we learn to notice God's blessings?",
+      "reference_ru": "Второзаконие 8:10",
+      "reference_en": "Deuteronomy 8:10",
+      "text_ru": "И когда будешь есть и насыщаться, тогда благословляй Господа, Бога твоего, за добрую землю, которую Он дал тебе.",
+      "text_en": "You shall eat and be full, and you shall bless the Lord your God for the good land which he has given you.",
+      "verse_ref": {
+        "book": "Deuteronomy",
+        "chapter": 8,
+        "verse": "10"
+      },
+      "answer_ru": "Мы учимся замечать Божьи благословения, когда не принимаем жизнь как должное, а благодарим Бога даже за простые дары.",
+      "answer_en": "We learn to notice God's blessings when we do not take life for granted, but thank God even for simple gifts.",
+      "reflection_ru": "Обычный день тоже наполнен Божьими дарами.",
+      "reflection_en": "An ordinary day is also filled with God's gifts.",
+      "related": [
+        {
+          "reference_ru": "Псалом 64:10",
+          "reference_en": "Psalm 65:9",
+          "text_ru": "Ты посещаешь землю и утоляешь жажду её, обильно обогащаешь её; поток Божий полон воды; Ты приготовляешь хлеб, ибо так устроил её.",
+          "text_en": "You visit the earth, and water it. You greatly enrich it. The river of God is full of water. You provide them grain, for so you have ordained it.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 64,
               "verse": "10"
-            }
-          },
-          {
-            "reference_ru": "Титу 2:11-12",
-            "reference_en": "Titus 2:11-12",
-    
-            "text_ru": "Ибо явилась благодать Божия, спасительная для всех человеков, научающая нас, чтобы мы, отвергнув нечестие и мирские похоти, целомудренно, праведно и благочестиво жили в нынешнем веке.",
-            "text_en": "For the grace of God has appeared, bringing salvation to all men, instructing us to the intent that, denying ungodliness and worldly lusts, we would live soberly, righteously, and godly in this present age.",
-    
-            "verse_ref": {
-              "book": "Titus",
-              "chapter": 2,
-              "verse": "11-12"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 65,
+              "verse": "9"
             }
           }
-        ]
-      },
-      {
-        "id": "question-day-64",
-        "day": 64,
-    
-        "topic_ru": "Библия",
-        "topic_en": "God's Word",
-    
-        "question_ru": "Почему важно читать Библию каждый день?",
-        "question_en": "Why is it important to read the Bible every day?",
-    
-        "reference_ru": "Деяния 17:11",
-        "reference_en": "Acts 17:11",
-    
-        "text_ru": "Они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так.",
-        "text_en": "Now these were more noble than those in Thessalonica, in that they received the word with all readiness of mind, examining the Scriptures daily to see whether these things were so.",
-    
-        "verse_ref": {
-          "book": "Acts",
-          "chapter": 17,
-          "verse": "11"
         },
-    
-        "answer_ru": "Ежедневное чтение Библии помогает узнавать Божью волю, укрепляет веру и направляет жизнь человека.",
-        "answer_en": "Reading the Bible every day helps us know God's will, strengthens our faith, and guides our lives.",
-    
-        "related": [
-          {
-            "reference_ru": "Псалом 118:11",
-            "reference_en": "Psalm 119:11",
-    
-            "text_ru": "В сердце моём сокрыл я слово Твоё, чтобы не грешить пред Тобою.",
-            "text_en": "I have hidden your word in my heart, that I might not sin against you.",
-    
-            "verse_ref_lang": {
-              "ru": {
-                "book": "Psalms",
-                "chapter": 118,
-                "verse": "11"
-              },
-              "en": {
-                "book": "Psalms",
-                "chapter": 119,
-                "verse": "11"
-              }
-            }
-          },
-          {
-            "reference_ru": "Иакова 1:22",
-            "reference_en": "James 1:22",
-    
-            "text_ru": "Будьте же исполнители слова, а не слышатели только, обманывающие самих себя.",
-            "text_en": "But be doers of the word, and not only hearers, deluding your own selves.",
-    
-            "verse_ref": {
-              "book": "James",
-              "chapter": 1,
-              "verse": "22"
-            }
-          },
-          {
-            "reference_ru": "1 Петра 2:2",
-            "reference_en": "1 Peter 2:2",
-    
-            "text_ru": "Как новорождённые младенцы, возлюбите чистое словесное молоко, дабы от него возрасти вам во спасение.",
-            "text_en": "As newborn babies, long for the pure milk of the Word, that you may grow thereby.",
-    
-            "verse_ref": {
-              "book": "1-Peter",
-              "chapter": 2,
-              "verse": "2"
-            }
+        {
+          "reference_ru": "Деяния 14:17",
+          "reference_en": "Acts 14:17",
+          "text_ru": "Хотя и не переставал свидетельствовать о Себе благодеяниями, подавая нам с неба дожди и времена плодоносные и исполняя пищею и веселием сердца наши.",
+          "text_en": "Yet he didn't leave himself without witness, in that he did good and gave you rains from the sky and fruitful seasons, filling our hearts with food and gladness.",
+          "verse_ref": {
+            "book": "Acts",
+            "chapter": 14,
+            "verse": "17"
           }
-        ]
-      },
-      {
-        "id": "question-day-65",
-        "day": 65,
-    
-        "topic_ru": "Новая жизнь",
-        "topic_en": "New Life",
-    
-        "question_ru": "Как Бог изменяет человека?",
-        "question_en": "How does God change a person?",
-    
-        "reference_ru": "Римлянам 12:2",
-        "reference_en": "Romans 12:2",
-    
-        "text_ru": "И не сообразуйтесь с веком сим, но преобразуйтесь обновлением ума вашего, чтобы вам познавать, что есть воля Божия, благая, угодная и совершенная.",
-        "text_en": "Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
-    
-        "verse_ref": {
-          "book": "Romans",
-          "chapter": 12,
-          "verse": "2"
         },
-    
-        "answer_ru": "Бог изменяет человека изнутри. Через Своё Слово и действие Святого Духа Он обновляет мышление, характер и образ жизни.",
-        "answer_en": "God changes a person from the inside. Through His Word and the work of the Holy Spirit, He renews our mind, character, and way of life.",
-    
-        "related": [
-          {
-            "reference_ru": "Ефесянам 4:22-24",
-            "reference_en": "Ephesians 4:22-24",
-    
-            "text_ru": "Отложить прежний образ жизни ветхого человека... а обновиться духом ума вашего и облечься в нового человека.",
-            "text_en": "Put away, as concerning your former way of life, the old man... and be renewed in the spirit of your mind, and put on the new man.",
-    
-            "verse_ref": {
-              "book": "Ephesians",
-              "chapter": 4,
-              "verse": "22-24"
-            }
-          },
-          {
-            "reference_ru": "Колоссянам 3:9-10",
-            "reference_en": "Colossians 3:9-10",
-    
-            "text_ru": "Совлекшись ветхого человека с делами его и облекшись в нового, который обновляется в познании по образу Создавшего его.",
-            "text_en": "Seeing that you have put off the old man with his doings, and have put on the new man, who is being renewed in knowledge after the image of his Creator.",
-    
-            "verse_ref": {
-              "book": "Colossians",
-              "chapter": 3,
-              "verse": "9-10"
-            }
-          },
-          {
-            "reference_ru": "1 Фессалоникийцам 5:23",
-            "reference_en": "1 Thessalonians 5:23",
-    
-            "text_ru": "Сам же Бог мира да освятит вас во всей полноте; и ваш дух и душа и тело во всей целости да сохранится без порока в пришествие Господа нашего Иисуса Христа.",
-            "text_en": "May the God of peace himself sanctify you completely. May your whole spirit, soul, and body be preserved blameless at the coming of our Lord Jesus Christ.",
-    
-            "verse_ref": {
-              "book": "1-Thessalonians",
-              "chapter": 5,
-              "verse": "23"
+        {
+          "reference_ru": "Матфея 6:26",
+          "reference_en": "Matthew 6:26",
+          "text_ru": "Взгляните на птиц небесных: они ни сеют, ни жнут, ни собирают в житницы; и Отец ваш Небесный питает их. Вы не гораздо ли лучше их?",
+          "text_en": "See the birds of the sky, that they don't sow, neither do they reap, nor gather into barns. Your heavenly Father feeds them. Aren't you of much more value than they?",
+          "verse_ref": {
+            "book": "Matthew",
+            "chapter": 6,
+            "verse": "26"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-69",
+      "day": 69,
+      "topic_ru": "Радость в испытаниях",
+      "topic_en": "Joy in Trials",
+      "question_ru": "Можно ли радоваться Богу даже в трудные времена?",
+      "question_en": "Can we rejoice in God even in difficult times?",
+      "reference_ru": "Аввакум 3:17-18",
+      "reference_en": "Habakkuk 3:17-18",
+      "text_ru": "Хотя бы не расцвела смоковница и не было плода на виноградных лозах, и маслина изменила, и нива не дала пищи, хотя бы не стало овец в загоне и рогатого скота в стойлах, — но и тогда я буду радоваться о Господе и веселиться о Боге спасения моего.",
+      "text_en": "For though the fig tree doesn't flourish, nor fruit be in the vines; the labor of the olive fails, the fields yield no food; the flocks are cut off from the fold, and there is no herd in the stalls, yet I will rejoice in the Lord. I will be joyful in the God of my salvation!",
+      "verse_ref": {
+        "book": "Habakkuk",
+        "chapter": 3,
+        "verse": "17-18"
+      },
+      "answer_ru": "Даже в трудные времена человек может радоваться Богу, потому что настоящая радость основана не на обстоятельствах, а на Боге спасения.",
+      "answer_en": "Even in difficult times, a person can rejoice in God because true joy is not based on circumstances, but on the God of salvation.",
+      "reflection_ru": "Когда исчезает многое, Бог всё равно остаётся.",
+      "reflection_en": "When much is gone, God still remains.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 16:22",
+          "reference_en": "John 16:22",
+          "text_ru": "Так и вы теперь имеете печаль; но Я увижу вас опять, и возрадуется сердце ваше, и радости вашей никто не отнимет у вас.",
+          "text_en": "Therefore you now have sorrow, but I will see you again, and your heart will rejoice, and no one will take your joy away from you.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 16,
+            "verse": "22"
+          }
+        },
+        {
+          "reference_ru": "2 Коринфянам 6:10",
+          "reference_en": "2 Corinthians 6:10",
+          "text_ru": "Нас огорчают, а мы всегда радуемся; мы нищи, но многих обогащаем; мы ничего не имеем, но всем обладаем.",
+          "text_en": "As sorrowful, yet always rejoicing; as poor, yet making many rich; as having nothing, and yet possessing all things.",
+          "verse_ref": {
+            "book": "2-Corinthians",
+            "chapter": 6,
+            "verse": "10"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 1:8",
+          "reference_en": "1 Peter 1:8",
+          "text_ru": "Которого, не видев, любите, и Которого доселе не видя, но веруя в Него, радуетесь радостью неизреченною и преславною.",
+          "text_en": "Whom, not having known, you love. In him, though now you don't see him, yet believing, you rejoice greatly with joy that is unspeakable and full of glory.",
+          "verse_ref": {
+            "book": "1-Peter",
+            "chapter": 1,
+            "verse": "8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-70",
+      "day": 70,
+      "topic_ru": "Истинное счастье",
+      "topic_en": "True Happiness",
+      "question_ru": "Что делает человека по-настоящему счастливым?",
+      "question_en": "What makes a person truly happy?",
+      "reference_ru": "Псалом 145:5",
+      "reference_en": "Psalm 146:5",
+      "text_ru": "Блажен, кому помощник Бог Иаковлев, у кого надежда на Господа Бога его.",
+      "text_en": "Happy is he who has the God of Jacob for his help, whose hope is in the Lord, his God.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Psalms",
+          "chapter": 145,
+          "verse": "5"
+        },
+        "en": {
+          "book": "Psalms",
+          "chapter": 146,
+          "verse": "5"
+        }
+      },
+      "answer_ru": "По-настоящему счастлив тот, кто ищет помощи у Бога и возлагает надежду на Господа, а не только на земные обстоятельства.",
+      "answer_en": "A truly happy person seeks help from God and places hope in the Lord, not only in earthly circumstances.",
+      "reflection_ru": "Счастье крепче, когда надежда стоит на Боге.",
+      "reflection_en": "Happiness is stronger when hope rests in God.",
+      "related": [
+        {
+          "reference_ru": "Псалом 33:9",
+          "reference_en": "Psalm 34:8",
+          "text_ru": "Вкусите, и увидите, как благ Господь! Блажен человек, который уповает на Него!",
+          "text_en": "Oh taste and see that the Lord is good. Blessed is the man who takes refuge in him.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 33,
+              "verse": "9"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 34,
+              "verse": "8"
             }
           }
-        ]
+        },
+        {
+          "reference_ru": "Притчи 17:22",
+          "reference_en": "Proverbs 17:22",
+          "text_ru": "Весёлое сердце благотворно, как врачевство, а унылый дух сушит кости.",
+          "text_en": "A cheerful heart makes good medicine, but a crushed spirit dries up the bones.",
+          "verse_ref": {
+            "book": "Proverbs",
+            "chapter": 17,
+            "verse": "22"
+          }
+        },
+        {
+          "reference_ru": "Иакова 1:25",
+          "reference_en": "James 1:25",
+          "text_ru": "Но кто вникнет в закон совершенный, закон свободы, и пребудет в нём, тот, будучи не слушателем забывчивым, но исполнителем дела, блажен будет в своём действовании.",
+          "text_en": "But he who looks into the perfect law of freedom and continues, not being a hearer who forgets, but a doer of the work, this man will be blessed in what he does.",
+          "verse_ref": {
+            "book": "James",
+            "chapter": 1,
+            "verse": "25"
+          }
+        }
+      ],
+      "verse_ref": {
+        "book": "Psalms",
+        "chapter": 145,
+        "verse": "5"
       }
-    
-  ] 
+    }
+  ]
 }
