@@ -209,6 +209,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         closeDetails(targetId);
       });
     });
+
+    document.querySelectorAll("a.scripture-book-link").forEach(link => {
+      link.addEventListener("click", closeAllDetails);
+    });
   }
 
   function bindChronologyReferences(root) {

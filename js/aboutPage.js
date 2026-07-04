@@ -264,6 +264,14 @@ function createText(text) {
         closeDetails(id);
       });
     });
+
+    root.querySelectorAll("a.scripture-book-link").forEach(link => {
+      link.addEventListener("click", () => {
+        document.querySelectorAll(".scripture-details").forEach(el => {
+          el.style.display = "none";
+        });
+      });
+    });
   }
 
   function createTopNav(items, lang) {
