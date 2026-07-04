@@ -242,8 +242,14 @@
       return book;
     }
 
-    closeOpenDetails();
     const insertionTarget = options.insertAfter || target;
+    const next = insertionTarget.nextElementSibling;
+    if (next && next.classList.contains("bd-inline")) {
+      next.remove();
+      return book;
+    }
+
+    closeOpenDetails();
     insertionTarget.insertAdjacentHTML("afterend", `<div class="bd-inline">${detailsBoxHTML(book)}</div>`);
     return book;
   }
