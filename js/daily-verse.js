@@ -1,4 +1,5 @@
 import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
+import "./bible-chronology.js";
 
 const easterDates = {
   2026: "2026-04-05",
@@ -357,7 +358,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 ? `
                 <div class="daily-verse-title-inline">
                     <span class="daily-verse-title-text">
-                    ${escapeHtml(topic)}${topic && reference ? " — " : ""}${escapeHtml(reference)}
+                    ${escapeHtml(topic)}${topic && reference ? " — " : ""}${renderChronologyReference(reference, verseRef, lang)}
                     </span>
 
                     ${
@@ -580,6 +581,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           nextBtn.addEventListener("click", goNext);
         }
         initDailyVerseSwipe(root, goPrev, goNext);
+
+        bindDailyChronologyReferences(root);
+
         initDailyVerseTooltip(root);
       }
       function openDailyVerseSearch() {
@@ -1096,6 +1100,51 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     });
   }
 
+  function getReferenceBookName(reference = "") {
+    return String(reference)
+      .replace(/\s+\d+\s*[:.]\s*\d+.*$/, "")
+      .replace(/\s+\d+\s*[:.]?.*$/, "")
+      .trim();
+  }
+
+  function renderChronologyReference(reference = "", verseRef = null, lang = "ru") {
+    if (!reference) return "";
+
+    const bookName = getReferenceBookName(reference);
+    if (!bookName) return escapeHtml(reference);
+
+    const rest = String(reference).slice(bookName.length);
+    const chronologyRef = verseRef || reference;
+    const label = lang === "ru" ? "Открыть хронологию книги" : "Open book chronology";
+
+    return `<span class="daily-chronology-book" role="button" tabindex="0" aria-label="${escapeHtml(label)}" data-chronology-reference='${escapeHtml(JSON.stringify(chronologyRef))}'>${escapeHtml(bookName)}</span>${escapeHtml(rest)}`;
+  }
+
+  function bindDailyChronologyReferences(root) {
+    if (!root.dataset.chronologyCloseBound) {
+      root.dataset.chronologyCloseBound = "true";
+      root.addEventListener("click", (event) => {
+        if (window.BibleChronology?.closeFromEvent(event)) return;
+      });
+    }
+
+    root.querySelectorAll(".daily-chronology-book").forEach((bookName) => {
+      const openChronology = async () => {
+        if (!window.BibleChronology) return;
+
+        const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
+        const target = bookName.closest(".scripture-related-ref") || bookName.closest(".daily-verse-title-text") || bookName;
+        await window.BibleChronology.showReferenceDetails(reference, target);
+      };
+
+      bookName.addEventListener("click", openChronology);
+      bookName.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        openChronology();
+      });
+    });
+  }
   function renderDailyRelatedItem(rel, lang) {
     const ref = rel[`reference_${lang}`] || "";
     const text = rel[`text_${lang}`] || "";
@@ -1105,7 +1154,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   
     return `
       <li class="scripture-related-item">
-        <span class="scripture-related-ref">${escapeHtml(ref)}</span>
+        <span class="scripture-related-ref">${renderChronologyReference(ref, verseRef, lang)}</span>
         ${
           hasRealLink
             ? `<a class="scripture-book-link"
