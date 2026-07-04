@@ -1463,6 +1463,15 @@ table.book-dates td:nth-child(2) {
   cursor: pointer;
 }
 
+.bible-chronology-book-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline dotted currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-skip-ink: none;
+}
+
 /* ===== Salvation popup only ===== */
 
 .scripture-popup {

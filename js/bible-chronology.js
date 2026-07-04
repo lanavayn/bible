@@ -23,6 +23,28 @@
     return getLang() === "ru" ? RU : EN;
   }
 
+  function escapeHtml(value = "") {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function renderReference(reference = "", chronologyRef = null, options = {}) {
+    if (!reference) return "";
+
+    const bookName = extractBookPart(reference);
+    if (!bookName) return escapeHtml(reference);
+
+    const rest = String(reference).slice(bookName.length);
+    const payload = chronologyRef || reference;
+    const lang = options.lang || getLang();
+    const label = lang === "ru" ? "Открыть хронологию книги" : "Open book chronology";
+
+    return `<span class="bible-chronology-book-link" role="button" tabindex="0" aria-label="${escapeHtml(label)}" data-chronology-reference='${escapeHtml(JSON.stringify(payload))}'>${escapeHtml(bookName)}</span>${escapeHtml(rest)}`;
+  }
   async function loadBibleBooks(jsonPath = "/data/bible-books.json") {
     if (DATA && dataPath === jsonPath) return DATA;
     if (dataPromise && dataPath === jsonPath) return dataPromise;
@@ -97,7 +119,25 @@
       псалмы: "псалтирь",
       song: "song of songs",
       "song of solomon": "song of songs",
-      revelation: "revelation"
+      revelation: "revelation",
+      "1-john": "1 john",
+      "2-john": "2 john",
+      "3-john": "3 john",
+      "1-corinthians": "1 corinthians",
+      "2-corinthians": "2 corinthians",
+      "1-thessalonians": "1 thessalonians",
+      "2-thessalonians": "2 thessalonians",
+      "1-peter": "1 peter",
+      "2-peter": "2 peter",
+      "1-иоанна": "1 иоанна",
+      "2-иоанна": "2 иоанна",
+      "3-иоанна": "3 иоанна",
+      "1-коринфянам": "1 коринфянам",
+      "2-коринфянам": "2 коринфянам",
+      "1-фессалоникийцам": "1 фессалоникийцам",
+      "2-фессалоникийцам": "2 фессалоникийцам",
+      "1-петра": "1 петра",
+      "2-петра": "2 петра"
     };
 
     Object.entries(aliases).forEach(([alias, target]) => {
@@ -215,6 +255,7 @@
     findBookById,
     findBookInData,
     findBookByReference,
+    renderReference,
     toggleInlineDetails,
     closeFromEvent,
     closeOpenDetails,

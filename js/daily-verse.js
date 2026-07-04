@@ -1100,24 +1100,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     });
   }
 
-  function getReferenceBookName(reference = "") {
-    return String(reference)
-      .replace(/\s+\d+\s*[:.]\s*\d+.*$/, "")
-      .replace(/\s+\d+\s*[:.]?.*$/, "")
-      .trim();
-  }
-
   function renderChronologyReference(reference = "", verseRef = null, lang = "ru") {
-    if (!reference) return "";
-
-    const bookName = getReferenceBookName(reference);
-    if (!bookName) return escapeHtml(reference);
-
-    const rest = String(reference).slice(bookName.length);
-    const chronologyRef = verseRef || reference;
-    const label = lang === "ru" ? "Открыть хронологию книги" : "Open book chronology";
-
-    return `<span class="daily-chronology-book" role="button" tabindex="0" aria-label="${escapeHtml(label)}" data-chronology-reference='${escapeHtml(JSON.stringify(chronologyRef))}'>${escapeHtml(bookName)}</span>${escapeHtml(rest)}`;
+    return window.BibleChronology?.renderReference(reference, verseRef, { lang }) || escapeHtml(reference);
   }
 
   function bindDailyChronologyReferences(root) {
@@ -1128,7 +1112,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       });
     }
 
-    root.querySelectorAll(".daily-chronology-book").forEach((bookName) => {
+    root.querySelectorAll(".bible-chronology-book-link").forEach((bookName) => {
       const openChronology = async () => {
         if (!window.BibleChronology) return;
 
