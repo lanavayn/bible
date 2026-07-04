@@ -1,4 +1,5 @@
 import { buildBibleLink } from "./bibleLinks.js";
+import "./bible-chronology.js";
 document.addEventListener("DOMContentLoaded", async () => {
     const pageRoot = document.getElementById("scripture-page");
     if (!pageRoot) return;
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
       renderVerses(verses, lang, versesContainer);
       bindVerseToggles();
+      bindChronologyReferences(versesContainer);
       bindTopNavLinks();
       initGlobalTooltip();
     } catch (error) {
@@ -78,6 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const mainVerseRef = getVerseRefByLang(item, lang);
       const mainLink = buildBibleLink(mainVerseRef, lang);
+      const splitRef = window.BibleChronology?.splitReference(reference) || { bookName: "", rest: reference };
   
       const detailsId = `details-${index}`;
       const triggerId = `trigger-${index}`;
@@ -91,12 +94,21 @@ document.addEventListener("DOMContentLoaded", async () => {
           <span class="scripture-topic ${getTopicClass(topic, lang)}">
             ${getTopicIcon(topic, lang)}${formatTopic(topic, lang)} —
           </span>
+          ${
+            splitRef.bookName
+              ? `<span class="bible-chronology-book-link"
+                   role="button"
+                   tabindex="0"
+                   aria-label="Open book chronology"
+                   data-chronology-reference='${escapeAttribute(JSON.stringify(mainVerseRef || reference))}'>${escapeHtml(splitRef.bookName)}</span>`
+              : ""
+          }
           <a href="#"
             class="scripture-reference explain-link"
             id="${triggerId}" 
             data-target="${detailsId}"
             data-tooltip="${lang === 'ru' ? 'Показать объяснение' : 'Show explanation'}">
-            ${escapeHtml(reference)}
+            ${escapeHtml(splitRef.bookName ? splitRef.rest.trim() : reference)}
           </a>
 
           ${
@@ -186,6 +198,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
         const targetId = this.dataset.target;
+        window.BibleChronology?.closeOpenDetails();
         toggleDetails(targetId);
       });
     });
@@ -198,11 +211,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+  function bindChronologyReferences(root) {
+    if (!root) return;
+
+    if (!root.dataset.chronologyCloseBound) {
+      root.dataset.chronologyCloseBound = "true";
+      root.addEventListener("click", (event) => {
+        if (window.BibleChronology?.closeFromEvent(event)) return;
+      });
+    }
+
+    root.querySelectorAll(".bible-chronology-book-link").forEach((bookName) => {
+      const openChronology = async () => {
+        if (!window.BibleChronology) return;
+
+        const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
+        closeAllDetails();
+        await window.BibleChronology.showReferenceDetails(reference, bookName, {
+          insertAfter: bookName.closest(".scripture-heading") || bookName
+        });
+      };
+
+      bookName.addEventListener("click", openChronology);
+      bookName.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        openChronology();
+      });
+    });
+  }
+
   function bindTopNavLinks() {
     document.querySelectorAll(".top-nav-link").forEach(link => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
   
+        window.BibleChronology?.closeOpenDetails();
         closeAllDetails();
   
         const targetId = this.getAttribute("href")?.replace("#", "");

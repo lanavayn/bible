@@ -1851,14 +1851,17 @@ table.book-dates td:nth-child(2) {
   background: #f8f3fb;
   border: 1px solid #e6dcef;
   border-radius: 12px;
-  padding: 12px 14px;
+  padding: 6px 14px 12px;
   position: relative;
 }
 
 .scripture-close-row {
+  position: absolute;
+  top: 6px;
+  right: 8px;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1px;
+  margin: 0;
 }
 
 .scripture-close {
@@ -1867,6 +1870,7 @@ table.book-dates td:nth-child(2) {
   cursor: pointer;
   color: #777;
   font-size: 20px;
+  line-height: 1;
   opacity: 0.6;
 }
 .scripture-close:hover {

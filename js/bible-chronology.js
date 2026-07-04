@@ -45,6 +45,19 @@
 
     return `<span class="bible-chronology-book-link" role="button" tabindex="0" aria-label="${escapeHtml(label)}" data-chronology-reference='${escapeHtml(JSON.stringify(payload))}'>${escapeHtml(bookName)}</span>${escapeHtml(rest)}`;
   }
+
+  function splitReference(reference = "") {
+    if (!reference) return { bookName: "", rest: "" };
+
+    const bookName = extractBookPart(reference);
+    if (!bookName) return { bookName: "", rest: String(reference) };
+
+    return {
+      bookName,
+      rest: String(reference).slice(bookName.length)
+    };
+  }
+
   async function loadBibleBooks(jsonPath = "/data/bible-books.json") {
     if (DATA && dataPath === jsonPath) return DATA;
     if (dataPromise && dataPath === jsonPath) return dataPromise;
@@ -263,6 +276,7 @@
     findBookInData,
     findBookByReference,
     renderReference,
+    splitReference,
     toggleInlineDetails,
     closeFromEvent,
     closeOpenDetails,
