@@ -4546,6 +4546,8 @@ body.daily-verse-search-open {
   padding: 0.6rem 0.8rem 0.7rem;
   margin: 6px 0;
   line-height: 1.45;
+  font-weight: 400;
+  text-align: left;
   overflow-wrap: break-word;
   word-break: break-word;
 }

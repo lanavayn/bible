@@ -243,7 +243,8 @@
     }
 
     closeOpenDetails();
-    target.insertAdjacentHTML("afterend", `<div class="bd-inline">${detailsBoxHTML(book)}</div>`);
+    const insertionTarget = target.closest(".daily-verse-title-inline") || target;
+    insertionTarget.insertAdjacentHTML("afterend", `<div class="bd-inline">${detailsBoxHTML(book)}</div>`);
     return book;
   }
 
