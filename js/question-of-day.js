@@ -89,6 +89,16 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
     const hasRealToday = realTodayIndex !== -1;
     let currentIndex = todayIndex;
+    const requestedQuestion = getPositiveQueryNumber("question");
+    if (requestedQuestion !== null) {
+      const requestedIndex = questions.findIndex(question =>
+        Number(question.day) === requestedQuestion
+      );
+
+      if (requestedIndex !== -1) {
+        currentIndex = requestedIndex;
+      }
+    }
 
     function renderCard(index) {
       const q = questions[index];
@@ -133,6 +143,14 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             </div>
 
             <div class="daily-verse-date-jumps">
+
+            ${
+              hasRealToday && todayIndex >= 0 && index !== todayIndex
+                ? `<button class="dv-jump-btn dv-jump-today" type="button">
+                    ${lang === "ru" ? "Сегодня" : "Today"}
+                  </button>`
+                : ""
+            }
 
             <button class="dv-jump-btn question-search-open" type="button">
               🔍 ${lang === "ru" ? "Найти вопрос" : "Find a Question"}
@@ -310,6 +328,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
       const closeBtn = root.querySelector(".dv-close");
       const searchOpenBtn = root.querySelector(".question-search-open");
+      const jumpTodayBtn = root.querySelector(".dv-jump-today");
       bindQuestionChronologyReferences(root);
 
       function closeAllQuestionHelp(exceptInline = null) {
@@ -343,6 +362,16 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       if (searchOpenBtn) {
         searchOpenBtn.addEventListener("click", () => {
           openQuestionSearch();
+        });
+      }
+
+      if (jumpTodayBtn) {
+        jumpTodayBtn.addEventListener("click", () => {
+          if (todayIndex >= 0) {
+            currentIndex = todayIndex;
+            updateQueryNumber("question", questions[currentIndex]?.day);
+            renderCard(currentIndex);
+          }
         });
       }
       const mottoHelpBtn = root.querySelector(".question-motto-help-btn");
@@ -417,6 +446,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const prevBtn = root.querySelector(".dv-prev");
       if (prevBtn) {
         prevBtn.addEventListener("click", () => {
+          updateQueryNumber("question", questions[index - 1]?.day);
           renderCard(index - 1);
         });
       }
@@ -424,6 +454,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const nextBtn = root.querySelector(".dv-next");
       if (nextBtn) {
         nextBtn.addEventListener("click", () => {
+          updateQueryNumber("question", questions[index + 1]?.day);
           renderCard(index + 1);
         });
       }
@@ -534,6 +565,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     
       function openQuestionByIndex(index) {
         currentIndex = index;
+        updateQueryNumber("question", questions[currentIndex]?.day);
         closeSearch();
     
         renderCard(currentIndex);
@@ -774,6 +806,23 @@ function splitQuestionRelatedVerseLine(text = "") {
     firstPart: words.slice(0, 8).join(" "),
     remainingPart: words.slice(8).join(" ")
   };
+}
+
+function getPositiveQueryNumber(name) {
+  const value = Number(new URLSearchParams(window.location.search).get(name));
+  return Number.isInteger(value) && value > 0 ? value : null;
+}
+
+function updateQueryNumber(name, value) {
+  const number = Number(value);
+  if (!Number.isInteger(number) || number <= 0) return;
+
+  const url = new URL(window.location.href);
+  url.searchParams.set(name, String(number));
+  if (name === "question") {
+    url.searchParams.delete("day");
+  }
+  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
 function addQuestionCreationHelp(text, lang, verseRef = null) {

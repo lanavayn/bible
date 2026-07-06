@@ -318,40 +318,55 @@ function getIndexLang() {
       loadDailyVerseBtn.addEventListener("click", openDailyVerse);
     }
 
-    if (loadQuestionBtn) {
-      loadQuestionBtn.addEventListener("click", async () => {
-        loadQuestionBtn.textContent =
-          lang === "ru" ? "Загрузка..." : "Loading...";
+    async function openDailyQuestion() {
+      if (!loadQuestionBtn) return;
+      loadQuestionBtn.textContent =
+        lang === "ru" ? "Загрузка..." : "Loading...";
 
-          try {
-            closeAllTopicCards();
-            await import("/js/question-of-day.js");
-          
-            document.getElementById("daily-verse").innerHTML = "";
-          
-            if (typeof window.renderQuestionOfDay === "function") {
-              await window.renderQuestionOfDay();
-              loadQuestionBtn.classList.add("is-active");
-              loadQuestionBtn.classList.remove("is-muted");
+        try {
+          closeAllTopicCards();
+          await import("/js/question-of-day.js");
+        
+          document.getElementById("daily-verse").innerHTML = "";
+        
+          if (typeof window.renderQuestionOfDay === "function") {
+            await window.renderQuestionOfDay();
+            loadQuestionBtn.classList.add("is-active");
+            loadQuestionBtn.classList.remove("is-muted");
 
+            if (loadDailyVerseBtn) {
               loadDailyVerseBtn.classList.remove("is-active");
               loadDailyVerseBtn.classList.add("is-muted");
             }
-          
-            loadQuestionBtn.textContent =
-              lang === "ru" ? "💬Вопрос дня" : "💬Daily Question";
-          
-          } catch (error) {
-            console.error(error);
-            loadQuestionBtn.textContent =
-              lang === "ru" ? "Ошибка" : "Error";
           }
-      });
+        
+          loadQuestionBtn.textContent =
+            lang === "ru" ? "💬Вопрос дня" : "💬Daily Question";
+        
+        } catch (error) {
+          console.error(error);
+          loadQuestionBtn.textContent =
+            lang === "ru" ? "Ошибка" : "Error";
+        }
+    }
+
+    if (loadQuestionBtn) {
+      loadQuestionBtn.addEventListener("click", openDailyQuestion);
     }
 
     const requestedDailyVerseDay = Number(new URLSearchParams(window.location.search).get("day"));
     if (loadDailyVerseBtn && Number.isInteger(requestedDailyVerseDay) && requestedDailyVerseDay > 0) {
       openDailyVerse();
+    }
+
+    const requestedDailyQuestion = Number(new URLSearchParams(window.location.search).get("question"));
+    if (
+      loadQuestionBtn &&
+      (!Number.isInteger(requestedDailyVerseDay) || requestedDailyVerseDay <= 0) &&
+      Number.isInteger(requestedDailyQuestion) &&
+      requestedDailyQuestion > 0
+    ) {
+      openDailyQuestion();
     }
   }
 

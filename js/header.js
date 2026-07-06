@@ -57,13 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const commentsHref = isRu ? "comments.html" : "comments.html";
     const askQuestionHref = isRu ? "ask-question.html" : "ask-question.html";
   
-    function withDailyVerseDay(href) {
-      const day = Number(new URLSearchParams(window.location.search).get("day"));
-      if (!Number.isInteger(day) || day <= 0) return href;
-
+    function withDailySelection(href) {
       const normalizedHref = href === "/index.html" ? "/" : href;
       const url = new URL(normalizedHref, window.location.origin);
-      url.searchParams.set("day", String(day));
+      const currentParams = new URLSearchParams(window.location.search);
+      const day = Number(currentParams.get("day"));
+      const question = Number(currentParams.get("question"));
+
+      if (Number.isInteger(day) && day > 0) {
+        url.searchParams.set("day", String(day));
+      } else if (Number.isInteger(question) && question > 0) {
+        url.searchParams.set("question", String(question));
+      }
+
       return `${url.pathname}${url.search}${url.hash}`;
     }
 
@@ -75,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ? currentPage
       : (pairedPage === "index.html" ? "/ru/" : `/ru/${pairedPage}`);
 
-    const enHref = withDailyVerseDay(enHrefBase);
-    const ruHref = withDailyVerseDay(ruHrefBase);
+    const enHref = withDailySelection(enHrefBase);
+    const ruHref = withDailySelection(ruHrefBase);
   
     const showBack =
       currentPage === "about.html" ||
@@ -162,14 +168,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (langEn) {
       langEn.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.replace(withDailyVerseDay(enHrefBase));
+        window.location.replace(withDailySelection(enHrefBase));
       });
     }
     
     if (langRu) {
       langRu.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.replace(withDailyVerseDay(ruHrefBase));
+        window.location.replace(withDailySelection(ruHrefBase));
       });
     }
 
