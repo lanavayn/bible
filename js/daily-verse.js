@@ -138,6 +138,16 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       const hasRealToday = realTodayIndex !== -1;
 
       let currentIndex = todayIndex;
+      const requestedDay = getPositiveQueryNumber("day");
+      if (requestedDay !== null) {
+        const requestedIndex = verses.findIndex((verse, index) =>
+          index <= todayIndex && Number(verse.day) === requestedDay
+        );
+
+        if (requestedIndex !== -1) {
+          currentIndex = requestedIndex;
+        }
+      }
 
       let keepDetailsOpen = false;
   
@@ -430,6 +440,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const goPrev = () => {
           if (currentIndex > 0) {
             currentIndex = currentIndex - 1;
+            updateQueryNumber("day", verses[currentIndex]?.day);
             renderCard(currentIndex);
           }
         };
@@ -437,6 +448,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const goNext = () => {
           if (currentIndex < todayIndex) {
             currentIndex = currentIndex + 1;
+            updateQueryNumber("day", verses[currentIndex]?.day);
             renderCard(currentIndex);
           }
         };
@@ -444,6 +456,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         if (jumpDay1Btn) {
           jumpDay1Btn.addEventListener("click", () => {
             currentIndex = START_INDEX;
+            updateQueryNumber("day", verses[currentIndex]?.day);
             animateChange(() => {
             renderCard(currentIndex);
             });
@@ -454,6 +467,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           jumpTodayBtn.addEventListener("click", () => {
             if (todayIndex >= 0) {
               currentIndex = todayIndex;
+              updateQueryNumber("day", verses[currentIndex]?.day);
               animateChange(() => {
               renderCard(currentIndex);
               });
@@ -703,6 +717,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       
         function openVerseByIndex(index) {
           currentIndex = index;
+          updateQueryNumber("day", verses[currentIndex]?.day);
         
           closeSearch();
         
@@ -1203,6 +1218,20 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     if (parts.length <= words) return clean;
 
     return parts.slice(0, words).join(" ") + "...";
+  }
+
+  function getPositiveQueryNumber(name) {
+    const value = Number(new URLSearchParams(window.location.search).get(name));
+    return Number.isInteger(value) && value > 0 ? value : null;
+  }
+
+  function updateQueryNumber(name, value) {
+    const number = Number(value);
+    if (!Number.isInteger(number) || number <= 0) return;
+
+    const url = new URL(window.location.href);
+    url.searchParams.set(name, String(number));
+    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
   function escapeHtml(str) {

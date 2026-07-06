@@ -280,9 +280,10 @@ function getIndexLang() {
     }
 
     const loadDailyVerseBtn = document.getElementById("loadDailyVerseBtn");
+    const loadQuestionBtn = document.getElementById("loadQuestionBtn");
 
-    if (loadDailyVerseBtn) {
-      loadDailyVerseBtn.addEventListener("click", async () => {
+    async function openDailyVerse() {
+      if (!loadDailyVerseBtn) return;
         loadDailyVerseBtn.textContent =
           lang === "ru" ? "Загрузка..." : "Loading...";
 
@@ -297,8 +298,10 @@ function getIndexLang() {
               loadDailyVerseBtn.classList.add("is-active");
               loadDailyVerseBtn.classList.remove("is-muted");
 
-              loadQuestionBtn.classList.remove("is-active");
-              loadQuestionBtn.classList.add("is-muted");
+              if (loadQuestionBtn) {
+                loadQuestionBtn.classList.remove("is-active");
+                loadQuestionBtn.classList.add("is-muted");
+              }
             }
           
             loadDailyVerseBtn.textContent =
@@ -309,10 +312,11 @@ function getIndexLang() {
             loadDailyVerseBtn.textContent =
               lang === "ru" ? "Стих не загрузился" : "Verse failed to load";
           }
-      });
     }
 
-    const loadQuestionBtn = document.getElementById("loadQuestionBtn");
+    if (loadDailyVerseBtn) {
+      loadDailyVerseBtn.addEventListener("click", openDailyVerse);
+    }
 
     if (loadQuestionBtn) {
       loadQuestionBtn.addEventListener("click", async () => {
@@ -343,6 +347,11 @@ function getIndexLang() {
               lang === "ru" ? "Ошибка" : "Error";
           }
       });
+    }
+
+    const requestedDailyVerseDay = Number(new URLSearchParams(window.location.search).get("day"));
+    if (loadDailyVerseBtn && Number.isInteger(requestedDailyVerseDay) && requestedDailyVerseDay > 0) {
+      openDailyVerse();
     }
   }
 

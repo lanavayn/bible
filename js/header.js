@@ -57,13 +57,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const commentsHref = isRu ? "comments.html" : "comments.html";
     const askQuestionHref = isRu ? "ask-question.html" : "ask-question.html";
   
-    const enHref = lang === "en"
+    function withDailyVerseDay(href) {
+      const day = Number(new URLSearchParams(window.location.search).get("day"));
+      if (!Number.isInteger(day) || day <= 0) return href;
+
+      const normalizedHref = href === "/index.html" ? "/" : href;
+      const url = new URL(normalizedHref, window.location.origin);
+      url.searchParams.set("day", String(day));
+      return `${url.pathname}${url.search}${url.hash}`;
+    }
+
+    const enHrefBase = lang === "en"
       ? currentPage
       : `/${pairedPage}`;
   
-    const ruHref = lang === "ru"
+    const ruHrefBase = lang === "ru"
       ? currentPage
       : (pairedPage === "index.html" ? "/ru/" : `/ru/${pairedPage}`);
+
+    const enHref = withDailyVerseDay(enHrefBase);
+    const ruHref = withDailyVerseDay(ruHrefBase);
   
     const showBack =
       currentPage === "about.html" ||
@@ -149,14 +162,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (langEn) {
       langEn.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.replace(enHref);
+        window.location.replace(withDailyVerseDay(enHrefBase));
       });
     }
     
     if (langRu) {
       langRu.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.replace(ruHref);
+        window.location.replace(withDailyVerseDay(ruHrefBase));
       });
     }
 
