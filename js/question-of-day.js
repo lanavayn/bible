@@ -736,6 +736,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       renderResults();
     }
 
+    updateQueryNumber("question", questions[currentIndex]?.day);
     renderCard(currentIndex);
 
   } catch (e) {

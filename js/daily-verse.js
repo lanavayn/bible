@@ -891,6 +891,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         //setTimeout(() => searchInput.focus(), 50);
       }
 
+      updateQueryNumber("day", verses[currentIndex]?.day);
       animateChange(() => {
           renderCard(currentIndex);
       });
@@ -1231,6 +1232,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
     const url = new URL(window.location.href);
     url.searchParams.set(name, String(number));
+    if (name === "day") {
+      url.searchParams.delete("question");
+    }
     window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
