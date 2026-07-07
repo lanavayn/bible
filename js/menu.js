@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
   
         if (!isOpen) {
+          window.PopupManager?.closeAll({ except: dropdown });
           dropdown.classList.add("is-open");
           button.setAttribute("aria-expanded", "true");
         }

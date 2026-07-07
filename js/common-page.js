@@ -283,6 +283,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   
     if (!isOpen) {
+      window.PopupManager?.closeAll({ except: target });
       target.style.display = "block";
       scrollToDetails(target);
     }

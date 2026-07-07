@@ -82,6 +82,8 @@ if (helpBtn && helpInline) {
   helpBtn.insertAdjacentElement("afterend", helpInline);
 }
 function closeAllFooterHelp(exceptInline = null) {
+  window.PopupManager?.closeAll({ except: exceptInline });
+
   document.querySelectorAll(".footer-help-inline").forEach((inline) => {
     if (inline !== exceptInline) {
       inline.setAttribute("hidden", "");
@@ -157,12 +159,16 @@ timelineButtons.forEach((btn) => {
       `);
 
       box = footer.querySelector(".footer-timeline-box");
+      window.PopupManager?.closeAll({ except: box });
 
       if (window.initBookDates) {
         await window.initBookDates("#footer-book-dates");
       }
     } else if (timelineLine && box.previousElementSibling !== timelineLine) {
       timelineLine.insertAdjacentElement("afterend", box);
+      window.PopupManager?.closeAll({ except: box });
+    } else {
+      window.PopupManager?.closeAll({ except: box });
     }
 
     box.hidden = false;

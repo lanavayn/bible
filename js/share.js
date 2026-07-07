@@ -25,7 +25,15 @@ document.addEventListener("click", async function (event) {
 });
 
 function showSharePopup() {
-  let popup = document.getElementById("share-popup");
+  const existingPopup = document.getElementById("share-popup");
+  if (existingPopup) {
+    existingPopup.remove();
+    return;
+  }
+
+  window.PopupManager?.closeAll();
+
+  let popup = null;
 
   if (!popup) {
     popup = document.createElement("div");

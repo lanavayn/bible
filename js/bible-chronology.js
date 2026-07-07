@@ -242,6 +242,7 @@
       return;
     }
 
+    global.PopupManager?.closeAll();
     closeOpenDetails();
     tr.insertAdjacentHTML("afterend", inlineRowHTML(book));
   }
@@ -262,6 +263,7 @@
       return book;
     }
 
+    global.PopupManager?.closeAll();
     closeOpenDetails();
     insertionTarget.insertAdjacentHTML("afterend", `<div class="bd-inline">${detailsBoxHTML(book)}</div>`);
     return book;

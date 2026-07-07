@@ -332,6 +332,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       bindQuestionChronologyReferences(root);
 
       function closeAllQuestionHelp(exceptInline = null) {
+        window.PopupManager?.closeAll({ except: exceptInline });
+
         document.querySelectorAll(".footer-help-inline").forEach(inline => {
           if (inline !== exceptInline) {
             inline.setAttribute("hidden", "");

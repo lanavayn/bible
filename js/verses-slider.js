@@ -493,6 +493,7 @@
     });
 
     if (!isOpen) {
+      window.PopupManager?.closeAll({ except: target });
       keepDetailsOpen = true;
       target.style.display = 'block';
       if (swiper) swiper.updateAutoHeight(250);

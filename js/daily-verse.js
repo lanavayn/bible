@@ -498,6 +498,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         }
 
         function closeAllDailyHelp(exceptInline = null) {
+          window.PopupManager?.closeAll({ except: exceptInline });
+
           document.querySelectorAll(".footer-help-inline").forEach(inline => {
             if (inline !== exceptInline) {
               inline.setAttribute("hidden", "");

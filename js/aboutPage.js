@@ -221,7 +221,10 @@ function createText(text) {
       e.style.display = "none";
     });
   
-    if (!isOpen) el.style.display = "block";
+    if (!isOpen) {
+      window.PopupManager?.closeAll({ except: el });
+      el.style.display = "block";
+    }
   }
   
   function closeDetails(targetId) {
@@ -302,6 +305,8 @@ function createText(text) {
       btn.addEventListener("click", () => {
         const isOpen = !helpInline.hasAttribute("hidden");
   
+        window.PopupManager?.closeAll({ except: helpInline });
+
         root.querySelectorAll(".footer-help-inline").forEach(el => {
           el.setAttribute("hidden", "");
         });
