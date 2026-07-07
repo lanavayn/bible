@@ -242,7 +242,8 @@
       return;
     }
 
-    global.PopupManager?.closeAll();
+    const popupContext = tr.closest(".footer-timeline-box") || tr;
+    global.PopupManager?.closeAll({ except: popupContext });
     closeOpenDetails();
     tr.insertAdjacentHTML("afterend", inlineRowHTML(book));
   }
@@ -263,7 +264,8 @@
       return book;
     }
 
-    global.PopupManager?.closeAll();
+    const popupContext = insertionTarget.closest(".footer-timeline-box") || insertionTarget;
+    global.PopupManager?.closeAll({ except: popupContext });
     closeOpenDetails();
     insertionTarget.insertAdjacentHTML("afterend", `<div class="bd-inline">${detailsBoxHTML(book)}</div>`);
     return book;
