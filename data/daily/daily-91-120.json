@@ -77,8 +77,8 @@
         "chapter": 11,
         "verse": "24"
       },
-      "interpretation_ru": "Доверяй Богу в молитве. Он всегда слышит и отвечает так, как будет лучше.",
-      "interpretation_en": "Trust God in prayer. He always hears and answers in the best way.",
+      "interpretation_ru": "Доверяй Господь в молитве. Он всегда слышит и отвечает так, как будет лучше.",
+      "interpretation_en": "Trust the Lord in prayer. He always hears and answers in the best way.",
       "related": [
         {
           "reference_ru": "1 Иоанна 5:14",
@@ -138,8 +138,8 @@
         "chapter": 4,
         "verse": "16"
       },
-      "interpretation_ru": "Бог всегда готов принять каждого, кто приходит к Нему с искренним сердцем.",
-      "interpretation_en": "God is always ready to receive everyone who comes to Him sincerely.",
+      "interpretation_ru": "Господь всегда готов принять каждого, кто приходит к Нему с искренним сердцем.",
+      "interpretation_en": "The Lord is always ready to receive everyone who comes to Him sincerely.",
       "related": [
         {
           "reference_ru": "Иеремия 29:12",
@@ -192,8 +192,8 @@
         "chapter": 65,
         "verse": "24"
       },
-      "interpretation_ru": "Бог знает наши нужды заранее. Молитва помогает нам доверить Ему свою жизнь.",
-      "interpretation_en": "God knows our needs before we ask. Prayer helps us entrust our lives to Him.",
+      "interpretation_ru": "Господь знает наши нужды заранее. Молитва помогает нам доверить Ему свою жизнь.",
+      "interpretation_en": "The Lord knows our needs before we ask. Prayer helps us entrust our lives to Him.",
       "related": [
         {
           "reference_ru": "Псалом 33:18",
@@ -231,6 +231,121 @@
           "text_en": "Now to him who is able to do exceedingly abundantly above all that we ask or think, according to the power that works in us.",
           "verse_ref": {
             "book": "ephesians",
+            "chapter": 3,
+            "verse": "20"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-07-09",
+      "day": 95,
+      "topic": {
+        "ru": "Ищущие Бога найдут Его",
+        "en": "Those Who Seek God Will Find Him"
+      },
+      "reference_ru": "Притчи 8:17",
+      "reference_en": "Proverbs 8:17",
+      "text_ru": "Любящих меня я люблю, и ищущие меня найдут меня.",
+      "text_en": "I love those who love me. Those who seek me diligently will find me.",
+      "verse_ref": {
+        "book": "proverbs",
+        "chapter": 8,
+        "verse": "17"
+      },
+      "interpretation_ru": "Господь обещает открыться тем, кто искренне ищет Его. Он не оставляет человека без ответа.",
+      "interpretation_en": "The Lord promises to reveal Himself to those who sincerely seek Him. He does not leave a person without an answer.",
+      "related": [
+        {
+          "reference_ru": "1 Паралипоменон 28:9",
+          "reference_en": "1 Chronicles 28:9",
+          "text_ru": "Если будешь искать Его, то найдешь Его, а если оставишь Его, Он оставит тебя навсегда.",
+          "text_en": "If you seek him, he will be found by you; but if you forsake him, he will cast you off forever.",
+          "verse_ref": {
+            "book": "1-chronicles",
+            "chapter": 28,
+            "verse": "9"
+          }
+        },
+        {
+          "reference_ru": "Осия 6:3",
+          "reference_en": "Hosea 6:3",
+          "text_ru": "Итак познаем, будем стремиться познать Господа.",
+          "text_en": "Let us acknowledge the Lord. Let us press on to know the Lord.",
+          "verse_ref": {
+            "book": "hosea",
+            "chapter": 6,
+            "verse": "3"
+          }
+        },
+        {
+          "reference_ru": "Псалом 24:14",
+          "reference_en": "Psalm 25:14",
+          "text_ru": "Тайна Господня — боящимся Его, и завет Свой Он открывает им.",
+          "text_en": "The friendship of the Lord is with those who fear him. He will show them his covenant.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 24,
+              "verse": "14"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 25,
+              "verse": "14"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-07-10",
+      "day": 96,
+      "topic": {
+        "ru": "Христос принимает приходящих к Нему",
+        "en": "Christ Receives Those Who Come to Him"
+      },
+      "reference_ru": "Иоанна 6:37",
+      "reference_en": "John 6:37",
+      "text_ru": "Все, что дает Мне Отец, ко Мне придет; и приходящего ко Мне не изгоню вон.",
+      "text_en": "All those whom the Father gives me will come to me. He who comes to me I will in no way throw out.",
+      "verse_ref": {
+        "book": "john",
+        "chapter": 6,
+        "verse": "37"
+      },
+      "interpretation_ru": "Иисус не отвергает человека, который приходит к Нему. У Него есть место для каждого искреннего сердца.",
+      "interpretation_en": "Jesus does not reject the one who comes to Him. There is a place with Him for every sincere heart.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 1:12",
+          "reference_en": "John 1:12",
+          "text_ru": "А тем, которые приняли Его, верующим во имя Его, дал власть быть чадами Божиими.",
+          "text_en": "But as many as received him, to them he gave the right to become God's children, to those who believe in his name.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 1,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 7:17",
+          "reference_en": "John 7:17",
+          "text_ru": "Кто хочет творить волю Его, тот узнает о сем учении, от Бога ли оно, или Я Сам от Себя говорю.",
+          "text_en": "If anyone desires to do his will, he will know about the teaching, whether it is from God or if I am speaking from myself.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 7,
+            "verse": "17"
+          }
+        },
+        {
+          "reference_ru": "Откровение 3:20",
+          "reference_en": "Revelation 3:20",
+          "text_ru": "Се, стою у двери и стучу: если кто услышит голос Мой и отворит дверь, войду к нему, и буду вечерять с ним, и он со Мною.",
+          "text_en": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, then I will come in to him and will dine with him, and he with me.",
+          "verse_ref": {
+            "book": "revelation",
             "chapter": 3,
             "verse": "20"
           }

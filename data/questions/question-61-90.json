@@ -636,6 +636,69 @@
         "chapter": 145,
         "verse": "5"
       }
-    }
+    },
+    {
+      "id": "question-day-71",
+      "day": 71,
+      "topic_ru": "Поиск Господа",
+      "topic_en": "Seeking the Lord",
+      "question_ru": "Можно ли действительно найти Господа?",
+      "question_en": "Can We Really Find the Lord?",
+      "reference_ru": "Притчи 8:17",
+      "reference_en": "Proverbs 8:17",
+      "text_ru": "Любящих меня я люблю, и ищущие меня найдут меня.",
+      "text_en": "I love those who love me. Those who seek me diligently will find me.",
+      "verse_ref": {
+        "book": "Proverbs",
+        "chapter": 8,
+        "verse": "17"
+      },
+      "answer_ru": "Да. Господь обещает, что каждый, кто искренне ищет Его, обязательно найдёт Его. Он открывает Себя тем, кто всем сердцем стремится познать Его.",
+      "answer_en": "Yes. The Lord promises that everyone who sincerely seeks Him will find Him. He reveals Himself to those who truly desire to know Him.",
+      "reflection_ru": "Господь никогда не оставляет без ответа искренне ищущее Его сердце.",
+      "reflection_en": "The Lord never leaves a sincere seeking heart without an answer.",
+      "related": [
+        {
+          "reference_ru": "1 Паралипоменон 28:9",
+          "reference_en": "1 Chronicles 28:9",
+          "text_ru": "Если будешь искать Его, то найдешь Его, а если оставишь Его, Он оставит тебя навсегда.",
+          "text_en": "If you seek him, he will be found by you; but if you forsake him, he will cast you off forever.",
+          "verse_ref": {
+            "book": "1-Chronicles",
+            "chapter": 28,
+            "verse": "9"
+          }
+        },
+        {
+          "reference_ru": "Осия 6:3",
+          "reference_en": "Hosea 6:3",
+          "text_ru": "Итак познаем, будем стремиться познать Господа.",
+          "text_en": "Let us acknowledge the Lord. Let us press on to know the Lord.",
+          "verse_ref": {
+            "book": "Hosea",
+            "chapter": 6,
+            "verse": "3"
+          }
+        },
+        {
+          "reference_ru": "Псалом 24:14",
+          "reference_en": "Psalm 25:14",
+          "text_ru": "Тайна Господня — боящимся Его, и завет Свой Он открывает им.",
+          "text_en": "The friendship of the Lord is with those who fear him. He will show them his covenant.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 24,
+              "verse": "14"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 25,
+              "verse": "14"
+            }
+          }
+        }
+      ]
+    }    
   ]
 }
