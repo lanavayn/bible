@@ -351,6 +351,283 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-07-11",
+      "day": 97,
+      "topic": {
+        "ru": "Храни сердце",
+        "en": "Guard Your Heart"
+      },
+      "reference_ru": "Притчи 4:23",
+      "reference_en": "Proverbs 4:23",
+      "text_ru": "Больше всего хранимого храни сердце твоё, потому что из него источники жизни.",
+      "text_en": "Keep your heart with all diligence, for out of it is the wellspring of life.",
+      "verse_ref": {
+        "book": "proverbs",
+        "chapter": 4,
+        "verse": "23"
+      },
+      "interpretation_ru": "Господь учит внимательно хранить сердце, потому что мысли, желания и выборы человека начинаются внутри.",
+      "interpretation_en": "The Lord teaches us to guard our heart carefully, because our thoughts, desires, and choices begin within.",
+      "related": [
+        {
+          "reference_ru": "Луки 6:45",
+          "reference_en": "Luke 6:45",
+          "text_ru": "Добрый человек из доброго сокровища сердца своего выносит доброе, а злой человек из злого сокровища сердца своего выносит злое, ибо от избытка сердца говорят уста его.",
+          "text_en": "The good man out of the good treasure of his heart brings out that which is good, and the evil man out of the evil treasure of his heart brings out that which is evil, for out of the abundance of the heart, his mouth speaks.",
+          "verse_ref": {
+            "book": "luke",
+            "chapter": 6,
+            "verse": "45"
+          }
+        },
+        {
+          "reference_ru": "Матфея 12:35",
+          "reference_en": "Matthew 12:35",
+          "text_ru": "Добрый человек из доброго сокровища выносит доброе, а злой человек из злого сокровища выносит злое.",
+          "text_en": "The good man out of his good treasure brings out good things, and the evil man out of his evil treasure brings out evil things.",
+          "verse_ref": {
+            "book": "matthew",
+            "chapter": 12,
+            "verse": "35"
+          }
+        },
+        {
+          "reference_ru": "Псалом 50:12",
+          "reference_en": "Psalm 51:10",
+          "text_ru": "Сердце чистое сотвори во мне, Боже, и дух правый обнови внутри меня.",
+          "text_en": "Create in me a clean heart, O God. Renew a right spirit within me.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 50,
+              "verse": "12"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": "10"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-07-12",
+      "day": 98,
+      "topic": {
+        "ru": "Господь с тобой в испытаниях",
+        "en": "The Lord Is with You in Trials"
+      },
+      "reference_ru": "Исаия 43:2",
+      "reference_en": "Isaiah 43:2",
+      "text_ru": "Будешь ли переходить через воды, Я с тобою; через реки ли, они не потопят тебя; пойдёшь ли через огонь, не обожжёшься, и пламя не опалит тебя.",
+      "text_en": "When you pass through the waters, I will be with you; and through the rivers, they will not overflow you. When you walk through the fire, you will not be burned, and flame will not scorch you.",
+      "verse_ref": {
+        "book": "isaiah",
+        "chapter": 43,
+        "verse": "2"
+      },
+      "interpretation_ru": "Испытания не означают, что Господь оставил человека. Он обещает быть рядом и провести через трудности.",
+      "interpretation_en": "Trials do not mean the Lord has left a person. He promises to be near and to bring us through difficulties.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 5:3-5",
+          "reference_en": "Romans 5:3-5",
+          "text_ru": "И не сим только, но хвалимся и скорбями, зная, что от скорби происходит терпение, от терпения опытность, от опытности надежда, а надежда не постыжает, потому что любовь Божия излилась в сердца наши Духом Святым, данным нам.",
+          "text_en": "Not only this, but we also rejoice in our sufferings, knowing that suffering produces perseverance; and perseverance, proven character; and proven character, hope; and hope doesn’t disappoint us, because God’s love has been poured into our hearts through the Holy Spirit who was given to us.",
+          "verse_ref": {
+            "book": "romans",
+            "chapter": 5,
+            "verse": "3-5"
+          }
+        },
+        {
+          "reference_ru": "2 Коринфянам 4:17",
+          "reference_en": "2 Corinthians 4:17",
+          "text_ru": "Кратковременное лёгкое страдание наше производит в безмерном преизбытке вечную славу.",
+          "text_en": "For our light affliction, which is for the moment, works for us more and more exceedingly an eternal weight of glory.",
+          "verse_ref": {
+            "book": "2-corinthians",
+            "chapter": 4,
+            "verse": "17"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 4:12-13",
+          "reference_en": "1 Peter 4:12-13",
+          "text_ru": "Возлюбленные! огненного искушения, для испытания вам посылаемого, не чуждайтесь, как приключения для вас странного, но как вы участвуете в Христовых страданиях, радуйтесь, да и в явление славы Его возрадуетесь и восторжествуете.",
+          "text_en": "Beloved, don’t be astonished at the fiery trial which has come upon you to test you, as though a strange thing happened to you. But because you are partakers of Christ’s sufferings, rejoice, that at the revelation of his glory you also may rejoice with exceeding joy.",
+          "verse_ref": {
+            "book": "1-peter",
+            "chapter": 4,
+            "verse": "12-13"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-07-13",
+      "day": 99,
+      "topic": {
+        "ru": "Живи верой",
+        "en": "Walk by Faith"
+      },
+      "reference_ru": "2 Коринфянам 5:7",
+      "reference_en": "2 Corinthians 5:7",
+      "text_ru": "Ибо мы ходим верою, а не видением.",
+      "text_en": "For we walk by faith, not by sight.",
+      "verse_ref": {
+        "book": "2-corinthians",
+        "chapter": 5,
+        "verse": "7"
+      },
+      "interpretation_ru": "Господь учит доверять Ему даже тогда, когда мы ещё не видим полного ответа или ясной дороги.",
+      "interpretation_en": "The Lord teaches us to trust Him even when we do not yet see the full answer or the clear path.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 1:17",
+          "reference_en": "Romans 1:17",
+          "text_ru": "В нем открывается правда Божия от веры в веру, как написано: праведный верою жив будет.",
+          "text_en": "For in it is revealed God’s righteousness from faith to faith. As it is written, “But the righteous shall live by faith.”",
+          "verse_ref": {
+            "book": "romans",
+            "chapter": 1,
+            "verse": "17"
+          }
+        },
+        {
+          "reference_ru": "Аввакум 2:4",
+          "reference_en": "Habakkuk 2:4",
+          "text_ru": "Вот, душа надменная не успокоится, а праведный своею верою жив будет.",
+          "text_en": "Behold, his soul is puffed up. It is not upright in him, but the righteous will live by his faith.",
+          "verse_ref": {
+            "book": "habakkuk",
+            "chapter": 2,
+            "verse": "4"
+          }
+        },
+        {
+          "reference_ru": "Иуды 1:24",
+          "reference_en": "Jude 1:24",
+          "text_ru": "Могущему соблюсти вас от падения и поставить пред славою Своею непорочными в радости.",
+          "text_en": "Now to him who is able to keep you from stumbling, and to present you faultless before the presence of his glory in great joy.",
+          "verse_ref": {
+            "book": "jude",
+            "chapter": 1,
+            "verse": "24"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-07-14",
+      "day": 100,
+      "topic": {
+        "ru": "Все делай от души, как для Господа",
+        "en": "Do Everything Wholeheartedly for the Lord"
+      },
+      "reference_ru": "1 Коринфянам 15:58",
+      "reference_en": "1 Corinthians 15:58",
+      "text_ru": "Итак, братия мои возлюбленные, будьте тверды, непоколебимы, всегда преуспевайте в деле Господнем, зная, что труд ваш не тщетен пред Господом.",
+      "text_en": "Therefore, my beloved brothers, be steadfast, immovable, always abounding in the Lord's work, because you know that your labor is not in vain in the Lord.",
+      "verse_ref": {
+        "book": "1-corinthians",
+        "chapter": 15,
+        "verse": "58"
+      },
+      "interpretation_ru": "Когда человек служит Господу с верностью, его труд имеет значение, даже если результат виден не сразу.",
+      "interpretation_en": "When a person serves the Lord faithfully, that work matters, even when the results are not immediately visible.",
+      "related": [
+        {
+          "reference_ru": "Евреям 6:10",
+          "reference_en": "Hebrews 6:10",
+          "text_ru": "Ибо не неправеден Бог, чтобы забыл дело ваше и труд любви, которую вы оказали во имя Его, послужив и служа святым.",
+          "text_en": "For God is not unrighteous, so as to forget your work and the labor of love which you showed toward his name.",
+          "verse_ref": {
+            "book": "hebrews",
+            "chapter": 6,
+            "verse": "10"
+          }
+        },
+        {
+          "reference_ru": "Колоссянам 3:23",
+          "reference_en": "Colossians 3:23",
+          "text_ru": "И всё, что делаете, делайте от души, как для Господа, а не для человеков.",
+          "text_en": "And whatever you do, work heartily, as for the Lord and not for men.",
+          "verse_ref": {
+            "book": "colossians",
+            "chapter": 3,
+            "verse": "23"
+          }
+        },
+        {
+          "reference_ru": "2 Фессалоникийцам 3:13",
+          "reference_en": "2 Thessalonians 3:13",
+          "text_ru": "Вы же, братия, не унывайте, делая добро.",
+          "text_en": "But you, brothers, don't be weary in doing what is right.",
+          "verse_ref": {
+            "book": "2-thessalonians",
+            "chapter": 3,
+            "verse": "13"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-07-15",
+      "day": 101,
+      "topic": {
+        "ru": "Возрастай в благодати",
+        "en": "Grow in Grace"
+      },
+      "reference_ru": "2 Петра 3:18",
+      "reference_en": "2 Peter 3:18",
+      "text_ru": "но возрастайте в благодати и познании Господа нашего и Спасителя Иисуса Христа. Ему слава и ныне и в день вечный. Аминь.",
+      "text_en": "But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be the glory both now and forever. Amen.",
+      "verse_ref": {
+        "book": "2-peter",
+        "chapter": 3,
+        "verse": "18"
+      },
+      "interpretation_ru": "Вера растет, когда человек продолжает познавать Иисуса Христа и доверять Ему каждый день.",
+      "interpretation_en": "Faith grows as we continue to know Jesus Christ more and trust Him each day.",
+      "related": [
+        {
+          "reference_ru": "Ефесянам 3:16-17",
+          "reference_en": "Ephesians 3:16-17",
+          "text_ru": "Да даст вам, по богатству славы Своей, крепко утвердиться Духом Его во внутреннем человеке, верою вселиться Христу в сердца ваши.",
+          "text_en": "That he would grant you, according to the riches of his glory, that you may be strengthened with power through his Spirit in the inner person, that Christ may dwell in your hearts through faith, to the end that you, being rooted and grounded in love.",
+          "verse_ref": {
+            "book": "ephesians",
+            "chapter": 3,
+            "verse": "16-17"
+          }
+        },
+        {
+          "reference_ru": "Филиппийцам 3:13-14",
+          "reference_en": "Philippians 3:13-14",
+          "text_ru": "Братия, я не почитаю себя достигшим; а только, забывая заднее и простираясь вперед, стремлюсь к цели, к почести вышнего звания Божия во Христе Иисусе.",
+          "text_en": "Brothers, I don’t regard myself as yet having taken hold, but one thing I do: forgetting the things which are behind and stretching forward to the things which are before, I press on toward the goal for the prize of the high calling of God in Christ Jesus.",
+          "verse_ref": {
+            "book": "philippians",
+            "chapter": 3,
+            "verse": "13-14"
+          }
+        },
+        {
+          "reference_ru": "1 Фессалоникийцам 5:16-18",
+          "reference_en": "1 Thessalonians 5:16-18",
+          "text_ru": "Всегда радуйтесь. Непрестанно молитесь. За всё благодарите: ибо такова о вас воля Божия во Христе Иисусе.",
+          "text_en": "Rejoice always. Pray without ceasing. In everything give thanks, for this is the will of God in Christ Jesus toward you.",
+          "verse_ref": {
+            "book": "1-thessalonians",
+            "chapter": 5,
+            "verse": "16-18"
+          }
+        }
+      ]
     }
   ]
 }

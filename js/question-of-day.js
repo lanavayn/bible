@@ -1,11 +1,12 @@
 import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 import "./bible-chronology.js";
+import { addInlineWordHelp } from "./inline-word-help.js";
 
 //
 // PROD date Anpril 30 2026
-const START_DATE = "2026-04-30";
+//const START_DATE = "2026-04-30";
 //test  
-//const START_DATE = "2026-02-01";
+const START_DATE = "2026-02-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -829,100 +830,17 @@ function updateQueryNumber(name, value) {
 }
 
 function addQuestionCreationHelp(text, lang, verseRef = null) {
-  if (!text) return "";
-
-  let safeText = escapeHtml(text);
-
-  if (lang === "ru") {
-    const creationHelpHtml = `
-      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-        <span class="footer-help-box daily-help-box">
-          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-          В Синодальном переводе слово «тварь» означает «творение».
-        </span>
-      </span>
-    `;
-
-    safeText = safeText.replace(
-      /(тварь|твари|тварью|тварей|тварею|творение)/i,
-      `$1${creationHelpHtml}`
-    );
-
-    const blessedHelpHtml = `
-    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «блажен»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-      <span class="footer-help-box daily-help-box">
-        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-        В Синодальном переводе слово «блажен» означает «счастлив» или «благословен Богом». Речь идёт о глубоком счастье, которое приходит от жизни с Богом.
-      </span>
-    </span>
-  `;
-
-  safeText = safeText.replace(
-    /(Блаженны|Блажен|блаженны|блажен)/,
-    `$1${blessedHelpHtml}`
-  );
-
-    const pronounHelpHtml = `
-      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-        <span class="footer-help-box daily-help-box">
-          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-          В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.
-        </span>
-      </span>
-    `;
-
-    safeText = safeText.replace(
-      /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
-      `$1$2${pronounHelpHtml}`
-    );
-    const firmamentHelpHtml = `
-      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «твердь»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-        <span class="footer-help-box daily-help-box">
-          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-          Твердь — небесный простор, видимое небо над землёй.
-        </span>
-      </span>
-    `;
-
-    safeText = safeText.replace(
-      /(^|[^А-Яа-яЁё])(твердь)(?=$|[^А-Яа-яЁё])/i,
-      `$1$2${firmamentHelpHtml}`
-    );
-
-    const tukHelpHtml = `
-    <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тук»">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-      <span class="footer-help-box daily-help-box">
-        <button class="footer-help-close question-creation-help-close" type="button" aria-label="Закрыть">×</button>
-        Изобилие и полное удовлетворение от Божьих благословений.
-      </span>
-    </span>
-  `;
-
-  safeText = safeText.replace(
-    /(^|[^А-Яа-яЁё])(туком|тук)(?=$|[^А-Яа-яЁё])/i,
-    `$1$2${tukHelpHtml}`
-  );
-
-
-  }
-
-  if (lang === "en" && isOldTestamentBook(verseRef)) {
-    const lordHelpHtml = `
-      <button class="footer-help-btn question-creation-help-btn" type="button" aria-expanded="false" aria-label="More about Lord">i</button><span class="footer-help-inline question-creation-help-inline" hidden>
-        <span class="footer-help-box daily-help-box">
-          <button class="footer-help-close question-creation-help-close" type="button" aria-label="Close">×</button>
-          In the Old Testament, “Lord” often represents God’s personal name, Yahweh.
-        </span>
-      </span>
-    `;
-
-    safeText = safeText.replace(
-      /\blord\b/gi,
-      (match) => `${match}${lordHelpHtml}`
-    );
-  }
-
-  return safeText;
+  return addInlineWordHelp(text, {
+    lang,
+    isOldTestament: isOldTestamentBook(verseRef),
+    includeQuestionTerms: true,
+    classes: {
+      button: "question-creation-help-btn",
+      inline: "question-creation-help-inline",
+      box: "daily-help-box",
+      close: "question-creation-help-close"
+    }
+  });
 }
 
 function getTomorrowPreview(text = "", words = 4) {

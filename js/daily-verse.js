@@ -1,9 +1,10 @@
 import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 import "./bible-chronology.js";
+import { addInlineWordHelp } from "./inline-word-help.js";
 
 const easterDates = {
-  2026: "2026-04-05",
-  //2026: "2026-01-05",
+  //2026: "2026-04-05",
+  2026: "2026-01-05",
   2027: "2027-03-28",
   2028: "2028-04-16",
   2029: "2029-04-01",
@@ -955,50 +956,16 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   }
 
   function addCreationHelp(text, lang, verseRef = null) {
-    if (!text) return "";
-
-    let safeText = escapeHtml(text);
-    if (lang === "ru") {
-        const creationHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «тварь»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе слово «тварь» означает «творение».</span></span>`;
-      
-        safeText = safeText.replace(
-          /(тварь|твари|тварью|тварей|тварею|творение)/i,
-          match => `${match}${creationHelpHtml}`
-        );
-
-        const burdensHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о слове «бремена»">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>Бремена — это жизненные трудности, заботы и переживания, в которых мы можем поддерживать друг друга.</span></span>`;
-      
-        safeText = safeText.replace(
-          /(^|[^А-Яа-яЁё])(Бремена|бремена)/i,
-          match => `${match}${burdensHelpHtml}`
-        );
-      
-        const pronounHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="Подробнее о местоимениях с большой буквы">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Закрыть">×</button>В Синодальном переводе некоторые местоимения пишутся с большой буквы при обращении к Богу или упоминании о Нём.</span></span>`;
-      
-        safeText = safeText.replace(
-          /(^|[^А-Яа-яЁё])(Ты|Твой|Твоя|Твоё|Твои|Тебя|Тебе|Тобой)(?=$|[^А-Яа-яЁё])/,
-          (match, before, word) => `${before}${word}${pronounHelpHtml}`
-        );
-  }
-  if (lang === "en" && isOldTestamentBook(verseRef)) {
-    const lordHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="More about LORD">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Close">×</button>In the Old Testament, “LORD” often represents God’s personal name, Yahweh.</span></span>`;
-  
-    safeText = safeText.replace(
-      /\b(LORD|Lord)\b/g,
-      (match) => `${match}${lordHelpHtml}`
-    );
-  }
-
-  if (lang === "en") {
-    const burdenHelpHtml = `<button class="footer-help-btn daily-help-btn" type="button" aria-expanded="false" aria-label="More about burdens">i</button><span class="footer-help-inline daily-help-inline" hidden><span class="footer-help-box daily-help-box"><button class="footer-help-close daily-help-close" type="button" aria-label="Close">×</button>Burdens are the difficulties, cares, and struggles of life that we can help one another carry.</span></span>`;
-  
-    safeText = safeText.replace(
-      /\b(Burdens|burdens)\b/g,
-      (match) => `${match}${burdenHelpHtml}`
-    );
-  }
-  
-    return safeText;
+    return addInlineWordHelp(text, {
+      lang,
+      isOldTestament: isOldTestamentBook(verseRef),
+      classes: {
+        button: "daily-help-btn",
+        inline: "daily-help-inline",
+        box: "daily-help-box",
+        close: "daily-help-close"
+      }
+    });
   }
 
   function updateDailyVerseToggleLabel(button, isOpen, lang) {

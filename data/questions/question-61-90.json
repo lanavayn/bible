@@ -699,6 +699,290 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-72",
+      "day": 72,
+      "topic_ru": "Божье руководство",
+      "topic_en": "God's Guidance",
+      "question_ru": "Как узнать Божью волю?",
+      "question_en": "How Can I Know God's Will?",
+      "reference_ru": "Псалом 24:4-5",
+      "reference_en": "Psalm 25:4-5",
+      "text_ru": "Укажи мне, Господи, пути Твои и научи меня стезям Твоим. Направь меня на истину Твою и научи меня, ибо Ты Бог спасения моего; на Тебя надеюсь всякий день.",
+      "text_en": "Show me your ways, Lord. Teach me your paths. Guide me in your truth, and teach me, for you are the God of my salvation.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Psalms",
+          "chapter": 24,
+          "verse": "4-5"
+        },
+        "en": {
+          "book": "Psalms",
+          "chapter": 25,
+          "verse": "4-5"
+        }
+      },
+      "answer_ru": "Господь ведёт того, кто не только молится и спрашивает, но и готов следовать.",
+      "answer_en": "The Lord guides those who not only seek Him in prayer, but are also willing to follow Him.",
+      "related": [
+        {
+          "reference_ru": "Колоссянам 1:9",
+          "reference_en": "Colossians 1:9",
+          "text_ru": "Посему и мы с того дня, как о сем услышали, не перестаем молиться о вас и просить, чтобы вы исполнялись познанием воли Его, во всякой премудрости и разумении духовном",
+          "text_en": "For this cause, we also, since the day we heard this, don’t cease praying and making requests for you, that you may be filled with the knowledge of his will in all spiritual wisdom and understanding.",
+          "verse_ref": {
+            "book": "Colossians",
+            "chapter": 1,
+            "verse": "9"
+          }
+        },
+        {
+          "reference_ru": "Исаия 58:11",
+          "reference_en": "Isaiah 58:11",
+          "text_ru": "И будет Господь вождем твоим всегда, и во время засухи будет насыщать душу твою и утучнять кости твои, и ты будешь, как напоенный водою сад и как источник, которого воды никогда не иссякают.",
+          "text_en": "The Lord will guide you continually, satisfy your soul in dry places, and make your bones strong. You will be like a watered garden, and like a spring of water whose waters don’t fail.",
+          "verse_ref": {
+            "book": "Isaiah",
+            "chapter": 58,
+            "verse": "11"
+          }
+        },
+        {
+          "reference_ru": "Псалом 85:11",
+          "reference_en": "Psalm 86:11",
+          "text_ru": "Наставь меня, Господи, на путь Твой, и буду ходить в истине Твоей; утверди сердце мое в страхе имени Твоего.",
+          "text_en": "Teach me your way, Lord. I will walk in your truth. Make my heart undivided to fear your name.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 85,
+              "verse": "11"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 86,
+              "verse": "11"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-73",
+      "day": 73,
+      "topic_ru": "Слабая вера",
+      "topic_en": "Weak Faith",
+      "question_ru": "Что делать, когда вера ослабевает?",
+      "question_en": "What should I do when my faith feels weak?",
+      "reference_ru": "Марка 9:24",
+      "reference_en": "Mark 9:24",
+      "text_ru": "Верую, Господи! помоги моему неверию.",
+      "text_en": "I believe. Help my unbelief!",
+      "verse_ref": {
+        "book": "Mark",
+        "chapter": 9,
+        "verse": "24"
+      },
+      "answer_ru": "Слабая вера становится крепче, когда несёт свою слабость к Господу.",
+      "answer_en": "Weak faith grows stronger when it brings its weakness to the Lord.",
+      "related": [
+        {
+          "reference_ru": "Луки 22:32",
+          "reference_en": "Luke 22:32",
+          "text_ru": "Но Я молился о тебе, чтобы не оскудела вера твоя; и ты некогда, обратившись, утверди братьев твоих.",
+          "text_en": "But I prayed for you, that your faith wouldn't fail.",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 22,
+            "verse": "32"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 1:7",
+          "reference_en": "1 Peter 1:7",
+          "text_ru": "Дабы испытанная вера ваша оказалась драгоценнее гибнущего, хотя и огнем испытываемого золота, к похвале и чести и славе в явление Иисуса Христа.",
+          "text_en": "That the proof of your faith, which is more precious than gold that perishes, may be found to result in praise, glory, and honor.",
+          "verse_ref": {
+            "book": "1-Peter",
+            "chapter": 1,
+            "verse": "7"
+          }
+        },
+        {
+          "reference_ru": "2 Фессалоникийцам 1:3",
+          "reference_en": "2 Thessalonians 1:3",
+          "text_ru": "Всегда по справедливости мы должны благодарить Бога за вас, братия, потому что возрастает вера ваша, и умножается любовь каждого друг ко другу между всеми вами.",
+          "text_en": "Your faith grows exceedingly, and the love of each and every one of you toward one another abounds.",
+          "verse_ref": {
+            "book": "2-Thessalonians",
+            "chapter": 1,
+            "verse": "3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-74",
+      "day": 74,
+      "topic_ru": "Искушения",
+      "topic_en": "Temptation",
+      "question_ru": "Как устоять перед искушением?",
+      "question_en": "How can I stand firm against temptation?",
+      "reference_ru": "1 Коринфянам 10:13",
+      "reference_en": "1 Corinthians 10:13",
+      "text_ru": "Вас постигло искушение не иное, как человеческое; и верен Бог, Который не попустит вам быть искушаемыми сверх сил, но при искушении даст и облегчение, так чтобы вы могли перенести.",
+      "text_en": "No temptation has taken you except what is common to man. God is faithful, who will not allow you to be tempted above what you are able, but will with the temptation also make the way of escape, that you may be able to endure it.",
+      "verse_ref": {
+        "book": "1-Corinthians",
+        "chapter": 10,
+        "verse": "13"
+      },
+      "answer_ru": "Искушение громко обещает, но Господь даёт настоящий выход.",
+      "answer_en": "Temptation makes loud promises, but the Lord gives a real way out.",
+      "related": [
+        {
+          "reference_ru": "Иакова 4:7",
+          "reference_en": "James 4:7",
+          "text_ru": "Итак покоритесь Богу; противостаньте диаволу, и убежит от вас.",
+          "text_en": "Be subject therefore to God. Resist the devil, and he will flee from you.",
+          "verse_ref": {
+            "book": "James",
+            "chapter": 4,
+            "verse": "7"
+          }
+        },
+        {
+          "reference_ru": "Матфея 26:41",
+          "reference_en": "Matthew 26:41",
+          "text_ru": "Бодрствуйте и молитесь, чтобы не впасть в искушение: дух бодр, плоть же немощна.",
+          "text_en": "Watch and pray, that you don't enter into temptation. The spirit indeed is willing, but the flesh is weak.",
+          "verse_ref": {
+            "book": "Matthew",
+            "chapter": 26,
+            "verse": "41"
+          }
+        },
+        {
+          "reference_ru": "2 Тимофею 2:22",
+          "reference_en": "2 Timothy 2:22",
+          "text_ru": "Юношеских похотей убегай, а держись правды, веры, любви, мира со всеми призывающими Господа от чистого сердца.",
+          "text_en": "Flee from youthful lusts; but pursue righteousness, faith, love, and peace with those who call on the Lord out of a pure heart.",
+          "verse_ref": {
+            "book": "2-Timothy",
+            "chapter": 2,
+            "verse": "22"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-75",
+      "day": 75,
+      "topic_ru": "Служение",
+      "topic_en": "Serving Others",
+      "question_ru": "Почему Господь учит нас служить другим?",
+      "question_en": "Why does the Lord teach us to serve others?",
+      "reference_ru": "Марка 10:45",
+      "reference_en": "Mark 10:45",
+      "text_ru": "Ибо и Сын Человеческий не для того пришёл, чтобы Ему служили, но чтобы послужить и отдать душу Свою для искупления многих.",
+      "text_en": "For the Son of Man also came not to be served, but to serve, and to give his life as a ransom for many.",
+      "verse_ref": {
+        "book": "Mark",
+        "chapter": 10,
+        "verse": "45"
+      },
+      "answer_ru": "Сам Христос показал путь любви, смирения и заботы о других.",
+      "answer_en": "Christ Himself showed the way of love, humility, and care for others.",
+      "related": [
+        {
+          "reference_ru": "Матфея 25:40",
+          "reference_en": "Matthew 25:40",
+          "text_ru": "И Царь скажет им в ответ: истинно говорю вам: так как вы сделали это одному из сих братьев Моих меньших, то сделали Мне.",
+          "text_en": "The King will answer them, ‘Most certainly I tell you, because you did it to one of the least of these my brothers, you did it to me.’",
+          "verse_ref": {
+            "book": "Matthew",
+            "chapter": 25,
+            "verse": "40"
+          }
+        },
+        {
+          "reference_ru": "Евреям 13:16",
+          "reference_en": "Hebrews 13:16",
+          "text_ru": "Не забывайте также благотворения и общительности, ибо таковые жертвы благоугодны Богу.",
+          "text_en": "But don't forget to be doing good and sharing, for with such sacrifices God is well pleased.",
+          "verse_ref": {
+            "book": "Hebrews",
+            "chapter": 13,
+            "verse": "16"
+          }
+        },
+        {
+          "reference_ru": "1 Иоанна 3:18",
+          "reference_en": "1 John 3:18",
+          "text_ru": "Станем любить не словом или языком, но делом и истиною.",
+          "text_en": "Let's not love in word only, or with the tongue only, but in deed and truth.",
+          "verse_ref": {
+            "book": "1-John",
+            "chapter": 3,
+            "verse": "18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-76",
+      "day": 76,
+      "topic_ru": "Прощение",
+      "topic_en": "Forgiveness",
+      "question_ru": "Что дает человеку прощение?",
+      "question_en": "What Does Forgiveness Do for You?",
+      "reference_ru": "Матфея 6:14-15",
+      "reference_en": "Matthew 6:14-15",
+      "text_ru": "Ибо если вы будете прощать людям согрешения их, то простит и вам Отец ваш Небесный; а если не будете прощать людям согрешения их, то и Отец ваш не простит вам согрешений ваших.",
+      "text_en": "For if you forgive men their trespasses, your heavenly Father will also forgive you. But if you don't forgive men their trespasses, neither will your Father forgive your trespasses.",
+      "verse_ref": {
+        "book": "Matthew",
+        "chapter": 6,
+        "verse": "14-15"
+      },
+      "answer_ru": "Прощение не оправдывает зло, но освобождает сердце перед Господом.",
+      "answer_en": "Forgiveness does not excuse evil, but it frees the heart before the Lord.",
+      "related": [
+        {
+          "reference_ru": "Луки 17:3-4",
+          "reference_en": "Luke 17:3-4",
+          "text_ru": "Наблюдайте за собою. Если же согрешит против тебя брат твой, выговори ему; и если покается, прости ему; и если семь раз в день согрешит против тебя и семь раз в день обратится, и скажет: каюсь, — прости ему.",
+          "text_en": "Be careful. If your brother sins against you, rebuke him. If he repents, forgive him. If he sins against you seven times in the day, and seven times returns, saying, ‘I repent,’ you shall forgive him.",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 17,
+            "verse": "3-4"
+          }
+        },
+        {
+          "reference_ru": "Матфея 18:21-22",
+          "reference_en": "Matthew 18:21-22",
+          "text_ru": "Тогда Петр приступил к Нему и сказал: Господи! сколько раз прощать брату моему, согрешающему против меня? до семи ли раз? Иисус говорит ему: не говорю тебе: до семи, но до седмижды семидесяти раз.",
+          "text_en": "Then Peter came and said to him, “Lord, how often shall my brother sin against me, and I forgive him? Until seven times?” Jesus said to him, “I don’t tell you until seven times, but, until seventy times seven.",
+          "verse_ref": {
+            "book": "Matthew",
+            "chapter": 18,
+            "verse": "21-22"
+          }
+        },
+        {
+          "reference_ru": "Иакова 2:13",
+          "reference_en": "James 2:13",
+          "text_ru": "Ибо суд без милости не оказавшему милости; милость превозносится над судом.",
+          "text_en": "For judgment is without mercy to him who has shown no mercy. Mercy triumphs over judgment.",
+          "verse_ref": {
+            "book": "James",
+            "chapter": 2,
+            "verse": "13"
+          }
+        }
+      ]
     }    
   ]
 }
