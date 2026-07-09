@@ -3,8 +3,8 @@ import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 
 const easterDates = {
-  //2026: "2026-04-05",
-  2026: "2026-01-05",
+  2026: "2026-04-05",
+  //2026: "2026-01-05",
   2027: "2027-03-28",
   2028: "2028-04-16",
   2029: "2029-04-01",

@@ -4,9 +4,9 @@ import { addInlineWordHelp } from "./inline-word-help.js";
 
 //
 // PROD date Anpril 30 2026
-//const START_DATE = "2026-04-30";
+const START_DATE = "2026-04-30";
 //test  
-const START_DATE = "2026-02-01";
+//const START_DATE = "2026-02-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
