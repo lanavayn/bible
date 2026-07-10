@@ -1,6 +1,7 @@
 import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
+import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 
 //
 // PROD date Anpril 30 2026
@@ -323,6 +324,12 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
               : ""
           }
         </div>
+
+        ${renderFeedbackControls({
+          contentType: "daily-question",
+          contentId: q.day,
+          language: lang
+        })}
     
       </div>
     `;
@@ -331,6 +338,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const searchOpenBtn = root.querySelector(".question-search-open");
       const jumpTodayBtn = root.querySelector(".dv-jump-today");
       bindQuestionChronologyReferences(root);
+      initFeedbackControls(root);
 
       function closeAllQuestionHelp(exceptInline = null) {
         window.PopupManager?.closeAll({ except: exceptInline });

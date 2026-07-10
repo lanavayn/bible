@@ -3221,6 +3221,49 @@ table.book-dates th:nth-child(2) {
   box-shadow: none;
 }
 
+.feedback-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+}
+
+.feedback-prompt {
+  font-style: italic;
+}
+
+.feedback-btn {
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-panel-soft);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.3;
+  transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.feedback-btn:hover,
+.feedback-btn.is-selected {
+  background: #fff3dc;
+  border-color: #d8bd83;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.feedback-status {
+  min-height: 1em;
+  color: var(--color-text-soft);
+}
+
+.feedback-status[data-type="error"] {
+  color: #9c3b2f;
+}
+
 .daily-verse-header-right {
   display: flex;
   align-items: center;
