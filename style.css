@@ -3255,6 +3255,20 @@ table.book-dates th:nth-child(2) {
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
+.feedback-btn.is-selected {
+  background: #6f8f55;
+  border-color: #557241;
+  color: #ffffff;
+  box-shadow: 0 2px 7px rgba(111, 143, 85, 0.28);
+}
+
+.feedback-btn[data-feedback-action="down"].is-selected {
+  background: #d9ecff;
+  border-color: #86bce8;
+  color: #1f5f8f;
+  box-shadow: 0 2px 7px rgba(72, 142, 199, 0.22);
+}
+
 .feedback-status {
   min-height: 1em;
   color: var(--color-text-soft);
