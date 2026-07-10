@@ -4,10 +4,15 @@ document.addEventListener("click", async function (event) {
 
   event.preventDefault();
 
+  await window.shareBiblePage?.();
+});
+
+window.shareBiblePage = async function shareBiblePage(options = {}) {
+  const shareUrl = options.url || window.location.href;
   const shareData = {
     title: document.title,
     text: "Check out this page:",
-    url: window.location.href
+    url: shareUrl
   };
 
   // 📱 Mobile — native share
@@ -21,10 +26,10 @@ document.addEventListener("click", async function (event) {
   }
 
   // 💻 Desktop — popup под header
-  showSharePopup();
-});
+  showSharePopup(shareUrl);
+};
 
-function showSharePopup() {
+function showSharePopup(shareUrl = window.location.href) {
   const existingPopup = document.getElementById("share-popup");
   if (existingPopup) {
     existingPopup.remove();
@@ -55,7 +60,7 @@ function showSharePopup() {
 
     popup.innerHTML = `
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <a href="mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}">
+        <a href="mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(shareUrl)}">
           📧 ${isRu ? "Отправить по email" : "Send via email"}
         </a>
 
@@ -69,10 +74,10 @@ function showSharePopup() {
 
     document.getElementById("copyLinkBtn").addEventListener("click", async () => {
       try {
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(shareUrl);
         showToast();
       } catch {
-        prompt("Copy this link:", window.location.href);
+        prompt("Copy this link:", shareUrl);
       }
       popup.remove();
     });

@@ -118,38 +118,17 @@ function updateSelectedState(row, selectedVote) {
   });
 }
 
-async function copyShareLink(url, labels, row) {
-  try {
-    await navigator.clipboard.writeText(url);
-    setStatus(row, labels.copied, "success");
-  } catch {
-    window.prompt(labels.copyPrompt, url);
-  }
-}
-
 async function handleShare(row, config) {
   const labels = getLabels(config.language);
   const shareUrl = getShareUrl(config.contentType, config.contentId);
-  const shareData = {
-    title: document.title,
-    text: labels.prompt,
-    url: shareUrl
-  };
 
   try {
-    if (navigator.share) {
-      await navigator.share(shareData);
-    } else {
-      await copyShareLink(shareUrl, labels, row);
+    if (typeof window.shareBiblePage !== "function") {
+      throw new Error("Share helper is not available");
     }
-
-    await submitFeedback({
-      ...config,
-      action: "share",
-      pageUrl: shareUrl
-    });
+    await window.shareBiblePage({ url: shareUrl });
   } catch {
-    await copyShareLink(shareUrl, labels, row);
+    setStatus(row, labels.error, "error");
   }
 }
 
