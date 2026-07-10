@@ -77,8 +77,12 @@ function getShareUrl(contentType, contentId) {
 }
 
 async function submitFeedback(payload) {
+  const itemLabel = payload.contentType === "daily-question" ? "Question" : "Day";
+  const actionLabel = payload.action === "down" ? "No" : "Yes";
+
   const body = new URLSearchParams({
     "form-name": FORM_NAME,
+    feedback_title: `${payload.contentType} - ${itemLabel} ${payload.contentId} - ${actionLabel}`,
     content_type: payload.contentType,
     content_id: String(payload.contentId),
     language: payload.language,
