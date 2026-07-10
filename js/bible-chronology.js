@@ -88,6 +88,17 @@
     return String(value).replace(/^\s*\d+\.\s*/, "").trim();
   }
 
+  function formatBookHeading(book, lang = getLang()) {
+    if (!book) return "";
+
+    const isRu = String(lang).toLowerCase().startsWith("ru");
+    const rawTitle = isRu ? book.book_ru : book.book_en;
+    const title = String(rawTitle || "").replace(/^\s*(Книга|Book)\s+/i, "").trim();
+    const prefix = isRu ? "Книга" : "Book";
+
+    return title ? `${prefix} ${title}` : "";
+  }
+
   function normalizeBookText(value = "") {
     return stripListNumber(value)
       .toLowerCase()
@@ -188,7 +199,7 @@
   function detailsBoxHTML(book) {
     const isRu = getLang() === "ru";
     const t = T();
-    const title = isRu ? book.book_ru : book.book_en;
+    const title = formatBookHeading(book);
     const year = isRu ? (book.year_ru || book.dates_ru) : (book.year_en || book.dates_en);
     const place = isRu ? book.place_ru : book.place_en;
     const author = isRu ? (book.author_ru || "—") : (book.author_en || book.author_ru || "—");
@@ -279,6 +290,7 @@
     findBookById,
     findBookInData,
     findBookByReference,
+    formatBookHeading,
     renderReference,
     splitReference,
     toggleInlineDetails,

@@ -38,7 +38,9 @@
 
   function rowHTML(b, chronology) {
     const isRu = getLang() === "ru";
-    const name = isRu ? b.book_ru : b.book_en;
+    const name = chronology.formatBookHeading
+      ? chronology.formatBookHeading(b, getLang())
+      : `${isRu ? "Книга" : "Book"} ${isRu ? b.book_ru : b.book_en}`;
     const dates = isRu ? b.dates_ru : b.dates_en;
     const btn = chronology.hasDetails(b)
       ? `<button class="bd-info" type="button" data-id="${b.id}">i</button>`
