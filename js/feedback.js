@@ -76,16 +76,35 @@ function getShareUrl(contentType, contentId) {
   return url.toString();
 }
 
+function getDeviceType() {
+  const ua = navigator.userAgent || "";
+  const hasTouch = navigator.maxTouchPoints > 1;
+  const width = window.innerWidth || 1024;
+
+  if (/iPad|Tablet|PlayBook|Silk/i.test(ua) || (hasTouch && width >= 768 && width <= 1180)) {
+    return "Tablet";
+  }
+
+  if (/Android|iPhone|iPod|IEMobile|Opera Mini/i.test(ua) || width < 768) {
+    return "Mobile";
+  }
+
+  return "Desktop";
+}
+
 async function submitFeedback(payload) {
   const itemLabel = payload.contentType === "daily-question" ? "Question" : "Day";
   const actionLabel = payload.action === "down" ? "No" : "Yes";
+  const languageLabel = payload.language === "ru" ? "RU" : "EN";
+  const deviceType = getDeviceType();
 
   const body = new URLSearchParams({
     "form-name": FORM_NAME,
-    feedback_title: `${payload.contentType} - ${itemLabel} ${payload.contentId} - ${actionLabel}`,
+    feedback_title: `${payload.contentType} - ${itemLabel} ${payload.contentId} - ${languageLabel} - ${deviceType} - ${actionLabel}`,
     content_type: payload.contentType,
     content_id: String(payload.contentId),
     language: payload.language,
+    device_type: deviceType,
     action: payload.action,
     page_url: payload.pageUrl,
     timestamp: new Date().toISOString(),
