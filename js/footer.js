@@ -176,21 +176,29 @@ timelineButtons.forEach((btn) => {
     const testament = btn.dataset.testament;
     const oldSection = box.querySelector("#old-testament");
     const newSection = box.querySelector("#new-testament");
+    let selectedSection = null;
 
     if (oldSection && newSection) {
-      oldSection.open = false;
-      newSection.open = false;
-    
       if (testament === "old") {
-        oldSection.open = true;
+        selectedSection = oldSection;
+        newSection.open = false;
       }
     
       if (testament === "new") {
-        newSection.open = true;
+        selectedSection = newSection;
+        oldSection.open = false;
+      }
+
+      if (selectedSection && !selectedSection.open) {
+        selectedSection.open = true;
       }
     }
 
-    //box.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (selectedSection) {
+      setTimeout(() => {
+        selectedSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    }
   });
 });
 

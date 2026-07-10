@@ -139,6 +139,14 @@ function getIndexLang() {
     }
   
     toggleBookDatesCategory(button);
+
+    const category = button.closest('.category[data-category="book-dates-block"]');
+    if (category?.classList.contains("open")) {
+      setTimeout(() => {
+        const timeline = category.querySelector("#book-dates") || category;
+        timeline.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    }
   }
   
   function renderIndexPage() {
