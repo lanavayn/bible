@@ -11,6 +11,10 @@
       "year_en": "Trad.: 15th–13th c. BCE; critical: 10th–5th c. BCE",
       "place_ru": "Иудея (Иерусалим); возможны послепленные редакции",
       "place_en": "Judah (Jerusalem); possible post-exilic redaction",
+      "language": {
+        "ru": "Древнееврейский",
+        "en": "Hebrew"
+      },
       "ol": "he",
       "lang_detail_ru": "Древнееврейский (библейский иврит).",
       "lang_detail_en": "Biblical Hebrew.",
@@ -32,6 +36,10 @@
         "year_en": "Trad.: 15th–13th c. BCE; critical: 10th–5th c. BCE",
         "place_ru": "Иудея; последующая редакция после плена.",
         "place_en": "Judah; later redaction after the exile.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Древнееврейский; поэзия и проза ранних традиций.",
         "lang_detail_en": "Biblical Hebrew; prose and early poetic traditions.",
@@ -53,6 +61,10 @@
         "year_en": "Priestly layers mainly 7th–5th c. BCE",
         "place_ru": "Иудея (храмовый контекст).",
         "place_en": "Judah (temple context).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит; священническая терминология.",
         "lang_detail_en": "Biblical Hebrew; priestly terminology.",
@@ -74,6 +86,10 @@
         "year_en": "Late-period layers/redactions.",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -95,6 +111,10 @@
         "year_en": "Core: Josianic reforms (~622 BCE); later additions to 5th c.",
         "place_ru": "Иерусалим / Иудея.",
         "place_en": "Jerusalem / Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит, дейтерономистический стиль.",
         "lang_detail_en": "Biblical Hebrew, Deuteronomistic style.",
@@ -116,6 +136,10 @@
         "year_en": "Trad.: 13th c. BCE; critical: 7th–6th c. BCE",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -137,6 +161,10 @@
         "year_en": "Trad.: 11th c. BCE; critical: 7th–6th c. BCE",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -158,6 +186,10 @@
         "year_en": "Post-exilic period.",
         "place_ru": "Иудея (литературный контекст).",
         "place_en": "Judah (literary context).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит с архаизмами/диалектными чертами.",
         "lang_detail_en": "Biblical Hebrew with archaic/dialectal features.",
@@ -179,6 +211,10 @@
     "year_en": "Trad.: 10th c. BCE; critical: 7th–6th c. BCE",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -200,6 +236,10 @@
       "year_en": "Trad.: 10th–9th c. BCE; critical: 7th–6th c. BCE",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -221,6 +261,10 @@
         "year_en": "Trad.: 10th c. BCE; critical: 7th–6th c. BCE",
         "place_ru": "Иудея/Вавилон (редакция).",
         "place_en": "Judah/Babylon (redaction).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -242,6 +286,10 @@
         "year_en": "Trad.: 9th–8th c. BCE; critical: 7th–6th c. BCE",
         "place_ru": "Иудея/Вавилон.",
         "place_en": "Judah/Babylon.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -263,6 +311,10 @@
         "year_en": "Post-exilic Chronicler’s corpus.",
         "place_ru": "Иудея (послепленный период).",
         "place_en": "Judah (post-exilic).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит (поздний).",
         "lang_detail_en": "Late Biblical Hebrew.",
@@ -284,6 +336,10 @@
         "year_en": "Post-exilic Chronicler’s corpus.",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поздний библейский иврит.",
         "lang_detail_en": "Late Biblical Hebrew.",
@@ -305,6 +361,10 @@
         "year_en": "Mid-5th c. BCE",
         "place_ru": "Иудея (персидский период).",
         "place_en": "Judah (Persian period).",
+        "language": {
+          "ru": "Древнееврейский и арамейский",
+          "en": "Hebrew and Aramaic"
+        },
         "ol": "he",
         "lang_detail_ru": "Еврейский и арамейский фрагменты.",
         "lang_detail_en": "Hebrew with Aramaic sections.",
@@ -326,6 +386,10 @@
         "year_en": "c. 445–420 BCE",
         "place_ru": "Иерусалим (персидский период).",
         "place_en": "Jerusalem (Persian period).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит; административные записки.",
         "lang_detail_en": "Biblical Hebrew; administrative notes.",
@@ -347,6 +411,10 @@
         "year_en": "c. 465–424 BCE",
         "place_ru": "Иудея (персидский период).",
         "place_en": "Judah (Persian period).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит; административные записки.",
         "lang_detail_en": "Biblical Hebrew; administrative notes.",
@@ -368,6 +436,10 @@
         "year_en": "Uncertain; likely pre- and post-exilic layers.",
         "place_ru": "Иудея (литературный контекст).",
         "place_en": "Judah (literary context).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поэтический библейский иврит с архаизмами; прозаическая рамка.",
         "lang_detail_en": "Poetic Biblical Hebrew with archaisms; prose frame.",
@@ -389,6 +461,10 @@
         "year_en": "Anthology from Davidic era (10th c.) to post-exilic.",
         "place_ru": "Иерусалим, храмовое богослужение.",
         "place_en": "Jerusalem, temple worship.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поэтический библейский иврит, жанровое разнообразие.",
         "lang_detail_en": "Poetic Biblical Hebrew; diverse genres.",
@@ -410,6 +486,10 @@
         "year_en": "Layers: Solomonic and later collections.",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит, афористическая поэзия.",
         "lang_detail_en": "Biblical Hebrew; aphoristic poetry.",
@@ -431,6 +511,10 @@
         "year_en": "c. 3rd c. BCE",
         "place_ru": "Иудея (поздний период).",
         "place_en": "Judah (late period).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поздний библейский иврит с эллинистическими чертами.",
         "lang_detail_en": "Late Biblical Hebrew with Hellenistic features.",
@@ -452,6 +536,10 @@
         "year_en": "Estimates range from early monarchic to post-exilic.",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Любовная поэзия на библейском иврите.",
         "lang_detail_en": "Love poetry in Biblical Hebrew.",
@@ -473,6 +561,10 @@
         "year_en": "c. 740–700 (First Isa); c. 540–520 (Second Isa); 5th c. (Third Isa).",
         "place_ru": "Иерусалим / Вавилон.",
         "place_en": "Jerusalem / Babylon.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -494,6 +586,10 @@
         "year_en": "c. 627–580 BCE",
         "place_ru": "Иерусалим, затем Египет (традиция).",
         "place_en": "Jerusalem, later Egypt (trad.).",
+        "language": {
+          "ru": "Древнееврейский и арамейский",
+          "en": "Hebrew and Aramaic"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит; в LXX иной порядок и объём.",
         "lang_detail_en": "Biblical Hebrew; LXX differs in order/length.",
@@ -515,6 +611,10 @@
         "year_en": "Soon after Jerusalem’s fall (586).",
         "place_ru": "Иерусалим / Иудея.",
         "place_en": "Jerusalem / Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поэтический иврит (акростихи).",
         "lang_detail_en": "Poetic Hebrew (acrostics).",
@@ -536,6 +636,10 @@
         "year_en": "Exilic prophecies (Babylon).",
         "place_ru": "Вавилон.",
         "place_en": "Babylon.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит; видения, символические действия.",
         "lang_detail_en": "Biblical Hebrew; visions and symbolic acts.",
@@ -557,6 +661,10 @@
         "year_en": "Trad.: 6th c.; critical: ~165 BCE.",
         "place_ru": "Вавилон / Иудея (контекст и редакция).",
         "place_en": "Babylon / Judah (context/redaction).",
+        "language": {
+          "ru": "Древнееврейский и арамейский",
+          "en": "Hebrew and Aramaic"
+        },
         "ol": "he",
         "lang_detail_ru": "Еврейский и арамейский (2:4b–7:28 — арам.).",
         "lang_detail_en": "Hebrew and Aramaic (2:4b–7:28 in Aramaic).",
@@ -578,6 +686,10 @@
         "year_en": "c. 750–725 BCE",
         "place_ru": "Северное царство (Израиль).",
         "place_en": "Northern Kingdom (Israel).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -599,6 +711,10 @@
         "year_en": "Uncertain; often post-exilic.",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -620,6 +736,10 @@
         "year_en": "Jeroboam II.",
         "place_ru": "Северное царство / Иудея (пророческое служение).",
         "place_en": "Northern Kingdom / Judah (ministry).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -641,6 +761,10 @@
         "year_en": "After 586 BCE (commonly).",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -662,6 +786,10 @@
         "year_en": "Likely post-exilic narrative parable.",
         "place_ru": "Иудея (литературный контекст).",
         "place_en": "Judah (literary context).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит, нарратив.",
         "lang_detail_en": "Biblical Hebrew, narrative.",
@@ -683,6 +811,10 @@
         "year_en": "c. 740–700 BCE",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -704,6 +836,10 @@
         "year_en": "Shortly before Nineveh’s fall (612).",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -725,6 +861,10 @@
         "year_en": "c. 610–600 BCE",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -746,6 +886,10 @@
         "year_en": "Reign of Josiah.",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Библейский иврит.",
         "lang_detail_en": "Biblical Hebrew.",
@@ -767,6 +911,10 @@
         "year_en": "520 BCE (dated oracles).",
         "place_ru": "Иерусалим (восстановление храма).",
         "place_en": "Jerusalem (temple rebuilding).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поздний библейский иврит.",
         "lang_detail_en": "Late Biblical Hebrew.",
@@ -788,6 +936,10 @@
         "year_en": "Early visions 520–518; later chapters 5th c.",
         "place_ru": "Иерусалим (послепленный контекст).",
         "place_en": "Jerusalem (post-exilic context).",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поздний библейский иврит; апокалиптические образы.",
         "lang_detail_en": "Late Biblical Hebrew; apocalyptic imagery.",
@@ -809,6 +961,10 @@
         "year_en": "Post-exilic (Persian era).",
         "place_ru": "Иудея.",
         "place_en": "Judah.",
+        "language": {
+          "ru": "Древнееврейский",
+          "en": "Hebrew"
+        },
         "ol": "he",
         "lang_detail_ru": "Поздний библейский иврит.",
         "lang_detail_en": "Late Biblical Hebrew.",
@@ -832,6 +988,10 @@
       "year_en": "c. 70–90 CE",
       "place_ru": "Сирия (Антиохия?) — вероятная среда общины.",
       "place_en": "Syria (Antioch?) — likely community setting.",
+      "language": {
+        "ru": "Греческий койне",
+        "en": "Koine Greek"
+      },
       "ol": "gr",
       "lang_detail_ru": "Греческий койне; ранняя традиция упоминает «по-еврейски», но научный консенсус — греческий оригинал.",
       "lang_detail_en": "Koine Greek; early tradition mentions a ‘Hebrew’ version, but consensus favors a Greek original.",
@@ -853,6 +1013,10 @@
       "year_en": "c. 65–70 CE",
       "place_ru": "Рим (традиц.) или Сирия/Палестина.",
       "place_en": "Rome (trad.) or Syria/Palestine.",
+      "language": {
+        "ru": "Греческий койне",
+        "en": "Koine Greek"
+      },
       "ol": "gr",
       "lang_detail_ru": "Греческий койне.",
       "lang_detail_en": "Koine Greek.",
@@ -874,6 +1038,10 @@
       "year_en": "c. 70–90 CE",
       "place_ru": "Греция/Сирия (гипотезы).",
       "place_en": "Greece/Syria (hypotheses).",
+      "language": {
+        "ru": "Греческий койне",
+        "en": "Koine Greek"
+      },
       "ol": "gr",
       "lang_detail_ru": "Греческий койне; образованный стиль; автор «Луки–Деяний».",
       "lang_detail_en": "Koine Greek; educated style; author of Luke–Acts.",
@@ -895,6 +1063,10 @@
       "year_en": "c. 90–100 CE",
       "place_ru": "Эфес (традиц.) или иная община Малой Азии.",
       "place_en": "Ephesus (trad.) or another community in Asia Minor.",
+      "language": {
+        "ru": "Греческий койне",
+        "en": "Koine Greek"
+      },
       "ol": "gr",
       "lang_detail_ru": "Греческий койне.",
       "lang_detail_en": "Koine Greek.",
@@ -916,6 +1088,10 @@
         "year_en": "c. 70–90 CE",
         "place_ru": "Та же среда, что и у «Луки» (Греция/Сирия — гипотезы).",
         "place_en": "Likely same milieu as Luke (Greece/Syria—hypotheses).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -937,6 +1113,10 @@
         "year_en": "c. 40–62 CE (before James’s martyrdom in Jerusalem).",
         "place_ru": "Иерусалим.",
         "place_en": "Jerusalem.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне (дидактический стиль).",
         "lang_detail_en": "Koine Greek (didactic style).",
@@ -958,6 +1138,10 @@
         "year_en": "Often dated to the 60s; alternatively 80s.",
         "place_ru": "«В Вавилоне» (1 Пет 5:13) — традиц. толк.: Рим.",
         "place_en": "“In Babylon” (1 Pet 5:13) — trad. reading: Rome.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне (пастырская риторика).",
         "lang_detail_en": "Koine Greek (pastoral rhetoric).",
@@ -979,6 +1163,10 @@
         "year_en": "Often considered among the latest NT letters.",
         "place_ru": "Неопределённо (римская традиция для Петра сохраняется).",
         "place_en": "Uncertain (Roman Petrine tradition retained).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1000,6 +1188,10 @@
         "year_en": "c. 90s CE",
         "place_ru": "Эфес / иоаннская община (Малая Азия).",
         "place_en": "Ephesus / Johannine community (Asia Minor).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне; лексика и темы Евангелия от Иоанна.",
         "lang_detail_en": "Koine Greek; Johannine vocabulary/themes.",
@@ -1021,6 +1213,10 @@
         "year_en": "c. 90s CE",
         "place_ru": "Эфес / Малая Азия (общинный контекст).",
         "place_en": "Ephesus / Asia Minor (community context).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне; краткое письмo.",
         "lang_detail_en": "Koine Greek; short letter.",
@@ -1042,6 +1238,10 @@
         "year_en": "c. 90s CE",
         "place_ru": "Эфес / Малая Азия.",
         "place_en": "Ephesus / Asia Minor.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне; личное краткое послание.",
         "lang_detail_en": "Koine Greek; brief personal letter.",
@@ -1063,6 +1263,10 @@
         "year_en": "Often 60s–80s CE",
         "place_ru": "Иудея / диаспора (неопределённо).",
         "place_en": "Judea / diaspora (uncertain).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне; использование межзаветных традиций.",
         "lang_detail_en": "Koine Greek; uses intertestamental traditions.",
@@ -1084,6 +1288,10 @@
         "year_en": "57 CE",
         "place_ru": "Коринф.",
         "place_en": "Corinth.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1105,6 +1313,10 @@
         "year_en": "c. 53–55 CE",
         "place_ru": "Ефес.",
         "place_en": "Ephesus.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1126,6 +1338,10 @@
         "year_en": "c. 55–57 CE",
         "place_ru": "Македония.",
         "place_en": "Macedonia.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1147,6 +1363,10 @@
         "year_en": "c. 48–55 CE (South/North Galatia hypotheses).",
         "place_ru": "Вероятно Антиохия/Эфес (дискуссии).",
         "place_en": "Likely Antioch/Ephesus (debated).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1168,6 +1388,10 @@
         "year_en": "Prison (60–62) or later (80s) — debated.",
         "place_ru": "Рим (тюремные письма) — традиц.",
         "place_en": "Rome (prison letters) — trad.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1189,6 +1413,10 @@
         "year_en": "Prison letter (60–62).",
         "place_ru": "Рим (иногда Кесария/Эфес — альтернативы).",
         "place_en": "Rome (sometimes Caesarea/Ephesus as alternatives).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1210,6 +1438,10 @@
         "year_en": "Prison (60–62) or later (80s) — debated.",
         "place_ru": "Рим (традиц.).",
         "place_en": "Rome (trad.).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1231,6 +1463,10 @@
         "year_en": "49–51 CE",
         "place_ru": "Коринф.",
         "place_en": "Corinth.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1252,6 +1488,10 @@
         "year_en": "c. 50–52 CE (later datings proposed by some).",
         "place_ru": "Коринф (традиц.).",
         "place_en": "Corinth (trad.).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1273,6 +1513,10 @@
         "year_en": "63–67 (trad.) or early 2nd c. (critical).",
         "place_ru": "Македония/Эфес (традиц.).",
         "place_en": "Macedonia/Ephesus (trad.).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1294,6 +1538,10 @@
         "year_en": "Traditionally Paul’s last letter (Roman imprisonment).",
         "place_ru": "Рим (традиц.).",
         "place_en": "Rome (trad.).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1315,6 +1563,10 @@
         "year_en": "63–67 (trad.) / alternatively early 2nd c.",
         "place_ru": "Крит / Никополь (традиц.).",
         "place_en": "Crete / Nicopolis (trad.).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1336,6 +1588,10 @@
         "year_en": "Prison letter (60–62).",
         "place_ru": "Рим (традиц.).",
         "place_en": "Rome (trad.).",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Греческий койне.",
         "lang_detail_en": "Koine Greek.",
@@ -1357,6 +1613,10 @@
         "year_en": "Range 60s–90s CE; possibly before or soon after the temple’s fall.",
         "place_ru": "Неопределённо (Рим? Александрия?); адресаты из иудео-христиан.",
         "place_en": "Uncertain (Rome? Alexandria?); Jewish-Christian addressees.",
+        "language": {
+          "ru": "Греческий койне",
+          "en": "Koine Greek"
+        },
         "ol": "gr",
         "lang_detail_ru": "Высокая греческая риторика.",
         "lang_detail_en": "Elevated Greek rhetoric.",
@@ -1378,6 +1638,10 @@
           "year_en": "Trad.: Domitianic (95–96); alternative — Neronian (68–69).",
           "place_ru": "Патмос (традиц.).",
           "place_en": "Patmos (trad.).",
+          "language": {
+            "ru": "Греческий койне",
+            "en": "Koine Greek"
+          },
           "ol": "gr",
           "lang_detail_ru": "Греческий койне с семитизмами.",
           "lang_detail_en": "Koine Greek with Semitisms.",
