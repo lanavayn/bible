@@ -117,6 +117,12 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
       const tomorrowQuestionText = tomorrowQuestion?.[`question_${lang}`] || "";
       const tomorrowQuestionPreview = getTomorrowPreview(tomorrowQuestionText, 4);
+      const prevArrowHtml = index > 0
+        ? `<button class="dv-arrow dv-left dv-arrow-date dv-prev" type="button">‹</button>`
+        : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
+      const nextArrowHtml = index < todayIndex
+        ? `<button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>`
+        : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
 
       root.innerHTML = `
       <div class="daily-verse-card">
@@ -132,11 +138,6 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         </div>
 
         <div class="daily-verse-date-row">
-          ${
-            index > 0
-              ? `<button class="dv-arrow dv-left dv-arrow-date dv-prev" type="button">‹</button>`
-              : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-          }
 
           <div class="daily-verse-date-center">
             <div class="daily-verse-date">
@@ -209,11 +210,6 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           </div>  
           </div>
 
-          ${
-            index < todayIndex
-              ? `<button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>`
-              : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-          }
         </div>
             <button
                 class="dv-close"
@@ -222,10 +218,14 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                 title="${lang === "ru" ? "Закрыть" : "Close"}"
         >×</button>
 
-        <div class="daily-verse-title-inline">
-          <span class="daily-verse-title-text">
-            ${question}
+        <div class="daily-verse-title-inline daily-title-nav-row">
+          ${prevArrowHtml}
+          <span class="daily-title-main">
+            <span class="daily-verse-title-text">
+              ${question}
+            </span>
           </span>
+          ${nextArrowHtml}
         </div>
 
         <div class="daily-verse-subtitle-row daily-verse-subtitle-row--plain">

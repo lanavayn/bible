@@ -3177,7 +3177,7 @@ table.book-dates th:nth-child(2) {
 
 .daily-verse-date-row {
   display: grid;
-  grid-template-columns: 2.6rem 1fr 2.6rem;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 0.35rem;
   width: 100%;
@@ -3428,7 +3428,6 @@ table.book-dates th:nth-child(2) {
   } 
 
   .daily-verse-date-row {
-    grid-template-columns: 2.7rem 1fr 2.7rem;
     gap: 0.15rem;
   }
 
@@ -3450,6 +3449,30 @@ table.book-dates th:nth-child(2) {
   .daily-verse-date-jumps {
     margin-top: 0.15rem;
     gap: 0.3rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .daily-verse-date-jumps .dv-jump-btn,
+  .daily-verse-date-jumps .daily-tomorrow-wrap {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .daily-verse-date-jumps .dv-jump-btn {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    white-space: nowrap;
+  }
+
+  .daily-tomorrow-wrap .dv-jump-btn {
+    width: 100%;
+  }
+
+  .daily-title-nav-row {
+    grid-template-columns: 2.55rem minmax(0, 1fr) 2.55rem;
+    gap: 0.15rem;
+    margin-top: 0.1rem;
   }
 
   .daily-verse-subtitle-row--plain {
@@ -3469,6 +3492,30 @@ table.book-dates th:nth-child(2) {
   gap: 0.35rem;
   margin-bottom: 0.45rem;
   flex-wrap: wrap;
+}
+
+.daily-title-nav-row {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) 2.6rem;
+  align-items: center;
+  justify-items: center;
+  gap: 0.25rem;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.daily-title-main {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.daily-title-nav-row .dv-arrow-date,
+.daily-title-nav-row .dv-arrow-date-placeholder {
+  justify-self: center;
 }
 
 .daily-verse-title-text {

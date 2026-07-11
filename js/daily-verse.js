@@ -208,6 +208,12 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const tomorrowVerse = index === todayIndex ? verses[index + 1] : null;
         const tomorrowVerseText = tomorrowVerse?.[`text_${lang}`] || "";
         const tomorrowVersePreview = getTomorrowPreview(tomorrowVerseText, 7);        
+        const prevArrowHtml = verses.length > 1 && index > 0
+          ? `<button class="dv-arrow dv-left dv-arrow-date" type="button" aria-label="${ui[lang].prev}">‹</button>`
+          : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
+        const nextArrowHtml = verses.length > 1 && index < todayIndex
+          ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
+          : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
@@ -225,12 +231,6 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
             <div class="daily-verse-date-wrap">
             <div class="daily-verse-date-row">
-
-              ${
-                verses.length > 1 && index > 0
-                  ? `<button class="dv-arrow dv-left dv-arrow-date" type="button" aria-label="${ui[lang].prev}">‹</button>`
-                  : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-              }
 
               ${
                 fullDateLabel
@@ -318,12 +318,6 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   : ""
               }
 
-              ${
-                verses.length > 1 && index < todayIndex
-                  ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
-                  : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`
-              }
-
             </div>
 
             <div class="daily-verse-subtitle-row daily-verse-subtitle-row--plain">
@@ -372,28 +366,32 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             ${
             topic || reference
                 ? `
-                <div class="daily-verse-title-inline">
-                    <span class="daily-verse-title-text">
-                    ${escapeHtml(topic)}${topic && reference ? " — " : ""}${renderChronologyReference(reference, verseRef, lang)}
-                    </span>
+                <div class="daily-verse-title-inline daily-title-nav-row">
+                    ${prevArrowHtml}
+                    <span class="daily-title-main">
+                      <span class="daily-verse-title-text">
+                      ${escapeHtml(topic)}${topic && reference ? " — " : ""}${renderChronologyReference(reference, verseRef, lang)}
+                      </span>
 
-                    ${
-                    bibleLink
-                        ? `
-                        <a
-                            class="scripture-book-link main-book-link daily-verse-book-link"
-                            href="${escapeHtml(bibleLink)}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-tooltip="${escapeHtml(openBibleLabel)}"
-                            aria-label="${escapeHtml(openBibleLabel)}"
-                            title="${escapeHtml(openBibleLabel)}"
-                        >
-                            <span class="book-icon">&#128214;</span>
-                        </a>
-                        `
-                        : ""
-                    }
+                      ${
+                      bibleLink
+                          ? `
+                          <a
+                              class="scripture-book-link main-book-link daily-verse-book-link"
+                              href="${escapeHtml(bibleLink)}"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              data-tooltip="${escapeHtml(openBibleLabel)}"
+                              aria-label="${escapeHtml(openBibleLabel)}"
+                              title="${escapeHtml(openBibleLabel)}"
+                          >
+                              <span class="book-icon">&#128214;</span>
+                          </a>
+                          `
+                          : ""
+                      }
+                    </span>
+                    ${nextArrowHtml}
                 </div>
                 `
                 : ""
