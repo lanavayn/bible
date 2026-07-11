@@ -127,7 +127,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             ${lang === "ru" ? "Вопрос дня" : "Daily Question"}
           </span>
           <span class="daily-card-kicker-subtitle">
-            ${lang === "ru" ? "Каждый день — новый вопрос" : "A new question every day"}
+            ${lang === "ru" ? "Каждый день новый вопрос" : "Every day a new question"}
           </span>
         </div>
 

@@ -3871,9 +3871,7 @@ table.book-dates th:nth-child(2) {
   font-weight: 400;
   line-height: 1.15;
   color: #7c6f61;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 /* Question of the Day: spacing between motto, reference, and verse */

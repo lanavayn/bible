@@ -217,7 +217,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
               ${lang === "ru" ? "Стих дня" : "Daily Verse"}
             </span>
             <span class="daily-card-kicker-subtitle">
-              ${lang === "ru" ? "Каждый день — новый стих" : "A new verse every day"}
+              ${lang === "ru" ? "Каждый день новый стих" : "Every day a new verse"}
             </span>
           </div>
             <div class="daily-verse-header">
