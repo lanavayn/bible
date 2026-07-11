@@ -349,7 +349,7 @@ function getIndexLang() {
           }
         
           loadQuestionBtn.textContent =
-            lang === "ru" ? "💬Вопрос дня" : "💬Daily Question";
+            lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question";
         
         } catch (error) {
           console.error(error);

@@ -121,10 +121,14 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       root.innerHTML = `
       <div class="daily-verse-card">
 
-        <div class="daily-verse-daily-note">
-          ${lang === "ru"
-            ? "Каждый день — новый вопрос"
-            : "A new question every day"}
+        <div class="daily-card-kicker">
+          <span class="daily-card-kicker-title">
+            <span aria-hidden="true">💬</span>
+            ${lang === "ru" ? "Вопрос дня" : "Daily Question"}
+          </span>
+          <span class="daily-card-kicker-subtitle">
+            ${lang === "ru" ? "Каждый день — новый вопрос" : "A new question every day"}
+          </span>
         </div>
 
         <div class="daily-verse-date-row">

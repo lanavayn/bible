@@ -211,10 +211,14 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
-          <div class="daily-verse-daily-note">
-            ${lang === "ru"
-              ? "Каждый день — новый стих"
-              : "A new verse every day"}
+          <div class="daily-card-kicker">
+            <span class="daily-card-kicker-title">
+              <span aria-hidden="true">📖</span>
+              ${lang === "ru" ? "Стих дня" : "Daily Verse"}
+            </span>
+            <span class="daily-card-kicker-subtitle">
+              ${lang === "ru" ? "Каждый день — новый стих" : "A new verse every day"}
+            </span>
           </div>
             <div class="daily-verse-header">
            <!-- убрали заголовок -->
