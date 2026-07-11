@@ -3337,6 +3337,10 @@ table.book-dates th:nth-child(2) {
     margin: 0.05rem 1.65rem 0.2rem 0;
   }
 
+  #daily-verse .daily-card-kicker {
+    margin-bottom: 0.28rem;
+  }
+
   .daily-card-kicker-title {
     font-size: 0.88rem;
   }
@@ -3431,6 +3435,10 @@ table.book-dates th:nth-child(2) {
     gap: 0.15rem;
   }
 
+  #daily-verse .daily-verse-date-row {
+    gap: 0.22rem;
+  }
+
   .dv-arrow-date,
   .dv-arrow-date-placeholder {
     width: 2.55rem;
@@ -3453,8 +3461,8 @@ table.book-dates th:nth-child(2) {
     width: 100%;
   }
 
-  .daily-verse-date-jumps .dv-jump-btn,
-  .daily-verse-date-jumps .daily-tomorrow-wrap {
+  #question-of-day .daily-verse-date-jumps .dv-jump-btn,
+  #question-of-day .daily-verse-date-jumps .daily-tomorrow-wrap {
     flex: 1 1 0;
     min-width: 0;
   }
@@ -3465,8 +3473,29 @@ table.book-dates th:nth-child(2) {
     white-space: nowrap;
   }
 
-  .daily-tomorrow-wrap .dv-jump-btn {
+  #question-of-day .daily-tomorrow-wrap .dv-jump-btn {
     width: 100%;
+  }
+
+  #daily-verse .daily-verse-date-jumps {
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+  }
+
+  #daily-verse .daily-verse-date-jumps .dv-jump-btn,
+  #daily-verse .daily-verse-date-jumps .daily-tomorrow-wrap {
+    flex: 0 0 auto;
+    min-width: max-content;
+  }
+
+  #daily-verse .daily-verse-date-jumps .dv-jump-btn {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #daily-verse .daily-tomorrow-wrap .dv-jump-btn {
+    width: auto;
   }
 
   .daily-title-nav-row {
@@ -3475,8 +3504,23 @@ table.book-dates th:nth-child(2) {
     margin-top: 0.1rem;
   }
 
+  #daily-verse .daily-title-nav-row {
+    grid-template-columns: 2.55rem minmax(0, 1fr) 2.55rem;
+    gap: 0.45rem;
+    margin: 0.22rem -0.35rem 0.35rem;
+    width: calc(100% + 0.7rem);
+  }
+
+  #daily-verse .daily-title-main {
+    padding: 0 0.25rem;
+  }
+
   .daily-verse-subtitle-row--plain {
     margin-top: 0.2rem;
+  }
+
+  #daily-verse .daily-verse-subtitle-row--plain {
+    margin-top: 0.28rem;
   }
   
 }
