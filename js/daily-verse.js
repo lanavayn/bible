@@ -1131,9 +1131,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
         const titleAnchor = bookName.closest(".daily-verse-title-inline");
         const relatedAnchor = bookName.closest(".scripture-related-line-anchor");
+        const verseTextAnchor = bookName.closest(".daily-verse-text");
         const target = bookName.closest(".scripture-related-ref") || bookName.closest(".daily-verse-title-text") || bookName;
         await window.BibleChronology.showReferenceDetails(reference, target, {
-          insertAfter: titleAnchor || relatedAnchor || target
+          insertAfter: titleAnchor || relatedAnchor || verseTextAnchor || target
         });
       };
 
