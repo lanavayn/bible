@@ -3479,8 +3479,8 @@ table.book-dates th:nth-child(2) {
 
   #question-of-day .daily-verse-date-jumps .dv-jump-btn,
   #question-of-day .daily-verse-date-jumps .daily-tomorrow-wrap {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 0 0 auto;
+    min-width: max-content;
   }
 
   .daily-verse-date-jumps .dv-jump-btn {
@@ -3490,11 +3490,18 @@ table.book-dates th:nth-child(2) {
   }
 
   #question-of-day .daily-tomorrow-wrap .dv-jump-btn {
-    width: 100%;
+    width: auto;
   }
 
   #question-of-day .daily-verse-date-jumps {
+    justify-content: center;
+    gap: 0.5rem;
     margin-top: 0.5rem;
+  }
+
+  #question-of-day .daily-verse-date-jumps .dv-jump-btn {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   #daily-verse .daily-verse-date-jumps {
