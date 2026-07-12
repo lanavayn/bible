@@ -3357,6 +3357,10 @@ table.book-dates th:nth-child(2) {
     transform: translateX(0.35rem);
   }
 
+  #question-of-day .daily-card-kicker-subtitle {
+    transform: translateX(0.35rem);
+  }
+
   .daily-verse-header {
     margin-bottom: 0.2rem;
     align-items: flex-start;
@@ -3487,6 +3491,10 @@ table.book-dates th:nth-child(2) {
 
   #question-of-day .daily-tomorrow-wrap .dv-jump-btn {
     width: 100%;
+  }
+
+  #question-of-day .daily-verse-date-jumps {
+    margin-top: 0.5rem;
   }
 
   #daily-verse .daily-verse-date-jumps {
