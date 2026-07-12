@@ -241,6 +241,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             </span>
           `
           : "";
+        const {
+          firstPart: mainVerseFirstPart,
+          remainingPart: mainVerseRemainingPart
+        } = splitRelatedVerseLine(text);
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
@@ -406,8 +410,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
             ${text ? `
               <blockquote class="daily-verse-text">
-                ${verseReferenceInlineHtml}
-                ${addCreationHelp(text, lang, verseRef)}
+                <span class="daily-main-verse-line-anchor">
+                  ${verseReferenceInlineHtml}
+                  ${addCreationHelp(mainVerseFirstPart, lang, verseRef)}
+                </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addCreationHelp(mainVerseRemainingPart, lang, verseRef)}</span>` : ""}
               </blockquote>
             ` : ""}
 
@@ -1131,10 +1137,12 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
         const titleAnchor = bookName.closest(".daily-verse-title-inline");
         const relatedAnchor = bookName.closest(".scripture-related-line-anchor");
+        const mainLineAnchor = bookName.closest(".daily-main-verse-line-anchor");
         const verseTextAnchor = bookName.closest(".daily-verse-text");
+        const useMainLineAnchor = window.matchMedia?.("(max-width: 768px)").matches;
         const target = bookName.closest(".scripture-related-ref") || bookName.closest(".daily-verse-title-text") || bookName;
         await window.BibleChronology.showReferenceDetails(reference, target, {
-          insertAfter: titleAnchor || relatedAnchor || verseTextAnchor || target
+          insertAfter: titleAnchor || relatedAnchor || (useMainLineAnchor ? mainLineAnchor : null) || verseTextAnchor || target
         });
       };
 

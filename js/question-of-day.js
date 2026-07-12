@@ -134,6 +134,10 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           </span>
         `
         : "";
+      const {
+        firstPart: mainVerseFirstPart,
+        remainingPart: mainVerseRemainingPart
+      } = splitQuestionRelatedVerseLine(text);
 
       const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
       const tomorrowQuestionText = tomorrowQuestion?.[`question_${lang}`] || "";
@@ -278,8 +282,10 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         </div>  
     
         <blockquote class="daily-verse-text">
-          ${verseReferenceInlineHtml}
-          ${addQuestionCreationHelp(text, lang, verseRef)}
+          <span class="daily-main-verse-line-anchor">
+            ${verseReferenceInlineHtml}
+            ${addQuestionCreationHelp(mainVerseFirstPart, lang, verseRef)}
+          </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addQuestionCreationHelp(mainVerseRemainingPart, lang, verseRef)}</span>` : ""}
         </blockquote>
     
         <div class="scripture-note-box">
@@ -783,10 +789,12 @@ function bindQuestionChronologyReferences(root) {
       const reference = JSON.parse(bookName.dataset.chronologyReference || "null");
       const titleAnchor = bookName.closest(".daily-verse-title-inline");
       const relatedAnchor = bookName.closest(".scripture-related-line-anchor");
+      const mainLineAnchor = bookName.closest(".daily-main-verse-line-anchor");
       const verseTextAnchor = bookName.closest(".daily-verse-text");
+      const useMainLineAnchor = window.matchMedia?.("(max-width: 768px)").matches;
       const target = bookName.closest(".scripture-related-ref") || bookName.closest(".daily-verse-title-text") || bookName;
       await window.BibleChronology.showReferenceDetails(reference, target, {
-        insertAfter: titleAnchor || relatedAnchor || verseTextAnchor || target
+        insertAfter: titleAnchor || relatedAnchor || (useMainLineAnchor ? mainLineAnchor : null) || verseTextAnchor || target
       });
     };
 
