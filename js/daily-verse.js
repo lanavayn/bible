@@ -200,6 +200,21 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         lang === "ru" ? "См. также в Писании:" : "See also in Scripture:";
         const detailsId = `dv-details-${escapeHtml(verse.id || index)}`;
         const openBibleLabel = lang === "ru" ? "Открыть в Библии" : "Open in Bible";
+        const renderMainBibleIconLink = extraClass => bibleLink
+          ? `
+          <a
+              class="scripture-book-link main-book-link daily-verse-book-link ${extraClass}"
+              href="${escapeHtml(bibleLink)}"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-tooltip="${escapeHtml(openBibleLabel)}"
+              aria-label="${escapeHtml(openBibleLabel)}"
+              title="${escapeHtml(openBibleLabel)}"
+          >
+              <span class="book-icon">&#128214;</span>
+          </a>
+          `
+          : "";
         const previewText = getVersePreview(text);
         const expandBtnLabel = keepDetailsOpen
           ? (lang === "ru" ? "Меньше" : "Less")
@@ -214,6 +229,18 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const nextArrowHtml = verses.length > 1 && index < todayIndex
           ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
           : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
+        const titleLineHtml = renderDailyVerseTitleLine(
+          topic
+        );
+        const verseReferenceInlineHtml = reference
+          ? `
+            <span class="daily-verse-inline-reference">
+              <span class="daily-verse-inline-reference-text">${renderChronologyReference(reference, verseRef, lang)}</span>
+              ${renderMainBibleIconLink("daily-verse-inline-book-link")}
+              <span class="daily-reference-dash">—</span>
+            </span>
+          `
+          : "";
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
@@ -369,27 +396,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 <div class="daily-verse-title-inline daily-title-nav-row">
                     ${prevArrowHtml}
                     <span class="daily-title-main">
-                      <span class="daily-verse-title-text">
-                      ${escapeHtml(topic)}${topic && reference ? " — " : ""}${renderChronologyReference(reference, verseRef, lang)}
-                      </span>
-
-                      ${
-                      bibleLink
-                          ? `
-                          <a
-                              class="scripture-book-link main-book-link daily-verse-book-link"
-                              href="${escapeHtml(bibleLink)}"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              data-tooltip="${escapeHtml(openBibleLabel)}"
-                              aria-label="${escapeHtml(openBibleLabel)}"
-                              title="${escapeHtml(openBibleLabel)}"
-                          >
-                              <span class="book-icon">&#128214;</span>
-                          </a>
-                          `
-                          : ""
-                      }
+                      ${titleLineHtml}
                     </span>
                     ${nextArrowHtml}
                 </div>
@@ -397,7 +404,12 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 : ""
             }
 
-            ${text ? `<blockquote class="daily-verse-text">${addCreationHelp(text, lang, verseRef)}</blockquote>` : ""}
+            ${text ? `
+              <blockquote class="daily-verse-text">
+                ${verseReferenceInlineHtml}
+                ${addCreationHelp(text, lang, verseRef)}
+              </blockquote>
+            ` : ""}
 
             <div class="scripture-note-box">
               ${
@@ -1099,6 +1111,11 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     return window.BibleChronology?.renderReference(reference, verseRef, { lang }) || escapeHtml(reference);
   }
 
+  function renderDailyVerseTitleLine(topic = "") {
+    const cleanTopic = String(topic || "").trim();
+    return cleanTopic ? `<span class="daily-verse-title-text">${escapeHtml(cleanTopic)}</span>` : "";
+  }
+
   function bindDailyChronologyReferences(root) {
     if (!root.dataset.chronologyCloseBound) {
       root.dataset.chronologyCloseBound = "true";
@@ -1160,7 +1177,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                  &#128214;
                </span>`
         }
-        <span class="scripture-related-text">— ${addCreationHelp(firstPart, lang, verseRef)}</span>
+        <span class="scripture-related-text scripture-related-dash">—</span>
+        <span class="scripture-related-text">${addCreationHelp(firstPart, lang, verseRef)}</span>
         </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addCreationHelp(remainingPart, lang, verseRef)}</span>` : ""}
       </li>
     `;

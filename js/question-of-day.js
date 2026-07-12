@@ -113,6 +113,27 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
       const verseRef = q?.verse_ref_lang?.[lang] || q?.verse_ref || null;
       const bibleLink = buildBibleLink(verseRef, lang);
+      const openBibleLabel = lang === "ru" ? "Открыть в Библии" : "Open in Bible";
+      const mainBibleIconLink = bibleLink
+        ? `<a
+             href="${escapeHtml(bibleLink)}"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="scripture-book-link main-book-link daily-verse-book-link"
+             title="${escapeHtml(openBibleLabel)}"
+           >
+             <span class="book-icon">📖</span>
+           </a>`
+        : "";
+      const verseReferenceInlineHtml = reference
+        ? `
+          <span class="daily-verse-inline-reference">
+            <span class="daily-verse-inline-reference-text">${renderChronologyReference(reference, verseRef, lang)}</span>
+            ${mainBibleIconLink}
+            <span class="daily-reference-dash">—</span>
+          </span>
+        `
+        : "";
 
       const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
       const tomorrowQuestionText = tomorrowQuestion?.[`question_${lang}`] || "";
@@ -256,26 +277,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           </div>
         </div>  
     
-        <div class="daily-verse-title-inline">
-          <span class="daily-verse-title-text">
-            ${renderChronologyReference(reference, verseRef, lang)}
-          </span>
-          ${
-            bibleLink
-              ? `<a
-                   href="${bibleLink}"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="scripture-book-link main-book-link daily-verse-book-link"
-                   title="${lang === "ru" ? "Открыть в Библии" : "Open in Bible"}"
-                 >
-                   <span class="book-icon">📖</span>
-                 </a>`
-              : ""
-          }
-        </div>
-    
         <blockquote class="daily-verse-text">
+          ${verseReferenceInlineHtml}
           ${addQuestionCreationHelp(text, lang, verseRef)}
         </blockquote>
     
@@ -317,7 +320,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                               >📖</a>`
                             : ""
                         }
-                        <span class="scripture-related-text">— ${addQuestionCreationHelp(firstPart, lang, relVerseRef)}</span>
+                        <span class="scripture-related-text scripture-related-dash">—</span>
+                        <span class="scripture-related-text">${addQuestionCreationHelp(firstPart, lang, relVerseRef)}</span>
                         </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addQuestionCreationHelp(remainingPart, lang, relVerseRef)}</span>` : ""}
                       </li>
                     `;

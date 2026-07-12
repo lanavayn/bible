@@ -3388,7 +3388,7 @@ table.book-dates th:nth-child(2) {
     padding: 0 0.35rem;
     min-height: auto;
   }
-  
+
   .dv-left {
     left: -0.1rem;
   }
@@ -3436,7 +3436,7 @@ table.book-dates th:nth-child(2) {
   }
 
   #daily-verse .daily-verse-date-row {
-    gap: 0.22rem;
+    gap: 0.3rem;
   }
 
   .dv-arrow-date,
@@ -3480,7 +3480,7 @@ table.book-dates th:nth-child(2) {
   #daily-verse .daily-verse-date-jumps {
     justify-content: center;
     gap: 0.4rem;
-    margin-top: 0.3rem;
+    margin-top: 0.4rem;
   }
 
   #daily-verse .daily-verse-date-jumps .dv-jump-btn,
@@ -3520,7 +3520,7 @@ table.book-dates th:nth-child(2) {
   }
 
   #daily-verse .daily-verse-subtitle-row--plain {
-    margin-top: 0.28rem;
+    margin-top: 0.45rem;
   }
   
 }
@@ -3555,6 +3555,34 @@ table.book-dates th:nth-child(2) {
   justify-content: center;
   gap: 0.35rem;
   flex-wrap: wrap;
+}
+
+.daily-verse-inline-reference .daily-verse-book-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin: 0;
+  line-height: 1;
+}
+
+.daily-verse-inline-reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-right: 0.25rem;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.daily-verse-inline-reference-text {
+  font-weight: 700;
+  color: #5f4333;
+}
+
+.daily-reference-dash,
+.scripture-related-dash {
+  display: inline-block;
+  margin: 0 0.15rem;
 }
 
 .daily-title-nav-row .dv-arrow-date,
