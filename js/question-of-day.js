@@ -5,9 +5,9 @@ import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 
 //
 // PROD date Anpril 30 2026
-const START_DATE = "2026-04-30";
+//const START_DATE = "2026-04-30";
 //test  
-//const START_DATE = "2026-02-01";
+const START_DATE = "2026-02-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -163,6 +163,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         </div>
 
         <div class="daily-verse-date-row">
+          ${prevArrowHtml}
 
           <div class="daily-verse-date-center">
             <div class="daily-verse-date">
@@ -235,6 +236,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           </div>  
           </div>
 
+          ${nextArrowHtml}
         </div>
             <button
                 class="dv-close"
@@ -243,14 +245,12 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                 title="${lang === "ru" ? "Закрыть" : "Close"}"
         >×</button>
 
-        <div class="daily-verse-title-inline daily-title-nav-row">
-          ${prevArrowHtml}
+        <div class="daily-verse-title-inline">
           <span class="daily-title-main">
             <span class="daily-verse-title-text">
               ${question}
             </span>
           </span>
-          ${nextArrowHtml}
         </div>
 
         <div class="daily-verse-subtitle-row daily-verse-subtitle-row--plain">

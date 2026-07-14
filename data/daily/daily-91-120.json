@@ -628,6 +628,270 @@
           }
         }
       ]
-    }
+    },
+      {
+        "id": "daily-2026-07-16",
+        "day": 102,
+        "topic": {
+          "ru": "Приближайся к Господу",
+          "en": "Draw Near to the Lord"
+        },
+        "reference_ru": "Псалом 72:28",
+        "reference_en": "Psalm 73:28",
+        "text_ru": "А мне благо приближаться к Богу! На Господа Бога я возложил упование мое, чтобы возвещать все дела Твои.",
+        "text_en": "But it is good for me to come close to God. I have made the Lord Yahweh my refuge, that I may tell of all your works.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Psalms",
+            "chapter": 72,
+            "verse": "28"
+          },
+          "en": {
+            "book": "Psalms",
+            "chapter": 73,
+            "verse": "28"
+          }
+        },
+        "interpretation_ru": "Истинная радость и безопасность находятся не в обстоятельствах, а в близости с Господом.",
+        "interpretation_en": "True joy and security are found not in circumstances but in drawing near to the Lord.",
+        "related": [
+          {
+            "reference_ru": "Псалом 118:2",
+            "reference_en": "Psalm 119:2",
+            "text_ru": "Блаженны хранящие откровения Его, всем сердцем ищущие Его.",
+            "text_en": "Blessed are those who keep his statutes, who seek him with their whole heart.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 118,
+                "verse": "2"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 119,
+                "verse": "2"
+              }
+            }
+          },
+          {
+            "reference_ru": "Колоссянам 2:6-7",
+            "reference_en": "Colossians 2:6-7",
+            "text_ru": "Посему, как вы приняли Христа Иисуса Господа, так и ходите в Нем, будучи укоренены и утверждены в Нем.",
+            "text_en": "As therefore you received Christ Jesus the Lord, walk in him, rooted and built up in him.",
+            "verse_ref": {
+              "book": "colossians",
+              "chapter": 2,
+              "verse": "6-7"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-17",
+        "day": 103,
+        "topic": {
+          "ru": "Ищи Господа каждый день",
+          "en": "Seek the Lord Every Day"
+        },
+        "reference_ru": "Псалом 26:4",
+        "reference_en": "Psalm 27:4",
+        "text_ru": "Одного просил я у Господа, того только ищу: чтобы пребывать мне в доме Господнем во все дни жизни моей.",
+        "text_en": "One thing I have asked of the Lord, that I will seek after: that I may dwell in the Lord's house all the days of my life.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Psalms",
+            "chapter": 26,
+            "verse": "4"
+          },
+          "en": {
+            "book": "Psalms",
+            "chapter": 27,
+            "verse": "4"
+          }
+        },
+        "interpretation_ru": "Самое большое желание верующего — быть ближе к Господу и познавать Его.",
+        "interpretation_en": "The greatest desire of a believer is to be close to the Lord and know Him more.",
+        "related": [
+          {
+            "reference_ru": "Ефесянам 3:17-19",
+            "reference_en": "Ephesians 3:17-19",
+            "text_ru": "Верою вселиться Христу в сердца ваши... чтобы вам уразуметь превосходящую разумение любовь Христову.",
+            "text_en": "That Christ may dwell in your hearts through faith... that you may know Christ's love which surpasses knowledge.",
+            "verse_ref": {
+              "book": "ephesians",
+              "chapter": 3,
+              "verse": "17-19"
+            }
+          },
+          {
+            "reference_ru": "Евреям 12:2",
+            "reference_en": "Hebrews 12:2",
+            "text_ru": "Взирая на начальника и совершителя веры Иисуса.",
+            "text_en": "Looking to Jesus, the author and perfecter of faith.",
+            "verse_ref": {
+              "book": "hebrews",
+              "chapter": 12,
+              "verse": "2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-18",
+        "day": 104,
+        "topic": {
+          "ru": "Только Христос имеет слова жизни",
+          "en": "Only Christ Has the Words of Life"
+        },
+        "reference_ru": "Иоанна 6:68",
+        "reference_en": "John 6:68",
+        "text_ru": "Господи! к кому нам идти? Ты имеешь глаголы вечной жизни.",
+        "text_en": "Lord, to whom would we go? You have the words of eternal life.",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 6,
+          "verse": "68"
+        },
+        "interpretation_ru": "Настоящую жизнь и надежду можно найти только во Христе.",
+        "interpretation_en": "True life and hope can only be found in Christ.",
+        "related": [
+          {
+            "reference_ru": "Псалом 130:2",
+            "reference_en": "Psalm 131:2",
+            "text_ru": "Не смирял ли я и не успокаивал ли души моей?",
+            "text_en": "Surely I have calmed and quieted my soul.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 130,
+                "verse": "2"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 131,
+                "verse": "2"
+              }
+            }
+          },
+          {
+            "reference_ru": "Псалом 120:7-8",
+            "reference_en": "Psalm 121:7-8",
+            "text_ru": "Господь сохранит тебя от всякого зла; сохранит душу твою.",
+            "text_en": "The Lord will keep you from all evil. He will keep your soul.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 120,
+                "verse": "7-8"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 121,
+                "verse": "7-8"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-19",
+        "day": 105,
+        "topic": {
+          "ru": "Познавай Христа",
+          "en": "Know Christ"
+        },
+        "reference_ru": "Филиппийцам 3:10",
+        "reference_en": "Philippians 3:10",
+        "text_ru": "Чтобы познать Его и силу воскресения Его.",
+        "text_en": "That I may know him and the power of his resurrection.",
+        "verse_ref": {
+          "book": "philippians",
+          "chapter": 3,
+          "verse": "10"
+        },
+        "interpretation_ru": "Главная цель христианской жизни — всё глубже узнавать Иисуса Христа.",
+        "interpretation_en": "The greatest goal of the Christian life is to know Jesus Christ more deeply.",
+        "related": [
+          {
+            "reference_ru": "Исаия 12:2",
+            "reference_en": "Isaiah 12:2",
+            "text_ru": "Вот, Бог — спасение мое: уповаю на Него и не боюсь.",
+            "text_en": "Behold, God is my salvation. I will trust and will not be afraid.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 12,
+              "verse": "2"
+            }
+          },
+          {
+            "reference_ru": "Псалом 111:7",
+            "reference_en": "Psalm 112:7",
+            "text_ru": "Не убоится худой молвы: сердце его твердо, уповая на Господа.",
+            "text_en": "He will not be afraid of evil news. His heart is steadfast, trusting in the Lord.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 111,
+                "verse": "7"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 112,
+                "verse": "7"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-20",
+        "day": 106,
+        "topic": {
+          "ru": "Покой в Господе",
+          "en": "Rest in the Lord"
+        },
+        "reference_ru": "Исаия 30:15",
+        "reference_en": "Isaiah 30:15",
+        "text_ru": "В тишине и уповании крепость ваша.",
+        "text_en": "In quietness and confidence shall be your strength.",
+        "verse_ref": {
+          "book": "isaiah",
+          "chapter": 30,
+          "verse": "15"
+        },
+        "interpretation_ru": "Господь дает силу тем, кто перестает полагаться только на себя и доверяет Ему.",
+        "interpretation_en": "The Lord gives strength to those who stop relying on themselves and trust Him.",
+        "related": [
+          {
+            "reference_ru": "Плач Иеремии 3:24",
+            "reference_en": "Lamentations 3:24",
+            "text_ru": "Господь часть моя... поэтому буду надеяться на Него.",
+            "text_en": "The Lord is my portion... therefore I will hope in him.",
+            "verse_ref": {
+              "book": "lamentations",
+              "chapter": 3,
+              "verse": "24"
+            }
+          },
+          {
+            "reference_ru": "Псалом 83:12",
+            "reference_en": "Psalm 84:11",
+            "text_ru": "Ибо Господь Бог есть солнце и щит.",
+            "text_en": "For the Lord God is a sun and a shield.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 83,
+                "verse": "12"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 84,
+                "verse": "11"
+              }
+            }
+          }
+        ]
+      }
   ]
 }

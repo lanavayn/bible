@@ -4,8 +4,8 @@ import { addInlineWordHelp } from "./inline-word-help.js";
 import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 
 const easterDates = {
-  2026: "2026-04-05",
-  //2026: "2026-01-05",
+  //2026: "2026-04-05",
+  2026: "2026-01-05",
   2027: "2027-03-28",
   2028: "2028-04-16",
   2029: "2029-04-01",
@@ -262,6 +262,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
             <div class="daily-verse-date-wrap">
             <div class="daily-verse-date-row">
+              ${prevArrowHtml}
 
               ${
                 fullDateLabel
@@ -349,6 +350,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   : ""
               }
 
+              ${nextArrowHtml}
             </div>
 
             <div class="daily-verse-subtitle-row daily-verse-subtitle-row--plain">
@@ -397,12 +399,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
             ${
             topic || reference
                 ? `
-                <div class="daily-verse-title-inline daily-title-nav-row">
-                    ${prevArrowHtml}
+                <div class="daily-verse-title-inline">
                     <span class="daily-title-main">
                       ${titleLineHtml}
                     </span>
-                    ${nextArrowHtml}
                 </div>
                 `
                 : ""

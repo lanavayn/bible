@@ -983,6 +983,132 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-77",
+      "day": 77,
+      "topic_ru": "Ободрение",
+      "topic_en": "Encouragement",
+      "question_ru": "Что делать, когда кажется, что нет сил?",
+      "question_en": "What Should I Do When I Feel Like I Have No Strength?",
+      "reference_ru": "2 Коринфянам 4:16",
+      "reference_en": "2 Corinthians 4:16",
+      "text_ru": "Посему мы не унываем; но если внешний наш человек и тлеет, то внутренний со дня на день обновляется.",
+      "text_en": "Therefore we don't faint, but though our outward person is decaying, yet our inward person is renewed day by day.",
+      "verse_ref": {
+        "book": "2-Corinthians",
+        "chapter": 4,
+        "verse": "16"
+      },
+      "answer_ru": "Когда собственных сил становится мало, Господь способен ежедневно обновлять наше сердце и давать силы идти дальше.",
+      "answer_en": "When our own strength is running out, the Lord is able to renew our heart day by day and give us strength to keep going.",
+      "reflection_ru": "Даже когда тело устает, Господь может обновить внутреннего человека.",
+      "reflection_en": "Even when the body grows weary, the Lord can renew the inner person.",
+      "related": [
+        {
+          "reference_ru": "Евреям 12:3",
+          "reference_en": "Hebrews 12:3",
+          "text_ru": "Помыслите о Претерпевшем такое над Собою поругание от грешников, чтобы вам не изнемочь и не ослабеть душами вашими.",
+          "text_en": "For consider him who has endured such contradiction of sinners against himself, so that you don't grow weary, fainting in your souls.",
+          "verse_ref": {
+            "book": "Hebrews",
+            "chapter": 12,
+            "verse": "3"
+          }
+        },
+        {
+          "reference_ru": "Псалом 42:12",
+          "reference_en": "Psalm 43:5",
+          "text_ru": "Что унываешь, душа моя, и что смущаешься? Уповай на Господа, ибо я буду еще славить Его, Спасителя моего и Бога моего.",
+          "text_en": "Why are you in despair, my soul? Why are you disturbed within me? Hope in God, for I shall still praise him, my Savior and my God.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 42,
+              "verse": "12"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 43,
+              "verse": "5"
+            }
+          }
+        },
+        {
+          "reference_ru": "Римлянам 8:18",
+          "reference_en": "Romans 8:18",
+          "text_ru": "Ибо думаю, что нынешние временные страдания ничего не стоят в сравнении с тою славою, которая откроется в нас.",
+          "text_en": "For I consider that the sufferings of this present time are not worthy to be compared with the glory which will be revealed toward us.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 8,
+            "verse": "18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-78",
+      "day": 78,
+      "topic_ru": "Утешение",
+      "topic_en": "Comfort",
+      "question_ru": "Как пережить трудные времена?",
+      "question_en": "How Can I Get Through Difficult Times?",
+      "reference_ru": "2 Коринфянам 1:3-4",
+      "reference_en": "2 Corinthians 1:3-4",
+      "text_ru": "Благословен Бог и Отец Господа нашего Иисуса Христа, Отец милосердия и Бог всякого утешения, утешающий нас во всякой скорби нашей, чтобы и мы могли утешать находящихся во всякой скорби тем утешением, которым Бог утешает нас самих.",
+      "text_en": "Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies and God of all comfort, who comforts us in all our affliction, that we may be able to comfort those who are in any affliction through the comfort with which we ourselves are comforted by God.",
+      "verse_ref": {
+        "book": "2-Corinthians",
+        "chapter": 1,
+        "verse": "3-4"
+      },
+      "answer_ru": "Трудные времена легче пережить, когда человек обращается к Господу, Который обещает утешать и поддерживать Своих детей.",
+      "answer_en": "Difficult times become easier to endure when we turn to the Lord, who promises to comfort and strengthen His children.",
+      "reflection_ru": "Господь не всегда сразу меняет обстоятельства, но всегда может дать утешение сердцу.",
+      "reflection_en": "The Lord does not always change our circumstances immediately, but He always can comfort our hearts.",
+      "related": [
+        {
+          "reference_ru": "Второзаконие 31:8",
+          "reference_en": "Deuteronomy 31:8",
+          "text_ru": "Господь Сам пойдет пред тобою, Сам будет с тобою, не отступит от тебя и не оставит тебя; не бойся и не ужасайся.",
+          "text_en": "The Lord himself is who goes before you. He will be with you. He will not fail you nor forsake you. Don't be afraid. Don't be discouraged.",
+          "verse_ref": {
+            "book": "Deuteronomy",
+            "chapter": 31,
+            "verse": "8"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 5:10",
+          "reference_en": "1 Peter 5:10",
+          "text_ru": "Бог же всякой благодати... Сам да совершит вас, да утвердит, да укрепит, да соделает непоколебимыми.",
+          "text_en": "May the God of all grace... himself restore, establish, strengthen, and settle you.",
+          "verse_ref": {
+            "book": "1-Peter",
+            "chapter": 5,
+            "verse": "10"
+          }
+        },
+        {
+          "reference_ru": "Псалом 33:19",
+          "reference_en": "Psalm 34:18",
+          "text_ru": "Близок Господь к сокрушенным сердцем и смиренных духом спасет.",
+          "text_en": "Yahweh is near to those who have a broken heart, and saves those who have a crushed spirit.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 33,
+              "verse": "19"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 34,
+              "verse": "18"
+            }
+          }
+        }
+      ]
     }    
   ]
 }

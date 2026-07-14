@@ -3042,14 +3042,18 @@ table.book-dates th:nth-child(2) {
   -webkit-tap-highlight-color: transparent;
 }
 
+.daily-verse-date-row .dv-arrow-date {
+  transform: translateY(-0.12rem);
+}
+
 .dv-arrow-date:hover {
   background: #f8ecd7;
   color: #4d3423;
-  transform: translateY(-1px);
+  transform: translateY(calc(-0.12rem - 1px));
 }
 
 .dv-arrow-date:active {
-  transform: translateY(0);
+  transform: translateY(-0.12rem);
 }
 
 .dv-arrow-date-placeholder {
@@ -3177,7 +3181,7 @@ table.book-dates th:nth-child(2) {
 
 .daily-verse-date-row {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2.6rem minmax(0, 1fr) 2.6rem;
   align-items: center;
   gap: 0.35rem;
   width: 100%;
@@ -3444,6 +3448,7 @@ table.book-dates th:nth-child(2) {
   } 
 
   .daily-verse-date-row {
+    grid-template-columns: 2.55rem minmax(0, 1fr) 2.55rem;
     gap: 0.15rem;
   }
 
@@ -4018,6 +4023,20 @@ table.book-dates th:nth-child(2) {
   line-height: 1.15;
   color: #7c6f61;
   white-space: normal;
+}
+
+#daily-verse .daily-card-kicker-subtitle,
+#question-of-day .daily-card-kicker-subtitle,
+#daily-verse .daily-verse-subtitle,
+#question-of-day .daily-verse-subtitle,
+#daily-verse .scripture-interpretation,
+#question-of-day .scripture-interpretation,
+#daily-verse .scripture-related-title,
+#question-of-day .scripture-related-title,
+#daily-verse .scripture-related-text,
+#question-of-day .scripture-related-text {
+  color: #000000;
+  opacity: 1;
 }
 
 /* Question of the Day: spacing between motto, reference, and verse */
