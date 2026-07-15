@@ -3096,7 +3096,7 @@ table.book-dates th:nth-child(2) {
 
 .daily-date-text {
   font-size: 0.92rem;
-  color: #6a4a35;
+  color: #5b3d1f;
   opacity: 1;
 }
 
@@ -4029,14 +4029,18 @@ table.book-dates th:nth-child(2) {
   min-width: 0;
   text-align: right;
   font-size: 0.78rem;
-  font-weight: 400;
+  font-weight: 550;
   line-height: 1.15;
-  color: #7c6f61;
+  color: #5b3d1f;
   white-space: normal;
 }
 
 #daily-verse .daily-card-kicker-subtitle,
-#question-of-day .daily-card-kicker-subtitle,
+#question-of-day .daily-card-kicker-subtitle {
+  color: #5b3d1f;
+  opacity: 1;
+}
+
 #daily-verse .daily-verse-subtitle,
 #question-of-day .daily-verse-subtitle,
 #daily-verse .scripture-interpretation,
