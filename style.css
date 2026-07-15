@@ -3042,18 +3042,14 @@ table.book-dates th:nth-child(2) {
   -webkit-tap-highlight-color: transparent;
 }
 
-.daily-verse-date-row .dv-arrow-date {
-  transform: translateY(-0.12rem);
-}
-
 .dv-arrow-date:hover {
   background: #f8ecd7;
   color: #4d3423;
-  transform: translateY(calc(-0.12rem - 1px));
+  transform: translateY(-1px);
 }
 
 .dv-arrow-date:active {
-  transform: translateY(-0.12rem);
+  transform: translateY(0);
 }
 
 .dv-arrow-date-placeholder {
@@ -3453,6 +3449,8 @@ table.book-dates th:nth-child(2) {
   }
 
   #daily-verse .daily-verse-date-row {
+    grid-template-columns: 2.85rem minmax(0, 1fr) 2.85rem;
+    align-items: start;
     gap: 0.3rem;
   }
 
@@ -3469,6 +3467,18 @@ table.book-dates th:nth-child(2) {
 
   .dv-arrow-date {
     font-size: 1.9rem;
+  }
+
+  .daily-verse-date-row .dv-arrow-date {
+    transform: translateY(-0.28rem);
+  }
+
+  .daily-verse-date-row .dv-arrow-date:hover {
+    transform: translateY(calc(-0.28rem - 1px));
+  }
+
+  .daily-verse-date-row .dv-arrow-date:active {
+    transform: translateY(-0.28rem);
   }
 
   .daily-verse-date {
@@ -3512,7 +3522,7 @@ table.book-dates th:nth-child(2) {
   #daily-verse .daily-verse-date-jumps {
     justify-content: center;
     gap: 0.5rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   #daily-verse .daily-verse-date-jumps .dv-jump-btn,
@@ -4947,4 +4957,40 @@ body.daily-verse-search-open {
 
 #question-of-day .footer-help-inline[hidden] {
   display: none !important;
+}
+
+/* Daily Verse mobile date navigation */
+@media (max-width: 48rem) {
+  #daily-verse .daily-verse-date-row .dv-arrow-date,
+  #daily-verse .daily-verse-date-row .dv-arrow-date-placeholder {
+    align-self: start;
+    box-sizing: border-box;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    min-height: 2.5rem;
+    flex-basis: 2.5rem;
+    transform: translateY(-0.65rem);
+  }
+
+  #daily-verse .daily-verse-date-row .dv-arrow-date {
+    border: 2px solid #c79d62;
+    background: #f8ecd7;
+    color: #4d3423;
+    box-shadow: 0 2px 7px rgba(77, 52, 35, 0.2);
+    font-size: 2.1rem;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0.025rem 0 currentColor, -0.025rem 0 currentColor;
+  }
+
+  #daily-verse .daily-verse-date-row .dv-arrow-date:hover {
+    background: #f3e2c5;
+    color: #3f2a1c;
+    transform: translateY(calc(-0.65rem - 1px));
+  }
+
+  #daily-verse .daily-verse-date-row .dv-arrow-date:active {
+    transform: translateY(-0.65rem);
+  }
 }
