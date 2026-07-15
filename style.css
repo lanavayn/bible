@@ -5010,4 +5010,44 @@ body.daily-verse-search-open {
   #question-of-day .daily-verse-date-row .dv-arrow-date:hover {
     background: transparent;
   }
+
+  /* Match Daily Question navigation to the Daily Verse navigation. */
+  #question-of-day .daily-verse-date-row {
+    grid-template-columns: 2.85rem minmax(0, 1fr) 2.85rem;
+    align-items: start;
+    gap: 0.3rem;
+  }
+
+  #question-of-day .daily-verse-date-center {
+    text-align: center;
+  }
+
+  #question-of-day .daily-verse-date-row .dv-arrow-date,
+  #question-of-day .daily-verse-date-row .dv-arrow-date-placeholder {
+    align-self: start;
+    box-sizing: border-box;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    min-height: 2.5rem;
+    flex-basis: 2.5rem;
+    transform: translateY(-0.65rem);
+  }
+
+  #question-of-day .daily-verse-date-row .dv-arrow-date {
+    color: #4d3423;
+    font-size: 2.1rem;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0.025rem 0 currentColor, -0.025rem 0 currentColor;
+  }
+
+  #question-of-day .daily-verse-date-row .dv-arrow-date:hover {
+    color: #3f2a1c;
+    transform: translateY(calc(-0.65rem - 1px));
+  }
+
+  #question-of-day .daily-verse-date-row .dv-arrow-date:active {
+    transform: translateY(-0.65rem);
+  }
 }
