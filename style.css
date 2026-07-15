@@ -4993,4 +4993,51 @@ body.daily-verse-search-open {
   #daily-verse .daily-verse-date-row .dv-arrow-date:active {
     transform: translateY(-0.65rem);
   }
+
+  /* Shrink only the painted circle; preserve the icon and button hit area. */
+  #daily-verse .daily-verse-date-row .dv-arrow-date,
+  #question-of-day .daily-verse-date-row .dv-arrow-date {
+    --daily-arrow-circle-background: transparent;
+    --daily-arrow-circle-border: none;
+    --daily-arrow-circle-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    position: relative !important;
+    isolation: isolate;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  #daily-verse .daily-verse-date-row .dv-arrow-date {
+    --daily-arrow-circle-background: #f8ecd7;
+    --daily-arrow-circle-border: 2px solid #c79d62;
+    --daily-arrow-circle-shadow: 0 2px 7px rgba(77, 52, 35, 0.2);
+  }
+
+  #daily-verse .daily-verse-date-row .dv-arrow-date::before,
+  #question-of-day .daily-verse-date-row .dv-arrow-date::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    width: 91%;
+    height: 91%;
+    border: var(--daily-arrow-circle-border);
+    border-radius: 50%;
+    background: var(--daily-arrow-circle-background);
+    box-shadow: var(--daily-arrow-circle-shadow);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  #daily-verse .daily-verse-date-row .dv-arrow-date:hover {
+    --daily-arrow-circle-background: #f3e2c5;
+    background: transparent;
+  }
+
+  #question-of-day .daily-verse-date-row .dv-arrow-date:hover {
+    --daily-arrow-circle-background: rgba(0, 0, 0, 0.05);
+    background: transparent;
+  }
 }
