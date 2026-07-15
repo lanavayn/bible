@@ -4994,37 +4994,16 @@ body.daily-verse-search-open {
     transform: translateY(-0.65rem);
   }
 
-  /* Paint a smaller circle inside the unchanged arrow button hit area. */
+  /* Keep the full arrow hit area while leaving its background invisible. */
   #daily-verse .daily-verse-date-row .dv-arrow-date,
   #question-of-day .daily-verse-date-row .dv-arrow-date {
-    --daily-arrow-circle-background: transparent;
-    --daily-arrow-circle-border-color: rgba(0, 0, 0, 0.08);
-    background: radial-gradient(
-      circle closest-side,
-      var(--daily-arrow-circle-background) 0 calc(80% - 1px),
-      var(--daily-arrow-circle-border-color) calc(80% - 1px) 80%,
-      transparent calc(80% + 1px)
-    );
+    background: transparent;
     border: 0;
     box-shadow: none;
   }
 
-  #daily-verse .daily-verse-date-row .dv-arrow-date {
-    --daily-arrow-circle-background: #f8ecd7;
-    --daily-arrow-circle-border-color: #c79d62;
-  }
-
-  #daily-verse .daily-verse-date-row .dv-arrow-date:hover {
-    --daily-arrow-circle-background: #f3e2c5;
-    background: radial-gradient(
-      circle closest-side,
-      var(--daily-arrow-circle-background) 0 calc(80% - 1px),
-      var(--daily-arrow-circle-border-color) calc(80% - 1px) 80%,
-      transparent calc(80% + 1px)
-    );
-  }
-
+  #daily-verse .daily-verse-date-row .dv-arrow-date:hover,
   #question-of-day .daily-verse-date-row .dv-arrow-date:hover {
-    --daily-arrow-circle-background: rgba(0, 0, 0, 0.05);
+    background: transparent;
   }
 }
