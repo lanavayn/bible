@@ -892,6 +892,284 @@
             }
           }
         ]
-      }
+      },
+            {
+              "id": "daily-2026-07-21",
+              "day": 107,
+              "topic": {
+                "ru": "Остановись и доверься Господу",
+                "en": "Be Still and Trust the Lord"
+              },
+              "reference_ru": "Псалом 45:11",
+              "reference_en": "Psalm 46:10",
+              "text_ru": "Остановитесь и познайте, что Я — Бог: буду превознесен в народах, превознесен на земле.",
+              "text_en": "Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.",
+              "verse_ref_lang": {
+                "ru": {
+                  "book": "psalms",
+                  "chapter": 45,
+                  "verse": "11"
+                },
+                "en": {
+                  "book": "psalms",
+                  "chapter": 46,
+                  "verse": "10"
+                }
+              },
+              "interpretation_ru": "Доверие начинается с осознания того, что Бог царствует и никогда не теряет контроля.",
+              "interpretation_en": "Trust begins with recognizing that God reigns and is always in control.",
+              "related": [
+                {
+                  "reference_ru": "Псалом 15:8",
+                  "reference_en": "Psalm 16:8",
+                  "text_ru": "Всегда видел я пред собою Господа, ибо Он одесную меня; не поколеблюсь.",
+                  "text_en": "I have set the Lord always before me. Because he is at my right hand, I shall not be moved.",
+                  "verse_ref_lang": {
+                    "ru": {
+                      "book": "psalms",
+                      "chapter": 15,
+                      "verse": "8"
+                    },
+                    "en": {
+                      "book": "psalms",
+                      "chapter": 16,
+                      "verse": "8"
+                    }
+                  }
+                },
+                {
+                  "reference_ru": "Псалом 90:2",
+                  "reference_en": "Psalm 91:2",
+                  "text_ru": "Говорит Господу: «прибежище мое и защита моя, Бог мой, на Которого я уповаю!»",
+                  "text_en": "I will say of the Lord, “He is my refuge and my fortress; my God, in whom I trust.”",
+                  "verse_ref_lang": {
+                    "ru": {
+                      "book": "psalms",
+                      "chapter": 90,
+                      "verse": "2"
+                    },
+                    "en": {
+                      "book": "psalms",
+                      "chapter": 91,
+                      "verse": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-07-22",
+              "day": 108,
+              "topic": {
+                "ru": "Господь — крепкая защита",
+                "en": "The Lord Is a Strong Refuge"
+              },
+              "reference_ru": "Притчи 18:11",
+              "reference_en": "Proverbs 18:10",
+              "text_ru": "Имя Господа — крепкая башня: убегает в нее праведник — и безопасен.",
+              "text_en": "The Lord’s name is a strong tower. The righteous run to it, and are safe.",
+              "verse_ref_lang": {
+                "ru": {
+                  "book": "proverbs",
+                  "chapter": 18,
+                  "verse": "11"
+                },
+                "en": {
+                  "book": "proverbs",
+                  "chapter": 18,
+                  "verse": "10"
+                }
+              },
+              "interpretation_ru": "Имя Господа — безопасное убежище для всех, кто доверяет Ему.",
+              "interpretation_en": "The Lord's name is a safe refuge for all who trust in Him.",
+              "related": [
+                {
+                  "reference_ru": "Псалом 9:10",
+                  "reference_en": "Psalm 9:9",
+                  "text_ru": "И будет Господь прибежищем угнетенному, прибежищем во времена скорби.",
+                  "text_en": "The Lord will also be a high tower for the oppressed; a high tower in times of trouble.",
+                  "verse_ref_lang": {
+                    "ru": {
+                      "book": "psalms",
+                      "chapter": 9,
+                      "verse": "10"
+                    },
+                    "en": {
+                      "book": "psalms",
+                      "chapter": 9,
+                      "verse": "9"
+                    }
+                  }
+                },
+                {
+                  "reference_ru": "Псалом 32:20",
+                  "reference_en": "Psalm 33:20",
+                  "text_ru": "Душа наша уповает на Господа: Он — помощь наша и защита наша.",
+                  "text_en": "Our soul has waited for the Lord. He is our help and our shield.",
+                  "verse_ref_lang": {
+                    "ru": {
+                      "book": "psalms",
+                      "chapter": 32,
+                      "verse": "20"
+                    },
+                    "en": {
+                      "book": "psalms",
+                      "chapter": 33,
+                      "verse": "20"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-07-23",
+              "day": 109,
+              "topic": {
+                "ru": "Радость спасения",
+                "en": "The Joy of Salvation"
+              },
+              "reference_ru": "Псалом 50:14",
+              "reference_en": "Psalm 51:12",
+              "text_ru": "Возврати мне радость спасения Твоего и Духом владычественным утверди меня.",
+              "text_en": "Restore to me the joy of your salvation. Uphold me with a willing spirit.",
+              "verse_ref_lang": {
+                "ru": {
+                  "book": "psalms",
+                  "chapter": 50,
+                  "verse": "14"
+                },
+                "en": {
+                  "book": "psalms",
+                  "chapter": 51,
+                  "verse": "12"
+                }
+              },
+              "interpretation_ru": "Настоящая радость рождается не из обстоятельств, а из осознания Божьего спасения и Его постоянной благодати.",
+              "interpretation_en": "True joy comes not from circumstances but from God's salvation and His continual grace.",
+              "related": [
+                {
+                  "reference_ru": "Исаия 61:10",
+                  "reference_en": "Isaiah 61:10",
+                  "text_ru": "Радостью буду радоваться о Господе, возвеселится душа моя о Боге моем; ибо Он облёк меня в ризы спасения, одеждою правды одел меня.",
+                  "text_en": "I will greatly rejoice in the Lord. My soul shall be joyful in my God, for he has clothed me with the garments of salvation. He has covered me with the robe of righteousness.",
+                  "verse_ref": {
+                    "book": "isaiah",
+                    "chapter": 61,
+                    "verse": "10"
+                  }
+                },
+                {
+                  "reference_ru": "1 Петра 1:8-9",
+                  "reference_en": "1 Peter 1:8-9",
+                  "text_ru": "Которого, не видев, любите, и Которого доселе не видя, но веруя в Него, радуетесь радостью неизреченною и преславною, достигая наконец верою вашею спасения душ.",
+                  "text_en": "Whom not having known you love. In him, though now you don't see him, yet believing, you rejoice greatly with joy that is unspeakable and full of glory, receiving the result of your faith, the salvation of your souls.",
+                  "verse_ref": {
+                    "book": "1-peter",
+                    "chapter": 1,
+                    "verse": "8-9"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-07-24",
+              "day": 110,
+              "topic": {
+                "ru": "Блажен уповающий на Господа",
+                "en": "Blessed Is the One Who Trusts in the Lord"
+              },
+              "reference_ru": "Иеремия 17:7",
+              "reference_en": "Jeremiah 17:7",
+              "text_ru": "Благословен человек, который надеется на Господа, и которого упование — Господь.",
+              "text_en": "Blessed is the man who trusts in the Lord, and whose confidence is in the Lord.",
+              "verse_ref": {
+                "book": "jeremiah",
+                "chapter": 17,
+                "verse": "7"
+              },
+              "interpretation_ru": "Господь благословляет тех, кто делает Его своей надеждой и основанием жизни, независимо от обстоятельств.",
+              "interpretation_en": "The Lord blesses those who make Him their hope and the foundation of their lives, regardless of circumstances.",
+              "related": [
+                {
+                  "reference_ru": "Притчи 3:6",
+                  "reference_en": "Proverbs 3:6",
+                  "text_ru": "Во всех путях твоих познавай Его, и Он направит стези твои.",
+                  "text_en": "In all your ways acknowledge him, and he will make your paths straight.",
+                  "verse_ref": {
+                    "book": "proverbs",
+                    "chapter": 3,
+                    "verse": "6"
+                  }
+                },
+                {
+                  "reference_ru": "Псалом 24:9",
+                  "reference_en": "Psalm 25:9",
+                  "text_ru": "Направляет кротких к правде, и научает кротких путям Своим.",
+                  "text_en": "He guides the humble in justice. He teaches the humble his way.",
+                  "verse_ref_lang": {
+                    "ru": {
+                      "book": "psalms",
+                      "chapter": 24,
+                      "verse": "9"
+                    },
+                    "en": {
+                      "book": "psalms",
+                      "chapter": 25,
+                      "verse": "9"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "daily-2026-07-25",
+              "day": 111,
+              "topic": {
+                "ru": "Радуйся в Господе",
+                "en": "Rejoice in the Lord"
+              },
+              "reference_ru": "Аввакум 3:18",
+              "reference_en": "Habakkuk 3:18",
+              "text_ru": "Но и тогда я буду радоваться о Господе и веселиться о Боге спасения моего.",
+              "text_en": "Yet I will rejoice in the Lord. I will be joyful in the God of my salvation.",
+              "verse_ref": {
+                "book": "habakkuk",
+                "chapter": 3,
+                "verse": "18"
+              },
+              "interpretation_ru": "Радость в Господе не зависит от обстоятельств.",
+              "interpretation_en": "Joy in the Lord does not depend on circumstances.",
+              "related": [
+                {
+                  "reference_ru": "Псалом 129:5",
+                  "reference_en": "Psalm 130:5",
+                  "text_ru": "Надеюсь на Господа, надеется душа моя; на слово Его уповаю.",
+                  "text_en": "I wait for the Lord. My soul waits. I hope in his word.",
+                  "verse_ref_lang": {
+                    "ru": {
+                      "book": "psalms",
+                      "chapter": 129,
+                      "verse": "5"
+                    },
+                    "en": {
+                      "book": "psalms",
+                      "chapter": 130,
+                      "verse": "5"
+                    }
+                  }
+                },
+                {
+                  "reference_ru": "Исаия 25:1",
+                  "reference_en": "Isaiah 25:1",
+                  "text_ru": "Господи! Ты Бог мой; превознесу Тебя, восхвалю имя Твое, ибо Ты совершил дивное; предопределения древние истинны. Аминь.",
+                  "text_en": "Lord, you are my God. I will exalt you. I will praise your name, for you have done wonderful things, even faithful and true plans formed long ago.",
+                  "verse_ref": {
+                    "book": "isaiah",
+                    "chapter": 25,
+                    "verse": "1"
+                  }
+                }
+              ]
+            }
   ]
 }
