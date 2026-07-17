@@ -802,7 +802,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 <strong>${escapeHtml(dayText)}</strong>
                 ${todayText}
                 <span>${escapeHtml(topic)}</span><span class="daily-verse-search-colon">:</span>
-                <span>${escapeHtml(reference)}</span>
+                <span class="daily-verse-search-reference">${escapeHtml(reference)}</span>
               </span>
             </button>
           `;

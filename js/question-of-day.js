@@ -5,9 +5,9 @@ import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 
 //
 // PROD date Anpril 30 2026
-const START_DATE = "2026-04-30";
+//const START_DATE = "2026-04-30";
 //test  
-//const START_DATE = "2026-02-01";
+const START_DATE = "2026-02-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -665,7 +665,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                 ${todayText}
                 <span>${escapeHtml(questionText)}</span>
                 <span class="daily-verse-search-colon">:</span>
-                <span>${escapeHtml(reference)}</span>
+                <span class="daily-verse-search-reference">${escapeHtml(reference)}</span>
               </span>
             </button>
           `;

@@ -344,7 +344,7 @@
               ? `
                 <h3 class="scripture-heading">
                   <span class="scripture-topic">${esc(topic)} —</span>
-                  <span class="scripture-topic">${esc(refText)}</span>
+                  <span class="scripture-topic bible-reference">${esc(refText)}</span>
                   ${
                     link
                       ? `<a class="scripture-book-link main-book-link"

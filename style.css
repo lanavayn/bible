@@ -3106,10 +3106,24 @@ table.book-dates th:nth-child(2) {
   margin-right: 6px;
 
   font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
   color: #5b3d1f;
 
   cursor: default;
   pointer-events: none;
+}
+
+/* Uniform OpenType numerals for Bible references across all surfaces. */
+.scripture-reference,
+.scripture-related-ref,
+.daily-verse-inline-reference-text,
+.daily-verse-search-reference,
+.verse-slider .ref,
+.verse-slider .verse-related-ref,
+.bible-reference {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 .daily-date-text {
@@ -4020,6 +4034,10 @@ table.book-dates th:nth-child(2) {
 #question-of-day .daily-verse-date-row {
   margin-top: 0 !important;
   padding-top: 0 !important;
+}
+
+#question-of-day .daily-verse-date-row + .dv-close + .daily-verse-title-inline {
+  margin-top: 0.2rem;
 }
 
 .daily-card-kicker {
@@ -5034,6 +5052,10 @@ body.daily-verse-search-open {
     grid-template-columns: 2.85rem minmax(0, 1fr) 2.85rem;
     align-items: start;
     gap: 0.3rem;
+  }
+
+  #question-of-day .daily-verse-date-row + .dv-close + .daily-verse-title-inline {
+    margin-top: 0.5rem;
   }
 
   #question-of-day .daily-verse-date-center {

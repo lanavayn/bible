@@ -1109,6 +1109,307 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-79",
+      "day": 79,
+      "topic_ru": "Ожидание Господа",
+      "topic_en": "Waiting on the Lord",
+      "question_ru": "Почему Господь иногда заставляет нас ждать?",
+      "question_en": "Why does the Lord sometimes make us wait?",
+      "reference_ru": "Исаия 30:18",
+      "reference_en": "Isaiah 30:18",
+      "text_ru": "И потому Господь медлит, чтобы помиловать вас, и потому ещё удерживается, чтобы сжалиться над вами; ибо Господь есть Бог правды: блаженны все уповающие на Него!",
+      "text_en": "Therefore the Lord will wait, that he may be gracious to you; and therefore he will be exalted, that he may have mercy on you, for the Lord is a God of justice. Blessed are all those who wait for him.",
+      "verse_ref": {
+        "book": "Isaiah",
+        "chapter": 30,
+        "verse": "18"
+      },
+      "answer_ru": "Иногда Господь допускает ожидание, чтобы научить нас терпению, укрепить доверие к Нему и дать ответ в наилучшее время.",
+      "answer_en": "Sometimes the Lord allows us to wait so that He can teach us patience, strengthen our trust in Him, and answer at the best time.",
+      "reflection_ru": "Ожидание не означает, что Господь забыл нас.",
+      "reflection_en": "Waiting does not mean that the Lord has forgotten us.",
+      "related": [
+        {
+          "reference_ru": "Псалом 36:7",
+          "reference_en": "Psalm 37:7",
+          "text_ru": "Покорись Господу и надейся на Него. Не ревнуй успевающему в пути своём, человеку лукавствующему.",
+          "text_en": "Rest in the Lord, and wait patiently for him. Don’t fret because of him who prospers in his way, because of the man who makes wicked plots happen.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 36,
+              "verse": "7"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 37,
+              "verse": "7"
+            }
+          }
+        },
+        {
+          "reference_ru": "Иакова 5:7-8",
+          "reference_en": "James 5:7-8",
+          "text_ru": "Итак, братия, будьте долготерпеливы до пришествия Господня. Вот, земледелец ждёт драгоценного плода от земли и для него терпит долго, пока получит дождь ранний и поздний. Долготерпите и вы, укрепите сердца ваши, потому что пришествие Господне приближается.",
+          "text_en": "Be patient therefore, brothers, until the coming of the Lord. Behold, the farmer waits for the precious fruit of the earth, being patient over it, until it receives the early and late rain. You also be patient. Establish your hearts, for the coming of the Lord is at hand.",
+          "verse_ref": {
+            "book": "James",
+            "chapter": 5,
+            "verse": "7-8"
+          }
+        },
+        {
+          "reference_ru": "Римлянам 12:12",
+          "reference_en": "Romans 12:12",
+          "text_ru": "Утешайтесь надеждою; в скорби будьте терпеливы, в молитве постоянны.",
+          "text_en": "Rejoicing in hope, enduring in troubles, continuing steadfastly in prayer.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 12,
+            "verse": "12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-80",
+      "day": 80,
+      "topic_ru": "Мудрые решения",
+      "topic_en": "Wise Decisions",
+      "question_ru": "Как принимать мудрые решения?",
+      "question_en": "How can we make wise decisions?",
+      "reference_ru": "Притчи 15:22",
+      "reference_en": "Proverbs 15:22",
+      "text_ru": "Без совета предприятия расстроятся, а при множестве советников они состоятся.",
+      "text_en": "Where there is no counsel, plans fail; but in a multitude of counselors they are established.",
+      "verse_ref": {
+        "book": "Proverbs",
+        "chapter": 15,
+        "verse": "22"
+      },
+      "answer_ru": "Господь может направлять нас через мудрые советы других людей.",
+      "answer_en": "The Lord can guide us through the wise counsel of others.",
+      "reflection_ru": "Господь может направлять нас через мудрые советы других людей.",
+      "reflection_en": "The Lord can guide us through the wise counsel of others.",
+      "related": [
+        {
+          "reference_ru": "Притчи 11:14",
+          "reference_en": "Proverbs 11:14",
+          "text_ru": "При недостатке попечения падает народ, а при многих советниках благоденствует.",
+          "text_en": "Where there is no wise guidance, the nation falls, but in the multitude of counselors there is victory.",
+          "verse_ref": {
+            "book": "Proverbs",
+            "chapter": 11,
+            "verse": "14"
+          }
+        },
+        {
+          "reference_ru": "Притчи 19:20",
+          "reference_en": "Proverbs 19:20",
+          "text_ru": "Слушайся совета и принимай обличение, чтобы сделаться тебе впоследствии мудрым.",
+          "text_en": "Listen to counsel and receive instruction, that you may be wise in your latter end.",
+          "verse_ref": {
+            "book": "Proverbs",
+            "chapter": 19,
+            "verse": "20"
+          }
+        },
+        {
+          "reference_ru": "Филиппийцам 1:9-10",
+          "reference_en": "Philippians 1:9-10",
+          "text_ru": "И молюсь о том, чтобы любовь ваша ещё более и более возрастала в познании и всяком чувстве, чтобы, познавая лучшее, вы были чисты и непреткновенны в день Христов.",
+          "text_en": "This I pray, that your love may abound yet more and more in knowledge and all discernment, so that you may approve the things that are excellent, that you may be sincere and without offense to the day of Christ.",
+          "verse_ref": {
+            "book": "Philippians",
+            "chapter": 1,
+            "verse": "9-10"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-81",
+      "day": 81,
+      "topic_ru": "Мир в сердце",
+      "topic_en": "Peace in the Heart",
+      "question_ru": "Как сохранить мир в сердце?",
+      "question_en": "How can we keep peace in our hearts?",
+      "reference_ru": "Псалом 4:9",
+      "reference_en": "Psalm 4:8",
+      "text_ru": "Спокойно ложусь я и сплю, ибо Ты, Господи, един даёшь мне жить в безопасности.",
+      "text_en": "In peace I will both lay myself down and sleep, for you alone, Lord, make me live in safety.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Psalms",
+          "chapter": 4,
+          "verse": "9"
+        },
+        "en": {
+          "book": "Psalms",
+          "chapter": 4,
+          "verse": "8"
+        }
+      },
+      "answer_ru": "Мир сохраняется в сердце, когда человек доверяет свою безопасность Господу и помнит, что Он рядом даже среди тревожных обстоятельств.",
+      "answer_en": "Peace remains in the heart when a person entrusts their safety to the Lord and remembers that He is near even in troubling circumstances.",
+      "reflection_ru": "Сердце может успокоиться, когда опирается на Господа.",
+      "reflection_en": "The heart can rest when it relies on the Lord.",
+      "related": [
+        {
+          "reference_ru": "Притчи 12:20",
+          "reference_en": "Proverbs 12:20",
+          "text_ru": "Коварство — в сердце злоумышленников, радость — у миротворцев.",
+          "text_en": "Deceit is in the heart of those who plot evil, but joy comes to the promoters of peace.",
+          "verse_ref": {
+            "book": "Proverbs",
+            "chapter": 12,
+            "verse": "20"
+          }
+        },
+        {
+          "reference_ru": "Исаия 32:17",
+          "reference_en": "Isaiah 32:17",
+          "text_ru": "И делом правды будет мир, и плодом правосудия — спокойствие и безопасность вовеки.",
+          "text_en": "The work of righteousness will be peace, and the effect of righteousness, quietness and confidence forever.",
+          "verse_ref": {
+            "book": "Isaiah",
+            "chapter": 32,
+            "verse": "17"
+          }
+        },
+        {
+          "reference_ru": "Псалом 28:11",
+          "reference_en": "Psalm 29:11",
+          "text_ru": "Господь даст силу народу Своему, Господь благословит народ Свой миром.",
+          "text_en": "The Lord will give strength to his people. The Lord will bless his people with peace.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 28,
+              "verse": "11"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 29,
+              "verse": "11"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-82",
+      "day": 82,
+      "topic_ru": "Послушание Господу",
+      "topic_en": "Obedience to the Lord",
+      "question_ru": "Почему важно слушаться Господа?",
+      "question_en": "Why is it important to obey the Lord?",
+      "reference_ru": "Второзаконие 5:33",
+      "reference_en": "Deuteronomy 5:33",
+      "text_ru": "Ходите по тому пути, по которому повелел вам Господь, Бог ваш, дабы вы были живы, и хорошо было вам, и прожили много времени на той земле, которую получите во владение.",
+      "text_en": "You shall walk in all the way which the Lord your God has commanded you, that you may live, and that it may be well with you, and that you may prolong your days in the land which you shall possess.",
+      "verse_ref": {
+        "book": "Deuteronomy",
+        "chapter": 5,
+        "verse": "33"
+      },
+      "answer_ru": "Господь зовёт нас идти путём, который приносит жизнь.",
+      "answer_en": "The Lord calls us to walk in the way that brings life.",
+      "reflection_ru": "Господь зовёт нас идти путём, который приносит жизнь.",
+      "reflection_en": "The Lord calls us to walk in the way that brings life.",
+      "related": [
+        {
+          "reference_ru": "1 Царств 15:22",
+          "reference_en": "1 Samuel 15:22",
+          "text_ru": "И отвечал Самуил: неужели всесожжения и жертвы столько же приятны Господу, как послушание гласу Господа? Послушание лучше жертвы и повиновение лучше тука овнов.",
+          "text_en": "Samuel said, “Has the Lord as great delight in burnt offerings and sacrifices as in obeying the Lord’s voice? Behold, to obey is better than sacrifice, and to listen than the fat of rams.”",
+          "verse_ref": {
+            "book": "1-Samuel",
+            "chapter": 15,
+            "verse": "22"
+          }
+        },
+        {
+          "reference_ru": "Луки 6:46",
+          "reference_en": "Luke 6:46",
+          "text_ru": "Что вы зовёте Меня: Господи! Господи! — и не делаете того, что Я говорю?",
+          "text_en": "Why do you call me, ‘Lord, Lord,’ and don’t do the things which I say?",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 6,
+            "verse": "46"
+          }
+        },
+        {
+          "reference_ru": "1 Иоанна 2:5",
+          "reference_en": "1 John 2:5",
+          "text_ru": "А кто соблюдает слово Его, в том истинно любовь Божия совершилась: из сего узнаём, что мы в Нём.",
+          "text_en": "But whoever keeps his word, God’s love has most certainly been perfected in him. This is how we know that we are in him.",
+          "verse_ref": {
+            "book": "1-John",
+            "chapter": 2,
+            "verse": "5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-83",
+      "day": 83,
+      "topic_ru": "Надежда на будущее",
+      "topic_en": "Hope for the Future",
+      "question_ru": "Какую надежду Господь даёт на будущее?",
+      "question_en": "What hope does the Lord give for the future?",
+      "reference_ru": "1 Петра 1:3",
+      "reference_en": "1 Peter 1:3",
+      "text_ru": "Благословен Бог и Отец Господа нашего Иисуса Христа, по великой Своей милости возродивший нас воскресением Иисуса Христа из мёртвых к упованию живому.",
+      "text_en": "Blessed be the God and Father of our Lord Jesus Christ, who according to his great mercy became our father again to a living hope through the resurrection of Jesus Christ from the dead.",
+      "verse_ref": {
+        "book": "1-Peter",
+        "chapter": 1,
+        "verse": "3"
+      },
+      "answer_ru": "Господь даёт живую надежду: воскресение, вечную жизнь со Христом и уверенность, что нынешние трудности не являются концом истории.",
+      "answer_en": "The Lord gives a living hope: resurrection, eternal life with Christ, and confidence that present troubles are not the end of the story.",
+      "reflection_ru": "Будущее верующего основано на воскресении Иисуса Христа.",
+      "reflection_en": "The believer’s future is founded on the resurrection of Jesus Christ.",
+      "related": [
+        {
+          "reference_ru": "Евреям 6:19",
+          "reference_en": "Hebrews 6:19",
+          "text_ru": "Которая для души есть как бы якорь безопасный и крепкий, и входит во внутреннейшее за завесу.",
+          "text_en": "This hope we have as an anchor of the soul, a hope both sure and steadfast and entering into that which is within the veil.",
+          "verse_ref": {
+            "book": "Hebrews",
+            "chapter": 6,
+            "verse": "19"
+          }
+        },
+        {
+          "reference_ru": "Колоссянам 1:5",
+          "reference_en": "Colossians 1:5",
+          "text_ru": "В надежде на уготованное вам на небесах, о чём вы прежде слышали в истинном слове благовествования.",
+          "text_en": "Because of the hope which is laid up for you in the heavens, of which you heard before in the word of the truth of the Good News.",
+          "verse_ref": {
+            "book": "Colossians",
+            "chapter": 1,
+            "verse": "5"
+          }
+        },
+        {
+          "reference_ru": "1 Иоанна 3:2-3",
+          "reference_en": "1 John 3:2-3",
+          "text_ru": "Возлюбленные! мы теперь дети Божии; но ещё не открылось, что будем. Знаем только, что, когда откроется, будем подобны Ему, потому что увидим Его, как Он есть. И всякий, имеющий сию надежду на Него, очищает себя так, как Он чист.",
+          "text_en": "Beloved, now we are children of God, and it is not yet revealed what we will be; but we know that when he is revealed, we will be like him, for we will see him just as he is. Everyone who has this hope set on him purifies himself, even as he is pure.",
+          "verse_ref": {
+            "book": "1-John",
+            "chapter": 3,
+            "verse": "2-3"
+          }
+        }
+      ]
     }    
   ]
 }
