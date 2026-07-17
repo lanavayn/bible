@@ -3310,6 +3310,84 @@ table.book-dates th:nth-child(2) {
   color: #9c3b2f;
 }
 
+.daily-notification-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0.85rem auto 0;
+  padding: 0.75rem 0.85rem;
+  max-width: 27rem;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  background: var(--color-panel-soft);
+  color: var(--color-text);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(80, 54, 28, 0.06);
+}
+
+.daily-notification-title {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.daily-notification-message {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.daily-notification-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.daily-notification-btn,
+.daily-notification-link {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.34rem 0.8rem;
+  font: inherit;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.daily-notification-btn {
+  background: #fff9ec;
+  color: var(--color-text);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.daily-notification-link {
+  background: transparent;
+  color: #6a4a35;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.daily-notification-btn:hover,
+.daily-notification-link:hover {
+  background: #fff3dc;
+}
+
+.daily-notification-btn:disabled,
+.daily-notification-link:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.daily-notification-status {
+  min-height: 1em;
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+}
+
+.daily-notification-status[data-type="error"] {
+  color: #9c3b2f;
+}
+
 .daily-verse-header-right {
   display: flex;
   align-items: center;

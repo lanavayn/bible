@@ -1,0 +1,6 @@
+[functions]
+  directory = "netlify/functions"
+  included_files = ["data/daily/*.json"]
+
+[functions."daily-verse-notification"]
+  schedule = "0 13,14 * * *"

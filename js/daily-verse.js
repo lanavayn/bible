@@ -2,6 +2,7 @@ import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
+import { initDailyVerseNotifications, renderDailyVerseNotificationControls } from "./onesignal-notifications.js";
 
 const easterDates = {
   2026: "2026-04-05",
@@ -450,6 +451,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
               contentId: verse.day,
               language: lang
             })}
+
+            ${renderDailyVerseNotificationControls({ language: lang })}
             
         </section>
         `;
@@ -630,6 +633,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   
         initDailyVerseTooltip(root);
         initFeedbackControls(root);
+        initDailyVerseNotifications(root);
       }
       function openDailyVerseSearch() {
         const availableVerses = verses
