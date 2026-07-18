@@ -121,7 +121,6 @@ function buildNotificationPayload({ force = false } = {}) {
       ru: topic,
       en: topic
     },
-    url,
     web_url: url,
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
@@ -173,7 +172,7 @@ async function sendDailyVerseNotification(options = {}) {
   console.info("[Bible for All] Daily Verse notification selected content.", {
     day: payload.data.day,
     calculatedDay: payload.data.calculated_day,
-    url: payload.url,
+    url: payload.web_url,
     idempotencyKey: payload.idempotency_key,
     includedSegments: payload.included_segments
   });
@@ -214,7 +213,7 @@ async function sendDailyVerseNotification(options = {}) {
   return {
     skipped: false,
     day: payload.data.day,
-    url: payload.url,
+    url: payload.web_url,
     idempotency_key: payload.idempotency_key,
     oneSignal: body
   };
