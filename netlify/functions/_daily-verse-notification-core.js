@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const TORONTO_TIME_ZONE = process.env.NOTIFICATION_TZ || "America/Toronto";
 const DEFAULT_SITE_URL = "https://bibleforall.ca";
@@ -130,8 +131,8 @@ function buildNotificationPayload({ force = false } = {}) {
     web_url: url,
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
-      ? `daily-verse-ru-uat-manual-${Date.now()}-day-${day}`
-      : `daily-verse-ru-uat-${dateKey}-day-${day}`,
+      ? crypto.randomUUID()
+      : createIdempotencyUuid(`daily-verse-ru-uat-${dateKey}-day-${day}`),
     data: {
       content_type: "daily-verse",
       language: "ru",
@@ -231,6 +232,17 @@ function requireEnv(name) {
     throw new Error(`Missing required environment variable: ${name}`);
   }
   return value;
+}
+
+function createIdempotencyUuid(seed) {
+  const hex = crypto.createHash("sha256").update(seed).digest("hex").slice(0, 32);
+  return [
+    hex.slice(0, 8),
+    hex.slice(8, 12),
+    `5${hex.slice(13, 16)}`,
+    `${((parseInt(hex.slice(16, 18), 16) & 0x3f) | 0x80).toString(16).padStart(2, "0")}${hex.slice(18, 20)}`,
+    hex.slice(20, 32)
+  ].join("-");
 }
 
 module.exports = {
