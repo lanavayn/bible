@@ -112,13 +112,7 @@ function buildNotificationPayload({ force = false } = {}) {
   return {
     app_id: requireEnv("ONESIGNAL_APP_ID"),
     target_channel: "push",
-    filters: [
-      { field: "tag", key: "lang", relation: "=", value: "ru" },
-      { operator: "AND" },
-      { field: "tag", key: "daily_verse_ru", relation: "=", value: "true" },
-      { operator: "AND" },
-      { field: "tag", key: "notifications_phase", relation: "=", value: "uat" }
-    ],
+    included_segments: ["Total Subscriptions"],
     headings: {
       ru: "Стих дня",
       en: "Стих дня"
@@ -181,13 +175,13 @@ async function sendDailyVerseNotification(options = {}) {
     calculatedDay: payload.data.calculated_day,
     url: payload.url,
     idempotencyKey: payload.idempotency_key,
-    filters: payload.filters
+    includedSegments: payload.included_segments
   });
 
-  const response = await fetch("https://onesignal.com/api/v1/notifications", {
+  const response = await fetch("https://api.onesignal.com/notifications?c=push", {
     method: "POST",
     headers: {
-      "Authorization": `Basic ${requireEnv("ONESIGNAL_REST_API_KEY")}`,
+      "Authorization": `Key ${requireEnv("ONESIGNAL_REST_API_KEY")}`,
       "Content-Type": "application/json; charset=utf-8"
     },
     body: JSON.stringify(payload)
