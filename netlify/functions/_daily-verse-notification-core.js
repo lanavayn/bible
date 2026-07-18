@@ -145,12 +145,28 @@ function buildNotificationPayload({ force = false } = {}) {
 
 function shouldSendNow(date = new Date()) {
   const parts = getTorontoParts(date);
-  return parts.hour === "09";
+  return parts.hour === "09" && parts.minute === "00";
 }
 
 async function sendDailyVerseNotification(options = {}) {
+  const startDate = new Date();
+  const startParts = getTorontoParts(startDate);
+  console.info("[Bible for All] Daily Verse notification function started.", {
+    isoTime: startDate.toISOString(),
+    torontoTime: `${startParts.year}-${startParts.month}-${startParts.day} ${startParts.hour}:${startParts.minute}:${startParts.second}`,
+    timeZone: TORONTO_TIME_ZONE,
+    force: Boolean(options.force),
+    hasAppId: Boolean(process.env.ONESIGNAL_APP_ID),
+    hasRestApiKey: Boolean(process.env.ONESIGNAL_REST_API_KEY),
+    siteUrl: process.env.SITE_URL || DEFAULT_SITE_URL
+  });
+
   if (!options.force && !shouldSendNow()) {
-    const parts = getTorontoParts(new Date());
+    const parts = getTorontoParts(startDate);
+    console.info("[Bible for All] Daily Verse notification skipped outside the 09:00 Toronto send window.", {
+      localTime: `${parts.hour}:${parts.minute}:${parts.second}`
+    });
+
     return {
       skipped: true,
       reason: `Current ${TORONTO_TIME_ZONE} time is ${parts.hour}:${parts.minute}, not 09:00.`,
@@ -159,6 +175,14 @@ async function sendDailyVerseNotification(options = {}) {
   }
 
   const payload = buildNotificationPayload(options);
+  console.info("[Bible for All] Daily Verse notification selected content.", {
+    day: payload.data.day,
+    calculatedDay: payload.data.calculated_day,
+    url: payload.url,
+    idempotencyKey: payload.idempotency_key,
+    filters: payload.filters
+  });
+
   const response = await fetch("https://onesignal.com/api/v1/notifications", {
     method: "POST",
     headers: {
@@ -176,6 +200,14 @@ async function sendDailyVerseNotification(options = {}) {
   } catch {
     body = { raw: responseText };
   }
+
+  console.info("[Bible for All] OneSignal notification response received.", {
+    status: response.status,
+    ok: response.ok,
+    notificationId: body?.id || null,
+    recipients: body?.recipients ?? null,
+    errors: body?.errors || null
+  });
 
   if (!response.ok) {
     const error = new Error(`OneSignal send failed with ${response.status}.`);
