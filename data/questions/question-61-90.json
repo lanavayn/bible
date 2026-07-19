@@ -1410,6 +1410,67 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-84",
+      "day": 84,
+      "topic_ru": "Имя Господа",
+      "topic_en": "God's Name",
+      "question_ru": "Почему нельзя произносить имя Господа напрасно?",
+      "question_en": "Why should we not use the Lord's name in vain?",
+      "reference_ru": "Исход 20:7",
+      "reference_en": "Exodus 20:7",
+      "text_ru": "Не произноси имени Господа, Бога твоего, напрасно; ибо Господь не оставит без наказания того, кто произносит имя Его напрасно.",
+      "text_en": "You shall not take the name of the Lord your God in vain, for the Lord will not hold him guiltless who takes his name in vain.",
+      "verse_ref": {
+        "book": "Exodus",
+        "chapter": 20,
+        "verse": "7"
+      },
+      "answer_ru": "Имя Господа свято. Бог хочет, чтобы мы произносили Его имя с почтением и уважением.",
+      "answer_en": "The Lord's name is holy. God wants us to speak His name with reverence and respect.",
+      "related": [
+        {
+          "reference_ru": "Левит 19:12",
+          "reference_en": "Leviticus 19:12",
+          "text_ru": "Не клянитесь именем Моим во лжи и не бесчести имени Бога твоего. Я Господь.",
+          "text_en": "You shall not swear by my name falsely, and profane the name of your God. I am the Lord.",
+          "verse_ref": {
+            "book": "Leviticus",
+            "chapter": 19,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "Екклесиаст 5:1",
+          "reference_en": "Ecclesiastes 5:2",
+          "text_ru": "Не торопись языком твоим, и сердце твое да не спешит произнести слово пред Богом; потому что Бог на небе, а ты на земле; поэтому слова твои да будут немноги.",
+          "text_en": "Don't be rash with your mouth, and don't let your heart be hasty to utter anything before God. For God is in heaven and you on earth; therefore let your words be few.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Ecclesiastes",
+              "chapter": 5,
+              "verse": "1"
+            },
+            "en": {
+              "book": "Ecclesiastes",
+              "chapter": 5,
+              "verse": "2"
+            }
+          }
+        },
+        {
+          "reference_ru": "Малахия 1:6",
+          "reference_en": "Malachi 1:6",
+          "text_ru": "Сын чтит отца и раб — господина своего; если Я отец, то где почтение ко Мне? и если Я Господь, то где благоговение предо Мною? говорит Господь Саваоф.",
+          "text_en": "A son honors his father, and a servant his master. If then I am a father, where is my honor? If I am a master, where is the respect due me? says the Lord of Armies.",
+          "verse_ref": {
+            "book": "Malachi",
+            "chapter": 1,
+            "verse": "6"
+          }
+        }
+      ]
     }    
   ]
 }
