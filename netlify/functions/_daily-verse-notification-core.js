@@ -137,11 +137,6 @@ function buildNotificationPayload({ force = false } = {}) {
   };
 }
 
-function shouldSendNow(date = new Date()) {
-  const parts = getTorontoParts(date);
-  return parts.hour === "09" && parts.minute === "00";
-}
-
 async function sendDailyVerseNotification(options = {}) {
   const startDate = new Date();
   const startParts = getTorontoParts(startDate);
@@ -155,18 +150,7 @@ async function sendDailyVerseNotification(options = {}) {
     siteUrl: process.env.SITE_URL || DEFAULT_SITE_URL
   });
 
-  if (!options.force && !shouldSendNow()) {
-    const parts = getTorontoParts(startDate);
-    console.info("[Bible for All] Daily Verse notification skipped outside the 09:00 Toronto send window.", {
-      localTime: `${parts.hour}:${parts.minute}:${parts.second}`
-    });
-
-    return {
-      skipped: true,
-      reason: `Current ${TORONTO_TIME_ZONE} time is ${parts.hour}:${parts.minute}, not 09:00.`,
-      localTime: `${parts.hour}:${parts.minute}:${parts.second}`
-    };
-  }
+  console.info("[Bible for All] Daily Verse notification will run. Timing is controlled by Netlify cron.");
 
   const payload = buildNotificationPayload(options);
   console.info("[Bible for All] Daily Verse notification selected content.", {
@@ -244,6 +228,5 @@ module.exports = {
   getDayNumberFromEaster,
   getRussianDailyVerseUrl,
   getTorontoParts,
-  sendDailyVerseNotification,
-  shouldSendNow
+  sendDailyVerseNotification
 };
