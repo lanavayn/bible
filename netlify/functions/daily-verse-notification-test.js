@@ -12,7 +12,7 @@ exports.handler = async event => {
   }
 
   try {
-    const result = await sendDailyVerseNotification({ force: true });
+    const result = await sendDailyVerseNotification({ force: true, source: "manual-test" });
     console.info("[Bible for All] Manual Daily Verse notification test result:", result);
 
     return {

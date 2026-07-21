@@ -4,6 +4,7 @@ const crypto = require("crypto");
 
 const TORONTO_TIME_ZONE = process.env.NOTIFICATION_TZ || "America/Toronto";
 const DEFAULT_SITE_URL = "https://bibleforall.ca";
+const ONESIGNAL_NOTIFICATION_ENDPOINT = "https://api.onesignal.com/notifications?c=push";
 const DAILY_JSON_FILES = [
   "daily-1-30.json",
   "daily-31-60.json",
@@ -140,14 +141,24 @@ function buildNotificationPayload({ force = false } = {}) {
 async function sendDailyVerseNotification(options = {}) {
   const startDate = new Date();
   const startParts = getTorontoParts(startDate);
+  const appId = process.env.ONESIGNAL_APP_ID || "";
+  const credentialContext = {
+    source: options.source || (options.force ? "manual-test" : "scheduled"),
+    appIdMasked: maskValue(appId),
+    appIdEnvName: "ONESIGNAL_APP_ID",
+    restApiKeyEnvName: "ONESIGNAL_REST_API_KEY",
+    hasAppId: Boolean(appId),
+    hasRestApiKey: Boolean(process.env.ONESIGNAL_REST_API_KEY),
+    endpoint: ONESIGNAL_NOTIFICATION_ENDPOINT
+  };
+
   console.info("[Bible for All] Daily Verse notification function started.", {
     isoTime: startDate.toISOString(),
     torontoTime: `${startParts.year}-${startParts.month}-${startParts.day} ${startParts.hour}:${startParts.minute}:${startParts.second}`,
     timeZone: TORONTO_TIME_ZONE,
     force: Boolean(options.force),
-    hasAppId: Boolean(process.env.ONESIGNAL_APP_ID),
-    hasRestApiKey: Boolean(process.env.ONESIGNAL_REST_API_KEY),
-    siteUrl: process.env.SITE_URL || DEFAULT_SITE_URL
+    siteUrl: process.env.SITE_URL || DEFAULT_SITE_URL,
+    credentialContext
   });
 
   console.info("[Bible for All] Daily Verse notification will run. Timing is controlled by Netlify cron.");
@@ -158,10 +169,11 @@ async function sendDailyVerseNotification(options = {}) {
     calculatedDay: payload.data.calculated_day,
     url: payload.web_url,
     idempotencyKey: payload.idempotency_key,
-    includedSegments: payload.included_segments
+    includedSegments: payload.included_segments,
+    requestPayload: maskNotificationPayload(payload)
   });
 
-  const response = await fetch("https://api.onesignal.com/notifications?c=push", {
+  const response = await fetch(ONESIGNAL_NOTIFICATION_ENDPOINT, {
     method: "POST",
     headers: {
       "Authorization": `Key ${requireEnv("ONESIGNAL_REST_API_KEY")}`,
@@ -184,7 +196,8 @@ async function sendDailyVerseNotification(options = {}) {
     ok: response.ok,
     notificationId: body?.id || null,
     recipients: body?.recipients ?? null,
-    errors: body?.errors || null
+    errors: body?.errors || null,
+    oneSignalResponse: body
   });
 
   if (!response.ok) {
@@ -199,6 +212,7 @@ async function sendDailyVerseNotification(options = {}) {
     day: payload.data.day,
     url: payload.web_url,
     idempotency_key: payload.idempotency_key,
+    credentialContext,
     oneSignal: body
   };
 }
@@ -220,6 +234,19 @@ function createIdempotencyUuid(seed) {
     `${((parseInt(hex.slice(16, 18), 16) & 0x3f) | 0x80).toString(16).padStart(2, "0")}${hex.slice(18, 20)}`,
     hex.slice(20, 32)
   ].join("-");
+}
+
+function maskValue(value) {
+  if (!value) return "";
+  if (value.length <= 8) return `${value.slice(0, 2)}...${value.slice(-2)}`;
+  return `${value.slice(0, 8)}...${value.slice(-4)}`;
+}
+
+function maskNotificationPayload(payload) {
+  return {
+    ...payload,
+    app_id: maskValue(payload.app_id)
+  };
 }
 
 module.exports = {

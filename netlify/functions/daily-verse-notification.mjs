@@ -9,7 +9,7 @@ export default async function handler(request) {
       nextRun: body?.next_run || null
     });
 
-    const result = await sendDailyVerseNotification();
+    const result = await sendDailyVerseNotification({ source: "scheduled" });
     console.info("[Bible for All] Scheduled Daily Verse notification result:", result);
 
     return Response.json(result);
