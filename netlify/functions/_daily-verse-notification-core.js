@@ -194,9 +194,7 @@ async function sendDailyVerseNotification(options = {}) {
   console.info("[Bible for All] OneSignal notification response received.", {
     status: response.status,
     ok: response.ok,
-    notificationId: body?.id || null,
-    recipients: body?.recipients ?? null,
-    errors: body?.errors || null,
+    rawOneSignalResponseText: responseText,
     oneSignalResponse: body
   });
 
@@ -213,6 +211,8 @@ async function sendDailyVerseNotification(options = {}) {
     url: payload.web_url,
     idempotency_key: payload.idempotency_key,
     credentialContext,
+    oneSignalHttpStatus: response.status,
+    oneSignalRawResponseText: responseText,
     oneSignal: body
   };
 }
