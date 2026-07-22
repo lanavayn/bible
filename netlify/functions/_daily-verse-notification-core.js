@@ -103,16 +103,18 @@ function getRussianDailyVerseUrl(day) {
   return `${baseUrl}/ru/?day=${encodeURIComponent(day)}`;
 }
 
-function buildNotificationPayload({ force = false } = {}) {
+function buildNotificationPayload({ force = false, source = "" } = {}) {
   const now = new Date();
   const parts = getTorontoParts(now);
   const { day, currentDayNumber, verse } = getCurrentDailyVerse(now);
   const url = getRussianDailyVerseUrl(day);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
+  const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
   const topic = verse?.topic?.ru || "Стих дня";
 
   return {
     app_id: requireEnv("ONESIGNAL_APP_ID"),
+    name: `UAT ${notificationSource} Daily Verse - Day ${day} - ${dateKey} 14:20 EDT`,
     target_channel: "push",
     included_segments: ["Total Subscriptions"],
     headings: {
