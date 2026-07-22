@@ -135,6 +135,12 @@ const RU_COMMON_DEFINITIONS = [
 
 const RU_QUESTION_DEFINITIONS = [
   {
+    label: "Подробнее о слове «напрасно»",
+    closeLabel: "Закрыть",
+    text: "Без уважения, легкомысленно, впустую или с ложной целью. Имя Господа не следует использовать в шутках, пустых выражениях или для обмана.",
+    pattern: /(^|[^А-Яа-яЁё])(напрасно)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
     label: "Подробнее о слове «блажен»",
     closeLabel: "Закрыть",
     text: "В Синодальном переводе означает «счастлив» или «благословен Богом». Речь идёт о глубоком счастье, которое приходит от жизни с Богом.",
@@ -217,6 +223,15 @@ const EN_COMMON_DEFINITIONS = [
   }
 ];
 
+const EN_QUESTION_DEFINITIONS = [
+  {
+    label: "More about in vain",
+    closeLabel: "Close",
+    text: "Without reverence, carelessly, needlessly, or for a false purpose. The LORD’s name should not be used in jokes, empty expressions, or to deceive others.",
+    pattern: /\b(in vain)\b/gi
+  }
+];
+
 const EN_OLD_TESTAMENT_DEFINITION = {
   label: "More about LORD",
   closeLabel: "Close",
@@ -252,6 +267,10 @@ export function addInlineWordHelp(text, options = {}) {
 
   if (lang === "en") {
     definitions.push(...EN_COMMON_DEFINITIONS);
+  }
+
+  if (lang === "en" && includeQuestionTerms) {
+    definitions.push(...EN_QUESTION_DEFINITIONS);
   }
 
   return insertHelpButtons(safeText, definitions, classes);
