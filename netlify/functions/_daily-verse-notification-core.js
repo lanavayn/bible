@@ -143,8 +143,9 @@ async function sendDailyVerseNotification(options = {}) {
   const startDate = new Date();
   const startParts = getTorontoParts(startDate);
   const appId = process.env.ONESIGNAL_APP_ID || "";
+  const source = options.source || (options.force ? "manual-test" : "scheduled");
   const credentialContext = {
-    source: options.source || (options.force ? "manual-test" : "scheduled"),
+    source,
     appIdMasked: maskValue(appId),
     appIdEnvName: "ONESIGNAL_APP_ID",
     restApiKeyEnvName: "ONESIGNAL_REST_API_KEY",
@@ -163,6 +164,13 @@ async function sendDailyVerseNotification(options = {}) {
   });
 
   console.info("[Bible for All] Daily Verse notification will run. Timing is controlled by Netlify cron.");
+  console.info("[Bible for All] Daily Verse notification environment check.", {
+    source,
+    hasAppId: Boolean(process.env.ONESIGNAL_APP_ID),
+    hasRestApiKey: Boolean(process.env.ONESIGNAL_REST_API_KEY),
+    hasSiteUrl: Boolean(process.env.SITE_URL),
+    force: Boolean(options.force)
+  });
 
   const payload = buildNotificationPayload(options);
   console.info("[Bible for All] Daily Verse notification selected content.", {
@@ -172,6 +180,14 @@ async function sendDailyVerseNotification(options = {}) {
     idempotencyKey: payload.idempotency_key,
     includedSegments: payload.included_segments,
     requestPayload: maskNotificationPayload(payload)
+  });
+
+  console.info("[Bible for All] Daily Verse notification calling OneSignal.", {
+    source,
+    force: Boolean(options.force),
+    endpoint: ONESIGNAL_NOTIFICATION_ENDPOINT,
+    idempotencyKey: payload.idempotency_key,
+    appIdMasked: maskValue(payload.app_id)
   });
 
   const response = await fetch(ONESIGNAL_NOTIFICATION_ENDPOINT, {

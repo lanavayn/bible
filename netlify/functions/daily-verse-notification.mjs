@@ -3,13 +3,18 @@ import notificationCore from "./_daily-verse-notification-core.js";
 const { sendDailyVerseNotification } = notificationCore;
 
 export default async function handler(request) {
-  try {
-    const body = await readScheduleBody(request);
-    console.info("[Bible for All] Scheduled Daily Verse notification invoked by Netlify.", {
-      nextRun: body?.next_run || null
-    });
+  const startedAt = new Date();
+  const invocationType = "scheduled";
 
-    const result = await sendDailyVerseNotification({ source: "scheduled" });
+  console.info("[Bible for All] Scheduled Daily Verse notification function start.", {
+    invocationType,
+    utcTime: startedAt.toISOString(),
+    method: request?.method || null,
+    force: false
+  });
+
+  try {
+    const result = await sendDailyVerseNotification({ source: invocationType, force: false });
     console.info("[Bible for All] Scheduled Daily Verse notification result:", result);
 
     return Response.json(result);
@@ -29,11 +34,3 @@ export default async function handler(request) {
 export const config = {
   schedule: "0 15 * * *"
 };
-
-async function readScheduleBody(request) {
-  try {
-    return await request.json();
-  } catch {
-    return null;
-  }
-}
