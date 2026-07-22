@@ -110,11 +110,12 @@ function buildNotificationPayload({ force = false, source = "" } = {}) {
   const url = getRussianDailyVerseUrl(day);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
   const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
+  const scheduledTestLabel = "15:00 EDT";
   const topic = verse?.topic?.ru || "Стих дня";
 
   return {
     app_id: requireEnv("ONESIGNAL_APP_ID"),
-    name: `UAT ${notificationSource} Daily Verse - Day ${day} - ${dateKey} 14:20 EDT`,
+    name: `UAT ${notificationSource} Daily Verse TEST ${scheduledTestLabel} - Day ${day} - ${dateKey}`,
     target_channel: "push",
     included_segments: ["Total Subscriptions"],
     headings: {
@@ -129,7 +130,7 @@ function buildNotificationPayload({ force = false, source = "" } = {}) {
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
       ? crypto.randomUUID()
-      : createIdempotencyUuid(`daily-verse-ru-uat-${dateKey}-day-${day}`),
+      : createIdempotencyUuid(`daily-verse-ru-uat-scheduled-test-1500-${dateKey}-day-${day}`),
     data: {
       content_type: "daily-verse",
       language: "ru",
