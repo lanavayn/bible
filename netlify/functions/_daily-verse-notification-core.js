@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const TORONTO_TIME_ZONE = process.env.NOTIFICATION_TZ || "America/Toronto";
 const DEFAULT_SITE_URL = "https://bibleforall.ca";
 const ONESIGNAL_NOTIFICATION_ENDPOINT = "https://api.onesignal.com/notifications?c=push";
+const ONESIGNAL_NOTIFICATION_VIEW_ENDPOINT = "https://api.onesignal.com/notifications";
 const DAILY_JSON_FILES = [
   "daily-1-30.json",
   "daily-31-60.json",
@@ -205,15 +206,59 @@ async function sendDailyVerseNotification(options = {}) {
     throw error;
   }
 
+  const notificationId = body?.id || null;
+  const deliveryResult = notificationId
+    ? await viewOneSignalNotification(notificationId)
+    : null;
+
   return {
     skipped: false,
+    source: credentialContext.source,
+    force: Boolean(options.force),
     day: payload.data.day,
     url: payload.web_url,
     idempotency_key: payload.idempotency_key,
     credentialContext,
     oneSignalHttpStatus: response.status,
     oneSignalRawResponseText: responseText,
-    oneSignal: body
+    oneSignal: body,
+    oneSignalDelivery: deliveryResult
+  };
+}
+
+async function viewOneSignalNotification(notificationId) {
+  await delay(3000);
+
+  const appId = requireEnv("ONESIGNAL_APP_ID");
+  const viewUrl = `${ONESIGNAL_NOTIFICATION_VIEW_ENDPOINT}/${encodeURIComponent(notificationId)}?app_id=${encodeURIComponent(appId)}`;
+  const response = await fetch(viewUrl, {
+    method: "GET",
+    headers: {
+      "Authorization": `Key ${requireEnv("ONESIGNAL_REST_API_KEY")}`
+    }
+  });
+
+  const responseText = await response.text();
+  let body;
+
+  try {
+    body = responseText ? JSON.parse(responseText) : {};
+  } catch {
+    body = { raw: responseText };
+  }
+
+  console.info("[Bible for All] OneSignal delivery lookup response received.", {
+    status: response.status,
+    ok: response.ok,
+    notificationId,
+    rawOneSignalDeliveryResponseText: responseText,
+    oneSignalDeliveryResponse: body
+  });
+
+  return {
+    httpStatus: response.status,
+    rawResponseText: responseText,
+    response: body
   };
 }
 
@@ -247,6 +292,10 @@ function maskNotificationPayload(payload) {
     ...payload,
     app_id: maskValue(payload.app_id)
   };
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 module.exports = {
