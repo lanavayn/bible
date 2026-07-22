@@ -27,7 +27,7 @@ export default async function handler(request) {
 }
 
 export const config = {
-  schedule: "0 13 * * *"
+  schedule: "0 15 * * *"
 };
 
 async function readScheduleBody(request) {
