@@ -5,6 +5,8 @@ const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
+const TAG_WRITE_ATTEMPTS = 3;
+const TAG_WRITE_RETRY_MS = 1200;
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -131,8 +133,7 @@ function initNotificationControls(root = document, feature) {
       }
 
       const subscription = await waitForActivePushSubscription(OneSignal);
-      await tagNotificationSubscriber(OneSignal, feature, language, true);
-      const tags = await waitForFeatureTag(OneSignal, feature, language);
+      const tags = await tagNotificationSubscriber(OneSignal, feature, language, true);
 
       if (!isFeatureTagEnabled(tags, feature)) {
         throw new Error(`OneSignal tag was not confirmed for ${feature}.`);
@@ -280,15 +281,65 @@ async function requestNotificationPermission(OneSignal) {
 }
 
 async function tagNotificationSubscriber(OneSignal, feature, language, enabled) {
+  const tagsToWrite = getNotificationTags(feature, language, enabled);
+  let lastTags = {};
+
+  for (let attempt = 1; attempt <= TAG_WRITE_ATTEMPTS; attempt += 1) {
+    const subscription = await waitForActivePushSubscription(OneSignal);
+
+    console.info("[Bible for All] OneSignal addTags attempt.", {
+      feature,
+      language,
+      enabled,
+      attempt,
+      subscription,
+      tagsToWrite
+    });
+
+    await OneSignal.User?.addTags?.(tagsToWrite);
+    await delay(TAG_WRITE_RETRY_MS);
+
+    lastTags = await getOneSignalTags(OneSignal, {
+      stage: "after-addTags",
+      feature,
+      language,
+      enabled,
+      attempt
+    });
+
+    if (enabled ? isFeatureTagEnabled(lastTags, feature, language) : isFeatureTagDisabled(lastTags, feature, language)) {
+      console.info("[Bible for All] OneSignal tags confirmed.", {
+        feature,
+        language,
+        enabled,
+        attempt,
+        tags: lastTags
+      });
+      return lastTags;
+    }
+
+    console.info("[Bible for All] OneSignal tags not confirmed yet; retrying after active subscription check.", {
+      feature,
+      language,
+      enabled,
+      attempt,
+      tags: lastTags
+    });
+  }
+
+  return lastTags;
+}
+
+function getNotificationTags(feature, language, enabled) {
   const featureTag = getFeatureTag(feature);
   const languageFeatureTag = `${featureTag}_${language}`;
 
-  await OneSignal.User?.addTags?.({
+  return {
     lang: language,
     [featureTag]: String(Boolean(enabled)),
     [languageFeatureTag]: String(Boolean(enabled)),
     notifications_phase: "uat"
-  });
+  };
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
@@ -297,8 +348,15 @@ async function getFeatureEnabled(OneSignal, feature, language) {
   return isFeatureTagEnabled(tags, feature, language);
 }
 
-async function getOneSignalTags(OneSignal) {
-  return OneSignal.User?.getTags ? await OneSignal.User.getTags() : {};
+async function getOneSignalTags(OneSignal, details = {}) {
+  const tags = OneSignal.User?.getTags ? await OneSignal.User.getTags() : {};
+
+  console.info("[Bible for All] OneSignal getTags result.", {
+    ...details,
+    tags
+  });
+
+  return tags;
 }
 
 async function waitForFeatureTag(OneSignal, feature, language) {
@@ -324,6 +382,15 @@ function isFeatureTagEnabled(tags, feature, language = null) {
   if (languageFeatureTag && tags?.[languageFeatureTag] === "true") return true;
   if (tags?.[featureTag] === "true") return true;
   return false;
+}
+
+function isFeatureTagDisabled(tags, feature, language = null) {
+  const featureTag = getFeatureTag(feature);
+  const languageFeatureTag = language ? `${featureTag}_${language}` : null;
+
+  if (tags?.[featureTag] === "true") return false;
+  if (languageFeatureTag && tags?.[languageFeatureTag] === "true") return false;
+  return true;
 }
 
 async function waitForActivePushSubscription(OneSignal) {
