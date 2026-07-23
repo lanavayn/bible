@@ -9,24 +9,25 @@ let sdkPromise = null;
 let initPromise = null;
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
-  if (language !== "ru") return "";
+  const copy = getNotificationCopy(language);
+  if (!copy) return "";
 
   return `
-    <section class="daily-notification-box" data-notification-feature="daily-verse-ru">
+    <section class="daily-notification-box" data-notification-feature="daily-verse">
       <div class="daily-notification-content">
         <div class="daily-notification-title" data-notification-title>
-          🔔 Получать ежедневный стих в 9:00 утра
+          ${copy.heading}
         </div>
         <p class="daily-notification-message" data-notification-message hidden>
-          Вы будете получать ежедневный стих в 9:00 утра.
+          ${copy.enabledMessage}
         </p>
       </div>
       <div class="daily-notification-actions">
         <button class="daily-notification-btn" type="button" data-notification-enable>
-          Включить уведомления
+          ${copy.enableButton}
         </button>
         <button class="daily-notification-link" type="button" data-notification-disable hidden>
-          Отключить уведомления
+          ${copy.disableButton}
         </button>
       </div>
       <div class="daily-notification-status" role="status" aria-live="polite" data-notification-status></div>
@@ -35,7 +36,7 @@ export function renderDailyVerseNotificationControls({ language } = {}) {
 }
 
 export function initDailyVerseNotifications(root = document) {
-  const box = root.querySelector('[data-notification-feature="daily-verse-ru"]');
+  const box = root.querySelector('[data-notification-feature="daily-verse"]');
   if (!box || box.dataset.bound === "true") return;
 
   box.dataset.bound = "true";
@@ -211,21 +212,42 @@ function setState(box, state) {
   const message = box.querySelector("[data-notification-message]");
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
+  const copy = getNotificationCopy(document.documentElement.lang);
 
   box.dataset.notificationState = state;
 
   if (state === STATUS_ENABLED) {
-    title.textContent = "✅ Уведомления включены";
+    title.textContent = copy.enabledTitle;
     message.hidden = false;
     enableBtn.hidden = true;
     disableBtn.hidden = false;
     return;
   }
 
-  title.textContent = "🔔 Получать ежедневный стих в 9:00 утра";
+  title.textContent = copy.heading;
   message.hidden = true;
   enableBtn.hidden = false;
   disableBtn.hidden = true;
+}
+
+function getNotificationCopy(language = "ru") {
+  if (language === "en") {
+    return {
+      heading: "🔔 Receive a new Bible verse every day",
+      enableButton: "Get the Verse of the Day",
+      enabledTitle: "✅ Notifications enabled",
+      enabledMessage: "You will receive a new Bible verse every day.",
+      disableButton: "Turn off notifications"
+    };
+  }
+
+  return {
+    heading: "🔔 Получайте новый стих каждый день",
+    enableButton: "Получать стих дня",
+    enabledTitle: "✅ Уведомления включены",
+    enabledMessage: "Вы будете получать новый стих каждый день.",
+    disableButton: "Отключить уведомления"
+  };
 }
 
 function setStatus(box, message, type = "") {
