@@ -76,6 +76,12 @@ function getVerseSpecificDefinitions(lang, verseRef) {
         closeLabel: "Закрыть",
         text: "В Новом Завете так названы все верующие в Иисуса Христа, а не только особо почитаемые люди.",
         pattern: /(^|[^А-Яа-яЁё])(святых)(?=$|[^А-Яа-яЁё])/gi
+      },
+      {
+        label: "Подробнее о слове «духом»",
+        closeLabel: "Закрыть",
+        text: "«Молиться духом» — значит молиться искренне, под руководством Святого Духа, доверяя Богу и ища Его воли.",
+        pattern: /(^|[^А-Яа-яЁё])(духом)(?=$|[^А-Яа-яЁё])/gi
       }
     ];
   }
@@ -86,6 +92,12 @@ function getVerseSpecificDefinitions(lang, verseRef) {
       closeLabel: "Close",
       text: "In the New Testament, this refers to all believers in Jesus Christ, not only to specially honored individuals.",
       pattern: /\b(saints)\b/gi
+    },
+    {
+      label: "More about praying in the Spirit",
+      closeLabel: "Close",
+      text: "“Praying in the Spirit” means praying sincerely, under the guidance of the Holy Spirit, trusting God and seeking His will.",
+      pattern: /\b(in the Spirit)\b/gi
     }
   ];
 }
