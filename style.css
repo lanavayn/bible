@@ -3336,6 +3336,12 @@ table.book-dates th:nth-child(2) {
   line-height: 1.4;
 }
 
+.daily-notification-desktop-message {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 .daily-notification-actions {
   display: flex;
   justify-content: center;
@@ -3386,6 +3392,12 @@ table.book-dates th:nth-child(2) {
 
 .daily-notification-status[data-type="error"] {
   color: #9c3b2f;
+}
+
+@media (max-width: 768px) {
+  .daily-notification-desktop-message {
+    display: none;
+  }
 }
 
 .daily-verse-header-right {

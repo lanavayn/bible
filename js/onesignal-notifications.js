@@ -10,7 +10,7 @@ let initPromise = null;
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
   const copy = getNotificationCopy(language);
-  if (!copy) return "";
+  if (!copy || !isPushNotificationSupported()) return "";
 
   return `
     <section class="daily-notification-box" data-notification-feature="daily-verse">
@@ -18,6 +18,9 @@ export function renderDailyVerseNotificationControls({ language } = {}) {
         <div class="daily-notification-title" data-notification-title>
           ${copy.heading}
         </div>
+        <p class="daily-notification-desktop-message" data-notification-desktop-message>
+          ${copy.desktopDescription}
+        </p>
         <p class="daily-notification-message" data-notification-message hidden>
           ${copy.enabledMessage}
         </p>
@@ -209,6 +212,7 @@ async function tagDailyVerseRuUatSubscriber(OneSignal) {
 
 function setState(box, state) {
   const title = box.querySelector("[data-notification-title]");
+  const desktopMessage = box.querySelector("[data-notification-desktop-message]");
   const message = box.querySelector("[data-notification-message]");
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
@@ -218,6 +222,7 @@ function setState(box, state) {
 
   if (state === STATUS_ENABLED) {
     title.textContent = copy.enabledTitle;
+    desktopMessage.hidden = true;
     message.hidden = false;
     enableBtn.hidden = true;
     disableBtn.hidden = false;
@@ -225,15 +230,24 @@ function setState(box, state) {
   }
 
   title.textContent = copy.heading;
+  desktopMessage.hidden = false;
   message.hidden = true;
   enableBtn.hidden = false;
   disableBtn.hidden = true;
+}
+
+function isPushNotificationSupported() {
+  if (typeof window === "undefined") return true;
+  return "Notification" in window
+    && typeof navigator !== "undefined"
+    && "serviceWorker" in navigator;
 }
 
 function getNotificationCopy(language = "ru") {
   if (language === "en") {
     return {
       heading: "🔔 Receive a new Bible verse every day",
+      desktopDescription: "The Verse of the Day will appear in your browser notifications.",
       enableButton: "Get the Verse of the Day",
       enabledTitle: "✅ Verse of the Day is connected",
       enabledMessage: "You will receive a new Bible verse every day.",
@@ -243,6 +257,7 @@ function getNotificationCopy(language = "ru") {
 
   return {
     heading: "🔔 Получайте новый стих каждый день",
+    desktopDescription: "Стих дня появится в уведомлениях вашего браузера.",
     enableButton: "Получать стих дня",
     enabledTitle: "✅ Стих дня подключён",
     enabledMessage: "Вы будете получать новый стих каждый день.",
