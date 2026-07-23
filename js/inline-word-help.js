@@ -58,6 +58,38 @@ function insertHelpButtons(text, definitions, classes) {
   return result;
 }
 
+function isVerseReference(verseRef, book, chapter, verse) {
+  return verseRef?.book === book
+    && Number(verseRef?.chapter) === chapter
+    && String(verseRef?.verse) === String(verse);
+}
+
+function getVerseSpecificDefinitions(lang, verseRef) {
+  if (!isVerseReference(verseRef, "Ephesians", 6, "18")) {
+    return [];
+  }
+
+  if (lang === "ru") {
+    return [
+      {
+        label: "Подробнее о слове «святых»",
+        closeLabel: "Закрыть",
+        text: "В Новом Завете так названы все верующие в Иисуса Христа, а не только особо почитаемые люди.",
+        pattern: /(^|[^А-Яа-яЁё])(святых)(?=$|[^А-Яа-яЁё])/gi
+      }
+    ];
+  }
+
+  return [
+    {
+      label: "More about saints",
+      closeLabel: "Close",
+      text: "In the New Testament, this refers to all believers in Jesus Christ, not only to specially honored individuals.",
+      pattern: /\b(saints)\b/gi
+    }
+  ];
+}
+
 const RU_COMMON_DEFINITIONS = [
   {
     label: "Подробнее о слове «тварь»",
@@ -246,6 +278,7 @@ export function addInlineWordHelp(text, options = {}) {
     lang = "ru",
     isOldTestament = false,
     includeQuestionTerms = false,
+    verseRef = null,
     classes
   } = options;
 
@@ -254,7 +287,11 @@ export function addInlineWordHelp(text, options = {}) {
   if (lang === "ru") {
     return insertHelpButtons(
       safeText,
-      [...RU_COMMON_DEFINITIONS, ...(includeQuestionTerms ? RU_QUESTION_DEFINITIONS : [])],
+      [
+        ...RU_COMMON_DEFINITIONS,
+        ...(includeQuestionTerms ? RU_QUESTION_DEFINITIONS : []),
+        ...getVerseSpecificDefinitions(lang, verseRef)
+      ],
       classes
     );
   }
@@ -272,6 +309,8 @@ export function addInlineWordHelp(text, options = {}) {
   if (lang === "en" && includeQuestionTerms) {
     definitions.push(...EN_QUESTION_DEFINITIONS);
   }
+
+  definitions.push(...getVerseSpecificDefinitions(lang, verseRef));
 
   return insertHelpButtons(safeText, definitions, classes);
 }

@@ -1471,6 +1471,228 @@
           }
         }
       ]
-    }    
+    },
+    {
+      "id": "question-day-85",
+      "day": 85,
+      "topic_ru": "Болезнь и молитва",
+      "topic_en": "Illness and Prayer",
+      "question_ru": "Что делать, если заболел?",
+      "question_en": "What should I do if I become sick?",
+      "reference_ru": "Плач Иеремии 3:40",
+      "reference_en": "Lamentations 3:40",
+      "text_ru": "Испытаем и исследуем пути свои и обратимся к Господу.",
+      "text_en": "Let’s search and try our ways, and turn again to Yahweh.",
+      "verse_ref": {
+        "book": "Lamentations",
+        "chapter": 3,
+        "verse": "40"
+      },
+      "answer_ru": "Обратитесь к Господу. Попросите Его показать, что нужно изменить, и искренне обратитесь к Нему.",
+      "answer_en": "Turn to the Lord. Ask Him to show you what needs to change, and sincerely return to Him.",
+      "reflection_ru": "Болезнь может стать временем, чтобы стать ближе к Господу.",
+      "reflection_en": "Illness can become a time to draw closer to the Lord.",
+      "related": [
+        {
+          "reference_ru": "Псалом 31:5",
+          "reference_en": "Psalm 32:5",
+          "text_ru": "Но я открыл Тебе грех мой и не скрыл беззакония моего... И Ты снял с меня вину греха моего.",
+          "text_en": "I acknowledged my sin to you... and you forgave the iniquity of my sin.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 31,
+              "verse": "5"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 32,
+              "verse": "5"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 24:4",
+          "reference_en": "Psalm 25:4",
+          "text_ru": "Укажи мне, Господи, пути Твои и научи меня стезям Твоим.",
+          "text_en": "Show me your ways, Yahweh. Teach me your paths.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 24,
+              "verse": "4"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 25,
+              "verse": "4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-86",
+      "day": 86,
+      "topic_ru": "Испытание сердца",
+      "topic_en": "Searching the Heart",
+      "question_ru": "О чём просить Господа во время болезни?",
+      "question_en": "What should I ask the Lord during illness?",
+      "reference_ru": "Псалом 138:23-24",
+      "reference_en": "Psalm 139:23-24",
+      "text_ru": "Испытай меня, Боже, и узнай сердце моё... и направь меня на путь вечный.",
+      "text_en": "Search me, God, and know my heart... and lead me in the everlasting way.",
+      "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 138,
+              "verse": "23-24"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 139,
+              "verse": "23-24"
+            }
+          },
+      "answer_ru": "Просите Господа исследовать ваше сердце и направить вас на правильный путь.",
+      "answer_en": "Ask the Lord to search your heart and lead you in the right way.",
+      "reflection_ru": "Господь открывает то, что помогает нам стать ближе к Нему.",
+      "reflection_en": "The Lord reveals what helps us draw closer to Him.",
+      "related": [
+        {
+          "reference_ru": "Псалом 85:5",
+          "reference_en": "Psalm 86:5",
+          "text_ru": "Ибо Ты, Господи, благ и милосерд, и многомилостив ко всем, призывающим Тебя.",
+          "text_en": "For you, Lord, are good, and ready to forgive, abundant in loving kindness to all those who call on you.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 85,
+              "verse": "5"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 86,
+              "verse": "5"
+            }
+          }
+        },
+        {
+          "reference_ru": "Плач Иеремии 3:25",
+          "reference_en": "Lamentations 3:25",
+          "text_ru": "Благ Господь к надеющимся на Него, к душе, ищущей Его.",
+          "text_en": "The Lord is good to those who wait for him, to the soul who seeks him.",
+          "verse_ref": {
+            "book": "Lamentations",
+            "chapter": 3,
+            "verse": "25"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-87",
+      "day": 87,
+      "topic_ru": "Молитва об исцелении",
+      "topic_en": "Prayer for Healing",
+      "question_ru": "Как молиться об исцелении?",
+      "question_en": "How should I pray for healing?",
+      "reference_ru": "Иакова 5:16",
+      "reference_en": "James 5:16",
+      "text_ru": "Признавайтесь друг перед другом в проступках и молитесь друг за друга, чтобы исцелиться.",
+      "text_en": "Confess your sins to one another and pray for one another, that you may be healed.",
+      "verse_ref": {
+        "book": "James",
+        "chapter": 5,
+        "verse": "16"
+      },
+      "answer_ru": "С верой обращайтесь к Господу, исповедуйте грехи и молитесь друг за друга.",
+      "answer_en": "Come to the Lord in faith, confess your sins, and pray for one another.",
+      "reflection_ru": "Искренняя молитва приближает нас к Господу.",
+      "reflection_en": "Sincere prayer draws us closer to the Lord.",
+      "related": [
+        {
+          "reference_ru": "Псалом 49:15",
+          "reference_en": "Psalm 50:15",
+          "text_ru": "И призови Меня в день скорби; Я избавлю тебя, и ты прославишь Меня.",
+          "text_en": "Call on me in the day of trouble. I will deliver you, and you will honor me.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 49,
+              "verse": "15"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 50,
+              "verse": "15"
+            }
+          }
+        },
+        {
+          "reference_ru": "Ефесянам 6:18",
+          "reference_en": "Ephesians 6:18",
+          "text_ru": "Всякою молитвою и прошением молитесь во всякое время духом, и старайтесь о сем самом со всяким постоянством и молением о всех святых",
+          "text_en": "With all prayer and requests, praying at all times in the Spirit, and being watchful to this end in all perseverance and requests for all the saints.",
+          "verse_ref": {
+            "book": "Ephesians",
+            "chapter": 6,
+            "verse": "18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-88",
+      "day": 88,
+      "topic_ru": "Обращение к Господу",
+      "topic_en": "Returning to the Lord",
+      "question_ru": "Как обратиться к Господу всем сердцем?",
+      "question_en": "How can I return to the Lord with all my heart?",
+      "reference_ru": "Осия 14:3",
+      "reference_en": "Hosea 14:2",
+      "text_ru": "Возьмите с собою молитвенные слова и обратитесь к Господу.",
+      "text_en": "Take words with you, and return to the Lord.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Hosea",
+          "chapter": 14,
+          "verse": "3"
+        },
+        "en": {
+          "book": "Hosea",
+          "chapter": 14,
+          "verse": "2"
+        }
+      },
+      "answer_ru": "Придите к Господу с искренним покаянием, и Он по Своей милости примет вас.",
+      "answer_en": "Come to the Lord with sincere repentance, and He will receive you in His mercy.",
+      "reflection_ru": "Господь всегда готов принять кающегося человека.",
+      "reflection_en": "The Lord is always ready to receive a repentant heart.",
+      "related": [
+        {
+          "reference_ru": "Иоиль 2:12",
+          "reference_en": "Joel 2:12",
+          "text_ru": "Но и ныне ещё говорит Господь: обратитесь ко Мне всем сердцем вашим.",
+          "text_en": "Yet even now, says the Lord, turn to me with all your heart.",
+          "verse_ref": {
+            "book": "Joel",
+            "chapter": 2,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "Иеремия 24:7",
+          "reference_en": "Jeremiah 24:7",
+          "text_ru": "И дам им сердце, чтобы знать Меня, что Я Господь; и они будут Моим народом, а Я буду их Богом, ибо они обратятся ко Мне всем сердцем своим.",
+          "text_en": "I will give them a heart to know me, that I am the Lord. They will be my people, and I will be their God, for they will return to me with their whole heart.",
+          "verse_ref": {
+            "book": "Jeremiah",
+            "chapter": 24,
+            "verse": "7"
+          }
+        }
+      ]
+    }
   ]
 }

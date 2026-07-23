@@ -859,6 +859,7 @@ function addQuestionCreationHelp(text, lang, verseRef = null) {
     lang,
     isOldTestament: isOldTestamentBook(verseRef),
     includeQuestionTerms: true,
+    verseRef,
     classes: {
       button: "question-creation-help-btn",
       inline: "question-creation-help-inline",
