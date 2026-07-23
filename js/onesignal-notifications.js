@@ -350,6 +350,12 @@ function getPushSubscriptionState(OneSignal) {
   };
 }
 
+function maskValue(value = "") {
+  if (!value) return "";
+  if (value.length <= 8) return `${value.slice(0, 2)}...${value.slice(-2)}`;
+  return `${value.slice(0, 8)}...${value.slice(-4)}`;
+}
+
 async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
   const registration = await getOneSignalServiceWorkerRegistration();
   const tags = details.tags || await getOneSignalTags(OneSignal);
