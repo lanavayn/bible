@@ -66,7 +66,7 @@ export function initDailyVerseNotifications(root = document) {
 
       await tagDailyVerseRuUatSubscriber(OneSignal);
       setState(box, STATUS_ENABLED);
-      setStatus(box, "Уведомления включены.");
+      setStatus(box, "");
       console.info("[Bible for All] Daily Verse notifications enabled for RU UAT.");
     } catch (error) {
       console.error("[Bible for All] Failed to enable Daily Verse notifications.", error);
@@ -235,18 +235,18 @@ function getNotificationCopy(language = "ru") {
     return {
       heading: "🔔 Receive a new Bible verse every day",
       enableButton: "Get the Verse of the Day",
-      enabledTitle: "✅ Notifications enabled",
+      enabledTitle: "✅ Verse of the Day is connected",
       enabledMessage: "You will receive a new Bible verse every day.",
-      disableButton: "Turn off notifications"
+      disableButton: "Stop receiving the Verse of the Day"
     };
   }
 
   return {
     heading: "🔔 Получайте новый стих каждый день",
     enableButton: "Получать стих дня",
-    enabledTitle: "✅ Уведомления включены",
+    enabledTitle: "✅ Стих дня подключён",
     enabledMessage: "Вы будете получать новый стих каждый день.",
-    disableButton: "Отключить уведомления"
+    disableButton: "Не получать стих дня"
   };
 }
 
