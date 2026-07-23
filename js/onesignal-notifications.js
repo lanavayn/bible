@@ -47,6 +47,7 @@ const FEATURE_COPY = {
 let configPromise = null;
 let sdkPromise = null;
 let initPromise = null;
+let activeConfig = null;
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
   return renderNotificationControls({ feature: "daily-verse", language });
@@ -115,9 +116,11 @@ function initNotificationControls(root = document, feature) {
 
     try {
       const OneSignal = await initializeOneSignal();
+      await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
       const permissionGranted = await requestNotificationPermission(OneSignal);
 
       if (!permissionGranted) {
+        await logNotificationDiagnostics(OneSignal, "permission-not-granted", { feature, language });
         setState(box, STATUS_DISABLED);
         setStatus(box, "Разрешение на уведомления не получено.", STATUS_ERROR);
         return;
@@ -129,11 +132,13 @@ function initNotificationControls(root = document, feature) {
 
       const subscription = await waitForActivePushSubscription(OneSignal);
       await tagNotificationSubscriber(OneSignal, feature, language, true);
-      const tags = await getOneSignalTags(OneSignal);
+      const tags = await waitForFeatureTag(OneSignal, feature, language);
 
       if (!isFeatureTagEnabled(tags, feature)) {
         throw new Error(`OneSignal tag was not confirmed for ${feature}.`);
       }
+
+      await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
       setState(box, STATUS_ENABLED);
       setStatus(box, "");
@@ -157,8 +162,10 @@ function initNotificationControls(root = document, feature) {
 
     try {
       const OneSignal = await initializeOneSignal();
+      await logNotificationDiagnostics(OneSignal, "before-disable", { feature, language });
 
       await tagNotificationSubscriber(OneSignal, feature, language, false);
+      await logNotificationDiagnostics(OneSignal, "after-disable", { feature, language });
 
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
@@ -195,6 +202,7 @@ async function initializeOneSignal() {
     }
 
     const config = await loadNotificationConfig();
+    activeConfig = config;
     await loadOneSignalSdk();
 
     window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -263,11 +271,6 @@ async function requestNotificationPermission(OneSignal) {
 
   if (Notification.permission === "denied") return false;
 
-  if (OneSignal.Slidedown?.promptPush) {
-    await OneSignal.Slidedown.promptPush({ force: true });
-    return OneSignal.Notifications?.permission === true || Notification.permission === "granted";
-  }
-
   if (OneSignal.Notifications?.requestPermission) {
     return Boolean(await OneSignal.Notifications.requestPermission());
   }
@@ -296,6 +299,22 @@ async function getFeatureEnabled(OneSignal, feature, language) {
 
 async function getOneSignalTags(OneSignal) {
   return OneSignal.User?.getTags ? await OneSignal.User.getTags() : {};
+}
+
+async function waitForFeatureTag(OneSignal, feature, language) {
+  const startedAt = Date.now();
+
+  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+    const tags = await getOneSignalTags(OneSignal);
+
+    if (isFeatureTagEnabled(tags, feature, language)) {
+      return tags;
+    }
+
+    await delay(SUBSCRIPTION_POLL_MS);
+  }
+
+  return getOneSignalTags(OneSignal);
 }
 
 function isFeatureTagEnabled(tags, feature, language = null) {
@@ -329,6 +348,45 @@ function getPushSubscriptionState(OneSignal) {
     token: OneSignal.User?.PushSubscription?.token || null,
     optedIn: Boolean(OneSignal.User?.PushSubscription?.optedIn)
   };
+}
+
+async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
+  const registration = await getOneSignalServiceWorkerRegistration();
+  const tags = details.tags || await getOneSignalTags(OneSignal);
+
+  console.info("[Bible for All] OneSignal diagnostics.", {
+    stage,
+    feature: details.feature || null,
+    language: details.language || null,
+    notificationPermission: typeof Notification !== "undefined" ? Notification.permission : null,
+    oneSignalPermission: OneSignal.Notifications?.permission ?? null,
+    appId: maskValue(activeConfig?.appId || ""),
+    serviceWorkerPath: activeConfig?.serviceWorkerPath || null,
+    serviceWorkerScope: activeConfig?.serviceWorkerScope || null,
+    serviceWorkerRegistration: registration,
+    pushSubscription: getPushSubscriptionState(OneSignal),
+    tags
+  });
+}
+
+async function getOneSignalServiceWorkerRegistration() {
+  if (typeof navigator === "undefined" || !navigator.serviceWorker?.getRegistration) {
+    return null;
+  }
+
+  try {
+    const registration = await navigator.serviceWorker.getRegistration(activeConfig?.serviceWorkerScope || "/push/onesignal/");
+    return registration
+      ? {
+          scope: registration.scope,
+          activeScriptURL: registration.active?.scriptURL || null,
+          installingScriptURL: registration.installing?.scriptURL || null,
+          waitingScriptURL: registration.waiting?.scriptURL || null
+        }
+      : null;
+  } catch (error) {
+    return { error: error.message };
+  }
 }
 
 function setState(box, state) {
