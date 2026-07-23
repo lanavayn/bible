@@ -5,6 +5,7 @@ const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
+const EXTERNAL_ID_KEY = "bfa_uat_push_external_id";
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -116,6 +117,7 @@ function initNotificationControls(root = document, feature) {
 
     try {
       const OneSignal = await initializeOneSignal();
+      const externalId = await identifyOneSignalUser(OneSignal);
       await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
       const permissionGranted = await requestNotificationPermission(OneSignal);
 
@@ -145,6 +147,7 @@ function initNotificationControls(root = document, feature) {
       console.info("[Bible for All] Notifications enabled for UAT.", {
         feature,
         language,
+        externalId,
         subscription
       });
     } catch (error) {
@@ -162,6 +165,7 @@ function initNotificationControls(root = document, feature) {
 
     try {
       const OneSignal = await initializeOneSignal();
+      await identifyOneSignalUser(OneSignal);
       await logNotificationDiagnostics(OneSignal, "before-disable", { feature, language });
 
       await tagNotificationSubscriber(OneSignal, feature, language, false);
@@ -279,6 +283,16 @@ async function requestNotificationPermission(OneSignal) {
   return permission === "granted";
 }
 
+async function identifyOneSignalUser(OneSignal) {
+  const externalId = getOrCreateExternalId();
+
+  if (OneSignal.login) {
+    await OneSignal.login(externalId);
+  }
+
+  return externalId;
+}
+
 async function tagNotificationSubscriber(OneSignal, feature, language, enabled) {
   const featureTag = getFeatureTag(feature);
   const languageFeatureTag = `${featureTag}_${language}`;
@@ -289,6 +303,33 @@ async function tagNotificationSubscriber(OneSignal, feature, language, enabled) 
     [languageFeatureTag]: String(Boolean(enabled)),
     notifications_phase: "uat"
   });
+}
+
+function getOrCreateExternalId() {
+  try {
+    const existing = localStorage.getItem(EXTERNAL_ID_KEY);
+    if (existing) return existing;
+
+    const value = `bfa_uat_${createBrowserId()}`;
+    localStorage.setItem(EXTERNAL_ID_KEY, value);
+    return value;
+  } catch {
+    return `bfa_uat_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+  }
+}
+
+function createBrowserId() {
+  if (crypto?.randomUUID) {
+    return crypto.randomUUID();
+  }
+
+  if (crypto?.getRandomValues) {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, byte => byte.toString(16).padStart(2, "0")).join("");
+  }
+
+  return `${Date.now()}_${Math.random().toString(16).slice(2)}`;
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
@@ -366,6 +407,8 @@ async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
     language: details.language || null,
     notificationPermission: typeof Notification !== "undefined" ? Notification.permission : null,
     oneSignalPermission: OneSignal.Notifications?.permission ?? null,
+    oneSignalId: OneSignal.User?.onesignalId || null,
+    externalId: getStoredExternalId(),
     appId: maskValue(activeConfig?.appId || ""),
     serviceWorkerPath: activeConfig?.serviceWorkerPath || null,
     serviceWorkerScope: activeConfig?.serviceWorkerScope || null,
@@ -373,6 +416,14 @@ async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
     pushSubscription: getPushSubscriptionState(OneSignal),
     tags
   });
+}
+
+function getStoredExternalId() {
+  try {
+    return localStorage.getItem(EXTERNAL_ID_KEY) || null;
+  } catch {
+    return null;
+  }
 }
 
 async function getOneSignalServiceWorkerRegistration() {
