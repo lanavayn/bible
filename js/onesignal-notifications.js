@@ -3,17 +3,63 @@ const CONFIG_URL = "/.netlify/functions/notifications-config";
 const STATUS_ENABLED = "enabled";
 const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
+const FEATURE_COPY = {
+  "daily-verse": {
+    en: {
+      heading: "🔔 Receive a new Bible verse every day",
+      desktopDescription: "The Verse of the Day will appear in your browser notifications.",
+      enableButton: "Get the Verse of the Day",
+      enabledTitle: "✅ Verse of the Day is connected",
+      enabledMessage: "You will receive a new Bible verse every day.",
+      disableButton: "Stop receiving the Verse of the Day"
+    },
+    ru: {
+      heading: "🔔 Получайте новый стих каждый день",
+      desktopDescription: "Стих дня появится в уведомлениях вашего браузера.",
+      enableButton: "Получать стих дня",
+      enabledTitle: "✅ Стих дня подключён",
+      enabledMessage: "Вы будете получать новый стих каждый день.",
+      disableButton: "Не получать стих дня"
+    }
+  },
+  "daily-question": {
+    en: {
+      heading: "🔔 Receive a new Bible question every day",
+      desktopDescription: "The Question of the Day will appear in your browser notifications.",
+      enableButton: "Get the Question of the Day",
+      enabledTitle: "✅ Question of the Day is on",
+      enabledMessage: "You’ll receive a new Bible question every day.",
+      disableButton: "Stop receiving the Question of the Day"
+    },
+    ru: {
+      heading: "🔔 Получайте новый вопрос из Библии каждый день",
+      desktopDescription: "Вопрос дня появится в уведомлениях вашего браузера.",
+      enableButton: "Получать вопрос дня",
+      enabledTitle: "✅ Вопрос дня подключён",
+      enabledMessage: "Вы будете получать новый вопрос каждый день.",
+      disableButton: "Не получать вопрос дня"
+    }
+  }
+};
 
 let configPromise = null;
 let sdkPromise = null;
 let initPromise = null;
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
-  const copy = getNotificationCopy(language);
+  return renderNotificationControls({ feature: "daily-verse", language });
+}
+
+export function renderDailyQuestionNotificationControls({ language } = {}) {
+  return renderNotificationControls({ feature: "daily-question", language });
+}
+
+function renderNotificationControls({ feature, language } = {}) {
+  const copy = getNotificationCopy(feature, language);
   if (!copy || !isPushNotificationSupported()) return "";
 
   return `
-    <section class="daily-notification-box" data-notification-feature="daily-verse">
+    <section class="daily-notification-box" data-notification-feature="${feature}" data-notification-language="${language}">
       <div class="daily-notification-content">
         <div class="daily-notification-title" data-notification-title>
           ${copy.heading}
@@ -39,13 +85,22 @@ export function renderDailyVerseNotificationControls({ language } = {}) {
 }
 
 export function initDailyVerseNotifications(root = document) {
-  const box = root.querySelector('[data-notification-feature="daily-verse"]');
+  initNotificationControls(root, "daily-verse");
+}
+
+export function initDailyQuestionNotifications(root = document) {
+  initNotificationControls(root, "daily-question");
+}
+
+function initNotificationControls(root = document, feature) {
+  const box = root.querySelector(`[data-notification-feature="${feature}"]`);
   if (!box || box.dataset.bound === "true") return;
 
   box.dataset.bound = "true";
 
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
+  const language = getBoxLanguage(box);
 
   refreshNotificationState(box);
 
@@ -67,12 +122,13 @@ export function initDailyVerseNotifications(root = document) {
         await OneSignal.User.PushSubscription.optIn();
       }
 
-      await tagDailyVerseRuUatSubscriber(OneSignal);
+      await tagNotificationSubscriber(OneSignal, feature, language, true);
+      setStoredFeatureState(feature, language, true);
       setState(box, STATUS_ENABLED);
       setStatus(box, "");
-      console.info("[Bible for All] Daily Verse notifications enabled for RU UAT.");
+      console.info("[Bible for All] Notifications enabled for UAT.", { feature, language });
     } catch (error) {
-      console.error("[Bible for All] Failed to enable Daily Verse notifications.", error);
+      console.error("[Bible for All] Failed to enable notifications.", { feature, language, error });
       setState(box, STATUS_ERROR);
       setStatus(box, "Не удалось включить уведомления. Попробуйте ещё раз.", STATUS_ERROR);
     } finally {
@@ -87,20 +143,14 @@ export function initDailyVerseNotifications(root = document) {
     try {
       const OneSignal = await initializeOneSignal();
 
-      if (OneSignal.User?.PushSubscription?.optOut) {
-        await OneSignal.User.PushSubscription.optOut();
-      }
-
-      await OneSignal.User?.addTags?.({
-        daily_verse_ru: "false",
-        notifications_phase: "uat-disabled"
-      });
+      await tagNotificationSubscriber(OneSignal, feature, language, false);
+      setStoredFeatureState(feature, language, false);
 
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
-      console.info("[Bible for All] Daily Verse notifications disabled.");
+      console.info("[Bible for All] Notifications disabled for UAT.", { feature, language });
     } catch (error) {
-      console.error("[Bible for All] Failed to disable Daily Verse notifications.", error);
+      console.error("[Bible for All] Failed to disable notifications.", { feature, language, error });
       setStatus(box, "Не удалось отключить уведомления. Проверьте настройки браузера.", STATUS_ERROR);
     } finally {
       setBusy(box, false);
@@ -112,7 +162,10 @@ async function refreshNotificationState(box) {
   try {
     const OneSignal = await initializeOneSignal();
     const optedIn = Boolean(OneSignal.User?.PushSubscription?.optedIn);
-    setState(box, optedIn ? STATUS_ENABLED : STATUS_DISABLED);
+    const feature = getBoxFeature(box);
+    const language = getBoxLanguage(box);
+    const featureEnabled = optedIn && await getFeatureEnabled(OneSignal, feature, language);
+    setState(box, featureEnabled ? STATUS_ENABLED : STATUS_DISABLED);
   } catch (error) {
     console.info("[Bible for All] Notifications are not ready yet.", error);
     setState(box, STATUS_DISABLED);
@@ -201,13 +254,29 @@ async function requestNotificationPermission(OneSignal) {
   return permission === "granted";
 }
 
-async function tagDailyVerseRuUatSubscriber(OneSignal) {
+async function tagNotificationSubscriber(OneSignal, feature, language, enabled) {
+  const featureTag = getFeatureTag(feature);
+  const languageFeatureTag = `${featureTag}_${language}`;
+
   await OneSignal.User?.addTags?.({
-    lang: "ru",
-    daily_verse: "true",
-    daily_verse_ru: "true",
+    lang: language,
+    [featureTag]: String(Boolean(enabled)),
+    [languageFeatureTag]: String(Boolean(enabled)),
     notifications_phase: "uat"
   });
+}
+
+async function getFeatureEnabled(OneSignal, feature, language) {
+  const featureTag = getFeatureTag(feature);
+  const stored = getStoredFeatureState(feature, language);
+
+  if (OneSignal.User?.getTags) {
+    const tags = await OneSignal.User.getTags();
+    if (tags?.[featureTag] === "true") return true;
+    if (tags?.[featureTag] === "false") return false;
+  }
+
+  return stored;
 }
 
 function setState(box, state) {
@@ -216,7 +285,7 @@ function setState(box, state) {
   const message = box.querySelector("[data-notification-message]");
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
-  const copy = getNotificationCopy(document.documentElement.lang);
+  const copy = getNotificationCopy(getBoxFeature(box), getBoxLanguage(box));
 
   box.dataset.notificationState = state;
 
@@ -243,26 +312,40 @@ function isPushNotificationSupported() {
     && "serviceWorker" in navigator;
 }
 
-function getNotificationCopy(language = "ru") {
-  if (language === "en") {
-    return {
-      heading: "🔔 Receive a new Bible verse every day",
-      desktopDescription: "The Verse of the Day will appear in your browser notifications.",
-      enableButton: "Get the Verse of the Day",
-      enabledTitle: "✅ Verse of the Day is connected",
-      enabledMessage: "You will receive a new Bible verse every day.",
-      disableButton: "Stop receiving the Verse of the Day"
-    };
-  }
+function getNotificationCopy(feature = "daily-verse", language = "ru") {
+  return FEATURE_COPY[feature]?.[language === "en" ? "en" : "ru"] || null;
+}
 
-  return {
-    heading: "🔔 Получайте новый стих каждый день",
-    desktopDescription: "Стих дня появится в уведомлениях вашего браузера.",
-    enableButton: "Получать стих дня",
-    enabledTitle: "✅ Стих дня подключён",
-    enabledMessage: "Вы будете получать новый стих каждый день.",
-    disableButton: "Не получать стих дня"
-  };
+function getBoxFeature(box) {
+  return box.dataset.notificationFeature || "daily-verse";
+}
+
+function getBoxLanguage(box) {
+  return box.dataset.notificationLanguage || (document.documentElement.lang === "en" ? "en" : "ru");
+}
+
+function getFeatureTag(feature) {
+  return feature.replace(/-/g, "_");
+}
+
+function getStoredFeatureState(feature, language) {
+  try {
+    return localStorage.getItem(getFeatureStorageKey(feature, language)) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function setStoredFeatureState(feature, language, enabled) {
+  try {
+    localStorage.setItem(getFeatureStorageKey(feature, language), String(Boolean(enabled)));
+  } catch {
+    // Local storage is only used to keep the per-feature UI state friendly.
+  }
+}
+
+function getFeatureStorageKey(feature, language) {
+  return `bfa_notifications_${feature}_${language}`;
 }
 
 function setStatus(box, message, type = "") {
