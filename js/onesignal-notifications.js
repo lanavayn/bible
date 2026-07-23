@@ -104,6 +104,9 @@ function initNotificationControls(root = document, feature) {
   const disableBtn = box.querySelector("[data-notification-disable]");
   const language = getBoxLanguage(box);
 
+  initializeOneSignal().catch(error => {
+    console.info("[Bible for All] Notifications preload is not ready yet.", error);
+  });
   refreshNotificationState(box);
 
   enableBtn?.addEventListener("click", async () => {
@@ -254,8 +257,16 @@ function loadOneSignalSdk() {
 }
 
 async function requestNotificationPermission(OneSignal) {
-  if (Notification.permission === "granted") return true;
+  if (OneSignal.Notifications?.permission === true || Notification.permission === "granted") {
+    return true;
+  }
+
   if (Notification.permission === "denied") return false;
+
+  if (OneSignal.Slidedown?.promptPush) {
+    await OneSignal.Slidedown.promptPush({ force: true });
+    return OneSignal.Notifications?.permission === true || Notification.permission === "granted";
+  }
 
   if (OneSignal.Notifications?.requestPermission) {
     return Boolean(await OneSignal.Notifications.requestPermission());
