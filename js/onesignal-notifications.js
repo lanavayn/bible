@@ -3,6 +3,8 @@ const CONFIG_URL = "/.netlify/functions/notifications-config";
 const STATUS_ENABLED = "enabled";
 const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
+const SUBSCRIPTION_WAIT_MS = 12000;
+const SUBSCRIPTION_POLL_MS = 400;
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -122,11 +124,21 @@ function initNotificationControls(root = document, feature) {
         await OneSignal.User.PushSubscription.optIn();
       }
 
+      const subscription = await waitForActivePushSubscription(OneSignal);
       await tagNotificationSubscriber(OneSignal, feature, language, true);
-      setStoredFeatureState(feature, language, true);
+      const tags = await getOneSignalTags(OneSignal);
+
+      if (!isFeatureTagEnabled(tags, feature)) {
+        throw new Error(`OneSignal tag was not confirmed for ${feature}.`);
+      }
+
       setState(box, STATUS_ENABLED);
       setStatus(box, "");
-      console.info("[Bible for All] Notifications enabled for UAT.", { feature, language });
+      console.info("[Bible for All] Notifications enabled for UAT.", {
+        feature,
+        language,
+        subscription
+      });
     } catch (error) {
       console.error("[Bible for All] Failed to enable notifications.", { feature, language, error });
       setState(box, STATUS_ERROR);
@@ -144,7 +156,6 @@ function initNotificationControls(root = document, feature) {
       const OneSignal = await initializeOneSignal();
 
       await tagNotificationSubscriber(OneSignal, feature, language, false);
-      setStoredFeatureState(feature, language, false);
 
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
@@ -267,16 +278,46 @@ async function tagNotificationSubscriber(OneSignal, feature, language, enabled) 
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
-  const featureTag = getFeatureTag(feature);
-  const stored = getStoredFeatureState(feature, language);
+  const tags = await getOneSignalTags(OneSignal);
 
-  if (OneSignal.User?.getTags) {
-    const tags = await OneSignal.User.getTags();
-    if (tags?.[featureTag] === "true") return true;
-    if (tags?.[featureTag] === "false") return false;
+  return isFeatureTagEnabled(tags, feature, language);
+}
+
+async function getOneSignalTags(OneSignal) {
+  return OneSignal.User?.getTags ? await OneSignal.User.getTags() : {};
+}
+
+function isFeatureTagEnabled(tags, feature, language = null) {
+  const featureTag = getFeatureTag(feature);
+  const languageFeatureTag = language ? `${featureTag}_${language}` : null;
+
+  if (languageFeatureTag && tags?.[languageFeatureTag] === "true") return true;
+  if (tags?.[featureTag] === "true") return true;
+  return false;
+}
+
+async function waitForActivePushSubscription(OneSignal) {
+  const startedAt = Date.now();
+
+  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+    const subscription = getPushSubscriptionState(OneSignal);
+
+    if (subscription.optedIn && subscription.id && subscription.token) {
+      return subscription;
+    }
+
+    await delay(SUBSCRIPTION_POLL_MS);
   }
 
-  return stored;
+  throw new Error("OneSignal push subscription was not confirmed.");
+}
+
+function getPushSubscriptionState(OneSignal) {
+  return {
+    id: OneSignal.User?.PushSubscription?.id || null,
+    token: OneSignal.User?.PushSubscription?.token || null,
+    optedIn: Boolean(OneSignal.User?.PushSubscription?.optedIn)
+  };
 }
 
 function setState(box, state) {
@@ -328,26 +369,6 @@ function getFeatureTag(feature) {
   return feature.replace(/-/g, "_");
 }
 
-function getStoredFeatureState(feature, language) {
-  try {
-    return localStorage.getItem(getFeatureStorageKey(feature, language)) === "true";
-  } catch {
-    return false;
-  }
-}
-
-function setStoredFeatureState(feature, language, enabled) {
-  try {
-    localStorage.setItem(getFeatureStorageKey(feature, language), String(Boolean(enabled)));
-  } catch {
-    // Local storage is only used to keep the per-feature UI state friendly.
-  }
-}
-
-function getFeatureStorageKey(feature, language) {
-  return `bfa_notifications_${feature}_${language}`;
-}
-
 function setStatus(box, message, type = "") {
   const status = box.querySelector("[data-notification-status]");
   if (!status) return;
@@ -360,4 +381,8 @@ function setBusy(box, isBusy) {
   box.querySelectorAll("button").forEach(button => {
     button.disabled = isBusy;
   });
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
