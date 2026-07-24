@@ -1,5 +1,6 @@
 const SDK_SRC = "https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
 const CONFIG_URL = "/.netlify/functions/notifications-config";
+const TAG_UPDATE_URL = "/.netlify/functions/onesignal-update-tags";
 const STATUS_ENABLED = "enabled";
 const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
@@ -131,8 +132,7 @@ function initNotificationControls(root = document, feature) {
       }
 
       const subscription = await waitForActivePushSubscription(OneSignal);
-      await tagNotificationSubscriber(OneSignal, feature, language, true);
-      const tags = await waitForFeatureTag(OneSignal, feature, language);
+      const tags = await tagNotificationSubscriber(OneSignal, feature, language, true);
 
       if (!isFeatureTagEnabled(tags, feature)) {
         throw new Error(`OneSignal tag was not confirmed for ${feature}.`);
@@ -280,15 +280,47 @@ async function requestNotificationPermission(OneSignal) {
 }
 
 async function tagNotificationSubscriber(OneSignal, feature, language, enabled) {
-  const featureTag = getFeatureTag(feature);
-  const languageFeatureTag = `${featureTag}_${language}`;
+  const subscription = getPushSubscriptionState(OneSignal);
 
-  await OneSignal.User?.addTags?.({
-    lang: language,
-    [featureTag]: String(Boolean(enabled)),
-    [languageFeatureTag]: String(Boolean(enabled)),
-    notifications_phase: "uat"
+  console.info("[Bible for All] Requesting server-side OneSignal tag update.", {
+    feature,
+    language,
+    enabled,
+    subscription: {
+      id: subscription.id,
+      optedIn: subscription.optedIn,
+      hasToken: Boolean(subscription.token)
+    }
   });
+
+  const response = await fetch(TAG_UPDATE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    body: JSON.stringify({
+      feature,
+      language,
+      enabled: Boolean(enabled),
+      subscription_id: subscription.id
+    })
+  });
+  const result = await response.json().catch(() => ({}));
+
+  console.info("[Bible for All] Server-side OneSignal tag update response.", {
+    feature,
+    language,
+    enabled,
+    status: response.status,
+    ok: response.ok,
+    result
+  });
+
+  if (!response.ok || !result.ok) {
+    throw new Error(result.error || `OneSignal tag update failed with ${response.status}.`);
+  }
+
+  return result.tags || {};
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
