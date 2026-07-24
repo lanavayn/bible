@@ -1,6 +1,8 @@
 const ONESIGNAL_API_BASE = "https://api.onesignal.com";
 const ALLOWED_FEATURES = new Set(["daily-verse", "daily-question"]);
 const ALLOWED_LANGUAGES = new Set(["ru", "en"]);
+const IDENTITY_LOOKUP_ATTEMPTS = 6;
+const IDENTITY_LOOKUP_RETRY_MS = 800;
 
 exports.handler = async event => {
   if (event.httpMethod !== "POST") {
@@ -88,30 +90,42 @@ exports.handler = async event => {
 
 async function fetchSubscriptionIdentity({ appId, restApiKey, subscriptionId }) {
   const url = `${ONESIGNAL_API_BASE}/apps/${encodeURIComponent(appId)}/subscriptions/${encodeURIComponent(subscriptionId)}/user/identity`;
-  const response = await fetch(url, {
-    method: "GET",
-    headers: {
-      "Authorization": `Key ${restApiKey}`
+
+  for (let attempt = 1; attempt <= IDENTITY_LOOKUP_ATTEMPTS; attempt += 1) {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Authorization": `Key ${restApiKey}`
+      }
+    });
+    const result = await parseOneSignalResponse(response);
+
+    console.info("[Bible for All] OneSignal identity lookup response.", {
+      status: result.status,
+      ok: result.ok,
+      attempt,
+      subscriptionIdMasked: maskValue(subscriptionId),
+      rawResponseText: result.rawText,
+      response: result.body
+    });
+
+    if (result.ok) {
+      return result;
     }
-  });
-  const result = await parseOneSignalResponse(response);
 
-  console.info("[Bible for All] OneSignal identity lookup response.", {
-    status: result.status,
-    ok: result.ok,
-    subscriptionIdMasked: maskValue(subscriptionId),
-    rawResponseText: result.rawText,
-    response: result.body
-  });
+    if (result.status !== 404 || attempt === IDENTITY_LOOKUP_ATTEMPTS) {
+      const error = new Error(`OneSignal identity lookup failed with ${result.status}.`);
+      error.statusCode = 502;
+      error.body = result.body;
+      throw error;
+    }
 
-  if (!result.ok) {
-    const error = new Error(`OneSignal identity lookup failed with ${result.status}.`);
-    error.statusCode = 502;
-    error.body = result.body;
-    throw error;
+    await delay(IDENTITY_LOOKUP_RETRY_MS);
   }
 
-  return result;
+  const error = new Error("OneSignal identity lookup did not complete.");
+  error.statusCode = 502;
+  throw error;
 }
 
 async function updateOneSignalUserTags({ appId, restApiKey, oneSignalId, subscriptionId, tags }) {
@@ -221,4 +235,8 @@ function maskValue(value = "") {
   if (!value) return "";
   if (value.length <= 8) return `${value.slice(0, 2)}...${value.slice(-2)}`;
   return `${value.slice(0, 8)}...${value.slice(-4)}`;
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
