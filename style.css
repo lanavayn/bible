@@ -3394,6 +3394,52 @@ table.book-dates th:nth-child(2) {
   color: #9c3b2f;
 }
 
+.daily-notification-diagnostics {
+  border-top: 1px solid rgba(106, 74, 53, 0.18);
+  padding-top: 0.45rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.daily-notification-diagnostics-title {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.daily-notification-diagnostics-list {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0 0 0.45rem;
+}
+
+.daily-notification-diagnostics-list div {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, auto) 1fr;
+  gap: 0.35rem;
+}
+
+.daily-notification-diagnostics-list dt,
+.daily-notification-diagnostics-list dd {
+  margin: 0;
+}
+
+.daily-notification-diagnostics-list dd {
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+.daily-notification-diagnostics-copy {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  background: #fff9ec;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .daily-notification-desktop-message {
     display: none;

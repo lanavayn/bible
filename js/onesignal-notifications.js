@@ -84,7 +84,27 @@ function renderNotificationControls({ feature, language } = {}) {
         </button>
       </div>
       <div class="daily-notification-status" role="status" aria-live="polite" data-notification-status></div>
+      ${renderUatDiagnosticsPanel()}
     </section>
+  `;
+}
+
+function renderUatDiagnosticsPanel() {
+  if (!shouldShowUatDiagnostics()) return "";
+
+  return `
+    <div class="daily-notification-diagnostics" data-notification-diagnostics>
+      <div class="daily-notification-diagnostics-title">UAT notification diagnostics</div>
+      <dl class="daily-notification-diagnostics-list">
+        <div><dt>OneSignal User ID</dt><dd data-diagnostic-onesignal-id>Loading...</dd></div>
+        <div><dt>PushSubscription ID</dt><dd data-diagnostic-subscription-id>Loading...</dd></div>
+        <div><dt>optedIn</dt><dd data-diagnostic-opted-in>Loading...</dd></div>
+        <div><dt>permission</dt><dd data-diagnostic-permission>Loading...</dd></div>
+      </dl>
+      <button class="daily-notification-diagnostics-copy" type="button" data-notification-diagnostics-copy>
+        Copy diagnostics
+      </button>
+    </div>
   `;
 }
 
@@ -104,12 +124,14 @@ function initNotificationControls(root = document, feature) {
 
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
+  const diagnosticsBtn = box.querySelector("[data-notification-diagnostics-copy]");
   const language = getBoxLanguage(box);
 
   initializeOneSignal().catch(error => {
     console.info("[Bible for All] Notifications preload is not ready yet.", error);
   });
   refreshNotificationState(box);
+  refreshUatDiagnostics(box);
 
   enableBtn?.addEventListener("click", async () => {
     setBusy(box, true);
@@ -139,6 +161,7 @@ function initNotificationControls(root = document, feature) {
         language,
         subscription
       });
+      refreshUatDiagnostics(box);
     } catch (error) {
       console.error("[Bible for All] Failed to enable notifications.", { feature, language, error });
       setState(box, STATUS_ERROR);
@@ -171,11 +194,27 @@ function initNotificationControls(root = document, feature) {
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
       console.info("[Bible for All] Notifications disabled for UAT.", { feature, language });
+      refreshUatDiagnostics(box);
     } catch (error) {
       console.error("[Bible for All] Failed to disable notifications.", { feature, language, error });
       setStatus(box, "Не удалось отключить уведомления. Проверьте настройки браузера.", STATUS_ERROR);
     } finally {
       setBusy(box, false);
+    }
+  });
+
+  diagnosticsBtn?.addEventListener("click", async () => {
+    const diagnostics = await getUatDiagnostics();
+    const text = formatDiagnostics(diagnostics);
+
+    try {
+      await navigator.clipboard.writeText(text);
+      diagnosticsBtn.textContent = "Copied";
+      setTimeout(() => {
+        diagnosticsBtn.textContent = "Copy diagnostics";
+      }, 1500);
+    } catch (error) {
+      console.warn("[Bible for All] Could not copy notification diagnostics.", error);
     }
   });
 }
@@ -497,6 +536,65 @@ async function getOneSignalServiceWorkerRegistration() {
   } catch (error) {
     return { error: error.message };
   }
+}
+
+async function refreshUatDiagnostics(box) {
+  const diagnosticsBox = box.querySelector("[data-notification-diagnostics]");
+  if (!diagnosticsBox) return;
+
+  const diagnostics = await getUatDiagnostics();
+
+  diagnosticsBox.querySelector("[data-diagnostic-onesignal-id]").textContent = diagnostics.oneSignalId;
+  diagnosticsBox.querySelector("[data-diagnostic-subscription-id]").textContent = diagnostics.pushSubscriptionId;
+  diagnosticsBox.querySelector("[data-diagnostic-opted-in]").textContent = diagnostics.optedIn;
+  diagnosticsBox.querySelector("[data-diagnostic-permission]").textContent = diagnostics.notificationPermission;
+}
+
+async function getUatDiagnostics() {
+  const fallback = {
+    oneSignalId: "not ready",
+    pushSubscriptionId: "not ready",
+    optedIn: "false",
+    notificationPermission: getNotificationPermission()
+  };
+
+  if (!shouldShowUatDiagnostics()) return fallback;
+
+  try {
+    const OneSignal = await initializeOneSignal();
+    const subscription = getPushSubscriptionState(OneSignal);
+
+    return {
+      oneSignalId: maskValue(OneSignal.User?.onesignalId || ""),
+      pushSubscriptionId: maskValue(subscription.id || ""),
+      optedIn: String(Boolean(subscription.optedIn)),
+      notificationPermission: getNotificationPermission()
+    };
+  } catch (error) {
+    return {
+      ...fallback,
+      oneSignalId: `error: ${error.message}`,
+      pushSubscriptionId: "error"
+    };
+  }
+}
+
+function formatDiagnostics(diagnostics) {
+  return [
+    `OneSignal User ID: ${diagnostics.oneSignalId}`,
+    `PushSubscription ID: ${diagnostics.pushSubscriptionId}`,
+    `optedIn: ${diagnostics.optedIn}`,
+    `notification permission: ${diagnostics.notificationPermission}`
+  ].join("\n");
+}
+
+function getNotificationPermission() {
+  return typeof Notification !== "undefined" ? Notification.permission : "unsupported";
+}
+
+function shouldShowUatDiagnostics() {
+  if (typeof window === "undefined") return false;
+  return ["bible-uat.netlify.app", "localhost", "127.0.0.1"].includes(window.location.hostname);
 }
 
 function setState(box, state) {
