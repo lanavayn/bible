@@ -299,7 +299,7 @@ async function tagNotificationSubscriber(OneSignal, feature, language, enabled) 
       feature,
       language,
       enabled: Boolean(enabled),
-      subscription_id: subscriptionId
+      subscription_id: subscription.id
     })
   });
   const result = await response.json().catch(() => ({}));
