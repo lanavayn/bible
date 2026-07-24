@@ -127,11 +127,7 @@ function initNotificationControls(root = document, feature) {
         return;
       }
 
-      if (OneSignal.User?.PushSubscription?.optIn) {
-        await OneSignal.User.PushSubscription.optIn();
-      }
-
-      const subscription = await waitForActivePushSubscription(OneSignal);
+      const subscription = await ensurePushSubscriptionOptedIn(OneSignal);
       const tags = await tagNotificationSubscriber(OneSignal, feature, language, true);
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
@@ -160,7 +156,16 @@ function initNotificationControls(root = document, feature) {
       const OneSignal = await initializeOneSignal();
       await logNotificationDiagnostics(OneSignal, "before-disable", { feature, language });
 
-      await tagNotificationSubscriber(OneSignal, feature, language, false);
+      const subscription = getPushSubscriptionState(OneSignal);
+
+      if (subscription.id) {
+        await tagNotificationSubscriber(OneSignal, feature, language, false, subscription);
+      }
+
+      if (OneSignal.User?.PushSubscription?.optOut) {
+        await OneSignal.User.PushSubscription.optOut();
+      }
+
       await logNotificationDiagnostics(OneSignal, "after-disable", { feature, language });
 
       setState(box, STATUS_DISABLED);
@@ -199,19 +204,26 @@ async function initializeOneSignal() {
 
     const config = await loadNotificationConfig();
     activeConfig = config;
-    await loadOneSignalSdk();
-
     window.OneSignalDeferred = window.OneSignalDeferred || [];
+    await loadOneSignalSdk();
 
     return new Promise((resolve, reject) => {
       window.OneSignalDeferred.push(async OneSignal => {
         try {
-          await OneSignal.init({
-            appId: config.appId,
+          const initOptions = {
+            appId: config.appId.trim(),
             serviceWorkerPath: config.serviceWorkerPath,
             serviceWorkerParam: { scope: config.serviceWorkerScope },
             allowLocalhostAsSecureOrigin: Boolean(config.allowLocalhostAsSecureOrigin)
+          };
+
+          console.info("[Bible for All] Initializing OneSignal.", {
+            appId: maskValue(initOptions.appId),
+            serviceWorkerPath: initOptions.serviceWorkerPath,
+            serviceWorkerScope: initOptions.serviceWorkerParam.scope
           });
+
+          await OneSignal.init(initOptions);
 
           resolve(OneSignal);
         } catch (error) {
@@ -234,9 +246,10 @@ async function loadNotificationConfig() {
         return response.json();
       })
       .then(config => {
-        if (!config?.appId) {
+        if (typeof config?.appId !== "string" || !config.appId.trim()) {
           throw new Error("Missing OneSignal app ID.");
         }
+        config.appId = config.appId.trim();
         return config;
       });
   }
@@ -245,7 +258,7 @@ async function loadNotificationConfig() {
 }
 
 function loadOneSignalSdk() {
-  if (window.OneSignalDeferred) return Promise.resolve();
+  if (window.OneSignal?.User && window.OneSignal?.Notifications) return Promise.resolve();
   if (sdkPromise) return sdkPromise;
 
   sdkPromise = new Promise((resolve, reject) => {
@@ -275,9 +288,47 @@ async function requestNotificationPermission(OneSignal) {
   return permission === "granted";
 }
 
-async function tagNotificationSubscriber(OneSignal, feature, language, enabled) {
-  const subscription = getPushSubscriptionState(OneSignal);
+async function ensurePushSubscriptionOptedIn(OneSignal) {
+  const activeSubscription = getPushSubscriptionState(OneSignal);
+
+  if (isActivePushSubscription(activeSubscription)) {
+    return activeSubscription;
+  }
+
+  if (OneSignal.User?.PushSubscription?.optIn) {
+    try {
+      await OneSignal.User.PushSubscription.optIn();
+    } catch (error) {
+      const subscriptionAfterError = getPushSubscriptionState(OneSignal);
+
+      if (isActivePushSubscription(subscriptionAfterError)) {
+        console.warn("[Bible for All] OneSignal optIn reported an error after the browser subscription became active.", {
+          error,
+          subscription: subscriptionAfterError
+        });
+        return subscriptionAfterError;
+      }
+
+      throw error;
+    }
+  }
+
+  return waitForActivePushSubscription(OneSignal);
+}
+
+async function tagNotificationSubscriber(OneSignal, feature, language, enabled, knownSubscription = null) {
+  const subscription = knownSubscription || getPushSubscriptionState(OneSignal);
   const intendedTags = buildNotificationTags(feature, language, enabled);
+
+  if (!subscription.id) {
+    console.warn("[Bible for All] Skipping server-side OneSignal tag update because no subscription ID is available.", {
+      feature,
+      language,
+      enabled,
+      subscription
+    });
+    return intendedTags;
+  }
 
   console.info("[Bible for All] Requesting server-side OneSignal tag update.", {
     feature,
@@ -380,7 +431,7 @@ async function waitForActivePushSubscription(OneSignal) {
   while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
     const subscription = getPushSubscriptionState(OneSignal);
 
-    if (subscription.optedIn && subscription.id && subscription.token) {
+    if (isActivePushSubscription(subscription)) {
       return subscription;
     }
 
@@ -396,6 +447,10 @@ function getPushSubscriptionState(OneSignal) {
     token: OneSignal.User?.PushSubscription?.token || null,
     optedIn: Boolean(OneSignal.User?.PushSubscription?.optedIn)
   };
+}
+
+function isActivePushSubscription(subscription) {
+  return Boolean(subscription?.optedIn && subscription.id && subscription.token);
 }
 
 function maskValue(value = "") {
