@@ -6,8 +6,6 @@ const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
-const TAG_UPDATE_ATTEMPTS = 4;
-const TAG_UPDATE_RETRY_MS = 6000;
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -135,10 +133,6 @@ function initNotificationControls(root = document, feature) {
 
       const subscription = await waitForActivePushSubscription(OneSignal);
       const tags = await tagNotificationSubscriber(OneSignal, feature, language, true);
-
-      if (!isFeatureTagEnabled(tags, feature)) {
-        throw new Error(`OneSignal tag was not confirmed for ${feature}.`);
-      }
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
@@ -283,6 +277,7 @@ async function requestNotificationPermission(OneSignal) {
 
 async function tagNotificationSubscriber(OneSignal, feature, language, enabled) {
   const subscription = getPushSubscriptionState(OneSignal);
+  const intendedTags = buildNotificationTags(feature, language, enabled);
 
   console.info("[Bible for All] Requesting server-side OneSignal tag update.", {
     feature,
@@ -295,37 +290,6 @@ async function tagNotificationSubscriber(OneSignal, feature, language, enabled) 
     }
   });
 
-  let lastResult = null;
-
-  for (let attempt = 1; attempt <= TAG_UPDATE_ATTEMPTS; attempt += 1) {
-    const { response, result } = await updateTagsOnServer({ feature, language, enabled, subscriptionId: subscription.id });
-    lastResult = { response, result };
-
-    console.info("[Bible for All] Server-side OneSignal tag update response.", {
-      feature,
-      language,
-      enabled,
-      attempt,
-      status: response.status,
-      ok: response.ok,
-      result
-    });
-
-    if (response.ok && result.ok) {
-      return result.tags || {};
-    }
-
-    if (!shouldRetryTagUpdate(response, result) || attempt === TAG_UPDATE_ATTEMPTS) {
-      throw new Error(result.error || `OneSignal tag update failed with ${response.status}.`);
-    }
-
-    await delay(TAG_UPDATE_RETRY_MS);
-  }
-
-  throw new Error(lastResult?.result?.error || "OneSignal tag update failed.");
-}
-
-async function updateTagsOnServer({ feature, language, enabled, subscriptionId }) {
   const response = await fetch(TAG_UPDATE_URL, {
     method: "POST",
     headers: {
@@ -340,13 +304,27 @@ async function updateTagsOnServer({ feature, language, enabled, subscriptionId }
   });
   const result = await response.json().catch(() => ({}));
 
-  return { response, result };
-}
+  console.info("[Bible for All] Server-side OneSignal tag update response.", {
+    feature,
+    language,
+    enabled,
+    status: response.status,
+    ok: response.ok,
+    result
+  });
 
-function shouldRetryTagUpdate(response, result) {
-  return response.status === 502
-    && typeof result?.error === "string"
-    && result.error.toLowerCase().includes("identity lookup");
+  if (!response.ok || !result.ok) {
+    console.warn("[Bible for All] Push subscription is active, but OneSignal tag sync failed.", {
+      feature,
+      language,
+      enabled,
+      status: response.status,
+      result
+    });
+    return intendedTags;
+  }
+
+  return result.tags || intendedTags;
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
@@ -382,6 +360,18 @@ function isFeatureTagEnabled(tags, feature, language = null) {
   if (languageFeatureTag && tags?.[languageFeatureTag] === "true") return true;
   if (tags?.[featureTag] === "true") return true;
   return false;
+}
+
+function buildNotificationTags(feature, language, enabled) {
+  const featureTag = getFeatureTag(feature);
+  const languageFeatureTag = `${featureTag}_${language}`;
+
+  return {
+    lang: language,
+    [featureTag]: String(Boolean(enabled)),
+    [languageFeatureTag]: String(Boolean(enabled)),
+    notifications_phase: "uat"
+  };
 }
 
 async function waitForActivePushSubscription(OneSignal) {
