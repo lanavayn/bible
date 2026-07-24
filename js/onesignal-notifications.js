@@ -6,6 +6,8 @@ const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
+const TAG_UPDATE_ATTEMPTS = 4;
+const TAG_UPDATE_RETRY_MS = 6000;
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -293,6 +295,37 @@ async function tagNotificationSubscriber(OneSignal, feature, language, enabled) 
     }
   });
 
+  let lastResult = null;
+
+  for (let attempt = 1; attempt <= TAG_UPDATE_ATTEMPTS; attempt += 1) {
+    const { response, result } = await updateTagsOnServer({ feature, language, enabled, subscriptionId: subscription.id });
+    lastResult = { response, result };
+
+    console.info("[Bible for All] Server-side OneSignal tag update response.", {
+      feature,
+      language,
+      enabled,
+      attempt,
+      status: response.status,
+      ok: response.ok,
+      result
+    });
+
+    if (response.ok && result.ok) {
+      return result.tags || {};
+    }
+
+    if (!shouldRetryTagUpdate(response, result) || attempt === TAG_UPDATE_ATTEMPTS) {
+      throw new Error(result.error || `OneSignal tag update failed with ${response.status}.`);
+    }
+
+    await delay(TAG_UPDATE_RETRY_MS);
+  }
+
+  throw new Error(lastResult?.result?.error || "OneSignal tag update failed.");
+}
+
+async function updateTagsOnServer({ feature, language, enabled, subscriptionId }) {
   const response = await fetch(TAG_UPDATE_URL, {
     method: "POST",
     headers: {
@@ -302,25 +335,18 @@ async function tagNotificationSubscriber(OneSignal, feature, language, enabled) 
       feature,
       language,
       enabled: Boolean(enabled),
-      subscription_id: subscription.id
+      subscription_id: subscriptionId
     })
   });
   const result = await response.json().catch(() => ({}));
 
-  console.info("[Bible for All] Server-side OneSignal tag update response.", {
-    feature,
-    language,
-    enabled,
-    status: response.status,
-    ok: response.ok,
-    result
-  });
+  return { response, result };
+}
 
-  if (!response.ok || !result.ok) {
-    throw new Error(result.error || `OneSignal tag update failed with ${response.status}.`);
-  }
-
-  return result.tags || {};
+function shouldRetryTagUpdate(response, result) {
+  return response.status === 502
+    && typeof result?.error === "string"
+    && result.error.toLowerCase().includes("identity lookup");
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
