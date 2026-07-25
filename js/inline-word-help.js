@@ -59,12 +59,27 @@ function insertHelpButtons(text, definitions, classes) {
 }
 
 function isVerseReference(verseRef, book, chapter, verse) {
-  return verseRef?.book === book
+  return String(verseRef?.book || "").toLowerCase() === String(book).toLowerCase()
     && Number(verseRef?.chapter) === chapter
     && String(verseRef?.verse) === String(verse);
 }
 
 function getVerseSpecificDefinitions(lang, verseRef) {
+  if (isVerseReference(verseRef, "Romans", 8, "25")) {
+    if (lang !== "ru") {
+      return [];
+    }
+
+    return [
+      {
+        label: "Подробнее о стихе Римлянам 8:25",
+        closeLabel: "Закрыть",
+        text: "Вера помогает терпеливо ждать исполнения Божьих обещаний.",
+        pattern: /(^|[^А-Яа-яЁё])(чего не видим, тогда ожидаем в терпении\.)(?=$|[^А-Яа-яЁё])/gi
+      }
+    ];
+  }
+
   if (!isVerseReference(verseRef, "Ephesians", 6, "18")) {
     return [];
   }
@@ -126,6 +141,54 @@ const RU_COMMON_DEFINITIONS = [
     closeLabel: "Закрыть",
     text: "Божье избавление человека от греха и смерти через Иисуса Христа.",
     pattern: /(^|[^А-Яа-яЁё])(спасение|спасения|спасению|спасением)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Евангелие»",
+    closeLabel: "Закрыть",
+    text: "Весть о спасении, прощении и вечной жизни через Иисуса Христа.",
+    pattern: /(^|[^А-Яа-яЁё])(Евангелие|Евангелия|Евангелию|Евангелием)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о фразе «приготовлю вам место»",
+    closeLabel: "Закрыть",
+    text: "Иисус обещает, что верующие смогут быть с Ним в вечности.",
+    pattern: /(^|[^А-Яа-яЁё])(приготовлю вам место)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о фразе «гряду скоро»",
+    closeLabel: "Закрыть",
+    text: "Иисус обещает, что однажды обязательно вернётся.",
+    pattern: /(^|[^А-Яа-яЁё])(гряду скоро)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «сретение»",
+    closeLabel: "Закрыть",
+    text: "Встреча; здесь — встреча верующих с Господом.",
+    pattern: /(^|[^А-Яа-яЁё])(сретение|сретения|сретению|сретением|сретении)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «подъять»",
+    closeLabel: "Закрыть",
+    text: "Поднять; возвысить.",
+    pattern: /(^|[^А-Яа-яЁё])(подъять|подъял|подъяла|подъяли|подъемлю|подъемлет|подъемлют)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «венец»",
+    closeLabel: "Закрыть",
+    text: "Символ награды, которую Господь обещает тем, кто остаётся Ему верным.",
+    pattern: /(^|[^А-Яа-яЁё])(венец|венца|венцу|венцом|венце|венцы|венцов|венцам|венцами|венцах)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «анафема»",
+    closeLabel: "Закрыть",
+    text: "Находящийся под Божьим осуждением; отлучённый от Бога.",
+    pattern: /(^|[^А-Яа-яЁё])(анафема|анафемы|анафеме|анафему|анафемой)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «маран-афа»",
+    closeLabel: "Закрыть",
+    text: "«Господь грядёт» или «Приди, Господи!» — древняя молитва первых христиан.",
+    pattern: /(^|[^А-Яа-яЁё])(маран-афа|маранафа)(?=$|[^А-Яа-яЁё])/gi
   },
   {
     label: "Подробнее о слове «покаяние»",
@@ -222,6 +285,42 @@ const EN_COMMON_DEFINITIONS = [
     closeLabel: "Close",
     text: "God’s rescue from sin and death through Jesus Christ.",
     pattern: /\b(Salvation|salvation)\b/g
+  },
+  {
+    label: "More about Gospel",
+    closeLabel: "Close",
+    text: "The message of salvation, forgiveness, and eternal life through Jesus Christ.",
+    pattern: /\b(Gospel|gospel)\b/g
+  },
+  {
+    label: "More about prepare a place for you",
+    closeLabel: "Close",
+    text: "Jesus promises that believers will be with Him for eternity.",
+    pattern: /\b(prepare a place for you)\b/gi
+  },
+  {
+    label: "More about I am coming quickly",
+    closeLabel: "Close",
+    text: "Jesus promises that He will certainly return one day.",
+    pattern: /\b(I am coming quickly|I come quickly)\b/gi
+  },
+  {
+    label: "More about crown",
+    closeLabel: "Close",
+    text: "A symbol of the reward the Lord promises to those who remain faithful to Him.",
+    pattern: /\b(Crown|crown|crowns)\b/g
+  },
+  {
+    label: "More about anathema",
+    closeLabel: "Close",
+    text: "Under God's judgment; separated from God.",
+    pattern: /\b(Anathema|anathema)\b/g
+  },
+  {
+    label: "More about Maranatha",
+    closeLabel: "Close",
+    text: "\"Our Lord is coming\" or \"Come, Lord!\" — an ancient prayer of the early Christians.",
+    pattern: /\b(Maranatha|maranatha)\b/g
   },
   {
     label: "More about repentance",

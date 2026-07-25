@@ -96,7 +96,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         "/data/daily/daily-1-30.json",
         "/data/daily/daily-31-60.json",
         "/data/daily/daily-61-90.json",
-        "/data/daily/daily-91-120.json"       
+        "/data/daily/daily-91-120.json",
+        "/data/daily/daily-121-150.json"
       ];
       
       let verses = [];
@@ -987,6 +988,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     return addInlineWordHelp(text, {
       lang,
       isOldTestament: isOldTestamentBook(verseRef),
+      verseRef,
       classes: {
         button: "daily-help-btn",
         inline: "daily-help-inline",
