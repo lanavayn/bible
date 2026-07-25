@@ -1519,20 +1519,20 @@
         "id": "daily-2026-08-03",
         "day": 120,
         "topic": {
-          "ru": "Жизнь без слёз и смерти",
-          "en": "Life Without Tears or Death"
+          "ru": "Вечная радость без слёз и смерти",
+          "en": "Eternal Joy Without Tears and Death"
         },
-        "reference_ru": "Откровение 21:4",
-        "reference_en": "Revelation 21:4",
-        "text_ru": "И отрет Бог всякую слезу с очей их, и смерти не будет уже; ни плача, ни вопля, ни болезни уже не будет, ибо прежнее прошло.",
-        "text_en": "He will wipe away from them every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain, any more. The first things have passed away.",
+        "reference_ru": "Исаия 35:10",
+        "reference_en": "Isaiah 35:10",
+        "text_ru": "И возвратятся избавленные Господом, придут на Сион с радостным восклицанием; и радость вечная будет над головою их; они найдут радость и веселие, а печаль и воздыхание удалятся.",
+        "text_en": "The Lord’s ransomed ones will return, and come with singing to Zion; and everlasting joy will be on their heads. They will obtain gladness and joy, and sorrow and sighing will flee away.",
         "verse_ref": {
-          "book": "revelation",
-          "chapter": 21,
-          "verse": "4"
+          "book": "isaiah",
+          "chapter": 35,
+          "verse": "10"
         },
-        "interpretation_ru": "После возвращения Христа Господь навсегда избавит Свой народ от слёз, боли и смерти.",
-        "interpretation_en": "After Christ returns, the Lord will forever free His people from tears, pain, and death.",
+        "interpretation_ru": "Господь обещает Своему народу вечную радость, в которой больше не будет печали и страданий.",
+        "interpretation_en": "The Lord promises His people eternal joy, where sorrow and suffering will be no more.",
         "related": [
           {
             "reference_ru": "Исаия 25:8",
