@@ -1693,6 +1693,62 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-89",
+      "day": 89,
+      "topic_ru": "Евангелие",
+      "topic_en": "The Gospel",
+      "question_ru": "Что значит Евангелие?",
+      "question_en": "What does the Gospel mean?",
+      "reference_ru": "Марка 1:15",
+      "reference_en": "Mark 1:15",
+      "text_ru": "И говоря, что исполнилось время и приблизилось Царствие Божие: покайтесь и веруйте в Евангелие.",
+      "text_en": "Saying, \"The time is fulfilled, and God's Kingdom is at hand! Repent, and believe in the Good News.\"",
+      "verse_ref": {
+        "book": "Mark",
+        "chapter": 1,
+        "verse": "15"
+      },
+      "answer_ru": "Евангелие — это добрая весть о спасении через Иисуса Христа. Бог призывает каждого покаяться, верить и принять дар вечной жизни.",
+      "answer_en": "The Gospel is the good news of salvation through Jesus Christ. God calls everyone to repent, believe, and receive the gift of eternal life.",
+      "reflection_ru": "Евангелие открывает каждому человеку путь к спасению через Иисуса Христа.",
+      "reflection_en": "The Gospel reveals the way of salvation through Jesus Christ to everyone.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 1:16",
+          "reference_en": "Romans 1:16",
+          "text_ru": "Ибо я не стыжусь благовествования Христова, потому что оно есть сила Божия ко спасению всякому верующему, во-первых Иудею, потом и Еллину.",
+          "text_en": "For I am not ashamed of the Good News of Christ, for it is the power of God for salvation for everyone who believes; for the Jew first, and also for the Greek.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 1,
+            "verse": "16"
+          }
+        },
+        {
+          "reference_ru": "1 Коринфянам 15:3-4",
+          "reference_en": "1 Corinthians 15:3-4",
+          "text_ru": "Ибо я первоначально преподал вам, что и сам принял, то есть, что Христос умер за грехи наши, по Писанию, и что Он погребён был, и что воскрес в третий день, по Писанию.",
+          "text_en": "For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures.",
+          "verse_ref": {
+            "book": "1-Corinthians",
+            "chapter": 15,
+            "verse": "3-4"
+          }
+        },
+        {
+          "reference_ru": "Деяния 20:24",
+          "reference_en": "Acts 20:24",
+          "text_ru": "Но я ни на что не взираю и не дорожу своею жизнью, только бы с радостью совершить поприще моё и служение, которое я принял от Господа Иисуса, проповедать Евангелие благодати Божией.",
+          "text_en": "But these things don't count, nor do I hold my life dear to myself, so that I may finish my race with joy, and the ministry which I received from the Lord Jesus, to testify to the Good News of God's grace.",
+          "verse_ref": {
+            "book": "Acts",
+            "chapter": 20,
+            "verse": "24"
+          }
+        }
+      ]
     }
   ]
 }
