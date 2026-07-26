@@ -1738,14 +1738,59 @@
           }
         },
         {
-          "reference_ru": "Деяния 20:24",
-          "reference_en": "Acts 20:24",
-          "text_ru": "Но я ни на что не взираю и не дорожу своею жизнью, только бы с радостью совершить поприще моё и служение, которое я принял от Господа Иисуса, проповедать Евангелие благодати Божией.",
-          "text_en": "But these things don't count, nor do I hold my life dear to myself, so that I may finish my race with joy, and the ministry which I received from the Lord Jesus, to testify to the Good News of God's grace.",
+          "reference_ru": "2 Тимофею 1:10",
+          "reference_en": "2 Timothy 1:10",
+          "text_ru": "Явившейся же ныне явлением Спасителя нашего Иисуса Христа, разрушившего смерть и явившего жизнь и нетление через благовестие.",
+          "text_en": "But has now been revealed by the appearing of our Savior, Christ Jesus, who abolished death and brought life and immortality to light through the Good News.",
           "verse_ref": {
-            "book": "Acts",
-            "chapter": 20,
-            "verse": "24"
+            "book": "2-Timothy",
+            "chapter": 1,
+            "verse": "10"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-90",
+      "day": 90,
+      "topic_ru": "Четыре Евангелия",
+      "topic_en": "The Four Gospels",
+      "question_ru": "Почему в Библии четыре Евангелия?",
+      "question_en": "Why are there four Gospels in the Bible?",
+      "reference_ru": "Луки 1:3-4",
+      "reference_en": "Luke 1:3-4",
+      "text_ru": "То рассудилось и мне, по тщательном исследовании всего сначала, по порядку описать тебе, достопочтенный Феофил, чтобы ты узнал твёрдое основание того учения, в котором был наставлен.",
+      "text_en": "It seemed good to me also, having traced the course of all things accurately from the first, to write to you in order, most excellent Theophilus; that you might know the certainty concerning the things in which you were instructed.",
+      "verse_ref": {
+        "book": "Luke",
+        "chapter": 1,
+        "verse": "3-4"
+      },
+      "answer_ru": "Бог дал несколько свидетельств об Иисусе Христе, чтобы истина была подтверждена. Все четыре Евангелия рассказывают об одном Спасителе и дополняют друг друга.",
+      "answer_en": "God gave several testimonies about Jesus Christ so that the truth would be confirmed. All four Gospels tell about the same Savior and complement one another.",
+      "reflection_ru": "Четыре Евангелия помогают нам полнее увидеть жизнь, служение и учение Иисуса Христа.",
+      "reflection_en": "The four Gospels help us see the life, ministry, and teaching of Jesus Christ more fully.",
+      "related": [
+        {
+          "reference_ru": "Второзаконие 19:15",
+          "reference_en": "Deuteronomy 19:15",
+          "text_ru": "Недостаточно одного свидетеля против кого-либо в какой-нибудь вине и в каком-нибудь преступлении и в каком-нибудь грехе, которым он согрешит: при словах двух свидетелей, или при словах трёх свидетелей состоится всякое дело.",
+          "text_en": "One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sins. At the mouth of two witnesses, or at the mouth of three witnesses, shall a matter be established.",
+          "verse_ref": {
+            "book": "Deuteronomy",
+            "chapter": 19,
+            "verse": "15"
+          }
+        },
+        {
+          "reference_ru": "2 Петра 1:16",
+          "reference_en": "2 Peter 1:16",
+          "text_ru": "Ибо мы возвестили вам силу и пришествие Господа нашего Иисуса Христа, не хитросплетённым басням последуя, но быв очевидцами Его величия.",
+          "text_en": "For we did not follow cunningly devised fables when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his majesty.",
+          "verse_ref": {
+            "book": "2-Peter",
+            "chapter": 1,
+            "verse": "16"
           }
         }
       ]

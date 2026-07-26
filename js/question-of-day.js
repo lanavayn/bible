@@ -7,7 +7,7 @@ import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 // PROD date Anpril 30 2026
 const START_DATE = "2026-04-30";
 //test  
-//const START_DATE = "2026-02-01";
+//const START_DATE = "2026-01-01";
 
 function parseDate(dateStr) {
   const [y, m, d] = dateStr.split("-").map(Number);
@@ -50,7 +50,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     const jsonPaths = [
       "/data/questions/question-1-30.json",
       "/data/questions/question-31-60.json",
-      "/data/questions/question-61-90.json"      
+      "/data/questions/question-61-90.json",      
+      "/data/questions/question-91-120.json"
     ];
     
     let questions = [];

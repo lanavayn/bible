@@ -1,0 +1,50 @@
+{
+    "questions": [
+      {
+        "id": "question-day-91",
+        "day": 91,
+        "topic_ru": "Происхождение Евангелия",
+        "topic_en": "The Source of the Gospel",
+        "question_ru": "Как мы знаем, что Евангелие — от Господа?",
+        "question_en": "How do we know the Gospel is from the Lord?",
+        "reference_ru": "Галатам 1:11-12",
+        "reference_en": "Galatians 1:11-12",
+        "text_ru": "Возвещаю вам, братия, что Евангелие, которое я благовествовал, не есть человеческое, ибо и я принял его и научился не от человека, но через откровение Иисуса Христа.",
+        "text_en": "But I make known to you, brothers, concerning the Good News which was preached by me, that it is not according to man. For neither did I receive it from man, nor was I taught it, but it came to me through revelation of Jesus Christ.",
+        "verse_ref": {
+          "book": "Galatians",
+          "chapter": 1,
+          "verse": "11-12"
+        },
+        "answer_ru": "Евангелие дано Господом через Иисуса Христа, а не исходит от человека.",
+        "answer_en": "The Gospel was given by the Lord through Jesus Christ, not by man.",
+        "reflection_ru": "Евангелию можно доверять, потому что его источник — Господь, а не человеческая мудрость.",
+        "reflection_en": "We can trust the Gospel because its source is the Lord, not human wisdom.",
+        "related": [
+          {
+            "reference_ru": "Евреям 2:3-4",
+            "reference_en": "Hebrews 2:3-4",
+            "text_ru": "То как мы избежим, вознерадев о толиком спасении, которое, быв сначала проповедано Господом, в нас утвердилось слышавшими от Него, при засвидетельствовании от Бога знамениями и чудесами, и различными силами, и раздаянием Духа Святого по Его воле?",
+            "text_en": "How will we escape if we neglect so great a salvation—which at the first having been spoken through the Lord, was confirmed to us by those who heard, God also testifying with them, both by signs and wonders, by various works of power, and by gifts of the Holy Spirit, according to his own will?",
+            "verse_ref": {
+              "book": "Hebrews",
+              "chapter": 2,
+              "verse": "3-4"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 12:49-50",
+            "reference_en": "John 12:49-50",
+            "text_ru": "Ибо Я говорил не от Себя; но пославший Меня Отец, Он дал Мне заповедь, что сказать и что говорить. И Я знаю, что заповедь Его есть жизнь вечная. Итак, что Я говорю, говорю, как сказал Мне Отец.",
+            "text_en": "For I spoke not from myself, but the Father who sent me gave me a commandment, what I should say and what I should speak. I know that his commandment is eternal life. The things therefore which I speak, even as the Father has said to me, so I speak.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 12,
+              "verse": "49-50"
+            }
+          }
+        ]
+      }
+    ]
+}
+  
