@@ -149,7 +149,11 @@ function initNotificationControls(root = document, feature) {
         return;
       }
 
-      const subscription = await ensurePushSubscriptionOptedIn(OneSignal);
+      if (OneSignal.User?.PushSubscription?.optIn) {
+        await OneSignal.User.PushSubscription.optIn();
+      }
+
+      const subscription = await waitForActivePushSubscription(OneSignal);
       const tags = await tagNotificationSubscriber(OneSignal, feature, language, true);
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
