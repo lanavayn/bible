@@ -1,5 +1,6 @@
 const SDK_SRC = "https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
 const CONFIG_URL = "/.netlify/functions/notifications-config";
+const TAG_UPDATE_URL = "/.netlify/functions/onesignal-update-tags";
 const STATUS_ENABLED = "enabled";
 const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
@@ -454,25 +455,73 @@ function waitForSubscriptionState(OneSignal, predicate, timeoutMessage) {
 
 async function syncAndVerifyFeatureTags(OneSignal, feature, language, enabled) {
   const intendedTags = buildNotificationTags(feature, language, enabled);
+  let clientTags = {};
 
-  if (!OneSignal.User?.addTags || !OneSignal.User?.getTags) {
-    throw new Error("OneSignal tag APIs are unavailable.");
-  }
-
-  await OneSignal.User.addTags(intendedTags);
-
-  const startedAt = Date.now();
-  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
-    const tags = await getOneSignalTags(OneSignal);
-
-    if (tagsMatch(tags, intendedTags)) {
-      return tags;
+  try {
+    if (!OneSignal.User?.addTags || !OneSignal.User?.getTags) {
+      throw new Error("OneSignal tag APIs are unavailable.");
     }
 
-    await delay(SUBSCRIPTION_POLL_MS);
+    await OneSignal.User.addTags(intendedTags);
+    const startedAt = Date.now();
+
+    while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+      clientTags = await getOneSignalTags(OneSignal);
+
+      if (tagsMatch(clientTags, intendedTags)) {
+        break;
+      }
+
+      await delay(SUBSCRIPTION_POLL_MS);
+    }
+  } catch (error) {
+    console.warn("[Bible for All] OneSignal client tag sync failed; using the UAT server fallback.", error);
   }
 
-  throw new Error(`OneSignal tags were not confirmed for ${feature}.`);
+  const serverTags = await syncFeatureTagsWithServer(OneSignal, feature, language, enabled);
+
+  if (!tagsMatch(serverTags, intendedTags)) {
+    throw new Error(`OneSignal tags were not confirmed for ${feature}.`);
+  }
+
+  return serverTags;
+}
+
+async function syncFeatureTagsWithServer(OneSignal, feature, language, enabled) {
+  const subscription = getPushSubscriptionState(OneSignal);
+
+  if (!subscription.id) {
+    throw new Error("OneSignal Subscription ID is unavailable for tag synchronization.");
+  }
+
+  const response = await fetch(TAG_UPDATE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    body: JSON.stringify({
+      feature,
+      language,
+      enabled: Boolean(enabled),
+      subscription_id: subscription.id
+    })
+  });
+  const result = await response.json().catch(() => ({}));
+
+  console.info("[Bible for All] OneSignal server tag fallback response.", {
+    feature,
+    language,
+    enabled,
+    status: response.status,
+    ok: response.ok,
+    result
+  });
+
+  if (!response.ok || !result.ok) {
+    throw new Error(result.error || `OneSignal server tag sync failed with ${response.status}.`);
+  }
+
+  return result.tags || {};
 }
 
 function tagsMatch(actualTags, expectedTags) {
