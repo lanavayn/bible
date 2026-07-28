@@ -541,22 +541,17 @@ async function getOneSignalTags(OneSignal) {
 
 function isFeatureTagEnabled(tags, feature, language = null) {
   const featureTag = getFeatureTag(feature);
-  const languageFeatureTag = language ? `${featureTag}_${language}` : null;
+  const value = tags?.[featureTag];
 
-  if (languageFeatureTag && tags?.[languageFeatureTag] === "true") return true;
-  if (tags?.[featureTag] === "true") return true;
-  return false;
+  if (language) return value === language;
+  return value === "ru" || value === "en";
 }
 
 function buildNotificationTags(feature, language, enabled) {
   const featureTag = getFeatureTag(feature);
-  const languageFeatureTag = `${featureTag}_${language}`;
 
   return {
-    lang: language,
-    [featureTag]: String(Boolean(enabled)),
-    [languageFeatureTag]: String(Boolean(enabled)),
-    notifications_phase: "uat"
+    [featureTag]: enabled ? language : "false"
   };
 }
 

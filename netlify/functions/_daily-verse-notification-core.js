@@ -117,7 +117,9 @@ function buildNotificationPayload({ force = false, source = "" } = {}) {
     app_id: requireEnv("ONESIGNAL_APP_ID"),
     name: `UAT ${notificationSource} Daily Verse TEST ${scheduledTestLabel} - Day ${day} - ${dateKey}`,
     target_channel: "push",
-    included_segments: ["Total Subscriptions"],
+    filters: [
+      { field: "tag", key: "daily_verse", relation: "=", value: "ru" }
+    ],
     headings: {
       ru: "Стих дня",
       en: "Стих дня"
@@ -181,7 +183,7 @@ async function sendDailyVerseNotification(options = {}) {
     calculatedDay: payload.data.calculated_day,
     url: payload.web_url,
     idempotencyKey: payload.idempotency_key,
-    includedSegments: payload.included_segments,
+    filters: payload.filters,
     requestPayload: maskNotificationPayload(payload)
   });
 

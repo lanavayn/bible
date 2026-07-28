@@ -232,10 +232,7 @@ function buildWhitelistedTags(feature, language, enabled) {
   const featureTag = feature.replace(/-/g, "_");
 
   return {
-    lang: language,
-    [featureTag]: String(enabled),
-    [`${featureTag}_${language}`]: String(enabled),
-    notifications_phase: "uat"
+    [featureTag]: enabled ? language : "false"
   };
 }
 

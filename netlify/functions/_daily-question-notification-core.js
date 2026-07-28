@@ -98,11 +98,7 @@ function buildNotificationPayload({ language, force = false, source = "", testLa
     name: `UAT ${notificationSource} Daily Question TEST ${testLabel} - Question ${day} - ${dateKey} - ${language.toUpperCase()}`,
     target_channel: "push",
     filters: [
-      { field: "tag", key: "notifications_phase", relation: "=", value: "uat" },
-      { operator: "AND" },
-      { field: "tag", key: "daily_question", relation: "=", value: "true" },
-      { operator: "AND" },
-      { field: "tag", key: "lang", relation: "=", value: language }
+      { field: "tag", key: "daily_question", relation: "=", value: language }
     ],
     headings: {
       [language]: heading,
