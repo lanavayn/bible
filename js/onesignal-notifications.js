@@ -251,6 +251,7 @@ async function initializeOneSignal() {
         try {
           const initOptions = {
             appId: config.appId.trim(),
+            autoResubscribe: false,
             serviceWorkerPath: config.serviceWorkerPath,
             serviceWorkerParam: { scope: config.serviceWorkerScope },
             allowLocalhostAsSecureOrigin: Boolean(config.allowLocalhostAsSecureOrigin)
