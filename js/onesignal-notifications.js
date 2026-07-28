@@ -1,11 +1,11 @@
 const SDK_SRC = "https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
 const CONFIG_URL = "/.netlify/functions/notifications-config";
-const TAG_UPDATE_URL = "/.netlify/functions/onesignal-update-tags";
 const STATUS_ENABLED = "enabled";
 const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
+const PREFERENCE_KEY_PREFIX = "bfa.notifications";
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -49,6 +49,7 @@ let configPromise = null;
 let sdkPromise = null;
 let initPromise = null;
 let activeConfig = null;
+let oneSignalInstance = null;
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
   return renderNotificationControls({ feature: "daily-verse", language });
@@ -127,10 +128,14 @@ function initNotificationControls(root = document, feature) {
   const diagnosticsBtn = box.querySelector("[data-notification-diagnostics-copy]");
   const language = getBoxLanguage(box);
 
-  initializeOneSignal().catch(error => {
-    console.info("[Bible for All] Notifications preload is not ready yet.", error);
-  });
-  refreshNotificationState(box);
+  if (hasLocalPreference(feature, language) && getNotificationPermission() === "granted") {
+    refreshNotificationState(box);
+  } else {
+    if (getNotificationPermission() !== "granted") {
+      setLocalPreference(feature, language, false);
+    }
+    setState(box, STATUS_DISABLED);
+  }
   refreshUatDiagnostics(box);
 
   enableBtn?.addEventListener("click", async () => {
@@ -140,20 +145,12 @@ function initNotificationControls(root = document, feature) {
     try {
       const OneSignal = await initializeOneSignal();
       await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
-      const permissionGranted = await requestNotificationPermission(OneSignal);
-
-      if (!permissionGranted) {
-        await logNotificationDiagnostics(OneSignal, "permission-not-granted", { feature, language });
-        setState(box, STATUS_DISABLED);
-        setStatus(box, "Разрешение на уведомления не получено.", STATUS_ERROR);
-        return;
-      }
-
-      const subscription = await ensurePushSubscriptionOptedIn(OneSignal);
-      const tags = await tagNotificationSubscriber(OneSignal, feature, language, true);
+      const subscription = await optInAndConfirm(OneSignal);
+      const tags = await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
+      setLocalPreference(feature, language, true);
       setState(box, STATUS_ENABLED);
       setStatus(box, "");
       console.info("[Bible for All] Notifications enabled for UAT.", {
@@ -161,7 +158,7 @@ function initNotificationControls(root = document, feature) {
         language,
         subscription
       });
-      refreshUatDiagnostics(box);
+      refreshUatDiagnostics(box, OneSignal);
     } catch (error) {
       console.error("[Bible for All] Failed to enable notifications.", { feature, language, error });
       setState(box, STATUS_ERROR);
@@ -179,22 +176,34 @@ function initNotificationControls(root = document, feature) {
       const OneSignal = await initializeOneSignal();
       await logNotificationDiagnostics(OneSignal, "before-disable", { feature, language });
 
-      const subscription = getPushSubscriptionState(OneSignal);
+      const existingTags = await getOneSignalTags(OneSignal);
+      const hasOtherFeature = hasOtherEnabledFeature(existingTags, feature);
+      let tagError = null;
 
-      if (subscription.id) {
-        await tagNotificationSubscriber(OneSignal, feature, language, false, subscription);
+      try {
+        await syncAndVerifyFeatureTags(OneSignal, feature, language, false);
+      } catch (error) {
+        tagError = error;
+        console.warn("[Bible for All] Notification preference tag could not be disabled.", {
+          feature,
+          language,
+          error
+        });
       }
 
-      if (OneSignal.User?.PushSubscription?.optOut) {
-        await OneSignal.User.PushSubscription.optOut();
+      if (!hasOtherFeature) {
+        await optOutAndConfirm(OneSignal);
+      } else if (tagError) {
+        throw tagError;
       }
 
       await logNotificationDiagnostics(OneSignal, "after-disable", { feature, language });
 
+      setLocalPreference(feature, language, false);
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
       console.info("[Bible for All] Notifications disabled for UAT.", { feature, language });
-      refreshUatDiagnostics(box);
+      refreshUatDiagnostics(box, OneSignal);
     } catch (error) {
       console.error("[Bible for All] Failed to disable notifications.", { feature, language, error });
       setStatus(box, "Не удалось отключить уведомления. Проверьте настройки браузера.", STATUS_ERROR);
@@ -204,7 +213,7 @@ function initNotificationControls(root = document, feature) {
   });
 
   diagnosticsBtn?.addEventListener("click", async () => {
-    const diagnostics = await getUatDiagnostics();
+    const diagnostics = getUatDiagnostics();
     const text = formatDiagnostics(diagnostics);
 
     try {
@@ -220,16 +229,32 @@ function initNotificationControls(root = document, feature) {
 }
 
 async function refreshNotificationState(box) {
+  const feature = getBoxFeature(box);
+  const language = getBoxLanguage(box);
+
+  if (!hasLocalPreference(feature, language) || getNotificationPermission() !== "granted") {
+    setLocalPreference(feature, language, false);
+    setState(box, STATUS_DISABLED);
+    refreshUatDiagnostics(box);
+    return;
+  }
+
   try {
     const OneSignal = await initializeOneSignal();
-    const optedIn = Boolean(OneSignal.User?.PushSubscription?.optedIn);
-    const feature = getBoxFeature(box);
-    const language = getBoxLanguage(box);
-    const featureEnabled = optedIn && await getFeatureEnabled(OneSignal, feature, language);
+    const subscription = getPushSubscriptionState(OneSignal);
+    const featureEnabled = isActivePushSubscription(subscription)
+      && await getFeatureEnabled(OneSignal, feature, language);
+
+    if (!featureEnabled) {
+      setLocalPreference(feature, language, false);
+    }
+
     setState(box, featureEnabled ? STATUS_ENABLED : STATUS_DISABLED);
+    refreshUatDiagnostics(box, OneSignal);
   } catch (error) {
     console.info("[Bible for All] Notifications are not ready yet.", error);
     setState(box, STATUS_DISABLED);
+    refreshUatDiagnostics(box);
   }
 }
 
@@ -265,6 +290,7 @@ async function initializeOneSignal() {
 
           await OneSignal.init(initOptions);
 
+          oneSignalInstance = OneSignal;
           resolve(OneSignal);
         } catch (error) {
           reject(error);
@@ -313,112 +339,145 @@ function loadOneSignalSdk() {
   return sdkPromise;
 }
 
-async function requestNotificationPermission(OneSignal) {
-  if (OneSignal.Notifications?.permission === true || Notification.permission === "granted") {
-    return true;
+async function optInAndConfirm(OneSignal) {
+  const pushSubscription = OneSignal.User?.PushSubscription;
+
+  if (!pushSubscription?.optIn) {
+    throw new Error("OneSignal push subscription is unavailable.");
   }
 
-  if (Notification.permission === "denied") return false;
+  const subscriptionChange = waitForSubscriptionState(
+    OneSignal,
+    isActivePushSubscription,
+    "OneSignal push subscription was not confirmed."
+  );
 
-  if (OneSignal.Notifications?.requestPermission) {
-    return Boolean(await OneSignal.Notifications.requestPermission());
+  try {
+    await pushSubscription.optIn();
+  } catch (error) {
+    subscriptionChange.cancel();
+    throw error;
   }
 
-  const permission = await Notification.requestPermission();
-  return permission === "granted";
+  const currentSubscription = getPushSubscriptionState(OneSignal);
+  if (isActivePushSubscription(currentSubscription)) {
+    subscriptionChange.cancel();
+    return currentSubscription;
+  }
+
+  return subscriptionChange.promise;
 }
 
-async function ensurePushSubscriptionOptedIn(OneSignal) {
-  const activeSubscription = getPushSubscriptionState(OneSignal);
+async function optOutAndConfirm(OneSignal) {
+  const pushSubscription = OneSignal.User?.PushSubscription;
 
-  if (isActivePushSubscription(activeSubscription)) {
-    return activeSubscription;
+  if (!pushSubscription?.optOut) {
+    throw new Error("OneSignal push subscription is unavailable.");
   }
 
-  if (OneSignal.User?.PushSubscription?.optIn) {
-    try {
-      await OneSignal.User.PushSubscription.optIn();
-      const subscription = await waitForActivePushSubscription(OneSignal);
-      await OneSignal.User.PushSubscription.optIn();
-      return subscription;
-    } catch (error) {
-      const subscriptionAfterError = getPushSubscriptionState(OneSignal);
+  const subscriptionChange = waitForSubscriptionState(
+    OneSignal,
+    subscription => !subscription.optedIn,
+    "OneSignal push opt-out was not confirmed."
+  );
 
-      if (isActivePushSubscription(subscriptionAfterError)) {
-        console.warn("[Bible for All] OneSignal optIn reported an error after the browser subscription became active.", {
-          error,
-          subscription: subscriptionAfterError
-        });
-        return subscriptionAfterError;
-      }
+  try {
+    await pushSubscription.optOut();
+  } catch (error) {
+    subscriptionChange.cancel();
+    throw error;
+  }
 
-      throw error;
+  const currentSubscription = getPushSubscriptionState(OneSignal);
+  if (!currentSubscription.optedIn) {
+    subscriptionChange.cancel();
+    return currentSubscription;
+  }
+
+  return subscriptionChange.promise;
+}
+
+function waitForSubscriptionState(OneSignal, predicate, timeoutMessage) {
+  const pushSubscription = OneSignal.User?.PushSubscription;
+  let settled = false;
+  let timeoutId = null;
+  let resolvePromise;
+  let rejectPromise;
+
+  const cleanup = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+    pushSubscription?.removeEventListener?.("change", handleChange);
+  };
+
+  const finish = (callback, value) => {
+    if (settled) return;
+    settled = true;
+    cleanup();
+    callback(value);
+  };
+
+  const handleChange = event => {
+    const subscription = {
+      id: event?.current?.id || pushSubscription?.id || null,
+      token: event?.current?.token || pushSubscription?.token || null,
+      optedIn: Boolean(event?.current?.optedIn ?? pushSubscription?.optedIn)
+    };
+
+    if (predicate(subscription)) {
+      finish(resolvePromise, subscription);
     }
-  }
+  };
 
-  return waitForActivePushSubscription(OneSignal);
+  const promise = new Promise((resolve, reject) => {
+    resolvePromise = resolve;
+    rejectPromise = reject;
+    pushSubscription?.addEventListener?.("change", handleChange);
+    timeoutId = setTimeout(() => {
+      const subscription = getPushSubscriptionState(OneSignal);
+
+      if (predicate(subscription)) {
+        finish(resolve, subscription);
+      } else {
+        finish(reject, new Error(timeoutMessage));
+      }
+    }, SUBSCRIPTION_WAIT_MS);
+  });
+
+  return {
+    promise,
+    cancel: () => {
+      settled = true;
+      cleanup();
+    }
+  };
 }
 
-async function tagNotificationSubscriber(OneSignal, feature, language, enabled, knownSubscription = null) {
-  const subscription = knownSubscription || getPushSubscriptionState(OneSignal);
+async function syncAndVerifyFeatureTags(OneSignal, feature, language, enabled) {
   const intendedTags = buildNotificationTags(feature, language, enabled);
 
-  if (!subscription.id) {
-    console.warn("[Bible for All] Skipping server-side OneSignal tag update because no subscription ID is available.", {
-      feature,
-      language,
-      enabled,
-      subscription
-    });
-    return intendedTags;
+  if (!OneSignal.User?.addTags || !OneSignal.User?.getTags) {
+    throw new Error("OneSignal tag APIs are unavailable.");
   }
 
-  console.info("[Bible for All] Requesting server-side OneSignal tag update.", {
-    feature,
-    language,
-    enabled,
-    subscription: {
-      id: subscription.id,
-      optedIn: subscription.optedIn,
-      hasToken: Boolean(subscription.token)
+  await OneSignal.User.addTags(intendedTags);
+
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+    const tags = await getOneSignalTags(OneSignal);
+
+    if (tagsMatch(tags, intendedTags)) {
+      return tags;
     }
-  });
 
-  const response = await fetch(TAG_UPDATE_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json; charset=utf-8"
-    },
-    body: JSON.stringify({
-      feature,
-      language,
-      enabled: Boolean(enabled),
-      subscription_id: subscription.id
-    })
-  });
-  const result = await response.json().catch(() => ({}));
-
-  console.info("[Bible for All] Server-side OneSignal tag update response.", {
-    feature,
-    language,
-    enabled,
-    status: response.status,
-    ok: response.ok,
-    result
-  });
-
-  if (!response.ok || !result.ok) {
-    console.warn("[Bible for All] Push subscription is active, but OneSignal tag sync failed.", {
-      feature,
-      language,
-      enabled,
-      status: response.status,
-      result
-    });
-    return intendedTags;
+    await delay(SUBSCRIPTION_POLL_MS);
   }
 
-  return result.tags || intendedTags;
+  throw new Error(`OneSignal tags were not confirmed for ${feature}.`);
+}
+
+function tagsMatch(actualTags, expectedTags) {
+  return Object.entries(expectedTags)
+    .every(([key, value]) => actualTags?.[key] === value);
 }
 
 async function getFeatureEnabled(OneSignal, feature, language) {
@@ -429,22 +488,6 @@ async function getFeatureEnabled(OneSignal, feature, language) {
 
 async function getOneSignalTags(OneSignal) {
   return OneSignal.User?.getTags ? await OneSignal.User.getTags() : {};
-}
-
-async function waitForFeatureTag(OneSignal, feature, language) {
-  const startedAt = Date.now();
-
-  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
-    const tags = await getOneSignalTags(OneSignal);
-
-    if (isFeatureTagEnabled(tags, feature, language)) {
-      return tags;
-    }
-
-    await delay(SUBSCRIPTION_POLL_MS);
-  }
-
-  return getOneSignalTags(OneSignal);
 }
 
 function isFeatureTagEnabled(tags, feature, language = null) {
@@ -468,20 +511,10 @@ function buildNotificationTags(feature, language, enabled) {
   };
 }
 
-async function waitForActivePushSubscription(OneSignal) {
-  const startedAt = Date.now();
-
-  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
-    const subscription = getPushSubscriptionState(OneSignal);
-
-    if (isActivePushSubscription(subscription)) {
-      return subscription;
-    }
-
-    await delay(SUBSCRIPTION_POLL_MS);
-  }
-
-  throw new Error("OneSignal push subscription was not confirmed.");
+function hasOtherEnabledFeature(tags, currentFeature) {
+  return ["daily-verse", "daily-question"]
+    .filter(feature => feature !== currentFeature)
+    .some(feature => isFeatureTagEnabled(tags, feature));
 }
 
 function getPushSubscriptionState(OneSignal) {
@@ -504,7 +537,15 @@ function maskValue(value = "") {
 
 async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
   const registration = await getOneSignalServiceWorkerRegistration();
-  const tags = details.tags || await getOneSignalTags(OneSignal);
+  let tags = details.tags || {};
+
+  if (!details.tags) {
+    try {
+      tags = await getOneSignalTags(OneSignal);
+    } catch (error) {
+      tags = { diagnosticError: error.message };
+    }
+  }
 
   console.info("[Bible for All] OneSignal diagnostics.", {
     stage,
@@ -542,11 +583,11 @@ async function getOneSignalServiceWorkerRegistration() {
   }
 }
 
-async function refreshUatDiagnostics(box) {
+function refreshUatDiagnostics(box, OneSignal = oneSignalInstance) {
   const diagnosticsBox = box.querySelector("[data-notification-diagnostics]");
   if (!diagnosticsBox) return;
 
-  const diagnostics = await getUatDiagnostics();
+  const diagnostics = getUatDiagnostics(OneSignal);
 
   diagnosticsBox.querySelector("[data-diagnostic-onesignal-id]").textContent = diagnostics.oneSignalId;
   diagnosticsBox.querySelector("[data-diagnostic-subscription-id]").textContent = diagnostics.pushSubscriptionId;
@@ -554,7 +595,7 @@ async function refreshUatDiagnostics(box) {
   diagnosticsBox.querySelector("[data-diagnostic-permission]").textContent = diagnostics.notificationPermission;
 }
 
-async function getUatDiagnostics() {
+function getUatDiagnostics(OneSignal = oneSignalInstance) {
   const fallback = {
     oneSignalId: "not ready",
     pushSubscriptionId: "not ready",
@@ -563,9 +604,9 @@ async function getUatDiagnostics() {
   };
 
   if (!shouldShowUatDiagnostics()) return fallback;
+  if (!OneSignal) return fallback;
 
   try {
-    const OneSignal = await initializeOneSignal();
     const subscription = getPushSubscriptionState(OneSignal);
 
     return {
@@ -648,6 +689,32 @@ function getBoxLanguage(box) {
 
 function getFeatureTag(feature) {
   return feature.replace(/-/g, "_");
+}
+
+function getPreferenceKey(feature, language) {
+  return `${PREFERENCE_KEY_PREFIX}.${feature}.${language}`;
+}
+
+function hasLocalPreference(feature, language) {
+  try {
+    return localStorage.getItem(getPreferenceKey(feature, language)) === "enabled";
+  } catch {
+    return false;
+  }
+}
+
+function setLocalPreference(feature, language, enabled) {
+  try {
+    const key = getPreferenceKey(feature, language);
+
+    if (enabled) {
+      localStorage.setItem(key, "enabled");
+    } else {
+      localStorage.removeItem(key);
+    }
+  } catch (error) {
+    console.info("[Bible for All] Notification preference could not be stored locally.", error);
+  }
 }
 
 function setStatus(box, message, type = "") {
