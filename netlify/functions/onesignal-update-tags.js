@@ -1,6 +1,7 @@
 const ONESIGNAL_API_BASE = "https://api.onesignal.com";
 const ALLOWED_FEATURES = new Set(["daily-verse", "daily-question"]);
 const ALLOWED_LANGUAGES = new Set(["ru", "en"]);
+const IDENTITY_RETRY_DELAYS_MS = [0, 500, 1500, 3000];
 
 exports.handler = async event => {
   if (event.httpMethod !== "POST") {
@@ -34,16 +35,17 @@ exports.handler = async event => {
       identityEndpoint: "GET /apps/{app_id}/subscriptions/{subscription_id}/user/identity"
     });
 
-    const identityResult = await fetchSubscriptionIdentity({ appId, restApiKey, subscriptionId });
+    const identityResult = await fetchSubscriptionIdentityWithRetry({ appId, restApiKey, subscriptionId });
 
     if (identityResult.status === 404) {
       return jsonResponse(404, {
         ok: false,
-        error: "OneSignal subscription identity was not found for the confirmed browser subscription_id.",
+        error: "OneSignal subscription identity remained unresolved after bounded propagation retries.",
         identifierType: "subscription_id",
         endpoint: "GET /apps/{app_id}/subscriptions/{subscription_id}/user/identity",
         identityStatus: identityResult.status,
-        identityResponse: identityResult.body
+        identityResponse: identityResult.body,
+        attempts: identityResult.attempts
       });
     }
 
@@ -95,6 +97,7 @@ exports.handler = async event => {
       oneSignalIdMasked: maskValue(oneSignalId),
       tags,
       identityStatus: identityResult.status,
+      identityAttempts: identityResult.attempts,
       updateStatus: updateResult.status
     });
 
@@ -102,6 +105,7 @@ exports.handler = async event => {
       ok: true,
       tags,
       identityStatus: identityResult.status,
+      identityAttempts: identityResult.attempts,
       updateStatus: updateResult.status,
       updateResponse: updateResult.body
     });
@@ -117,7 +121,39 @@ exports.handler = async event => {
   }
 };
 
-async function fetchSubscriptionIdentity({ appId, restApiKey, subscriptionId }) {
+async function fetchSubscriptionIdentityWithRetry({ appId, restApiKey, subscriptionId }) {
+  let result = null;
+
+  for (let index = 0; index < IDENTITY_RETRY_DELAYS_MS.length; index += 1) {
+    const delayMs = IDENTITY_RETRY_DELAYS_MS[index];
+
+    if (delayMs > 0) {
+      await delay(delayMs);
+    }
+
+    result = await fetchSubscriptionIdentity({
+      appId,
+      restApiKey,
+      subscriptionId,
+      attempt: index + 1,
+      totalAttempts: IDENTITY_RETRY_DELAYS_MS.length
+    });
+
+    if (result.status !== 404) {
+      return {
+        ...result,
+        attempts: index + 1
+      };
+    }
+  }
+
+  return {
+    ...result,
+    attempts: IDENTITY_RETRY_DELAYS_MS.length
+  };
+}
+
+async function fetchSubscriptionIdentity({ appId, restApiKey, subscriptionId, attempt, totalAttempts }) {
   const url = `${ONESIGNAL_API_BASE}/apps/${encodeURIComponent(appId)}/subscriptions/${encodeURIComponent(subscriptionId)}/user/identity`;
   const response = await fetch(url, {
     method: "GET",
@@ -130,6 +166,9 @@ async function fetchSubscriptionIdentity({ appId, restApiKey, subscriptionId }) 
   console.info("[Bible for All] OneSignal identity lookup response.", {
     status: result.status,
     ok: result.ok,
+    attempt,
+    totalAttempts,
+    appIdMasked: maskValue(appId),
     identifierType: "subscription_id",
     endpoint: "GET /apps/{app_id}/subscriptions/{subscription_id}/user/identity",
     subscriptionIdMasked: maskValue(subscriptionId),
@@ -138,6 +177,10 @@ async function fetchSubscriptionIdentity({ appId, restApiKey, subscriptionId }) 
   });
 
   return result;
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function updateOneSignalUserTags({ appId, restApiKey, oneSignalId, subscriptionId, tags }) {
