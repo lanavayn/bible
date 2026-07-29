@@ -44,6 +44,141 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-92",
+        "day": 92,
+        "topic_ru": "Одежда и благочестие",
+        "topic_en": "Clothing and Godliness",
+        "question_ru": "Запрещает ли Библия красиво одеваться?",
+        "question_en": "Does the Bible forbid dressing beautifully?",
+        "reference_ru": "Екклесиаст 9:8",
+        "reference_en": "Ecclesiastes 9:8",
+        "text_ru": "Да будут во всякое время одежды твои светлы, и да не оскудевает елей на голове твоей.",
+        "text_en": "Let your garments always be white, and do not let your head lack oil.",
+        "verse_ref": {
+          "book": "Ecclesiastes",
+          "chapter": 9,
+          "verse": "8"
+        },
+        "answer_ru": "Библия не запрещает красивую и опрятную одежду. Главное — чтобы сердце было посвящено Богу.",
+        "answer_en": "The Bible does not forbid beautiful or neat clothing. What matters most is a heart devoted to God.",
+        "reflection_ru": "Красота внешнего вида не противоречит вере, если она сочетается со скромностью, благодарностью и правильными мотивами.",
+        "reflection_en": "A beautiful appearance is not contrary to faith when it is accompanied by modesty, gratitude, and the right motives.",
+        "related": [
+          {
+            "reference_ru": "Притчи 31:22",
+            "reference_en": "Proverbs 31:22",
+            "text_ru": "Она делает себе ковры; виссон и пурпур — одежда ее.",
+            "text_en": "She makes for herself carpets of tapestry. Her clothing is fine linen and purple.",
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 31,
+              "verse": "22"
+            }
+          },
+          {
+            "reference_ru": "Бытие 24:53",
+            "reference_en": "Genesis 24:53",
+            "text_ru": "И вынул раб серебряные вещи, золотые вещи и одежды и дал Ревекке.",
+            "text_en": "The servant brought out silver jewelry, gold jewelry, and clothing, and gave them to Rebekah.",
+            "verse_ref": {
+              "book": "Genesis",
+              "chapter": 24,
+              "verse": "53"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-93",
+        "day": 93,
+        "topic_ru": "Украшения и благочестие",
+        "topic_en": "Jewelry and Godliness",
+        "question_ru": "Осуждает ли Бог украшения?",
+        "question_en": "Does God condemn jewelry?",
+        "reference_ru": "Иезекииль 16:11-13",
+        "reference_en": "Ezekiel 16:11-13",
+        "text_ru": "И нарядил тебя в украшения, и положил запястья на руки твои и ожерелье на шею твою. И дал тебе кольцо на нос твой, и серьги к ушам твоим, и прекрасный венец на голову твою... И была ты чрезвычайно красива.",
+        "text_en": "I decked you with ornaments, put bracelets on your hands, a chain on your neck, a ring on your nose, earrings in your ears, and a beautiful crown on your head... You were exceedingly beautiful.",
+        "verse_ref": {
+          "book": "Ezekiel",
+          "chapter": 16,
+          "verse": "11-13"
+        },
+        "answer_ru": "Библия не осуждает украшения сами по себе. Бог смотрит на сердце и мотивы человека.",
+        "answer_en": "The Bible does not condemn jewelry itself. God looks at the heart and a person's motives.",
+        "reflection_ru": "Украшения могут быть уместными, если они не становятся источником гордости или тщеславия.",
+        "reflection_en": "Jewelry can be appropriate when it does not become a source of pride or vanity.",
+        "related": [
+          {
+            "reference_ru": "Исход 35:22",
+            "reference_en": "Exodus 35:22",
+            "text_ru": "И приходили мужчины и женщины, все по расположению сердца, приносили кольца, серьги, перстни и привески — всякие золотые вещи, каждый, кто приносил приношение золота Господу.",
+            "text_en": "They came, both men and women, all whose hearts were willing, and brought brooches, earrings, signet rings, bracelets, all sorts of gold jewelry—everyone bringing an offering of gold to the Lord.",
+            "verse_ref": {
+              "book": "Exodus",
+              "chapter": 35,
+              "verse": "22"
+            }
+          },
+          {
+            "reference_ru": "Бытие 41:42",
+            "reference_en": "Genesis 41:42",
+            "text_ru": "И снял фараон перстень свой с руки своей, и надел его на руку Иосифа; одел его в виссонные одежды, возложил золотую цепь на шею ему.",
+            "text_en": "Pharaoh took off his signet ring from his hand and put it on Joseph's hand, clothed him in garments of fine linen, and put a gold chain around his neck.",
+            "verse_ref": {
+              "book": "Genesis",
+              "chapter": 41,
+              "verse": "42"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-94",
+        "day": 94,
+        "topic_ru": "Сердце важнее внешности",
+        "topic_en": "The Heart Matters More Than Appearance",
+        "question_ru": "На что Бог смотрит прежде всего — на внешний вид или на сердце?",
+        "question_en": "What does God look at first—our appearance or our heart?",
+        "reference_ru": "1 Царств 16:7",
+        "reference_en": "1 Samuel 16:7",
+        "text_ru": "Но Господь сказал Самуилу: не смотри на вид его и на высоту роста его... ибо человек смотрит на лице, а Господь смотрит на сердце.",
+        "text_en": "But the Lord said to Samuel, 'Do not look on his face, or on the height of his stature... for man looks at the outward appearance, but Yahweh looks at the heart.'",
+        "verse_ref": {
+          "book": "1-Samuel",
+          "chapter": 16,
+          "verse": "7"
+        },
+        "answer_ru": "Для Бога самое важное — состояние сердца. Внешний вид имеет значение, но сердце и мотивы всегда стоят на первом месте.",
+        "answer_en": "What matters most to God is the condition of the heart. Appearance has its place, but the heart and our motives always come first.",
+        "reflection_ru": "Истинная красота начинается внутри. Когда сердце принадлежит Богу, это отражается и в поступках, и во внешнем облике.",
+        "reflection_en": "True beauty begins within. When the heart belongs to God, it is reflected in both our character and appearance.",
+        "related": [
+          {
+            "reference_ru": "Иеремия 17:10",
+            "reference_en": "Jeremiah 17:10",
+            "text_ru": "Я, Господь, проникаю сердце и испытываю внутренности, чтобы воздать каждому по пути его и по плодам дел его.",
+            "text_en": "I, Lord, search the mind, I try the heart, even to give every man according to his ways, according to the fruit of his doings.",
+            "verse_ref": {
+              "book": "Jeremiah",
+              "chapter": 17,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "1 Петра 3:3-4",
+            "reference_en": "1 Peter 3:3-4",
+            "text_ru": "Да будет украшением вашим не внешнее плетение волос, не золотые уборы или нарядность в одежде, но сокровенный сердца человек в нетленной красоте кроткого и молчаливого духа, что драгоценно пред Богом.",
+            "text_en": "Don't let your beauty be the outward adorning of braiding the hair and of wearing jewels of gold or putting on fine clothing, but let it be the hidden person of the heart, in the incorruptible adornment of a gentle and quiet spirit, which is very precious in God's sight.",
+            "verse_ref": {
+              "book": "1-Peter",
+              "chapter": 3,
+              "verse": "3-4"
+            }
+          }
+        ]
       }
     ]
 }
