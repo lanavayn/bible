@@ -83,7 +83,7 @@ function getDailyQuestionUrl(day, language) {
   return `${baseUrl}${pathPrefix}?question=${encodeURIComponent(day)}`;
 }
 
-function buildNotificationPayload({ language, force = false, source = "", testLabel = "21:25 EDT" } = {}) {
+function buildNotificationPayload({ language, force = false, source = "", testLabel = "22:45 EDT" } = {}) {
   const now = new Date();
   const parts = getTorontoParts(now);
   const { day, currentQuestionNumber, question } = getCurrentDailyQuestion(now);
@@ -112,7 +112,7 @@ function buildNotificationPayload({ language, force = false, source = "", testLa
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
       ? crypto.randomUUID()
-      : createIdempotencyUuid(`daily-question-${language}-uat-scheduled-2125-${dateKey}-question-${day}`),
+      : createIdempotencyUuid(`daily-question-${language}-uat-scheduled-2245-${dateKey}-question-${day}`),
     data: {
       content_type: "daily-question",
       language,

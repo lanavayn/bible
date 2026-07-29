@@ -17,7 +17,7 @@ export default async function handler(request) {
       source: "scheduled",
       force: false,
       languages: ["ru", "en"],
-      testLabel: "21:25 EDT"
+      testLabel: "22:45 EDT"
     });
 
     console.info("[Bible for All] Scheduled Daily Question notification result:", result);
@@ -36,5 +36,5 @@ export default async function handler(request) {
 }
 
 export const config = {
-  schedule: "14 2 * * *"
+  schedule: "45 2 * * *"
 };
