@@ -110,7 +110,7 @@ function buildNotificationPayload({ force = false, source = "" } = {}) {
   const url = getRussianDailyVerseUrl(day);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
   const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
-  const scheduledTestLabel = "16:05 EDT";
+  const scheduledTestLabel = "21:20 EDT";
   const topic = verse?.topic?.ru || "Стих дня";
 
   return {
@@ -132,7 +132,7 @@ function buildNotificationPayload({ force = false, source = "" } = {}) {
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
       ? crypto.randomUUID()
-      : createIdempotencyUuid(`daily-verse-ru-uat-scheduled-1605-${dateKey}-day-${day}`),
+      : createIdempotencyUuid(`daily-verse-ru-uat-scheduled-2120-${dateKey}-day-${day}`),
     data: {
       content_type: "daily-verse",
       language: "ru",
