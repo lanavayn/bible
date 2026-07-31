@@ -106,6 +106,15 @@ function initNotificationControls(root = document, feature) {
     try {
       const OneSignal = await initializeOneSignal();
       await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
+      const permissionGranted = await requestNotificationPermission(OneSignal);
+
+      if (!permissionGranted) {
+        setLocalPreference(false);
+        setState(box, STATUS_DISABLED);
+        setStatus(box, "Разрешение на уведомления не получено.", STATUS_ERROR);
+        return;
+      }
+
       await optInAndConfirm(OneSignal);
       const tags = await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
       const confirmedSubscription = await waitForStableActiveSubscription(OneSignal);
@@ -326,6 +335,27 @@ function loadOneSignalSdk() {
   });
 
   return sdkPromise;
+}
+
+async function requestNotificationPermission(OneSignal) {
+  if (hasGrantedNotificationPermission(OneSignal)) return true;
+  if (getNotificationPermission() === "denied") return false;
+
+  if (OneSignal.Notifications?.requestPermission) {
+    await OneSignal.Notifications.requestPermission();
+  } else {
+    await Notification.requestPermission();
+  }
+
+  const startedAt = Date.now();
+
+  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+    if (hasGrantedNotificationPermission(OneSignal)) return true;
+    if (getNotificationPermission() === "denied") return false;
+    await delay(SUBSCRIPTION_POLL_MS);
+  }
+
+  return false;
 }
 
 async function optInAndConfirm(OneSignal) {
@@ -585,9 +615,13 @@ function isActivePushSubscription(subscription) {
 }
 
 function isConfirmedActiveSubscription(OneSignal, subscription) {
-  return getNotificationPermission() === "granted"
-    && OneSignal.Notifications?.permission === true
+  return hasGrantedNotificationPermission(OneSignal)
     && isActivePushSubscription(subscription);
+}
+
+function hasGrantedNotificationPermission(OneSignal) {
+  return getNotificationPermission() === "granted"
+    && OneSignal.Notifications?.permission === true;
 }
 
 function maskValue(value = "") {
