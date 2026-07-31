@@ -145,7 +145,7 @@
         "reference_ru": "1 Царств 16:7",
         "reference_en": "1 Samuel 16:7",
         "text_ru": "Но Господь сказал Самуилу: не смотри на вид его и на высоту роста его... ибо человек смотрит на лице, а Господь смотрит на сердце.",
-        "text_en": "But the Lord said to Samuel, 'Do not look on his face, or on the height of his stature... for man looks at the outward appearance, but Yahweh looks at the heart.'",
+        "text_en": "But the Lord said to Samuel, 'Do not look on his face, or on the height of his stature... for man looks at the outward appearance, but the Lord looks at the heart.'",
         "verse_ref": {
           "book": "1-Samuel",
           "chapter": 16,
@@ -176,6 +176,69 @@
               "book": "1-Peter",
               "chapter": 3,
               "verse": "3-4"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-95",
+        "day": 95,
+        "topic_ru": "Небесные книги",
+        "topic_en": "The Heavenly Books",
+        "question_ru": "О каких небесных книгах говорит Библия?",
+        "question_en": "What heavenly books does the Bible mention?",
+        "reference_ru": "Даниил 7:10",
+        "reference_en": "Daniel 7:10",
+        "text_ru": "Огненная река выходила и проходила пред Ним; тысячи тысяч служили Ему и тьмы тем предстояли пред Ним; судьи сели, и раскрылись книги.",
+        "text_en": "A fiery stream issued and came out from before him. Thousands of thousands ministered to him. Ten thousand times ten thousand stood before him. The judgment was set. The books were opened.",
+        "verse_ref": {
+          "book": "Daniel",
+          "chapter": 7,
+          "verse": "10"
+        },
+        "answer_ru": "Библия упоминает книги, раскрываемые на суде, памятную книгу, книгу, в которой записаны дни человека, а также Книгу жизни. При этом Писание не объясняет, являются ли они разными книгами или некоторые из них относятся к одной и той же книге.",
+        "answer_en": "The Bible mentions books opened in judgment, the Book of Remembrance, the book in which a person's days are recorded, and the Book of Life. However, Scripture does not explain whether these are all different books or whether some refer to the same book.",
+        "reflection_ru": "Бог знает каждого человека и ведет совершенный учет. Все, что Писание открывает о небесных книгах, побуждает нас доверять Его справедливости.",
+        "reflection_en": "God knows every person and keeps perfect records. Everything Scripture reveals about the heavenly books encourages us to trust His justice.",
+        "related": [
+          {
+            "reference_ru": "Малахия 3:16",
+            "reference_en": "Malachi 3:16",
+            "text_ru": "Но боящиеся Бога говорят друг другу: «внимает Господь и слышит это, и пред лицом Его пишется памятная книга о боящихся Господа и чтущих имя Его».",
+            "text_en": "Then those who feared the Lord spoke with one another; and the Lord listened and heard, and a book of remembrance was written before him for those who feared the Lord and honored his name.",
+            "verse_ref": {
+              "book": "Malachi",
+              "chapter": 3,
+              "verse": "16"
+            }
+          },
+          {
+            "reference_ru": "Псалом 138:16",
+            "reference_en": "Psalm 139:16",
+            "text_ru": "Зародыш мой видели очи Твои; в Твоей книге записаны все дни, для меня назначенные, когда ни одного из них еще не было.",
+            "text_en": "Your eyes saw my body. In your book they were all written, the days that were ordained for me, when as yet there were none of them.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 138,
+                "verse": "16"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 139,
+                "verse": "16"
+              }
+            }  
+          },
+          {
+            "reference_ru": "Откровение 20:12",
+            "reference_en": "Revelation 20:12",
+            "text_ru": "И увидел я мертвых, малых и великих, стоящих пред Богом, и книги раскрыты были, и иная книга раскрыта, которая есть книга жизни; и судимы были мертвые по написанному в книгах, сообразно с делами своими.",
+            "text_en": "I saw the dead, the great and the small, standing before the throne, and they opened the books. Another book was opened, which is the book of life. The dead were judged out of the things which were written in the books, according to their works.",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 20,
+              "verse": "12"
             }
           }
         ]

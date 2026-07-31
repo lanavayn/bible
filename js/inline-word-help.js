@@ -1,3 +1,5 @@
+import { isOldTestamentBook } from "./bibleLinks.js";
+
 function escapeHtml(value = "") {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -18,6 +20,7 @@ function findDefinitionMatches(text, definitions) {
     const source = definition.pattern;
     const flags = source.flags.includes("g") ? source.flags : `${source.flags}g`;
     const pattern = new RegExp(source.source, flags);
+    let definitionMatchCount = 0;
     let match;
 
     while ((match = pattern.exec(text)) !== null) {
@@ -27,8 +30,10 @@ function findDefinitionMatches(text, definitions) {
       const end = start + word.length;
 
       matches.push({ start, end, definition, order });
+      definitionMatchCount += 1;
 
       if (match[0] === "") pattern.lastIndex += 1;
+      if (definition.maxMatches && definitionMatchCount >= definition.maxMatches) break;
       if (!source.flags.includes("g")) break;
     }
   });
@@ -147,6 +152,12 @@ const RU_COMMON_DEFINITIONS = [
     closeLabel: "Закрыть",
     text: "Евангелие, то есть Добрая Весть о спасении через Иисуса Христа.",
     pattern: /(^|[^А-Яа-яЁё])(благовестие|благовестия|благовестию|благовестием)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Ветхий днями",
+    closeLabel: "Закрыть",
+    text: "Ветхий днями — библейское имя Бога, указывающее на Его вечность.",
+    pattern: /(^|[^А-Яа-яЁё])(Ветхий днями)(?=$|[^А-Яа-яЁё])/gi
   },
   {
     label: "Подробнее о слове «Евангелие»",
@@ -385,7 +396,8 @@ const EN_OLD_TESTAMENT_DEFINITION = {
   label: "More about LORD",
   closeLabel: "Close",
   text: "In the Old Testament, this often represents God’s personal name, Yahweh.",
-  pattern: /\b(LORD|Lord|lord)\b/g
+  pattern: /\b(LORD|Lord|lord)\b/g,
+  maxMatches: 1
 };
 
 export function addInlineWordHelp(text, options = {}) {
@@ -395,10 +407,13 @@ export function addInlineWordHelp(text, options = {}) {
     lang = "ru",
     isOldTestament = false,
     includeQuestionTerms = false,
+    suppressOldTestamentLordHelp = false,
     verseRef = null,
     classes
   } = options;
 
+  const resolvedIsOldTestament = !suppressOldTestamentLordHelp
+    && (verseRef ? isOldTestamentBook(verseRef) : isOldTestament);
   let safeText = escapeHtml(text);
 
   if (lang === "ru") {
@@ -415,7 +430,7 @@ export function addInlineWordHelp(text, options = {}) {
 
   const definitions = [];
 
-  if (lang === "en" && isOldTestament) {
+  if (lang === "en" && resolvedIsOldTestament) {
     definitions.push(EN_OLD_TESTAMENT_DEFINITION);
   }
 

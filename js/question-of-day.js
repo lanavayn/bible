@@ -139,6 +139,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         firstPart: mainVerseFirstPart,
         remainingPart: mainVerseRemainingPart
       } = splitQuestionRelatedVerseLine(text);
+      const mainVerseFirstPartHasLordHelp = hasEnglishOldTestamentLordHelp(mainVerseFirstPart, lang, verseRef);
 
       const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
       const tomorrowQuestionText = tomorrowQuestion?.[`question_${lang}`] || "";
@@ -286,7 +287,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
           <span class="daily-main-verse-line-anchor">
             ${verseReferenceInlineHtml}
             ${addQuestionCreationHelp(mainVerseFirstPart, lang, verseRef)}
-          </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addQuestionCreationHelp(mainVerseRemainingPart, lang, verseRef)}</span>` : ""}
+          </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addQuestionCreationHelp(mainVerseRemainingPart, lang, verseRef, { suppressOldTestamentLordHelp: mainVerseFirstPartHasLordHelp })}</span>` : ""}
         </blockquote>
     
         <div class="scripture-note-box">
@@ -309,6 +310,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                     const relVerseRef =
                       rel?.verse_ref_lang?.[lang] || rel?.verse_ref || null;
                     const { firstPart, remainingPart } = splitQuestionRelatedVerseLine(relText);
+                    const firstPartHasLordHelp = hasEnglishOldTestamentLordHelp(firstPart, lang, relVerseRef);
 
                     const link = buildBibleLink(relVerseRef, lang);
     
@@ -329,7 +331,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                         }
                         <span class="scripture-related-text scripture-related-dash">—</span>
                         <span class="scripture-related-text">${addQuestionCreationHelp(firstPart, lang, relVerseRef)}</span>
-                        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addQuestionCreationHelp(remainingPart, lang, relVerseRef)}</span>` : ""}
+                        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addQuestionCreationHelp(remainingPart, lang, relVerseRef, { suppressOldTestamentLordHelp: firstPartHasLordHelp })}</span>` : ""}
                       </li>
                     `;
                   }).join("")}
@@ -855,10 +857,17 @@ function updateQueryNumber(name, value) {
   window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
-function addQuestionCreationHelp(text, lang, verseRef = null) {
+function hasEnglishOldTestamentLordHelp(text, lang, verseRef = null) {
+  return lang === "en"
+    && isOldTestamentBook(verseRef)
+    && /\b(?:LORD|Lord|lord)\b/.test(text || "");
+}
+
+function addQuestionCreationHelp(text, lang, verseRef = null, options = {}) {
   return addInlineWordHelp(text, {
     lang,
-    isOldTestament: isOldTestamentBook(verseRef),
+    isOldTestament: isOldTestamentBook(verseRef) && !options.suppressOldTestamentLordHelp,
+    suppressOldTestamentLordHelp: options.suppressOldTestamentLordHelp,
     includeQuestionTerms: true,
     verseRef,
     classes: {
