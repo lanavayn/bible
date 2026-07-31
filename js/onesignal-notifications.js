@@ -92,12 +92,10 @@ function initNotificationControls(root = document, feature) {
   const disableBtn = box.querySelector("[data-notification-disable]");
   const language = getBoxLanguage(box);
 
-  if (hasLocalPreference() && getNotificationPermission() === "granted") {
+  if (getNotificationPermission() === "granted") {
     refreshNotificationState(box);
   } else {
-    if (getNotificationPermission() !== "granted") {
-      setLocalPreference(false);
-    }
+    setLocalPreference(false);
     setState(box, STATUS_DISABLED);
   }
 
@@ -108,8 +106,9 @@ function initNotificationControls(root = document, feature) {
     try {
       const OneSignal = await initializeOneSignal();
       await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
-      const subscription = await optInAndConfirm(OneSignal);
+      await optInAndConfirm(OneSignal);
       const tags = await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
+      const confirmedSubscription = await waitForStableActiveSubscription(OneSignal);
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
@@ -119,10 +118,11 @@ function initNotificationControls(root = document, feature) {
       console.info("[Bible for All] Notifications enabled for UAT.", {
         feature,
         language,
-        subscription
+        subscription: confirmedSubscription
       });
     } catch (error) {
       console.error("[Bible for All] Failed to enable notifications.", { feature, language, error });
+      setLocalPreference(false);
       setState(box, STATUS_ERROR);
       setStatus(box, "Не удалось включить уведомления. Попробуйте ещё раз.", STATUS_ERROR);
     } finally {
@@ -170,7 +170,7 @@ async function refreshNotificationState(box) {
   const feature = getBoxFeature(box);
   const language = getBoxLanguage(box);
 
-  if (!hasLocalPreference() || getNotificationPermission() !== "granted") {
+  if (getNotificationPermission() !== "granted") {
     setLocalPreference(false);
     setState(box, STATUS_DISABLED);
     return;
@@ -179,7 +179,7 @@ async function refreshNotificationState(box) {
   try {
     const OneSignal = await initializeOneSignal();
     const subscription = getPushSubscriptionState(OneSignal);
-    let featureEnabled = isActivePushSubscription(subscription);
+    let featureEnabled = isConfirmedActiveSubscription(OneSignal, subscription);
 
     if (featureEnabled) {
       const tags = await getOneSignalTags(OneSignal);
@@ -191,11 +191,14 @@ async function refreshNotificationState(box) {
 
     if (!featureEnabled) {
       setLocalPreference(false);
+    } else {
+      setLocalPreference(true);
     }
 
     setState(box, featureEnabled ? STATUS_ENABLED : STATUS_DISABLED);
   } catch (error) {
     console.info("[Bible for All] Notifications are not ready yet.", error);
+    setLocalPreference(false);
     setState(box, STATUS_DISABLED);
   }
 }
@@ -203,7 +206,7 @@ async function refreshNotificationState(box) {
 export async function syncDailyVerseNotificationLanguage(language) {
   const normalizedLanguage = language === "en" ? "en" : "ru";
 
-  if (!hasLocalPreference() || getNotificationPermission() !== "granted") {
+  if (getNotificationPermission() !== "granted") {
     return { updated: false, reason: "not-subscribed" };
   }
 
@@ -211,10 +214,12 @@ export async function syncDailyVerseNotificationLanguage(language) {
     const OneSignal = await initializeOneSignal();
     const subscription = getPushSubscriptionState(OneSignal);
 
-    if (!isActivePushSubscription(subscription)) {
+    if (!isConfirmedActiveSubscription(OneSignal, subscription)) {
       setLocalPreference(false);
       return { updated: false, reason: "inactive-subscription" };
     }
+
+    setLocalPreference(true);
 
     const tags = await getOneSignalTags(OneSignal);
     if (isFeatureTagEnabled(tags, normalizedLanguage)) {
@@ -330,9 +335,13 @@ async function optInAndConfirm(OneSignal) {
     throw new Error("OneSignal push subscription is unavailable.");
   }
 
+  const wasActive = isConfirmedActiveSubscription(
+    OneSignal,
+    getPushSubscriptionState(OneSignal)
+  );
   const subscriptionChange = waitForSubscriptionState(
     OneSignal,
-    isActivePushSubscription,
+    subscription => isConfirmedActiveSubscription(OneSignal, subscription),
     "OneSignal push subscription was not confirmed."
   );
 
@@ -343,13 +352,40 @@ async function optInAndConfirm(OneSignal) {
     throw error;
   }
 
-  const currentSubscription = getPushSubscriptionState(OneSignal);
-  if (isActivePushSubscription(currentSubscription)) {
+  let currentSubscription = getPushSubscriptionState(OneSignal);
+  if (isConfirmedActiveSubscription(OneSignal, currentSubscription)) {
     subscriptionChange.cancel();
-    return currentSubscription;
+  } else {
+    currentSubscription = await subscriptionChange.promise;
   }
 
-  return subscriptionChange.promise;
+  // A new OneSignal record can expose an ID/token before its opt-in state has
+  // finished persisting. Reconfirm that same subscription once it exists.
+  if (!wasActive) {
+    await pushSubscription.optIn();
+  }
+
+  return waitForStableActiveSubscription(OneSignal);
+}
+
+async function waitForStableActiveSubscription(OneSignal) {
+  const startedAt = Date.now();
+  let consecutiveActiveChecks = 0;
+
+  while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+    const subscription = getPushSubscriptionState(OneSignal);
+
+    if (isConfirmedActiveSubscription(OneSignal, subscription)) {
+      consecutiveActiveChecks += 1;
+      if (consecutiveActiveChecks >= 2) return subscription;
+    } else {
+      consecutiveActiveChecks = 0;
+    }
+
+    await delay(SUBSCRIPTION_POLL_MS);
+  }
+
+  throw new Error("OneSignal push subscription did not remain active after opt-in.");
 }
 
 async function optOutAndConfirm(OneSignal) {
@@ -548,6 +584,12 @@ function isActivePushSubscription(subscription) {
   return Boolean(subscription?.optedIn && subscription.id && subscription.token);
 }
 
+function isConfirmedActiveSubscription(OneSignal, subscription) {
+  return getNotificationPermission() === "granted"
+    && OneSignal.Notifications?.permission === true
+    && isActivePushSubscription(subscription);
+}
+
 function maskValue(value = "") {
   if (!value) return "";
   if (value.length <= 8) return `${value.slice(0, 2)}...${value.slice(-2)}`;
@@ -649,26 +691,6 @@ function getBoxFeature(box) {
 
 function getBoxLanguage(box) {
   return box.dataset.notificationLanguage || (document.documentElement.lang === "en" ? "en" : "ru");
-}
-
-function hasLocalPreference() {
-  try {
-    if (localStorage.getItem(PREFERENCE_KEY) === "enabled") {
-      return true;
-    }
-
-    const hasLegacyPreference = LEGACY_DAILY_VERSE_PREFERENCE_KEYS
-      .some(key => localStorage.getItem(key) === "enabled");
-
-    if (hasLegacyPreference) {
-      localStorage.setItem(PREFERENCE_KEY, "enabled");
-      LEGACY_PREFERENCE_KEYS.forEach(key => localStorage.removeItem(key));
-    }
-
-    return hasLegacyPreference;
-  } catch {
-    return false;
-  }
 }
 
 function setLocalPreference(enabled) {
