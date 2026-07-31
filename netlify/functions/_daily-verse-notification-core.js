@@ -112,7 +112,7 @@ function buildNotificationPayload({ force = false, source = "", language = "ru" 
   const url = getDailyVerseUrl(day, normalizedLanguage);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
   const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
-  const scheduledTestLabel = "22:40 EDT";
+  const scheduledTestLabel = "10:00 Toronto";
   const heading = normalizedLanguage === "ru" ? "Стих дня" : "Daily Verse";
   const topic = verse?.topic?.[normalizedLanguage] || heading;
 
@@ -135,7 +135,7 @@ function buildNotificationPayload({ force = false, source = "", language = "ru" 
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
       ? crypto.randomUUID()
-      : createIdempotencyUuid(`daily-verse-${normalizedLanguage}-uat-scheduled-2240-${dateKey}-day-${day}`),
+      : createIdempotencyUuid(`daily-verse-${normalizedLanguage}-uat-scheduled-1000-toronto-${dateKey}-day-${day}`),
     data: {
       content_type: "daily-verse",
       language: normalizedLanguage,
