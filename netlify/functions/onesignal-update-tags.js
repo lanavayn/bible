@@ -1,5 +1,5 @@
 const ONESIGNAL_API_BASE = "https://api.onesignal.com";
-const ALLOWED_FEATURES = new Set(["daily-verse", "daily-question"]);
+const ALLOWED_FEATURES = new Set(["daily-verse"]);
 const ALLOWED_LANGUAGES = new Set(["ru", "en"]);
 const IDENTITY_RETRY_DELAYS_MS = [0, 500, 1500, 3000];
 
@@ -229,10 +229,10 @@ async function parseOneSignalResponse(response) {
 }
 
 function buildWhitelistedTags(feature, language, enabled) {
-  const featureTag = feature.replace(/-/g, "_");
-
   return {
-    [featureTag]: enabled ? language : "false"
+    daily_verse: "",
+    daily_question: "",
+    daily_verse_language: enabled ? language : ""
   };
 }
 

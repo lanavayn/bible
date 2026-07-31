@@ -164,18 +164,29 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const langEn = document.getElementById("langEn");
     const langRu = document.getElementById("langRu");
+
+    async function switchLanguage(href, targetLanguage) {
+      try {
+        const notifications = await import("/js/onesignal-notifications.js");
+        await notifications.syncDailyVerseNotificationLanguage(targetLanguage);
+      } catch (error) {
+        console.info("[Bible for All] Notification language preference was not updated.", error);
+      }
+
+      window.location.replace(withDailySelection(href));
+    }
     
     if (langEn) {
-      langEn.addEventListener("click", function (e) {
+      langEn.addEventListener("click", async function (e) {
         e.preventDefault();
-        window.location.replace(withDailySelection(enHrefBase));
+        await switchLanguage(enHrefBase, "en");
       });
     }
     
     if (langRu) {
-      langRu.addEventListener("click", function (e) {
+      langRu.addEventListener("click", async function (e) {
         e.preventDefault();
-        window.location.replace(withDailySelection(ruHrefBase));
+        await switchLanguage(ruHrefBase, "ru");
       });
     }
 

@@ -1,4 +1,4 @@
-const { sendDailyVerseNotification } = require("./_daily-verse-notification-core");
+const { sendDailyVerseNotifications } = require("./_daily-verse-notification-core");
 
 exports.handler = async event => {
   const expectedToken = process.env.NOTIFICATION_TEST_TOKEN;
@@ -12,7 +12,7 @@ exports.handler = async event => {
   }
 
   try {
-    const result = await sendDailyVerseNotification({ force: true, source: "manual-test" });
+    const result = await sendDailyVerseNotifications({ force: true, source: "manual-test" });
     console.info("[Bible for All] Manual Daily Verse notification test result:", result);
 
     return {

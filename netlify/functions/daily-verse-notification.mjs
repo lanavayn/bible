@@ -1,6 +1,6 @@
 import notificationCore from "./_daily-verse-notification-core.js";
 
-const { sendDailyVerseNotification } = notificationCore;
+const { sendDailyVerseNotifications } = notificationCore;
 
 export default async function handler(request) {
   const startedAt = new Date();
@@ -14,7 +14,7 @@ export default async function handler(request) {
   });
 
   try {
-    const result = await sendDailyVerseNotification({ source: invocationType, force: false });
+    const result = await sendDailyVerseNotifications({ source: invocationType, force: false });
     console.info("[Bible for All] Scheduled Daily Verse notification result:", result);
 
     return Response.json(result);

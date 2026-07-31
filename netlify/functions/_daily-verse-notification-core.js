@@ -98,31 +98,34 @@ function getCurrentDailyVerse(date = new Date()) {
   };
 }
 
-function getRussianDailyVerseUrl(day) {
+function getDailyVerseUrl(day, language = "ru") {
   const baseUrl = (process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "");
-  return `${baseUrl}/ru/?day=${encodeURIComponent(day)}`;
+  const pathPrefix = language === "ru" ? "/ru/" : "/";
+  return `${baseUrl}${pathPrefix}?day=${encodeURIComponent(day)}`;
 }
 
-function buildNotificationPayload({ force = false, source = "" } = {}) {
+function buildNotificationPayload({ force = false, source = "", language = "ru" } = {}) {
   const now = new Date();
   const parts = getTorontoParts(now);
   const { day, currentDayNumber, verse } = getCurrentDailyVerse(now);
-  const url = getRussianDailyVerseUrl(day);
+  const normalizedLanguage = language === "en" ? "en" : "ru";
+  const url = getDailyVerseUrl(day, normalizedLanguage);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
   const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
   const scheduledTestLabel = "22:40 EDT";
-  const topic = verse?.topic?.ru || "Стих дня";
+  const heading = normalizedLanguage === "ru" ? "Стих дня" : "Daily Verse";
+  const topic = verse?.topic?.[normalizedLanguage] || heading;
 
   return {
     app_id: requireEnv("ONESIGNAL_APP_ID"),
-    name: `UAT ${notificationSource} Daily Verse TEST ${scheduledTestLabel} - Day ${day} - ${dateKey}`,
+    name: `UAT ${notificationSource} Daily Verse TEST ${scheduledTestLabel} - Day ${day} - ${dateKey} - ${normalizedLanguage.toUpperCase()}`,
     target_channel: "push",
     filters: [
-      { field: "tag", key: "daily_verse", relation: "=", value: "ru" }
+      { field: "tag", key: "daily_verse_language", relation: "=", value: normalizedLanguage }
     ],
     headings: {
-      ru: "Стих дня",
-      en: "Стих дня"
+      ru: heading,
+      en: heading
     },
     contents: {
       ru: topic,
@@ -132,16 +135,29 @@ function buildNotificationPayload({ force = false, source = "" } = {}) {
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
       ? crypto.randomUUID()
-      : createIdempotencyUuid(`daily-verse-ru-uat-scheduled-2240-${dateKey}-day-${day}`),
+      : createIdempotencyUuid(`daily-verse-${normalizedLanguage}-uat-scheduled-2240-${dateKey}-day-${day}`),
     data: {
       content_type: "daily-verse",
-      language: "ru",
+      language: normalizedLanguage,
       day,
       calculated_day: currentDayNumber,
       phase: "uat",
       force
     }
   };
+}
+
+async function sendDailyVerseNotifications(options = {}) {
+  const languages = Array.isArray(options.languages) && options.languages.length
+    ? options.languages
+    : ["ru", "en"];
+  const results = [];
+
+  for (const language of languages) {
+    results.push(await sendDailyVerseNotification({ ...options, language }));
+  }
+
+  return results;
 }
 
 async function sendDailyVerseNotification(options = {}) {
@@ -322,8 +338,9 @@ function delay(ms) {
 module.exports = {
   buildNotificationPayload,
   getCurrentDailyVerse,
+  getDailyVerseUrl,
   getDayNumberFromEaster,
-  getRussianDailyVerseUrl,
   getTorontoParts,
-  sendDailyVerseNotification
+  sendDailyVerseNotification,
+  sendDailyVerseNotifications
 };

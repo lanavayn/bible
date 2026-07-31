@@ -6,7 +6,18 @@ const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
-const PREFERENCE_KEY_PREFIX = "bfa.notifications";
+const PREFERENCE_KEY = "bfa.notifications.daily-verse";
+const LEGACY_DAILY_VERSE_PREFERENCE_KEYS = [
+  "bfa.notifications.daily-verse.ru",
+  "bfa.notifications.daily-verse.en"
+];
+const LEGACY_PREFERENCE_KEYS = [
+  ...LEGACY_DAILY_VERSE_PREFERENCE_KEYS,
+  "bfa.notifications.daily-question.ru",
+  "bfa.notifications.daily-question.en"
+];
+const LANGUAGE_TAG = "daily_verse_language";
+const LEGACY_TAGS = ["daily_verse", "daily_question"];
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
@@ -25,24 +36,6 @@ const FEATURE_COPY = {
       enabledMessage: "Вы будете получать новый стих каждый день.",
       disableButton: "Не получать стих дня"
     }
-  },
-  "daily-question": {
-    en: {
-      heading: "🔔 Receive a new Bible question every day",
-      desktopDescription: "The Question of the Day will appear in your browser notifications.",
-      enableButton: "Get the Question of the Day",
-      enabledTitle: "✅ Question of the Day is on",
-      enabledMessage: "You’ll receive a new Bible question every day.",
-      disableButton: "Stop receiving the Question of the Day"
-    },
-    ru: {
-      heading: "🔔 Получайте новый вопрос из Библии каждый день",
-      desktopDescription: "Вопрос дня появится в уведомлениях вашего браузера.",
-      enableButton: "Получать вопрос дня",
-      enabledTitle: "✅ Вопрос дня подключён",
-      enabledMessage: "Вы будете получать новый вопрос каждый день.",
-      disableButton: "Не получать вопрос дня"
-    }
   }
 };
 
@@ -54,10 +47,6 @@ let oneSignalInstance = null;
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
   return renderNotificationControls({ feature: "daily-verse", language });
-}
-
-export function renderDailyQuestionNotificationControls({ language } = {}) {
-  return renderNotificationControls({ feature: "daily-question", language });
 }
 
 function renderNotificationControls({ feature, language } = {}) {
@@ -114,10 +103,6 @@ export function initDailyVerseNotifications(root = document) {
   initNotificationControls(root, "daily-verse");
 }
 
-export function initDailyQuestionNotifications(root = document) {
-  initNotificationControls(root, "daily-question");
-}
-
 function initNotificationControls(root = document, feature) {
   const box = root.querySelector(`[data-notification-feature="${feature}"]`);
   if (!box || box.dataset.bound === "true") return;
@@ -129,11 +114,11 @@ function initNotificationControls(root = document, feature) {
   const diagnosticsBtn = box.querySelector("[data-notification-diagnostics-copy]");
   const language = getBoxLanguage(box);
 
-  if (hasLocalPreference(feature, language) && getNotificationPermission() === "granted") {
+  if (hasLocalPreference() && getNotificationPermission() === "granted") {
     refreshNotificationState(box);
   } else {
     if (getNotificationPermission() !== "granted") {
-      setLocalPreference(feature, language, false);
+      setLocalPreference(false);
     }
     setState(box, STATUS_DISABLED);
   }
@@ -151,7 +136,7 @@ function initNotificationControls(root = document, feature) {
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
-      setLocalPreference(feature, language, true);
+      setLocalPreference(true);
       setState(box, STATUS_ENABLED);
       setStatus(box, "");
       console.info("[Bible for All] Notifications enabled for UAT.", {
@@ -177,14 +162,9 @@ function initNotificationControls(root = document, feature) {
       const OneSignal = await initializeOneSignal();
       await logNotificationDiagnostics(OneSignal, "before-disable", { feature, language });
 
-      const existingTags = await getOneSignalTags(OneSignal);
-      const hasOtherFeature = hasOtherEnabledFeature(existingTags, feature);
-      let tagError = null;
-
       try {
         await syncAndVerifyFeatureTags(OneSignal, feature, language, false);
       } catch (error) {
-        tagError = error;
         console.warn("[Bible for All] Notification preference tag could not be disabled.", {
           feature,
           language,
@@ -192,15 +172,11 @@ function initNotificationControls(root = document, feature) {
         });
       }
 
-      if (!hasOtherFeature) {
-        await optOutAndConfirm(OneSignal);
-      } else if (tagError) {
-        throw tagError;
-      }
+      await optOutAndConfirm(OneSignal);
 
       await logNotificationDiagnostics(OneSignal, "after-disable", { feature, language });
 
-      setLocalPreference(feature, language, false);
+      setLocalPreference(false);
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
       console.info("[Bible for All] Notifications disabled for UAT.", { feature, language });
@@ -233,8 +209,8 @@ async function refreshNotificationState(box) {
   const feature = getBoxFeature(box);
   const language = getBoxLanguage(box);
 
-  if (!hasLocalPreference(feature, language) || getNotificationPermission() !== "granted") {
-    setLocalPreference(feature, language, false);
+  if (!hasLocalPreference() || getNotificationPermission() !== "granted") {
+    setLocalPreference(false);
     setState(box, STATUS_DISABLED);
     refreshUatDiagnostics(box);
     return;
@@ -243,11 +219,18 @@ async function refreshNotificationState(box) {
   try {
     const OneSignal = await initializeOneSignal();
     const subscription = getPushSubscriptionState(OneSignal);
-    const featureEnabled = isActivePushSubscription(subscription)
-      && await getFeatureEnabled(OneSignal, feature, language);
+    let featureEnabled = isActivePushSubscription(subscription);
+
+    if (featureEnabled) {
+      const tags = await getOneSignalTags(OneSignal);
+
+      if (!isFeatureTagEnabled(tags, language)) {
+        await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
+      }
+    }
 
     if (!featureEnabled) {
-      setLocalPreference(feature, language, false);
+      setLocalPreference(false);
     }
 
     setState(box, featureEnabled ? STATUS_ENABLED : STATUS_DISABLED);
@@ -256,6 +239,49 @@ async function refreshNotificationState(box) {
     console.info("[Bible for All] Notifications are not ready yet.", error);
     setState(box, STATUS_DISABLED);
     refreshUatDiagnostics(box);
+  }
+}
+
+export async function syncDailyVerseNotificationLanguage(language) {
+  const normalizedLanguage = language === "en" ? "en" : "ru";
+
+  if (!hasLocalPreference() || getNotificationPermission() !== "granted") {
+    return { updated: false, reason: "not-subscribed" };
+  }
+
+  try {
+    const OneSignal = await initializeOneSignal();
+    const subscription = getPushSubscriptionState(OneSignal);
+
+    if (!isActivePushSubscription(subscription)) {
+      setLocalPreference(false);
+      return { updated: false, reason: "inactive-subscription" };
+    }
+
+    const tags = await getOneSignalTags(OneSignal);
+    if (isFeatureTagEnabled(tags, normalizedLanguage)) {
+      return { updated: false, reason: "already-current" };
+    }
+
+    await syncAndVerifyFeatureTags(
+      OneSignal,
+      "daily-verse",
+      normalizedLanguage,
+      true
+    );
+
+    console.info("[Bible for All] Daily Verse notification language updated.", {
+      language: normalizedLanguage,
+      subscriptionId: maskValue(subscription.id)
+    });
+
+    return { updated: true, language: normalizedLanguage };
+  } catch (error) {
+    console.warn("[Bible for All] Daily Verse notification language update failed.", {
+      language: normalizedLanguage,
+      error
+    });
+    return { updated: false, reason: "sync-failed" };
   }
 }
 
@@ -458,17 +484,24 @@ async function syncAndVerifyFeatureTags(OneSignal, feature, language, enabled) {
   let clientTags = {};
 
   try {
-    if (!OneSignal.User?.addTags || !OneSignal.User?.getTags) {
+    if (!OneSignal.User?.addTags || !OneSignal.User?.removeTags || !OneSignal.User?.getTags) {
       throw new Error("OneSignal tag APIs are unavailable.");
     }
 
-    await OneSignal.User.addTags(intendedTags);
+    await OneSignal.User.removeTags(LEGACY_TAGS);
+
+    if (enabled) {
+      await OneSignal.User.addTags(intendedTags);
+    } else {
+      await OneSignal.User.removeTags([LANGUAGE_TAG]);
+    }
+
     const startedAt = Date.now();
 
     while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
       clientTags = await getOneSignalTags(OneSignal);
 
-      if (tagsMatch(clientTags, intendedTags)) {
+      if (tagsMatch(clientTags, intendedTags, enabled)) {
         break;
       }
 
@@ -480,7 +513,7 @@ async function syncAndVerifyFeatureTags(OneSignal, feature, language, enabled) {
 
   const serverTags = await syncFeatureTagsWithServer(OneSignal, feature, language, enabled);
 
-  if (!tagsMatch(serverTags, intendedTags)) {
+  if (!tagsMatch(serverTags, intendedTags, enabled)) {
     throw new Error(`OneSignal tags were not confirmed for ${feature}.`);
   }
 
@@ -524,41 +557,26 @@ async function syncFeatureTagsWithServer(OneSignal, feature, language, enabled) 
   return result.tags || {};
 }
 
-function tagsMatch(actualTags, expectedTags) {
-  return Object.entries(expectedTags)
-    .every(([key, value]) => actualTags?.[key] === value);
-}
+function tagsMatch(actualTags, expectedTags, enabled = true) {
+  if (!enabled) {
+    return !actualTags?.[LANGUAGE_TAG];
+  }
 
-async function getFeatureEnabled(OneSignal, feature, language) {
-  const tags = await getOneSignalTags(OneSignal);
-
-  return isFeatureTagEnabled(tags, feature, language);
+  return actualTags?.[LANGUAGE_TAG] === expectedTags[LANGUAGE_TAG];
 }
 
 async function getOneSignalTags(OneSignal) {
   return OneSignal.User?.getTags ? await OneSignal.User.getTags() : {};
 }
 
-function isFeatureTagEnabled(tags, feature, language = null) {
-  const featureTag = getFeatureTag(feature);
-  const value = tags?.[featureTag];
-
-  if (language) return value === language;
-  return value === "ru" || value === "en";
+function isFeatureTagEnabled(tags, language) {
+  return tags?.[LANGUAGE_TAG] === language;
 }
 
 function buildNotificationTags(feature, language, enabled) {
-  const featureTag = getFeatureTag(feature);
-
   return {
-    [featureTag]: enabled ? language : "false"
+    [LANGUAGE_TAG]: enabled ? language : ""
   };
-}
-
-function hasOtherEnabledFeature(tags, currentFeature) {
-  return ["daily-verse", "daily-question"]
-    .filter(feature => feature !== currentFeature)
-    .some(feature => isFeatureTagEnabled(tags, feature));
 }
 
 function getPushSubscriptionState(OneSignal) {
@@ -731,31 +749,34 @@ function getBoxLanguage(box) {
   return box.dataset.notificationLanguage || (document.documentElement.lang === "en" ? "en" : "ru");
 }
 
-function getFeatureTag(feature) {
-  return feature.replace(/-/g, "_");
-}
-
-function getPreferenceKey(feature, language) {
-  return `${PREFERENCE_KEY_PREFIX}.${feature}.${language}`;
-}
-
-function hasLocalPreference(feature, language) {
+function hasLocalPreference() {
   try {
-    return localStorage.getItem(getPreferenceKey(feature, language)) === "enabled";
+    if (localStorage.getItem(PREFERENCE_KEY) === "enabled") {
+      return true;
+    }
+
+    const hasLegacyPreference = LEGACY_DAILY_VERSE_PREFERENCE_KEYS
+      .some(key => localStorage.getItem(key) === "enabled");
+
+    if (hasLegacyPreference) {
+      localStorage.setItem(PREFERENCE_KEY, "enabled");
+      LEGACY_PREFERENCE_KEYS.forEach(key => localStorage.removeItem(key));
+    }
+
+    return hasLegacyPreference;
   } catch {
     return false;
   }
 }
 
-function setLocalPreference(feature, language, enabled) {
+function setLocalPreference(enabled) {
   try {
-    const key = getPreferenceKey(feature, language);
-
     if (enabled) {
-      localStorage.setItem(key, "enabled");
+      localStorage.setItem(PREFERENCE_KEY, "enabled");
     } else {
-      localStorage.removeItem(key);
+      localStorage.removeItem(PREFERENCE_KEY);
     }
+    LEGACY_PREFERENCE_KEYS.forEach(key => localStorage.removeItem(key));
   } catch (error) {
     console.info("[Bible for All] Notification preference could not be stored locally.", error);
   }
