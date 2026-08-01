@@ -1,0 +1,382 @@
+{
+    "questions": [
+      {
+        "id": "question-day-91",
+        "day": 91,
+        "topic_ru": "Происхождение Евангелия",
+        "topic_en": "The Source of the Gospel",
+        "question_ru": "Как мы знаем, что Евангелие — от Господа?",
+        "question_en": "How do we know the Gospel is from the Lord?",
+        "reference_ru": "Галатам 1:11-12",
+        "reference_en": "Galatians 1:11-12",
+        "text_ru": "Возвещаю вам, братия, что Евангелие, которое я благовествовал, не есть человеческое, ибо и я принял его и научился не от человека, но через откровение Иисуса Христа.",
+        "text_en": "But I make known to you, brothers, concerning the Good News which was preached by me, that it is not according to man. For neither did I receive it from man, nor was I taught it, but it came to me through revelation of Jesus Christ.",
+        "verse_ref": {
+          "book": "Galatians",
+          "chapter": 1,
+          "verse": "11-12"
+        },
+        "answer_ru": "Евангелие дано Господом через Иисуса Христа, а не исходит от человека.",
+        "answer_en": "The Gospel was given by the Lord through Jesus Christ, not by man.",
+        "reflection_ru": "Евангелию можно доверять, потому что его источник — Господь, а не человеческая мудрость.",
+        "reflection_en": "We can trust the Gospel because its source is the Lord, not human wisdom.",
+        "related": [
+          {
+            "reference_ru": "Евреям 2:3-4",
+            "reference_en": "Hebrews 2:3-4",
+            "text_ru": "То как мы избежим, вознерадев о толиком спасении, которое, быв сначала проповедано Господом, в нас утвердилось слышавшими от Него, при засвидетельствовании от Бога знамениями и чудесами, и различными силами, и раздаянием Духа Святого по Его воле?",
+            "text_en": "How will we escape if we neglect so great a salvation—which at the first having been spoken through the Lord, was confirmed to us by those who heard, God also testifying with them, both by signs and wonders, by various works of power, and by gifts of the Holy Spirit, according to his own will?",
+            "verse_ref": {
+              "book": "Hebrews",
+              "chapter": 2,
+              "verse": "3-4"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 12:49-50",
+            "reference_en": "John 12:49-50",
+            "text_ru": "Ибо Я говорил не от Себя; но пославший Меня Отец, Он дал Мне заповедь, что сказать и что говорить. И Я знаю, что заповедь Его есть жизнь вечная. Итак, что Я говорю, говорю, как сказал Мне Отец.",
+            "text_en": "For I spoke not from myself, but the Father who sent me gave me a commandment, what I should say and what I should speak. I know that his commandment is eternal life. The things therefore which I speak, even as the Father has said to me, so I speak.",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 12,
+              "verse": "49-50"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-92",
+        "day": 92,
+        "topic_ru": "Одежда и благочестие",
+        "topic_en": "Clothing and Godliness",
+        "question_ru": "Запрещает ли Библия красиво одеваться?",
+        "question_en": "Does the Bible forbid dressing beautifully?",
+        "reference_ru": "Екклесиаст 9:8",
+        "reference_en": "Ecclesiastes 9:8",
+        "text_ru": "Да будут во всякое время одежды твои светлы, и да не оскудевает елей на голове твоей.",
+        "text_en": "Let your garments always be white, and do not let your head lack oil.",
+        "verse_ref": {
+          "book": "Ecclesiastes",
+          "chapter": 9,
+          "verse": "8"
+        },
+        "answer_ru": "Библия не запрещает красивую и опрятную одежду. Главное — чтобы сердце было посвящено Богу.",
+        "answer_en": "The Bible does not forbid beautiful or neat clothing. What matters most is a heart devoted to God.",
+        "reflection_ru": "Красота внешнего вида не противоречит вере, если она сочетается со скромностью, благодарностью и правильными мотивами.",
+        "reflection_en": "A beautiful appearance is not contrary to faith when it is accompanied by modesty, gratitude, and the right motives.",
+        "related": [
+          {
+            "reference_ru": "Притчи 31:22",
+            "reference_en": "Proverbs 31:22",
+            "text_ru": "Она делает себе ковры; виссон и пурпур — одежда ее.",
+            "text_en": "She makes for herself carpets of tapestry. Her clothing is fine linen and purple.",
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 31,
+              "verse": "22"
+            }
+          },
+          {
+            "reference_ru": "Бытие 24:53",
+            "reference_en": "Genesis 24:53",
+            "text_ru": "И вынул раб серебряные вещи, золотые вещи и одежды и дал Ревекке.",
+            "text_en": "The servant brought out silver jewelry, gold jewelry, and clothing, and gave them to Rebekah.",
+            "verse_ref": {
+              "book": "Genesis",
+              "chapter": 24,
+              "verse": "53"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-93",
+        "day": 93,
+        "topic_ru": "Украшения и благочестие",
+        "topic_en": "Jewelry and Godliness",
+        "question_ru": "Осуждает ли Бог украшения?",
+        "question_en": "Does God condemn jewelry?",
+        "reference_ru": "Иезекииль 16:11-13",
+        "reference_en": "Ezekiel 16:11-13",
+        "text_ru": "И нарядил тебя в украшения, и положил запястья на руки твои и ожерелье на шею твою. И дал тебе кольцо на нос твой, и серьги к ушам твоим, и прекрасный венец на голову твою... И была ты чрезвычайно красива.",
+        "text_en": "I decked you with ornaments, put bracelets on your hands, a chain on your neck, a ring on your nose, earrings in your ears, and a beautiful crown on your head... You were exceedingly beautiful.",
+        "verse_ref": {
+          "book": "Ezekiel",
+          "chapter": 16,
+          "verse": "11-13"
+        },
+        "answer_ru": "Библия не осуждает украшения сами по себе. Бог смотрит на сердце и мотивы человека.",
+        "answer_en": "The Bible does not condemn jewelry itself. God looks at the heart and a person's motives.",
+        "reflection_ru": "Украшения могут быть уместными, если они не становятся источником гордости или тщеславия.",
+        "reflection_en": "Jewelry can be appropriate when it does not become a source of pride or vanity.",
+        "related": [
+          {
+            "reference_ru": "Исход 35:22",
+            "reference_en": "Exodus 35:22",
+            "text_ru": "И приходили мужчины и женщины, все по расположению сердца, приносили кольца, серьги, перстни и привески — всякие золотые вещи, каждый, кто приносил приношение золота Господу.",
+            "text_en": "They came, both men and women, all whose hearts were willing, and brought brooches, earrings, signet rings, bracelets, all sorts of gold jewelry—everyone bringing an offering of gold to the Lord.",
+            "verse_ref": {
+              "book": "Exodus",
+              "chapter": 35,
+              "verse": "22"
+            }
+          },
+          {
+            "reference_ru": "Бытие 41:42",
+            "reference_en": "Genesis 41:42",
+            "text_ru": "И снял фараон перстень свой с руки своей, и надел его на руку Иосифа; одел его в виссонные одежды, возложил золотую цепь на шею ему.",
+            "text_en": "Pharaoh took off his signet ring from his hand and put it on Joseph's hand, clothed him in garments of fine linen, and put a gold chain around his neck.",
+            "verse_ref": {
+              "book": "Genesis",
+              "chapter": 41,
+              "verse": "42"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-94",
+        "day": 94,
+        "topic_ru": "Сердце важнее внешности",
+        "topic_en": "The Heart Matters More Than Appearance",
+        "question_ru": "На что Бог смотрит прежде всего — на внешний вид или на сердце?",
+        "question_en": "What does God look at first—our appearance or our heart?",
+        "reference_ru": "1 Царств 16:7",
+        "reference_en": "1 Samuel 16:7",
+        "text_ru": "Но Господь сказал Самуилу: не смотри на вид его и на высоту роста его... ибо человек смотрит на лице, а Господь смотрит на сердце.",
+        "text_en": "But the Lord said to Samuel, 'Do not look on his face, or on the height of his stature... for man looks at the outward appearance, but the Lord looks at the heart.'",
+        "verse_ref": {
+          "book": "1-Samuel",
+          "chapter": 16,
+          "verse": "7"
+        },
+        "answer_ru": "Для Бога самое важное — состояние сердца. Внешний вид имеет значение, но сердце и мотивы всегда стоят на первом месте.",
+        "answer_en": "What matters most to God is the condition of the heart. Appearance has its place, but the heart and our motives always come first.",
+        "reflection_ru": "Истинная красота начинается внутри. Когда сердце принадлежит Богу, это отражается и в поступках, и во внешнем облике.",
+        "reflection_en": "True beauty begins within. When the heart belongs to God, it is reflected in both our character and appearance.",
+        "related": [
+          {
+            "reference_ru": "Иеремия 17:10",
+            "reference_en": "Jeremiah 17:10",
+            "text_ru": "Я, Господь, проникаю сердце и испытываю внутренности, чтобы воздать каждому по пути его и по плодам дел его.",
+            "text_en": "I, Lord, search the mind, I try the heart, even to give every man according to his ways, according to the fruit of his doings.",
+            "verse_ref": {
+              "book": "Jeremiah",
+              "chapter": 17,
+              "verse": "10"
+            }
+          },
+          {
+            "reference_ru": "1 Петра 3:3-4",
+            "reference_en": "1 Peter 3:3-4",
+            "text_ru": "Да будет украшением вашим не внешнее плетение волос, не золотые уборы или нарядность в одежде, но сокровенный сердца человек в нетленной красоте кроткого и молчаливого духа, что драгоценно пред Богом.",
+            "text_en": "Don't let your beauty be the outward adorning of braiding the hair and of wearing jewels of gold or putting on fine clothing, but let it be the hidden person of the heart, in the incorruptible adornment of a gentle and quiet spirit, which is very precious in God's sight.",
+            "verse_ref": {
+              "book": "1-Peter",
+              "chapter": 3,
+              "verse": "3-4"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-95",
+        "day": 95,
+        "topic_ru": "Небесные книги",
+        "topic_en": "The Heavenly Books",
+        "question_ru": "О каких небесных книгах говорит Библия?",
+        "question_en": "What heavenly books does the Bible mention?",
+        "reference_ru": "Даниил 7:10",
+        "reference_en": "Daniel 7:10",
+        "text_ru": "Огненная река выходила и проходила пред Ним; тысячи тысяч служили Ему и тьмы тем предстояли пред Ним; судьи сели, и раскрылись книги.",
+        "text_en": "A fiery stream issued and came out from before him. Thousands of thousands ministered to him. Ten thousand times ten thousand stood before him. The judgment was set. The books were opened.",
+        "verse_ref": {
+          "book": "Daniel",
+          "chapter": 7,
+          "verse": "10"
+        },
+        "answer_ru": "Библия упоминает книги, раскрываемые на суде, памятную книгу, книгу, в которой записаны дни человека, а также Книгу жизни. При этом Писание не объясняет, являются ли они разными книгами или некоторые из них относятся к одной и той же книге.",
+        "answer_en": "The Bible mentions books opened in judgment, the Book of Remembrance, the book in which a person's days are recorded, and the Book of Life. However, Scripture does not explain whether these are all different books or whether some refer to the same book.",
+        "reflection_ru": "Бог знает каждого человека и ведет совершенный учет. Все, что Писание открывает о небесных книгах, побуждает нас доверять Его справедливости.",
+        "reflection_en": "God knows every person and keeps perfect records. Everything Scripture reveals about the heavenly books encourages us to trust His justice.",
+        "related": [
+          {
+            "reference_ru": "Малахия 3:16",
+            "reference_en": "Malachi 3:16",
+            "text_ru": "Но боящиеся Бога говорят друг другу: «внимает Господь и слышит это, и пред лицом Его пишется памятная книга о боящихся Господа и чтущих имя Его».",
+            "text_en": "Then those who feared the Lord spoke with one another; and the Lord listened and heard, and a book of remembrance was written before him for those who feared the Lord and honored his name.",
+            "verse_ref": {
+              "book": "Malachi",
+              "chapter": 3,
+              "verse": "16"
+            }
+          },
+          {
+            "reference_ru": "Псалом 138:16",
+            "reference_en": "Psalm 139:16",
+            "text_ru": "Зародыш мой видели очи Твои; в Твоей книге записаны все дни, для меня назначенные, когда ни одного из них еще не было.",
+            "text_en": "Your eyes saw my body. In your book they were all written, the days that were ordained for me, when as yet there were none of them.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 138,
+                "verse": "16"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 139,
+                "verse": "16"
+              }
+            }
+          },
+          {
+            "reference_ru": "Откровение 20:12",
+            "reference_en": "Revelation 20:12",
+            "text_ru": "И увидел я мертвых, малых и великих, стоящих пред Богом, и книги раскрыты были, и иная книга раскрыта, которая есть книга жизни; и судимы были мертвые по написанному в книгах, сообразно с делами своими.",
+            "text_en": "I saw the dead, the great and the small, standing before the throne, and they opened the books. Another book was opened, which is the book of life. The dead were judged out of the things which were written in the books, according to their works.",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 20,
+              "verse": "12"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-96",
+        "day": 96,
+        "topic_ru": "Книга жизни",
+        "topic_en": "The Book of Life",
+        "question_ru": "Что такое Книга жизни?",
+        "question_en": "What is the Book of Life?",
+        "reference_ru": "Откровение 20:12",
+        "reference_en": "Revelation 20:12",
+        "text_ru": "И увидел я мертвых, малых и великих, стоящих пред Богом, и книги раскрыты были, и иная книга раскрыта, которая есть книга жизни; и судимы были мертвые по написанному в книгах, сообразно с делами своими.",
+        "text_en": "I saw the dead, the great and the small, standing before the throne, and they opened the books. Another book was opened, which is the book of life. The dead were judged out of the things which were written in the books, according to their works.",
+        "verse_ref": {
+          "book": "Revelation",
+          "chapter": 20,
+          "verse": "12"
+        },
+        "answer_ru": "Книга жизни — это небесная книга, в которой записаны имена принадлежащих Господу. Только записанные в ней наследуют вечную жизнь и войдут в Божье Царство.",
+        "answer_en": "The Book of Life is a heavenly book containing the names of those who belong to the Lord. Only those whose names are written in it will inherit eternal life and enter God's Kingdom.",
+        "reflection_ru": "Самый важный вопрос для каждого человека — записано ли его имя в Книге жизни.",
+        "reflection_en": "The most important question for every person is whether their name is written in the Book of Life.",
+        "related": [
+          {
+            "reference_ru": "Откровение 21:27",
+            "reference_en": "Revelation 21:27",
+            "text_ru": "И не войдет в него ничто нечистое и никто преданный мерзости и лжи, а только те, которые написаны у Агнца в книге жизни.",
+            "text_en": "There will in no way enter into it anything profane, or one who causes an abomination or a lie, but only those who are written in the Lamb's book of life.",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 21,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 4:3",
+            "reference_en": "Philippians 4:3",
+            "text_ru": "Ей, прошу и тебя, искренний сотрудник, помогай им, подвизавшимся в благовествовании вместе со мною и с Климентом и с прочими сотрудниками моими, которых имена — в книге жизни.",
+            "text_en": "Yes, I beg you also, true partner, help these women, for they labored with me in the Good News, with Clement also, and the rest of my fellow workers, whose names are in the book of life.",
+            "verse_ref": {
+              "book": "Philippians",
+              "chapter": 4,
+              "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Луки 10:20",
+            "reference_en": "Luke 10:20",
+            "text_ru": "Однако ж тому не радуйтесь, что духи вам повинуются; но радуйтесь тому, что имена ваши написаны на небесах.",
+            "text_en": "Nevertheless, don't rejoice in this, that the spirits are subject to you, but rejoice that your names are written in heaven.",
+            "verse_ref": {
+              "book": "Luke",
+              "chapter": 10,
+              "verse": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-97",
+        "day": 97,
+        "topic_ru": "Книга жизни",
+        "topic_en": "The Book of Life",
+        "question_ru": "Может ли имя быть удалено из Книги жизни?",
+        "question_en": "Can a name be removed from the Book of Life?",
+        "reference_ru": "Откровение 3:5",
+        "reference_en": "Revelation 3:5",
+        "text_ru": "Побеждающий облечется в белые одежды; и не изглажу имени его из книги жизни, и исповедаю имя его пред Отцом Моим и пред Ангелами Его.",
+        "text_en": "He who overcomes will be dressed in white garments, and I will in no way blot his name out of the Book of Life, and I will confess his name before my Father and before his angels.",
+        "verse_ref": {
+          "book": "Revelation",
+          "chapter": 3,
+          "verse": "5"
+        },
+        "answer_ru": "Иисус обещает не удалить имя побеждающего из Книги жизни. Поэтому важно оставаться верным Господу и Его Слову.",
+        "answer_en": "Jesus promises not to remove the overcomer's name from the Book of Life. The Bible also contains warnings about being blotted out of God's book, calling believers to remain faithful to the Lord.",
+        "reflection_ru": "Божье желание — чтобы наше имя осталось в Книге жизни. Поэтому Иисус призывает нас быть Ему верными.",
+        "reflection_en": "God desires our names to remain in the Book of Life. Therefore, Jesus calls us to remain faithful to Him.",
+        "related": [
+          {
+            "reference_ru": "Исход 32:32–33",
+            "reference_en": "Exodus 32:32–33",
+            "text_ru": "Но теперь, если простишь грех их... а если нет, то изгладь и меня из книги Твоей, в которую Ты вписал. Господь сказал Моисею: того, кто согрешил предо Мною, изглажу из книги Моей.",
+            "text_en": "Jesus promises not to remove the overcomer's name from the Book of Life. Therefore, it is important to remain faithful to the Lord and to His Word.",
+            "verse_ref": {
+              "book": "Exodus",
+              "chapter": 32,
+              "verse": "32-33"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-98",
+        "day": 98,
+        "topic_ru": "Библия и Коран",
+        "topic_en": "The Bible and the Quran",
+        "question_ru": "Чем отличается Библия от Корана?",
+        "question_en": "What is the difference between the Bible and the Quran?",
+        "reference_ru": "2 Тимофею 3:16-17",
+        "reference_en": "2 Timothy 3:16-17",
+        "text_ru": "Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности, да будет совершен Божий человек, ко всякому доброму делу приготовлен.",
+        "text_en": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness, that each person who belongs to God may be complete, thoroughly equipped for every good work.",
+        "verse_ref": {
+          "book": "2-Timothy",
+          "chapter": 3,
+          "verse": "16-17"
+        },
+        "answer_ru": "Только Библия открывает Божий путь спасения через Иисуса Христа и приглашает каждого исследовать её.",
+        "answer_en": "Only the Bible reveals God's way of salvation through Jesus Christ and invites everyone to study it.",
+        "reflection_ru": "Каждый человек должен исследовать Писание и проверять любое учение по Божьему Слову.",
+        "reflection_en": "Everyone should examine the Scriptures and test every teaching by God's Word.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:6",
+            "reference_en": "John 14:6",
+            "text_ru": "Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.",
+            "text_en": "Jesus said to him, \"I am the way, the truth, and the life. No one comes to the Father except through me.\"",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 14,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Галатам 1:8",
+            "reference_en": "Galatians 1:8",
+            "text_ru": "Но если бы даже мы или Ангел с неба стал благовествовать вам не то, что мы благовествовали вам, да будет анафема.",
+            "text_en": "But even though we, or an angel from heaven, should preach to you any Good News other than that which we preached to you, let him be cursed.",
+            "verse_ref": {
+              "book": "Galatians",
+              "chapter": 1,
+              "verse": "8"
+            }
+          }
+        ]
+      }
+    ]
+}

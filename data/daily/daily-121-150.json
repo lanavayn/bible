@@ -1,0 +1,47 @@
+{
+  "verses": [
+    {
+      "id": "daily-2026-08-04",
+      "day": 121,
+      "topic": {
+        "ru": "Гряди, Господи Иисусе",
+        "en": "Come, Lord Jesus"
+      },
+      "reference_ru": "Откровение 22:20",
+      "reference_en": "Revelation 22:20",
+      "text_ru": "Свидетельствующий сие говорит: ей, гряду скоро! Аминь. Ей, гряди, Господи Иисусе!",
+      "text_en": "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus.",
+      "verse_ref": {
+        "book": "revelation",
+        "chapter": 22,
+        "verse": "20"
+      },
+      "interpretation_ru": "Пусть слова «Гряди, Господи Иисусе!» станут нашей молитвой.",
+      "interpretation_en": "May the words “Come, Lord Jesus!” become our prayer.",
+      "related": [
+        {
+          "reference_ru": "1 Коринфянам 16:22",
+          "reference_en": "1 Corinthians 16:22",
+          "text_ru": "Кто не любит Господа Иисуса Христа, анафема, маран-афа.",
+          "text_en": "If any man doesn’t love the Lord Jesus Christ, let him be cursed. Come, Lord!",
+          "verse_ref": {
+            "book": "1-corinthians",
+            "chapter": 16,
+            "verse": "22"
+          }
+        },
+        {
+          "reference_ru": "Филиппийцам 3:20",
+          "reference_en": "Philippians 3:20",
+          "text_ru": "Наше же жительство — на небесах, откуда мы ожидаем и Спасителя, Господа нашего Иисуса Христа.",
+          "text_en": "For our citizenship is in heaven, from where we also wait for a Savior, the Lord Jesus Christ.",
+          "verse_ref": {
+            "book": "philippians",
+            "chapter": 3,
+            "verse": "20"
+          }
+        }
+      ]
+    }
+  ]
+}

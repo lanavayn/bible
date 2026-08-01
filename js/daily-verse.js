@@ -97,7 +97,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         "/data/daily/daily-1-30.json",
         "/data/daily/daily-31-60.json",
         "/data/daily/daily-61-90.json",
-        "/data/daily/daily-91-120.json"       
+        "/data/daily/daily-91-120.json",
+        "/data/daily/daily-121-150.json"
       ];
       
       let verses = [];
@@ -246,6 +247,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           firstPart: mainVerseFirstPart,
           remainingPart: mainVerseRemainingPart
         } = splitRelatedVerseLine(text);
+        const mainVerseFirstPartHasLordHelp = hasEnglishOldTestamentLordHelp(mainVerseFirstPart, lang, verseRef);
 
         root.innerHTML = `
         <section class="daily-verse-card" data-id="${escapeHtml(verse.id || "")}">
@@ -414,7 +416,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                 <span class="daily-main-verse-line-anchor">
                   ${verseReferenceInlineHtml}
                   ${addCreationHelp(mainVerseFirstPart, lang, verseRef)}
-                </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addCreationHelp(mainVerseRemainingPart, lang, verseRef)}</span>` : ""}
+                </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addCreationHelp(mainVerseRemainingPart, lang, verseRef, { suppressOldTestamentLordHelp: mainVerseFirstPartHasLordHelp })}</span>` : ""}
               </blockquote>
             ` : ""}
 
@@ -987,10 +989,18 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     return shortened.trim() + "...";
   }
 
-  function addCreationHelp(text, lang, verseRef = null) {
+  function hasEnglishOldTestamentLordHelp(text, lang, verseRef = null) {
+    return lang === "en"
+      && isOldTestamentBook(verseRef)
+      && /\b(?:LORD|Lord|lord)\b/.test(text || "");
+  }
+
+  function addCreationHelp(text, lang, verseRef = null, options = {}) {
     return addInlineWordHelp(text, {
       lang,
-      isOldTestament: isOldTestamentBook(verseRef),
+      isOldTestament: isOldTestamentBook(verseRef) && !options.suppressOldTestamentLordHelp,
+      suppressOldTestamentLordHelp: options.suppressOldTestamentLordHelp,
+      verseRef,
       classes: {
         button: "daily-help-btn",
         inline: "daily-help-inline",
@@ -1171,6 +1181,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
     const link = buildBibleLink(verseRef, lang);
     const hasRealLink = !!link;
     const { firstPart, remainingPart } = splitRelatedVerseLine(text);
+    const firstPartHasLordHelp = hasEnglishOldTestamentLordHelp(firstPart, lang, verseRef);
   
     return `
       <li class="scripture-related-item">
@@ -1192,7 +1203,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         }
         <span class="scripture-related-text scripture-related-dash">—</span>
         <span class="scripture-related-text">${addCreationHelp(firstPart, lang, verseRef)}</span>
-        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addCreationHelp(remainingPart, lang, verseRef)}</span>` : ""}
+        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addCreationHelp(remainingPart, lang, verseRef, { suppressOldTestamentLordHelp: firstPartHasLordHelp })}</span>` : ""}
       </li>
     `;
   }

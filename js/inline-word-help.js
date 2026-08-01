@@ -1,3 +1,5 @@
+import { isOldTestamentBook } from "./bibleLinks.js";
+
 function escapeHtml(value = "") {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -18,6 +20,7 @@ function findDefinitionMatches(text, definitions) {
     const source = definition.pattern;
     const flags = source.flags.includes("g") ? source.flags : `${source.flags}g`;
     const pattern = new RegExp(source.source, flags);
+    let definitionMatchCount = 0;
     let match;
 
     while ((match = pattern.exec(text)) !== null) {
@@ -27,8 +30,10 @@ function findDefinitionMatches(text, definitions) {
       const end = start + word.length;
 
       matches.push({ start, end, definition, order });
+      definitionMatchCount += 1;
 
       if (match[0] === "") pattern.lastIndex += 1;
+      if (definition.maxMatches && definitionMatchCount >= definition.maxMatches) break;
       if (!source.flags.includes("g")) break;
     }
   });
@@ -58,6 +63,65 @@ function insertHelpButtons(text, definitions, classes) {
   return result;
 }
 
+function isVerseReference(verseRef, book, chapter, verse) {
+  return String(verseRef?.book || "").toLowerCase() === String(book).toLowerCase()
+    && Number(verseRef?.chapter) === chapter
+    && String(verseRef?.verse) === String(verse);
+}
+
+function getVerseSpecificDefinitions(lang, verseRef) {
+  if (isVerseReference(verseRef, "Romans", 8, "25")) {
+    if (lang !== "ru") {
+      return [];
+    }
+
+    return [
+      {
+        label: "Подробнее о стихе Римлянам 8:25",
+        closeLabel: "Закрыть",
+        text: "Вера помогает терпеливо ждать исполнения Божьих обещаний.",
+        pattern: /(^|[^А-Яа-яЁё])(чего не видим, тогда ожидаем в терпении\.)(?=$|[^А-Яа-яЁё])/gi
+      }
+    ];
+  }
+
+  if (!isVerseReference(verseRef, "Ephesians", 6, "18")) {
+    return [];
+  }
+
+  if (lang === "ru") {
+    return [
+      {
+        label: "Подробнее о слове «святых»",
+        closeLabel: "Закрыть",
+        text: "В Новом Завете так названы все верующие в Иисуса Христа, а не только особо почитаемые люди.",
+        pattern: /(^|[^А-Яа-яЁё])(святых)(?=$|[^А-Яа-яЁё])/gi
+      },
+      {
+        label: "Подробнее о слове «духом»",
+        closeLabel: "Закрыть",
+        text: "«Молиться духом» — значит молиться искренне, под руководством Святого Духа, доверяя Богу и ища Его воли.",
+        pattern: /(^|[^А-Яа-яЁё])(духом)(?=$|[^А-Яа-яЁё])/gi
+      }
+    ];
+  }
+
+  return [
+    {
+      label: "More about saints",
+      closeLabel: "Close",
+      text: "In the New Testament, this refers to all believers in Jesus Christ, not only to specially honored individuals.",
+      pattern: /\b(saints)\b/gi
+    },
+    {
+      label: "More about praying in the Spirit",
+      closeLabel: "Close",
+      text: "“Praying in the Spirit” means praying sincerely, under the guidance of the Holy Spirit, trusting God and seeking His will.",
+      pattern: /\b(in the Spirit)\b/gi
+    }
+  ];
+}
+
 const RU_COMMON_DEFINITIONS = [
   {
     label: "Подробнее о слове «тварь»",
@@ -82,6 +146,84 @@ const RU_COMMON_DEFINITIONS = [
     closeLabel: "Закрыть",
     text: "Божье избавление человека от греха и смерти через Иисуса Христа.",
     pattern: /(^|[^А-Яа-яЁё])(спасение|спасения|спасению|спасением)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «благовестие",
+    closeLabel: "Закрыть",
+    text: "Евангелие, то есть Добрая Весть о спасении через Иисуса Христа.",
+    pattern: /(^|[^А-Яа-яЁё])(благовестие|благовестия|благовестию|благовестием)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Ветхий днями",
+    closeLabel: "Закрыть",
+    text: "Ветхий днями — библейское имя Бога, указывающее на Его вечность.",
+    pattern: /(^|[^А-Яа-яЁё])(Ветхий днями)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Белые одежды",
+    closeLabel: "Закрыть",
+    text: "Белые одежды — символ чистоты, праведности и принятия Богом.",
+    pattern: /(^|[^А-Яа-яЁё])(Белые одежды|белые одежды|белые одежду|белые одеждыю|белые одеждым)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Изглажу»",
+    closeLabel: "Закрыть",
+    text: "Стереть запись, удалить имя.",
+    pattern: /(^|[^А-Яа-яЁё])(Изглажу|Изгладить|изглажу|изгладить)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Побеждающий»",
+    closeLabel: "Закрыть",
+    text: "Человек, который остается верным Иисусу Христу до конца.",
+    pattern: /(^|[^А-Яа-яЁё])(Побеждающий|побеждающий)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Евангелие»",
+    closeLabel: "Закрыть",
+    text: "Весть о спасении, прощении и вечной жизни через Иисуса Христа.",
+    pattern: /(^|[^А-Яа-яЁё])(Евангелие|Евангелия|Евангелию|Евангелием)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о фразе «приготовлю вам место»",
+    closeLabel: "Закрыть",
+    text: "Иисус обещает, что верующие смогут быть с Ним в вечности.",
+    pattern: /(^|[^А-Яа-яЁё])(приготовлю вам место)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о фразе «гряду скоро»",
+    closeLabel: "Закрыть",
+    text: "Иисус обещает, что однажды обязательно вернётся.",
+    pattern: /(^|[^А-Яа-яЁё])(гряду скоро)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «сретение»",
+    closeLabel: "Закрыть",
+    text: "Встреча; здесь — встреча верующих с Господом.",
+    pattern: /(^|[^А-Яа-яЁё])(сретение|сретения|сретению|сретением|сретении)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «подъять»",
+    closeLabel: "Закрыть",
+    text: "Поднять; возвысить.",
+    pattern: /(^|[^А-Яа-яЁё])(подъять|подъял|подъяла|подъяли|подъемлю|подъемлет|подъемлют)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «венец»",
+    closeLabel: "Закрыть",
+    text: "Символ награды, которую Господь обещает тем, кто остаётся Ему верным.",
+    pattern: /(^|[^А-Яа-яЁё])(венец|венца|венцу|венцом|венце|венцы|венцов|венцам|венцами|венцах)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «анафема»",
+    closeLabel: "Закрыть",
+    text: "Находящийся под Божьим осуждением; отлучённый от Бога.",
+    pattern: /(^|[^А-Яа-яЁё])(анафема|анафемы|анафеме|анафему|анафемой)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «маран-афа»",
+    closeLabel: "Закрыть",
+    text: "«Господь грядёт» или «Приди, Господи!» — древняя молитва первых христиан.",
+    pattern: /(^|[^А-Яа-яЁё])(маран-афа|маранафа)(?=$|[^А-Яа-яЁё])/gi
   },
   {
     label: "Подробнее о слове «покаяние»",
@@ -135,6 +277,12 @@ const RU_COMMON_DEFINITIONS = [
 
 const RU_QUESTION_DEFINITIONS = [
   {
+    label: "Подробнее о слове «напрасно»",
+    closeLabel: "Закрыть",
+    text: "Без уважения, легкомысленно, впустую или с ложной целью. Имя Господа не следует использовать в шутках, пустых выражениях или для обмана.",
+    pattern: /(^|[^А-Яа-яЁё])(напрасно)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
     label: "Подробнее о слове «блажен»",
     closeLabel: "Закрыть",
     text: "В Синодальном переводе означает «счастлив» или «благословен Богом». Речь идёт о глубоком счастье, которое приходит от жизни с Богом.",
@@ -172,6 +320,42 @@ const EN_COMMON_DEFINITIONS = [
     closeLabel: "Close",
     text: "God’s rescue from sin and death through Jesus Christ.",
     pattern: /\b(Salvation|salvation)\b/g
+  },
+  {
+    label: "More about Gospel",
+    closeLabel: "Close",
+    text: "The message of salvation, forgiveness, and eternal life through Jesus Christ.",
+    pattern: /\b(Gospel|gospel)\b/g
+  },
+  {
+    label: "More about prepare a place for you",
+    closeLabel: "Close",
+    text: "Jesus promises that believers will be with Him for eternity.",
+    pattern: /\b(prepare a place for you)\b/gi
+  },
+  {
+    label: "More about I am coming quickly",
+    closeLabel: "Close",
+    text: "Jesus promises that He will certainly return one day.",
+    pattern: /\b(I am coming quickly|I come quickly)\b/gi
+  },
+  {
+    label: "More about crown",
+    closeLabel: "Close",
+    text: "A symbol of the reward the Lord promises to those who remain faithful to Him.",
+    pattern: /\b(Crown|crown|crowns)\b/g
+  },
+  {
+    label: "More about anathema",
+    closeLabel: "Close",
+    text: "Under God's judgment; separated from God.",
+    pattern: /\b(Anathema|anathema)\b/g
+  },
+  {
+    label: "More about Maranatha",
+    closeLabel: "Close",
+    text: "\"Our Lord is coming\" or \"Come, Lord!\" — an ancient prayer of the early Christians.",
+    pattern: /\b(Maranatha|maranatha)\b/g
   },
   {
     label: "More about repentance",
@@ -217,11 +401,21 @@ const EN_COMMON_DEFINITIONS = [
   }
 ];
 
+const EN_QUESTION_DEFINITIONS = [
+  {
+    label: "More about in vain",
+    closeLabel: "Close",
+    text: "Without reverence, carelessly, needlessly, or for a false purpose. The LORD’s name should not be used in jokes, empty expressions, or to deceive others.",
+    pattern: /\b(in vain)\b/gi
+  }
+];
+
 const EN_OLD_TESTAMENT_DEFINITION = {
   label: "More about LORD",
   closeLabel: "Close",
   text: "In the Old Testament, this often represents God’s personal name, Yahweh.",
-  pattern: /\b(LORD|Lord|lord)\b/g
+  pattern: /\b(LORD|Lord|lord)\b/g,
+  maxMatches: 1
 };
 
 export function addInlineWordHelp(text, options = {}) {
@@ -231,28 +425,42 @@ export function addInlineWordHelp(text, options = {}) {
     lang = "ru",
     isOldTestament = false,
     includeQuestionTerms = false,
+    suppressOldTestamentLordHelp = false,
+    verseRef = null,
     classes
   } = options;
 
+  const resolvedIsOldTestament = !suppressOldTestamentLordHelp
+    && (verseRef ? isOldTestamentBook(verseRef) : isOldTestament);
   let safeText = escapeHtml(text);
 
   if (lang === "ru") {
     return insertHelpButtons(
       safeText,
-      [...RU_COMMON_DEFINITIONS, ...(includeQuestionTerms ? RU_QUESTION_DEFINITIONS : [])],
+      [
+        ...RU_COMMON_DEFINITIONS,
+        ...(includeQuestionTerms ? RU_QUESTION_DEFINITIONS : []),
+        ...getVerseSpecificDefinitions(lang, verseRef)
+      ],
       classes
     );
   }
 
   const definitions = [];
 
-  if (lang === "en" && isOldTestament) {
+  if (lang === "en" && resolvedIsOldTestament) {
     definitions.push(EN_OLD_TESTAMENT_DEFINITION);
   }
 
   if (lang === "en") {
     definitions.push(...EN_COMMON_DEFINITIONS);
   }
+
+  if (lang === "en" && includeQuestionTerms) {
+    definitions.push(...EN_QUESTION_DEFINITIONS);
+  }
+
+  definitions.push(...getVerseSpecificDefinitions(lang, verseRef));
 
   return insertHelpButtons(safeText, definitions, classes);
 }

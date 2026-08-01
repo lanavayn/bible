@@ -1170,6 +1170,393 @@
                   }
                 }
               ]
+            },
+    {
+        "id": "daily-2026-07-26",
+        "day": 112,
+        "topic": {
+          "ru": "Евангелие для всех народов",
+          "en": "The Gospel for All Nations"
+        },
+        "reference_ru": "Матфея 24:14",
+        "reference_en": "Matthew 24:14",
+        "text_ru": "И проповедано будет сие Евангелие Царствия по всей вселенной, во свидетельство всем народам; и тогда придет конец.",
+        "text_en": "This Good News of the Kingdom will be preached in the whole world for a testimony to all the nations, and then the end will come.",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 24,
+          "verse": "14"
+        },
+        "interpretation_ru": "Перед концом света Господь даёт каждому возможность услышать истину — чтобы каждый имел шанс спастись.",
+        "interpretation_en": "Before the end of the world, the Lord gives everyone an opportunity to hear the truth, so that each person has a chance to be saved.",
+        "related": [
+          {
+            "reference_ru": "Откровение 14:6–7",
+            "reference_en": "Revelation 14:6–7",
+            "text_ru": "И увидел я другого Ангела, летящего посредине неба, который имел вечное Евангелие, чтобы благовествовать живущим на земле и всякому племени, и колену, и языку, и народу; и говорил он громким голосом: убойтесь Бога и воздайте Ему славу, ибо наступил час суда Его.",
+            "text_en": "I saw an angel flying in mid heaven, having an eternal Good News to proclaim to those who dwell on the earth, and to every nation, tribe, language, and people. He said with a loud voice, “Fear the Lord, and give him glory, for the hour of his judgment has come.”",
+            "verse_ref": {
+              "book": "revelation",
+              "chapter": 14,
+              "verse": "6-7"
             }
+          },
+          {
+            "reference_ru": "Марка 13:10",
+            "reference_en": "Mark 13:10",
+            "text_ru": "И во всех народах прежде должно быть проповедано Евангелие.",
+            "text_en": "The Good News must first be preached to all the nations.",
+            "verse_ref": {
+              "book": "mark",
+              "chapter": 13,
+              "verse": "10"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-27",
+        "day": 113,
+        "topic": {
+          "ru": "Иисус придёт снова",
+          "en": "Jesus Will Come Again"
+        },
+        "reference_ru": "Иоанна 14:1–3",
+        "reference_en": "John 14:1–3",
+        "text_ru": "Да не смущается сердце ваше; веруйте в Бога и в Меня веруйте. В доме Отца Моего обителей много. И когда пойду и приготовлю вам место, приду опять и возьму вас к Себе, чтобы и вы были, где Я.",
+        "text_en": "Don’t let your heart be troubled. Believe in God. Believe also in me. In my Father’s house are many homes. If I go and prepare a place for you, I will come again and will receive you to myself; that where I am, you may be there also.",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 14,
+          "verse": "1-3"
+        },
+        "interpretation_ru": "Иисус обещает вернуться. Его пришествие — надежда для каждого верующего.",
+        "interpretation_en": "Jesus promises to return. His coming is the hope of every believer.",
+        "related": [
+          {
+            "reference_ru": "Деяния 1:11",
+            "reference_en": "Acts 1:11",
+            "text_ru": "Сей Иисус, вознесшийся от вас на небо, придет таким же образом.",
+            "text_en": "This Jesus will come back in the same way as you saw him going into the sky.",
+            "verse_ref": {
+              "book": "acts",
+              "chapter": 1,
+              "verse": "11"
+            }
+          },
+          {
+            "reference_ru": "1 Фессалоникийцам 4:16–17",
+            "reference_en": "1 Thessalonians 4:16–17",
+            "text_ru": "Сам Господь сойдет с неба, и мертвые во Христе воскреснут прежде; потом мы, оставшиеся в живых, вместе с ними восхищены будем на облаках в сретение Господу на воздухе.",
+            "text_en": "The Lord himself will descend from heaven, and the dead in Christ will rise first. Then we who are alive will be caught up together with them in the clouds to meet the Lord in the air.",
+            "verse_ref": {
+              "book": "1-thessalonians",
+              "chapter": 4,
+              "verse": "16-17"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-28",
+        "day": 114,
+        "topic": {
+          "ru": "Христос явится ожидающим Его",
+          "en": "Christ Will Appear to Those Who Wait"
+        },
+        "reference_ru": "Евреям 9:28",
+        "reference_en": "Hebrews 9:28",
+        "text_ru": "Так и Христос, однажды принеся Себя в жертву, чтобы подъять грехи многих, во второй раз явится не для очищения греха, а для ожидающих Его во спасение.",
+        "text_en": "So Christ also, having been offered once to bear the sins of many, will appear a second time, without sin, to those who are eagerly waiting for him for salvation.",
+        "verse_ref": {
+          "book": "hebrews",
+          "chapter": 9,
+          "verse": "28"
+        },
+        "interpretation_ru": "Христос придёт снова, чтобы спасти людей, которые с верой ожидают Его.",
+        "interpretation_en": "Christ will come again to save those who wait for Him in faith.",
+        "related": [
+          {
+            "reference_ru": "2 Тимофею 4:8",
+            "reference_en": "2 Timothy 4:8",
+            "text_ru": "А теперь готовится мне венец правды, который даст мне Господь в день оный.",
+            "text_en": "The crown of righteousness is stored up for me, which the Lord will give to me in that day.",
+            "verse_ref": {
+              "book": "2-timothy",
+              "chapter": 4,
+              "verse": "8"
+            }
+          },
+          {
+            "reference_ru": "1 Петра 1:13",
+            "reference_en": "1 Peter 1:13",
+            "text_ru": "Совершенно уповайте на подаваемую вам благодать в явлении Иисуса Христа.",
+            "text_en": "Set your hope fully on the grace that will be brought to you at the revelation of Jesus Christ.",
+            "verse_ref": {
+              "book": "1-peter",
+              "chapter": 1,
+              "verse": "13"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-29",
+        "day": 115,
+        "topic": {
+          "ru": "Будь готов встретить Господа",
+          "en": "Be Ready to Meet the Lord"
+        },
+        "reference_ru": "Матфея 24:44",
+        "reference_en": "Matthew 24:44",
+        "text_ru": "Потому и вы будьте готовы, ибо в который час не думаете, приидет Сын Человеческий.",
+        "text_en": "Therefore also be ready, for in an hour that you don’t expect, the Son of Man will come.",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 24,
+          "verse": "44"
+        },
+        "interpretation_ru": "Мы не знаем, когда придёт Христос. Господь призывает нас быть готовыми каждый день.",
+        "interpretation_en": "We do not know when Christ will come. The Lord calls us to be ready every day.",
+        "related": [
+          {
+            "reference_ru": "Луки 12:40",
+            "reference_en": "Luke 12:40",
+            "text_ru": "Будьте же и вы готовы, ибо, в который час не думаете, приидет Сын Человеческий.",
+            "text_en": "Therefore be ready also, for the Son of Man is coming in an hour that you don’t expect him.",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 12,
+              "verse": "40"
+            }
+          },
+          {
+            "reference_ru": "1 Фессалоникийцам 5:6",
+            "reference_en": "1 Thessalonians 5:6",
+            "text_ru": "Итак, не будем спать, как и прочие, но будем бодрствовать и трезвиться.",
+            "text_en": "So then, let’s not sleep, as the rest do, but let’s watch and be sober.",
+            "verse_ref": {
+              "book": "1-thessalonians",
+              "chapter": 5,
+              "verse": "6"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-30",
+        "day": 116,
+        "topic": {
+          "ru": "Жить по воле Господа",
+          "en": "Live According to the Lord’s Will"
+        },
+        "reference_ru": "Откровение 22:7",
+        "reference_en": "Revelation 22:7",
+        "text_ru": "Се, гряду скоро: блажен соблюдающий слова пророчества книги сей.",
+        "text_en": "Behold, I come quickly. Blessed is he who keeps the words of the prophecy of this book.",
+        "verse_ref": {
+          "book": "revelation",
+          "chapter": 22,
+          "verse": "7"
+        },
+        "interpretation_ru": "Ждать Христа — это не просто говорить о вере. Это жить так, чтобы исполнять Его волю.",
+        "interpretation_en": "Waiting for Christ is more than talking about faith. It means living in a way that follows His will.",
+        "related": [
+          {
+            "reference_ru": "Откровение 1:3",
+            "reference_en": "Revelation 1:3",
+            "text_ru": "Блажен читающий и слушающие слова пророчества сего и соблюдающие написанное в нем.",
+            "text_en": "Blessed is he who reads and those who hear the words of the prophecy, and keep the things that are written in it.",
+            "verse_ref": {
+              "book": "revelation",
+              "chapter": 1,
+              "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Откровение 3:11",
+            "reference_en": "Revelation 3:11",
+            "text_ru": "Се, гряду скоро; держи, что имеешь, дабы кто не восхитил венца твоего.",
+            "text_en": "I am coming quickly! Hold firmly that which you have, so that no one takes your crown.",
+            "verse_ref": {
+              "book": "revelation",
+              "chapter": 3,
+              "verse": "11"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-07-31",
+        "day": 117,
+        "topic": {
+          "ru": "Христос обязательно придёт",
+          "en": "Christ Will Surely Come"
+        },
+        "reference_ru": "Откровение 22:12",
+        "reference_en": "Revelation 22:12",
+        "text_ru": "Се, гряду скоро, и возмездие Моё со Мною, чтобы воздать каждому по делам его.",
+        "text_en": "Behold, I come quickly. My reward is with me, to repay to each man according to his work.",
+        "verse_ref": {
+          "book": "revelation",
+          "chapter": 22,
+          "verse": "12"
+        },
+        "interpretation_ru": "Христос обязательно придёт. Будем готовы встретить Его.",
+        "interpretation_en": "Christ will surely come. Let us be ready to meet Him.",
+        "related": [
+          {
+            "reference_ru": "Матфея 16:27",
+            "reference_en": "Matthew 16:27",
+            "text_ru": "Ибо придет Сын Человеческий во славе Отца Своего с Ангелами Своими и тогда воздаст каждому по делам его.",
+            "text_en": "For the Son of Man will come in the glory of his Father with his angels, and then he will render to everyone according to his deeds.",
+            "verse_ref": {
+              "book": "matthew",
+              "chapter": 16,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 2:6",
+            "reference_en": "Romans 2:6",
+            "text_ru": "Который воздаст каждому по делам его.",
+            "text_en": "He will pay back to everyone according to their works.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 2,
+              "verse": "6"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-08-01",
+        "day": 118,
+        "topic": {
+          "ru": "Надежда, а не страх",
+          "en": "Hope, Not Fear"
+        },
+        "reference_ru": "Луки 21:28",
+        "reference_en": "Luke 21:28",
+        "text_ru": "Когда же начнет это сбываться, тогда восклонитесь и поднимите головы ваши, потому что приближается избавление ваше.",
+        "text_en": "But when these things begin to happen, look up and lift up your heads, because your redemption is near.",
+        "verse_ref": {
+          "book": "luke",
+          "chapter": 21,
+          "verse": "28"
+        },
+        "interpretation_ru": "Когда вокруг происходят тревожные события, Господь призывает нас не опускать голову, а надеяться на Него.",
+        "interpretation_en": "When troubling events unfold around us, the Lord calls us not to lose heart, but to put our hope in Him.",
+        "related": [
+          {
+            "reference_ru": "Исаия 35:4",
+            "reference_en": "Isaiah 35:4",
+            "text_ru": "Скажите робким душею: будьте тверды, не бойтесь; вот Бог ваш, придет отмщение, воздаяние Божие; Он придет и спасет вас.",
+            "text_en": "Tell those who have a fearful heart, “Be strong! Don’t be afraid! Behold, your God will come with vengeance, God’s retribution. He will come and save you.”",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 35,
+              "verse": "4"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 8:23",
+            "reference_en": "Romans 8:23",
+            "text_ru": "И мы сами, имея начаток Духа, и мы в себе стенаем, ожидая усыновления, искупления тела нашего.",
+            "text_en": "We ourselves groan within ourselves, waiting for adoption, the redemption of our body.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 8,
+              "verse": "23"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-08-02",
+        "day": 119,
+        "topic": {
+          "ru": "Господь исполнит обещание",
+          "en": "The Lord Will Fulfill His Promise"
+        },
+        "reference_ru": "Евреям 10:35–37",
+        "reference_en": "Hebrews 10:35–37",
+        "text_ru": "Итак не оставляйте упования вашего, которому предстоит великое воздаяние. Терпение нужно вам, чтобы, исполнив волю Божию, получить обещанное; ибо ещё немного, очень немного, и Грядущий придет и не умедлит.",
+        "text_en": "Therefore don’t throw away your boldness, which has a great reward. For you need endurance so that, having done the will of God, you may receive the promise. In a very little while, he who comes will come and will not wait.",
+        "verse_ref": {
+          "book": "hebrews",
+          "chapter": 10,
+          "verse": "35-37"
+        },
+        "interpretation_ru": "Доверяйте Господу. Он всегда исполняет Свои обещания.",
+        "interpretation_en": "Trust the Lord. He always fulfills His promises.",
+        "related": [
+          {
+            "reference_ru": "Евреям 6:12",
+            "reference_en": "Hebrews 6:12",
+            "text_ru": "Дабы вы не обленились, но подражали тем, которые верою и долготерпением наследуют обетования.",
+            "text_en": "Don’t be sluggish, but imitators of those who through faith and perseverance inherited the promises.",
+            "verse_ref": {
+              "book": "hebrews",
+              "chapter": 6,
+              "verse": "12"
+            }
+          },
+          {
+            "reference_ru": "Римлянам 8:25",
+            "reference_en": "Romans 8:25",
+            "text_ru": "Но когда надеемся того, чего не видим, тогда ожидаем в терпении.",
+            "text_en": "But if we hope for that which we don’t see, we wait for it with patience.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 8,
+              "verse": "25"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-08-03",
+        "day": 120,
+        "topic": {
+          "ru": "Вечная радость без слёз и смерти",
+          "en": "Eternal Joy Without Tears and Death"
+        },
+        "reference_ru": "Исаия 35:10",
+        "reference_en": "Isaiah 35:10",
+        "text_ru": "И возвратятся избавленные Господом, придут на Сион с радостным восклицанием; и радость вечная будет над головою их; они найдут радость и веселие, а печаль и воздыхание удалятся.",
+        "text_en": "The Lord’s ransomed ones will return, and come with singing to Zion; and everlasting joy will be on their heads. They will obtain gladness and joy, and sorrow and sighing will flee away.",
+        "verse_ref": {
+          "book": "isaiah",
+          "chapter": 35,
+          "verse": "10"
+        },
+        "interpretation_ru": "Господь обещает Своему народу вечную радость, в которой больше не будет печали и страданий.",
+        "interpretation_en": "The Lord promises His people eternal joy, where sorrow and suffering will be no more.",
+        "related": [
+          {
+            "reference_ru": "Исаия 25:8",
+            "reference_en": "Isaiah 25:8",
+            "text_ru": "Поглощена будет смерть навеки, и отрет Господь Бог слезы со всех лиц.",
+            "text_en": "He has swallowed up death forever! The Lord God will wipe away tears from off all faces.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 25,
+              "verse": "8"
+            }
+          },
+          {
+            "reference_ru": "Откровение 7:17",
+            "reference_en": "Revelation 7:17",
+            "text_ru": "Ибо Агнец, Который среди престола, будет пасти их и водить их на живые источники вод; и отрет Бог всякую слезу с очей их.",
+            "text_en": "For the Lamb who is in the middle of the throne shepherds them and leads them to springs of life-giving waters. And God will wipe away every tear from their eyes.",
+            "verse_ref": {
+              "book": "revelation",
+              "chapter": 7,
+              "verse": "17"
+            }
+          }
+        ]
+      }
   ]
 }

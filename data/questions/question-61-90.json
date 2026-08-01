@@ -1410,6 +1410,390 @@
           }
         }
       ]
-    }    
+    },
+    {
+      "id": "question-day-84",
+      "day": 84,
+      "topic_ru": "Имя Господа",
+      "topic_en": "God's Name",
+      "question_ru": "Почему нельзя произносить имя Господа напрасно?",
+      "question_en": "Why should we not use the Lord's name in vain?",
+      "reference_ru": "Исход 20:7",
+      "reference_en": "Exodus 20:7",
+      "text_ru": "Не произноси имени Господа, Бога твоего, напрасно; ибо Господь не оставит без наказания того, кто произносит имя Его напрасно.",
+      "text_en": "You shall not take the name of the Lord your God in vain, for the Lord will not hold him guiltless who takes his name in vain.",
+      "verse_ref": {
+        "book": "Exodus",
+        "chapter": 20,
+        "verse": "7"
+      },
+      "answer_ru": "Имя Господа свято. Бог хочет, чтобы мы произносили Его имя с почтением и уважением.",
+      "answer_en": "The Lord's name is holy. God wants us to speak His name with reverence and respect.",
+      "related": [
+        {
+          "reference_ru": "Левит 19:12",
+          "reference_en": "Leviticus 19:12",
+          "text_ru": "Не клянитесь именем Моим во лжи и не бесчести имени Бога твоего. Я Господь.",
+          "text_en": "You shall not swear by my name falsely, and profane the name of your God. I am the Lord.",
+          "verse_ref": {
+            "book": "Leviticus",
+            "chapter": 19,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "Екклесиаст 5:1",
+          "reference_en": "Ecclesiastes 5:2",
+          "text_ru": "Не торопись языком твоим, и сердце твое да не спешит произнести слово пред Богом; потому что Бог на небе, а ты на земле; поэтому слова твои да будут немноги.",
+          "text_en": "Don't be rash with your mouth, and don't let your heart be hasty to utter anything before God. For God is in heaven and you on earth; therefore let your words be few.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Ecclesiastes",
+              "chapter": 5,
+              "verse": "1"
+            },
+            "en": {
+              "book": "Ecclesiastes",
+              "chapter": 5,
+              "verse": "2"
+            }
+          }
+        },
+        {
+          "reference_ru": "Малахия 1:6",
+          "reference_en": "Malachi 1:6",
+          "text_ru": "Сын чтит отца и раб — господина своего; если Я отец, то где почтение ко Мне? и если Я Господь, то где благоговение предо Мною? говорит Господь Саваоф.",
+          "text_en": "A son honors his father, and a servant his master. If then I am a father, where is my honor? If I am a master, where is the respect due me? says the Lord of Armies.",
+          "verse_ref": {
+            "book": "Malachi",
+            "chapter": 1,
+            "verse": "6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-85",
+      "day": 85,
+      "topic_ru": "Болезнь и молитва",
+      "topic_en": "Illness and Prayer",
+      "question_ru": "Что делать, если заболел?",
+      "question_en": "What should I do if I become sick?",
+      "reference_ru": "Плач Иеремии 3:40",
+      "reference_en": "Lamentations 3:40",
+      "text_ru": "Испытаем и исследуем пути свои и обратимся к Господу.",
+      "text_en": "Let’s search and try our ways, and turn again to Yahweh.",
+      "verse_ref": {
+        "book": "Lamentations",
+        "chapter": 3,
+        "verse": "40"
+      },
+      "answer_ru": "Обратитесь к Господу. Попросите Его показать, что нужно изменить, и искренне обратитесь к Нему.",
+      "answer_en": "Turn to the Lord. Ask Him to show you what needs to change, and sincerely return to Him.",
+      "reflection_ru": "Болезнь может стать временем, чтобы стать ближе к Господу.",
+      "reflection_en": "Illness can become a time to draw closer to the Lord.",
+      "related": [
+        {
+          "reference_ru": "Псалом 31:5",
+          "reference_en": "Psalm 32:5",
+          "text_ru": "Но я открыл Тебе грех мой и не скрыл беззакония моего... И Ты снял с меня вину греха моего.",
+          "text_en": "I acknowledged my sin to you... and you forgave the iniquity of my sin.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 31,
+              "verse": "5"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 32,
+              "verse": "5"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 24:4",
+          "reference_en": "Psalm 25:4",
+          "text_ru": "Укажи мне, Господи, пути Твои и научи меня стезям Твоим.",
+          "text_en": "Show me your ways, Yahweh. Teach me your paths.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 24,
+              "verse": "4"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 25,
+              "verse": "4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-86",
+      "day": 86,
+      "topic_ru": "Испытание сердца",
+      "topic_en": "Searching the Heart",
+      "question_ru": "О чём просить Господа во время болезни?",
+      "question_en": "What should I ask the Lord during illness?",
+      "reference_ru": "Псалом 138:23-24",
+      "reference_en": "Psalm 139:23-24",
+      "text_ru": "Испытай меня, Боже, и узнай сердце моё... и направь меня на путь вечный.",
+      "text_en": "Search me, God, and know my heart... and lead me in the everlasting way.",
+      "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 138,
+              "verse": "23-24"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 139,
+              "verse": "23-24"
+            }
+          },
+      "answer_ru": "Просите Господа исследовать ваше сердце и направить вас на правильный путь.",
+      "answer_en": "Ask the Lord to search your heart and lead you in the right way.",
+      "reflection_ru": "Господь открывает то, что помогает нам стать ближе к Нему.",
+      "reflection_en": "The Lord reveals what helps us draw closer to Him.",
+      "related": [
+        {
+          "reference_ru": "Псалом 85:5",
+          "reference_en": "Psalm 86:5",
+          "text_ru": "Ибо Ты, Господи, благ и милосерд, и многомилостив ко всем, призывающим Тебя.",
+          "text_en": "For you, Lord, are good, and ready to forgive, abundant in loving kindness to all those who call on you.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 85,
+              "verse": "5"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 86,
+              "verse": "5"
+            }
+          }
+        },
+        {
+          "reference_ru": "Плач Иеремии 3:25",
+          "reference_en": "Lamentations 3:25",
+          "text_ru": "Благ Господь к надеющимся на Него, к душе, ищущей Его.",
+          "text_en": "The Lord is good to those who wait for him, to the soul who seeks him.",
+          "verse_ref": {
+            "book": "Lamentations",
+            "chapter": 3,
+            "verse": "25"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-87",
+      "day": 87,
+      "topic_ru": "Молитва об исцелении",
+      "topic_en": "Prayer for Healing",
+      "question_ru": "Как молиться об исцелении?",
+      "question_en": "How should I pray for healing?",
+      "reference_ru": "Иакова 5:16",
+      "reference_en": "James 5:16",
+      "text_ru": "Признавайтесь друг перед другом в проступках и молитесь друг за друга, чтобы исцелиться.",
+      "text_en": "Confess your sins to one another and pray for one another, that you may be healed.",
+      "verse_ref": {
+        "book": "James",
+        "chapter": 5,
+        "verse": "16"
+      },
+      "answer_ru": "С верой обращайтесь к Господу, исповедуйте грехи и молитесь друг за друга.",
+      "answer_en": "Come to the Lord in faith, confess your sins, and pray for one another.",
+      "reflection_ru": "Искренняя молитва приближает нас к Господу.",
+      "reflection_en": "Sincere prayer draws us closer to the Lord.",
+      "related": [
+        {
+          "reference_ru": "Псалом 49:15",
+          "reference_en": "Psalm 50:15",
+          "text_ru": "И призови Меня в день скорби; Я избавлю тебя, и ты прославишь Меня.",
+          "text_en": "Call on me in the day of trouble. I will deliver you, and you will honor me.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 49,
+              "verse": "15"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 50,
+              "verse": "15"
+            }
+          }
+        },
+        {
+          "reference_ru": "Ефесянам 6:18",
+          "reference_en": "Ephesians 6:18",
+          "text_ru": "Всякою молитвою и прошением молитесь во всякое время духом, и старайтесь о сем самом со всяким постоянством и молением о всех святых",
+          "text_en": "With all prayer and requests, praying at all times in the Spirit, and being watchful to this end in all perseverance and requests for all the saints.",
+          "verse_ref": {
+            "book": "Ephesians",
+            "chapter": 6,
+            "verse": "18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-88",
+      "day": 88,
+      "topic_ru": "Обращение к Господу",
+      "topic_en": "Returning to the Lord",
+      "question_ru": "Как обратиться к Господу всем сердцем?",
+      "question_en": "How can I return to the Lord with all my heart?",
+      "reference_ru": "Осия 14:3",
+      "reference_en": "Hosea 14:2",
+      "text_ru": "Возьмите с собою молитвенные слова и обратитесь к Господу.",
+      "text_en": "Take words with you, and return to the Lord.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Hosea",
+          "chapter": 14,
+          "verse": "3"
+        },
+        "en": {
+          "book": "Hosea",
+          "chapter": 14,
+          "verse": "2"
+        }
+      },
+      "answer_ru": "Придите к Господу с искренним покаянием, и Он по Своей милости примет вас.",
+      "answer_en": "Come to the Lord with sincere repentance, and He will receive you in His mercy.",
+      "reflection_ru": "Господь всегда готов принять кающегося человека.",
+      "reflection_en": "The Lord is always ready to receive a repentant heart.",
+      "related": [
+        {
+          "reference_ru": "Иоиль 2:12",
+          "reference_en": "Joel 2:12",
+          "text_ru": "Но и ныне ещё говорит Господь: обратитесь ко Мне всем сердцем вашим.",
+          "text_en": "Yet even now, says the Lord, turn to me with all your heart.",
+          "verse_ref": {
+            "book": "Joel",
+            "chapter": 2,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "Иеремия 24:7",
+          "reference_en": "Jeremiah 24:7",
+          "text_ru": "И дам им сердце, чтобы знать Меня, что Я Господь; и они будут Моим народом, а Я буду их Богом, ибо они обратятся ко Мне всем сердцем своим.",
+          "text_en": "I will give them a heart to know me, that I am the Lord. They will be my people, and I will be their God, for they will return to me with their whole heart.",
+          "verse_ref": {
+            "book": "Jeremiah",
+            "chapter": 24,
+            "verse": "7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-89",
+      "day": 89,
+      "topic_ru": "Евангелие",
+      "topic_en": "The Gospel",
+      "question_ru": "Что значит Евангелие?",
+      "question_en": "What does the Gospel mean?",
+      "reference_ru": "Марка 1:15",
+      "reference_en": "Mark 1:15",
+      "text_ru": "И говоря, что исполнилось время и приблизилось Царствие Божие: покайтесь и веруйте в Евангелие.",
+      "text_en": "Saying, \"The time is fulfilled, and God's Kingdom is at hand! Repent, and believe in the Good News.\"",
+      "verse_ref": {
+        "book": "Mark",
+        "chapter": 1,
+        "verse": "15"
+      },
+      "answer_ru": "Евангелие — это добрая весть о спасении через Иисуса Христа. Бог призывает каждого покаяться, верить и принять дар вечной жизни.",
+      "answer_en": "The Gospel is the good news of salvation through Jesus Christ. God calls everyone to repent, believe, and receive the gift of eternal life.",
+      "reflection_ru": "Евангелие открывает каждому человеку путь к спасению через Иисуса Христа.",
+      "reflection_en": "The Gospel reveals the way of salvation through Jesus Christ to everyone.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 1:16",
+          "reference_en": "Romans 1:16",
+          "text_ru": "Ибо я не стыжусь благовествования Христова, потому что оно есть сила Божия ко спасению всякому верующему, во-первых Иудею, потом и Еллину.",
+          "text_en": "For I am not ashamed of the Good News of Christ, for it is the power of God for salvation for everyone who believes; for the Jew first, and also for the Greek.",
+          "verse_ref": {
+            "book": "Romans",
+            "chapter": 1,
+            "verse": "16"
+          }
+        },
+        {
+          "reference_ru": "1 Коринфянам 15:3-4",
+          "reference_en": "1 Corinthians 15:3-4",
+          "text_ru": "Ибо я первоначально преподал вам, что и сам принял, то есть, что Христос умер за грехи наши, по Писанию, и что Он погребён был, и что воскрес в третий день, по Писанию.",
+          "text_en": "For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures.",
+          "verse_ref": {
+            "book": "1-Corinthians",
+            "chapter": 15,
+            "verse": "3-4"
+          }
+        },
+        {
+          "reference_ru": "2 Тимофею 1:10",
+          "reference_en": "2 Timothy 1:10",
+          "text_ru": "Явившейся же ныне явлением Спасителя нашего Иисуса Христа, разрушившего смерть и явившего жизнь и нетление через благовестие.",
+          "text_en": "But has now been revealed by the appearing of our Savior, Christ Jesus, who abolished death and brought life and immortality to light through the Good News.",
+          "verse_ref": {
+            "book": "2-Timothy",
+            "chapter": 1,
+            "verse": "10"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-90",
+      "day": 90,
+      "topic_ru": "Четыре Евангелия",
+      "topic_en": "The Four Gospels",
+      "question_ru": "Почему в Библии четыре Евангелия?",
+      "question_en": "Why are there four Gospels in the Bible?",
+      "reference_ru": "Луки 1:3-4",
+      "reference_en": "Luke 1:3-4",
+      "text_ru": "То рассудилось и мне, по тщательном исследовании всего сначала, по порядку описать тебе, достопочтенный Феофил, чтобы ты узнал твёрдое основание того учения, в котором был наставлен.",
+      "text_en": "It seemed good to me also, having traced the course of all things accurately from the first, to write to you in order, most excellent Theophilus; that you might know the certainty concerning the things in which you were instructed.",
+      "verse_ref": {
+        "book": "Luke",
+        "chapter": 1,
+        "verse": "3-4"
+      },
+      "answer_ru": "Бог дал несколько свидетельств об Иисусе Христе, чтобы истина была подтверждена. Все четыре Евангелия рассказывают об одном Спасителе и дополняют друг друга.",
+      "answer_en": "God gave several testimonies about Jesus Christ so that the truth would be confirmed. All four Gospels tell about the same Savior and complement one another.",
+      "reflection_ru": "Четыре Евангелия помогают нам полнее увидеть жизнь, служение и учение Иисуса Христа.",
+      "reflection_en": "The four Gospels help us see the life, ministry, and teaching of Jesus Christ more fully.",
+      "related": [
+        {
+          "reference_ru": "Второзаконие 19:15",
+          "reference_en": "Deuteronomy 19:15",
+          "text_ru": "Недостаточно одного свидетеля против кого-либо в какой-нибудь вине и в каком-нибудь преступлении и в каком-нибудь грехе, которым он согрешит: при словах двух свидетелей, или при словах трёх свидетелей состоится всякое дело.",
+          "text_en": "One witness shall not rise up against a man for any iniquity, or for any sin, in any sin that he sins. At the mouth of two witnesses, or at the mouth of three witnesses, shall a matter be established.",
+          "verse_ref": {
+            "book": "Deuteronomy",
+            "chapter": 19,
+            "verse": "15"
+          }
+        },
+        {
+          "reference_ru": "2 Петра 1:16",
+          "reference_en": "2 Peter 1:16",
+          "text_ru": "Ибо мы возвестили вам силу и пришествие Господа нашего Иисуса Христа, не хитросплетённым басням последуя, но быв очевидцами Его величия.",
+          "text_en": "For we did not follow cunningly devised fables when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his majesty.",
+          "verse_ref": {
+            "book": "2-Peter",
+            "chapter": 1,
+            "verse": "16"
+          }
+        }
+      ]
+    }
   ]
 }
