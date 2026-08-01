@@ -332,6 +332,51 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-98",
+        "day": 98,
+        "topic_ru": "Библия и Коран",
+        "topic_en": "The Bible and the Quran",
+        "question_ru": "Чем отличается Библия от Корана?",
+        "question_en": "What is the difference between the Bible and the Quran?",
+        "reference_ru": "2 Тимофею 3:16-17",
+        "reference_en": "2 Timothy 3:16-17",
+        "text_ru": "Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности, да будет совершен Божий человек, ко всякому доброму делу приготовлен.",
+        "text_en": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for instruction in righteousness, that each person who belongs to God may be complete, thoroughly equipped for every good work.",
+        "verse_ref": {
+          "book": "2-Timothy",
+          "chapter": 3,
+          "verse": "16-17"
+        },
+        "answer_ru": "Только Библия открывает Божий путь спасения через Иисуса Христа и приглашает каждого исследовать её.",
+        "answer_en": "Only the Bible reveals God's way of salvation through Jesus Christ and invites everyone to study it.",
+        "reflection_ru": "Каждый человек должен исследовать Писание и проверять любое учение по Божьему Слову.",
+        "reflection_en": "Everyone should examine the Scriptures and test every teaching by God's Word.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 14:6",
+            "reference_en": "John 14:6",
+            "text_ru": "Иисус сказал ему: Я есмь путь и истина и жизнь; никто не приходит к Отцу, как только через Меня.",
+            "text_en": "Jesus said to him, \"I am the way, the truth, and the life. No one comes to the Father except through me.\"",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 14,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "Галатам 1:8",
+            "reference_en": "Galatians 1:8",
+            "text_ru": "Но если бы даже мы или Ангел с неба стал благовествовать вам не то, что мы благовествовали вам, да будет анафема.",
+            "text_en": "But even though we, or an angel from heaven, should preach to you any Good News other than that which we preached to you, let him be cursed.",
+            "verse_ref": {
+              "book": "Galatians",
+              "chapter": 1,
+              "verse": "8"
+            }
+          }
+        ]
       }
     ]
 }
