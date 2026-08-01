@@ -242,6 +242,96 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-96",
+        "day": 96,
+        "topic_ru": "Книга жизни",
+        "topic_en": "The Book of Life",
+        "question_ru": "Что такое Книга жизни?",
+        "question_en": "What is the Book of Life?",
+        "reference_ru": "Откровение 20:12",
+        "reference_en": "Revelation 20:12",
+        "text_ru": "И увидел я мертвых, малых и великих, стоящих пред Богом, и книги раскрыты были, и иная книга раскрыта, которая есть книга жизни; и судимы были мертвые по написанному в книгах, сообразно с делами своими.",
+        "text_en": "I saw the dead, the great and the small, standing before the throne, and they opened the books. Another book was opened, which is the book of life. The dead were judged out of the things which were written in the books, according to their works.",
+        "verse_ref": {
+          "book": "Revelation",
+          "chapter": 20,
+          "verse": "12"
+        },
+        "answer_ru": "Книга жизни — это небесная книга, в которой записаны имена принадлежащих Господу. Только записанные в ней наследуют вечную жизнь и войдут в Божье Царство.",
+        "answer_en": "The Book of Life is a heavenly book containing the names of those who belong to the Lord. Only those whose names are written in it will inherit eternal life and enter God's Kingdom.",
+        "reflection_ru": "Самый важный вопрос для каждого человека — записано ли его имя в Книге жизни.",
+        "reflection_en": "The most important question for every person is whether their name is written in the Book of Life.",
+        "related": [
+          {
+            "reference_ru": "Откровение 21:27",
+            "reference_en": "Revelation 21:27",
+            "text_ru": "И не войдет в него ничто нечистое и никто преданный мерзости и лжи, а только те, которые написаны у Агнца в книге жизни.",
+            "text_en": "There will in no way enter into it anything profane, or one who causes an abomination or a lie, but only those who are written in the Lamb's book of life.",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 21,
+              "verse": "27"
+            }
+          },
+          {
+            "reference_ru": "Филиппийцам 4:3",
+            "reference_en": "Philippians 4:3",
+            "text_ru": "Ей, прошу и тебя, искренний сотрудник, помогай им, подвизавшимся в благовествовании вместе со мною и с Климентом и с прочими сотрудниками моими, которых имена — в книге жизни.",
+            "text_en": "Yes, I beg you also, true partner, help these women, for they labored with me in the Good News, with Clement also, and the rest of my fellow workers, whose names are in the book of life.",
+            "verse_ref": {
+              "book": "Philippians",
+              "chapter": 4,
+              "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Луки 10:20",
+            "reference_en": "Luke 10:20",
+            "text_ru": "Однако ж тому не радуйтесь, что духи вам повинуются; но радуйтесь тому, что имена ваши написаны на небесах.",
+            "text_en": "Nevertheless, don't rejoice in this, that the spirits are subject to you, but rejoice that your names are written in heaven.",
+            "verse_ref": {
+              "book": "Luke",
+              "chapter": 10,
+              "verse": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-97",
+        "day": 97,
+        "topic_ru": "Книга жизни",
+        "topic_en": "The Book of Life",
+        "question_ru": "Может ли имя быть удалено из Книги жизни?",
+        "question_en": "Can a name be removed from the Book of Life?",
+        "reference_ru": "Откровение 3:5",
+        "reference_en": "Revelation 3:5",
+        "text_ru": "Побеждающий облечется в белые одежды; и не изглажу имени его из книги жизни, и исповедаю имя его пред Отцом Моим и пред Ангелами Его.",
+        "text_en": "He who overcomes will be dressed in white garments, and I will in no way blot his name out of the Book of Life, and I will confess his name before my Father and before his angels.",
+        "verse_ref": {
+          "book": "Revelation",
+          "chapter": 3,
+          "verse": "5"
+        },
+        "answer_ru": "Иисус обещает не удалить имя побеждающего из Книги жизни. Поэтому важно оставаться верным Господу и Его Слову.",
+        "answer_en": "Jesus promises not to remove the overcomer's name from the Book of Life. The Bible also contains warnings about being blotted out of God's book, calling believers to remain faithful to the Lord.",
+        "reflection_ru": "Божье желание — чтобы наше имя осталось в Книге жизни. Поэтому Иисус призывает нас быть Ему верными.",
+        "reflection_en": "God desires our names to remain in the Book of Life. Therefore, Jesus calls us to remain faithful to Him.",
+        "related": [
+          {
+            "reference_ru": "Исход 32:32–33",
+            "reference_en": "Exodus 32:32–33",
+            "text_ru": "Но теперь, если простишь грех их... а если нет, то изгладь и меня из книги Твоей, в которую Ты вписал. Господь сказал Моисею: того, кто согрешил предо Мною, изглажу из книги Моей.",
+            "text_en": "Jesus promises not to remove the overcomer's name from the Book of Life. Therefore, it is important to remain faithful to the Lord and to His Word.",
+            "verse_ref": {
+              "book": "Exodus",
+              "chapter": 32,
+              "verse": "32-33"
+            }
+          }
+        ]
       }
     ]
 }
