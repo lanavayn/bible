@@ -124,7 +124,7 @@ function initNotificationControls(root = document, feature) {
       setLocalPreference(true);
       setState(box, STATUS_ENABLED);
       setStatus(box, "");
-      console.info("[Bible for All] Notifications enabled for UAT.", {
+      console.info("[Bible for All] Notifications enabled.", {
         feature,
         language,
         subscription: confirmedSubscription
@@ -164,7 +164,7 @@ function initNotificationControls(root = document, feature) {
       setLocalPreference(false);
       setState(box, STATUS_DISABLED);
       setStatus(box, "Уведомления отключены.");
-      console.info("[Bible for All] Notifications disabled for UAT.", { feature, language });
+      console.info("[Bible for All] Notifications disabled.", { feature, language });
     } catch (error) {
       console.error("[Bible for All] Failed to disable notifications.", { feature, language, error });
       setStatus(box, "Не удалось отключить уведомления. Проверьте настройки браузера.", STATUS_ERROR);
@@ -531,7 +531,7 @@ async function syncAndVerifyFeatureTags(OneSignal, feature, language, enabled) {
       await delay(SUBSCRIPTION_POLL_MS);
     }
   } catch (error) {
-    console.warn("[Bible for All] OneSignal client tag sync failed; using the UAT server fallback.", error);
+    console.warn("[Bible for All] OneSignal client tag sync failed; using the server fallback.", error);
   }
 
   const serverTags = await syncFeatureTagsWithServer(OneSignal, feature, language, enabled);

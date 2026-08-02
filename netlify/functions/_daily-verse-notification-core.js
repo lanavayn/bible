@@ -10,7 +10,8 @@ const DAILY_JSON_FILES = [
   "daily-1-30.json",
   "daily-31-60.json",
   "daily-61-90.json",
-  "daily-91-120.json"
+  "daily-91-120.json",
+  "daily-121-150.json"
 ];
 
 const easterDates = {
@@ -112,13 +113,12 @@ function buildNotificationPayload({ force = false, source = "", language = "ru" 
   const url = getDailyVerseUrl(day, normalizedLanguage);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
   const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
-  const scheduledTestLabel = "10:00 Toronto";
   const heading = normalizedLanguage === "ru" ? "Стих дня" : "Daily Verse";
   const topic = verse?.topic?.[normalizedLanguage] || heading;
 
   return {
     app_id: requireEnv("ONESIGNAL_APP_ID"),
-    name: `UAT ${notificationSource} Daily Verse TEST ${scheduledTestLabel} - Day ${day} - ${dateKey} - ${normalizedLanguage.toUpperCase()}`,
+    name: `${notificationSource} Daily Verse - Day ${day} - ${dateKey} - ${normalizedLanguage.toUpperCase()}`,
     target_channel: "push",
     filters: [
       { field: "tag", key: "daily_verse_language", relation: "=", value: normalizedLanguage }
@@ -135,13 +135,13 @@ function buildNotificationPayload({ force = false, source = "", language = "ru" 
     chrome_web_icon: `${(process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "")}/images/favicon.png`,
     idempotency_key: force
       ? crypto.randomUUID()
-      : createIdempotencyUuid(`daily-verse-${normalizedLanguage}-uat-scheduled-1000-toronto-${dateKey}-day-${day}`),
+      : createIdempotencyUuid(`daily-verse-${normalizedLanguage}-production-scheduled-1000-toronto-${dateKey}-day-${day}`),
     data: {
       content_type: "daily-verse",
       language: normalizedLanguage,
       day,
       calculated_day: currentDayNumber,
-      phase: "uat",
+      phase: "production",
       force
     }
   };
