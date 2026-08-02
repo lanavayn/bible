@@ -44,7 +44,3 @@ export default async function handler(request) {
     );
   }
 }
-
-export const config = {
-  schedule: "0 14,15 * * *"
-};
