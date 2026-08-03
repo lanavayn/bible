@@ -520,6 +520,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         
             document.querySelectorAll(".dv-reopen-btn").forEach(btn => {
               btn.classList.remove("is-active", "is-muted");
+              btn.setAttribute("aria-selected", "false");
             });
         
             const reopenBtn = document.getElementById("daily-verse-reopen");

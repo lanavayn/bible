@@ -461,6 +461,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         
             document.querySelectorAll(".dv-reopen-btn").forEach(btn => {
               btn.classList.remove("is-active", "is-muted");
+              btn.setAttribute("aria-selected", "false");
             });
         
             const reopenBtn = document.getElementById("question-reopen");

@@ -101,6 +101,7 @@ function getIndexLang() {
   
     document.querySelectorAll(".dv-reopen-btn").forEach(btn => {
       btn.classList.remove("is-active", "is-muted");
+      btn.setAttribute("aria-selected", "false");
     });
   }
   
@@ -160,12 +161,12 @@ function getIndexLang() {
   
     root.innerHTML = `
       <h1 class="hero-title">${t.heroTitle}</h1>
-      <div class="daily-question-row">
-        <button id="loadDailyVerseBtn" class="dv-reopen-btn" type="button">
+      <div class="daily-question-row" role="tablist">
+        <button id="loadDailyVerseBtn" class="dv-reopen-btn" type="button" role="tab" aria-controls="daily-verse" aria-selected="false">
           ${lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse"}
         </button>
 
-        <button id="loadQuestionBtn" class="dv-reopen-btn" type="button">
+        <button id="loadQuestionBtn" class="dv-reopen-btn" type="button" role="tab" aria-controls="question-of-day" aria-selected="false">
           ${lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question"}
         </button>
       </div>
@@ -305,10 +306,12 @@ function getIndexLang() {
               await window.renderDailyVerse();
               loadDailyVerseBtn.classList.add("is-active");
               loadDailyVerseBtn.classList.remove("is-muted");
+              loadDailyVerseBtn.setAttribute("aria-selected", "true");
 
               if (loadQuestionBtn) {
                 loadQuestionBtn.classList.remove("is-active");
                 loadQuestionBtn.classList.add("is-muted");
+                loadQuestionBtn.setAttribute("aria-selected", "false");
               }
             }
           
@@ -341,10 +344,12 @@ function getIndexLang() {
             await window.renderQuestionOfDay();
             loadQuestionBtn.classList.add("is-active");
             loadQuestionBtn.classList.remove("is-muted");
+            loadQuestionBtn.setAttribute("aria-selected", "true");
 
             if (loadDailyVerseBtn) {
               loadDailyVerseBtn.classList.remove("is-active");
               loadDailyVerseBtn.classList.add("is-muted");
+              loadDailyVerseBtn.setAttribute("aria-selected", "false");
             }
           }
         
