@@ -67,6 +67,12 @@ function loadDailyVerses() {
   const dailyDir = path.resolve(__dirname, "../../data/daily");
   return DAILY_JSON_FILES.flatMap(fileName => {
     const filePath = path.join(dailyDir, fileName);
+
+    if (!fs.existsSync(filePath)) {
+      console.warn(`[Bible for All] Daily Verse data file is unavailable: ${fileName}`);
+      return [];
+    }
+
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return Array.isArray(data?.verses) ? data.verses : [];
   });
@@ -75,28 +81,64 @@ function loadDailyVerses() {
 function getCurrentDailyVerse(date = new Date()) {
   const currentDayNumber = getDayNumberFromEaster(date);
   const verses = loadDailyVerses();
-  let selected = null;
-
-  for (const verse of verses) {
+  const selected = verses.find(verse => Number(verse.day) === currentDayNumber) || null;
+  const highestAvailableDay = verses.reduce((highest, verse) => {
     const day = Number(verse.day);
-    if (Number.isInteger(day) && day <= currentDayNumber) {
-      selected = verse;
-    }
-  }
-
-  if (!selected) {
-    selected = verses[0] || null;
-  }
-
-  if (!selected) {
-    throw new Error("No Daily Verse records were found.");
-  }
+    return Number.isInteger(day) ? Math.max(highest, day) : highest;
+  }, 0);
 
   return {
-    day: Number(selected.day),
+    day: currentDayNumber,
     currentDayNumber,
+    highestAvailableDay,
     verse: selected
   };
+}
+
+function getDailyVerseForNotification(options = {}, date = new Date()) {
+  const current = getCurrentDailyVerse(date);
+  const localTestDay = Number(options.localTestDay);
+
+  if (!Number.isInteger(localTestDay)) {
+    return current;
+  }
+
+  assertLocalTestMode();
+
+  const verses = loadDailyVerses();
+  const selected = verses.find(verse => Number(verse.day) === localTestDay) || null;
+
+  return {
+    day: localTestDay,
+    currentDayNumber: localTestDay,
+    highestAvailableDay: current.highestAvailableDay,
+    verse: selected
+  };
+}
+
+function getUnavailableVerseReason(selection, language) {
+  const verse = selection?.verse;
+  const reference = language === "ru" ? verse?.reference_ru : verse?.reference_en;
+  const verseText = language === "ru" ? verse?.text_ru : verse?.text_en;
+  const notificationText = verse?.topic?.[language];
+
+  if (!selection || selection.day > selection.highestAvailableDay || !verse) {
+    return "No Daily Verse configured";
+  }
+
+  if (!String(reference || "").trim()) {
+    return "Daily Verse reference is missing";
+  }
+
+  if (!String(verseText || "").trim()) {
+    return "Daily Verse text is missing";
+  }
+
+  if (!String(notificationText || "").trim()) {
+    return "Daily Verse notification text is missing";
+  }
+
+  return null;
 }
 
 function getDailyVerseUrl(day, language = "ru") {
@@ -105,10 +147,9 @@ function getDailyVerseUrl(day, language = "ru") {
   return `${baseUrl}${pathPrefix}?day=${encodeURIComponent(day)}`;
 }
 
-function buildNotificationPayload({ force = false, source = "", language = "ru" } = {}) {
-  const now = new Date();
+function buildNotificationPayload({ force = false, source = "", language = "ru", selection = null, now = new Date() } = {}) {
   const parts = getTorontoParts(now);
-  const { day, currentDayNumber, verse } = getCurrentDailyVerse(now);
+  const { day, currentDayNumber, verse } = selection || getCurrentDailyVerse(now);
   const normalizedLanguage = language === "en" ? "en" : "ru";
   const url = getDailyVerseUrl(day, normalizedLanguage);
   const dateKey = `${parts.year}-${parts.month}-${parts.day}`;
@@ -193,7 +234,28 @@ async function sendDailyVerseNotification(options = {}) {
     force: Boolean(options.force)
   });
 
-  const payload = buildNotificationPayload(options);
+  const normalizedLanguage = options.language === "en" ? "en" : "ru";
+  const selection = getDailyVerseForNotification(options, startDate);
+  const unavailableReason = getUnavailableVerseReason(selection, normalizedLanguage);
+
+  if (unavailableReason) {
+    const skippedResult = {
+      sent: false,
+      skipped: true,
+      reason: unavailableReason,
+      day: selection.day
+    };
+
+    console.info(`[Bible for All] Daily Verse skipped: no verse configured for day ${selection.day}.`, skippedResult);
+    return skippedResult;
+  }
+
+  const payload = buildNotificationPayload({
+    ...options,
+    language: normalizedLanguage,
+    selection,
+    now: startDate
+  });
   console.info("[Bible for All] Daily Verse notification selected content.", {
     day: payload.data.day,
     calculatedDay: payload.data.calculated_day,
@@ -202,6 +264,23 @@ async function sendDailyVerseNotification(options = {}) {
     filters: payload.filters,
     requestPayload: maskNotificationPayload(payload)
   });
+
+  if (options.localDryRun) {
+    assertLocalTestMode();
+    console.info("[Bible for All] Local Daily Verse dry run reached the OneSignal send boundary.", {
+      day: payload.data.day,
+      language: normalizedLanguage,
+      endpoint: ONESIGNAL_NOTIFICATION_ENDPOINT
+    });
+
+    return {
+      sent: false,
+      skipped: false,
+      dryRun: true,
+      day: payload.data.day,
+      url: payload.web_url
+    };
+  }
 
   console.info("[Bible for All] Daily Verse notification calling OneSignal.", {
     source,
@@ -305,6 +384,17 @@ function requireEnv(name) {
     throw new Error(`Missing required environment variable: ${name}`);
   }
   return value;
+}
+
+function assertLocalTestMode() {
+  const isLocalTest = process.env.NODE_ENV === "test"
+    && process.env.DAILY_VERSE_LOCAL_TEST === "true"
+    && !process.env.NETLIFY
+    && !process.env.CONTEXT;
+
+  if (!isLocalTest) {
+    throw new Error("Daily Verse local test overrides are disabled outside explicit local test mode.");
+  }
 }
 
 function createIdempotencyUuid(seed) {
