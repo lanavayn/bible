@@ -4827,16 +4827,16 @@ body.daily-verse-search-open {
 
 /* active button */
 .dv-reopen-btn.is-active {
-  background: #f3f9ef;
-  color: #3ba22e;
-  border-color: #cfe6c7;
+  background: #e8f5e3;
+  color: #245c35;
+  border-color: #2e8b28;
   box-shadow: 0 3px 10px rgba(124, 85, 34, 0.12);
   transform: translateY(-1px);
 }
 
 #daily-verse .daily-card-kicker-title,
 #question-of-day .daily-card-kicker-title {
-  color: #3ba22e;
+  color: #245c35;
 }
 
 /* Extra-small phone fix: keep Daily Question inside the button */
