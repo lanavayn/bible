@@ -4150,11 +4150,6 @@ table.book-dates th:nth-child(2) {
   white-space: nowrap;
 }
 
-#daily-verse .daily-card-kicker-title,
-#question-of-day .daily-card-kicker-title {
-  color: #3ba22e;
-}
-
 .daily-card-kicker-subtitle {
   flex: 1 1 auto;
   min-width: 0;
@@ -4841,7 +4836,7 @@ body.daily-verse-search-open {
 
 #daily-verse .daily-card-kicker-title,
 #question-of-day .daily-card-kicker-title {
-  color: #245c35;
+  color: #3ba22e;
 }
 
 /* Extra-small phone fix: keep Daily Question inside the button */
