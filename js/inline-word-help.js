@@ -172,6 +172,12 @@ const RU_COMMON_DEFINITIONS = [
     pattern: /(^|[^А-Яа-яЁё])(Изглажу|Изгладить|изглажу|изгладить)(?=$|[^А-Яа-яЁё])/gi
   },
   {
+    label: "Подробнее о слове «Нечестивые»",
+    closeLabel: "Закрыть",
+    text: "Люди, которые сознательно живут без Бога и отвергают Его путь.",
+    pattern: /(^|[^А-Яа-яЁё])(Нечестивые|нечестивые|нечестивых)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
     label: "Подробнее о слове «Побеждающий»",
     closeLabel: "Закрыть",
     text: "Человек, который остается верным Иисусу Христу до конца.",
@@ -236,6 +242,12 @@ const RU_COMMON_DEFINITIONS = [
     closeLabel: "Закрыть",
     text: "Правильные отношения с Богом и жизнь, угодная Ему.",
     pattern: /(^|[^А-Яа-яЁё])(праведность|праведности|праведностью)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Аминь»",
+    closeLabel: "Закрыть",
+    text: "Eврейское слово, означающее «Истинно», «Да будет так». В Библии оно подтверждает истинность сказанного и завершает молитву.",
+    pattern: /(^|[^А-Яа-яЁё])(Аминь|аминь|аминью)(?=$|[^А-Яа-яЁё])/gi
   },
   {
     label: "Подробнее о слове «освящение»",
@@ -314,6 +326,18 @@ const EN_COMMON_DEFINITIONS = [
     closeLabel: "Close",
     text: "God’s undeserved love, mercy, and help, given to us through Jesus Christ.",
     pattern: /\b(Grace|grace)\b/g
+  },
+  {
+    label: "More about Amen",
+    closeLabel: "Close",
+    text: "A Hebrew word meaning “Truly” or “So be it.” In the Bible, it affirms the truth of what is said and often concludes a prayer.",
+    pattern: /\b(Amen|amen)\b/g
+  },
+  {
+    label: "More about the wicked",
+    closeLabel: "Close",
+    text: "People who knowingly live without God and reject His way.",
+    pattern: /\b(the wicked|The wicked)\b/g
   },
   {
     label: "More about salvation",

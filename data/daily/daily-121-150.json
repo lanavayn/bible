@@ -42,6 +42,120 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-05",
+      "day": 122,
+      "topic": {
+        "ru": "Не завидуй тем, кто живет без Бога",
+        "en": "Don't Envy Those Who Don't Follow the Lord"
+      },
+      "reference_ru": "Псалом 36:1-2",
+      "reference_en": "Psalm 37:1-2",
+      "text_ru": "Не ревнуй злодеям и не завидуй делающим беззаконие, ибо они, как трава, скоро будут подкошены и, как зеленеющий злак, увянут.",
+      "text_en": "Don't fret because of evildoers, neither be envious against those who work unrighteousness. For they shall soon be cut down like the grass, and wither like the green herb.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "psalms",
+          "chapter": 36,
+          "verse": "1-2"
+        },
+        "en": {
+          "book": "psalms",
+          "chapter": 37,
+          "verse": "1-2"
+        }
+      },
+      "interpretation_ru": "Не завидуй нечестивым. Их благополучие временно, и Господь никогда не оставляет Своих.",
+      "interpretation_en": "Don't envy the wicked. Their prosperity is temporary, and the Lord never forsakes those who belong to Him.",
+      "related": [
+        {
+          "reference_ru": "Притчи 23:17-18",
+          "reference_en": "Proverbs 23:17-18",
+          "text_ru": "Да не завидует сердце твое грешникам, но да пребудет оно во все дни в страхе Господнем, потому что есть будущность, и надежда твоя не потеряна.",
+          "text_en": "Don't let your heart envy sinners; but rather fear the LORD all day long. Indeed surely there is a future hope, and your hope will not be cut off.",
+          "verse_ref": {
+            "book": "proverbs",
+            "chapter": 23,
+            "verse": "17-18"
+          }
+        },
+        {
+          "reference_ru": "Псалом 72:17-18",
+          "reference_en": "Psalm 73:17-18",
+          "text_ru": "Доколе не вошел я во святилище Божие и не уразумел конца их. Так! На скользких путях поставил Ты их и низвергаешь их в пропасти.",
+          "text_en": "Until I entered God's sanctuary, and considered their latter end. Surely you set them in slippery places. You throw them down to destruction.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 72,
+              "verse": "17-18"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 73,
+              "verse": "17-18"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-06",
+      "day": 123,
+      "topic": {
+        "ru": "Господь знает конец каждого пути",
+        "en": "The Lord Knows the End of Every Path"
+      },
+      "reference_ru": "Псалом 36:37-38",
+      "reference_en": "Psalm 37:37-38",
+      "text_ru": "Наблюдай за непорочным и смотри на праведного, ибо будущность такого человека есть мир; а беззаконники все истребятся; будущность нечестивых погибнет.",
+      "text_en": "Mark the perfect man, and see the upright, for there is a future for the man of peace. As for transgressors, they shall be destroyed together. The future of the wicked shall be cut off.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "psalms",
+          "chapter": 36,
+          "verse": "37-38"
+        },
+        "en": {
+          "book": "psalms",
+          "chapter": 37,
+          "verse": "37-38"
+        }
+      },
+      "interpretation_ru": "Господь видит то, чего не видим мы. Доверяй Ему, даже если сегодня не всё понятно.",
+      "interpretation_en": "The Lord sees what we cannot. Trust Him, even when you don't understand everything today.",
+      "related": [
+        {
+          "reference_ru": "Псалом 72:24",
+          "reference_en": "Psalm 73:24",
+          "text_ru": "Ты руководишь меня советом Твоим и потом примешь меня в славу.",
+          "text_en": "You will guide me with your counsel, and afterward receive me to glory.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 72,
+              "verse": "24"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 73,
+              "verse": "24"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 1:6",
+          "reference_en": "Psalm 1:6",
+          "text_ru": "Ибо знает Господь путь праведных, а путь нечестивых погибнет.",
+          "text_en": "For the Lord knows the way of the righteous, but the way of the wicked shall perish.",
+          "verse_ref": {
+            "book": "psalms",
+            "chapter": 1,
+            "verse": "6"
+          }
+        }
+      ]
     }
   ]
 }
