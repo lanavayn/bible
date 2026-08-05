@@ -6,18 +6,35 @@ export default async function handler(request) {
   const startedAt = new Date();
   const invocationType = "scheduled";
   const torontoParts = getTorontoParts(startedAt);
+  const scheduleEnabled = String(process.env.DAILY_VERSE_SCHEDULE_ENABLED || "").trim().toLowerCase() === "true";
 
   console.info("[Bible for All] Scheduled Daily Verse notification function start.", {
     invocationType,
     utcTime: startedAt.toISOString(),
     torontoTime: `${torontoParts.year}-${torontoParts.month}-${torontoParts.day} ${torontoParts.hour}:${torontoParts.minute}:${torontoParts.second}`,
+    torontoDate: `${torontoParts.year}-${torontoParts.month}-${torontoParts.day}`,
     method: request?.method || null,
+    scheduledSendingEnabled: scheduleEnabled,
     force: false
   });
+
+  if (!scheduleEnabled) {
+    const result = {
+      skipped: true,
+      skip_reason: "non-production-site",
+      reason: "Daily Verse scheduled sending is disabled for this site.",
+      utcTime: startedAt.toISOString(),
+      torontoTime: `${torontoParts.year}-${torontoParts.month}-${torontoParts.day} ${torontoParts.hour}:${torontoParts.minute}:${torontoParts.second}`
+    };
+
+    console.info("[Bible for All] Scheduled Daily Verse notification skipped.", result);
+    return Response.json(result);
+  }
 
   if (Number(torontoParts.hour) !== 10) {
     const result = {
       skipped: true,
+      skip_reason: "outside-toronto-send-hour",
       reason: "Current America/Toronto hour is not 10.",
       utcTime: startedAt.toISOString(),
       torontoTime: `${torontoParts.year}-${torontoParts.month}-${torontoParts.day} ${torontoParts.hour}:${torontoParts.minute}:${torontoParts.second}`
@@ -44,3 +61,7 @@ export default async function handler(request) {
     );
   }
 }
+
+export const config = {
+  schedule: "0 14,15 * * *"
+};

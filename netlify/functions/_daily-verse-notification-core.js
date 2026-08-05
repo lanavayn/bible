@@ -6,6 +6,7 @@ const TORONTO_TIME_ZONE = process.env.NOTIFICATION_TZ || "America/Toronto";
 const DEFAULT_SITE_URL = "https://bibleforall.ca";
 const ONESIGNAL_NOTIFICATION_ENDPOINT = "https://api.onesignal.com/notifications?c=push";
 const ONESIGNAL_NOTIFICATION_VIEW_ENDPOINT = "https://api.onesignal.com/notifications";
+const DAILY_VERSE_SCHEDULE_ENABLED_ENV = "DAILY_VERSE_SCHEDULE_ENABLED";
 const DAILY_JSON_FILES = [
   "daily-1-30.json",
   "daily-31-60.json",
@@ -13,6 +14,17 @@ const DAILY_JSON_FILES = [
   "daily-91-120.json",
   "daily-121-150.json"
 ];
+
+function getDailyFileNameForDay(day) {
+  const normalizedDay = Number(day);
+  if (!Number.isInteger(normalizedDay) || normalizedDay <= 0) return null;
+  if (normalizedDay <= 30) return "daily-1-30.json";
+  if (normalizedDay <= 60) return "daily-31-60.json";
+  if (normalizedDay <= 90) return "daily-61-90.json";
+  if (normalizedDay <= 120) return "daily-91-120.json";
+  if (normalizedDay <= 150) return "daily-121-150.json";
+  return null;
+}
 
 const easterDates = {
   2026: "2026-04-05",
@@ -52,6 +64,24 @@ function parseDate(dateString) {
   return Date.UTC(year, month - 1, day);
 }
 
+function getTorontoDateKey(date = new Date()) {
+  const parts = getTorontoParts(date);
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function getVerseDateKey(verse) {
+  if (!verse || typeof verse !== "object") return null;
+
+  const explicitDate = String(verse.date || "").trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(explicitDate)) {
+    return explicitDate;
+  }
+
+  const id = String(verse.id || "").trim();
+  const idMatch = /^daily-(\d{4}-\d{2}-\d{2})$/.exec(id);
+  return idMatch ? idMatch[1] : null;
+}
+
 function getDayNumberFromEaster(date = new Date()) {
   const parts = getTorontoParts(date);
   const todayUtc = Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
@@ -78,10 +108,84 @@ function loadDailyVerses() {
   });
 }
 
+function loadDailyVersesFromFile(fileName) {
+  if (!fileName) {
+    return {
+      fileName: null,
+      filePath: null,
+      exists: false,
+      verses: []
+    };
+  }
+
+  const dailyDir = path.resolve(__dirname, "../../data/daily");
+  const filePath = path.join(dailyDir, fileName);
+
+  if (!fs.existsSync(filePath)) {
+    console.warn(`[Bible for All] Daily Verse data file is unavailable: ${fileName}`);
+    return {
+      fileName,
+      filePath,
+      exists: false,
+      verses: []
+    };
+  }
+
+  const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  return {
+    fileName,
+    filePath,
+    exists: true,
+    verses: Array.isArray(data?.verses) ? data.verses : []
+  };
+}
+
+function getExactDailyVerseSelection({ day, expectedDateKey }) {
+  const selectedFileName = getDailyFileNameForDay(day);
+  const selectedFile = loadDailyVersesFromFile(selectedFileName);
+  const verses = selectedFile.verses;
+  const exactDayMatch = verses.find(verse => Number(verse.day) === Number(day)) || null;
+  const exactDateMatch = verses.find(verse => getVerseDateKey(verse) === expectedDateKey) || null;
+  const exactDayDateMatch = verses.find(verse =>
+    Number(verse.day) === Number(day) && getVerseDateKey(verse) === expectedDateKey
+  ) || null;
+
+  let skipReason = null;
+
+  if (!exactDayDateMatch) {
+    if (exactDayMatch && exactDateMatch && exactDayMatch.id !== exactDateMatch.id) {
+      skipReason = "day-date-mismatch";
+    } else {
+      skipReason = "exact-day-date-record-not-found";
+    }
+  }
+
+  return {
+    day: Number(day),
+    expectedDateKey,
+    selectedFileName,
+    selectedFileExists: selectedFile.exists,
+    exactDayMatchFound: Boolean(exactDayMatch),
+    exactDateMatchFound: Boolean(exactDateMatch),
+    exactDayMatchId: exactDayMatch?.id || null,
+    exactDateMatchId: exactDateMatch?.id || null,
+    exactDayMatchDateKey: getVerseDateKey(exactDayMatch),
+    exactDateMatchDateKey: getVerseDateKey(exactDateMatch),
+    selectedVerseId: exactDayDateMatch?.id || null,
+    selectedVerseDateKey: getVerseDateKey(exactDayDateMatch),
+    verse: exactDayDateMatch,
+    skipReason
+  };
+}
+
 function getCurrentDailyVerse(date = new Date()) {
   const currentDayNumber = getDayNumberFromEaster(date);
+  const expectedDateKey = getTorontoDateKey(date);
+  const selection = getExactDailyVerseSelection({
+    day: currentDayNumber,
+    expectedDateKey
+  });
   const verses = loadDailyVerses();
-  const selected = verses.find(verse => Number(verse.day) === currentDayNumber) || null;
   const highestAvailableDay = verses.reduce((highest, verse) => {
     const day = Number(verse.day);
     return Number.isInteger(day) ? Math.max(highest, day) : highest;
@@ -91,7 +195,19 @@ function getCurrentDailyVerse(date = new Date()) {
     day: currentDayNumber,
     currentDayNumber,
     highestAvailableDay,
-    verse: selected
+    expectedDateKey,
+    verse: selection.verse,
+    selectedFileName: selection.selectedFileName,
+    selectedFileExists: selection.selectedFileExists,
+    selectedVerseId: selection.selectedVerseId,
+    selectedVerseDateKey: selection.selectedVerseDateKey,
+    exactDayMatchFound: selection.exactDayMatchFound,
+    exactDateMatchFound: selection.exactDateMatchFound,
+    exactDayMatchId: selection.exactDayMatchId,
+    exactDateMatchId: selection.exactDateMatchId,
+    exactDayMatchDateKey: selection.exactDayMatchDateKey,
+    exactDateMatchDateKey: selection.exactDateMatchDateKey,
+    skipReason: selection.skipReason
   };
 }
 
@@ -104,15 +220,31 @@ function getDailyVerseForNotification(options = {}, date = new Date()) {
   }
 
   assertLocalTestMode();
-
-  const verses = loadDailyVerses();
-  const selected = verses.find(verse => Number(verse.day) === localTestDay) || null;
+  const expectedDateKey = typeof options.localTestDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(options.localTestDate)
+    ? options.localTestDate
+    : current.expectedDateKey;
+  const selection = getExactDailyVerseSelection({
+    day: localTestDay,
+    expectedDateKey
+  });
 
   return {
     day: localTestDay,
     currentDayNumber: localTestDay,
     highestAvailableDay: current.highestAvailableDay,
-    verse: selected
+    expectedDateKey,
+    verse: selection.verse,
+    selectedFileName: selection.selectedFileName,
+    selectedFileExists: selection.selectedFileExists,
+    selectedVerseId: selection.selectedVerseId,
+    selectedVerseDateKey: selection.selectedVerseDateKey,
+    exactDayMatchFound: selection.exactDayMatchFound,
+    exactDateMatchFound: selection.exactDateMatchFound,
+    exactDayMatchId: selection.exactDayMatchId,
+    exactDateMatchId: selection.exactDateMatchId,
+    exactDayMatchDateKey: selection.exactDayMatchDateKey,
+    exactDateMatchDateKey: selection.exactDateMatchDateKey,
+    skipReason: selection.skipReason
   };
 }
 
@@ -122,23 +254,39 @@ function getUnavailableVerseReason(selection, language) {
   const verseText = language === "ru" ? verse?.text_ru : verse?.text_en;
   const notificationText = verse?.topic?.[language];
 
-  if (!selection || selection.day > selection.highestAvailableDay || !verse) {
-    return "No Daily Verse configured";
+  if (!selection || !verse) {
+    if (selection?.skipReason === "day-date-mismatch") {
+      return "day-date-mismatch";
+    }
+
+    if (selection?.skipReason === "exact-day-date-record-not-found") {
+      return "exact-day-date-record-not-found";
+    }
+
+    if (selection?.day > selection?.highestAvailableDay) {
+      return "exact-day-date-record-not-found";
+    }
+
+    return "exact-day-date-record-not-found";
   }
 
   if (!String(reference || "").trim()) {
-    return "Daily Verse reference is missing";
+    return "daily-verse-reference-missing";
   }
 
   if (!String(verseText || "").trim()) {
-    return "Daily Verse text is missing";
+    return "daily-verse-text-missing";
   }
 
   if (!String(notificationText || "").trim()) {
-    return "Daily Verse notification text is missing";
+    return "daily-verse-notification-text-missing";
   }
 
   return null;
+}
+
+function isScheduledSendingEnabled() {
+  return String(process.env[DAILY_VERSE_SCHEDULE_ENABLED_ENV] || "").trim().toLowerCase() === "true";
 }
 
 function getDailyVerseUrl(day, language = "ru") {
@@ -147,7 +295,7 @@ function getDailyVerseUrl(day, language = "ru") {
   return `${baseUrl}${pathPrefix}?day=${encodeURIComponent(day)}`;
 }
 
-function buildNotificationPayload({ force = false, source = "", language = "ru", selection = null, now = new Date() } = {}) {
+function buildNotificationPayload({ force = false, source = "", language = "ru", selection = null, now = new Date(), localDryRun = false } = {}) {
   const parts = getTorontoParts(now);
   const { day, currentDayNumber, verse } = selection || getCurrentDailyVerse(now);
   const normalizedLanguage = language === "en" ? "en" : "ru";
@@ -156,9 +304,14 @@ function buildNotificationPayload({ force = false, source = "", language = "ru",
   const notificationSource = source === "scheduled" ? "Scheduled" : "Manual";
   const heading = normalizedLanguage === "ru" ? "Стих дня" : "Daily Verse";
   const topic = verse?.topic?.[normalizedLanguage] || heading;
+  const appId = process.env.ONESIGNAL_APP_ID || "";
+
+  if (localDryRun && !appId) {
+    assertLocalTestMode();
+  }
 
   return {
-    app_id: requireEnv("ONESIGNAL_APP_ID"),
+    app_id: appId || "local-dry-run",
     name: `${notificationSource} Daily Verse - Day ${day} - ${dateKey} - ${normalizedLanguage.toUpperCase()}`,
     target_channel: "push",
     filters: [
@@ -202,10 +355,11 @@ async function sendDailyVerseNotifications(options = {}) {
 }
 
 async function sendDailyVerseNotification(options = {}) {
-  const startDate = new Date();
+  const startDate = options.now ? new Date(options.now) : new Date();
   const startParts = getTorontoParts(startDate);
   const appId = process.env.ONESIGNAL_APP_ID || "";
   const source = options.source || (options.force ? "manual-test" : "scheduled");
+  const scheduleEnabled = isScheduledSendingEnabled();
   const credentialContext = {
     source,
     appIdMasked: maskValue(appId),
@@ -231,22 +385,68 @@ async function sendDailyVerseNotification(options = {}) {
     hasAppId: Boolean(process.env.ONESIGNAL_APP_ID),
     hasRestApiKey: Boolean(process.env.ONESIGNAL_REST_API_KEY),
     hasSiteUrl: Boolean(process.env.SITE_URL),
+    hasNotificationTz: Boolean(process.env.NOTIFICATION_TZ),
+    scheduledSendingEnabled: scheduleEnabled,
     force: Boolean(options.force)
   });
+
+  if (source === "scheduled" && !scheduleEnabled) {
+    const skippedResult = {
+      sent: false,
+      skipped: true,
+      skip_reason: "non-production-site",
+      reason: "Daily Verse scheduled sending is disabled for this site.",
+      language: options.language === "en" ? "en" : "ru",
+      torontoDate: getTorontoDateKey(startDate)
+    };
+
+    console.info("[Bible for All] Daily Verse scheduled notification skipped before OneSignal.", skippedResult);
+    return skippedResult;
+  }
 
   const normalizedLanguage = options.language === "en" ? "en" : "ru";
   const selection = getDailyVerseForNotification(options, startDate);
   const unavailableReason = getUnavailableVerseReason(selection, normalizedLanguage);
 
+  console.info("[Bible for All] Daily Verse notification selection diagnostics.", {
+    source,
+    invocationSource: source,
+    torontoDate: `${startParts.year}-${startParts.month}-${startParts.day}`,
+    torontoTime: `${startParts.hour}:${startParts.minute}:${startParts.second}`,
+    calculatedDay: selection.currentDayNumber,
+    requestedDay: selection.day,
+    expectedDateKey: selection.expectedDateKey,
+    selectedDataFile: selection.selectedFileName,
+    selectedDataFileExists: selection.selectedFileExists,
+    verseFound: Boolean(selection.verse),
+    selectedVerseId: selection.selectedVerseId,
+    selectedVerseDateKey: selection.selectedVerseDateKey,
+    exactDayMatchFound: selection.exactDayMatchFound,
+    exactDateMatchFound: selection.exactDateMatchFound,
+    exactDayMatchId: selection.exactDayMatchId,
+    exactDateMatchId: selection.exactDateMatchId,
+    exactDayMatchDateKey: selection.exactDayMatchDateKey,
+    exactDateMatchDateKey: selection.exactDateMatchDateKey,
+    skipReason: selection.skipReason,
+    exactReferenceRu: selection.verse?.reference_ru || null,
+    exactReferenceEn: selection.verse?.reference_en || null
+  });
+
   if (unavailableReason) {
     const skippedResult = {
       sent: false,
       skipped: true,
+      skip_reason: unavailableReason,
       reason: unavailableReason,
-      day: selection.day
+      day: selection.day,
+      calculatedDay: selection.currentDayNumber,
+      expectedDateKey: selection.expectedDateKey,
+      selectedDataFile: selection.selectedFileName,
+      verseFound: Boolean(selection.verse),
+      language: normalizedLanguage
     };
 
-    console.info(`[Bible for All] Daily Verse skipped: no verse configured for day ${selection.day}.`, skippedResult);
+    console.info("[Bible for All] Daily Verse skipped before OneSignal.", skippedResult);
     return skippedResult;
   }
 
@@ -278,7 +478,9 @@ async function sendDailyVerseNotification(options = {}) {
       skipped: false,
       dryRun: true,
       day: payload.data.day,
-      url: payload.web_url
+      url: payload.web_url,
+      selectedDataFile: selection.selectedFileName,
+      expectedDateKey: selection.expectedDateKey
     };
   }
 
@@ -287,7 +489,10 @@ async function sendDailyVerseNotification(options = {}) {
     force: Boolean(options.force),
     endpoint: ONESIGNAL_NOTIFICATION_ENDPOINT,
     idempotencyKey: payload.idempotency_key,
-    appIdMasked: maskValue(payload.app_id)
+    appIdMasked: maskValue(payload.app_id),
+    selectedDataFile: selection.selectedFileName,
+    verseFound: true,
+    language: normalizedLanguage
   });
 
   const response = await fetch(ONESIGNAL_NOTIFICATION_ENDPOINT, {
@@ -311,6 +516,8 @@ async function sendDailyVerseNotification(options = {}) {
   console.info("[Bible for All] OneSignal notification response received.", {
     status: response.status,
     ok: response.ok,
+    language: normalizedLanguage,
+    recipientCount: body?.recipients ?? body?.total_count ?? null,
     rawOneSignalResponseText: responseText,
     oneSignalResponse: body
   });
@@ -338,6 +545,7 @@ async function sendDailyVerseNotification(options = {}) {
     oneSignalHttpStatus: response.status,
     oneSignalRawResponseText: responseText,
     oneSignal: body,
+    recipientCount: body?.recipients ?? body?.total_count ?? null,
     oneSignalDelivery: deliveryResult
   };
 }
@@ -428,9 +636,14 @@ function delay(ms) {
 module.exports = {
   buildNotificationPayload,
   getCurrentDailyVerse,
+  getDailyVerseForNotification,
+  getExactDailyVerseSelection,
   getDailyVerseUrl,
   getDayNumberFromEaster,
   getTorontoParts,
+  getTorontoDateKey,
+  getVerseDateKey,
+  isScheduledSendingEnabled,
   sendDailyVerseNotification,
   sendDailyVerseNotifications
 };
