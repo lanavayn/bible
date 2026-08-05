@@ -377,6 +377,96 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-99",
+        "day": 99,
+        "topic_ru": "Божье Царство",
+        "topic_en": "The Kingdom of God",
+        "question_ru": "Что такое Божье Царство?",
+        "question_en": "What is the Kingdom of God?",
+        "reference_ru": "Римлянам 14:17",
+        "reference_en": "Romans 14:17",
+        "text_ru": "Ибо Царствие Божие не пища и питие, но праведность и мир и радость во Святом Духе.",
+        "text_en": "For God's Kingdom is not eating and drinking, but righteousness, peace, and joy in the Holy Spirit.",
+        "verse_ref": {
+          "book": "Romans",
+          "chapter": 14,
+          "verse": "17"
+        },
+        "answer_ru": "Божье Царство — это Божье правление, приносящее праведность, мир и радость через Святого Духа.",
+        "answer_en": "The Kingdom of God is God's reign, bringing righteousness, peace, and joy through the Holy Spirit.",
+        "reflection_ru": "Божье Царство начинается в сердце человека, который доверяет Господу и живет по Его воле.",
+        "reflection_en": "God's Kingdom begins in the heart of the person who trusts the Lord and lives according to His will.",
+        "related": [
+          {
+            "reference_ru": "Луки 17:20-21",
+            "reference_en": "Luke 17:20-21",
+            "text_ru": "Быв же спрошен фарисеями, когда придет Царствие Божие, отвечал им: не придет Царствие Божие приметным образом, и не скажут: вот, оно здесь, или: вот, там. Ибо вот, Царствие Божие внутрь вас есть.",
+            "text_en": "Being asked by the Pharisees when God's Kingdom would come, he answered them, 'God's Kingdom doesn't come with observation... for behold, God's Kingdom is within you.'",
+            "verse_ref": {
+              "book": "Luke",
+              "chapter": 17,
+              "verse": "20-21"
+            }
+          },
+          {
+            "reference_ru": "Иоанна 18:36",
+            "reference_en": "John 18:36",
+            "text_ru": "Иисус отвечал: Царство Мое не от мира сего; если бы от мира сего было Царство Мое, то служители Мои подвизались бы за Меня, чтобы Я не был предан Иудеям; но ныне Царство Мое не отсюда.",
+            "text_en": "Jesus answered, 'My Kingdom is not of this world. If my Kingdom were of this world, then my servants would fight, that I wouldn’t be delivered to the Jews. But now my Kingdom is not from here.'",
+            "verse_ref": {
+              "book": "John",
+              "chapter": 18,
+              "verse": "36"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-100",
+        "day": 100,
+        "topic_ru": "Божье Царство",
+        "topic_en": "The Kingdom of God",
+        "question_ru": "Когда придет Божье Царство?",
+        "question_en": "When will God's Kingdom come?",
+        "reference_ru": "Матфея 6:10",
+        "reference_en": "Matthew 6:10",
+        "text_ru": "Да придет Царствие Твое; да будет воля Твоя и на земле, как на небе.",
+        "text_en": "Let your Kingdom come. Let your will be done on earth as it is in heaven.",
+        "verse_ref": {
+          "book": "Matthew",
+          "chapter": 6,
+          "verse": "10"
+        },
+        "answer_ru": "Иисус учил ожидать пришествия Божьего Царства и молиться о его наступлении. Оно придет во всей полноте по Божьему плану.",
+        "answer_en": "Jesus taught us to look forward to God's Kingdom and to pray for its coming. It will come in its fullness according to God's plan.",
+        "reflection_ru": "Каждый день мы можем молиться о Божьем Царстве и жить так, чтобы Его воля исполнялась в нашей жизни.",
+        "reflection_en": "Each day we can pray for God's Kingdom and live so that His will is done in our lives.",
+        "related": [
+          {
+            "reference_ru": "Матфея 25:34",
+            "reference_en": "Matthew 25:34",
+            "text_ru": "Тогда скажет Царь тем, которые по правую сторону Его: придите, благословенные Отца Моего, наследуйте Царство, уготованное вам от создания мира.",
+            "text_en": "Then the King will tell those on his right hand, 'Come, blessed of my Father, inherit the Kingdom prepared for you from the foundation of the world.'",
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 25,
+              "verse": "34"
+            }
+          },
+          {
+            "reference_ru": "Откровение 11:15",
+            "reference_en": "Revelation 11:15",
+            "text_ru": "И седьмой Ангел вострубил, и раздались на небе громкие голоса, говорящие: царство мира соделалось Царством Господа нашего и Христа Его, и будет царствовать во веки веков.",
+            "text_en": "The seventh angel sounded, and there followed great voices in heaven, saying, 'The kingdom of the world has become the Kingdom of our Lord and of his Christ. He will reign forever and ever!'",
+            "verse_ref": {
+              "book": "Revelation",
+              "chapter": 11,
+              "verse": "15"
+            }
+          }
+        ]
       }
     ]
 }
