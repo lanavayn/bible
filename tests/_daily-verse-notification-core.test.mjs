@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const core = require("./_daily-verse-notification-core.js");
+const core = require("../netlify/functions/_daily-verse-notification-core.js");
 
 const ENV_KEYS = [
   "NODE_ENV",
