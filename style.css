@@ -90,6 +90,16 @@ body {
   padding-bottom: 5rem;
   font-size: var(--font-size-md);
   line-height: var(--line-height-base);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+
+button,
+input,
+select,
+textarea {
+  font-variant-numeric: inherit;
+  font-feature-settings: inherit;
 }
 
 img {
@@ -3106,15 +3116,13 @@ table.book-dates th:nth-child(2) {
   margin-right: 6px;
 
   font-weight: 600;
-  font-variant-numeric: lining-nums tabular-nums;
-  font-feature-settings: "lnum" 1, "tnum" 1;
   color: #5b3d1f;
 
   cursor: default;
   pointer-events: none;
 }
 
-/* Uniform OpenType numerals for Bible references across all surfaces. */
+/* Keep ordinary numerals visually consistent with surrounding text. */
 .scripture-reference,
 .scripture-related-ref,
 .daily-verse-inline-reference-text,
@@ -3122,8 +3130,8 @@ table.book-dates th:nth-child(2) {
 .verse-slider .ref,
 .verse-slider .verse-related-ref,
 .bible-reference {
-  font-variant-numeric: lining-nums tabular-nums;
-  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-variant-numeric: inherit;
+  font-feature-settings: inherit;
 }
 
 .daily-date-text {
