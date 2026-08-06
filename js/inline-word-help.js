@@ -208,6 +208,12 @@ const RU_COMMON_DEFINITIONS = [
     pattern: /(^|[^А-Яа-яЁё])(огнем испытываемого золота)(?=$|[^А-Яа-яЁё])/gi
   },
   {
+    label: "Подробнее о краеугольном камне",
+    closeLabel: "Закрыть",
+    text: "Краеугольный камень — это главный камень, который закладывали в основание здания. От него зависели правильное положение и прочность всей постройки. Библия называет Иисуса Христа краеугольным камнем, потому что на Нем основана христианская вера и Его Церковь.",
+    pattern: /(^|[^А-Яа-яЁё])(краеугольным камнем|краеугольный камень)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
     label: "Подробнее о слове «сретение»",
     closeLabel: "Закрыть",
     text: "Встреча; здесь — встреча верующих с Господом.",
@@ -344,6 +350,12 @@ const EN_COMMON_DEFINITIONS = [
     closeLabel: "Close",
     text: "Struck down — knocked down or brought low, but not destroyed.",
     pattern: /\b(struck down)\b/g
+  },
+  {
+    label: "More about the cornerstone",
+    closeLabel: "Close",
+    text: "In ancient buildings, the cornerstone was the first and most important stone laid in the foundation. It determined the position and strength of the entire building. The Bible calls Jesus the cornerstone because everything in our faith is built on Him.",
+    pattern: /\b(chief cornerstone|cornerstone)\b/g
   },
   {
     label: "More about refined gold",

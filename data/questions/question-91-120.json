@@ -467,6 +467,96 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-101",
+        "day": 101,
+        "topic_ru": "Христианская вера",
+        "topic_en": "The Christian Faith",
+        "question_ru": "Какое одно слово лучше всего отражает суть христианской веры?",
+        "question_en": "What One Word Best Describes the Essence of the Christian Faith?",
+        "reference_ru": "1 Коринфянам 3:11",
+        "reference_en": "1 Corinthians 3:11",
+        "text_ru": "Ибо никто не может положить другого основания, кроме положенного, которое есть Иисус Христос.",
+        "text_en": "For no one can lay any other foundation than that which has been laid, which is Jesus Christ.",
+        "verse_ref": {
+          "book": "1-Corinthians",
+          "chapter": 3,
+          "verse": "11"
+        },
+        "answer_ru": "В центре христианской веры находится не учение само по себе, а Сам Иисус Христос. Именно Он является основанием нашей веры, надежды и спасения..",
+        "answer_en": "The heart of the Christian faith is not merely a set of teachings, but Jesus Christ Himself. He is the foundation of our faith, hope, and salvation.",
+        "reflection_ru": "В центре христианской веры находится не учение само по себе, а Сам Иисус Христос. Именно Он является основанием нашей веры, надежды и спасения.",
+        "reflection_en": "The heart of the Christian faith is not merely a set of teachings, but Jesus Christ Himself. He is the foundation of our faith, hope, and salvation.",
+        "related": [
+          {
+            "reference_ru": "Колоссянам 1:18",
+            "reference_en": "Colossians 1:18",
+            "text_ru": "И Он есть глава тела Церкви; Он — начаток, первенец из мертвых, дабы иметь Ему во всем первенство.",
+            "text_en": "He is the head of the body, the assembly, who is the beginning, the firstborn from the dead; that in all things he might have the preeminence.",
+            "verse_ref": {
+              "book": "Colossians",
+              "chapter": 1,
+              "verse": "18"
+            }
+          },
+          {
+            "reference_ru": "Ефесянам 2:20",
+            "reference_en": "Ephesians 2:20",
+            "text_ru": "Быв утверждены на основании Апостолов и пророков, имея Самого Иисуса Христа краеугольным камнем",
+            "text_en": "Being built on the foundation of the apostles and prophets, Christ Jesus himself being the chief cornerstone",
+            "verse_ref": {
+              "book": "Ephesians",
+              "chapter": 2,
+              "verse": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-102",
+        "day": 102,
+        "topic_ru": "Понимание Библии",
+        "topic_en": "Understanding the Bible",
+        "question_ru": "Что делать, если читаешь Библию и не понимаешь?",
+        "question_en": "What should you do when you read the Bible and do not understand it?",
+        "reference_ru": "1 Коринфянам 2:12-13",
+        "reference_en": "1 Corinthians 2:12-13",
+        "text_ru": "Но мы приняли не духа мира сего, а Духа от Бога, дабы знать дарованное нам от Бога, что и возвещаем не от человеческой мудрости изученными словами, но изученными от Духа Святого, соображая духовное с духовным.",
+        "text_en": "But we received, not the spirit of the world, but the Spirit which is from God, that we might know the things that were freely given to us by God. We also speak these things, not in words which man’s wisdom teaches, but which the Holy Spirit teaches, comparing spiritual things with spiritual things.",
+        "verse_ref": {
+          "book": "1-Corinthians",
+          "chapter": 2,
+          "verse": "12-13"
+        },
+        "answer_ru": "Молись о помощи Святого Духа, размышляй над прочитанным и продолжай исследовать Писание.",
+        "answer_en": "Pray for the Holy Spirit’s help, reflect on what you read, and continue studying the Scriptures.",
+        "reflection_ru": "Если смысл неясен, не оставляй Библию. Проси Господа дать разумение и проверяй непонятное по другим местам Писания.",
+        "reflection_en": "If the meaning is unclear, do not give up reading the Bible. Ask the Lord for understanding and compare difficult passages with other Scriptures.",
+        "related": [
+          {
+            "reference_ru": "2 Тимофею 2:7",
+            "reference_en": "2 Timothy 2:7",
+            "text_ru": "Разумей, что я говорю. Да даст тебе Господь разумение во всем.",
+            "text_en": "Consider what I say, and may the Lord give you understanding in all things.",
+            "verse_ref": {
+              "book": "2-Timothy",
+              "chapter": 2,
+              "verse": "7"
+            }
+          },
+          {
+            "reference_ru": "Деяния 17:11",
+            "reference_en": "Acts 17:11",
+            "text_ru": "Здешние были благомысленнее Фессалоникских: они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так.",
+            "text_en": "Now these were more noble than those in Thessalonica, in that they received the word with all readiness of mind, examining the Scriptures daily to see whether these things were so.",
+            "verse_ref": {
+              "book": "Acts",
+              "chapter": 17,
+              "verse": "11"
+            }
+          }
+        ]
       }
     ]
 }
