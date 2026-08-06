@@ -317,6 +317,92 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-10",
+      "day": 128,
+      "topic": {
+        "ru": "Вечная слава важнее временных страданий",
+        "en": "Eternal Glory Is Greater Than Temporary Suffering"
+      },
+      "reference_ru": "2 Коринфянам 4:17-18",
+      "reference_en": "2 Corinthians 4:17-18",
+      "text_ru": "Ибо кратковременное легкое страдание наше производит в безмерном преизбытке вечную славу, когда мы смотрим не на видимое, но на невидимое: ибо видимое временно, а невидимое вечно.",
+      "text_en": "For our light affliction, which is for the moment, works for us more and more exceedingly an eternal weight of glory, while we don't look at the things which are seen, but at the things which are not seen. For the things which are seen are temporal, but the things which are not seen are eternal.",
+      "verse_ref": {
+        "book": "2-corinthians",
+        "chapter": 4,
+        "verse": "17-18"
+      },
+      "interpretation_ru": "Временные страдания не сравнятся с вечной славой, которую Господь готовит для тех, кто любит Его.",
+      "interpretation_en": "Temporary suffering cannot compare with the eternal glory the Lord has prepared for those who love Him.",
+      "related": [
+        {
+          "reference_ru": "Иакова 1:12",
+          "reference_en": "James 1:12",
+          "text_ru": "Блажен человек, который переносит искушение, потому что, быв испытан, он получит венец жизни, который обещал Господь любящим Его.",
+          "text_en": "Blessed is a man who endures temptation, for when he has been approved, he will receive the crown of life, which the Lord promised to those who love him.",
+          "verse_ref": {
+            "book": "james",
+            "chapter": 1,
+            "verse": "12"
+          }
+        },
+        {
+          "reference_ru": "2 Тимофею 2:11-12",
+          "reference_en": "2 Timothy 2:11-12",
+          "text_ru": "Верно слово: если мы с Ним умерли, то с Ним и оживем; если терпим, то с Ним и царствовать будем; если отречемся, и Он отречется от нас.",
+          "text_en": "This saying is faithful: 'For if we died with him, we will also live with him. If we endure, we will also reign with him. If we deny him, he also will deny us.'",
+          "verse_ref": {
+            "book": "2-timothy",
+            "chapter": 2,
+            "verse": "11-12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-11",
+      "day": 129,
+      "topic": {
+        "ru": "Оставайся верным до конца",
+        "en": "Remain Faithful to the End"
+      },
+      "reference_ru": "Матфея 24:13",
+      "reference_en": "Matthew 24:13",
+      "text_ru": "Претерпевший же до конца спасется.",
+      "text_en": "But he who endures to the end, the same will be saved.",
+      "verse_ref": {
+        "book": "matthew",
+        "chapter": 24,
+        "verse": "13"
+      },
+      "interpretation_ru": "Господь обещает спасение тем, кто продолжает доверять Ему, несмотря на испытания.",
+      "interpretation_en": "The Lord promises salvation to those who continue trusting Him, even through trials.",
+      "related": [
+        {
+          "reference_ru": "Откровение 2:10",
+          "reference_en": "Revelation 2:10",
+          "text_ru": "Не бойся ничего, что тебе надобно будет претерпеть. Вот, диавол будет ввергать из среды вас в темницу, чтобы искусить вас, и будете иметь скорбь дней десять. Будь верен до смерти, и дам тебе венец жизни.",
+          "text_en": "Don’t be afraid of the things which you are about to suffer. Behold, the devil is about to throw some of you into prison, that you may be tested; and you will have oppression for ten days. Be faithful to death, and I will give you the crown of life.",
+          "verse_ref": {
+            "book": "revelation",
+            "chapter": 2,
+            "verse": "10"
+          }
+        },
+        {
+          "reference_ru": "Луки 21:19",
+          "reference_en": "Luke 21:19",
+          "text_ru": "Терпением вашим спасайте души ваши.",
+          "text_en": "By your endurance you will win your lives.",
+          "verse_ref": {
+            "book": "luke",
+            "chapter": 21,
+            "verse": "19"
+          }
+        }
+      ]
     }
   ]
 }
