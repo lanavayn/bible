@@ -156,6 +156,167 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-07",
+      "day": 125,
+      "topic": {
+        "ru": "Господь помогает подняться снова праведнику",
+        "en": "The Lord Helps the Righteous Rise Again"
+      },
+      "reference_ru": "Притчи 24:16",
+      "reference_en": "Proverbs 24:16",
+      "text_ru": "Ибо семь раз упадет праведник, и встанет; а нечестивые впадут в погибель.",
+      "text_en": "For a righteous man falls seven times and rises up again, but the wicked are overthrown by calamity.",
+      "verse_ref": {
+        "book": "proverbs",
+        "chapter": 24,
+        "verse": "16"
+      },
+      "interpretation_ru": "Даже если ты споткнулся, Господь не оставит тебя. Он поддерживает падающих и помогает им снова подняться.",
+      "interpretation_en": "Even if you stumble, the Lord will not abandon you. He upholds those who fall and helps them rise again.",
+      "related": [
+        {
+          "reference_ru": "Псалом 36:23-24",
+          "reference_en": "Psalm 37:23-24",
+          "text_ru": "Господом утверждаются стопы такого человека, и Он благоволит к пути его: когда он будет падать, не упадет, ибо Господь поддерживает его за руку.",
+          "text_en": "A man's steps are established by the LORD. He delights in his way. Though he stumble, he shall not fall, for the LORD holds him up with his hand.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 36,
+              "verse": "23-24"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 37,
+              "verse": "23-24"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 144:14",
+          "reference_en": "Psalm 145:14",
+          "text_ru": "Господь поддерживает всех падающих и восставляет всех низверженных.",
+          "text_en": "The LORD upholds all who fall, and raises up all those who are bowed down.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 144,
+              "verse": "14"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 145,
+              "verse": "14"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-08",
+      "day": 126,
+      "topic": {
+        "ru": "Господь рядом с праведником в скорбях",
+        "en": "The Lord Is Near the Righteous in Times of Trouble"
+      },
+      "reference_ru": "Псалом 33:20",
+      "reference_en": "Psalm 34:19",
+      "text_ru": "Много скорбей у праведного, и от всех их избавит его Господь.",
+      "text_en": "Many are the afflictions of the righteous, but the LORD delivers him out of them all.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "psalms",
+          "chapter": 33,
+          "verse": "20"
+        },
+        "en": {
+          "book": "psalms",
+          "chapter": 34,
+          "verse": "19"
+        }
+      },
+      "interpretation_ru": "У праведного могут быть скорби, но Господь не оставляет его. Он рядом и избавляет от испытаний.",
+      "interpretation_en": "The righteous may face many troubles, but the Lord does not abandon them. He is near and delivers them through every trial.",
+      "related": [
+        {
+          "reference_ru": "2 Коринфянам 4:8-9",
+          "reference_en": "2 Corinthians 4:8-9",
+          "text_ru": "Мы отовсюду притесняемы, но не стеснены; мы в отчаянных обстоятельствах, но не отчаиваемся; мы гонимы, но не оставлены; низлагаемы, но не погибаем.",
+          "text_en": "We are pressed on every side, yet not crushed; perplexed, yet not to despair; pursued, yet not forsaken; struck down, yet not destroyed.",
+          "verse_ref": {
+            "book": "2-corinthians",
+            "chapter": 4,
+            "verse": "8-9"
+          }
+        },
+        {
+          "reference_ru": "Плач Иеремии 3:31-33",
+          "reference_en": "Lamentations 3:31-33",
+          "text_ru": "Ибо не навек оставляет Господь. Но послал горе, и помилует по множеству милостей Своих. Ибо Он не по изволению сердца Своего наказывает и огорчает сынов человеческих.",
+          "text_en": "For the Lord will not cast off forever. For though he causes grief, yet he will have compassion according to the multitude of his loving kindnesses. For he does not afflict willingly, nor grieve the children of men.",
+          "verse_ref": {
+            "book": "lamentations",
+            "chapter": 3,
+            "verse": "31-33"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-09",
+      "day": 127,
+      "topic": {
+        "ru": "Испытания укрепляют веру",
+        "en": "Trials Strengthen Faith"
+      },
+      "reference_ru": "1 Петра 5:10",
+      "reference_en": "1 Peter 5:10",
+      "text_ru": "Бог же всякой благодати, призвавший нас в вечную славу Свою во Христе Иисусе, Сам, по кратковременном страдании вашем, да совершит вас, да утвердит, да укрепит, да соделает непоколебимыми.",
+      "text_en": "May the God of all grace, who called you to his eternal glory in Christ Jesus, after you have suffered a little while, perfect, establish, strengthen, and settle you.",
+      "verse_ref": {
+        "book": "1-peter",
+        "chapter": 5,
+        "verse": "10"
+      },
+      "interpretation_ru": "Испытания не длятся вечно. Господь использует их, чтобы сделать нашу веру крепче, а нас — более зрелыми и непоколебимыми.",
+      "interpretation_en": "Trials do not last forever. The Lord uses them to strengthen our faith and make us mature and steadfast.",
+      "related": [
+        {
+          "reference_ru": "1 Петра 1:6-7",
+          "reference_en": "1 Peter 1:6-7",
+          "text_ru": "О сем радуйтесь, поскорбев теперь немного, если нужно, от различных искушений, дабы испытанная вера ваша оказалась драгоценнее гибнущего, хотя и огнем испытываемого золота, к похвале и чести и славе в явление Иисуса Христа.",
+          "text_en": "Wherein you greatly rejoice, though now for a little while, if need be, you have been put to grief in various trials, that the proof of your faith, being more precious than gold that perishes though it is tested by fire, may be found to result in praise, glory, and honor at the revelation of Jesus Christ.",
+          "verse_ref": {
+            "book": "1-peter",
+            "chapter": 1,
+            "verse": "6-7"
+          }
+        },
+        {
+          "reference_ru": "2 Коринфянам 12:9-10",
+          "reference_en": "2 Corinthians 12:9-10",
+          "text_ru": "Но Господь сказал мне: «Довольно для тебя благодати Моей, ибо сила Моя совершается в немощи». И потому я гораздо охотнее буду хвалиться своими немощами, чтобы обитала во мне сила Христова. Посему я благодушествую в немощах, в обидах, в нуждах, в гонениях, в притеснениях за Христа; ибо, когда я немощен, тогда силен.",
+          "text_en": "He has said to me, \"My grace is sufficient for you, for my power is made perfect in weakness.\" Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me. Therefore I take pleasure in weaknesses, in injuries, in necessities, in persecutions, in distresses, for Christ's sake. For when I am weak, then am I strong.",
+          "verse_ref": {
+            "book": "2-corinthians",
+            "chapter": 12,
+            "verse": "9-10"
+          }
+        },
+        {
+          "reference_ru": "Второзаконие 8:2",
+          "reference_en": "Deuteronomy 8:2",
+          "text_ru": "И помни весь путь, которым вел тебя Господь, Бог твой, по пустыне вот уже сорок лет, чтобы смирить тебя, чтобы испытать тебя и узнать, что в сердце твоем, будешь ли хранить заповеди Его или нет.",
+          "text_en": "You shall remember all the way which the LORD your God has led you these forty years in the wilderness, that he might humble you, to test you, to know what was in your heart, whether you would keep his commandments or not.",
+          "verse_ref": {
+            "book": "deuteronomy",
+            "chapter": 8,
+            "verse": "2"
+          }
+        }
+      ]
     }
   ]
 }

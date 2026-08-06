@@ -5,7 +5,7 @@ import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 import { initDailyVerseNotifications, renderDailyVerseNotificationControls } from "./onesignal-notifications.js";
 
 const easterDates = {
-  2026: "2026-04-05",
+  2026: "2026-04-05", //production
   //2026: "2026-01-05",  //for testing only
   2027: "2027-03-28",
   2028: "2028-04-16",

@@ -202,6 +202,12 @@ const RU_COMMON_DEFINITIONS = [
     pattern: /(^|[^А-Яа-яЁё])(гряду скоро)(?=$|[^А-Яа-яЁё])/gi
   },
   {
+    label: "Подробнее о фразе «огнем испытываемого золота»",
+    closeLabel: "Закрыть",
+    text: "Подобно тому как золото очищают огнем, испытания очищают и укрепляют нашу веру. Они помогают проявиться тому, что действительно находится в нашем сердце",
+    pattern: /(^|[^А-Яа-яЁё])(огнем испытываемого золота)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
     label: "Подробнее о слове «сретение»",
     closeLabel: "Закрыть",
     text: "Встреча; здесь — встреча верующих с Господом.",
@@ -242,6 +248,12 @@ const RU_COMMON_DEFINITIONS = [
     closeLabel: "Закрыть",
     text: "Правильные отношения с Богом и жизнь, угодная Ему.",
     pattern: /(^|[^А-Яа-яЁё])(праведность|праведности|праведностью)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о слове «Низлагаемы»",
+    closeLabel: "Закрыть",
+    text: "Сбиты с ног, повержены, опрокинуты, переживают тяжёлое падение или поражение, но не уничтожены.",
+    pattern: /(^|[^А-Яа-яЁё])(Низлагаемы|низлагаемы)(?=$|[^А-Яа-яЁё])/gi
   },
   {
     label: "Подробнее о слове «Аминь»",
@@ -326,6 +338,18 @@ const EN_COMMON_DEFINITIONS = [
     closeLabel: "Close",
     text: "God’s undeserved love, mercy, and help, given to us through Jesus Christ.",
     pattern: /\b(Grace|grace)\b/g
+  },
+  {
+    label: "More about struck down",
+    closeLabel: "Close",
+    text: "Struck down — knocked down or brought low, but not destroyed.",
+    pattern: /\b(struck down)\b/g
+  },
+  {
+    label: "More about refined gold",
+    closeLabel: "Close",
+    text: "Just as gold is refined by fire to remove impurities, trials refine and strengthen our faith. They reveal what is genuine in our hearts.",
+    pattern: /\bbeing more precious than gold\b/g
   },
   {
     label: "More about Amen",
