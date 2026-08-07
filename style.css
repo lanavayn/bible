@@ -572,11 +572,11 @@ h1,
   }
 
   .top-left {
-    margin-left: -0.2rem;
+    margin-left: -0.3rem;
   }
 
   .top-right {
-    margin-right: -0.2rem;
+    margin-right: -0.3rem;
   }
 
   .dropbtn {
@@ -3707,11 +3707,14 @@ table.book-dates th:nth-child(2) {
   }
 
   .daily-verse-subtitle-row--plain {
-    margin-top: 0.2rem;
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
   }
 
-  #daily-verse .daily-verse-subtitle-row--plain {
-    margin-top: 0.45rem;
+  #daily-verse .daily-verse-subtitle-row--plain,
+  #question-of-day .daily-verse-subtitle-row--plain {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
   }
   
 }
