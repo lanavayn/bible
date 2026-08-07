@@ -3468,7 +3468,7 @@ table.book-dates th:nth-child(2) {
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
     margin-right: -0.5rem;
-    padding: 0.75rem 0.55rem 0.8rem;
+    padding: 0.75rem 0.45rem 0.8rem 0.55rem;
     border-radius: 12px;
     touch-action: pan-y;
     margin-bottom: 0.1rem;
@@ -3538,7 +3538,7 @@ table.book-dates th:nth-child(2) {
   #question-of-day .scripture-note-box {
     width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0.4rem 0.5rem 0.5rem;
   }
 
   .daily-verse-book-link {
@@ -3546,7 +3546,7 @@ table.book-dates th:nth-child(2) {
   }
 
   .daily-verse-text {
-    padding: 0 0.25rem;
+    padding: 0 0.15rem 0 0.25rem;
     min-height: auto;
   }
 
@@ -4876,18 +4876,18 @@ body.daily-verse-search-open {
     margin-left: -0.6rem;
     margin-right: -0.6rem;
     padding-left: 0.45rem;
-    padding-right: 0.45rem;
+    padding-right: 0.35rem;
   }
 
   #daily-verse .scripture-note-box,
   #question-of-day .scripture-note-box {
     padding-left: 0.45rem;
-    padding-right: 0.45rem;
+    padding-right: 0.35rem;
   }
 
   .daily-verse-text {
     padding-left: 0.18rem;
-    padding-right: 0.18rem;
+    padding-right: 0.08rem;
   }
 
   html[lang="en"] .daily-question-row {
