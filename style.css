@@ -3465,10 +3465,10 @@ table.book-dates th:nth-child(2) {
 @media (max-width: 48rem) {
   .daily-verse-card {
     position: relative;
-    width: calc(100% + 0.75rem);
-    margin-left: -0.375rem;
-    margin-right: -0.375rem;
-    padding: 0.75rem 0.65rem 0.8rem;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding: 0.75rem 0.55rem 0.8rem;
     border-radius: 12px;
     touch-action: pan-y;
     margin-bottom: 0.1rem;
@@ -3538,7 +3538,7 @@ table.book-dates th:nth-child(2) {
   #question-of-day .scripture-note-box {
     width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem 0.6rem;
+    padding: 0.5rem 0.5rem;
   }
 
   .daily-verse-book-link {
@@ -3546,7 +3546,7 @@ table.book-dates th:nth-child(2) {
   }
 
   .daily-verse-text {
-    padding: 0 0.35rem;
+    padding: 0 0.25rem;
     min-height: auto;
   }
 
@@ -4871,6 +4871,25 @@ body.daily-verse-search-open {
 
 /* Extra-small phone fix: keep Daily Question inside the button */
 @media (max-width: 390px) {
+  .daily-verse-card {
+    width: calc(100% + 1.2rem);
+    margin-left: -0.6rem;
+    margin-right: -0.6rem;
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+  }
+
+  #daily-verse .scripture-note-box,
+  #question-of-day .scripture-note-box {
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+  }
+
+  .daily-verse-text {
+    padding-left: 0.18rem;
+    padding-right: 0.18rem;
+  }
+
   html[lang="en"] .daily-question-row {
     gap: 6px;
   }
