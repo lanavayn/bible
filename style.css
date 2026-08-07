@@ -3465,7 +3465,10 @@ table.book-dates th:nth-child(2) {
 @media (max-width: 48rem) {
   .daily-verse-card {
     position: relative;
-    padding: 0.75rem 0.85rem 0.8rem;
+    width: calc(100% + 0.75rem);
+    margin-left: -0.375rem;
+    margin-right: -0.375rem;
+    padding: 0.75rem 0.65rem 0.8rem;
     border-radius: 12px;
     touch-action: pan-y;
     margin-bottom: 0.1rem;
@@ -3529,6 +3532,13 @@ table.book-dates th:nth-child(2) {
   .daily-verse-title-text {
     font-size: 1rem;
     line-height: 1.25;
+  }
+
+  #daily-verse .scripture-note-box,
+  #question-of-day .scripture-note-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0.6rem;
   }
 
   .daily-verse-book-link {
