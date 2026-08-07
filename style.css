@@ -249,7 +249,6 @@ h1,
 
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropbtn {
@@ -577,7 +576,7 @@ h1,
   }
 
   .top-right {
-    margin-right: -0.625rem;
+    margin-right: -0.125rem;
   }
 
   .dropbtn {
@@ -836,7 +835,6 @@ li {
 
 .dropdown {
   position: relative;
-  display: inline-block;
   z-index: 9999;
 }
 
