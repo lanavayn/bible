@@ -49,6 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const isRu = document.documentElement.lang?.toLowerCase().startsWith("ru");
     const lang = isRu ? "ru" : "en";
     const t = translations[lang];
+    const isNarrowPhone = window.matchMedia("(max-width: 390px)").matches;
+    const headerTitleHtml = isRu
+      ? (
+          isNarrowPhone
+            ? "\u0414\u043e\u0431\u0440\u043e<br>\u043f\u043e\u0436\u0430\u043b\u043e\u0432\u0430\u0442\u044c \u0432<br>\u043c\u0438\u0440 \u0411\u0438\u0431\u043b\u0438\u0438"
+            : "\u0414\u043e\u0431\u0440\u043e \u043f\u043e\u0436\u0430\u043b\u043e\u0432\u0430\u0442\u044c \u0432<br>\u043c\u0438\u0440 \u0411\u0438\u0431\u043b\u0438\u0438"
+        )
+      : t.title;
   
     const pairedPage = pageMap[currentPage] || "index.html";
   
@@ -110,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
   
-        <div class="top-title">${t.title}</div>
+        <div class="top-title">${headerTitleHtml}</div>
   
         <div class="top-right dropdown">
           <button class="dropbtn">🌐</button>
