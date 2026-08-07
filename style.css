@@ -572,6 +572,14 @@ h1,
     line-height: 1.18;
   }
 
+  .top-left {
+    margin-left: -0.125rem;
+  }
+
+  .top-right {
+    margin-right: -0.625rem;
+  }
+
   .dropbtn {
     width: 2.8rem;
     height: 2.8rem;
