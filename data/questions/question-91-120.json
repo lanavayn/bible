@@ -557,7 +557,97 @@
             }
           }
         ]
-      }
-    ]
+      },
+      {
+            "id": "question-day-103",
+            "day": 103,
+            "topic_ru": "Душа и дух",
+            "topic_en": "Soul and Spirit",
+            "question_ru": "Что Библия называет душой и духом?",
+            "question_en": "What Does the Bible Call the Soul and the Spirit?",
+            "reference_ru": "Бытие 2:7",
+            "reference_en": "Genesis 2:7",
+            "text_ru": "И создал Господь Бог человека из праха земного, и вдунул в лице его дыхание жизни, и стал человек душею живою.",
+            "text_en": "The Lord God formed man from the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.",
+            "verse_ref": {
+              "book": "Genesis",
+              "chapter": 2,
+              "verse": "7"
+            },
+            "answer_ru": "Душа — это живой человек, а дух — данное Богом дыхание жизни.",
+            "answer_en": "The soul is the living person, while the spirit is the breath of life given by God.",
+            "reflection_ru": "Человек стал живой душой, когда Бог соединил тело с дыханием жизни. Когда дух жизни оставляет тело, человек умирает.",
+            "reflection_en": "A person became a living soul when God joined the body with the breath of life. When the spirit of life leaves the body, the person dies.",
+            "related": [
+              {
+                "reference_ru": "Екклесиаст 12:7",
+                "reference_en": "Ecclesiastes 12:7",
+                "text_ru": "И возвратится прах в землю, чем он и был; а дух возвратится к Богу, Который дал его.",
+                "text_en": "And the dust returns to the earth as it was, and the spirit returns to God who gave it.",
+                "verse_ref": {
+                  "book": "Ecclesiastes",
+                  "chapter": 12,
+                  "verse": "7"
+                }
+              },
+              {
+                "reference_ru": "Иакова 2:26",
+                "reference_en": "James 2:26",
+                "text_ru": "Ибо, как тело без духа мертво, так и вера без дел мертва.",
+                "text_en": "For as the body apart from the spirit is dead, even so faith apart from works is dead.",
+                "verse_ref": {
+                  "book": "James",
+                  "chapter": 2,
+                  "verse": "26"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-104",
+            "day": 104,
+            "topic_ru": "Духовный и душевный человек",
+            "topic_en": "The Spiritual and Natural Person",
+            "question_ru": "Кого Библия называет духовным человеком, а кого душевным?",
+            "question_en": "Whom Does the Bible Call Spiritual and Natural?",
+            "reference_ru": "1 Коринфянам 2:14-15",
+            "reference_en": "1 Corinthians 2:14-15",
+            "text_ru": "Душевный человек не принимает того, что от Духа Божия, потому что он почитает это безумием; и не может разуметь, потому что о сем надобно судить духовно. Но духовный судит о всем, а о нем судить никто не может.",
+            "text_en": "Now the natural man doesn’t receive the things of God’s Spirit, for they are foolishness to him, and he can’t know them, because they are spiritually discerned. But he who is spiritual discerns all things, and he himself is judged by no one.",
+            "verse_ref": {
+              "book": "1-Corinthians",
+              "chapter": 2,
+              "verse": "14-15"
+            },
+            "answer_ru": "Душевный человек не принимает Божьего Духа, а духовный следует Его водительству.",
+            "answer_en": "The natural person does not accept God’s Spirit, while the spiritual person follows His guidance.",
+            "reflection_ru": "Духовность проявляется в том, что человек принимает Божье Слово и позволяет Святому Духу руководить своей жизнью.",
+            "reflection_en": "Spirituality is shown when a person accepts God’s Word and allows the Holy Spirit to guide their life.",
+            "related": [
+              {
+                "reference_ru": "Римлянам 8:5-6",
+                "reference_en": "Romans 8:5-6",
+                "text_ru": "Ибо живущие по плоти о плотском помышляют, а живущие по духу — о духовном. Помышления плотские суть смерть, а помышления духовные — жизнь и мир.",
+                "text_en": "For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit, the things of the Spirit. For the mind of the flesh is death, but the mind of the Spirit is life and peace.",
+                "verse_ref": {
+                  "book": "Romans",
+                  "chapter": 8,
+                  "verse": "5-6"
+                }
+              },
+              {
+                "reference_ru": "Галатам 6:1",
+                "reference_en": "Galatians 6:1",
+                "text_ru": "Братия! если и впадет человек в какое согрешение, вы, духовные, исправляйте такового в духе кротости, наблюдая каждый за собою, чтобы не быть искушенным.",
+                "text_en": "Brothers, even if a man is caught in some fault, you who are spiritual must restore such a one in a spirit of gentleness, looking to yourself so that you also aren’t tempted.",
+                "verse_ref": {
+                  "book": "Galatians",
+                  "chapter": 6,
+                  "verse": "1"
+                }
+              }
+            ]
+          }
+        ]
 }
   
