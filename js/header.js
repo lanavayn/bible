@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Leave feedback",
         askQuestion: "💬 Ask a Question",
         about: "ℹ️ About the Bible",
+        textSize: "Text size",
         english: "English",
         russian: "Русский"
       },
@@ -19,11 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Оставить отзыв",
         askQuestion: "💬 Задать вопрос",
         about: "ℹ️ О Библии",
+        textSize: "Размер текста",
         english: "English",
         russian: "Русский"
       }
     };
   
+    const TEXT_SIZE_STORAGE_KEY = "bibleTextSize";
+    const TEXT_SIZE_OPTIONS = ["85", "100", "115"];
+
     const pageMap = {
       "10-commandments.html": "10-commandments.html",
       "purpose.html": "purpose.html",
@@ -49,6 +54,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const isRu = document.documentElement.lang?.toLowerCase().startsWith("ru");
     const lang = isRu ? "ru" : "en";
     const t = translations[lang];
+
+    function getSavedTextSize() {
+      try {
+        const savedValue = localStorage.getItem(TEXT_SIZE_STORAGE_KEY);
+        return TEXT_SIZE_OPTIONS.includes(savedValue) ? savedValue : "100";
+      } catch (error) {
+        return "100";
+      }
+    }
+
+    function applyTextSize(value) {
+      const normalizedValue = TEXT_SIZE_OPTIONS.includes(value) ? value : "100";
+      document.documentElement.setAttribute("data-text-size", normalizedValue);
+      return normalizedValue;
+    }
+
+    function saveTextSize(value) {
+      try {
+        localStorage.setItem(TEXT_SIZE_STORAGE_KEY, value);
+      } catch (error) {
+        console.info("[Bible for All] Text size preference was not saved.", error);
+      }
+    }
+
+    const currentTextSize = applyTextSize(getSavedTextSize());
     const isNarrowPhone = window.matchMedia("(max-width: 390px)").matches;
     const headerTitleHtml = isRu
       ? (
@@ -115,6 +145,20 @@ document.addEventListener("DOMContentLoaded", function () {
             ${showComments ? `<a href="${commentsHref}">${t.comments}</a>` : ""}
             ${showAskQuestion ? `<a href="${askQuestionHref}">${t.askQuestion}</a>` : ""}
             ${showAbout ? `<a href="${aboutHref}">${t.about}</a>` : ""}
+            <div class="menu-divider" role="separator"></div>
+            <div class="menu-text-size-section">
+              <div class="menu-text-size-label"><span aria-hidden="true">🔠</span><span>${t.textSize}</span></div>
+              <div class="menu-text-size-options" role="group" aria-label="${t.textSize}">
+                ${TEXT_SIZE_OPTIONS.map((value) => `
+                  <button
+                    class="text-size-option${currentTextSize === value ? " is-active" : ""}"
+                    type="button"
+                    data-text-size-value="${value}"
+                    aria-pressed="${currentTextSize === value ? "true" : "false"}"
+                  >${value}%</button>
+                `).join("")}
+              </div>
+            </div>
           </div>
         </div>
   
@@ -172,6 +216,28 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const langEn = document.getElementById("langEn");
     const langRu = document.getElementById("langRu");
+    const textSizeButtons = headerElement.querySelectorAll(".text-size-option");
+
+    function syncTextSizeButtons(selectedValue) {
+      textSizeButtons.forEach((button) => {
+        const isActive = button.dataset.textSizeValue === selectedValue;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    syncTextSizeButtons(currentTextSize);
+
+    textSizeButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const selectedValue = applyTextSize(button.dataset.textSizeValue);
+        saveTextSize(selectedValue);
+        syncTextSizeButtons(selectedValue);
+      });
+    });
 
     async function switchLanguage(href, targetLanguage) {
       try {
