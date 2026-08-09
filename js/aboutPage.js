@@ -3,6 +3,7 @@ import { buildBibleLink } from "./bibleLinks.js";
 document.addEventListener("DOMContentLoaded", async () => {
   const root = document.getElementById("about-page");
   if (!root) return;
+  root.classList.add("text-size-content");
 
   const lang = document.documentElement.lang === "ru" ? "ru" : "en";
 

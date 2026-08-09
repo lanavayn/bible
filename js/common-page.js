@@ -3,6 +3,7 @@ import "./bible-chronology.js";
 document.addEventListener("DOMContentLoaded", async () => {
     const pageRoot = document.getElementById("scripture-page");
     if (!pageRoot) return;
+    pageRoot.classList.add("text-size-content");
   
     const lang = document.documentElement.lang === "ru" ? "ru" : "en";
     const dataFile = pageRoot.dataset.json;

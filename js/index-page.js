@@ -172,11 +172,11 @@ function getIndexLang() {
       </div>
 
       <section id="daily-verse-block">
-        <div id="daily-verse"></div>
+        <div id="daily-verse" class="text-size-content"></div>
       </section>
 
       <section id="question-of-day-block">
-        <div id="question-of-day"></div>
+        <div id="question-of-day" class="text-size-content"></div>
       </section>
 
       <div class="topics-toolbar topic-toolbar-hidden">

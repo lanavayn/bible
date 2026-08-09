@@ -102,6 +102,22 @@ textarea {
   font-feature-settings: inherit;
 }
 
+:root {
+  --readable-text-scale: 1;
+}
+
+html[data-text-size="85"] {
+  --readable-text-scale: 0.85;
+}
+
+html[data-text-size="100"] {
+  --readable-text-scale: 1;
+}
+
+html[data-text-size="115"] {
+  --readable-text-scale: 1.15;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -4290,91 +4306,52 @@ table.book-dates th:nth-child(2) {
   margin-bottom: 0.45rem;
 }
 
-html[data-text-size="85"] #daily-verse .daily-verse-title-text,
-html[data-text-size="85"] #question-of-day .daily-verse-title-text {
-  font-size: 0.85rem;
+.text-size-content .hero-title,
+.text-size-content .page-title {
+  font-size: calc(var(--font-size-3xl) * var(--readable-text-scale));
 }
 
-html[data-text-size="100"] #daily-verse .daily-verse-title-text,
-html[data-text-size="100"] #question-of-day .daily-verse-title-text {
-  font-size: 1rem;
+.text-size-content .page-intro {
+  font-size: calc(var(--font-size-lg) * var(--readable-text-scale));
 }
 
-html[data-text-size="115"] #daily-verse .daily-verse-title-text,
-html[data-text-size="115"] #question-of-day .daily-verse-title-text {
-  font-size: 1.15rem;
+.text-size-content .page-note,
+.text-size-content .page-ten-commandments {
+  font-size: calc(0.95rem * var(--readable-text-scale));
 }
 
-html[data-text-size="85"] #daily-verse .daily-verse-subtitle,
-html[data-text-size="85"] #question-of-day .daily-verse-subtitle {
-  font-size: 0.85rem;
+.text-size-content .section-title {
+  font-size: calc(1.5rem * var(--readable-text-scale));
 }
 
-html[data-text-size="100"] #daily-verse .daily-verse-subtitle,
-html[data-text-size="100"] #question-of-day .daily-verse-subtitle {
-  font-size: 1rem;
+.text-size-content .section-text,
+.text-size-content .about-highlights li {
+  font-size: calc(1rem * var(--readable-text-scale));
 }
 
-html[data-text-size="115"] #daily-verse .daily-verse-subtitle,
-html[data-text-size="115"] #question-of-day .daily-verse-subtitle {
-  font-size: 1.15rem;
+.text-size-content .scripture-heading {
+  font-size: calc(1.1rem * var(--readable-text-scale));
 }
 
-html[data-text-size="85"] #daily-verse .daily-verse-text,
-html[data-text-size="85"] #question-of-day .daily-verse-text {
-  font-size: 0.8925rem;
+.text-size-content .scripture-reference {
+  font-size: calc(1.05rem * var(--readable-text-scale));
 }
 
-html[data-text-size="100"] #daily-verse .daily-verse-text,
-html[data-text-size="100"] #question-of-day .daily-verse-text {
-  font-size: 1.05rem;
+.text-size-content .scripture-text,
+.text-size-content .daily-verse-text {
+  font-size: calc(1.05rem * var(--readable-text-scale));
 }
 
-html[data-text-size="115"] #daily-verse .daily-verse-text,
-html[data-text-size="115"] #question-of-day .daily-verse-text {
-  font-size: 1.2075rem;
+.text-size-content .daily-verse-title-text,
+.text-size-content .daily-verse-subtitle,
+.text-size-content .scripture-related-title {
+  font-size: calc(1rem * var(--readable-text-scale));
 }
 
-html[data-text-size="85"] #daily-verse .scripture-interpretation,
-html[data-text-size="85"] #question-of-day .scripture-interpretation,
-html[data-text-size="85"] #daily-verse .scripture-related-item,
-html[data-text-size="85"] #question-of-day .scripture-related-item,
-html[data-text-size="85"] #daily-verse .scripture-related-text,
-html[data-text-size="85"] #question-of-day .scripture-related-text {
-  font-size: 0.833rem;
-}
-
-html[data-text-size="100"] #daily-verse .scripture-interpretation,
-html[data-text-size="100"] #question-of-day .scripture-interpretation,
-html[data-text-size="100"] #daily-verse .scripture-related-item,
-html[data-text-size="100"] #question-of-day .scripture-related-item,
-html[data-text-size="100"] #daily-verse .scripture-related-text,
-html[data-text-size="100"] #question-of-day .scripture-related-text {
-  font-size: 0.98rem;
-}
-
-html[data-text-size="115"] #daily-verse .scripture-interpretation,
-html[data-text-size="115"] #question-of-day .scripture-interpretation,
-html[data-text-size="115"] #daily-verse .scripture-related-item,
-html[data-text-size="115"] #question-of-day .scripture-related-item,
-html[data-text-size="115"] #daily-verse .scripture-related-text,
-html[data-text-size="115"] #question-of-day .scripture-related-text {
-  font-size: 1.127rem;
-}
-
-html[data-text-size="85"] #daily-verse .scripture-related-title,
-html[data-text-size="85"] #question-of-day .scripture-related-title {
-  font-size: 0.85rem;
-}
-
-html[data-text-size="100"] #daily-verse .scripture-related-title,
-html[data-text-size="100"] #question-of-day .scripture-related-title {
-  font-size: 1rem;
-}
-
-html[data-text-size="115"] #daily-verse .scripture-related-title,
-html[data-text-size="115"] #question-of-day .scripture-related-title {
-  font-size: 1.15rem;
+.text-size-content .scripture-interpretation,
+.text-size-content .scripture-related-item,
+.text-size-content .scripture-related-text {
+  font-size: calc(0.98rem * var(--readable-text-scale));
 }
 
 .categories-list {
