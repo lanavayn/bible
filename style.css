@@ -4802,19 +4802,28 @@ body.daily-verse-search-open {
 }
 
 @media (max-width: 480px) {
-  .daily-tomorrow-box {
-    left: 50%;
-    transform: translateX(-48%);
-  }
-
-  #daily-verse .daily-tomorrow-box {
-    left: 50%;
-    transform: translateX(-48%) !important;
-  }
-
+  .daily-tomorrow-box,
+  #daily-verse .daily-tomorrow-box,
   #question-of-day .question-tomorrow-box {
-    left: 50%;
-    transform: translateX(-48%) !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -50%) !important;
+    width: min(280px, calc(100vw - 32px)) !important;
+    max-width: calc(100vw - 32px) !important;
+    margin: 0 !important;
+  }
+
+  .daily-tomorrow-box .tomorrow-help-box,
+  #daily-verse .daily-tomorrow-box .tomorrow-help-box,
+  #question-of-day .question-tomorrow-box .tomorrow-help-box {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
 }
