@@ -4802,14 +4802,24 @@ body.daily-verse-search-open {
 }
 
 @media (max-width: 480px) {
+  #daily-verse .daily-verse-date-jumps,
+  #question-of-day .daily-verse-date-jumps {
+    position: relative;
+  }
+
+  #daily-verse .daily-tomorrow-wrap,
+  #question-of-day .daily-tomorrow-wrap {
+    position: static !important;
+  }
+
   .daily-tomorrow-box,
   #daily-verse .daily-tomorrow-box,
   #question-of-day .question-tomorrow-box {
-    position: fixed !important;
-    top: 50% !important;
+    position: absolute !important;
+    top: calc(100% + 0.45rem) !important;
     left: 50% !important;
     right: auto !important;
-    transform: translate(-50%, -50%) !important;
+    transform: translateX(-50%) !important;
     width: min(280px, calc(100vw - 32px)) !important;
     max-width: calc(100vw - 32px) !important;
     margin: 0 !important;
