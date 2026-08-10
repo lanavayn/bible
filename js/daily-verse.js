@@ -537,6 +537,11 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           document.querySelectorAll(".footer-help-inline").forEach(inline => {
             if (inline !== exceptInline) {
               inline.setAttribute("hidden", "");
+              if (inline.classList.contains("daily-tomorrow-box")) {
+                inline.style.setProperty("display", "none", "important");
+              }
+            } else if (inline.classList.contains("daily-tomorrow-box")) {
+              inline.style.removeProperty("display");
             }
           });
 
@@ -600,26 +605,37 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           const tomorrowBox = root.querySelector(".daily-tomorrow-box");
           const tomorrowClose = root.querySelector(".daily-tomorrow-close");
 
+          function setTomorrowBoxState(isOpen) {
+            if (!tomorrowBtn || !tomorrowBox) return;
+
+            if (isOpen) {
+              tomorrowBox.removeAttribute("hidden");
+              tomorrowBox.style.removeProperty("display");
+              tomorrowBtn.setAttribute("aria-expanded", "true");
+            } else {
+              tomorrowBox.setAttribute("hidden", "");
+              tomorrowBox.style.setProperty("display", "none", "important");
+              tomorrowBtn.setAttribute("aria-expanded", "false");
+            }
+          }
+
+          if (tomorrowBox?.hasAttribute("hidden")) {
+            setTomorrowBoxState(false);
+          }
+
           if (tomorrowBtn && tomorrowBox) {
             tomorrowBtn.addEventListener("click", () => {
-              const isOpen = !tomorrowBox.hasAttribute("hidden");
+              const willOpen = tomorrowBtn.getAttribute("aria-expanded") !== "true";
 
               closeAllDailyHelp(tomorrowBox);
 
-              if (isOpen) {
-                tomorrowBox.setAttribute("hidden", "");
-                tomorrowBtn.setAttribute("aria-expanded", "false");
-              } else {
-                tomorrowBox.removeAttribute("hidden");
-                tomorrowBtn.setAttribute("aria-expanded", "true");
-              }
+              setTomorrowBoxState(willOpen);
             });
           }
 
           if (tomorrowClose && tomorrowBox && tomorrowBtn) {
             tomorrowClose.addEventListener("click", () => {
-              tomorrowBox.setAttribute("hidden", "");
-              tomorrowBtn.setAttribute("aria-expanded", "false");
+              setTomorrowBoxState(false);
             });
           }
 
