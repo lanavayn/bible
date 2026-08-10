@@ -646,7 +646,8 @@ h1,
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
     margin-right: -0.5rem;
-    padding: 0.65rem 0.55rem;
+    margin-top: -0.35rem;
+    padding: 0.45rem 0.55rem;
     border-radius: 0.75rem;
     margin-bottom: 0.85rem;
     position: relative;
