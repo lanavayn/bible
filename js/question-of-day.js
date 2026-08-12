@@ -139,6 +139,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         firstPart: mainVerseFirstPart,
         remainingPart: mainVerseRemainingPart
       } = splitQuestionRelatedVerseLine(text);
+      const shownHelpDefinitions = new Set();
       const mainVerseFirstPartHasLordHelp = hasEnglishOldTestamentLordHelp(mainVerseFirstPart, lang, verseRef);
 
       const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
@@ -286,14 +287,14 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         <blockquote class="daily-verse-text">
           <span class="daily-main-verse-line-anchor">
             ${verseReferenceInlineHtml}
-            ${addQuestionCreationHelp(mainVerseFirstPart, lang, verseRef)}
-          </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addQuestionCreationHelp(mainVerseRemainingPart, lang, verseRef, { suppressOldTestamentLordHelp: mainVerseFirstPartHasLordHelp })}</span>` : ""}
+            ${addQuestionCreationHelp(mainVerseFirstPart, lang, verseRef, { shownDefinitions: shownHelpDefinitions })}
+          </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addQuestionCreationHelp(mainVerseRemainingPart, lang, verseRef, { suppressOldTestamentLordHelp: mainVerseFirstPartHasLordHelp, shownDefinitions: shownHelpDefinitions })}</span>` : ""}
         </blockquote>
     
         <div class="scripture-note-box">
           <p class="scripture-interpretation">
             <strong>${lang === "ru" ? "Размышление:" : "Reflection:"}</strong>
-            ${answer}
+            ${addQuestionCreationHelp(answer, lang, verseRef, { shownDefinitions: shownHelpDefinitions })}
           </p>
     
           ${
@@ -330,8 +331,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
                             : ""
                         }
                         <span class="scripture-related-text scripture-related-dash">—</span>
-                        <span class="scripture-related-text">${addQuestionCreationHelp(firstPart, lang, relVerseRef)}</span>
-                        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addQuestionCreationHelp(remainingPart, lang, relVerseRef, { suppressOldTestamentLordHelp: firstPartHasLordHelp })}</span>` : ""}
+                        <span class="scripture-related-text">${addQuestionCreationHelp(firstPart, lang, relVerseRef, { shownDefinitions: shownHelpDefinitions })}</span>
+                        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addQuestionCreationHelp(remainingPart, lang, relVerseRef, { suppressOldTestamentLordHelp: firstPartHasLordHelp, shownDefinitions: shownHelpDefinitions })}</span>` : ""}
                       </li>
                     `;
                   }).join("")}
@@ -871,6 +872,7 @@ function addQuestionCreationHelp(text, lang, verseRef = null, options = {}) {
     suppressOldTestamentLordHelp: options.suppressOldTestamentLordHelp,
     includeQuestionTerms: true,
     verseRef,
+    shownDefinitions: options.shownDefinitions || null,
     classes: {
       button: "question-creation-help-btn",
       inline: "question-creation-help-inline",

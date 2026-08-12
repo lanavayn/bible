@@ -247,6 +247,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           firstPart: mainVerseFirstPart,
           remainingPart: mainVerseRemainingPart
         } = splitRelatedVerseLine(text);
+        const shownHelpDefinitions = new Set();
         const mainVerseFirstPartHasLordHelp = hasEnglishOldTestamentLordHelp(mainVerseFirstPart, lang, verseRef);
 
         root.innerHTML = `
@@ -415,8 +416,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
               <blockquote class="daily-verse-text">
                 <span class="daily-main-verse-line-anchor">
                   ${verseReferenceInlineHtml}
-                  ${addCreationHelp(mainVerseFirstPart, lang, verseRef)}
-                </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addCreationHelp(mainVerseRemainingPart, lang, verseRef, { suppressOldTestamentLordHelp: mainVerseFirstPartHasLordHelp })}</span>` : ""}
+                  ${addCreationHelp(mainVerseFirstPart, lang, verseRef, { shownDefinitions: shownHelpDefinitions })}
+                </span>${mainVerseRemainingPart ? `<span class="daily-main-verse-remaining"> ${addCreationHelp(mainVerseRemainingPart, lang, verseRef, { suppressOldTestamentLordHelp: mainVerseFirstPartHasLordHelp, shownDefinitions: shownHelpDefinitions })}</span>` : ""}
               </blockquote>
             ` : ""}
 
@@ -426,7 +427,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   ? `
                   <p class="scripture-interpretation">
                     <strong>${detailsTitle}</strong>
-                    ${addCreationHelp(interpretation, lang, verseRef)}
+                    ${addCreationHelp(interpretation, lang, verseRef, { shownDefinitions: shownHelpDefinitions })}
                   </p>
                   `
                   : ""
@@ -440,7 +441,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                       <strong>${relatedTitle}</strong>
                     </p>
                     <ul class="scripture-related-list">
-                      ${related.map(rel => renderDailyRelatedItem(rel, lang)).join("")}
+                      ${related.map(rel => renderDailyRelatedItem(rel, lang, shownHelpDefinitions)).join("")}
                     </ul>
                   </div>
                   `
@@ -1018,6 +1019,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       isOldTestament: isOldTestamentBook(verseRef) && !options.suppressOldTestamentLordHelp,
       suppressOldTestamentLordHelp: options.suppressOldTestamentLordHelp,
       verseRef,
+      shownDefinitions: options.shownDefinitions || null,
       classes: {
         button: "daily-help-btn",
         inline: "daily-help-inline",
@@ -1191,7 +1193,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       });
     });
   }
-  function renderDailyRelatedItem(rel, lang) {
+  function renderDailyRelatedItem(rel, lang, shownDefinitions = null) {
     const ref = rel[`reference_${lang}`] || "";
     const text = rel[`text_${lang}`] || "";
     const verseRef = rel?.verse_ref_lang?.[lang] || rel?.verse_ref || null;
@@ -1219,8 +1221,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                </span>`
         }
         <span class="scripture-related-text scripture-related-dash">—</span>
-        <span class="scripture-related-text">${addCreationHelp(firstPart, lang, verseRef)}</span>
-        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addCreationHelp(remainingPart, lang, verseRef, { suppressOldTestamentLordHelp: firstPartHasLordHelp })}</span>` : ""}
+        <span class="scripture-related-text">${addCreationHelp(firstPart, lang, verseRef, { shownDefinitions })}</span>
+        </span>${remainingPart ? `<span class="scripture-related-text scripture-related-text-remaining"> ${addCreationHelp(remainingPart, lang, verseRef, { suppressOldTestamentLordHelp: firstPartHasLordHelp, shownDefinitions })}</span>` : ""}
       </li>
     `;
   }

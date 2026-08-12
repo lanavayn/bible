@@ -13,10 +13,15 @@ function createHelpHtml(definition, classes) {
   return `<button class="footer-help-btn ${classes.button}" type="button" aria-expanded="false" aria-label="${escapeHtml(definition.label)}">i</button><span class="footer-help-inline ${classes.inline}" hidden><span class="footer-help-box ${classes.box}"><button class="footer-help-close ${classes.close}" type="button" aria-label="${escapeHtml(definition.closeLabel)}">×</button>${escapeHtml(definition.text)}</span></span>`;
 }
 
-function findDefinitionMatches(text, definitions) {
+function findDefinitionMatches(text, definitions, options = {}) {
+  const shownDefinitions = options.shownDefinitions ?? null;
   const matches = [];
 
   definitions.forEach((definition, order) => {
+    if (shownDefinitions?.has(definition)) {
+      return;
+    }
+
     const source = definition.pattern;
     const flags = source.flags.includes("g") ? source.flags : `${source.flags}g`;
     const pattern = new RegExp(source.source, flags);
@@ -45,15 +50,17 @@ function findDefinitionMatches(text, definitions) {
     .sort((a, b) => a.start - b.start || a.order - b.order)
     .forEach((match) => {
       if (match.start < lastEnd) return;
+      if (shownDefinitions?.has(match.definition)) return;
       selected.push(match);
       lastEnd = match.end;
+      shownDefinitions?.add(match.definition);
     });
 
   return selected;
 }
 
-function insertHelpButtons(text, definitions, classes) {
-  const matches = findDefinitionMatches(text, definitions);
+function insertHelpButtons(text, definitions, classes, options = {}) {
+  const matches = findDefinitionMatches(text, definitions, options);
   let result = text;
 
   [...matches].reverse().forEach(({ end, definition }) => {
@@ -493,7 +500,8 @@ export function addInlineWordHelp(text, options = {}) {
     includeQuestionTerms = false,
     suppressOldTestamentLordHelp = false,
     verseRef = null,
-    classes
+    classes,
+    shownDefinitions = null
   } = options;
 
   const resolvedIsOldTestament = !suppressOldTestamentLordHelp
@@ -508,7 +516,8 @@ export function addInlineWordHelp(text, options = {}) {
         ...(includeQuestionTerms ? RU_QUESTION_DEFINITIONS : []),
         ...getVerseSpecificDefinitions(lang, verseRef)
       ],
-      classes
+      classes,
+      { shownDefinitions }
     );
   }
 
@@ -528,5 +537,5 @@ export function addInlineWordHelp(text, options = {}) {
 
   definitions.push(...getVerseSpecificDefinitions(lang, verseRef));
 
-  return insertHelpButtons(safeText, definitions, classes);
+  return insertHelpButtons(safeText, definitions, classes, { shownDefinitions });
 }
