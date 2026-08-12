@@ -647,6 +647,141 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-105",
+            "day": 105,
+            "topic_ru": "Ветхий Завет",
+            "topic_en": "The Old Covenant",
+            "question_ru": "Что такое Ветхий Завет?",
+            "question_en": "What Is the Old Covenant?",
+            "reference_ru": "Исход 24:7-8",
+            "reference_en": "Exodus 24:7-8",
+            "text_ru": "И взял книгу завета и прочитал вслух народу, и сказали они: всё, что сказал Господь, сделаем и будем послушны. И взял Моисей крови и окропил народ, говоря: вот кровь завета, который Господь заключил с вами о всех словах сих.",
+            "text_en": "He took the book of the covenant and read it in the hearing of the people, and they said, “All that the LORD has spoken we will do, and be obedient.” Moses took the blood and sprinkled it on the people and said, “Behold, the blood of the covenant which the LORD has made with you concerning all these words.”",
+            "verse_ref": {
+              "book": "Exodus",
+              "chapter": 24,
+              "verse": "7-8"
+            },
+            "answer_ru": "Ветхий Завет — это завет, который Бог заключил с народом Израиля через Моисея. Бог дал Свой закон, а народ обещал слушаться Его и исполнять Его заповеди.",
+            "answer_en": "The Old Covenant was the covenant God made with the people of Israel through Moses. God gave His law, and the people promised to obey Him and keep His commandments.",
+            "reflection_ru": "Бог заключил завет со Своим народом и открыл ему Свою волю. Народ согласился быть послушным Господу.",
+            "reflection_en": "God made a covenant with His people and revealed His will to them. The people agreed to obey the Lord.",
+            "related": [
+              {
+                "reference_ru": "Второзаконие 5:2-3",
+                "reference_en": "Deuteronomy 5:2-3",
+                "text_ru": "Господь, Бог наш, поставил с нами завет на Хориве; не с отцами нашими поставил Господь завет сей, но с нами, которые здесь сегодня все живы.",
+                "text_en": "The LORD our God made a covenant with us in Horeb. The LORD didn’t make this covenant with our fathers, but with us, even us, who are all of us here alive today.",
+                "verse_ref": {
+                  "book": "Deuteronomy",
+                  "chapter": 5,
+                  "verse": "2-3"
+                }
+              },
+              {
+                "reference_ru": "Евреям 9:18",
+                "reference_en": "Hebrews 9:18",
+                "text_ru": "Почему и первый завет был утвержден не без крови.",
+                "text_en": "Therefore even the first covenant has not been dedicated without blood.",
+                "verse_ref": {
+                  "book": "Hebrews",
+                  "chapter": 9,
+                  "verse": "18"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-106",
+            "day": 106,
+            "topic_ru": "Новый Завет",
+            "topic_en": "The New Covenant",
+            "question_ru": "Что такое Новый Завет?",
+            "question_en": "What Is the New Covenant?",
+            "reference_ru": "Иеремия 31:31-33",
+            "reference_en": "Jeremiah 31:31-33",
+            "text_ru": "Вот наступают дни, говорит Господь, когда Я заключу с домом Израиля и с домом Иуды новый завет, не такой завет, какой Я заключил с отцами их в тот день, когда взял их за руку, чтобы вывести их из земли Египетской; тот завет Мой они нарушили, хотя Я оставался в союзе с ними, говорит Господь. Но вот завет, который Я заключу с домом Израилевым после тех дней, говорит Господь: вложу закон Мой во внутренность их и на сердцах их напишу его, и буду им Богом, а они будут Моим народом.",
+            "text_en": "“Behold, the days come,” says the LORD, “that I will make a new covenant with the house of Israel and with the house of Judah, not according to the covenant that I made with their fathers in the day that I took them by the hand to bring them out of the land of Egypt, which covenant of mine they broke, although I was a husband to them,” says the LORD. “But this is the covenant that I will make with the house of Israel after those days,” says the LORD: “I will put my law in their inward parts, and I will write it in their heart. I will be their God, and they shall be my people.”",
+            "verse_ref": {
+              "book": "Jeremiah",
+              "chapter": 31,
+              "verse": "31-33"
+            },
+            "answer_ru": "Новый Завет — это завет Бога с людьми через Иисуса Христа. Спасение даётся по вере во Христа, а Божий закон Бог пишет в сердце человека.",
+            "answer_en": "The New Covenant is God's covenant with people through Jesus Christ. Salvation comes through faith in Christ, and God writes His law in the human heart.",
+            "reflection_ru": "В Новом Завете Бог не только открывает Свою волю, но желает написать Свой закон в сердце человека.",
+            "reflection_en": "In the New Covenant, God not only reveals His will but desires to write His law in the human heart.",
+            "related": [
+              {
+                "reference_ru": "Луки 22:20",
+                "reference_en": "Luke 22:20",
+                "text_ru": "Также и чашу после вечери, говоря: сия чаша есть Новый Завет в Моей крови, которая за вас проливается.",
+                "text_en": "Likewise, he took the cup after supper, saying, “This cup is the new covenant in my blood, which is poured out for you.”",
+                "verse_ref": {
+                  "book": "Luke",
+                  "chapter": 22,
+                  "verse": "20"
+                }
+              },
+              {
+                "reference_ru": "Евреям 9:15",
+                "reference_en": "Hebrews 9:15",
+                "text_ru": "И потому Он есть ходатай нового завета, дабы вследствие смерти Его, бывшей для искупления от преступлений, сделанных в первом завете, призванные к вечному наследию получили обетованное.",
+                "text_en": "For this reason he is the mediator of a new covenant, since a death has occurred for the redemption of the transgressions that were under the first covenant, that those who have been called may receive the promise of the eternal inheritance.",
+                "verse_ref": {
+                  "book": "Hebrews",
+                  "chapter": 9,
+                  "verse": "15"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-107",
+            "day": 107,
+            "topic_ru": "Ветхий и Новый Завет",
+            "topic_en": "The Old and New Covenants",
+            "question_ru": "Чем отличается Ветхий Завет от Нового Завета?",
+            "question_en": "What Is the Difference Between the Old Covenant and the New Covenant?",
+            "reference_ru": "Евреям 8:6",
+            "reference_en": "Hebrews 8:6",
+            "text_ru": "Но Сей Первосвященник получил служение тем превосходнейшее, чем лучшего Он ходатай завета, который утвержден на лучших обетованиях.",
+            "text_en": "But now he has obtained a more excellent ministry, by so much as he is also the mediator of a better covenant, which on better promises has been given as law.",
+            "verse_ref": {
+              "book": "Hebrews",
+              "chapter": 8,
+              "verse": "6"
+            },
+            "answer_ru": "Ветхий Завет был заключён через Моисея и основывался на данном Богом законе. Новый Завет заключён через Иисуса Христа: спасение приходит по вере в Него, а Божий закон написан в сердце человека.",
+            "answer_en": "The Old Covenant was made through Moses and was based on the law given by God. The New Covenant is made through Jesus Christ: salvation comes through faith in Him, and God's law is written in the human heart.",
+            "reflection_ru": "Новый Завет ведёт нас ко Христу: через Него мы получаем прощение, а Божий закон становится частью нашей жизни.",
+            "reflection_en": "The New Covenant leads us to Christ: through Him we receive forgiveness, and God's law becomes part of our lives.",
+            "related": [
+              {
+                "reference_ru": "Евреям 10:16-17",
+                "reference_en": "Hebrews 10:16-17",
+                "text_ru": "Вот завет, который завещаю им после тех дней, говорит Господь: вложу законы Мои в сердца их, и в мыслях их напишу их, и грехов их и беззаконий их не воспомяну более.",
+                "text_en": "“This is the covenant that I will make with them: ‘After those days,’ says the Lord, ‘I will put my laws on their heart, I will also write them on their mind;’” then he says, “I will remember their sins and their iniquities no more.”",
+                "verse_ref": {
+                  "book": "Hebrews",
+                  "chapter": 10,
+                  "verse": "16-17"
+                }
+              },
+              {
+                "reference_ru": "2 Коринфянам 3:6",
+                "reference_en": "2 Corinthians 3:6",
+                "text_ru": "Он дал нам способность быть служителями Нового Завета, не буквы, но духа, потому что буква убивает, а дух животворит.",
+                "text_en": "Who also made us sufficient as servants of a new covenant, not of the letter but of the Spirit. For the letter kills, but the Spirit gives life.",
+                "verse_ref": {
+                  "book": "2-Corinthians",
+                  "chapter": 3,
+                  "verse": "6"
+                }
+              }
+            ]
           }
         ]
 }
