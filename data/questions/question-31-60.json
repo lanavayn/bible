@@ -548,16 +548,14 @@
             "question_ru": "Кто создал этот мир?",
             "question_en": "Who created this world?",
           
-            "reference_ru": "Бытие 1:1",
-            "reference_en": "Genesis 1:1",
-          
-            "text_ru": "В начале сотворил Бог небо и землю.",
-            "text_en": "In the beginning, God created the heavens and the earth.",
-          
+            "reference_ru": "Неемия 9:6",
+            "reference_en": "Nehemiah 9:6",
+            "text_ru": "Ты, Господи, един, Ты создал небо, небеса небес и всё воинство их, землю и всё, что на ней, моря и всё, что в них, и Ты живишь всё сие, и небесные воинства Тебе поклоняются.",
+            "text_en": "You are the LORD, even you alone. You have made heaven, the heaven of heavens, with all their army, the earth and all things that are on it, the seas and all that is in them, and you preserve them all. The army of heaven worships you.",
             "verse_ref": {
-              "book": "Genesis",
-              "chapter": 1,
-              "verse": "1"
+              "book": "Nehemiah",
+              "chapter": 9,
+              "verse": "6"
             },
           
             "answer_ru": "Этот мир создал Бог.",
@@ -951,19 +949,6 @@
                   "book": "John",
                   "chapter": 17,
                   "verse": "3"
-                }
-              },
-              {
-                "reference_ru": "Колоссянам 1:16",
-                "reference_en": "Colossians 1:16",
-          
-                "text_ru": "ибо Им создано всё, что на небесах и что на земле, видимое и невидимое: престолы ли, господства ли, начальства ли, власти ли, — всё Им и для Него создано.",
-                "text_en": "For by him all things were created in the heavens and on the earth, visible things and invisible things, whether thrones or dominions or principalities or powers. All things have been created through him and for him.",
-          
-                "verse_ref": {
-                  "book": "Colossians",
-                  "chapter": 1,
-                  "verse": "16"
                 }
               }
             ]

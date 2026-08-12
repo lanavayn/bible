@@ -403,6 +403,99 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-12",
+      "day": 130,
+      "topic": {
+        "ru": "Бог сотворил небо и землю",
+        "en": "God Created the Heavens and the Earth"
+      },
+      "reference_ru": "Бытие 1:1",
+      "reference_en": "Genesis 1:1",
+      "text_ru": "В начале сотворил Бог небо и землю.",
+      "text_en": "In the beginning, God created the heavens and the earth.",
+      "verse_ref": {
+        "book": "genesis",
+        "chapter": 1,
+        "verse": "1"
+      },
+      "interpretation_ru": "Бог создал этот мир и всё, что нас окружает. Всё творение — дело Его рук.",
+      "interpretation_en": "God created this world and everything around us. All creation is the work of His hands.",
+      "related": [
+        {
+          "reference_ru": "Псалом 32:6",
+          "reference_en": "Psalm 33:6",
+          "text_ru": "Словом Господа сотворены небеса, и духом уст Его — всё воинство их.",
+          "text_en": "By the LORD’s word, the heavens were made; all their army by the breath of his mouth.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 32,
+              "verse": "6"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 33,
+              "verse": "6"
+            }
+          }
+        },
+        {
+          "reference_ru": "Исаия 45:12",
+          "reference_en": "Isaiah 45:12",
+          "text_ru": "Я создал землю и сотворил на ней человека; Я — Мои руки распростерли небеса, и всему воинству их дал закон Я.",
+          "text_en": "I have made the earth, and created man on it. I, even my hands, have stretched out the heavens. I have commanded all their army.",
+          "verse_ref": {
+            "book": "isaiah",
+            "chapter": 45,
+            "verse": "12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-13",
+      "day": 131,
+      "topic": {
+        "ru": "Всё сотворено через Христа",
+        "en": "All Things Were Created Through Christ"
+      },
+      "reference_ru": "Иоанна 1:1-3",
+      "reference_en": "John 1:1-3",
+      "text_ru": "В начале было Слово, и Слово было у Бога, и Слово было Бог. Оно было в начале у Бога. Всё чрез Него начало быть, и без Него ничто не начало быть, что начало быть.",
+      "text_en": "In the beginning was the Word, and the Word was with God, and the Word was God. The same was in the beginning with God. All things were made through him. Without him, nothing was made that has been made.",
+      "verse_ref": {
+        "book": "john",
+        "chapter": 1,
+        "verse": "1-3"
+      },
+      "interpretation_ru": "Иисус Христос — Слово, Которое было с Богом от начала. Через Него было сотворено всё.",
+      "interpretation_en": "Jesus Christ is the Word who was with God from the beginning. Through Him all things were created.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 1:14",
+          "reference_en": "John 1:14",
+          "text_ru": "И Слово стало плотию и обитало с нами, полное благодати и истины; и мы видели славу Его, славу, как Единородного от Отца.",
+          "text_en": "The Word became flesh and lived among us. We saw his glory, such glory as of the one and only Son of the Father, full of grace and truth.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 1,
+            "verse": "14"
+          }
+        },
+        {
+          "reference_ru": "Колоссянам 1:16",
+          "reference_en": "Colossians 1:16",
+          "text_ru": "Ибо Им создано всё, что на небесах и что на земле, видимое и невидимое: престолы ли, господства ли, начальства ли, власти ли, — всё Им и для Него создано.",
+          "text_en": "For by him all things were created, in the heavens and on the earth, visible things and invisible things, whether thrones or dominions or principalities or powers. All things have been created through him and for him.",
+          "verse_ref": {
+            "book": "colossians",
+            "chapter": 1,
+            "verse": "16"
+          }
+        }
+      ]
     }
   ]
 }
