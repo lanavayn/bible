@@ -136,7 +136,11 @@ function initNotificationControls(root = document, feature) {
   }
 
   enableBtn?.addEventListener("click", async () => {
-    console.info("[OneSignal Subscribe] button clicked", { feature, language });
+    console.info("[OneSignal Subscribe] button clicked", {
+      timestamp: new Date().toISOString(),
+      feature,
+      language
+    });
     setBusy(box, true);
     setStatus(box, copy.connecting);
     let stage = "environment-check";
@@ -155,6 +159,7 @@ function initNotificationControls(root = document, feature) {
 
       const permissionBefore = getNotificationPermission();
       console.info("[Bible for All] Notification permission before request.", {
+        timestamp: new Date().toISOString(),
         feature,
         language,
         permission: permissionBefore
@@ -170,7 +175,8 @@ function initNotificationControls(root = document, feature) {
       stage = "onesignal-initialization";
       OneSignal = await initializeOneSignal();
       const oneSignalPushSupported = await getOneSignalPushSupport(OneSignal);
-      console.info("[Bible for All] OneSignal SDK ready.", {
+      console.info("[OneSignal Subscribe] initialization completed", {
+        timestamp: new Date().toISOString(),
         feature,
         language,
         sdkLoaded: true,
@@ -186,6 +192,7 @@ function initNotificationControls(root = document, feature) {
       const permissionResult = await requestNotificationPermission(OneSignal);
 
       console.info("[Bible for All] Notification permission request completed.", {
+        timestamp: new Date().toISOString(),
         feature,
         language,
         permission: permissionResult,
@@ -207,6 +214,7 @@ function initNotificationControls(root = document, feature) {
       const confirmedSubscription = await optInAndConfirm(OneSignal);
 
       console.info("[Bible for All] OneSignal push subscription confirmed.", {
+        timestamp: new Date().toISOString(),
         feature,
         language,
         subscriptionId: confirmedSubscription.id,
@@ -232,22 +240,32 @@ function initNotificationControls(root = document, feature) {
       setState(box, STATUS_ENABLED);
       setStatus(box, copy.subscriptionCreated);
 
+      console.info("[OneSignal Subscribe] SUCCESS state confirmed", {
+        timestamp: new Date().toISOString(),
+        feature,
+        language,
+        notificationPermission: getNotificationPermission(),
+        oneSignalPermission: OneSignal.Notifications?.permission ?? null,
+        subscription: getLoggableSubscriptionState(getPushSubscriptionState(OneSignal))
+      });
+
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
       console.info("[Bible for All] Notifications enabled.", {
         feature,
         language,
-        subscription: confirmedSubscription
+        subscription: getLoggableSubscriptionState(confirmedSubscription)
       });
     } catch (error) {
       const subscription = OneSignal ? getPushSubscriptionState(OneSignal) : null;
-      console.error("[Bible for All] Failed to enable notifications.", {
+      console.error("[OneSignal Subscribe] FAILURE state", {
+        timestamp: new Date().toISOString(),
         feature,
         language,
         stage,
         environment: getNotificationEnvironment(),
         notificationPermission: getNotificationPermission(),
-        subscription,
+        subscription: getLoggableSubscriptionState(subscription),
         error,
         errorDetails: serializeError(error)
       });
@@ -300,6 +318,13 @@ async function refreshNotificationState(box) {
   const language = getBoxLanguage(box);
   const copy = getNotificationCopy(feature, language);
 
+  console.info("[OneSignal Subscribe] page initialization started", {
+    timestamp: new Date().toISOString(),
+    feature,
+    language,
+    notificationPermission: getNotificationPermission()
+  });
+
   if (getNotificationPermission() !== "granted") {
     setLocalPreference(false);
     setState(box, STATUS_DISABLED);
@@ -314,12 +339,18 @@ async function refreshNotificationState(box) {
     const subscription = getPushSubscriptionState(OneSignal);
     let featureEnabled = isConfirmedActiveSubscription(OneSignal, subscription);
 
-    if (featureEnabled) {
-      const tags = await getOneSignalTags(OneSignal);
+    console.info("[OneSignal Subscribe] state detected during page initialization", {
+      timestamp: new Date().toISOString(),
+      feature,
+      language,
+      notificationPermission: getNotificationPermission(),
+      oneSignalPermission: OneSignal.Notifications?.permission ?? null,
+      subscription: getLoggableSubscriptionState(subscription),
+      locallyActive: featureEnabled
+    });
 
-      if (!isFeatureTagEnabled(tags, language)) {
-        await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
-      }
+    if (featureEnabled) {
+      await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
     }
 
     if (!featureEnabled) {
@@ -329,6 +360,15 @@ async function refreshNotificationState(box) {
     }
 
     setState(box, featureEnabled ? STATUS_ENABLED : STATUS_DISABLED);
+    console.info("[OneSignal Subscribe] page initialization UI decision", {
+      timestamp: new Date().toISOString(),
+      feature,
+      language,
+      state: featureEnabled ? STATUS_ENABLED : STATUS_DISABLED,
+      reason: featureEnabled
+        ? "Local and server subscription checks passed."
+        : "An active OneSignal push subscription was not confirmed."
+    });
   } catch (error) {
     console.info("[Bible for All] Notifications are not ready yet.", error);
     setLocalPreference(false);
@@ -490,44 +530,74 @@ async function optInAndConfirm(OneSignal) {
     throw new Error("OneSignal push subscription is unavailable.");
   }
 
-  const initialSubscription = getPushSubscriptionState(OneSignal);
-  const wasActive = isConfirmedActiveSubscription(OneSignal, initialSubscription);
-  console.info("[OneSignal Subscribe] state before optIn", {
+  const readySubscription = await waitForPushSubscriptionIdentity(OneSignal);
+  const wasActive = isConfirmedActiveSubscription(OneSignal, readySubscription);
+  console.info("[OneSignal Subscribe] subscription ID/token ready", {
+    timestamp: new Date().toISOString(),
     notificationPermission: getNotificationPermission(),
     oneSignalPermission: OneSignal.Notifications?.permission ?? null,
-    subscription: initialSubscription
+    subscription: getLoggableSubscriptionState(readySubscription)
   });
 
-  const subscriptionChange = waitForSubscriptionState(
-    OneSignal,
-    subscription => isConfirmedActiveSubscription(OneSignal, subscription),
-    "OneSignal push subscription was not confirmed."
-  );
+  const subscriptionChange = wasActive
+    ? null
+    : waitForSubscriptionState(
+        OneSignal,
+        subscription => isConfirmedActiveSubscription(OneSignal, subscription),
+        "OneSignal push subscription was not confirmed."
+      );
 
   try {
-    console.info("[OneSignal Subscribe] calling PushSubscription.optIn()");
+    console.info("[OneSignal Subscribe] immediately before optIn()", {
+      timestamp: new Date().toISOString(),
+      subscription: getLoggableSubscriptionState(getPushSubscriptionState(OneSignal))
+    });
     await pushSubscription.optIn();
-    console.info("[OneSignal Subscribe] PushSubscription.optIn() resolved");
+    console.info("[OneSignal Subscribe] immediately after optIn()", {
+      timestamp: new Date().toISOString(),
+      subscription: getLoggableSubscriptionState(getPushSubscriptionState(OneSignal))
+    });
   } catch (error) {
-    subscriptionChange.cancel();
+    subscriptionChange?.cancel();
     throw error;
   }
 
   let currentSubscription;
   if (wasActive) {
-    subscriptionChange.cancel();
     currentSubscription = getPushSubscriptionState(OneSignal);
   } else {
     currentSubscription = await subscriptionChange.promise;
   }
 
   console.info("[OneSignal Subscribe] active subscription change confirmed", {
+    timestamp: new Date().toISOString(),
     notificationPermission: getNotificationPermission(),
     oneSignalPermission: OneSignal.Notifications?.permission ?? null,
-    subscription: currentSubscription
+    subscription: getLoggableSubscriptionState(currentSubscription)
   });
 
   return waitForStableActiveSubscription(OneSignal);
+}
+
+async function waitForPushSubscriptionIdentity(OneSignal) {
+  const identityChange = waitForSubscriptionState(
+    OneSignal,
+    subscription => Boolean(subscription.id && subscription.token),
+    "OneSignal did not create a PushSubscription ID/token after permission was granted."
+  );
+  const currentSubscription = getPushSubscriptionState(OneSignal);
+
+  if (currentSubscription.id && currentSubscription.token) {
+    identityChange.cancel();
+    return currentSubscription;
+  }
+
+  console.info("[OneSignal Subscribe] waiting for PushSubscription ID/token", {
+    timestamp: new Date().toISOString(),
+    subscription: getLoggableSubscriptionState(currentSubscription)
+  });
+
+  return identityChange.promise;
 }
 
 async function waitForStableActiveSubscription(OneSignal) {
@@ -606,8 +676,9 @@ function waitForSubscriptionState(OneSignal, predicate, timeoutMessage) {
     };
 
     console.info("[OneSignal Subscribe] PushSubscription change", {
-      previous: event?.previous || null,
-      current: event?.current || subscription
+      timestamp: new Date().toISOString(),
+      previous: getLoggableSubscriptionState(event?.previous || null),
+      current: getLoggableSubscriptionState(event?.current || subscription)
     });
 
     if (predicate(subscription)) {
@@ -747,6 +818,16 @@ function getPushSubscriptionState(OneSignal) {
   };
 }
 
+function getLoggableSubscriptionState(subscription) {
+  if (!subscription) return null;
+  return {
+    id: subscription.id || null,
+    token: subscription.token ? maskValue(subscription.token) : null,
+    hasToken: Boolean(subscription.token),
+    optedIn: Boolean(subscription.optedIn)
+  };
+}
+
 function isActivePushSubscription(subscription) {
   return Boolean(subscription?.optedIn && subscription.id && subscription.token);
 }
@@ -782,6 +863,7 @@ async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
   }
 
   console.info("[Bible for All] OneSignal diagnostics.", {
+    timestamp: new Date().toISOString(),
     stage,
     feature: details.feature || null,
     language: details.language || null,
@@ -802,7 +884,7 @@ async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
     serviceWorkerPath: activeConfig?.serviceWorkerPath || null,
     serviceWorkerScope: activeConfig?.serviceWorkerScope || null,
     serviceWorkerRegistration: registration,
-    pushSubscription: getPushSubscriptionState(OneSignal),
+    pushSubscription: getLoggableSubscriptionState(getPushSubscriptionState(OneSignal)),
     tags
   });
 }
