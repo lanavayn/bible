@@ -88,6 +88,25 @@ exports.handler = async event => {
       });
     }
 
+    const subscriptionResult = await confirmOneSignalSubscription({
+      appId,
+      restApiKey,
+      oneSignalId,
+      subscriptionId,
+      requireActive: enabled
+    });
+
+    if (enabled && !subscriptionResult.active) {
+      return jsonResponse(409, {
+        ok: false,
+        error: "OneSignal created the Subscription record, but did not confirm it as active.",
+        identifierType: "subscription_id",
+        endpoint: "GET /apps/{app_id}/users/by/onesignal_id/{onesignal_id}",
+        subscription: subscriptionResult.subscription,
+        attempts: subscriptionResult.attempts
+      });
+    }
+
     console.info("[Bible for All] OneSignal tag update completed.", {
       feature,
       language,
@@ -98,7 +117,9 @@ exports.handler = async event => {
       tags,
       identityStatus: identityResult.status,
       identityAttempts: identityResult.attempts,
-      updateStatus: updateResult.status
+      updateStatus: updateResult.status,
+      subscriptionActive: subscriptionResult.active,
+      subscriptionStatus: subscriptionResult.subscription
     });
 
     return jsonResponse(200, {
@@ -107,7 +128,9 @@ exports.handler = async event => {
       identityStatus: identityResult.status,
       identityAttempts: identityResult.attempts,
       updateStatus: updateResult.status,
-      updateResponse: updateResult.body
+      updateResponse: updateResult.body,
+      subscriptionActive: subscriptionResult.active,
+      subscription: subscriptionResult.subscription
     });
   } catch (error) {
     console.error("[Bible for All] OneSignal tag update failed.", {
@@ -208,6 +231,81 @@ async function updateOneSignalUserTags({ appId, restApiKey, oneSignalId, subscri
   });
 
   return result;
+}
+
+async function confirmOneSignalSubscription({ appId, restApiKey, oneSignalId, subscriptionId, requireActive }) {
+  let latest = null;
+
+  for (let index = 0; index < IDENTITY_RETRY_DELAYS_MS.length; index += 1) {
+    const delayMs = IDENTITY_RETRY_DELAYS_MS[index];
+    if (delayMs > 0) await delay(delayMs);
+
+    latest = await fetchOneSignalUser({ appId, restApiKey, oneSignalId });
+    const rawSubscription = Array.isArray(latest.body?.subscriptions)
+      ? latest.body.subscriptions.find(item => item?.id === subscriptionId)
+      : null;
+    const subscription = summarizeSubscription(rawSubscription);
+    const active = isActiveSubscription(subscription);
+
+    console.info("[Bible for All] OneSignal subscription confirmation.", {
+      attempt: index + 1,
+      totalAttempts: IDENTITY_RETRY_DELAYS_MS.length,
+      appIdMasked: maskValue(appId),
+      oneSignalIdMasked: maskValue(oneSignalId),
+      subscriptionIdMasked: maskValue(subscriptionId),
+      endpoint: "GET /apps/{app_id}/users/by/onesignal_id/{onesignal_id}",
+      httpStatus: latest.status,
+      subscription,
+      active
+    });
+
+    if (!latest.ok || active || !requireActive) {
+      return { active, subscription, attempts: index + 1 };
+    }
+  }
+
+  const rawSubscription = Array.isArray(latest?.body?.subscriptions)
+    ? latest.body.subscriptions.find(item => item?.id === subscriptionId)
+    : null;
+  const subscription = summarizeSubscription(rawSubscription);
+  return {
+    active: isActiveSubscription(subscription),
+    subscription,
+    attempts: IDENTITY_RETRY_DELAYS_MS.length
+  };
+}
+
+async function fetchOneSignalUser({ appId, restApiKey, oneSignalId }) {
+  const url = `${ONESIGNAL_API_BASE}/apps/${encodeURIComponent(appId)}/users/by/onesignal_id/${encodeURIComponent(oneSignalId)}`;
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Authorization": `Key ${restApiKey}`
+    }
+  });
+  return parseOneSignalResponse(response);
+}
+
+function summarizeSubscription(subscription) {
+  if (!subscription) return null;
+  return {
+    id: subscription.id || null,
+    type: subscription.type || null,
+    enabled: subscription.enabled === true,
+    notification_types: Number.isFinite(subscription.notification_types)
+      ? subscription.notification_types
+      : null,
+    hasToken: Boolean(subscription.token)
+  };
+}
+
+function isActiveSubscription(subscription) {
+  return Boolean(
+    subscription
+    && subscription.enabled === true
+    && Number(subscription.notification_types) > 0
+    && subscription.hasToken
+  );
 }
 
 async function parseOneSignalResponse(response) {

@@ -136,6 +136,7 @@ function initNotificationControls(root = document, feature) {
   }
 
   enableBtn?.addEventListener("click", async () => {
+    console.info("[OneSignal Subscribe] button clicked", { feature, language });
     setBusy(box, true);
     setStatus(box, copy.connecting);
     let stage = "environment-check";
@@ -213,22 +214,23 @@ function initNotificationControls(root = document, feature) {
         hasToken: Boolean(confirmedSubscription.token)
       });
 
-      setLocalPreference(true);
-      setState(box, STATUS_ENABLED);
-      setStatus(box, copy.subscriptionCreated);
-
       let tags = {};
       try {
-        stage = "tag-synchronization";
+        stage = "server-subscription-confirmation";
         tags = await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
       } catch (tagError) {
-        console.warn("[Bible for All] Push subscription is active, but notification tags were not synchronized.", {
+        console.error("[Bible for All] OneSignal server did not confirm an active push subscription.", {
           feature,
           language,
           subscriptionId: confirmedSubscription.id,
           error: serializeError(tagError)
         });
+        throw tagError;
       }
+
+      setLocalPreference(true);
+      setState(box, STATUS_ENABLED);
+      setStatus(box, copy.subscriptionCreated);
 
       await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
 
@@ -488,10 +490,14 @@ async function optInAndConfirm(OneSignal) {
     throw new Error("OneSignal push subscription is unavailable.");
   }
 
-  const wasActive = isConfirmedActiveSubscription(
-    OneSignal,
-    getPushSubscriptionState(OneSignal)
-  );
+  const initialSubscription = getPushSubscriptionState(OneSignal);
+  const wasActive = isConfirmedActiveSubscription(OneSignal, initialSubscription);
+  console.info("[OneSignal Subscribe] state before optIn", {
+    notificationPermission: getNotificationPermission(),
+    oneSignalPermission: OneSignal.Notifications?.permission ?? null,
+    subscription: initialSubscription
+  });
+
   const subscriptionChange = waitForSubscriptionState(
     OneSignal,
     subscription => isConfirmedActiveSubscription(OneSignal, subscription),
@@ -499,24 +505,27 @@ async function optInAndConfirm(OneSignal) {
   );
 
   try {
+    console.info("[OneSignal Subscribe] calling PushSubscription.optIn()");
     await pushSubscription.optIn();
+    console.info("[OneSignal Subscribe] PushSubscription.optIn() resolved");
   } catch (error) {
     subscriptionChange.cancel();
     throw error;
   }
 
-  let currentSubscription = getPushSubscriptionState(OneSignal);
-  if (isConfirmedActiveSubscription(OneSignal, currentSubscription)) {
+  let currentSubscription;
+  if (wasActive) {
     subscriptionChange.cancel();
+    currentSubscription = getPushSubscriptionState(OneSignal);
   } else {
     currentSubscription = await subscriptionChange.promise;
   }
 
-  // A new OneSignal record can expose an ID/token before its opt-in state has
-  // finished persisting. Reconfirm that same subscription once it exists.
-  if (!wasActive) {
-    await pushSubscription.optIn();
-  }
+  console.info("[OneSignal Subscribe] active subscription change confirmed", {
+    notificationPermission: getNotificationPermission(),
+    oneSignalPermission: OneSignal.Notifications?.permission ?? null,
+    subscription: currentSubscription
+  });
 
   return waitForStableActiveSubscription(OneSignal);
 }
@@ -595,6 +604,11 @@ function waitForSubscriptionState(OneSignal, predicate, timeoutMessage) {
       token: event?.current?.token || pushSubscription?.token || null,
       optedIn: Boolean(event?.current?.optedIn ?? pushSubscription?.optedIn)
     };
+
+    console.info("[OneSignal Subscribe] PushSubscription change", {
+      previous: event?.previous || null,
+      current: event?.current || subscription
+    });
 
     if (predicate(subscription)) {
       finish(resolvePromise, subscription);
@@ -976,7 +990,9 @@ function getNotificationErrorMessage(error, stage, copy) {
   if (error?.code === "onesignal-unavailable" || stage === "onesignal-initialization") {
     return copy.oneSignalUnavailable;
   }
-  if (stage === "subscription-creation") return copy.subscriptionFailed;
+  if (stage === "subscription-creation" || stage === "server-subscription-confirmation") {
+    return copy.subscriptionFailed;
+  }
   return copy.genericFailure;
 }
 
