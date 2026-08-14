@@ -496,6 +496,221 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-14",
+      "day": 132,
+      "topic": {
+        "ru": "Иисус — хлеб жизни",
+        "en": "Jesus Is the Bread of Life"
+      },
+      "reference_ru": "Иоанна 6:35",
+      "reference_en": "John 6:35",
+      "text_ru": "Иисус же сказал им: Я есмь хлеб жизни; приходящий ко Мне не будет алкать, и верующий в Меня не будет жаждать никогда.",
+      "text_en": "Jesus said to them, “I am the bread of life. Whoever comes to me will not be hungry, and whoever believes in me will never be thirsty.”",
+      "verse_ref": {
+        "book": "john",
+        "chapter": 6,
+        "verse": "35"
+      },
+      "interpretation_ru": "Иисус даёт то, чего не может дать этот мир: настоящую духовную жизнь. Приходящий к Нему находит то, что действительно насыщает душу.",
+      "interpretation_en": "Jesus gives what this world cannot give: true spiritual life. Whoever comes to Him finds what truly satisfies the soul.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 6:48",
+          "reference_en": "John 6:48",
+          "text_ru": "Я есмь хлеб жизни.",
+          "text_en": "I am the bread of life.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 6,
+            "verse": "48"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 6:51",
+          "reference_en": "John 6:51",
+          "text_ru": "Я хлеб живый, сшедший с небес; ядущий хлеб сей будет жить вовек; хлеб же, который Я дам, есть Плоть Моя, которую Я отдам за жизнь мира.",
+          "text_en": "I am the living bread which came down out of heaven. If anyone eats of this bread, he will live forever. Yes, the bread which I will give for the life of the world is my flesh.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 6,
+            "verse": "51"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-15",
+      "day": 133,
+      "topic": {
+        "ru": "Иисус и Отец — одно",
+        "en": "Jesus and the Father Are One"
+      },
+      "reference_ru": "Иоанна 10:30",
+      "reference_en": "John 10:30",
+      "text_ru": "Я и Отец — одно.",
+      "text_en": "I and the Father are one.",
+      "verse_ref": {
+        "book": "john",
+        "chapter": 10,
+        "verse": "30"
+      },
+      "interpretation_ru": "Иисус открывает нам Отца. Смотря на Его любовь, милость и характер, мы узнаём, каков Бог.",
+      "interpretation_en": "Jesus reveals the Father to us. Through His love, mercy, and character, we learn what God is like.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 14:9",
+          "reference_en": "John 14:9",
+          "text_ru": "Иисус сказал ему: столько времени Я с вами, и ты не знаешь Меня, Филипп? Видевший Меня видел Отца; как же ты говоришь: покажи нам Отца?",
+          "text_en": "Jesus said to him, “Have I been with you such a long time, and do you not know me, Philip? He who has seen me has seen the Father. How do you say, ‘Show us the Father?’”",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 14,
+            "verse": "9"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 5:23",
+          "reference_en": "John 5:23",
+          "text_ru": "Дабы все чтили Сына, как чтут Отца. Кто не чтит Сына, тот не чтит и Отца, пославшего Его.",
+          "text_en": "That all may honor the Son, even as they honor the Father. He who doesn’t honor the Son doesn’t honor the Father who sent him.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 5,
+            "verse": "23"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-16",
+      "day": 134,
+      "topic": {
+        "ru": "Во Христе полнота Божества",
+        "en": "The Fullness of Deity Dwells in Christ"
+      },
+      "reference_ru": "Колоссянам 2:9",
+      "reference_en": "Colossians 2:9",
+      "text_ru": "Ибо в Нем обитает вся полнота Божества телесно.",
+      "text_en": "For in him all the fullness of the Deity dwells bodily.",
+      "verse_ref": {
+        "book": "colossians",
+        "chapter": 2,
+        "verse": "9"
+      },
+      "interpretation_ru": "Иисус — не просто великий Учитель или пророк. Писание говорит, что в Нём обитает вся полнота Божества.",
+      "interpretation_en": "Jesus is not merely a great Teacher or prophet. Scripture says that all the fullness of Deity dwells in Him.",
+      "related": [
+        {
+          "reference_ru": "Филиппийцам 2:6",
+          "reference_en": "Philippians 2:6",
+          "text_ru": "Он, будучи образом Божиим, не почитал хищением быть равным Богу.",
+          "text_en": "Who, existing in the form of God, didn’t consider equality with God a thing to be grasped.",
+          "verse_ref": {
+            "book": "philippians",
+            "chapter": 2,
+            "verse": "6"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 20:28",
+          "reference_en": "John 20:28",
+          "text_ru": "Фома сказал Ему в ответ: Господь мой и Бог мой!",
+          "text_en": "Thomas answered him, “My Lord and my God!”",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 20,
+            "verse": "28"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-17",
+      "day": 135,
+      "topic": {
+        "ru": "Иисус — сияние Божьей славы",
+        "en": "Jesus Is the Radiance of God's Glory"
+      },
+      "reference_ru": "Евреям 1:3",
+      "reference_en": "Hebrews 1:3",
+      "text_ru": "Сей, будучи сияние славы и образ ипостаси Его и держа всё словом силы Своей, совершив Собою очищение грехов наших, воссел одесную престола величия на высоте.",
+      "text_en": "His Son is the radiance of his glory, the very image of his substance, and upholding all things by the word of his power, when he had by himself purified us of our sins, sat down on the right hand of the Majesty on high.",
+      "verse_ref": {
+        "book": "hebrews",
+        "chapter": 1,
+        "verse": "3"
+      },
+      "interpretation_ru": "В Иисусе Бог открыл Себя людям. Через Христа мы видим Божью славу, Его характер и Его любовь к человеку.",
+      "interpretation_en": "In Jesus, God revealed Himself to humanity. Through Christ we see God's glory, His character, and His love for us.",
+      "related": [
+        {
+          "reference_ru": "2 Коринфянам 4:6",
+          "reference_en": "2 Corinthians 4:6",
+          "text_ru": "Потому что Бог, повелевший из тьмы воссиять свету, озарил наши сердца, дабы просветить нас познанием славы Божией в лице Иисуса Христа.",
+          "text_en": "Seeing it is God who said, “Light will shine out of darkness,” who has shone in our hearts to give the light of the knowledge of the glory of God in the face of Jesus Christ.",
+          "verse_ref": {
+            "book": "2-corinthians",
+            "chapter": 4,
+            "verse": "6"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 12:45",
+          "reference_en": "John 12:45",
+          "text_ru": "И видящий Меня видит Пославшего Меня.",
+          "text_en": "He who sees me sees him who sent me.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 12,
+            "verse": "45"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-18",
+      "day": 136,
+      "topic": {
+        "ru": "Иисус — истинная виноградная лоза",
+        "en": "Jesus Is the True Vine"
+      },
+      "reference_ru": "Иоанна 15:1",
+      "reference_en": "John 15:1",
+      "text_ru": "Я есмь истинная виноградная лоза, а Отец Мой — виноградарь.",
+      "text_en": "I am the true vine, and my Father is the farmer.",
+      "verse_ref": {
+        "book": "john",
+        "chapter": 15,
+        "verse": "1"
+      },
+      "interpretation_ru": "Оставаясь со Христом, мы растём и приносим добрый плод.",
+      "interpretation_en": "Remaining with Christ, we grow and bear good fruit.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 15:7",
+          "reference_en": "John 15:7",
+          "text_ru": "Если пребудете во Мне и слова Мои в вас пребудут, то, чего ни пожелаете, просите, и будет вам.",
+          "text_en": "If you remain in me, and my words remain in you, you will ask whatever you desire, and it will be done for you.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 15,
+            "verse": "7"
+          }
+        },
+        {
+          "reference_ru": "Иоанна 15:8",
+          "reference_en": "John 15:8",
+          "text_ru": "Тем прославится Отец Мой, если вы принесете много плода и будете Моими учениками.",
+          "text_en": "In this my Father is glorified, that you bear much fruit; and so you will be my disciples.",
+          "verse_ref": {
+            "book": "john",
+            "chapter": 15,
+            "verse": "8"
+          }
+        }
+      ]
     }
   ]
 }
