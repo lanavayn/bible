@@ -26,7 +26,17 @@ const FEATURE_COPY = {
       enableButton: "Get the Verse of the Day",
       enabledTitle: "✅ Verse of the Day is connected",
       enabledMessage: "You will receive a new Bible verse every day.",
-      disableButton: "Stop receiving the Verse of the Day"
+      disableButton: "Stop receiving the Verse of the Day",
+      connecting: "Connecting notifications...",
+      permissionDenied: "Notifications are blocked in your browser settings. Allow notifications for this site, then try again.",
+      permissionDismissed: "Notification permission was not granted. Tap the button again when you are ready to allow it.",
+      unsupported: "This browser does not support Web Push notifications.",
+      oneSignalUnavailable: "OneSignal could not load. Check your connection and try again.",
+      subscriptionFailed: "Permission was granted, but the push subscription could not be created. Please try again.",
+      genericFailure: "Notifications could not be connected. Please try again.",
+      subscriptionCreated: "Notification subscription was successfully created.",
+      iosHomeScreen: "On iPhone or iPad, first add this site to your Home Screen, open it from the Home Screen, and then enable notifications.",
+      iosVersionUnsupported: "Web Push notifications require iOS or iPadOS 16.4 or later."
     },
     ru: {
       heading: "🔔 Получайте новый стих каждый день",
@@ -34,7 +44,17 @@ const FEATURE_COPY = {
       enableButton: "Получать стих дня",
       enabledTitle: "✅ Стих дня подключён",
       enabledMessage: "Вы будете получать новый стих каждый день.",
-      disableButton: "Не получать стих дня"
+      disableButton: "Не получать стих дня",
+      connecting: "Подключаем уведомления...",
+      permissionDenied: "Уведомления запрещены в настройках браузера. Разрешите уведомления для этого сайта и попробуйте снова.",
+      permissionDismissed: "Разрешение на уведомления не предоставлено. Нажмите кнопку ещё раз, когда будете готовы разрешить уведомления.",
+      unsupported: "Этот браузер не поддерживает Web Push уведомления.",
+      oneSignalUnavailable: "Не удалось загрузить OneSignal. Проверьте подключение к интернету и попробуйте снова.",
+      subscriptionFailed: "Разрешение получено, но push-подписку создать не удалось. Попробуйте снова.",
+      genericFailure: "Не удалось подключить уведомления. Попробуйте снова.",
+      subscriptionCreated: "Подписка на уведомления успешно создана.",
+      iosHomeScreen: "На iPhone или iPad сначала добавьте сайт на экран «Домой», откройте его с экрана «Домой», а затем включите уведомления.",
+      iosVersionUnsupported: "Для Web Push уведомлений требуется iOS или iPadOS 16.4 или новее."
     }
   }
 };
@@ -50,7 +70,7 @@ export function renderDailyVerseNotificationControls({ language } = {}) {
 
 function renderNotificationControls({ feature, language } = {}) {
   const copy = getNotificationCopy(feature, language);
-  if (!copy || !isPushNotificationSupported()) return "";
+  if (!copy) return "";
 
   return `
     <section class="daily-notification-box" data-notification-feature="${feature}" data-notification-language="${language}">
@@ -91,49 +111,147 @@ function initNotificationControls(root = document, feature) {
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
   const language = getBoxLanguage(box);
+  const copy = getNotificationCopy(feature, language);
+  const environment = getNotificationEnvironment();
+
+  logNotificationEnvironment("controls-initialized", environment, { feature, language });
+
+  const unavailableMessage = getUnavailableMessage(environment, copy);
+  if (unavailableMessage) {
+    setLocalPreference(false);
+    setState(box, STATUS_DISABLED);
+    setStatus(box, unavailableMessage, STATUS_ERROR);
+    if (enableBtn) enableBtn.disabled = true;
+    return;
+  }
 
   if (getNotificationPermission() === "granted") {
     refreshNotificationState(box);
   } else {
     setLocalPreference(false);
     setState(box, STATUS_DISABLED);
+    if (getNotificationPermission() === "denied") {
+      setStatus(box, copy.permissionDenied, STATUS_ERROR);
+    }
   }
 
   enableBtn?.addEventListener("click", async () => {
     setBusy(box, true);
-    setStatus(box, "Подключаем уведомления...");
+    setStatus(box, copy.connecting);
+    let stage = "environment-check";
+    let OneSignal = null;
 
     try {
-      const OneSignal = await initializeOneSignal();
-      await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
-      const permissionGranted = await requestNotificationPermission(OneSignal);
+      const currentEnvironment = getNotificationEnvironment();
+      logNotificationEnvironment("enable-click", currentEnvironment, { feature, language });
 
-      if (!permissionGranted) {
-        setLocalPreference(false);
+      const currentUnavailableMessage = getUnavailableMessage(currentEnvironment, copy);
+      if (currentUnavailableMessage) {
         setState(box, STATUS_DISABLED);
-        setStatus(box, "Разрешение на уведомления не получено.", STATUS_ERROR);
+        setStatus(box, currentUnavailableMessage, STATUS_ERROR);
         return;
       }
 
-      await optInAndConfirm(OneSignal);
-      const tags = await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
-      const confirmedSubscription = await waitForStableActiveSubscription(OneSignal);
+      const permissionBefore = getNotificationPermission();
+      console.info("[Bible for All] Notification permission before request.", {
+        feature,
+        language,
+        permission: permissionBefore
+      });
 
-      await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
+      if (permissionBefore === "denied") {
+        setLocalPreference(false);
+        setState(box, STATUS_DISABLED);
+        setStatus(box, copy.permissionDenied, STATUS_ERROR);
+        return;
+      }
+
+      stage = "onesignal-initialization";
+      OneSignal = await initializeOneSignal();
+      const oneSignalPushSupported = await getOneSignalPushSupport(OneSignal);
+      console.info("[Bible for All] OneSignal SDK ready.", {
+        feature,
+        language,
+        sdkLoaded: true,
+        pushSupported: oneSignalPushSupported
+      });
+
+      if (oneSignalPushSupported === false) {
+        throw createNotificationError("unsupported", "OneSignal reports that Web Push is not supported.");
+      }
+
+      await logNotificationDiagnostics(OneSignal, "before-enable", { feature, language });
+      stage = "permission-request";
+      const permissionResult = await requestNotificationPermission(OneSignal);
+
+      console.info("[Bible for All] Notification permission request completed.", {
+        feature,
+        language,
+        permission: permissionResult,
+        oneSignalPermission: OneSignal.Notifications?.permission ?? null
+      });
+
+      if (permissionResult !== "granted") {
+        setLocalPreference(false);
+        setState(box, STATUS_DISABLED);
+        setStatus(
+          box,
+          permissionResult === "denied" ? copy.permissionDenied : copy.permissionDismissed,
+          STATUS_ERROR
+        );
+        return;
+      }
+
+      stage = "subscription-creation";
+      const confirmedSubscription = await optInAndConfirm(OneSignal);
+
+      console.info("[Bible for All] OneSignal push subscription confirmed.", {
+        feature,
+        language,
+        subscriptionId: confirmedSubscription.id,
+        optedIn: confirmedSubscription.optedIn,
+        hasToken: Boolean(confirmedSubscription.token)
+      });
 
       setLocalPreference(true);
       setState(box, STATUS_ENABLED);
-      setStatus(box, "");
+      setStatus(box, copy.subscriptionCreated);
+
+      let tags = {};
+      try {
+        stage = "tag-synchronization";
+        tags = await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
+      } catch (tagError) {
+        console.warn("[Bible for All] Push subscription is active, but notification tags were not synchronized.", {
+          feature,
+          language,
+          subscriptionId: confirmedSubscription.id,
+          error: serializeError(tagError)
+        });
+      }
+
+      await logNotificationDiagnostics(OneSignal, "after-enable", { feature, language, tags });
+
       console.info("[Bible for All] Notifications enabled.", {
         feature,
         language,
         subscription: confirmedSubscription
       });
     } catch (error) {
-      console.error("[Bible for All] Failed to enable notifications.", { feature, language, error });
+      const subscription = OneSignal ? getPushSubscriptionState(OneSignal) : null;
+      console.error("[Bible for All] Failed to enable notifications.", {
+        feature,
+        language,
+        stage,
+        environment: getNotificationEnvironment(),
+        notificationPermission: getNotificationPermission(),
+        subscription,
+        error,
+        errorDetails: serializeError(error)
+      });
       setLocalPreference(false);
       setState(box, STATUS_ERROR);
-      setStatus(box, "Не удалось включить уведомления. Попробуйте ещё раз.", STATUS_ERROR);
+      setStatus(box, getNotificationErrorMessage(error, stage, copy), STATUS_ERROR);
     } finally {
       setBusy(box, false);
     }
@@ -178,10 +296,14 @@ function initNotificationControls(root = document, feature) {
 async function refreshNotificationState(box) {
   const feature = getBoxFeature(box);
   const language = getBoxLanguage(box);
+  const copy = getNotificationCopy(feature, language);
 
   if (getNotificationPermission() !== "granted") {
     setLocalPreference(false);
     setState(box, STATUS_DISABLED);
+    if (getNotificationPermission() === "denied") {
+      setStatus(box, copy.permissionDenied, STATUS_ERROR);
+    }
     return;
   }
 
@@ -261,8 +383,9 @@ async function initializeOneSignal() {
   if (initPromise) return initPromise;
 
   initPromise = (async () => {
-    if (!("Notification" in window) || !("serviceWorker" in navigator)) {
-      throw new Error("This browser does not support web push notifications.");
+    const environment = getNotificationEnvironment();
+    if (!environment.pushApiSupported) {
+      throw createNotificationError("unsupported", "This browser does not support web push notifications.");
     }
 
     const config = await loadNotificationConfig();
@@ -330,7 +453,7 @@ function loadOneSignalSdk() {
     script.src = SDK_SRC;
     script.defer = true;
     script.onload = resolve;
-    script.onerror = () => reject(new Error("Failed to load OneSignal SDK."));
+    script.onerror = () => reject(createNotificationError("onesignal-unavailable", "Failed to load OneSignal SDK."));
     document.head.appendChild(script);
   });
 
@@ -338,8 +461,8 @@ function loadOneSignalSdk() {
 }
 
 async function requestNotificationPermission(OneSignal) {
-  if (hasGrantedNotificationPermission(OneSignal)) return true;
-  if (getNotificationPermission() === "denied") return false;
+  if (hasGrantedNotificationPermission(OneSignal)) return "granted";
+  if (getNotificationPermission() === "denied") return "denied";
 
   if (OneSignal.Notifications?.requestPermission) {
     await OneSignal.Notifications.requestPermission();
@@ -350,12 +473,12 @@ async function requestNotificationPermission(OneSignal) {
   const startedAt = Date.now();
 
   while (Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
-    if (hasGrantedNotificationPermission(OneSignal)) return true;
-    if (getNotificationPermission() === "denied") return false;
+    if (hasGrantedNotificationPermission(OneSignal)) return "granted";
+    if (getNotificationPermission() === "denied") return "denied";
     await delay(SUBSCRIPTION_POLL_MS);
   }
 
-  return false;
+  return getNotificationPermission();
 }
 
 async function optInAndConfirm(OneSignal) {
@@ -632,6 +755,8 @@ function maskValue(value = "") {
 
 async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
   const registration = await getOneSignalServiceWorkerRegistration();
+  const environment = getNotificationEnvironment();
+  const oneSignalPushSupported = await getOneSignalPushSupport(OneSignal);
   let tags = details.tags || {};
 
   if (!details.tags) {
@@ -646,6 +771,16 @@ async function logNotificationDiagnostics(OneSignal, stage, details = {}) {
     stage,
     feature: details.feature || null,
     language: details.language || null,
+    browser: environment.browser,
+    operatingSystem: environment.operatingSystem,
+    operatingSystemVersion: environment.operatingSystemVersion,
+    standalone: environment.isStandalone,
+    secureContext: environment.secureContext,
+    notificationApiSupported: environment.notificationApiSupported,
+    serviceWorkerSupported: environment.serviceWorkerSupported,
+    pushManagerSupported: environment.pushManagerSupported,
+    oneSignalSdkLoaded: Boolean(OneSignal?.User && OneSignal?.Notifications),
+    oneSignalPushSupported,
     notificationPermission: typeof Notification !== "undefined" ? Notification.permission : null,
     oneSignalPermission: OneSignal.Notifications?.permission ?? null,
     oneSignalId: OneSignal.User?.onesignalId || null,
@@ -708,11 +843,152 @@ function setState(box, state) {
   disableBtn.hidden = true;
 }
 
-function isPushNotificationSupported() {
-  if (typeof window === "undefined") return true;
-  return "Notification" in window
-    && typeof navigator !== "undefined"
-    && "serviceWorker" in navigator;
+async function getOneSignalPushSupport(OneSignal) {
+  if (!OneSignal?.Notifications?.isPushSupported) return null;
+
+  try {
+    return Boolean(await OneSignal.Notifications.isPushSupported());
+  } catch (error) {
+    console.warn("[Bible for All] OneSignal push support check failed.", serializeError(error));
+    return null;
+  }
+}
+
+function getNotificationEnvironment() {
+  if (typeof window === "undefined" || typeof navigator === "undefined") {
+    return {
+      browser: "server",
+      operatingSystem: "server",
+      operatingSystemVersion: null,
+      isIOS: false,
+      isStandalone: false,
+      secureContext: true,
+      notificationApiSupported: true,
+      serviceWorkerSupported: true,
+      pushManagerSupported: true,
+      pushApiSupported: true
+    };
+  }
+
+  const userAgent = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+  const isIPadDesktopMode = platform === "MacIntel" && Number(navigator.maxTouchPoints) > 1;
+  const isIOS = /iPhone|iPad|iPod/i.test(userAgent) || isIPadDesktopMode;
+  const iosVersionMatch = userAgent.match(/OS (\d+)[_.](\d+)(?:[_.](\d+))?/i)
+    || (isIOS ? userAgent.match(/Version\/(\d+)\.(\d+)(?:\.(\d+))?/i) : null);
+  const operatingSystemVersion = iosVersionMatch
+    ? [iosVersionMatch[1], iosVersionMatch[2], iosVersionMatch[3] || "0"].join(".")
+    : null;
+  const notificationApiSupported = "Notification" in window;
+  const serviceWorkerSupported = "serviceWorker" in navigator;
+  const pushManagerSupported = "PushManager" in window
+    && typeof ServiceWorkerRegistration !== "undefined"
+    && "pushManager" in ServiceWorkerRegistration.prototype;
+  const secureContext = window.isSecureContext === true;
+
+  return {
+    userAgent,
+    platform,
+    browser: getBrowserName(userAgent),
+    operatingSystem: isIOS ? (isIPadDesktopMode || /iPad/i.test(userAgent) ? "iPadOS" : "iOS") : getOperatingSystem(userAgent),
+    operatingSystemVersion,
+    isIOS,
+    isStandalone: window.matchMedia?.("(display-mode: standalone)")?.matches === true
+      || navigator.standalone === true,
+    secureContext,
+    notificationApiSupported,
+    serviceWorkerSupported,
+    pushManagerSupported,
+    pushApiSupported: secureContext
+      && notificationApiSupported
+      && serviceWorkerSupported
+      && pushManagerSupported
+  };
+}
+
+function getBrowserName(userAgent) {
+  if (/EdgiOS|Edg\//i.test(userAgent)) return "Edge";
+  if (/FxiOS|Firefox\//i.test(userAgent)) return "Firefox";
+  if (/CriOS|Chrome\//i.test(userAgent)) return "Chrome";
+  if (/SamsungBrowser\//i.test(userAgent)) return "Samsung Internet";
+  if (/OPiOS|OPR\//i.test(userAgent)) return "Opera";
+  if (/Safari\//i.test(userAgent)) return "Safari";
+  return "Unknown";
+}
+
+function getOperatingSystem(userAgent) {
+  if (/Android/i.test(userAgent)) return "Android";
+  if (/Windows/i.test(userAgent)) return "Windows";
+  if (/Mac OS X/i.test(userAgent)) return "macOS";
+  if (/Linux/i.test(userAgent)) return "Linux";
+  return "Unknown";
+}
+
+function isVersionBefore(version, requiredMajor, requiredMinor) {
+  if (!version) return false;
+  const [major = 0, minor = 0] = version.split(".").map(Number);
+  return major < requiredMajor || (major === requiredMajor && minor < requiredMinor);
+}
+
+function getUnavailableMessage(environment, copy) {
+  if (environment.isIOS && isVersionBefore(environment.operatingSystemVersion, 16, 4)) {
+    return copy.iosVersionUnsupported;
+  }
+
+  if (environment.isIOS && !environment.isStandalone) {
+    return copy.iosHomeScreen;
+  }
+
+  if (!environment.pushApiSupported) {
+    return copy.unsupported;
+  }
+
+  return "";
+}
+
+function logNotificationEnvironment(stage, environment, details = {}) {
+  console.info("[Bible for All] Notification environment.", {
+    stage,
+    ...details,
+    browser: environment.browser,
+    operatingSystem: environment.operatingSystem,
+    operatingSystemVersion: environment.operatingSystemVersion,
+    isIOS: environment.isIOS,
+    standalone: environment.isStandalone,
+    secureContext: environment.secureContext,
+    notificationApiSupported: environment.notificationApiSupported,
+    serviceWorkerSupported: environment.serviceWorkerSupported,
+    pushManagerSupported: environment.pushManagerSupported,
+    pushApiSupported: environment.pushApiSupported,
+    notificationPermission: getNotificationPermission()
+  });
+}
+
+function createNotificationError(code, message, cause = null) {
+  const error = new Error(message);
+  error.code = code;
+  if (cause) error.cause = cause;
+  return error;
+}
+
+function getNotificationErrorMessage(error, stage, copy) {
+  if (error?.code === "unsupported") return copy.unsupported;
+  if (error?.code === "onesignal-unavailable" || stage === "onesignal-initialization") {
+    return copy.oneSignalUnavailable;
+  }
+  if (stage === "subscription-creation") return copy.subscriptionFailed;
+  return copy.genericFailure;
+}
+
+function serializeError(error) {
+  if (!error) return null;
+  return {
+    name: error.name || null,
+    code: error.code || null,
+    message: error.message || String(error),
+    stack: error.stack || null,
+    cause: error.cause ? serializeError(error.cause) : null
+  };
 }
 
 function getNotificationCopy(feature = "daily-verse", language = "ru") {
