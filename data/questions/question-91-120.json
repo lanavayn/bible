@@ -782,6 +782,103 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-108",
+            "day": 108,
+            "topic_ru": "Отец, Сын и Святой Дух",
+            "topic_en": "The Father, the Son, and the Holy Spirit",
+            "question_ru": "Что Библия говорит об Отце, Сыне и Святом Духе?",
+            "question_en": "What Does the Bible Say About the Father, the Son, and the Holy Spirit?",
+            "reference_ru": "2 Коринфянам 13:13",
+            "reference_en": "2 Corinthians 13:14",
+            "text_ru": "Благодать Господа нашего Иисуса Христа, и любовь Бога Отца, и общение Святаго Духа со всеми вами. Аминь.",
+            "text_en": "The grace of the Lord Jesus Christ, God’s love, and the fellowship of the Holy Spirit be with you all. Amen.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "2-Corinthians",
+                "chapter": 13,
+                "verse": "13"
+              },
+              "en": {
+                "book": "2-Corinthians",
+                "chapter": 13,
+                "verse": "14"
+              }
+            },
+            "answer_ru": "Библия говорит об Отце, Сыне и Святом Духе вместе, показывая их единство и участие в Божьем деле.",
+            "answer_en": "The Bible speaks of the Father, the Son, and the Holy Spirit together, showing their unity and participation in God’s work.",
+            "reflection_ru": "Отец, Сын и Святой Дух действуют в совершенном единстве. Мы можем доверять Богу и Его действию в нашей жизни.",
+            "reflection_en": "The Father, the Son, and the Holy Spirit work in perfect unity. We can trust God and His work in our lives.",
+            "related": [
+              {
+                "reference_ru": "Ефесянам 4:4-6",
+                "reference_en": "Ephesians 4:4-6",
+                "text_ru": "Одно тело и один дух, как вы и призваны к одной надежде вашего звания; один Господь, одна вера, одно крещение, один Бог и Отец всех, Который над всеми, и через всех, и во всех нас.",
+                "text_en": "There is one body and one Spirit, even as you also were called in one hope of your calling, one Lord, one faith, one baptism, one God and Father of all, who is over all and through all and in us all.",
+                "verse_ref": {
+                  "book": "Ephesians",
+                  "chapter": 4,
+                  "verse": "4-6"
+                }
+              },
+              {
+                "reference_ru": "Луки 3:21-22",
+                "reference_en": "Luke 3:21-22",
+                "text_ru": "Когда же крестился весь народ, и Иисус, крестившись, молился: отверзлось небо, и Дух Святый нисшел на Него в телесном виде, как голубь, и был глас с небес, глаголющий: Ты Сын Мой Возлюбленный; в Тебе Мое благоволение!",
+                "text_en": "Now when all the people were baptized, Jesus also had been baptized and was praying. The sky was opened, and the Holy Spirit descended in a bodily form like a dove on him; and a voice came out of the sky, saying “You are my beloved Son. In you I am well pleased.”",
+                "verse_ref": {
+                  "book": "Luke",
+                  "chapter": 3,
+                  "verse": "21-22"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-109",
+            "day": 109,
+            "topic_ru": "Святой Дух",
+            "topic_en": "The Holy Spirit",
+            "question_ru": "Кто такой Святой Дух?",
+            "question_en": "Who Is the Holy Spirit?",
+            "reference_ru": "1 Коринфянам 3:16",
+            "reference_en": "1 Corinthians 3:16",
+            "text_ru": "Разве не знаете, что вы храм Божий, и Дух Божий живет в вас?",
+            "text_en": "Don’t you know that you are a temple of God, and that God’s Spirit lives in you?",
+            "verse_ref": {
+              "book": "1-Corinthians",
+              "chapter": 3,
+              "verse": "16"
+            },
+            "answer_ru": "Святой Дух — это Дух Божий, Который пребывает в верующих, действует в мире и ведёт людей к Богу.",
+            "answer_en": "The Holy Spirit is God’s Spirit, who lives in believers, works in the world, and leads people to God.",
+            "reflection_ru": "Святой Дух не далёк от нас: Он пребывает в верующих и помогает нам жить с Богом.",
+            "reflection_en": "The Holy Spirit is not far from us: He lives in believers and helps us live with God.",
+            "related": [
+              {
+                "reference_ru": "Иоанна 16:7-8",
+                "reference_en": "John 16:7-8",
+                "text_ru": "Но Я истину говорю вам: лучше для вас, чтобы Я пошел; ибо, если Я не пойду, Утешитель не придет к вам; а если пойду, то пошлю Его к вам, и Он, придя, обличит мир о грехе и о правде и о суде.",
+                "text_en": "Nevertheless I tell you the truth: It is to your advantage that I go away, for if I don’t go away, the Counselor won’t come to you. But if I go, I will send him to you. When he has come, he will convict the world about sin, about righteousness, and about judgment.",
+                "verse_ref": {
+                  "book": "John",
+                  "chapter": 16,
+                  "verse": "7-8"
+                }
+              },
+              {
+                "reference_ru": "Римлянам 8:9",
+                "reference_en": "Romans 8:9",
+                "text_ru": "Но вы не по плоти живете, а по духу, если только Дух Божий живет в вас. Если же кто Духа Христова не имеет, тот и не Его.",
+                "text_en": "But you are not in the flesh but in the Spirit, if it is so that the Spirit of God dwells in you. But if any man doesn’t have the Spirit of Christ, he is not his.",
+                "verse_ref": {
+                  "book": "Romans",
+                  "chapter": 8,
+                  "verse": "9"
+                }
+              }
+            ]
           }
         ]
 }
