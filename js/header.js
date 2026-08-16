@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Leave feedback",
         askQuestion: "💬 Ask a Question",
         about: "ℹ️ About the Bible",
-        dailyVerseSubscription: "🔔 Daily Verse subscription",
+        dailyVerseSubscription: "🔔 Verse subscription",
         textSize: "Text size",
         english: "English",
         russian: "Русский"
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Оставить отзыв",
         askQuestion: "💬 Задать вопрос",
         about: "ℹ️ О Библии",
-        dailyVerseSubscription: "🔔 Подписка на стих дня",
+        dailyVerseSubscription: "🔔 Подписка на стих",
         textSize: "Размер текста",
         english: "English",
         russian: "Русский"

@@ -1295,7 +1295,7 @@ li {
   display: block;
   position: fixed;
   bottom: 76px;
-  right: 30px;
+  right: max(10px, calc(50% - 350px));
   z-index: 99;
   border: none;
   outline: none;
@@ -1323,13 +1323,6 @@ li {
 
 #scrollTopBtn:hover img {
   transform: scale(1.1);
-}
-
-/* Keep the fixed button beside the centered 720px content on desktop. */
-@media (min-width: 64rem) {
-  #scrollTopBtn {
-    right: calc(50% - 424px);
-  }
 }
 
 .top-left a {
@@ -2201,9 +2194,6 @@ table.book-dates td:nth-child(2) {
     padding: 10px 8px 6px 4px;
   }
 
-  #scrollTopBtn {
-    right: 10px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
