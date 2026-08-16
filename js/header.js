@@ -239,14 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    async function switchLanguage(href, targetLanguage) {
-      try {
-        const notifications = await import("/js/onesignal-notifications.js");
-        await notifications.syncDailyVerseNotificationLanguage(targetLanguage);
-      } catch (error) {
-        console.info("[Bible for All] Notification language preference was not updated.", error);
-      }
-
+    async function switchLanguage(href) {
       window.location.replace(withDailySelection(href));
     }
     

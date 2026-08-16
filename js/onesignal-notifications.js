@@ -26,6 +26,10 @@ const FEATURE_COPY = {
       enableButton: "Subscribe",
       enabledTitle: "✅ Verse of the Day is connected",
       enabledMessage: "You will receive a new Bible verse every day.",
+      enabledMessageByLanguage: {
+        ru: "You will receive a new Bible verse in Russian every day.",
+        en: "You will receive a new Bible verse in English every day."
+      },
       disableButton: "Unsubscribe",
       connecting: "Connecting notifications...",
       permissionDenied: "Notifications are blocked in your browser settings. Allow notifications for this site, then try again.",
@@ -44,6 +48,10 @@ const FEATURE_COPY = {
       enableButton: "Подписаться",
       enabledTitle: "✅ Стих дня подключён",
       enabledMessage: "Вы будете получать новый стих каждый день.",
+      enabledMessageByLanguage: {
+        ru: "Вы будете получать новый стих на русском языке каждый день.",
+        en: "Вы будете получать новый стих на английском языке каждый день."
+      },
       disableButton: "Oтписаться",
       connecting: "Подключаем уведомления...",
       permissionDenied: "Уведомления запрещены в настройках браузера. Разрешите уведомления для этого сайта и попробуйте снова.",
@@ -237,7 +245,7 @@ function initNotificationControls(root = document, feature) {
       }
 
       setLocalPreference(true);
-      setState(box, STATUS_ENABLED);
+      setState(box, STATUS_ENABLED, getSubscriptionLanguage(tags));
       setStatus(box, copy.subscriptionCreated);
 
       console.info("[OneSignal Subscribe] SUCCESS state confirmed", {
@@ -349,8 +357,23 @@ async function refreshNotificationState(box) {
       locallyActive: featureEnabled
     });
 
+    let subscriptionLanguage = null;
+
     if (featureEnabled) {
-      await syncAndVerifyFeatureTags(OneSignal, feature, language, true);
+      const existingTags = await getOneSignalTags(OneSignal);
+      subscriptionLanguage = getSubscriptionLanguage(existingTags);
+
+      if (!subscriptionLanguage) {
+        throw new Error("The active notification subscription has no confirmed language tag.");
+      }
+
+      const confirmedTags = await syncAndVerifyFeatureTags(
+        OneSignal,
+        feature,
+        subscriptionLanguage,
+        true
+      );
+      subscriptionLanguage = getSubscriptionLanguage(confirmedTags);
     }
 
     if (!featureEnabled) {
@@ -359,7 +382,11 @@ async function refreshNotificationState(box) {
       setLocalPreference(true);
     }
 
-    setState(box, featureEnabled ? STATUS_ENABLED : STATUS_DISABLED);
+    setState(
+      box,
+      featureEnabled ? STATUS_ENABLED : STATUS_DISABLED,
+      subscriptionLanguage
+    );
     console.info("[OneSignal Subscribe] page initialization UI decision", {
       timestamp: new Date().toISOString(),
       feature,
@@ -913,7 +940,7 @@ function getNotificationPermission() {
   return typeof Notification !== "undefined" ? Notification.permission : "unsupported";
 }
 
-function setState(box, state) {
+function setState(box, state, subscriptionLanguage = null) {
   const title = box.querySelector("[data-notification-title]");
   const desktopMessage = box.querySelector("[data-notification-desktop-message]");
   const message = box.querySelector("[data-notification-message]");
@@ -924,7 +951,13 @@ function setState(box, state) {
   box.dataset.notificationState = state;
 
   if (state === STATUS_ENABLED) {
+    const enabledMessage = copy.enabledMessageByLanguage?.[subscriptionLanguage];
+    if (!enabledMessage) {
+      throw new Error("The active notification subscription language is unavailable.");
+    }
+
     title.textContent = copy.enabledTitle;
+    message.textContent = enabledMessage;
     desktopMessage.hidden = true;
     message.hidden = false;
     enableBtn.hidden = true;
@@ -937,6 +970,11 @@ function setState(box, state) {
   message.hidden = true;
   enableBtn.hidden = false;
   disableBtn.hidden = true;
+}
+
+function getSubscriptionLanguage(tags) {
+  const language = tags?.[LANGUAGE_TAG];
+  return language === "ru" || language === "en" ? language : null;
 }
 
 async function getOneSignalPushSupport(OneSignal) {
