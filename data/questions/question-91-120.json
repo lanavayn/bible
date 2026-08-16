@@ -879,6 +879,51 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-110",
+            "day": 110,
+            "topic_ru": "Наши слова",
+            "topic_en": "Our Words",
+            "question_ru": "Как Библия учит нас контролировать свои слова?",
+            "question_en": "How Does the Bible Teach Us to Control Our Words?",
+            "reference_ru": "Матфея 12:36-37",
+            "reference_en": "Matthew 12:36-37",
+            "text_ru": "Говорю же вам, что за всякое праздное слово, какое скажут люди, дадут они ответ в день суда: ибо от слов своих оправдаешься, и от слов своих осудишься.",
+            "text_en": "I tell you that every idle word that men speak, they will give account of it in the day of judgment. For by your words you will be justified, and by your words you will be condemned.",
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 12,
+              "verse": "36-37"
+            },
+            "answer_ru": "Библия учит нас думать прежде, чем говорить, не поддаваться гневу и помнить, что наши слова имеют значение перед Богом.",
+            "answer_en": "The Bible teaches us to think before we speak, not to give in to anger, and to remember that our words matter before God.",
+            "reflection_ru": "Наши слова могут причинить боль или принести мир. Поэтому важно говорить обдуманно и с добротой.",
+            "reflection_en": "Our words can cause pain or bring peace. Therefore, it is important to speak thoughtfully and with kindness.",
+            "related": [
+              {
+                "reference_ru": "Иакова 1:19-20",
+                "reference_en": "James 1:19-20",
+                "text_ru": "Итак, братия мои возлюбленные, всякий человек да будет скор на слышание, медлен на слова, медлен на гнев, ибо гнев человека не творит правды Божией.",
+                "text_en": "So, then, my beloved brothers, let every man be swift to hear, slow to speak, and slow to anger; for the anger of man doesn’t produce the righteousness of God.",
+                "verse_ref": {
+                  "book": "James",
+                  "chapter": 1,
+                  "verse": "19-20"
+                }
+              },
+              {
+                "reference_ru": "Притчи 15:1",
+                "reference_en": "Proverbs 15:1",
+                "text_ru": "Гнев губит и разумных. Кроткий ответ отвращает гнев, а оскорбительное слово возбуждает ярость.",
+                "text_en": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+                "verse_ref": {
+                  "book": "Proverbs",
+                  "chapter": 15,
+                  "verse": "1"
+                }
+              }
+            ]
           }
         ]
 }
