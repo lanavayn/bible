@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Leave feedback",
         askQuestion: "💬 Ask a Question",
         about: "ℹ️ About the Bible",
+        dailyVerseSubscription: "🔔 Daily Verse subscription",
         textSize: "Text size",
         english: "English",
         russian: "Русский"
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Оставить отзыв",
         askQuestion: "💬 Задать вопрос",
         about: "ℹ️ О Библии",
+        dailyVerseSubscription: "🔔 Подписка на стих дня",
         textSize: "Размер текста",
         english: "English",
         russian: "Русский"
@@ -94,6 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutHref = isRu ? "about.html" : "about.html";
     const commentsHref = isRu ? "comments.html" : "comments.html";
     const askQuestionHref = isRu ? "ask-question.html" : "ask-question.html";
+    const dailyVerseSubscriptionHref = isRu
+      ? "/ru/#daily-verse-notifications"
+      : "/#daily-verse-notifications";
   
     function withDailySelection(href) {
       const normalizedHref = href === "/index.html" ? "/" : href;
@@ -145,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ${showComments ? `<a href="${commentsHref}">${t.comments}</a>` : ""}
             ${showAskQuestion ? `<a href="${askQuestionHref}">${t.askQuestion}</a>` : ""}
             ${showAbout ? `<a href="${aboutHref}">${t.about}</a>` : ""}
+            <a href="${dailyVerseSubscriptionHref}" id="menuDailyVerseSubscription">${t.dailyVerseSubscription}</a>
             <div class="menu-divider" role="separator"></div>
             <div class="menu-text-size-section">
               <div class="menu-text-size-label"><span aria-hidden="true">🔠</span><span>${t.textSize}</span></div>
@@ -173,6 +179,23 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `;
+
+    const dailyVerseSubscriptionLink = document.getElementById("menuDailyVerseSubscription");
+    if (dailyVerseSubscriptionLink && currentPage === "index.html") {
+      dailyVerseSubscriptionLink.addEventListener("click", async (event) => {
+        event.preventDefault();
+
+        dailyVerseSubscriptionLink.closest(".dropdown")?.classList.remove("is-open");
+        dailyVerseSubscriptionLink.blur();
+        window.history.pushState(null, "", dailyVerseSubscriptionHref);
+
+        if (typeof window.openDailyVerseSubscription === "function") {
+          await window.openDailyVerseSubscription();
+        } else {
+          window.location.assign(dailyVerseSubscriptionHref);
+        }
+      });
+    }
 
     window.addEventListener("pageshow", function () {
       document.querySelectorAll(".dropdown").forEach(dropdown => {

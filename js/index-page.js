@@ -325,6 +325,19 @@ function getIndexLang() {
           }
     }
 
+    async function openDailyVerseSubscription() {
+      let notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
+
+      if (!notificationBox) {
+        await openDailyVerse();
+        notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
+      }
+
+      notificationBox?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    window.openDailyVerseSubscription = openDailyVerseSubscription;
+
     if (loadDailyVerseBtn) {
       loadDailyVerseBtn.addEventListener("click", openDailyVerse);
     }
@@ -368,13 +381,17 @@ function getIndexLang() {
     }
 
     const requestedDailyVerseDay = Number(new URLSearchParams(window.location.search).get("day"));
-    if (loadDailyVerseBtn && Number.isInteger(requestedDailyVerseDay) && requestedDailyVerseDay > 0) {
+    const shouldOpenDailyVerseSubscription = window.location.hash === "#daily-verse-notifications";
+    if (shouldOpenDailyVerseSubscription) {
+      openDailyVerseSubscription();
+    } else if (loadDailyVerseBtn && Number.isInteger(requestedDailyVerseDay) && requestedDailyVerseDay > 0) {
       openDailyVerse();
     }
 
     const requestedDailyQuestion = Number(new URLSearchParams(window.location.search).get("question"));
     if (
       loadQuestionBtn &&
+      !shouldOpenDailyVerseSubscription &&
       (!Number.isInteger(requestedDailyVerseDay) || requestedDailyVerseDay <= 0) &&
       Number.isInteger(requestedDailyQuestion) &&
       requestedDailyQuestion > 0
