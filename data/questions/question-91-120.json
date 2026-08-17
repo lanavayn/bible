@@ -924,6 +924,103 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-111",
+            "day": 111,
+            "topic_ru": "Свет для других",
+            "topic_en": "A Light to Others",
+            "question_ru": "Что значит быть светом для других?",
+            "question_en": "What Does It Mean to Be a Light to Others?",
+            "reference_ru": "Матфея 5:14-16",
+            "reference_en": "Matthew 5:14-16",
+            "text_ru": "Вы — свет мира. Не может укрыться город, стоящий на верху горы. И, зажегши свечу, не ставят ее под сосудом, но на подсвечнике, и светит всем в доме. Так да светит свет ваш пред людьми, чтобы они видели ваши добрые дела и прославляли Отца вашего Небесного.",
+            "text_en": "You are the light of the world. A city located on a hill can't be hidden. Neither do you light a lamp and put it under a measuring basket, but on a stand; and it shines to all who are in the house. Even so, let your light shine before men, that they may see your good works and glorify your Father who is in heaven.",
+            "verse_ref": {
+              "book": "Matthew",
+              "chapter": 5,
+              "verse": "14-16"
+            },
+            "answer_ru": "Быть светом для других — значит жить так, чтобы наши слова и поступки отражали Божью любовь и помогали людям увидеть Бога.",
+            "answer_en": "To be a light to others means to live so that our words and actions reflect God's love and help people see God.",
+            "reflection_ru": "Быть светом — значит показывать Божью любовь своими словами и поступками.",
+            "reflection_en": "To be a light means to show God's love through our words and actions.",
+            "related": [
+              {
+                "reference_ru": "Филиппийцам 2:14-15",
+                "reference_en": "Philippians 2:14-15",
+                "text_ru": "Всё делайте без ропота и сомнения, чтобы вам быть неукоризненными и чистыми, чадами Божиими непорочными среди строптивого и развращенного рода, в котором вы сияете, как светила в мире.",
+                "text_en": "Do all things without complaining and arguing, that you may become blameless and harmless, children of God without defect in the middle of a crooked and perverse generation, among whom you are seen as lights in the world.",
+                "verse_ref": {
+                  "book": "Philippians",
+                  "chapter": 2,
+                  "verse": "14-15"
+                }
+              },
+              {
+                "reference_ru": "1 Петра 2:12",
+                "reference_en": "1 Peter 2:12",
+                "text_ru": "И провождать добродетельную жизнь между язычниками, дабы они за то, за что злословят вас, как злодеев, увидя добрые дела ваши, прославили Бога в день посещения.",
+                "text_en": "Having good behavior among the nations, so in that of which they speak against you as evildoers, they may by your good works, which they see, glorify God in the day of visitation.",
+                "verse_ref": {
+                  "book": "1-Peter",
+                  "chapter": 2,
+                  "verse": "12"
+                }
+              }
+            ]
+          },
+          {
+            "id": "question-day-112",
+            "day": 112,
+            "topic_ru": "Ангелы",
+            "topic_en": "Angels",
+            "question_ru": "Что Библия говорит об ангелах?",
+            "question_en": "What Does the Bible Say About Angels?",
+            "reference_ru": "Евреям 1:14",
+            "reference_en": "Hebrews 1:14",
+            "text_ru": "Не все ли они суть служебные духи, посылаемые на служение для тех, которые имеют наследовать спасение?",
+            "text_en": "Aren’t they all serving spirits, sent out to do service for the sake of those who will inherit salvation?",
+            "verse_ref": {
+              "book": "Hebrews",
+              "chapter": 1,
+              "verse": "14"
+            },
+            "answer_ru": "Ангелы — Божьи служители. Бог посылает их служить людям и охранять их.",
+            "answer_en": "Angels are God's servants. God sends them to serve and protect people.",
+            "reflection_ru": "Бог заботится о нас и посылает Своих ангелов на служение.",
+            "reflection_en": "God cares for us and sends His angels to serve.",
+            "related": [
+              {
+                "reference_ru": "Псалом 90:11",
+                "reference_en": "Psalm 91:11",
+                "text_ru": "Ибо Ангелам Своим заповедает о тебе — охранять тебя на всех путях твоих.",
+                "text_en": "For he will put his angels in charge of you, to guard you in all your ways.",
+                "verse_ref_lang": {
+                  "ru": {
+                    "book": "Psalms",
+                    "chapter": 90,
+                    "verse": "11"
+                  },
+                  "en": {
+                    "book": "Psalms",
+                    "chapter": 91,
+                    "verse": "11"
+                  }
+                }
+              },
+              {
+                "reference_ru": "Матфея 18:10",
+                "reference_en": "Matthew 18:10",
+                "text_ru": "Смотрите, не презирайте ни одного из малых сих; ибо говорю вам, что Ангелы их на небесах всегда видят лице Отца Моего Небесного.",
+                "text_en": "See that you don’t despise one of these little ones, for I tell you that in heaven their angels always see the face of my Father who is in heaven.",
+                "verse_ref": {
+                  "book": "Matthew",
+                  "chapter": 18,
+                  "verse": "10"
+                }
+              }
+            ]
           }
         ]
 }
