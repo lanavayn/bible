@@ -711,6 +711,421 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-19",
+      "day": 137,
+      "topic": {
+        "ru": "Господь завершит начатое",
+        "en": "The LORD Will Fulfill His Purpose for Me"
+      },
+      "reference_ru": "Псалом 137:8",
+      "reference_en": "Psalm 138:8",
+      "text_ru": "Господь совершит за меня! Милость Твоя, Господи, вовек: дело рук Твоих не оставляй.",
+      "text_en": "The LORD will fulfill that which concerns me. Your loving kindness, LORD, endures forever. Don’t forsake the works of your own hands.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "psalms",
+          "chapter": 137,
+          "verse": "8"
+        },
+        "en": {
+          "book": "psalms",
+          "chapter": 138,
+          "verse": "8"
+        }
+      },
+      "interpretation_ru": "Господь не оставляет дело Своих рук. Доверяй Ему: Он продолжает вести тебя и исполнит Свою волю.",
+      "interpretation_en": "The LORD does not abandon the work of His hands. Trust Him: He continues to lead you and will fulfill His purpose.",
+      "related": [
+        {
+          "reference_ru": "Псалом 56:3",
+          "reference_en": "Psalm 57:2",
+          "text_ru": "Воззову к Богу Всевышнему, Богу, благодетельствующему мне.",
+          "text_en": "I will cry to God Most High, to God who accomplishes my requests for me.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 56,
+              "verse": "3"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 57,
+              "verse": "2"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 32:11",
+          "reference_en": "Psalm 33:11",
+          "text_ru": "Совет же Господень стоит вовек; помышления сердца Его — в род и род.",
+          "text_en": "The counsel of the LORD stands fast forever, the thoughts of his heart to all generations.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 32,
+              "verse": "11"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 33,
+              "verse": "11"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-20",
+      "day": 138,
+      "topic": {
+        "ru": "Поступайте с другими так, как хотите, чтобы поступали с вами",
+        "en": "Treat Others as You Want to Be Treated"
+      },
+      "reference_ru": "Луки 6:31",
+      "reference_en": "Luke 6:31",
+      "text_ru": "И как хотите, чтобы с вами поступали люди, так и вы поступайте с ними.",
+      "text_en": "As you would like people to do to you, do exactly so to them.",
+      "verse_ref": {
+        "book": "luke",
+        "chapter": 6,
+        "verse": "31"
+      },
+      "interpretation_ru": "Иисус учит нас относиться к другим с той же добротой, уважением и заботой, которых мы ожидаем для себя.",
+      "interpretation_en": "Jesus teaches us to treat others with the same kindness, respect, and care that we desire for ourselves.",
+      "related": [
+        {
+          "reference_ru": "Филиппийцам 2:3-4",
+          "reference_en": "Philippians 2:3-4",
+          "text_ru": "Ничего не делайте по любопрению или по тщеславию, но по смиренномудрию почитайте один другого высшим себя. Не о себе только каждый заботься, но каждый и о других.",
+          "text_en": "Doing nothing through rivalry or through conceit, but in humility, each counting others better than himself; each of you not just looking to his own things, but each of you also to the things of others.",
+          "verse_ref": {
+            "book": "philippians",
+            "chapter": 2,
+            "verse": "3-4"
+          }
+        },
+        {
+          "reference_ru": "Римлянам 15:2",
+          "reference_en": "Romans 15:2",
+          "text_ru": "Каждый из нас должен угождать ближнему, во благо, к назиданию.",
+          "text_en": "Let each one of us please his neighbor for that which is good, to be building him up.",
+          "verse_ref": {
+            "book": "romans",
+            "chapter": 15,
+            "verse": "2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-21",
+      "day": 139,
+      "topic": {
+        "ru": "Пусть всё у вас будет с любовью",
+        "en": "Let All That You Do Be Done in Love"
+      },
+      "reference_ru": "1 Коринфянам 16:14",
+      "reference_en": "1 Corinthians 16:14",
+      "text_ru": "Всё у вас да будет с любовью.",
+      "text_en": "Let all that you do be done in love.",
+      "verse_ref": {
+        "book": "1-corinthians",
+        "chapter": 16,
+        "verse": "14"
+      },
+      "interpretation_ru": "Любовь должна проявляться не только в словах, но и во всём, что мы делаем каждый день.",
+      "interpretation_en": "Love should be seen not only in our words, but in everything we do each day.",
+      "related": [
+        {
+          "reference_ru": "1 Петра 4:8",
+          "reference_en": "1 Peter 4:8",
+          "text_ru": "Более же всего имейте усердную любовь друг ко другу, потому что любовь покрывает множество грехов.",
+          "text_en": "And above all things be earnest in your love among yourselves, for love covers a multitude of sins.",
+          "verse_ref": {
+            "book": "1-peter",
+            "chapter": 4,
+            "verse": "8"
+          }
+        },
+        {
+          "reference_ru": "1 Иоанна 4:11",
+          "reference_en": "1 John 4:11",
+          "text_ru": "Возлюбленные! если так возлюбил нас Бог, то и мы должны любить друг друга.",
+          "text_en": "Beloved, if God loved us in this way, we also ought to love one another.",
+          "verse_ref": {
+            "book": "1-john",
+            "chapter": 4,
+            "verse": "11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-22",
+      "day": 140,
+      "topic": {
+        "ru": "Всё могу через Христа",
+        "en": "I Can Do All Things Through Christ"
+      },
+      "reference_ru": "Филиппийцам 4:13",
+      "reference_en": "Philippians 4:13",
+      "text_ru": "Всё могу в укрепляющем меня Иисусе Христе.",
+      "text_en": "I can do all things through Christ who strengthens me.",
+      "verse_ref": {
+        "book": "philippians",
+        "chapter": 4,
+        "verse": "13"
+      },
+      "interpretation_ru": "Христос укрепляет нас, чтобы мы могли пройти через обстоятельства, которые встречаются на нашем пути.",
+      "interpretation_en": "Christ strengthens us to face the circumstances that come our way.",
+      "related": [
+        {
+          "reference_ru": "Псалом 17:33",
+          "reference_en": "Psalm 18:32",
+          "text_ru": "Бог препоясывает меня силою и устрояет мне верный путь.",
+          "text_en": "The God who arms me with strength, and makes my way perfect.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 17,
+              "verse": "33"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 18,
+              "verse": "32"
+            }
+          }
+        },
+        {
+          "reference_ru": "Колоссянам 1:11",
+          "reference_en": "Colossians 1:11",
+          "text_ru": "Укрепляясь всякою силою по могуществу славы Его, во всяком терпении и великодушии с радостью.",
+          "text_en": "Strengthened with all power, according to the might of his glory, for all endurance and perseverance with joy.",
+          "verse_ref": {
+            "book": "colossians",
+            "chapter": 1,
+            "verse": "11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-23",
+      "day": 141,
+      "topic": {
+        "ru": "Облекитесь в милосердие и доброту",
+        "en": "Clothe Yourselves with Compassion and Kindness"
+      },
+      "reference_ru": "Колоссянам 3:12-14",
+      "reference_en": "Colossians 3:12-14",
+      "text_ru": "Итак облекитесь, как избранные Божии, святые и возлюбленные, в милосердие, благость, смиренномудрие, кротость, долготерпение, снисходя друг другу и прощая взаимно, если кто на кого имеет жалобу: как Христос простил вас, так и вы. Более же всего облекитесь в любовь, которая есть совокупность совершенства.",
+      "text_en": "Put on therefore, as God’s chosen ones, holy and beloved, a heart of compassion, kindness, lowliness, humility, and perseverance; bearing with one another, and forgiving each other, if any man has a complaint against any; even as Christ forgave you, so you also do. Above all these things, walk in love, which is the bond of perfection.",
+      "verse_ref": {
+        "book": "colossians",
+        "chapter": 3,
+        "verse": "12-14"
+      },
+      "interpretation_ru": "Господь учит нас проявлять милосердие и доброту, быть смиренными, прощать друг друга и во всём руководствоваться любовью.",
+      "interpretation_en": "The Lord teaches us to show compassion and kindness, to be humble, to forgive one another, and to let love guide us in everything.",
+      "related": [
+        {
+          "reference_ru": "Ефесянам 4:2",
+          "reference_en": "Ephesians 4:2",
+          "text_ru": "Со всяким смиренномудрием и кротостью и долготерпением, снисходя друг ко другу любовью.",
+          "text_en": "With all lowliness and humility, with patience, bearing with one another in love.",
+          "verse_ref": {
+            "book": "ephesians",
+            "chapter": 4,
+            "verse": "2"
+          }
+        },
+        {
+          "reference_ru": "1 Фессалоникийцам 5:15",
+          "reference_en": "1 Thessalonians 5:15",
+          "text_ru": "Смотрите, чтобы кто кому не воздавал злом за зло; но всегда ищите добра и друг другу и всем.",
+          "text_en": "See that no one returns evil for evil to anyone, but always follow after that which is good for one another and for all.",
+          "verse_ref": {
+            "book": "1-thessalonians",
+            "chapter": 5,
+            "verse": "15"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-24",
+      "day": 142,
+      "topic": {
+        "ru": "Смотри на Иисуса",
+        "en": "Look to Jesus"
+      },
+      "reference_ru": "Евреям 12:1-2",
+      "reference_en": "Hebrews 12:1-2",
+      "text_ru": "Посему и мы, имея вокруг себя такое облако свидетелей, свергнем с себя всякое бремя и запинающий нас грех и с терпением будем проходить предлежащее нам поприще, взирая на начальника и совершителя веры Иисуса, Который, вместо предлежавшей Ему радости, претерпел крест, пренебрегши посрамление, и воссел одесную престола Божия.",
+      "text_en": "Therefore let’s also, seeing we are surrounded by so great a cloud of witnesses, lay aside every weight and the sin which so easily entangles us, and let’s run with perseverance the race that is set before us, looking to Jesus, the author and perfecter of faith, who for the joy that was set before him endured the cross, despising its shame, and has sat down at the right hand of the throne of God.",
+      "verse_ref": {
+        "book": "hebrews",
+        "chapter": 12,
+        "verse": "1-2"
+      },
+      "interpretation_ru": "Иисус — начало и совершитель нашей веры и пример верности до конца.",
+      "interpretation_en": "Jesus is the author and perfecter of our faith and our example of faithfulness to the end.",
+      "related": [
+        {
+          "reference_ru": "Филиппийцам 3:14",
+          "reference_en": "Philippians 3:14",
+          "text_ru": "Стремлюсь к цели, к почести вышнего звания Божия во Христе Иисусе.",
+          "text_en": "I press on toward the goal for the prize of the high calling of God in Christ Jesus.",
+          "verse_ref": {
+            "book": "philippians",
+            "chapter": 3,
+            "verse": "14"
+          }
+        },
+        {
+          "reference_ru": "2 Коринфянам 4:18",
+          "reference_en": "2 Corinthians 4:18",
+          "text_ru": "Когда мы смотрим не на видимое, но на невидимое: ибо видимое временно, а невидимое вечно.",
+          "text_en": "While we don’t look at the things which are seen, but at the things which are not seen. For the things which are seen are temporal, but the things which are not seen are eternal.",
+          "verse_ref": {
+            "book": "2-corinthians",
+            "chapter": 4,
+            "verse": "18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-25",
+      "day": 143,
+      "topic": {
+        "ru": "Совершенная любовь изгоняет страх",
+        "en": "Perfect Love Casts Out Fear"
+      },
+      "reference_ru": "1 Иоанна 4:18",
+      "reference_en": "1 John 4:18",
+      "text_ru": "В любви нет страха, но совершенная любовь изгоняет страх, потому что в страхе есть мучение. Боящийся несовершен в любви.",
+      "text_en": "There is no fear in love; but perfect love casts out fear, because fear has punishment. He who fears is not made perfect in love.",
+      "verse_ref": {
+        "book": "1-john",
+        "chapter": 4,
+        "verse": "18"
+      },
+      "interpretation_ru": "Божью любовь даёт сердцу уверенность и мир, тaм нет места страху.",
+      "interpretation_en": "God’s love gives the heart confidence and peace, leaving no room for fear.",
+      "related": [
+        {
+          "reference_ru": "1 Иоанна 4:16",
+          "reference_en": "1 John 4:16",
+          "text_ru": "И мы познали любовь, которую имеет к нам Бог, и уверовали в нее. Бог есть любовь, и пребывающий в любви пребывает в Боге, и Бог в нем.",
+          "text_en": "We know and have believed the love which God has for us. God is love, and he who remains in love remains in God, and God remains in him.",
+          "verse_ref": {
+            "book": "1-john",
+            "chapter": 4,
+            "verse": "16"
+          }
+        },
+        {
+          "reference_ru": "Римлянам 5:5",
+          "reference_en": "Romans 5:5",
+          "text_ru": "А надежда не постыжает, потому что любовь Божия излилась в сердца наши Духом Святым, данным нам.",
+          "text_en": "And hope doesn’t disappoint us, because God’s love has been poured into our hearts through the Holy Spirit who was given to us.",
+          "verse_ref": {
+            "book": "romans",
+            "chapter": 5,
+            "verse": "5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-26",
+      "day": 144,
+      "topic": {
+        "ru": "Пусть ваш свет светит перед людьми",
+        "en": "Let Your Light Shine Before Others"
+      },
+      "reference_ru": "Матфея 5:16",
+      "reference_en": "Matthew 5:16",
+      "text_ru": "Так да светит свет ваш пред людьми, чтобы они видели ваши добрые дела и прославляли Отца вашего Небесного.",
+      "text_en": "Even so, let your light shine before men, that they may see your good works and glorify your Father who is in heaven.",
+      "verse_ref": {
+        "book": "matthew",
+        "chapter": 5,
+        "verse": "16"
+      },
+      "interpretation_ru": "Наша вера становится видимой через добрые дела. Пусть люди, видя нашу жизнь, прославляют Небесного Отца.",
+      "interpretation_en": "Our faith becomes visible through good works. May people see our lives and glorify our heavenly Father.",
+      "related": [
+        {
+          "reference_ru": "Титу 2:7",
+          "reference_en": "Titus 2:7",
+          "text_ru": "Во всем показывай в себе образец добрых дел, в учительстве чистоту, степенность, неповрежденность.",
+          "text_en": "In all things show yourself an example of good works. In your teaching, show integrity, seriousness, incorruptibility.",
+          "verse_ref": {
+            "book": "titus",
+            "chapter": 2,
+            "verse": "7"
+          }
+        },
+        {
+          "reference_ru": "1 Иоанна 4:12",
+          "reference_en": "1 John 4:12",
+          "text_ru": "Бога никто никогда не видел. Если мы любим друг друга, то Бог в нас пребывает, и любовь Его совершенна есть в нас.",
+          "text_en": "No one has seen God at any time. If we love one another, God remains in us, and his love has been perfected in us.",
+          "verse_ref": {
+            "book": "1-john",
+            "chapter": 4,
+            "verse": "12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-27",
+      "day": 145,
+      "topic": {
+        "ru": "Живите в мире и стремитесь к святости",
+        "en": "Pursue Peace and Holiness"
+      },
+      "reference_ru": "Евреям 12:14",
+      "reference_en": "Hebrews 12:14",
+      "text_ru": "Старайтесь иметь мир со всеми и святость, без которой никто не увидит Господа.",
+      "text_en": "Follow after peace with all men, and the sanctification without which no man will see the Lord.",
+      "verse_ref": {
+        "book": "hebrews",
+        "chapter": 12,
+        "verse": "14"
+      },
+      "interpretation_ru": "Господь призывает нас жить в мире с людьми и стремиться к святости во всех поступках.",
+      "interpretation_en": "The Lord calls us to live in peace with others and to pursue holiness in all that we do.",
+      "related": [
+        {
+          "reference_ru": "Римлянам 12:16",
+          "reference_en": "Romans 12:16",
+          "text_ru": "Будьте единомысленны между собою; не высокомудрствуйте, но последуйте смиренным; не мечтайте о себе.",
+          "text_en": "Be of the same mind one toward another. Don’t set your mind on high things, but associate with the humble. Don’t be wise in your own conceits.",
+          "verse_ref": {
+            "book": "romans",
+            "chapter": 12,
+            "verse": "16"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 1:15-16",
+          "reference_en": "1 Peter 1:15-16",
+          "text_ru": "Но, по примеру призвавшего вас Святого, и сами будьте святы во всех поступках; ибо написано: будьте святы, потому что Я свят.",
+          "text_en": "But just as he who called you is holy, you yourselves also be holy in all of your behavior; because it is written, “You shall be holy, for I am holy.”",
+          "verse_ref": {
+            "book": "1-peter",
+            "chapter": 1,
+            "verse": "15-16"
+          }
+        }
+      ]
     }
   ]
 }

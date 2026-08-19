@@ -1021,6 +1021,51 @@
                 }
               }
             ]
+          },
+          {
+            "id": "question-day-113",
+            "day": 113,
+            "topic_ru": "Проклятие и благословение",
+            "topic_en": "Cursing and Blessing",
+            "question_ru": "Позволяет ли Библия проклинать другого человека или целый народ?",
+            "question_en": "Does the Bible Allow Us to Curse Another Person or an Entire Nation?",
+            "reference_ru": "Римлянам 12:14",
+            "reference_en": "Romans 12:14",
+            "text_ru": "Благословляйте гонителей ваших; благословляйте, а не проклинайте.",
+            "text_en": "Bless those who persecute you; bless, and don’t curse.",
+            "verse_ref": {
+              "book": "Romans",
+              "chapter": 12,
+              "verse": "14"
+            },
+            "answer_ru": "Библия не учит нас проклинать людей или народы. Она призывает благословлять даже тех, кто враждебно относится к нам, и молиться за них.",
+            "answer_en": "The Bible does not teach us to curse people or nations. It calls us to bless even those who are hostile toward us and to pray for them.",
+            "reflection_ru": "Бог призывает нас отвечать не проклятием, а благословением и молитвой, даже когда другие причиняют нам зло.",
+            "reflection_en": "God calls us to respond not with curses, but with blessing and prayer, even when others do us harm.",
+            "related": [
+              {
+                "reference_ru": "Луки 6:27-28",
+                "reference_en": "Luke 6:27-28",
+                "text_ru": "Но вам, слушающим, говорю: любите врагов ваших, благотворите ненавидящим вас, благословляйте проклинающих вас и молитесь за обижающих вас.",
+                "text_en": "But I tell you who hear: love your enemies, do good to those who hate you, bless those who curse you, and pray for those who mistreat you.",
+                "verse_ref": {
+                  "book": "Luke",
+                  "chapter": 6,
+                  "verse": "27-28"
+                }
+              },
+              {
+                "reference_ru": "Иакова 3:8-10",
+                "reference_en": "James 3:8-10",
+                "text_ru": "А язык укротить никто из людей не может: это — неудержимое зло; он исполнен смертоносного яда. Им благословляем Бога и Отца, и им проклинаем человеков, сотворенных по подобию Божию. Из тех же уст исходит благословение и проклятие: не должно, братия мои, сему так быть.",
+                "text_en": "But nobody can tame the tongue. It is a restless evil, full of deadly poison. With it we bless our God and Father, and with it we curse men who are made in the image of God. Out of the same mouth comes blessing and cursing. My brothers, these things ought not to be so.",
+                "verse_ref": {
+                  "book": "James",
+                  "chapter": 3,
+                  "verse": "8-10"
+                }
+              }
+            ]
           }
         ]
 }
