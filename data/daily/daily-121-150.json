@@ -1126,6 +1126,152 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-08-28",
+      "day": 146,
+      "topic": {
+        "ru": "Первая еда человека",
+        "en": "The First Food Given to Humanity"
+      },
+      "reference_ru": "Бытие 1:29",
+      "reference_en": "Genesis 1:29",
+      "text_ru": "И сказал Бог: вот, Я дал вам всякую траву, сеющую семя, какая есть на всей земле, и всякое дерево, у которого плод древесный, сеющий семя; — вам сие будет в пищу.",
+      "text_en": "God said, “Behold, I have given you every herb yielding seed, which is on the surface of all the earth, and every tree, which bears fruit yielding seed. It will be your food.”",
+      "verse_ref": {
+        "book": "genesis",
+        "chapter": 1,
+        "verse": "29"
+      },
+      "interpretation_ru": "В начале Бог дал человеку растительную пищу.",
+      "interpretation_en": "In the beginning, God gave humanity plant-based food.",
+      "related": [
+        {
+          "reference_ru": "Бытие 2:9",
+          "reference_en": "Genesis 2:9",
+          "text_ru": "И произрастил Господь Бог из земли всякое дерево, приятное на вид и хорошее для пищи, и дерево жизни посреди рая, и дерево познания добра и зла.",
+          "text_en": "Out of the ground the LORD God made every tree to grow that is pleasant to the sight and good for food, including the tree of life in the middle of the garden and the tree of the knowledge of good and evil.",
+          "verse_ref": {
+            "book": "genesis",
+            "chapter": 2,
+            "verse": "9"
+          }
+        },
+        {
+          "reference_ru": "Бытие 1:30",
+          "reference_en": "Genesis 1:30",
+          "text_ru": "А всем зверям земным, и всем птицам небесным, и всякому пресмыкающемуся по земле, в котором душа живая, дал Я всю зелень травную в пищу. И стало так.",
+          "text_en": "To every animal of the earth, and to every bird of the sky, and to everything that creeps on the earth, in which there is life, I have given every green herb for food;” and it was so.",
+          "verse_ref": {
+            "book": "genesis",
+            "chapter": 1,
+            "verse": "30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-29",
+      "day": 147,
+      "topic": {
+        "ru": "После потопа Господь позволил человеку есть мясо.",
+        "en": "After the Flood, the Lord allowed people to eat meat."
+      },
+      "reference_ru": "Бытие 9:3-4",
+      "reference_en": "Genesis 9:3-4",
+      "text_ru": "Всё движущееся, что живет, будет вам в пищу; как зелень травную даю вам всё; только плоти с душею ее, с кровью ее, не ешьте.",
+      "text_en": "Every moving thing that lives will be food for you. As I gave you the green herb, I have given everything to you. But flesh with its life, that is, its blood, you shall not eat.",
+      "verse_ref": {
+        "book": "genesis",
+        "chapter": 9,
+        "verse": "3-4"
+      },
+      "interpretation_ru": "После потопа Бог разрешил человеку употреблять в пищу животных.",
+      "interpretation_en": "After the flood, God permitted people to eat animals.",
+      "related": [
+        {
+          "reference_ru": "Псалом 103:14-15",
+          "reference_en": "Psalm 104:14-15",
+          "text_ru": "Ты произращаешь траву для скота, и зелень на пользу человека, чтобы произвести из земли пищу, и вино, которое веселит сердце человека, и елей, от которого блистает лице его, и хлеб, который укрепляет сердце человека.",
+          "text_en": "He causes the grass to grow for the livestock, and plants for man to cultivate, that he may produce food out of the earth: wine that makes glad the heart of man, oil to make his face to shine, and bread that strengthens man's heart.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 103,
+              "verse": "14-15"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 104,
+              "verse": "14-15"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-30",
+      "day": 148,
+      "topic": {
+        "ru": "Принимайте пищу с благодарением",
+        "en": "Receive Food with Thanksgiving"
+      },
+      "reference_ru": "1 Тимофею 4:4-5",
+      "reference_en": "1 Timothy 4:4-5",
+      "text_ru": "Ибо всякое творение Божие хорошо, и ничто не предосудительно, если принимается с благодарением, потому что освящается словом Божиим и молитвою.",
+      "text_en": "For every creature of God is good, and nothing is to be rejected if it is received with thanksgiving. For it is sanctified through the word of God and prayer.",
+      "verse_ref": {
+        "book": "1-timothy",
+        "chapter": 4,
+        "verse": "4-5"
+      },
+      "interpretation_ru": "Пища не должна становиться причиной страха или осуждения. Принимай Божьи дары с благодарностью и молитвой.",
+      "interpretation_en": "Food should not become a cause of fear or judgment. Receive God's gifts with thanksgiving and prayer.",
+      "related": [
+        {
+          "reference_ru": "1 Коринфянам 10:30-31",
+          "reference_en": "1 Corinthians 10:30-31",
+          "text_ru": "Если я с благодарением вкушаю пищу, то для чего порицать меня за то, за что я благодарю? Итак, едите ли, пьете ли, или иное что делаете, всё делайте в славу Божию.",
+          "text_en": "If I partake with thankfulness, why am I denounced for that for which I give thanks? Whether therefore you eat or drink, or whatever you do, do all to the glory of God.",
+          "verse_ref": {
+            "book": "1-corinthians",
+            "chapter": 10,
+            "verse": "30-31"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-2026-08-31",
+      "day": 149,
+      "topic": {
+        "ru": "Не осуждайте друг друга из-за пищи",
+        "en": "Do Not Judge One Another over Food"
+      },
+      "reference_ru": "Римлянам 14:2-3",
+      "reference_en": "Romans 14:2-3",
+      "text_ru": "Ибо иной уверен, что можно есть всё, а немощный ест овощи. Кто ест, не уничижай того, кто не ест; и кто не ест, не осуждай того, кто ест, потому что Бог принял его.",
+      "text_en": "One man has faith to eat all things, but he who is weak eats only vegetables. Don’t let him who eats despise him who doesn’t eat. Don’t let him who doesn’t eat judge him who eats, for God has accepted him.",
+      "verse_ref": {
+        "book": "romans",
+        "chapter": 14,
+        "verse": "2-3"
+      },
+      "interpretation_ru": "Не осуждай других за их выбор в пище.",
+      "interpretation_en": "Don’t judge others for their choices about food.",
+      "related": [
+        {
+          "reference_ru": "Колоссянам 2:16",
+          "reference_en": "Colossians 2:16",
+          "text_ru": "Итак никто да не осуждает вас за пищу, или питие, или за какой-нибудь праздник, или новомесячие, или субботу.",
+          "text_en": "Let no one therefore judge you in eating or drinking, or with respect to a feast day or a new moon or a Sabbath day.",
+          "verse_ref": {
+            "book": "colossians",
+            "chapter": 2,
+            "verse": "16"
+          }
+        }
+      ]
     }
   ]
 }
