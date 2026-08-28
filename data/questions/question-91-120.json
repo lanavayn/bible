@@ -1111,6 +1111,186 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-115",
+      "day": 115,
+      "topic_ru": "Ветхий и Новый Завет",
+      "topic_en": "The Old and New Testaments",
+      "question_ru": "Почему в Библии есть Ветхий и Новый Завет?",
+      "question_en": "Why Does the Bible Have Both the Old and New Testaments?",
+      "reference_ru": "Матфея 5:17",
+      "reference_en": "Matthew 5:17",
+      "text_ru": "Не думайте, что Я пришел нарушить закон или пророков: не нарушить пришел Я, но исполнить.",
+      "text_en": "Don’t think that I came to destroy the law or the prophets. I didn’t come to destroy, but to fulfill.",
+      "verse_ref": {
+        "book": "Matthew",
+        "chapter": 5,
+        "verse": "17"
+      },
+      "answer_ru": "Ветхий Завет готовит путь ко Христу, а Новый Завет рассказывает о Его пришествии и спасении.",
+      "answer_en": "The Old Testament prepares the way for Christ, while the New Testament tells of His coming and salvation.",
+      "reflection_ru": "Ветхий Завет готовит путь ко Христу, а Новый Завет рассказывает о Его пришествии и спасении.",
+      "reflection_en": "The Old Testament prepares the way for Christ, while the New Testament tells of His coming and salvation.",
+      "related": [
+        {
+          "reference_ru": "Луки 24:44",
+          "reference_en": "Luke 24:44",
+          "text_ru": "И сказал им: вот то, о чем Я вам говорил, еще быв с вами, что надлежит исполниться всему, написанному о Мне в законе Моисеевом и в пророках и псалмах.",
+          "text_en": "He said to them, “This is what I told you while I was still with you, that all things which are written in the law of Moses, the prophets, and the psalms concerning me must be fulfilled.”",
+          "verse_ref": {
+            "book": "Luke",
+            "chapter": 24,
+            "verse": "44"
+          }
+        },
+        {
+          "reference_ru": "2 Тимофею 3:15",
+          "reference_en": "2 Timothy 3:15",
+          "text_ru": "Притом же ты из детства знаешь священные писания, которые могут умудрить тебя во спасение верою во Христа Иисуса.",
+          "text_en": "From infancy, you have known the holy Scriptures which are able to make you wise for salvation through faith which is in Christ Jesus.",
+          "verse_ref": {
+            "book": "2-Timothy",
+            "chapter": 3,
+            "verse": "15"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-116",
+      "day": 116,
+      "topic_ru": "Сын Божий",
+      "topic_en": "The Son of God",
+      "question_ru": "Почему Иисус называется Сыном Божьим?",
+      "question_en": "Why Is Jesus Called the Son of God?",
+      "reference_ru": "Луки 1:35",
+      "reference_en": "Luke 1:35",
+      "text_ru": "Ангел сказал Ей в ответ: Дух Святый найдет на Тебя, и сила Всевышнего осенит Тебя; посему и рождаемое Святое наречется Сыном Божиим.",
+      "text_en": "The angel answered her, “The Holy Spirit will come on you, and the power of the Most High will overshadow you. Therefore also the holy one who is born from you will be called the Son of God.”",
+      "verse_ref": {
+        "book": "Luke",
+        "chapter": 1,
+        "verse": "35"
+      },
+      "answer_ru": "Иисус называется Сыном Божьим, потому что Он пришёл от Бога, и Сам Бог открыл, что Иисус — Его Сын.",
+      "answer_en": "Jesus is called the Son of God because He came from God, and God Himself revealed that Jesus is His Son.",
+      "reflection_ru": "Библия прямо называет Иисуса Сыном Божьим. Это открывает нам, Кто Он и от Кого Он пришёл.",
+      "reflection_en": "The Bible directly calls Jesus the Son of God. This reveals who He is and from whom He came.",
+      "related": [
+        {
+          "reference_ru": "Матфея 16:16",
+          "reference_en": "Matthew 16:16",
+          "text_ru": "Симон же Петр, отвечая, сказал: Ты — Христос, Сын Бога Живаго.",
+          "text_en": "Simon Peter answered, “You are the Christ, the Son of the living God.”",
+          "verse_ref": {
+            "book": "Matthew",
+            "chapter": 16,
+            "verse": "16"
+          }
+        },
+        {
+          "reference_ru": "Матфея 3:17",
+          "reference_en": "Matthew 3:17",
+          "text_ru": "И се, глас с небес глаголющий: Сей есть Сын Мой возлюбленный, в Котором Мое благоволение.",
+          "text_en": "Behold, a voice out of the heavens said, “This is my beloved Son, with whom I am well pleased.”",
+          "verse_ref": {
+          "book": "Matthew",
+          "chapter": 3,
+          "verse": "17"
+          }
+        }          
+      ]
+    },
+    {
+      "id": "question-day-117",
+      "day": 117,
+      "topic_ru": "Пришествие Иисуса",
+      "topic_en": "Why Jesus Came",
+      "question_ru": "Зачем Иисус пришёл на землю?",
+      "question_en": "Why Did Jesus Come to Earth?",
+      "reference_ru": "Луки 19:10",
+      "reference_en": "Luke 19:10",
+      "text_ru": "Ибо Сын Человеческий пришел взыскать и спасти погибшее.",
+      "text_en": "For the Son of Man came to seek and to save that which was lost.",
+      "verse_ref": {
+        "book": "Luke",
+        "chapter": 19,
+        "verse": "10"
+      },
+      "answer_ru": "Иисус пришёл на землю, чтобы найти и спасти погибших и открыть людям путь к спасению.",
+      "answer_en": "Jesus came to earth to seek and save the lost and to open the way of salvation for people.",
+      "reflection_ru": "Иисус пришёл в этот мир ради нашего спасения. Он ищет погибших и предлагает каждому человеку новую жизнь с Богом.",
+      "reflection_en": "Jesus came into this world for our salvation. He seeks the lost and offers every person a new life with God.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 3:17",
+          "reference_en": "John 3:17",
+          "text_ru": "Ибо не послал Бог Сына Своего в мир, чтобы судить мир, но чтобы мир спасен был чрез Него.",
+          "text_en": "For God didn’t send his Son into the world to judge the world, but that the world should be saved through him.",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 3,
+            "verse": "17"
+          }
+        },
+        {
+          "reference_ru": "Матфея 20:28",
+          "reference_en": "Matthew 20:28",
+          "text_ru": "Так как Сын Человеческий не для того пришел, чтобы Ему служили, но чтобы послужить и отдать душу Свою для искупления многих.",
+          "text_en": "Even as the Son of Man came not to be served, but to serve, and to give his life as a ransom for many.",
+          "verse_ref": {
+            "book": "Matthew",
+            "chapter": 20,
+            "verse": "28"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-118",
+      "day": 118,
+      "topic_ru": "Рождение свыше",
+      "topic_en": "Born Again",
+      "question_ru": "Что значит родиться свыше?",
+      "question_en": "What Does It Mean to Be Born Again?",
+      "reference_ru": "Иоанна 3:3",
+      "reference_en": "John 3:3",
+      "text_ru": "Иисус сказал ему в ответ: истинно, истинно говорю тебе, если кто не родится свыше, не может увидеть Царствия Божия.",
+      "text_en": "Jesus answered him, “Most certainly I tell you, unless one is born anew, he can’t see God’s Kingdom.”",
+      "verse_ref": {
+        "book": "John",
+        "chapter": 3,
+        "verse": "3"
+      },
+      "answer_ru": "Родиться свыше — значит получить новую духовную жизнь от Бога и начать жить под водительством Святого Духа.",
+      "answer_en": "To be born again means to receive new spiritual life from God and begin living under the guidance of the Holy Spirit.",
+      "reflection_ru": "Рождение свыше — это начало новой жизни с Богом, когда Он меняет сердце человека и ведёт его Своим Духом.",
+      "reflection_en": "Being born again is the beginning of a new life with God, as He changes a person’s heart and leads them by His Spirit.",
+      "related": [
+        {
+          "reference_ru": "Иоанна 3:5",
+          "reference_en": "John 3:5",
+          "text_ru": "Иисус отвечал: истинно, истинно говорю тебе, если кто не родится от воды и Духа, не может войти в Царствие Божие.",
+          "text_en": "Jesus answered, “Most certainly I tell you, unless one is born of water and spirit, he can’t enter into God’s Kingdom.”",
+          "verse_ref": {
+            "book": "John",
+            "chapter": 3,
+            "verse": "5"
+          }
+        },
+        {
+          "reference_ru": "1 Петра 1:23",
+          "reference_en": "1 Peter 1:23",
+          "text_ru": "Как возрожденные не от тленного семени, но от нетленного, от слова Божия, живого и пребывающего вовек.",
+          "text_en": "Having been born again, not of corruptible seed, but of incorruptible, through the word of God, which lives and remains forever.",
+          "verse_ref": {
+            "book": "1-Peter",
+            "chapter": 1,
+            "verse": "23"
+          }
+        }
+      ]
     }
   ]
 }
