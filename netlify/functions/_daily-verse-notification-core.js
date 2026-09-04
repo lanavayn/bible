@@ -12,7 +12,8 @@ const DAILY_JSON_FILES = [
   "daily-31-60.json",
   "daily-61-90.json",
   "daily-91-120.json",
-  "daily-121-150.json"
+  "daily-121-150.json",
+  "daily-151-180.json"
 ];
 
 function getDailyFileNameForDay(day) {
@@ -23,6 +24,7 @@ function getDailyFileNameForDay(day) {
   if (normalizedDay <= 90) return "daily-61-90.json";
   if (normalizedDay <= 120) return "daily-91-120.json";
   if (normalizedDay <= 150) return "daily-121-150.json";
+  if (normalizedDay <= 180) return "daily-151-180.json";
   return null;
 }
 
