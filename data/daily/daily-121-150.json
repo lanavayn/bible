@@ -1272,6 +1272,70 @@
           }
         }
       ]
+    },
+    {
+      "id": "daily-2026-09-01",
+      "day": 150,
+      "topic": {
+        "ru": "Бог — сила моего сердца",
+        "en": "God Is the Strength of My Heart"
+      },
+      "reference_ru": "Псалом 72:26",
+      "reference_en": "Psalm 73:26",
+      "text_ru": "Изнемогает плоть моя и сердце мое: Бог твердыня сердца моего и часть моя вовек.",
+      "text_en": "My flesh and my heart fails, but God is the strength of my heart and my portion forever.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "psalms",
+          "chapter": 72,
+          "verse": "26"
+        },
+        "en": {
+          "book": "psalms",
+          "chapter": 73,
+          "verse": "26"
+        }
+      },
+      "interpretation_ru": "Когда наши силы заканчиваются, Бог остаётся нашей опорой.",
+      "interpretation_en": "When our strength fails, God remains our support.",
+      "related": [
+        {
+          "reference_ru": "Псалом 27:7",
+          "reference_en": "Psalm 28:7",
+          "text_ru": "Господь — крепость моя и щит мой; на Него уповало сердце мое, и Он помог мне.",
+          "text_en": "The LORD is my strength and my shield. My heart has trusted in him, and I am helped.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 27,
+              "verse": "7"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 28,
+              "verse": "7"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 17:3",
+          "reference_en": "Psalm 18:2",
+          "text_ru": "Господь — твердыня моя и прибежище мое, Избавитель мой, Бог мой,— скала моя; на Него я уповаю.",
+          "text_en": "The LORD is my rock, my fortress, and my deliverer; my God, my rock, in whom I take refuge.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "psalms",
+              "chapter": 17,
+              "verse": "3"
+            },
+            "en": {
+              "book": "psalms",
+              "chapter": 18,
+              "verse": "2"
+            }
+          }
+        }
+      ]
     }
   ]
 }

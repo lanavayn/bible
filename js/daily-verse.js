@@ -5,8 +5,8 @@ import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 import { initDailyVerseNotifications, renderDailyVerseNotificationControls } from "./onesignal-notifications.js";
 
 const easterDates = {
-  2026: "2026-04-05", //production
-  //2026: "2026-01-05",  //for testing only
+  //2026: "2026-04-05", //production
+  2026: "2026-01-05",  //for testing only
   2027: "2027-03-28",
   2028: "2028-04-16",
   2029: "2029-04-01",
@@ -98,7 +98,8 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         "/data/daily/daily-31-60.json",
         "/data/daily/daily-61-90.json",
         "/data/daily/daily-91-120.json",
-        "/data/daily/daily-121-150.json"
+        "/data/daily/daily-121-150.json",
+        "/data/daily/daily-151-180.json"
       ];
       
       let verses = [];

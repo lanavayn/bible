@@ -1,0 +1,190 @@
+{
+    "verses": [
+      {
+        "id": "daily-2026-09-02",
+        "day": 151,
+        "topic": {
+          "ru": "Доверие во время трудностей",
+          "en": "Trust in Times of Trouble"
+        },
+        "reference_ru": "Иеремия 17:7-8",
+        "reference_en": "Jeremiah 17:7-8",
+        "text_ru": "Благословен человек, который надеется на Господа, и которого упование — Господь. Ибо он будет как дерево, посаженное при водах и пускающее корни свои у потока; не знает оно, когда приходит зной; лист его зелен, и во время засухи оно не боится и не перестает приносить плод.",
+        "text_en": "Blessed is the man who trusts in the LORD, and whose confidence is in the LORD. For he will be as a tree planted by the waters, who spreads out its roots by the river, and will not fear when heat comes, but its leaf will be green, and will not be concerned in the year of drought. It won’t cease from yielding fruit.",
+        "verse_ref": {
+          "book": "jeremiah",
+          "chapter": 17,
+          "verse": "7-8"
+        },
+        "interpretation_ru": "Доверяй Господу даже в трудные времена. Он даёт силы устоять и продолжать идти правильным путём.",
+        "interpretation_en": "Trust the Lord even in difficult times. He gives us strength to stand firm and continue on the right path.",
+        "related": [
+          {
+            "reference_ru": "Псалом 1:3",
+            "reference_en": "Psalm 1:3",
+            "text_ru": "И будет он как дерево, посаженное при потоках вод, которое приносит плод свой во время свое, и лист которого не вянет; и во всем, что он ни делает, успеет.",
+            "text_en": "He will be like a tree planted by the streams of water, that produces its fruit in its season, whose leaf also does not wither. Whatever he does shall prosper.",
+            "verse_ref": {
+              "book": "psalms",
+              "chapter": 1,
+              "verse": "3"
+            }
+          },
+          {
+            "reference_ru": "Псалом 83:6",
+            "reference_en": "Psalm 84:5",
+            "text_ru": "Блажен человек, которого сила в Тебе и у которого в сердце стези направлены к Тебе.",
+            "text_en": "Blessed are those whose strength is in you, who have set their hearts on a pilgrimage.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 83,
+                "verse": "6"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 84,
+                "verse": "5"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-09-03",
+        "day": 152,
+        "topic": {
+          "ru": "Господь даёт силу",
+          "en": "The Lord Gives Strength"
+        },
+        "reference_ru": "Аввакум 3:19",
+        "reference_en": "Habakkuk 3:19",
+        "text_ru": "Господь Бог — сила моя: Он сделает ноги мои как у оленя и на высоты мои возведет меня!",
+        "text_en": "The LORD, the Lord, is my strength. He makes my feet like deer’s feet, and enables me to go in high places.",
+        "verse_ref": {
+          "book": "habakkuk",
+          "chapter": 3,
+          "verse": "19"
+        },
+        "interpretation_ru": "Господь даёт нам силу идти вперёд даже тогда, когда путь труден.",
+        "interpretation_en": "The Lord gives us strength to keep going even when the path is difficult.",
+        "related": [
+          {
+            "reference_ru": "1 Паралипоменон 16:11",
+            "reference_en": "1 Chronicles 16:11",
+            "text_ru": "Взыщите Господа и силы Его, ищите непрестанно лица Его.",
+            "text_en": "Seek the LORD and his strength. Seek his face forever more.",
+            "verse_ref": {
+              "book": "1-chronicles",
+              "chapter": 16,
+              "verse": "11"
+            }
+          },
+          {
+            "reference_ru": "Ефесянам 3:16",
+            "reference_en": "Ephesians 3:16",
+            "text_ru": "Да даст вам, по богатству славы Своей, крепко утвердиться Духом Его во внутреннем человеке.",
+            "text_en": "That he would grant you, according to the riches of his glory, that you may be strengthened with power through his Spirit in the inner person.",
+            "verse_ref": {
+              "book": "ephesians",
+              "chapter": 3,
+              "verse": "16"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-09-04",
+        "day": 153,
+        "topic": {
+          "ru": "Не унывай",
+          "en": "Do Not Lose Heart"
+        },
+        "reference_ru": "2 Коринфянам 4:16",
+        "reference_en": "2 Corinthians 4:16",
+        "text_ru": "Посему мы не унываем; но если внешний наш человек и тлеет, то внутренний со дня на день обновляется.",
+        "text_en": "Therefore we don’t faint, but though our outward person is decaying, yet our inward person is renewed day by day.",
+        "verse_ref": {
+          "book": "2-corinthians",
+          "chapter": 4,
+          "verse": "16"
+        },
+        "interpretation_ru": "Не унывай: Господь обновляет нас изо дня в день.",
+        "interpretation_en": "Do not lose heart: the Lord renews us day by day.",
+        "related": [
+          {
+            "reference_ru": "Псалом 41:12",
+            "reference_en": "Psalm 42:11",
+            "text_ru": "Что унываешь ты, душа моя, и что смущаешься? Уповай на Бога, ибо я буду еще славить Его, Спасителя моего и Бога моего.",
+            "text_en": "Why are you in despair, my soul? Why are you disturbed within me? Hope in God! For I shall still praise him, the saving help of my countenance, and my God.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 41,
+                "verse": "12"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 42,
+                "verse": "11"
+              }
+            }
+          },
+          {
+            "reference_ru": "Евреям 10:35-36",
+            "reference_en": "Hebrews 10:35-36",
+            "text_ru": "Итак не оставляйте упования вашего, которому предстоит великое воздаяние. Терпение нужно вам, чтобы, исполнив волю Божию, получить обещанное.",
+            "text_en": "Therefore don’t throw away your boldness, which has a great reward. For you need endurance so that, having done the will of God, you may receive the promise.",
+            "verse_ref": {
+              "book": "hebrews",
+              "chapter": 10,
+              "verse": "35-36"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-09-05",
+        "day": 154,
+        "topic": {
+          "ru": "Бог рядом, когда жизнь идёт не по плану",
+          "en": "God Is Near When Life Doesn't Go as Planned"
+        },
+        "reference_ru": "Иакова 4:13-15",
+        "reference_en": "James 4:13-15",
+        "text_ru": "Теперь послушайте вы, говорящие: «сегодня или завтра отправимся в такой-то город, и проживем там один год, и будем торговать и получать прибыль»; вы, которые не знаете, что случится завтра: ибо что такое жизнь ваша? пар, являющийся на малое время, а потом исчезающий. Вместо того, чтобы вам говорить: «если угодно будет Господу и живы будем, то сделаем то или другое».",
+        "text_en": "Come now, you who say, “Today or tomorrow let’s go into this city and spend a year there, trade, and make a profit.” Whereas you don’t know what your life will be like tomorrow. For what is your life? For you are a vapor that appears for a little time and then vanishes away. For you ought to say, “If the Lord wills, we will both live and do this or that.”",
+        "verse_ref": {
+          "book": "james",
+          "chapter": 4,
+          "verse": "13-15"
+        },
+        "interpretation_ru": "Мы не знаем, что принесёт завтра, но можем доверять Господу, когда наши планы меняются.",
+        "interpretation_en": "We don't know what tomorrow will bring, but we can trust the Lord when our plans change.",
+        "related": [
+          {
+            "reference_ru": "Притчи 19:21",
+            "reference_en": "Proverbs 19:21",
+            "text_ru": "Много замыслов в сердце человека, но состоится только определенное Господом.",
+            "text_en": "There are many plans in a man’s heart, but the LORD’s counsel will prevail.",
+            "verse_ref": {
+              "book": "proverbs",
+              "chapter": 19,
+              "verse": "21"
+            }
+          },
+          {
+            "reference_ru": "Исаия 46:10",
+            "reference_en": "Isaiah 46:10",
+            "text_ru": "Я возвещаю от начала, что будет в конце, и от древних времен то, что еще не сделалось, говорю: Мой совет состоится, и все, что Мне угодно, Я сделаю.",
+            "text_en": "I declare the end from the beginning, and from ancient times things that are not yet done. I say: My counsel will stand, and I will do all that I please.",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 46,
+              "verse": "10"
+            }
+          }
+        ]
+      }
+    ]
+  }
