@@ -75,14 +75,14 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
   
     const ui = {
       ru: {
-        title: "Стих дня",
+        title: "Стих из Библии",
         loading: "Загрузка...",
         empty: "Стих не найден.",
         prev: "← Назад",
         next: "Вперёд →"
       },
       en: {
-        title: "Daily Verse",
+        title: "Bible Verse",
         loading: "Loading...",
         empty: "Verse not found.",
         prev: "← Previous",
@@ -180,12 +180,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
         const dayLabel = verse.day
           ? (lang === "ru"
-              ? `День ${verse.day}${isEasterDay ? " · Пасха" : ""}`
-              : `Day ${verse.day}${isEasterDay ? " · Easter" : ""}`)
+              ? `Стих ${verse.day}${isEasterDay ? " · Пасха" : ""}`
+              : `Verse ${verse.day}${isEasterDay ? " · Easter" : ""}`)
           : "";
-        const fullDateLabel = dayLabel && dateLabel
-            ? `${dayLabel} · ${dateLabel}`
-            : (dayLabel || dateLabel);
+        const fullDateLabel = dayLabel;
 
         const scriptureMotto = isEasterDay
             ? (lang === "ru"
@@ -256,10 +254,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           <div class="daily-card-kicker">
             <span class="daily-card-kicker-title">
               <span aria-hidden="true">📖</span>
-              ${lang === "ru" ? "Стих дня" : "Daily Verse"}
-            </span>
-            <span class="daily-card-kicker-subtitle">
-              ${lang === "ru" ? "Каждый день новый стих" : "Every day a new verse"}
+              ${lang === "ru" ? "Стих из Библии" : "Bible Verse"}
             </span>
           </div>
             <div class="daily-verse-header">
@@ -279,18 +274,13 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                           ? `<span class="daily-day-badge">${escapeHtml(dayLabel)}</span>`
                           : ""
                       }
-                      ${
-                        dateLabel
-                          ? `<span class="daily-date-text">${escapeHtml(dateLabel)}</span>`
-                          : ""
-                      }
                     </div>
 
                     <div class="daily-verse-date-jumps">
                       ${
                         index !== START_INDEX
                           ? `<button class="dv-jump-btn dv-jump-day1" type="button">
-                              ${lang === "ru" ? "День 1" : "Day 1"}
+                              ${lang === "ru" ? "Стих 1" : "Verse 1"}
                             </button>`
                           : ""
                       }
@@ -527,7 +517,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         
             const reopenBtn = document.getElementById("daily-verse-reopen");
             if (reopenBtn) {
-              reopenBtn.textContent = lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse";
+              reopenBtn.textContent = lang === "ru" ? "📖 Стих из Библии" : "📖 Bible Verse";
               reopenBtn.style.display = "inline-block";
             }
           });

@@ -158,10 +158,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         <div class="daily-card-kicker">
           <span class="daily-card-kicker-title">
             <span aria-hidden="true">💬</span>
-            ${lang === "ru" ? "Вопрос дня" : "Daily Question"}
-          </span>
-          <span class="daily-card-kicker-subtitle">
-            ${lang === "ru" ? "Каждый день новый вопрос" : "Every day a new question"}
+            ${lang === "ru" ? "Вопрос из Библии" : "Bible Question"}
           </span>
         </div>
 
@@ -172,8 +169,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             <div class="daily-verse-date">
               <span class="daily-day-badge">
                 ${lang === "ru" 
-                  ? `День ${q.day}${isToday ? " · Сегодня" : ""}`
-                  : `Day ${q.day}${isToday ? " · Today" : ""}`
+                  ? `Вопрос ${q.day}${isToday ? " · Сегодня" : ""}`
+                  : `Question ${q.day}${isToday ? " · Today" : ""}`
                 }
               </span>
             </div>
@@ -467,7 +464,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         
             const reopenBtn = document.getElementById("question-reopen");
             if (reopenBtn) {
-              reopenBtn.textContent = lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question";
+              reopenBtn.textContent = lang === "ru" ? "💬 Вопрос из Библии" : "💬 Bible Question";
               reopenBtn.style.display = "inline-block";
             }
           });

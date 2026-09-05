@@ -163,11 +163,11 @@ function getIndexLang() {
       <h1 class="hero-title">${t.heroTitle}</h1>
       <div class="daily-question-row" role="tablist">
         <button id="loadDailyVerseBtn" class="dv-reopen-btn" type="button" role="tab" aria-controls="daily-verse" aria-selected="false">
-          ${lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse"}
+          ${lang === "ru" ? "📖 Стих" : "📖 Verse"}
         </button>
 
         <button id="loadQuestionBtn" class="dv-reopen-btn" type="button" role="tab" aria-controls="question-of-day" aria-selected="false">
-          ${lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question"}
+          ${lang === "ru" ? "💬 Вопрос" : "💬 Question"}
         </button>
       </div>
 
@@ -316,7 +316,7 @@ function getIndexLang() {
             }
           
             loadDailyVerseBtn.textContent =
-              lang === "ru" ? "📖 Стих дня" : "📖 Daily Verse";
+              lang === "ru" ? "📖 Стих" : "📖 Verse";
           
           } catch (error) {
             console.error("Daily verse lazy load error:", error);
@@ -367,7 +367,7 @@ function getIndexLang() {
           }
         
           loadQuestionBtn.textContent =
-            lang === "ru" ? "💬 Вопрос дня" : "💬 Daily Question";
+            lang === "ru" ? "💬 Вопрос" : "💬 Question";
         
         } catch (error) {
           console.error(error);

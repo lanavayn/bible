@@ -21,8 +21,8 @@ const LEGACY_TAGS = ["daily_verse", "daily_question"];
 const FEATURE_COPY = {
   "daily-verse": {
     en: {
-      heading: "🔔 Receive a new Bible verse every day",
-      desktopDescription: "The Verse of the Day will appear in your browser notifications.",
+      heading: "🔔 Receive a Bible verse every day",
+      desktopDescription: "A Bible verse will appear in your browser notifications.",
       enableButton: "Subscribe",
       enabledTitle: "✅ Verse of the Day is connected",
       enabledMessage: "You will receive a new Bible verse every day.",
@@ -43,8 +43,8 @@ const FEATURE_COPY = {
       iosVersionUnsupported: "Web Push notifications require iOS or iPadOS 16.4 or later."
     },
     ru: {
-      heading: "🔔 Получайте новый стих каждый день",
-      desktopDescription: "Стих дня появится в уведомлениях вашего браузера.",
+      heading: "🔔 Получайте стих из Библии каждый день",
+      desktopDescription: "Стих из Библии появится в уведомлениях вашего браузера.",
       enableButton: "Подписаться",
       enabledTitle: "✅ Стих дня подключён",
       enabledMessage: "Вы будете получать новый стих каждый день.",
