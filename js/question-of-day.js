@@ -1,29 +1,29 @@
 import { buildBibleLink, isOldTestamentBook } from "./bibleLinks.js";
 import "./bible-chronology.js";
+import "./daily-verse-selector.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 
-//
-// PROD date Anpril 30 2026
-const START_DATE = "2026-05-10";
-//test  
-//const START_DATE = "2026-01-01";
+const LEGACY_START_DATE = "2026-05-10";
+const { addDaysToDateKey, getTorontoDateKey, selectQuestionRotation } = globalThis.DailyVerseSelector;
 
-function parseDate(dateStr) {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  return new Date(y, m - 1, d);
+function getLegacyQuestionId(dateKey) {
+  const startMs = Date.parse(`${LEGACY_START_DATE}T00:00:00.000Z`);
+  const dateMs = Date.parse(`${dateKey}T00:00:00.000Z`);
+  return Math.floor((dateMs - startMs) / 86400000) + 1;
 }
 
-function stripTime(date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
-}
+function getQuestionSelection(dateKey, rotationConfig) {
+  if (dateKey < rotationConfig.rotationStartDate) {
+    return {
+      dateKey,
+      questionId: getLegacyQuestionId(dateKey),
+      source: "legacy",
+      skipReason: null
+    };
+  }
 
-function getTodayIndex() {
-  const today = stripTime(new Date());
-  const start = parseDate(START_DATE);
-
-  const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
-  return diff + 1;
+  return selectQuestionRotation({ date: dateKey, rotationConfig });
 }
 
 window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "question-of-day") {
@@ -68,29 +68,48 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       questions = questions.concat(fileQuestions);
     }
     
-    //PROD code
-    const todayDay = getTodayIndex();
+    const rotationResponse = await fetch("/data/questions/question-rotation.json", { cache: "no-store" });
+    if (!rotationResponse.ok) {
+      throw new Error("Failed to load Question rotation configuration");
+    }
 
-    let todayIndex = -1;
-    let realTodayIndex = -1;
+    const rotationConfig = await rotationResponse.json();
+    const todayDateKey = getTorontoDateKey(new Date());
+    const todaySelection = getQuestionSelection(todayDateKey, rotationConfig);
+    const todayIndex = questions.findIndex(question =>
+      Number(question.day) === Number(todaySelection.questionId)
+    );
 
-    for (let i = 0; i < questions.length; i++) {
-      const day = Number(questions[i].day);
+    const hasRealToday = todayIndex !== -1;
+    const searchableQuestionIds = new Set(
+      todayDateKey < rotationConfig.rotationStartDate
+        ? questions
+            .filter(question => Number(question.day) <= Number(todaySelection.questionId))
+            .map(question => Number(question.day))
+        : rotationConfig.slots.filter(Number.isInteger)
+    );
 
-      if (day === todayDay) {
-        realTodayIndex = i;
-      }
-
-      if (day <= todayDay) {
-        todayIndex = i;
+    for (const assignment of Object.values(rotationConfig.reserved || {})) {
+      const questionId = Number(assignment?.questionId);
+      if (Number.isInteger(questionId) && questionId > 0
+        && (!assignment.activeFrom || todayDateKey >= assignment.activeFrom)) {
+        searchableQuestionIds.add(questionId);
       }
     }
 
-    if (todayIndex === -1) {
-      todayIndex = 0;
+    function getQuestionIndexForDate(dateKey) {
+      const selection = getQuestionSelection(dateKey, rotationConfig);
+      return questions.findIndex(question => Number(question.day) === Number(selection.questionId));
     }
 
-    const hasRealToday = realTodayIndex !== -1;
+    function getNavigationDateForQuestion(questionId) {
+      const legacyDateKey = addDaysToDateKey(LEGACY_START_DATE, Number(questionId) - 1);
+      return legacyDateKey < rotationConfig.rotationStartDate
+        ? legacyDateKey
+        : todaySelection.dateKey;
+    }
+
+    let currentDateKey = todaySelection.dateKey;
     let currentIndex = todayIndex;
     const requestedQuestion = getPositiveQueryNumber("question");
     if (requestedQuestion !== null) {
@@ -100,12 +119,19 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
 
       if (requestedIndex !== -1) {
         currentIndex = requestedIndex;
+        currentDateKey = getNavigationDateForQuestion(questions[requestedIndex].day);
       }
+    }
+
+    if (currentIndex === -1) {
+      console.warn("Bible Question selection is unavailable.", todaySelection);
+      root.innerHTML = `<div class="daily-verse-empty">${lang === "ru" ? "Вопрос из Библии пока недоступен." : "Bible Question is not available yet."}</div>`;
+      return;
     }
 
     function renderCard(index) {
       const q = questions[index];
-      const isToday = hasRealToday && index === todayIndex;
+      const isToday = currentDateKey === todaySelection.dateKey;
 
       const question = q[`question_${lang}`];
       const text = q[`text_${lang}`];
@@ -142,13 +168,22 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const shownHelpDefinitions = new Set();
       const mainVerseFirstPartHasLordHelp = hasEnglishOldTestamentLordHelp(mainVerseFirstPart, lang, verseRef);
 
-      const tomorrowQuestion = index === todayIndex ? questions[index + 1] : null;
+      const previousDateKey = addDaysToDateKey(currentDateKey, -1);
+      const previousIndex = getQuestionIndexForDate(previousDateKey);
+      const nextDateKey = addDaysToDateKey(currentDateKey, 1);
+      const nextIndex = getQuestionIndexForDate(nextDateKey);
+      const tomorrowSelection = isToday
+        ? getQuestionSelection(nextDateKey, rotationConfig)
+        : null;
+      const tomorrowQuestion = tomorrowSelection
+        ? questions.find(candidate => Number(candidate.day) === Number(tomorrowSelection.questionId))
+        : null;
       const tomorrowQuestionText = tomorrowQuestion?.[`question_${lang}`] || "";
       const tomorrowQuestionPreview = getTomorrowPreview(tomorrowQuestionText, 4);
-      const prevArrowHtml = index > 0
+      const prevArrowHtml = previousIndex !== -1
         ? `<button class="dv-arrow dv-left dv-arrow-date dv-prev" type="button">‹</button>`
         : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
-      const nextArrowHtml = index < todayIndex
+      const nextArrowHtml = !isToday && nextIndex !== -1
         ? `<button class="dv-arrow dv-right dv-arrow-date dv-next" type="button">›</button>`
         : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
 
@@ -178,7 +213,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
             <div class="daily-verse-date-jumps">
 
             ${
-              hasRealToday && todayIndex >= 0 && index !== todayIndex
+              hasRealToday && todayIndex >= 0 && !isToday
                 ? `<button class="dv-jump-btn dv-jump-today" type="button">
                     ${lang === "ru" ? "Сегодня" : "Today"}
                   </button>`
@@ -391,12 +426,13 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         });
       }
 
-      if (jumpTodayBtn) {
-        jumpTodayBtn.addEventListener("click", () => {
-          if (todayIndex >= 0) {
-            currentIndex = todayIndex;
-            updateQueryNumber("question", questions[currentIndex]?.day);
-            renderCard(currentIndex);
+        if (jumpTodayBtn) {
+          jumpTodayBtn.addEventListener("click", () => {
+            if (todayIndex >= 0) {
+              currentIndex = todayIndex;
+              currentDateKey = todaySelection.dateKey;
+              updateQueryNumber("question", questions[currentIndex]?.day);
+              renderCard(currentIndex);
           }
         });
       }
@@ -473,23 +509,27 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       const prevBtn = root.querySelector(".dv-prev");
       if (prevBtn) {
         prevBtn.addEventListener("click", () => {
-          updateQueryNumber("question", questions[index - 1]?.day);
-          renderCard(index - 1);
+          currentIndex = previousIndex;
+          currentDateKey = previousDateKey;
+          updateQueryNumber("question", questions[currentIndex]?.day);
+          renderCard(currentIndex);
         });
       }
 
       const nextBtn = root.querySelector(".dv-next");
       if (nextBtn) {
         nextBtn.addEventListener("click", () => {
-          updateQueryNumber("question", questions[index + 1]?.day);
-          renderCard(index + 1);
+          currentIndex = nextIndex;
+          currentDateKey = nextDateKey;
+          updateQueryNumber("question", questions[currentIndex]?.day);
+          renderCard(currentIndex);
         });
       }
     }
     function openQuestionSearch() {
       const availableQuestions = questions
         .map((question, index) => ({ question, index }))
-        .filter(item => item.index <= todayIndex);
+        .filter(item => searchableQuestionIds.has(Number(item.question.day)));
     
       let overlay = document.getElementById("question-search-overlay");
     
@@ -592,6 +632,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
     
       function openQuestionByIndex(index) {
         currentIndex = index;
+        currentDateKey = getNavigationDateForQuestion(questions[currentIndex].day);
         updateQueryNumber("question", questions[currentIndex]?.day);
         closeSearch();
     

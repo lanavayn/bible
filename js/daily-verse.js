@@ -87,6 +87,26 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       const todayIndex = verses.findIndex(verse => Number(verse.day) === Number(todaySelection.verseId));
       const hasRealToday = todayIndex !== -1;
 
+      function getVerseIndexForDate(dateKey) {
+        const selection = selectDailyVerse({ date: dateKey, rotationConfig });
+        return verses.findIndex(verse => Number(verse.day) === Number(selection.verseId));
+      }
+
+      function getNavigationDateForVerse(verseId) {
+        let dateKey = addDaysToDateKey(rotationConfig.rotationStartDate, -1);
+
+        for (let daysBack = 0; daysBack <= 370; daysBack += 1) {
+          const selection = selectDailyVerse({ date: dateKey, rotationConfig });
+          if (selection.source !== "rotation" && Number(selection.verseId) === Number(verseId)) {
+            return dateKey;
+          }
+          dateKey = addDaysToDateKey(dateKey, -1);
+        }
+
+        return todaySelection.dateKey;
+      }
+
+      let currentDateKey = todaySelection.dateKey;
       let currentIndex = todayIndex;
       const requestedDay = getPositiveQueryNumber("day");
       if (requestedDay !== null) {
@@ -94,6 +114,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
 
         if (requestedIndex !== -1) {
           currentIndex = requestedIndex;
+          currentDateKey = getNavigationDateForVerse(verses[requestedIndex].day);
         }
       }
 
@@ -162,9 +183,14 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           ? (lang === "ru" ? "Меньше" : "Less")
           : (lang === "ru" ? "Подробнее" : "More");
         const detailsVerseTitle = lang === "ru" ? "Полный стих:" : "Full verse:";
-        const tomorrowSelection = index === todayIndex
+        const isToday = currentDateKey === todaySelection.dateKey;
+        const previousDateKey = addDaysToDateKey(currentDateKey, -1);
+        const previousIndex = getVerseIndexForDate(previousDateKey);
+        const nextDateKey = addDaysToDateKey(currentDateKey, 1);
+        const nextIndex = getVerseIndexForDate(nextDateKey);
+        const tomorrowSelection = isToday
           ? selectDailyVerse({
-              date: addDaysToDateKey(todaySelection.dateKey, 1),
+              date: nextDateKey,
               rotationConfig
             })
           : null;
@@ -173,10 +199,10 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           : null;
         const tomorrowVerseText = tomorrowVerse?.[`text_${lang}`] || "";
         const tomorrowVersePreview = getTomorrowPreview(tomorrowVerseText, 7);        
-        const prevArrowHtml = verses.length > 1 && index > 0
+        const prevArrowHtml = previousIndex !== -1
           ? `<button class="dv-arrow dv-left dv-arrow-date" type="button" aria-label="${ui[lang].prev}">‹</button>`
           : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
-        const nextArrowHtml = !tomorrowVersePreview && verses.length > 1 && index < verses.length - 1
+        const nextArrowHtml = !tomorrowVersePreview && nextIndex !== -1
           ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
           : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
         const titleLineHtml = renderDailyVerseTitleLine(
@@ -235,7 +261,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                       }
 
                       ${
-                        hasRealToday && todayIndex >= 0 && index !== todayIndex
+                        hasRealToday && todayIndex >= 0 && !isToday
                           ? `<button class="dv-jump-btn dv-jump-today" type="button">
                               ${lang === "ru" ? "Сегодня" : "Today"}
                             </button>`
@@ -412,16 +438,18 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const mottoHelpClose = root.querySelector('.daily-motto-help-close');
 
         const goPrev = () => {
-          if (currentIndex > 0) {
-            currentIndex = currentIndex - 1;
+          if (previousIndex !== -1) {
+            currentIndex = previousIndex;
+            currentDateKey = previousDateKey;
             updateQueryNumber("day", verses[currentIndex]?.day);
             renderCard(currentIndex);
           }
         };
         
         const goNext = () => {
-          if (currentIndex < verses.length - 1) {
-            currentIndex = currentIndex + 1;
+          if (nextIndex !== -1) {
+            currentIndex = nextIndex;
+            currentDateKey = nextDateKey;
             updateQueryNumber("day", verses[currentIndex]?.day);
             renderCard(currentIndex);
           }
@@ -430,6 +458,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         if (jumpDay1Btn) {
           jumpDay1Btn.addEventListener("click", () => {
             currentIndex = START_INDEX;
+            currentDateKey = getNavigationDateForVerse(verses[currentIndex].day);
             updateQueryNumber("day", verses[currentIndex]?.day);
             animateChange(() => {
             renderCard(currentIndex);
@@ -441,6 +470,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           jumpTodayBtn.addEventListener("click", () => {
             if (todayIndex >= 0) {
               currentIndex = todayIndex;
+              currentDateKey = todaySelection.dateKey;
               updateQueryNumber("day", verses[currentIndex]?.day);
               animateChange(() => {
               renderCard(currentIndex);
@@ -710,6 +740,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       
         function openVerseByIndex(index) {
           currentIndex = index;
+          currentDateKey = getNavigationDateForVerse(verses[currentIndex].day);
           updateQueryNumber("day", verses[currentIndex]?.day);
         
           closeSearch();

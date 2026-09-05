@@ -64,6 +64,15 @@ test("legacy Verse 154 is followed by the approved first rotation verse", () => 
   assert.equal(rotation.source, "rotation");
 });
 
+test("the first rotation verse follows the preceding calendar selection", () => {
+  const previousDate = selector.addDaysToDateKey("2026-09-06", -1);
+  const previous = selector.selectDailyVerse({ date: previousDate, rotationConfig });
+  const current = selector.selectDailyVerse({ date: "2026-09-06", rotationConfig });
+
+  assert.equal(previous.verseId, 154);
+  assert.equal(current.verseId, 5);
+});
+
 test("an empty reserved slot skips forward without repeating a verse", () => {
   assert.equal(selector.selectDailyVerse({ date: "2026-09-16", rotationConfig }).verseId, 56);
   assert.equal(selector.selectDailyVerse({ date: "2026-09-17", rotationConfig }).verseId, 144);

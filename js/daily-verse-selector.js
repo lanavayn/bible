@@ -73,14 +73,14 @@
     return getEasterDateKey(dateKey) === dateKey;
   }
 
-  function getReservedVerseId(slotId, dateKey, rotationConfig) {
+  function getReservedContentId(slotId, dateKey, rotationConfig) {
     const assignment = rotationConfig?.reserved?.[slotId];
-    const verseId = Number(assignment?.verseId);
+    const contentId = Number(assignment?.verseId ?? assignment?.questionId);
     const activeFrom = assignment?.activeFrom;
 
-    if (!Number.isInteger(verseId) || verseId <= 0) return null;
+    if (!Number.isInteger(contentId) || contentId <= 0) return null;
     if (activeFrom && dateKey < activeFrom) return null;
-    return verseId;
+    return contentId;
   }
 
   function validateRotationConfig(rotationConfig) {
@@ -88,30 +88,32 @@
     const reserved = rotationConfig?.reserved && typeof rotationConfig.reserved === "object"
       ? rotationConfig.reserved
       : {};
-    const verseIds = slots.filter(slot => Number.isInteger(slot));
+    const contentIds = slots.filter(slot => Number.isInteger(slot));
     const reservedSlots = slots.filter(slot => typeof slot === "string");
-    const duplicateVerseIds = verseIds.filter((id, index) => verseIds.indexOf(id) !== index);
+    const duplicateContentIds = contentIds.filter((id, index) => contentIds.indexOf(id) !== index);
     const invalidReservedSlots = reservedSlots.filter(slot => !Object.hasOwn(reserved, slot));
 
     return {
       valid: Boolean(rotationConfig?.rotationStartDate)
         && slots.length > 0
-        && !duplicateVerseIds.length
+        && !duplicateContentIds.length
         && !invalidReservedSlots.length,
       positionCount: slots.length,
-      verseCount: verseIds.length,
+      contentCount: contentIds.length,
+      verseCount: contentIds.length,
       reservedCount: reservedSlots.length,
-      duplicateVerseIds: [...new Set(duplicateVerseIds)],
+      duplicateContentIds: [...new Set(duplicateContentIds)],
+      duplicateVerseIds: [...new Set(duplicateContentIds)],
       invalidReservedSlots
     };
   }
 
-  function getRotationSelection(dateKey, rotationConfig) {
+  function getRotationSelection(dateKey, rotationConfig, { skipEaster = false, easterContentId = null } = {}) {
     const validation = validateRotationConfig(rotationConfig);
     if (!validation.valid) {
       return {
         dateKey,
-        verseId: null,
+        contentId: null,
         source: "rotation",
         skipReason: "rotation-config-invalid",
         validation
@@ -123,11 +125,11 @@
     const slots = rotationConfig.slots;
 
     while (cursorDateKey <= dateKey) {
-      if (isEasterDate(cursorDateKey)) {
+      if (skipEaster && isEasterDate(cursorDateKey)) {
         if (cursorDateKey === dateKey) {
           return {
             dateKey,
-            verseId: Number(rotationConfig.easterVerseId),
+            contentId: Number(easterContentId),
             source: "easter",
             slotId: null,
             rotationSlotIndex: null,
@@ -139,7 +141,7 @@
         continue;
       }
 
-      let selectedVerseId = null;
+      let selectedContentId = null;
       let selectedSlotId = null;
       let selectedSlotIndex = null;
 
@@ -148,22 +150,22 @@
         const currentSlotIndex = slotIndex;
         slotIndex = (slotIndex + 1) % slots.length;
 
-        const verseId = Number.isInteger(slot)
+        const contentId = Number.isInteger(slot)
           ? slot
-          : getReservedVerseId(slot, cursorDateKey, rotationConfig);
+          : getReservedContentId(slot, cursorDateKey, rotationConfig);
 
-        if (verseId) {
-          selectedVerseId = verseId;
+        if (contentId) {
+          selectedContentId = contentId;
           selectedSlotId = typeof slot === "string" ? slot : null;
           selectedSlotIndex = currentSlotIndex;
           break;
         }
       }
 
-      if (!selectedVerseId) {
+      if (!selectedContentId) {
         return {
           dateKey,
-          verseId: null,
+          contentId: null,
           source: "rotation",
           skipReason: "rotation-no-selectable-verse",
           validation
@@ -173,7 +175,7 @@
       if (cursorDateKey === dateKey) {
         return {
           dateKey,
-          verseId: selectedVerseId,
+          contentId: selectedContentId,
           source: "rotation",
           slotId: selectedSlotId,
           rotationSlotIndex: selectedSlotIndex,
@@ -186,7 +188,7 @@
 
     return {
       dateKey,
-      verseId: null,
+      contentId: null,
       source: "rotation",
       skipReason: "rotation-date-before-start"
     };
@@ -199,6 +201,7 @@
     if (!rotationConfig?.rotationStartDate || dateKey < rotationConfig.rotationStartDate) {
       return {
         dateKey,
+        contentId: legacyDayNumber,
         verseId: legacyDayNumber,
         legacyDayNumber,
         source: isEasterDate(dateKey) ? "easter" : "legacy",
@@ -208,9 +211,24 @@
       };
     }
 
+    const selection = getRotationSelection(dateKey, rotationConfig, {
+      skipEaster: true,
+      easterContentId: rotationConfig.easterVerseId
+    });
     return {
-      ...getRotationSelection(dateKey, rotationConfig),
+      ...selection,
+      verseId: selection.contentId,
       legacyDayNumber
+    };
+  }
+
+  function selectQuestionRotation({ date = new Date(), rotationConfig } = {}) {
+    const dateKey = typeof date === "string" ? date : getTorontoDateKey(date);
+    const selection = getRotationSelection(dateKey, rotationConfig);
+
+    return {
+      ...selection,
+      questionId: selection.contentId
     };
   }
 
@@ -223,6 +241,7 @@
     getTorontoParts,
     isEasterDate,
     selectDailyVerse,
+    selectQuestionRotation,
     validateRotationConfig
   };
 

@@ -1,0 +1,42 @@
+{
+  "timeZone": "America/Toronto",
+  "rotationStartDate": "2026-09-05",
+  "slots": [
+    8, 75, 25, 101, 40, 61, 12, 80, 99, 17,
+    "RESERVED_01",
+    41, 106, 1, 70, 21, 81, 79, 15, 88, 30,
+    "RESERVED_02",
+    111, 48, 55, 116, 2, 68, 39, 95, 77, 9,
+    "RESERVED_03",
+    82, 28, 104, 42, 49, 109, 16, 66, 37, 89,
+    "RESERVED_04",
+    64, 3, 96, 26, 114, 56, 43, 102, 10, 73,
+    "RESERVED_05",
+    35, 83, 62, 4, 90, 24, 107, 50, 57, 112,
+    "RESERVED_06",
+    11, 71, 33, 97, 69, 18, 84, 22, 117, 44,
+    "RESERVED_07",
+    51, 105, 5, 78, 31, 91, 67, 19, 98, 29,
+    "RESERVED_08",
+    110, 58, 45, 115, 6, 76, 38, 85, 65, 13,
+    "RESERVED_09",
+    92, 27, 103, 52, 59, 108, 20, 74, 36, 86,
+    "RESERVED_10",
+    63, 7, 93, 34, 113, 46, 53, 14, 72, 23,
+    "RESERVED_11",
+    100, 87, 32, 60, 47, 94, 54
+  ],
+  "reserved": {
+    "RESERVED_01": { "questionId": null, "activeFrom": null },
+    "RESERVED_02": { "questionId": null, "activeFrom": null },
+    "RESERVED_03": { "questionId": null, "activeFrom": null },
+    "RESERVED_04": { "questionId": null, "activeFrom": null },
+    "RESERVED_05": { "questionId": null, "activeFrom": null },
+    "RESERVED_06": { "questionId": null, "activeFrom": null },
+    "RESERVED_07": { "questionId": null, "activeFrom": null },
+    "RESERVED_08": { "questionId": null, "activeFrom": null },
+    "RESERVED_09": { "questionId": null, "activeFrom": null },
+    "RESERVED_10": { "questionId": null, "activeFrom": null },
+    "RESERVED_11": { "questionId": null, "activeFrom": null }
+  }
+}
