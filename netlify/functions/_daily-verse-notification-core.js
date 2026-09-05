@@ -1,8 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const DailyVerseSelector = require("../../js/daily-verse-selector.js");
 
-const TORONTO_TIME_ZONE = process.env.NOTIFICATION_TZ || "America/Toronto";
+const TORONTO_TIME_ZONE = DailyVerseSelector.TORONTO_TIME_ZONE;
 const DEFAULT_SITE_URL = "https://bibleforall.ca";
 const ONESIGNAL_NOTIFICATION_ENDPOINT = "https://api.onesignal.com/notifications?c=push";
 const ONESIGNAL_NOTIFICATION_VIEW_ENDPOINT = "https://api.onesignal.com/notifications";
@@ -15,6 +16,13 @@ const DAILY_JSON_FILES = [
   "daily-121-150.json",
   "daily-151-180.json"
 ];
+const ROTATION_CONFIG_FILE = path.resolve(__dirname, "../../data/daily/verse-rotation.json");
+const {
+  getDayNumberFromEaster,
+  getTorontoDateKey,
+  getTorontoParts,
+  selectDailyVerse
+} = DailyVerseSelector;
 
 function getDailyFileNameForDay(day) {
   const normalizedDay = Number(day);
@@ -26,49 +34,6 @@ function getDailyFileNameForDay(day) {
   if (normalizedDay <= 150) return "daily-121-150.json";
   if (normalizedDay <= 180) return "daily-151-180.json";
   return null;
-}
-
-const easterDates = {
-  2026: "2026-04-05",
-  2027: "2027-03-28",
-  2028: "2028-04-16",
-  2029: "2029-04-01",
-  2030: "2030-04-21",
-  2031: "2031-04-13",
-  2032: "2032-03-28",
-  2033: "2033-04-17",
-  2034: "2034-04-09",
-  2035: "2035-03-25",
-  2036: "2036-04-13"
-};
-
-function getTorontoParts(date = new Date()) {
-  const formatter = new Intl.DateTimeFormat("en-CA", {
-    timeZone: TORONTO_TIME_ZONE,
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false
-  });
-
-  return Object.fromEntries(
-    formatter.formatToParts(date)
-      .filter(part => part.type !== "literal")
-      .map(part => [part.type, part.value])
-  );
-}
-
-function parseDate(dateString) {
-  const [year, month, day] = dateString.split("-").map(Number);
-  return Date.UTC(year, month - 1, day);
-}
-
-function getTorontoDateKey(date = new Date()) {
-  const parts = getTorontoParts(date);
-  return `${parts.year}-${parts.month}-${parts.day}`;
 }
 
 function getVerseDateKey(verse) {
@@ -84,17 +49,6 @@ function getVerseDateKey(verse) {
   return idMatch ? idMatch[1] : null;
 }
 
-function getDayNumberFromEaster(date = new Date()) {
-  const parts = getTorontoParts(date);
-  const todayUtc = Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day));
-  const easterThisYear = parseDate(easterDates[Number(parts.year)]);
-  const easterUtc = todayUtc >= easterThisYear
-    ? easterThisYear
-    : parseDate(easterDates[Number(parts.year) - 1]);
-
-  return Math.floor((todayUtc - easterUtc) / 86400000) + 1;
-}
-
 function loadDailyVerses() {
   const dailyDir = path.resolve(__dirname, "../../data/daily");
   return DAILY_JSON_FILES.flatMap(fileName => {
@@ -108,6 +62,18 @@ function loadDailyVerses() {
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return Array.isArray(data?.verses) ? data.verses : [];
   });
+}
+
+function loadVerseRotationConfig() {
+  try {
+    return JSON.parse(fs.readFileSync(ROTATION_CONFIG_FILE, "utf8"));
+  } catch (error) {
+    console.warn("[Bible for All] Daily Verse rotation configuration is unavailable.", {
+      filePath: ROTATION_CONFIG_FILE,
+      message: error.message
+    });
+    return null;
+  }
 }
 
 function loadDailyVersesFromFile(fileName) {
@@ -180,13 +146,47 @@ function getExactDailyVerseSelection({ day, expectedDateKey }) {
   };
 }
 
+function getDailyVerseSelectionById(verseId) {
+  const selectedFileName = getDailyFileNameForDay(verseId);
+  const selectedFile = loadDailyVersesFromFile(selectedFileName);
+  const verse = selectedFile.verses.find(candidate => Number(candidate.day) === Number(verseId)) || null;
+
+  return {
+    day: Number(verseId),
+    selectedFileName,
+    selectedFileExists: selectedFile.exists,
+    selectedVerseId: verse?.id || null,
+    selectedVerseDateKey: getVerseDateKey(verse),
+    verse,
+    skipReason: verse ? null : "rotation-verse-content-not-found"
+  };
+}
+
 function getCurrentDailyVerse(date = new Date()) {
-  const currentDayNumber = getDayNumberFromEaster(date);
   const expectedDateKey = getTorontoDateKey(date);
-  const selection = getExactDailyVerseSelection({
-    day: currentDayNumber,
-    expectedDateKey
-  });
+  const rotationConfig = loadVerseRotationConfig();
+  const decision = rotationConfig
+    ? selectDailyVerse({ date, rotationConfig })
+    : {
+        dateKey: expectedDateKey,
+        verseId: null,
+        legacyDayNumber: getDayNumberFromEaster(date),
+        source: "rotation",
+        skipReason: "rotation-config-unavailable"
+      };
+  const isLegacyDate = rotationConfig && expectedDateKey < rotationConfig.rotationStartDate;
+  const selection = decision.verseId
+    ? (isLegacyDate
+        ? getExactDailyVerseSelection({ day: decision.verseId, expectedDateKey })
+        : getDailyVerseSelectionById(decision.verseId))
+    : {
+        selectedFileName: null,
+        selectedFileExists: false,
+        selectedVerseId: null,
+        selectedVerseDateKey: null,
+        verse: null,
+        skipReason: decision.skipReason || "rotation-verse-content-not-found"
+      };
   const verses = loadDailyVerses();
   const highestAvailableDay = verses.reduce((highest, verse) => {
     const day = Number(verse.day);
@@ -194,22 +194,26 @@ function getCurrentDailyVerse(date = new Date()) {
   }, 0);
 
   return {
-    day: currentDayNumber,
-    currentDayNumber,
+    day: decision.verseId,
+    verseId: decision.verseId,
+    currentDayNumber: decision.legacyDayNumber,
     highestAvailableDay,
     expectedDateKey,
+    selectionSource: decision.source,
+    rotationSlotId: decision.slotId || null,
+    rotationSlotIndex: decision.rotationSlotIndex ?? null,
     verse: selection.verse,
     selectedFileName: selection.selectedFileName,
     selectedFileExists: selection.selectedFileExists,
     selectedVerseId: selection.selectedVerseId,
     selectedVerseDateKey: selection.selectedVerseDateKey,
-    exactDayMatchFound: selection.exactDayMatchFound,
-    exactDateMatchFound: selection.exactDateMatchFound,
-    exactDayMatchId: selection.exactDayMatchId,
-    exactDateMatchId: selection.exactDateMatchId,
-    exactDayMatchDateKey: selection.exactDayMatchDateKey,
-    exactDateMatchDateKey: selection.exactDateMatchDateKey,
-    skipReason: selection.skipReason
+    exactDayMatchFound: selection.exactDayMatchFound ?? Boolean(selection.verse),
+    exactDateMatchFound: selection.exactDateMatchFound ?? null,
+    exactDayMatchId: selection.exactDayMatchId ?? selection.selectedVerseId,
+    exactDateMatchId: selection.exactDateMatchId ?? null,
+    exactDayMatchDateKey: selection.exactDayMatchDateKey ?? selection.selectedVerseDateKey,
+    exactDateMatchDateKey: selection.exactDateMatchDateKey ?? null,
+    skipReason: decision.skipReason || selection.skipReason
   };
 }
 
@@ -257,6 +261,10 @@ function getUnavailableVerseReason(selection, language) {
   const notificationText = verse?.topic?.[language];
 
   if (!selection || !verse) {
+    if (selection?.skipReason) {
+      return selection.skipReason;
+    }
+
     if (selection?.skipReason === "day-date-mismatch") {
       return "day-date-mismatch";
     }
@@ -638,6 +646,7 @@ function delay(ms) {
 module.exports = {
   buildNotificationPayload,
   getCurrentDailyVerse,
+  getDailyVerseSelectionById,
   getDailyVerseForNotification,
   getExactDailyVerseSelection,
   getDailyVerseUrl,

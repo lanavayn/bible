@@ -3,58 +3,9 @@ import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 import { initFeedbackControls, renderFeedbackControls } from "./feedback.js";
 import { initDailyVerseNotifications, renderDailyVerseNotificationControls } from "./onesignal-notifications.js";
+import "./daily-verse-selector.js";
 
-const easterDates = {
-  2026: "2026-04-05", //production
-  //2026: "2026-01-05",  //for testing only
-  2027: "2027-03-28",
-  2028: "2028-04-16",
-  2029: "2029-04-01",
-  2030: "2030-04-21",
-  2031: "2031-04-13",
-  2032: "2032-03-28",
-  2033: "2033-04-17",
-  2034: "2034-04-09",
-  2035: "2035-03-25",
-  2036: "2036-04-13"
-};
-
-function parseLocalDate(dateString) {
-  const [y, m, d] = dateString.split("-").map(Number);
-  return new Date(y, m - 1, d);
-}
-
-function stripTime(date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
-}
-
-function getLastEaster(today = new Date()) {
-  const cleanToday = stripTime(today);
-  const year = cleanToday.getFullYear();
-  const thisEaster = parseLocalDate(easterDates[year]);
-
-  if (cleanToday >= thisEaster) return thisEaster;
-  return parseLocalDate(easterDates[year - 1]);
-}
-
-function getDayNumberFromEaster(today = new Date()) {
-  const cleanToday = stripTime(today);
-  const lastEaster = getLastEaster(cleanToday);
-
-  const diffMs = cleanToday - lastEaster;
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-  return diffDays + 1; // Пасха = Day 1
-}
-
-function getDateForDay(dayNumber, today = new Date()) {
-  const lastEaster = getLastEaster(today);
-
-  const date = new Date(lastEaster);
-  date.setDate(date.getDate() + (dayNumber - 1));
-
-  return date;
-}
+const { addDaysToDateKey, selectDailyVerse } = globalThis.DailyVerseSelector;
 
 window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse") {
     const root = document.getElementById(rootId);
@@ -115,39 +66,31 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         verses = verses.concat(fileVerses);
       }
 
+      const rotationResponse = await fetch("/data/daily/verse-rotation.json", { cache: "no-store" });
+      if (!rotationResponse.ok) {
+        throw new Error("Failed to load Daily Verse rotation configuration");
+      }
+
+      const rotationConfig = await rotationResponse.json();
+
       const START_INDEX = 0;
 
-      const todayDayNumber = getDayNumberFromEaster();
-
-      // production: показываем сегодняшний день,
-      // а если его ещё нет в JSON — последний доступный прошедший день
-      let todayIndex = -1;
-      let realTodayIndex = -1;
-
-      for (let i = 0; i < verses.length; i++) {
-        const day = Number(verses[i].day);
-
-        if (day === todayDayNumber) {
-          realTodayIndex = i;
-        }
-
-        if (day <= todayDayNumber) {
-          todayIndex = i;
-        }
+      if (!verses.length) {
+        root.innerHTML = `<div class="daily-verse-empty">${ui[lang].empty}</div>`;
+        return;
       }
 
-      if (todayIndex === -1) {
-        todayIndex = START_INDEX;
-      }
-
-      const hasRealToday = realTodayIndex !== -1;
+      const todaySelection = selectDailyVerse({
+        date: new Date(),
+        rotationConfig
+      });
+      const todayIndex = verses.findIndex(verse => Number(verse.day) === Number(todaySelection.verseId));
+      const hasRealToday = todayIndex !== -1;
 
       let currentIndex = todayIndex;
       const requestedDay = getPositiveQueryNumber("day");
       if (requestedDay !== null) {
-        const requestedIndex = verses.findIndex((verse, index) =>
-          index <= todayIndex && Number(verse.day) === requestedDay
-        );
+        const requestedIndex = verses.findIndex(verse => Number(verse.day) === requestedDay);
 
         if (requestedIndex !== -1) {
           currentIndex = requestedIndex;
@@ -155,8 +98,9 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
       }
 
       let keepDetailsOpen = false;
-  
-      if (!verses.length) {
+
+      if (currentIndex === -1) {
+        console.warn("Daily Verse selection is unavailable.", todaySelection);
         root.innerHTML = `<div class="daily-verse-empty">${ui[lang].empty}</div>`;
         return;
       }
@@ -172,9 +116,6 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         const reference = verse[`reference_${lang}`] || "";
         const text = verse[`text_${lang}`] || "";
         const interpretation = verse[`interpretation_${lang}`] || "";
-
-        const computedDate = getDateForDay(verse.day);
-        const dateLabel = formatDateFromDateObj(computedDate, lang);
 
         const isEasterDay = verse.day === 1;
 
@@ -221,13 +162,21 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
           ? (lang === "ru" ? "Меньше" : "Less")
           : (lang === "ru" ? "Подробнее" : "More");
         const detailsVerseTitle = lang === "ru" ? "Полный стих:" : "Full verse:";
-        const tomorrowVerse = index === todayIndex ? verses[index + 1] : null;
+        const tomorrowSelection = index === todayIndex
+          ? selectDailyVerse({
+              date: addDaysToDateKey(todaySelection.dateKey, 1),
+              rotationConfig
+            })
+          : null;
+        const tomorrowVerse = tomorrowSelection
+          ? verses.find(candidate => Number(candidate.day) === Number(tomorrowSelection.verseId))
+          : null;
         const tomorrowVerseText = tomorrowVerse?.[`text_${lang}`] || "";
         const tomorrowVersePreview = getTomorrowPreview(tomorrowVerseText, 7);        
         const prevArrowHtml = verses.length > 1 && index > 0
           ? `<button class="dv-arrow dv-left dv-arrow-date" type="button" aria-label="${ui[lang].prev}">‹</button>`
           : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
-        const nextArrowHtml = verses.length > 1 && index < todayIndex
+        const nextArrowHtml = !tomorrowVersePreview && verses.length > 1 && index < verses.length - 1
           ? `<button class="dv-arrow dv-right dv-arrow-date" type="button" aria-label="${ui[lang].next}">›</button>`
           : `<span class="dv-arrow-placeholder dv-arrow-date-placeholder"></span>`;
         const titleLineHtml = renderDailyVerseTitleLine(
@@ -471,7 +420,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         };
         
         const goNext = () => {
-          if (currentIndex < todayIndex) {
+          if (currentIndex < verses.length - 1) {
             currentIndex = currentIndex + 1;
             updateQueryNumber("day", verses[currentIndex]?.day);
             renderCard(currentIndex);
@@ -647,9 +596,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
         initDailyVerseNotifications(root);
       }
       function openDailyVerseSearch() {
-        const availableVerses = verses
-          .map((verse, index) => ({ verse, index }))
-          .filter(item => item.index <= todayIndex);
+        const availableVerses = verses.map((verse, index) => ({ verse, index }));
       
         let overlay = document.getElementById("daily-verse-search-overlay");
       
