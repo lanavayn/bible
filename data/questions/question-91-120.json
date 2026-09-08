@@ -1291,6 +1291,117 @@
           }
         }
       ]
+    },
+    {
+      "id": "question-day-119",
+      "day": 119,
+      "topic_ru": "Постоянство в жизни",
+      "topic_en": "What Remains Constant",
+      "question_ru": "Есть ли в жизни что-нибудь постоянное?",
+      "question_en": "Is There Anything in Life That Never Changes?",
+      "reference_ru": "Иов 14:1-2",
+      "reference_en": "Job 14:1-2",
+      "text_ru": "Человек, рожденный женою, краткодневен и пресыщен печалями: как цветок, он выходит и опадает; убегает, как тень, и не останавливается.",
+      "text_en": "Man, who is born of a woman, is of few days, and full of trouble. He grows up like a flower, and is cut down. He also flees like a shadow, and doesn’t continue.",
+      "verse_ref": {
+        "book": "Job",
+        "chapter": 14,
+        "verse": "1-2"
+      },
+      "answer_ru": "Земная жизнь постоянно меняется и быстро проходит, но Бог остаётся неизменным.",
+      "answer_en": "Earthly life is constantly changing and quickly passes, but God remains unchanged.",
+      "reflection_ru": "Всё земное временно. Поэтому важно строить свою жизнь на Боге, Который не меняется.",
+      "reflection_en": "Everything earthly is temporary. Therefore, it is important to build our lives on God, who does not change.",
+      "related": [
+        {
+          "reference_ru": "1 Паралипоменон 29:15",
+          "reference_en": "1 Chronicles 29:15",
+          "text_ru": "Потому что странники мы пред Тобою и пришельцы, как и все отцы наши; как тень дни наши на земле, и нет ничего прочного.",
+          "text_en": "For we are strangers before you and foreigners, as all our fathers were. Our days on the earth are as a shadow, and there is no remaining.",
+          "verse_ref": {
+            "book": "1-Chronicles",
+            "chapter": 29,
+            "verse": "15"
+          }
+        },
+        {
+          "reference_ru": "Евреям 13:8",
+          "reference_en": "Hebrews 13:8",
+          "text_ru": "Иисус Христос вчера и сегодня и во веки Тот же.",
+          "text_en": "Jesus Christ is the same yesterday, today, and forever.",
+          "verse_ref": {
+            "book": "Hebrews",
+            "chapter": 13,
+            "verse": "8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "question-day-120",
+      "day": 120,
+      "topic_ru": "Спокойствие среди перемен",
+      "topic_en": "Peace in Times of Change",
+      "question_ru": "Как сохранять спокойствие, когда всё быстро меняется?",
+      "question_en": "How Can We Stay Calm When Everything Is Changing So Quickly?",
+      "reference_ru": "Псалом 45:2-3",
+      "reference_en": "Psalm 46:1-2",
+      "text_ru": "Бог нам прибежище и сила, скорый помощник в бедах, посему не убоимся, хотя бы поколебалась земля, и горы двинулись в сердце морей.",
+      "text_en": "God is our refuge and strength, a very present help in trouble. Therefore we won’t be afraid, though the earth changes, though the mountains are shaken into the heart of the seas.",
+      "verse_ref_lang": {
+        "ru": {
+          "book": "Psalms",
+          "chapter": 45,
+          "verse": "2-3"
+        },
+        "en": {
+          "book": "Psalms",
+          "chapter": 46,
+          "verse": "1-2"
+        }
+      },
+      "answer_ru": "Когда всё вокруг меняется, мы можем сохранять спокойствие, доверяя Богу и помня, что Он — наша надежда.",
+      "answer_en": "When everything around us is changing, we can remain calm by trusting God and remembering that He is our hope.",
+      "reflection_ru": "Перемены могут пугать, но нам не нужно жить в страхе. Господь остаётся нашей опорой в любых обстоятельствах.",
+      "reflection_en": "Change can be frightening, but we do not need to live in fear. The Lord remains our support in every circumstance.",
+      "related": [
+        {
+          "reference_ru": "Псалом 61:6-7",
+          "reference_en": "Psalm 62:5-6",
+          "text_ru": "Только в Боге успокаивайся, душа моя! ибо на Него надежда моя. Только Он — твердыня моя и спасение мое, убежище мое: не поколеблюсь.",
+          "text_en": "My soul, wait in silence for God alone, for my expectation is from him. He alone is my rock and my salvation, my fortress. I will not be shaken.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 61,
+              "verse": "6-7"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 62,
+              "verse": "5-6"
+            }
+          }
+        },
+        {
+          "reference_ru": "Псалом 111:7-8",
+          "reference_en": "Psalm 112:7-8",
+          "text_ru": "Не убоится худой молвы: сердце его твердо, уповая на Господа. Утверждено сердце его: он не убоится, когда посмотрит на врагов своих.",
+          "text_en": "He will not be afraid of evil news. His heart is steadfast, trusting in the LORD. His heart is established. He will not be afraid in the end when he sees his adversaries.",
+          "verse_ref_lang": {
+            "ru": {
+              "book": "Psalms",
+              "chapter": 111,
+              "verse": "7-8"
+            },
+            "en": {
+              "book": "Psalms",
+              "chapter": 112,
+              "verse": "7-8"
+            }
+          }
+        }
+      ]
     }
   ]
 }

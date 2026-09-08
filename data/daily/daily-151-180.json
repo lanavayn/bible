@@ -185,6 +185,63 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-09-06",
+        "day": 155,
+        "topic": {
+          "ru": "Всё меняется, но Бог неизменен",
+          "en": "Everything Changes, but God Never Changes"
+        },
+        "reference_ru": "Псалом 101:26-27",
+        "reference_en": "Psalm 102:25-26",
+        "text_ru": "В начале Ты, Господи, основал землю, и небеса — дело Твоих рук; они погибнут, а Ты пребудешь; и все они, как риза, обветшают, и, как одежду, Ты переменишь их, и изменятся.",
+        "text_en": "Of old, you laid the foundation of the earth. The heavens are the work of your hands. They will perish, but you will endure. Yes, all of them will wear out like a garment. You will change them like a cloak, and they will be changed.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "psalms",
+            "chapter": 101,
+            "verse": "26-27"
+          },
+          "en": {
+            "book": "psalms",
+            "chapter": 102,
+            "verse": "25-26"
+          }
+        },
+        "interpretation_ru": "Всё вокруг меняется, но Бог остаётся неизменным. Всё по-прежнему в руках Господа.",
+        "interpretation_en": "Everything around us changes, but God remains the same. Everything is still in the Lord’s hands.",
+        "related": [
+          {
+            "reference_ru": "Псалом 101:28",
+            "reference_en": "Psalm 102:27",
+            "text_ru": "Но Ты — тот же, и лета Твои не кончатся.",
+            "text_en": "But you are the same. Your years will have no end.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "psalms",
+                "chapter": 101,
+                "verse": "28"
+              },
+              "en": {
+                "book": "psalms",
+                "chapter": 102,
+                "verse": "27"
+              }
+            }
+          },
+          {
+            "reference_ru": "Исаия 40:6-8",
+            "reference_en": "Isaiah 40:6-8",
+            "text_ru": "Голос говорит: возвещай! И сказал: что мне возвещать? Всякая плоть — трава, и вся красота её — как цвет полевой. Засыхает трава, увядает цвет, когда дунет на него дуновение Господа: так и народ — трава. Трава засыхает, цвет увядает, а слово Бога нашего пребудет вечно.",
+            "text_en": "The voice of one saying, “Cry out!” One said, “What shall I cry?” “All flesh is like grass, and all its glory is like the flower of the field. The grass withers, the flower fades, because the LORD’s breath blows on it. Surely the people are like grass. The grass withers, the flower fades; but the word of our God stands forever.”",
+            "verse_ref": {
+              "book": "isaiah",
+              "chapter": 40,
+              "verse": "6-8"
+            }
+          }
+        ]
       }
     ]
   }

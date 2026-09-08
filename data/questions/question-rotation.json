@@ -27,8 +27,8 @@
     100, 87, 32, 60, 47, 94, 54
   ],
   "reserved": {
-    "RESERVED_01": { "questionId": null, "activeFrom": null },
-    "RESERVED_02": { "questionId": null, "activeFrom": null },
+    "RESERVED_01": { "questionId": 119, "activeFrom": "2026-09-08" },
+    "RESERVED_02": { "questionId": 120, "activeFrom": "2026-09-08" },
     "RESERVED_03": { "questionId": null, "activeFrom": null },
     "RESERVED_04": { "questionId": null, "activeFrom": null },
     "RESERVED_05": { "questionId": null, "activeFrom": null },
