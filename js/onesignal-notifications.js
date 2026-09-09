@@ -4,6 +4,7 @@ const TAG_UPDATE_URL = "/.netlify/functions/onesignal-update-tags";
 const STATUS_ENABLED = "enabled";
 const STATUS_DISABLED = "disabled";
 const STATUS_ERROR = "error";
+const STATUS_CHECKING = "checking";
 const SUBSCRIPTION_WAIT_MS = 12000;
 const SUBSCRIPTION_POLL_MS = 400;
 const PREFERENCE_KEY = "bfa.notifications.daily-verse";
@@ -32,6 +33,8 @@ const FEATURE_COPY = {
       },
       disableButton: "Unsubscribe",
       connecting: "Connecting notifications...",
+      checking: "Checking notification subscription...",
+      stateUnavailable: "Subscription status is temporarily unavailable. Reopen this page to check again.",
       permissionDenied: "Notifications are blocked in your browser settings. Allow notifications for this site, then try again.",
       permissionDismissed: "Notification permission was not granted. Tap the button again when you are ready to allow it.",
       unsupported: "This browser does not support Web Push notifications.",
@@ -54,6 +57,8 @@ const FEATURE_COPY = {
       },
       disableButton: "Oтписаться",
       connecting: "Подключаем уведомления...",
+      checking: "Проверяем подписку на уведомления...",
+      stateUnavailable: "Статус подписки временно недоступен. Откройте страницу снова для повторной проверки.",
       permissionDenied: "Уведомления запрещены в настройках браузера. Разрешите уведомления для этого сайта и попробуйте снова.",
       permissionDismissed: "Разрешение на уведомления не предоставлено. Нажмите кнопку ещё раз, когда будете готовы разрешить уведомления.",
       unsupported: "Этот браузер не поддерживает Web Push уведомления.",
@@ -71,6 +76,29 @@ let configPromise = null;
 let sdkPromise = null;
 let initPromise = null;
 let activeConfig = null;
+const refreshingBoxes = new WeakSet();
+let resumeListenerInstalled = false;
+let lastResumeCheck = 0;
+
+function refreshVisibleNotificationControls() {
+  document.querySelectorAll('[data-notification-feature][data-bound="true"]').forEach(box => {
+    if (!getUnavailableMessage(getNotificationEnvironment(), getNotificationCopy(getBoxFeature(box), getBoxLanguage(box)))) {
+      refreshNotificationState(box);
+    }
+  });
+}
+
+function installNotificationResumeListener() {
+  if (resumeListenerInstalled) return;
+  resumeListenerInstalled = true;
+  const resume = () => {
+    if (document.visibilityState === "hidden" || Date.now() - lastResumeCheck < 15000) return;
+    lastResumeCheck = Date.now();
+    refreshVisibleNotificationControls();
+  };
+  document.addEventListener("visibilitychange", resume);
+  window.addEventListener("pageshow", resume);
+}
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
   return renderNotificationControls({ feature: "daily-verse", language });
@@ -115,6 +143,7 @@ function initNotificationControls(root = document, feature) {
   if (!box || box.dataset.bound === "true") return;
 
   box.dataset.bound = "true";
+  installNotificationResumeListener();
 
   const enableBtn = box.querySelector("[data-notification-enable]");
   const disableBtn = box.querySelector("[data-notification-disable]");
@@ -322,6 +351,7 @@ function initNotificationControls(root = document, feature) {
 }
 
 async function refreshNotificationState(box) {
+  if (!box.isConnected || refreshingBoxes.has(box) || box.dataset.notificationBusy === "true") return;
   const feature = getBoxFeature(box);
   const language = getBoxLanguage(box);
   const copy = getNotificationCopy(feature, language);
@@ -342,65 +372,73 @@ async function refreshNotificationState(box) {
     return;
   }
 
+  refreshingBoxes.add(box);
+  setState(box, STATUS_CHECKING);
+  setStatus(box, "");
   try {
-    const OneSignal = await initializeOneSignal();
+    const OneSignal = await withSubscriptionTimeout(initializeOneSignal());
+    const startedAt = Date.now();
+    while (box.isConnected && getNotificationPermission() === "granted"
+      && !isConfirmedActiveSubscription(OneSignal, getPushSubscriptionState(OneSignal))
+      && Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+      await delay(SUBSCRIPTION_POLL_MS);
+    }
+    if (!box.isConnected || box.dataset.notificationBusy === "true") return;
+
     const subscription = getPushSubscriptionState(OneSignal);
-    let featureEnabled = isConfirmedActiveSubscription(OneSignal, subscription);
-
-    console.info("[OneSignal Subscribe] state detected during page initialization", {
-      timestamp: new Date().toISOString(),
-      feature,
-      language,
-      notificationPermission: getNotificationPermission(),
-      oneSignalPermission: OneSignal.Notifications?.permission ?? null,
-      subscription: getLoggableSubscriptionState(subscription),
-      locallyActive: featureEnabled
-    });
-
-    let subscriptionLanguage = null;
-
-    if (featureEnabled) {
-      const existingTags = await getOneSignalTags(OneSignal);
-      subscriptionLanguage = getSubscriptionLanguage(existingTags);
-
-      if (!subscriptionLanguage) {
-        throw new Error("The active notification subscription has no confirmed language tag.");
-      }
-
-      const confirmedTags = await syncAndVerifyFeatureTags(
-        OneSignal,
-        feature,
-        subscriptionLanguage,
-        true
-      );
-      subscriptionLanguage = getSubscriptionLanguage(confirmedTags);
-    }
-
-    if (!featureEnabled) {
-      setLocalPreference(false);
-    } else {
+    if (isConfirmedActiveSubscription(OneSignal, subscription)) {
+      // Language metadata is not proof of whether the push channel is active.
       setLocalPreference(true);
+      setState(box, STATUS_ENABLED);
+      try {
+        const tags = await withSubscriptionTimeout(getOneSignalTags(OneSignal));
+        if (box.isConnected && box.dataset.notificationBusy !== "true"
+          && isConfirmedActiveSubscription(OneSignal, getPushSubscriptionState(OneSignal))) {
+          setState(box, STATUS_ENABLED, getSubscriptionLanguage(tags));
+        }
+      } catch (error) {
+        console.info("[Bible for All] Subscription active; language metadata unavailable.", error);
+      }
+      return;
     }
 
-    setState(
-      box,
-      featureEnabled ? STATUS_ENABLED : STATUS_DISABLED,
-      subscriptionLanguage
+    // An absent SDK identity alone is inconclusive. Check the actual browser
+    // push channel after the restoration window, without creating a subscription.
+    const registration = await withSubscriptionTimeout(
+      navigator.serviceWorker.getRegistration(activeConfig.serviceWorkerScope)
     );
-    console.info("[OneSignal Subscribe] page initialization UI decision", {
-      timestamp: new Date().toISOString(),
-      feature,
-      language,
-      state: featureEnabled ? STATUS_ENABLED : STATUS_DISABLED,
-      reason: featureEnabled
-        ? "Local and server subscription checks passed."
-        : "An active OneSignal push subscription was not confirmed."
-    });
+    const browserSubscription = registration
+      ? await withSubscriptionTimeout(registration.pushManager.getSubscription())
+      : undefined;
+    if (!box.isConnected || box.dataset.notificationBusy === "true") return;
+    const current = getPushSubscriptionState(OneSignal);
+    if (isConfirmedActiveSubscription(OneSignal, current)) {
+      setLocalPreference(true);
+      setState(box, STATUS_ENABLED);
+    } else if (getNotificationPermission() !== "granted"
+      || ((current.id || browserSubscription === null)
+        && OneSignal.User?.PushSubscription?.optedIn === false)) {
+      setLocalPreference(false);
+      setState(box, STATUS_DISABLED);
+    } else {
+      setStatus(box, copy.stateUnavailable);
+    }
   } catch (error) {
-    console.info("[Bible for All] Notifications are not ready yet.", error);
-    setLocalPreference(false);
-    setState(box, STATUS_DISABLED);
+    console.info("[Bible for All] Subscription state could not be confirmed.", error);
+    if (box.isConnected && box.dataset.notificationBusy !== "true") setStatus(box, copy.stateUnavailable);
+  } finally {
+    refreshingBoxes.delete(box);
   }
+}
+
+function withSubscriptionTimeout(promise) {
+  let timer;
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error("Subscription state check timed out.")), SUBSCRIPTION_WAIT_MS);
+    })
+  ]).finally(() => clearTimeout(timer));
 }
 
 export async function syncDailyVerseNotificationLanguage(language) {
@@ -481,7 +519,11 @@ async function initializeOneSignal() {
 
           await OneSignal.init(initOptions);
 
+          // One page-level listener; query live cards instead of retaining old DOM.
+          OneSignal.User?.PushSubscription?.addEventListener("change", refreshVisibleNotificationControls);
+
           resolve(OneSignal);
+          refreshVisibleNotificationControls();
         } catch (error) {
           reject(error);
         }
@@ -950,11 +992,17 @@ function setState(box, state, subscriptionLanguage = null) {
 
   box.dataset.notificationState = state;
 
+  if (state === STATUS_CHECKING) {
+    title.textContent = copy.checking;
+    desktopMessage.hidden = true;
+    message.hidden = true;
+    enableBtn.hidden = true;
+    disableBtn.hidden = true;
+    return;
+  }
+
   if (state === STATUS_ENABLED) {
-    const enabledMessage = copy.enabledMessageByLanguage?.[subscriptionLanguage];
-    if (!enabledMessage) {
-      throw new Error("The active notification subscription language is unavailable.");
-    }
+    const enabledMessage = copy.enabledMessageByLanguage?.[subscriptionLanguage] || copy.enabledMessage;
 
     title.textContent = copy.enabledTitle;
     message.textContent = enabledMessage;
@@ -1161,6 +1209,7 @@ function setStatus(box, message, type = "") {
 }
 
 function setBusy(box, isBusy) {
+  box.dataset.notificationBusy = String(isBusy);
   box.querySelectorAll("button").forEach(button => {
     button.disabled = isBusy;
   });
