@@ -4982,6 +4982,7 @@ body.daily-verse-search-open {
 
 .daily-question-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 6px;
@@ -4991,9 +4992,57 @@ body.daily-verse-search-open {
 }
 
 /* desktop / tablet buttons */
+.daily-question-row #loadHeartBtn {
+  white-space: normal;
+  max-width: 100%;
+}
+
+.heart-card {
+  background: #fffdf8;
+  border: 1px solid #e8dcc8;
+  border-radius: 0.9rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 1rem;
+  margin-bottom: 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.heart-card h2,
+.heart-card h3 {
+  text-align: center;
+}
+
+.heart-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.heart-pair .dv-reopen-btn {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.heart-verses:empty {
+  display: none;
+}
+
+.heart-verses {
+  text-align: left;
+}
+
+.heart-verses .scripture-related-item {
+  margin-bottom: 0.9rem;
+}
+
 .daily-question-row .dv-reopen-btn {
   flex: 0 0 auto;
-  min-width: 170px;
+  min-width: 0;
   max-width: none;
   white-space: nowrap;
   font-size: 1rem;
@@ -5029,7 +5078,7 @@ body.daily-verse-search-open {
   }
 
   .daily-question-row .dv-reopen-btn {
-    flex: 1 1 0;
+    flex: 0 1 auto;
     min-width: 0;
     font-size: 0.92rem;
     padding: 0.56rem 0.45rem;

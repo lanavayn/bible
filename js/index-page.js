@@ -93,6 +93,7 @@ function getIndexLang() {
   }
 
   function closeDailyAndQuestion() {
+    closeHeart();
     const daily = document.getElementById("daily-verse");
     const question = document.getElementById("question-of-day");
   
@@ -103,6 +104,14 @@ function getIndexLang() {
       btn.classList.remove("is-active", "is-muted");
       btn.setAttribute("aria-selected", "false");
     });
+  }
+
+  function closeHeart() {
+    const heart = document.getElementById("heart");
+    if (heart) heart.hidden = true;
+    const button = document.getElementById("loadHeartBtn");
+    button?.classList.remove("is-active");
+    button?.setAttribute("aria-selected", "false");
   }
   
   function closeAllTopicCards() {
@@ -169,6 +178,9 @@ function getIndexLang() {
         <button id="loadQuestionBtn" class="dv-reopen-btn" type="button" role="tab" aria-controls="question-of-day" aria-selected="false">
           ${lang === "ru" ? "💬 Вопрос" : "💬 Question"}
         </button>
+        <button id="loadHeartBtn" class="dv-reopen-btn" type="button" role="tab" aria-controls="heart" aria-selected="false">
+          ${lang === "ru" ? "❤️ Что на сердце?" : "❤️ What’s on your heart?"}
+        </button>
       </div>
 
       <section id="daily-verse-block">
@@ -178,6 +190,7 @@ function getIndexLang() {
       <section id="question-of-day-block">
         <div id="question-of-day" class="text-size-content"></div>
       </section>
+      <section id="heart" class="heart-card" role="tabpanel" aria-labelledby="loadHeartBtn" hidden></section>
 
       <div class="topics-toolbar topic-toolbar-hidden">
         <p class="topics-label">${t.topicsLabel}</p>
@@ -290,8 +303,26 @@ function getIndexLang() {
 
     const loadDailyVerseBtn = document.getElementById("loadDailyVerseBtn");
     const loadQuestionBtn = document.getElementById("loadQuestionBtn");
+    const loadHeartBtn = document.getElementById("loadHeartBtn");
+    loadHeartBtn.addEventListener("click", async () => {
+      closeDailyAndQuestion();
+      closeAllTopicCards();
+      const heart = document.getElementById("heart");
+      heart.hidden = false;
+      heart.textContent = lang === "ru" ? "Загрузка..." : "Loading...";
+      loadHeartBtn.classList.add("is-active");
+      loadHeartBtn.setAttribute("aria-selected", "true");
+      try {
+        const { renderHeart } = await import("/js/heart.js");
+        if (!heart.hidden) await renderHeart(heart, lang);
+      } catch (error) {
+        heart.textContent = lang === "ru" ? "Не удалось загрузить стихи. Попробуйте снова." : "Could not load verses. Please try again.";
+        console.error("Heart loading failed:", error);
+      }
+    });
 
     async function openDailyVerse() {
+      closeHeart();
       if (!loadDailyVerseBtn) return;
         loadDailyVerseBtn.textContent =
           lang === "ru" ? "Загрузка..." : "Loading...";
@@ -343,6 +374,7 @@ function getIndexLang() {
     }
 
     async function openDailyQuestion() {
+      closeHeart();
       if (!loadQuestionBtn) return;
       loadQuestionBtn.textContent =
         lang === "ru" ? "Загрузка..." : "Loading...";
