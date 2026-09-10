@@ -3,6 +3,10 @@ import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 
 const categoryIcons = { joy: "😊", sadness: "😢", peace: "🕊️", anxiety: "😟" };
+const categoryButtonLabels = {
+  ru: { joy: "Радость", sadness: "Грусть", peace: "Спокойствие", anxiety: "Тревога" },
+  en: { joy: "Joy", sadness: "Sadness", peace: "Peace", anxiety: "Anxiety" }
+};
 
 export async function renderHeart(root, language) {
   const lang = language === "ru" ? "ru" : "en";
@@ -51,7 +55,7 @@ export async function renderHeart(root, language) {
     button.dataset.heartCategory = category.id;
     button.className = "dv-reopen-btn";
     const label = [categoryIcons[category.id], category[`title_${lang}`]].filter(Boolean).join(" ");
-    button.textContent = label;
+    button.textContent = categoryButtonLabels[lang][category.id] || category[`title_${lang}`];
     button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", () => {
       if (button.getAttribute("aria-pressed") === "true") {
@@ -66,6 +70,7 @@ export async function renderHeart(root, language) {
         item.setAttribute("aria-pressed", String(item === button));
       }
       const title = document.createElement("h3");
+      title.dataset.heartCategory = category.id;
       title.textContent = label;
       const closeButton = document.createElement("button");
       closeButton.type = "button";
