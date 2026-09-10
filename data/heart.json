@@ -3,8 +3,8 @@
     {
       "id": "joy",
       "pair": 1,
-      "title_ru": "Я радуюсь",
-      "title_en": "I rejoice",
+      "title_ru": "Радость",
+      "title_en": "Joy",
       "verses": [
         {
           "reference_ru": "Псалом 117:24",
@@ -41,8 +41,8 @@
     {
       "id": "sadness",
       "pair": 1,
-      "title_ru": "Мне грустно",
-      "title_en": "I feel sad",
+      "title_ru": "Грусть",
+      "title_en": "Sadness",
       "verses": [
         {
           "reference_ru": "Псалом 50:14",
@@ -79,8 +79,8 @@
     {
       "id": "peace",
       "pair": 2,
-      "title_ru": "Душевное спокойствие",
-      "title_en": "Inner peace",
+      "title_ru": "Спокойствие",
+      "title_en": "Peace",
       "verses": [
         {
           "reference_ru": "Иоанна 14:27",
@@ -117,8 +117,8 @@
     {
       "id": "anxiety",
       "pair": 2,
-      "title_ru": "Мне тревожно",
-      "title_en": "I feel anxious",
+      "title_ru": "Тревога",
+      "title_en": "Anxiety",
       "verses": [
         {
           "reference_ru": "Исаия 41:10",

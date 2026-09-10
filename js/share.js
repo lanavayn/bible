@@ -8,7 +8,16 @@ document.addEventListener("click", async function (event) {
 });
 
 window.shareBiblePage = async function shareBiblePage(options = {}) {
-  const shareUrl = options.url || window.location.href;
+  const url = new URL(window.location.href);
+  const heart = document.getElementById("heart");
+  if (!options.url && heart && !heart.hidden) {
+    const selected = heart.querySelector('[data-heart-category][aria-pressed="true"]');
+    url.searchParams.set("heart", selected?.dataset.heartCategory || "");
+    url.searchParams.delete("day");
+    url.searchParams.delete("question");
+    url.hash = "";
+  }
+  const shareUrl = options.url || url.href;
   const shareData = {
     title: document.title,
     text: "Check out this page:",

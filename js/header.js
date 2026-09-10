@@ -104,6 +104,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const normalizedHref = href === "/index.html" ? "/" : href;
       const url = new URL(normalizedHref, window.location.origin);
       const currentParams = new URLSearchParams(window.location.search);
+      if (currentParams.has("heart")) {
+        url.searchParams.delete("day");
+        url.searchParams.delete("question");
+        url.searchParams.set("heart", currentParams.get("heart"));
+        return `${url.pathname}${url.search}`;
+      }
+      url.searchParams.delete("heart");
       const day = Number(currentParams.get("day"));
       const question = Number(currentParams.get("question"));
 

@@ -107,6 +107,11 @@ function getIndexLang() {
   }
 
   function closeHeart() {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("heart")) {
+      url.searchParams.delete("heart");
+      history.replaceState(null, "", url);
+    }
     const heart = document.getElementById("heart");
     if (heart) heart.hidden = true;
     const button = document.getElementById("loadHeartBtn");
@@ -190,7 +195,7 @@ function getIndexLang() {
       <section id="question-of-day-block">
         <div id="question-of-day" class="text-size-content"></div>
       </section>
-      <section id="heart" class="heart-card" role="tabpanel" aria-labelledby="loadHeartBtn" hidden></section>
+      <section id="heart" role="tabpanel" aria-labelledby="loadHeartBtn" hidden></section>
 
       <div class="topics-toolbar topic-toolbar-hidden">
         <p class="topics-label">${t.topicsLabel}</p>
@@ -305,8 +310,15 @@ function getIndexLang() {
     const loadQuestionBtn = document.getElementById("loadQuestionBtn");
     const loadHeartBtn = document.getElementById("loadHeartBtn");
     loadHeartBtn.addEventListener("click", async () => {
+      const selectedCategory = new URLSearchParams(window.location.search).get("heart") || "";
       closeDailyAndQuestion();
       closeAllTopicCards();
+      const url = new URL(window.location.href);
+      url.searchParams.delete("day");
+      url.searchParams.delete("question");
+      url.searchParams.set("heart", selectedCategory);
+      url.hash = "";
+      history.replaceState(null, "", url);
       const heart = document.getElementById("heart");
       heart.hidden = false;
       heart.textContent = lang === "ru" ? "Загрузка..." : "Loading...";
@@ -412,6 +424,10 @@ function getIndexLang() {
       loadQuestionBtn.addEventListener("click", openDailyQuestion);
     }
 
+    if (new URLSearchParams(window.location.search).has("heart")) {
+      loadHeartBtn.click();
+      return;
+    }
     const requestedDailyVerseDay = Number(new URLSearchParams(window.location.search).get("day"));
     const shouldOpenDailyVerseSubscription = window.location.hash === "#daily-verse-notifications";
     if (shouldOpenDailyVerseSubscription) {

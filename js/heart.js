@@ -16,10 +16,28 @@ export async function renderHeart(root, language) {
   heading.textContent = lang === "ru" ? "Что ты чувствуешь?" : "How do you feel?";
   const categories = document.createElement("div");
   categories.className = "heart-categories";
+  const chooser = document.createElement("div");
+  chooser.className = "heart-card heart-chooser";
+  chooser.append(heading, categories);
   const content = document.createElement("div");
-  content.className = "heart-verses text-size-content";
+  content.className = "heart-card heart-verses text-size-content";
+  content.hidden = true;
   const pairs = new Map();
   const buttons = [];
+
+  function closeCategory() {
+    const selected = buttons.find(button => button.getAttribute("aria-pressed") === "true");
+    content.hidden = true;
+    content.replaceChildren();
+    for (const button of buttons) {
+      button.classList.remove("is-active");
+      button.setAttribute("aria-pressed", "false");
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.set("heart", "");
+    history.replaceState(null, "", url);
+    selected?.focus();
+  }
 
   for (const category of data.categories) {
     if (!pairs.has(category.pair)) {
@@ -30,18 +48,33 @@ export async function renderHeart(root, language) {
     }
     const button = document.createElement("button");
     button.type = "button";
+    button.dataset.heartCategory = category.id;
     button.className = "dv-reopen-btn";
     const label = [categoryIcons[category.id], category[`title_${lang}`]].filter(Boolean).join(" ");
     button.textContent = label;
     button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", () => {
+      if (button.getAttribute("aria-pressed") === "true") {
+        closeCategory();
+        return;
+      }
+      const url = new URL(window.location.href);
+      url.searchParams.set("heart", category.id);
+      history.replaceState(null, "", url);
       for (const item of buttons) {
         item.classList.toggle("is-active", item === button);
         item.setAttribute("aria-pressed", String(item === button));
       }
       const title = document.createElement("h3");
       title.textContent = label;
-      content.replaceChildren(title);
+      const closeButton = document.createElement("button");
+      closeButton.type = "button";
+      closeButton.className = "dv-close";
+      closeButton.textContent = "×";
+      closeButton.setAttribute("aria-label", lang === "ru" ? "Закрыть" : "Close");
+      closeButton.addEventListener("click", closeCategory);
+      content.replaceChildren(closeButton, title);
+      content.hidden = false;
       const list = document.createElement("ul");
       list.className = "scripture-related-list";
       content.append(list);
@@ -102,5 +135,7 @@ export async function renderHeart(root, language) {
     buttons.push(button);
     pairs.get(category.pair).append(button);
   }
-  root.replaceChildren(heading, categories, content);
+  root.replaceChildren(chooser, content);
+  const selectedCategory = new URLSearchParams(window.location.search).get("heart");
+  buttons.find(button => button.dataset.heartCategory === selectedCategory)?.click();
 }

@@ -5033,11 +5033,48 @@ body.daily-verse-search-open {
 }
 
 .heart-verses {
+  position: relative;
   text-align: left;
+}
+
+.heart-verses > .dv-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 .heart-verses .scripture-related-item {
   margin-bottom: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  #index-page:has(#heart:not([hidden])) #loadDailyVerseBtn,
+  #index-page:has(#heart:not([hidden])) #loadQuestionBtn {
+    position: relative;
+    top: -4px;
+  }
+
+  .heart-chooser {
+    margin-top: -0.35rem;
+    padding-top: 0.5rem;
+  }
+
+  .heart-card > h2 {
+    margin-top: 0.25rem;
+  }
+
+  .heart-pair [data-heart-category="peace"] {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 390px) {
+  html[lang="ru"] .heart-pair [data-heart-category="peace"] {
+    font-size: 0.9rem;
+  }
 }
 
 .daily-question-row .dv-reopen-btn {
