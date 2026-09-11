@@ -5172,12 +5172,8 @@ body.daily-verse-search-open {
 
   .heart-chooser {
     margin-top: 0;
-    padding-top: 0.5rem;
-  }
-
-  .heart-chooser::before,
-  .heart-chooser::after {
-    display: none;
+    padding-top: 0.85rem;
+    padding-bottom: 0.35rem;
   }
 
   .heart-card > h2 {
