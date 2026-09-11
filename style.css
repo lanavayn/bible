@@ -5072,6 +5072,8 @@ body.daily-verse-search-open {
   line-height: 1.2;
   text-align: center;
   opacity: 0.75;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .heart-categories::after {
