@@ -18,6 +18,12 @@ export async function renderHeart(root, language) {
 
   const heading = document.createElement("h2");
   heading.textContent = lang === "ru" ? "Что ты чувствуешь?" : "How do you feel?";
+  const subtitle = document.createElement("span");
+  subtitle.className = "heart-chooser-subtitle";
+  subtitle.textContent = lang === "ru"
+    ? "Выбери то, что ближе всего к твоему сердцу"
+    : "Choose what feels closest to your heart";
+  heading.append(subtitle);
   const categories = document.createElement("div");
   categories.className = "heart-categories";
   const chooser = document.createElement("div");

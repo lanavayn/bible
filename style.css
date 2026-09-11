@@ -5016,10 +5016,11 @@ body.daily-verse-search-open {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: radial-gradient(ellipse at top left, #fffdf7 0%, transparent 65%),
-    linear-gradient(135deg, #fcf6e9, #fff8ed 55%, #f7ecd9);
-  border-color: #e8d8c0;
-  box-shadow: 0 7px 20px rgba(124, 85, 34, 0.14), inset 0 1px 3px #fffdf8;
+  padding-bottom: 0.7rem;
+  background: radial-gradient(ellipse at top left, rgba(255, 253, 247, 0.9), transparent 70%),
+    linear-gradient(135deg, rgba(252, 246, 233, 0.8), rgba(255, 248, 237, 0.75) 55%, rgba(247, 236, 217, 0.8));
+  border-color: rgba(222, 203, 175, 0.65);
+  box-shadow: 0 5px 15px rgba(124, 85, 34, 0.1), inset 0 1px 3px #fffdf8;
 }
 
 .heart-chooser::before,
@@ -5048,18 +5049,46 @@ body.daily-verse-search-open {
   width: min(13%, 5rem);
   aspect-ratio: 1;
   opacity: 0.08;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23cd9456' d='M50 90C35 78 5 57 5 32C5 8 35 3 50 24C65 3 95 8 95 32C95 57 65 78 50 90Z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23d98e9a'%3E%3Cpath d='M42 74C30 65 5 48 5 28C5 8 30 4 42 21C54 4 79 8 79 28C79 48 54 65 42 74Z'/%3E%3Cpath opacity='.6' d='M81 98C75 93 63 85 63 75C63 65 75 63 81 72C87 63 99 65 99 75C99 85 87 93 81 98Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .heart-chooser > h2 {
-  margin: 0.35rem 0 1rem;
+  position: relative;
+  top: -0.9rem;
+  margin: 0.25rem 0 0.75rem;
   font-size: clamp(1.15rem, 4.8vw, 1.75rem);
   white-space: nowrap;
 }
 
+.heart-chooser-subtitle {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 0.18rem;
+  font-size: clamp(0.85rem, 3.1vw, 1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.heart-categories::after {
+  content: "";
+  position: absolute;
+  right: 1%;
+  bottom: 3%;
+  width: min(14%, 5rem);
+  aspect-ratio: 1;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cpath id='h' d='M20 36C12 30 1 22 1 12C1 1 14 0 20 9C26 0 39 1 39 12C39 22 28 30 20 36Z'/%3E%3C/defs%3E%3Cg fill='%23d98e9a'%3E%3Cuse href='%23h' x='5' y='48'/%3E%3Cuse href='%23h' x='51' y='24'/%3E%3Cuse href='%23h' transform='translate(47 77) scale(.5)'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .heart-categories {
   max-width: 32rem;
-  margin: 0 auto;
+  margin: 0.7rem auto 0;
 }
 
 .heart-pair {
@@ -5093,7 +5122,9 @@ body.daily-verse-search-open {
 .heart-pair .dv-reopen-btn[data-heart-category="joy"],
 .heart-pair .dv-reopen-btn[data-heart-category="peace"],
 .heart-pair .dv-reopen-btn.is-active[data-heart-category="joy"],
-.heart-pair .dv-reopen-btn.is-active[data-heart-category="peace"] {
+.heart-pair .dv-reopen-btn.is-active[data-heart-category="peace"],
+.heart-verses > h3[data-heart-category="joy"],
+.heart-verses > h3[data-heart-category="peace"] {
   color: #245c35;
 }
 
@@ -5113,6 +5144,12 @@ body.daily-verse-search-open {
 .heart-verses {
   position: relative;
   text-align: left;
+  padding-top: 0.5rem;
+}
+
+.heart-verses > h3 {
+  margin-top: 0.15rem;
+  margin-bottom: 0.35rem;
 }
 
 .heart-verses > .dv-close {
@@ -5184,7 +5221,7 @@ body.daily-verse-search-open {
 
 /* mobile */
 @media (max-width: 420px) {
-  .daily-question-row {
+   .daily-question-row {
     gap: 8px;
     margin-bottom: 1rem;
   }
@@ -5195,6 +5232,7 @@ body.daily-verse-search-open {
     font-size: 0.92rem;
     padding: 0.56rem 0.45rem;
   }
+
 }
 
 .dv-reopen-btn {
