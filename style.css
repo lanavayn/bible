@@ -5017,6 +5017,7 @@ body.daily-verse-search-open {
   isolation: isolate;
   overflow: hidden;
   padding-bottom: 0.7rem;
+  margin-bottom: 0.25rem;
   background: radial-gradient(ellipse at top left, rgba(255, 253, 247, 0.9), transparent 70%),
     linear-gradient(135deg, rgba(252, 246, 233, 0.8), rgba(255, 248, 237, 0.75) 55%, rgba(247, 236, 217, 0.8));
   border-color: rgba(222, 203, 175, 0.65);
