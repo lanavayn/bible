@@ -5178,6 +5178,13 @@ body.daily-verse-search-open {
     padding-bottom: 0.35rem;
   }
 
+  .heart-chooser-subtitle {
+    white-space: normal;
+    line-height: 1.1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .heart-card > h2 {
     margin-top: 0.25rem;
   }
