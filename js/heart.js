@@ -8,7 +8,9 @@ const categoryPresentation = {
   peace: { icon: "🕊️", color: "#245c35", ru: "Спокойствие", en: "Peace" },
   anxiety: { icon: "😟", color: "#8a3946", ru: "Тревога", en: "Anxiety" },
   "lord-near": { icon: "🙏", color: "#245c35", ru: "Господь рядом", en: "The Lord Is Near" },
-  loneliness: { icon: "😔", color: "#8a3946", ru: "Одиночество", en: "Loneliness" }
+  loneliness: { icon: "😔", color: "#8a3946", ru: "Одиночество", en: "Loneliness" },
+  love: { icon: "❤️", color: "#245c35", ru: "Любовь", en: "Love" },
+  hate: { icon: "🖤", color: "#8a3946", ru: "Ненависть", en: "Hate" }
 };
 
 export async function renderHeart(root, language) {

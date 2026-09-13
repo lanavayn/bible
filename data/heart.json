@@ -203,6 +203,58 @@
           "text_en": "Be free from the love of money, content with such things as you have, for he has said, “I will in no way leave you, neither will I in any way forsake you.”"
         }
       ]
+    },
+    {
+      "id": "love",
+      "pair": 4,
+      "title_ru": "Любовь",
+      "title_en": "Love",
+      "verses": [
+        {
+          "reference_ru": "1 Коринфянам 13:4-5",
+          "reference_en": "1 Corinthians 13:4-5",
+          "text_ru": "Любовь долготерпит, милосердствует, любовь не завидует, любовь не превозносится, не гордится, не бесчинствует, не ищет своего, не раздражается, не мыслит зла.",
+          "text_en": "Love is patient and is kind. Love doesn’t envy. Love doesn’t brag, is not proud, doesn’t behave itself inappropriately, doesn’t seek its own way, is not provoked, takes no account of evil."
+        },
+        {
+          "reference_ru": "1 Иоанна 4:7",
+          "reference_en": "1 John 4:7",
+          "text_ru": "Возлюбленные! будем любить друг друга, потому что любовь от Бога, и всякий любящий рожден от Бога и знает Бога.",
+          "text_en": "Beloved, let’s love one another, for love is of God; and everyone who loves has been born of God and knows God."
+        },
+        {
+          "reference_ru": "Иоанна 13:34",
+          "reference_en": "John 13:34",
+          "text_ru": "Заповедь новую даю вам, да любите друг друга; как Я возлюбил вас, так и вы да любите друг друга.",
+          "text_en": "A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another."
+        }
+      ]
+    },
+    {
+      "id": "hate",
+      "pair": 4,
+      "title_ru": "Ненависть",
+      "title_en": "Hate",
+      "verses": [
+        {
+          "reference_ru": "Притчи 10:12",
+          "reference_en": "Proverbs 10:12",
+          "text_ru": "Ненависть возбуждает раздоры, но любовь покрывает все грехи.",
+          "text_en": "Hatred stirs up strife, but love covers all wrongs."
+        },
+        {
+          "reference_ru": "1 Иоанна 2:9",
+          "reference_en": "1 John 2:9",
+          "text_ru": "Кто говорит, что он во свете, а ненавидит брата своего, тот еще во тьме.",
+          "text_en": "He who says he is in the light and hates his brother is in the darkness even until now."
+        },
+        {
+          "reference_ru": "Луки 6:27-28",
+          "reference_en": "Luke 6:27-28",
+          "text_ru": "Но вам, слушающим, говорю: любите врагов ваших, благотворите ненавидящим вас, благословляйте проклинающих вас и молитесь за обижающих вас.",
+          "text_en": "But I tell you who hear: love your enemies, do good to those who hate you, bless those who curse you, and pray for those who mistreat you."
+        }
+      ]
     }
   ]
 }
