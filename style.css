@@ -5200,6 +5200,29 @@ body.daily-verse-search-open {
     font-size: clamp(0.82rem, 3.5vw, 1rem);
     padding: 0.6rem 0.2rem;
   }
+
+  .heart-chooser:not(.is-collapsed) .heart-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .heart-chooser:not(.is-collapsed) .heart-pair {
+    display: contents;
+  }
+
+  .heart-chooser:not(.is-collapsed) .heart-pair .dv-reopen-btn {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.35rem 0.75rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    box-shadow: 0 1px 3px rgba(124, 85, 34, 0.1);
+  }
 }
 
 .daily-question-row .dv-reopen-btn {
