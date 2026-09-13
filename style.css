@@ -5173,6 +5173,33 @@ body.daily-verse-search-open {
 }
 
 @media (max-width: 480px) {
+  .heart-chooser.is-collapsed {
+    background: none;
+    border-color: transparent;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .heart-chooser.is-collapsed > h2,
+  .heart-chooser.is-collapsed::before,
+  .heart-chooser.is-collapsed::after,
+  .heart-chooser.is-collapsed .heart-categories::after,
+  .heart-chooser.is-collapsed .heart-pair:not(:has([aria-pressed="true"])),
+  .heart-chooser.is-collapsed .dv-reopen-btn[aria-pressed="false"] {
+    display: none;
+  }
+
+  .heart-chooser.is-collapsed .heart-categories {
+    margin-top: 0;
+  }
+
+  .heart-chooser.is-collapsed .dv-reopen-btn[aria-pressed="true"] {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 0.5rem) / 2);
+  }
+
   #index-page:has(#heart:not([hidden])) #loadDailyVerseBtn,
   #index-page:has(#heart:not([hidden])) #loadQuestionBtn {
     position: relative;

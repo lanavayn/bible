@@ -36,6 +36,7 @@ export async function renderHeart(root, language) {
   const buttons = [];
 
   function closeCategory() {
+    chooser.classList.remove("is-collapsed");
     const selected = buttons.find(button => button.getAttribute("aria-pressed") === "true");
     content.hidden = true;
     content.replaceChildren();
@@ -86,6 +87,7 @@ export async function renderHeart(root, language) {
       closeButton.addEventListener("click", closeCategory);
       content.replaceChildren(closeButton, title);
       content.hidden = false;
+      chooser.classList.add("is-collapsed");
       const list = document.createElement("ul");
       list.className = "scripture-related-list";
       content.append(list);
@@ -142,6 +144,20 @@ export async function renderHeart(root, language) {
         popup.hidden = !opening;
         popup.previousElementSibling?.setAttribute("aria-expanded", String(opening));
       };
+      requestAnimationFrame(() => {
+        if (!window.matchMedia("(max-width: 480px)").matches
+          || !root.isConnected || root.hidden || content.hidden
+          || button.getAttribute("aria-pressed") !== "true") return;
+        const header = document.querySelector(".top-bar");
+        const inset = (header?.getBoundingClientRect().height || 0) + 24;
+        const top = button.getBoundingClientRect().top;
+        if (top < inset || content.getBoundingClientRect().top > window.innerHeight - 120) {
+          window.scrollTo({
+            top: Math.max(0, window.scrollY + top - inset),
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"
+          });
+        }
+      });
     });
     buttons.push(button);
     pairs.get(category.pair).append(button);
