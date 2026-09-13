@@ -2,10 +2,10 @@ import { buildBibleLink, BOOK_MAP } from "./bibleLinks.js";
 import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 
-const categoryIcons = { joy: "😊", sadness: "😢", peace: "🕊️", anxiety: "😟" };
+const categoryIcons = { joy: "😊", sadness: "😢", peace: "🕊️", anxiety: "😟", "lord-near": "🙏", loneliness: "😔" };
 const categoryButtonLabels = {
-  ru: { joy: "Радость", sadness: "Грусть", peace: "Спокойствие", anxiety: "Тревога" },
-  en: { joy: "Joy", sadness: "Sadness", peace: "Peace", anxiety: "Anxiety" }
+  ru: { joy: "Радость", sadness: "Грусть", peace: "Спокойствие", anxiety: "Тревога", "lord-near": "Господь рядом", loneliness: "Одиночество" },
+  en: { joy: "Joy", sadness: "Sadness", peace: "Peace", anxiety: "Anxiety", "lord-near": "The Lord Is Near", loneliness: "Loneliness" }
 };
 
 export async function renderHeart(root, language) {

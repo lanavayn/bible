@@ -5125,19 +5125,25 @@ body.daily-verse-search-open {
 
 .heart-pair .dv-reopen-btn[data-heart-category="joy"],
 .heart-pair .dv-reopen-btn[data-heart-category="peace"],
+.heart-pair .dv-reopen-btn[data-heart-category="lord-near"],
 .heart-pair .dv-reopen-btn.is-active[data-heart-category="joy"],
 .heart-pair .dv-reopen-btn.is-active[data-heart-category="peace"],
+.heart-pair .dv-reopen-btn.is-active[data-heart-category="lord-near"],
 .heart-verses > h3[data-heart-category="joy"],
-.heart-verses > h3[data-heart-category="peace"] {
+.heart-verses > h3[data-heart-category="peace"],
+.heart-verses > h3[data-heart-category="lord-near"] {
   color: #245c35;
 }
 
 .heart-pair .dv-reopen-btn[data-heart-category="sadness"],
 .heart-pair .dv-reopen-btn[data-heart-category="anxiety"],
+.heart-pair .dv-reopen-btn[data-heart-category="loneliness"],
 .heart-pair .dv-reopen-btn.is-active[data-heart-category="sadness"],
 .heart-pair .dv-reopen-btn.is-active[data-heart-category="anxiety"],
+.heart-pair .dv-reopen-btn.is-active[data-heart-category="loneliness"],
 .heart-verses > h3[data-heart-category="sadness"],
-.heart-verses > h3[data-heart-category="anxiety"] {
+.heart-verses > h3[data-heart-category="anxiety"],
+.heart-verses > h3[data-heart-category="loneliness"] {
   color: #8a3946;
 }
 

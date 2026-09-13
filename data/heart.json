@@ -151,6 +151,58 @@
           "text_en": "In quietness and confidence shall be your strength."
         }
       ]
+    },
+    {
+      "id": "lord-near",
+      "pair": 3,
+      "title_ru": "Господь рядом",
+      "title_en": "The Lord Is Near",
+      "verses": [
+        {
+          "reference_ru": "Псалом 15:8",
+          "reference_en": "Psalm 16:8",
+          "text_ru": "Всегда видел я пред собою Господа, ибо Он одесную меня; не поколеблюсь.",
+          "text_en": "I have set the LORD always before me. Because he is at my right hand, I shall not be moved."
+        },
+        {
+          "reference_ru": "Псалом 144:18",
+          "reference_en": "Psalm 145:18",
+          "text_ru": "Близок Господь ко всем призывающим Его, ко всем призывающим Его в истине.",
+          "text_en": "The LORD is near to all those who call on him, to all who call on him in truth."
+        },
+        {
+          "reference_ru": "Иоанна 15:4",
+          "reference_en": "John 15:4",
+          "text_ru": "Пребудьте во Мне, и Я в вас. Как ветвь не может приносить плода сама собою, если не будет на лозе: так и вы, если не будете во Мне.",
+          "text_en": "Remain in me, and I in you. As the branch can’t bear fruit by itself, unless it remains in the vine, so neither can you, unless you remain in me."
+        }
+      ]
+    },
+    {
+      "id": "loneliness",
+      "pair": 3,
+      "title_ru": "Одиночество",
+      "title_en": "Loneliness",
+      "verses": [
+        {
+          "reference_ru": "Псалом 26:10",
+          "reference_en": "Psalm 27:10",
+          "text_ru": "Ибо отец мой и мать моя оставили меня, но Господь примет меня.",
+          "text_en": "When my father and my mother forsake me, then the LORD will take me up."
+        },
+        {
+          "reference_ru": "Исаия 41:10",
+          "reference_en": "Isaiah 41:10",
+          "text_ru": "Не бойся, ибо Я с тобою; не смущайся, ибо Я Бог твой; Я укреплю тебя, и помогу тебе, и поддержу тебя десницею правды Моей.",
+          "text_en": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand."
+        },
+        {
+          "reference_ru": "Евреям 13:5",
+          "reference_en": "Hebrews 13:5",
+          "text_ru": "Имейте нрав несребролюбивый, довольствуясь тем, что есть. Ибо Сам сказал: не оставлю тебя и не покину тебя.",
+          "text_en": "Be free from the love of money, content with such things as you have, for he has said, “I will in no way leave you, neither will I in any way forsake you.”"
+        }
+      ]
     }
   ]
 }
