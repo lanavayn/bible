@@ -163,6 +163,18 @@ export async function renderHeart(root, language) {
     pairs.get(category.pair).append(button);
   }
   root.replaceChildren(chooser, content);
+  const mainButton = document.getElementById("loadHeartBtn");
+  if (mainButton && !mainButton.dataset.heartRestoreBound) {
+    mainButton.dataset.heartRestoreBound = "true";
+    mainButton.addEventListener("click", event => {
+      const heart = document.getElementById("heart");
+      const selected = heart?.querySelector('[data-heart-category][aria-pressed="true"]');
+      if (!heart || heart.hidden || !selected) return;
+      // Restore through the existing toggle before the homepage reload handler.
+      event.stopImmediatePropagation();
+      selected.click();
+    }, { capture: true });
+  }
   const selectedCategory = new URLSearchParams(window.location.search).get("heart");
   buttons.find(button => button.dataset.heartCategory === selectedCategory)?.click();
 }
