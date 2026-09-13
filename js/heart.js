@@ -2,17 +2,6 @@ import { buildBibleLink, BOOK_MAP } from "./bibleLinks.js";
 import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 
-const categoryPresentation = {
-  joy: { icon: "😊", color: "#245c35", ru: "Радость", en: "Joy" },
-  sadness: { icon: "😢", color: "#8a3946", ru: "Грусть", en: "Sadness" },
-  peace: { icon: "🕊️", color: "#245c35", ru: "Спокойствие", en: "Peace" },
-  anxiety: { icon: "😟", color: "#8a3946", ru: "Тревога", en: "Anxiety" },
-  "lord-near": { icon: "🙏", color: "#245c35", ru: "Господь рядом", en: "The Lord Is Near" },
-  loneliness: { icon: "😔", color: "#8a3946", ru: "Одиночество", en: "Loneliness" },
-  love: { icon: "❤️", color: "#245c35", ru: "Любовь", en: "Love" },
-  hate: { icon: "🖤", color: "#8a3946", ru: "Ненависть", en: "Hate" }
-};
-
 export async function renderHeart(root, language) {
   const lang = language === "ru" ? "ru" : "en";
   const response = await fetch("/data/heart.json", { cache: "no-cache" });
@@ -66,11 +55,10 @@ export async function renderHeart(root, language) {
     button.type = "button";
     button.dataset.heartCategory = category.id;
     button.className = "dv-reopen-btn";
-    const presentation = categoryPresentation[category.id] || {};
-    const color = presentation.color || "#245c35";
+    const color = category.color || "#245c35";
     button.style.setProperty("--heart-category-color", color);
-    const label = [presentation.icon, category[`title_${lang}`]].filter(Boolean).join(" ");
-    button.textContent = presentation[lang] || category[`title_${lang}`];
+    const label = [category.icon, category[`title_${lang}`]].filter(Boolean).join(" ");
+    button.textContent = category[`title_${lang}`];
     button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", () => {
       if (button.getAttribute("aria-pressed") === "true") {

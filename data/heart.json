@@ -2,6 +2,8 @@
   "categories": [
     {
       "id": "joy",
+      "icon": "😊",
+      "color": "#245c35",
       "pair": 1,
       "title_ru": "Радость",
       "title_en": "Joy",
@@ -40,6 +42,8 @@
     },
     {
       "id": "sadness",
+      "icon": "😢",
+      "color": "#8a3946",
       "pair": 1,
       "title_ru": "Грусть",
       "title_en": "Sadness",
@@ -78,6 +82,8 @@
     },
     {
       "id": "peace",
+      "icon": "🕊️",
+      "color": "#245c35",
       "pair": 2,
       "title_ru": "Спокойствие",
       "title_en": "Peace",
@@ -116,6 +122,8 @@
     },
     {
       "id": "anxiety",
+      "icon": "😟",
+      "color": "#8a3946",
       "pair": 2,
       "title_ru": "Тревога",
       "title_en": "Anxiety",
@@ -154,6 +162,8 @@
     },
     {
       "id": "lord-near",
+      "icon": "🙏",
+      "color": "#245c35",
       "pair": 3,
       "title_ru": "Господь рядом",
       "title_en": "The Lord Is Near",
@@ -180,6 +190,8 @@
     },
     {
       "id": "loneliness",
+      "icon": "😔",
+      "color": "#8a3946",
       "pair": 3,
       "title_ru": "Одиночество",
       "title_en": "Loneliness",
@@ -206,6 +218,8 @@
     },
     {
       "id": "love",
+      "icon": "❤️",
+      "color": "#245c35",
       "pair": 4,
       "title_ru": "Любовь",
       "title_en": "Love",
@@ -232,6 +246,8 @@
     },
     {
       "id": "hate",
+      "icon": "🖤",
+      "color": "#8a3946",
       "pair": 4,
       "title_ru": "Ненависть",
       "title_en": "Hate",
