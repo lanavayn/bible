@@ -2,10 +2,13 @@ import { buildBibleLink, BOOK_MAP } from "./bibleLinks.js";
 import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
 
-const categoryIcons = { joy: "😊", sadness: "😢", peace: "🕊️", anxiety: "😟", "lord-near": "🙏", loneliness: "😔" };
-const categoryButtonLabels = {
-  ru: { joy: "Радость", sadness: "Грусть", peace: "Спокойствие", anxiety: "Тревога", "lord-near": "Господь рядом", loneliness: "Одиночество" },
-  en: { joy: "Joy", sadness: "Sadness", peace: "Peace", anxiety: "Anxiety", "lord-near": "The Lord Is Near", loneliness: "Loneliness" }
+const categoryPresentation = {
+  joy: { icon: "😊", color: "#245c35", ru: "Радость", en: "Joy" },
+  sadness: { icon: "😢", color: "#8a3946", ru: "Грусть", en: "Sadness" },
+  peace: { icon: "🕊️", color: "#245c35", ru: "Спокойствие", en: "Peace" },
+  anxiety: { icon: "😟", color: "#8a3946", ru: "Тревога", en: "Anxiety" },
+  "lord-near": { icon: "🙏", color: "#245c35", ru: "Господь рядом", en: "The Lord Is Near" },
+  loneliness: { icon: "😔", color: "#8a3946", ru: "Одиночество", en: "Loneliness" }
 };
 
 export async function renderHeart(root, language) {
@@ -61,8 +64,11 @@ export async function renderHeart(root, language) {
     button.type = "button";
     button.dataset.heartCategory = category.id;
     button.className = "dv-reopen-btn";
-    const label = [categoryIcons[category.id], category[`title_${lang}`]].filter(Boolean).join(" ");
-    button.textContent = categoryButtonLabels[lang][category.id] || category[`title_${lang}`];
+    const presentation = categoryPresentation[category.id] || {};
+    const color = presentation.color || "#245c35";
+    button.style.setProperty("--heart-category-color", color);
+    const label = [presentation.icon, category[`title_${lang}`]].filter(Boolean).join(" ");
+    button.textContent = presentation[lang] || category[`title_${lang}`];
     button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", () => {
       if (button.getAttribute("aria-pressed") === "true") {
@@ -78,6 +84,7 @@ export async function renderHeart(root, language) {
       }
       const title = document.createElement("h3");
       title.dataset.heartCategory = category.id;
+      title.style.setProperty("--heart-category-color", color);
       title.textContent = label;
       const closeButton = document.createElement("button");
       closeButton.type = "button";
