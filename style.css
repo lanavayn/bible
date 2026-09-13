@@ -5095,6 +5095,42 @@ body.daily-verse-search-open {
   margin: 0.7rem auto 0;
 }
 
+.heart-slider {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 22rem) 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+}
+
+.heart-slider > .heart-categories {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.heart-slider .heart-slider-arrow:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.heart-slider .heart-slider-arrow:last-child {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.heart-chooser.is-collapsed .heart-slider {
+  display: block;
+  margin-top: 0;
+}
+
+.heart-chooser.is-collapsed .heart-slider > .heart-categories {
+  margin-inline: auto;
+}
+
 .heart-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5102,19 +5138,96 @@ body.daily-verse-search-open {
   margin-bottom: 0.5rem;
 }
 
+.heart-pair[hidden],
+.heart-slider-controls[hidden] {
+  display: none;
+}
+
+.heart-categories {
+  touch-action: pan-y;
+}
+
+.heart-slider-controls {
+  display: contents;
+}
+
+.heart-slider-arrow {
+  border: 1px solid #e5cfb3;
+  border-radius: 999px;
+  background: #fffdf8;
+  color: #245c35;
+  font: inherit;
+  font-size: 1.4rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.heart-slider-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.heart-slider-dots {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.heart-slider-dots button {
+  width: 1.5rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.heart-slider-dots button::before {
+  content: "";
+  display: block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin: auto;
+  border: 1px solid #8ab780;
+  border-radius: 50%;
+}
+
+.heart-slider-dots button[aria-current="true"]::before {
+  background: #245c35;
+}
+
 .heart-pair .dv-reopen-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   width: 100%;
   min-width: 0;
   max-width: none;
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   line-height: 1.3;
   padding: 0.7rem 0.45rem;
   border: 1px solid #e5cfb3;
-  border-radius: 999px;
+  border-radius: 1rem;
   background: linear-gradient(#fffdf8, #fbf3e6);
   box-shadow: 0 4px 8px rgba(124, 85, 34, 0.15), 0 1px 2px rgba(124, 85, 34, 0.08), inset 0 1px 1px #fffefa;
   color: var(--heart-category-color, #245c35);
+}
+
+.heart-category-icon {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-style: normal;
+  font-weight: normal;
+  /* Preserve the original icon row space without stretching the glyph. */
+  line-height: clamp(2.16rem, 6vw, 3.12rem);
 }
 
 .heart-pair .dv-reopen-btn.is-active {
@@ -5152,7 +5265,6 @@ body.daily-verse-search-open {
   margin-bottom: 0.9rem;
 }
 
-@media (max-width: 480px) {
   .heart-chooser.is-collapsed {
     background: none;
     border-color: transparent;
@@ -5162,6 +5274,7 @@ body.daily-verse-search-open {
   }
 
   .heart-chooser.is-collapsed > h2,
+  .heart-chooser.is-collapsed .heart-slider-controls,
   .heart-chooser.is-collapsed::before,
   .heart-chooser.is-collapsed::after,
   .heart-chooser.is-collapsed .heart-categories::after,
@@ -5180,6 +5293,7 @@ body.daily-verse-search-open {
     width: calc((100% - 0.5rem) / 2);
   }
 
+@media (max-width: 480px) {
   #index-page:has(#heart:not([hidden])) #loadDailyVerseBtn,
   #index-page:has(#heart:not([hidden])) #loadQuestionBtn {
     position: relative;

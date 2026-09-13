@@ -28,6 +28,63 @@ export async function renderHeart(root, language) {
   content.hidden = true;
   const pairs = new Map();
   const buttons = [];
+  let slideIndex = 0;
+  const slides = [];
+  const dots = [];
+  const controls = document.createElement("div");
+  controls.className = "heart-slider-controls";
+  const previous = document.createElement("button");
+  const next = document.createElement("button");
+  const pagination = document.createElement("div");
+  pagination.className = "heart-slider-dots";
+  for (const [button, label, symbol] of [
+    [previous, lang === "ru" ? "Предыдущая пара" : "Previous pair", "‹"],
+    [next, lang === "ru" ? "Следующая пара" : "Next pair", "›"]
+  ]) {
+    button.type = "button";
+    button.className = "heart-slider-arrow";
+    button.setAttribute("aria-label", label);
+    button.textContent = symbol;
+  }
+  controls.append(previous, pagination, next);
+  const slider = document.createElement("div");
+  slider.className = "heart-slider";
+  slider.append(categories, controls);
+  chooser.append(slider);
+
+  function showSlide(index) {
+    slideIndex = Math.max(0, Math.min(index, slides.length - 1));
+    slides.forEach((slide, i) => { slide.hidden = i !== slideIndex; });
+    dots.forEach((dot, i) => dot.setAttribute("aria-current", String(i === slideIndex)));
+    previous.disabled = slideIndex === 0;
+    next.disabled = slideIndex >= slides.length - 1;
+  }
+  previous.addEventListener("click", () => showSlide(slideIndex - 1));
+  next.addEventListener("click", () => showSlide(slideIndex + 1));
+  let touchStart = null;
+  let suppressClick = false;
+  categories.addEventListener("touchstart", event => {
+    suppressClick = false;
+    touchStart = event.touches.length === 1 && !chooser.classList.contains("is-collapsed")
+      ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+  }, { passive: true });
+  categories.addEventListener("touchend", event => {
+    if (!touchStart) return;
+    const dx = event.changedTouches[0].clientX - touchStart.x;
+    const dy = event.changedTouches[0].clientY - touchStart.y;
+    touchStart = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      suppressClick = true;
+      showSlide(slideIndex + (dx < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+  categories.addEventListener("touchcancel", () => { touchStart = null; });
+  categories.addEventListener("click", event => {
+    if (!suppressClick) return;
+    suppressClick = false;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { capture: true });
 
   function closeCategory() {
     chooser.classList.remove("is-collapsed");
@@ -49,6 +106,14 @@ export async function renderHeart(root, language) {
       const pair = document.createElement("div");
       pair.className = "heart-pair";
       pairs.set(category.pair, pair);
+      const index = slides.length;
+      slides.push(pair);
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `${lang === "ru" ? "Пара" : "Pair"} ${index + 1}`);
+      dot.addEventListener("click", () => showSlide(index));
+      dots.push(dot);
+      pagination.append(dot);
       categories.append(pair);
     }
     const button = document.createElement("button");
@@ -58,7 +123,13 @@ export async function renderHeart(root, language) {
     const color = category.color || "#245c35";
     button.style.setProperty("--heart-category-color", color);
     const label = [category.icon, category[`title_${lang}`]].filter(Boolean).join(" ");
-    button.textContent = category[`title_${lang}`];
+    const icon = document.createElement("span");
+    icon.className = "heart-category-icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = category.icon || "";
+    const buttonTitle = document.createElement("span");
+    buttonTitle.textContent = category[`title_${lang}`];
+    button.append(icon, buttonTitle);
     button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", () => {
       if (button.getAttribute("aria-pressed") === "true") {
@@ -67,6 +138,7 @@ export async function renderHeart(root, language) {
       }
       const url = new URL(window.location.href);
       url.searchParams.set("heart", category.id);
+      showSlide(slides.indexOf(pairs.get(category.pair)));
       history.replaceState(null, "", url);
       for (const item of buttons) {
         item.classList.toggle("is-active", item === button);
@@ -159,6 +231,8 @@ export async function renderHeart(root, language) {
     buttons.push(button);
     pairs.get(category.pair).append(button);
   }
+  showSlide(0);
+  controls.hidden = slides.length < 2;
   root.replaceChildren(chooser, content);
   const mainButton = document.getElementById("loadHeartBtn");
   if (mainButton && !mainButton.dataset.heartRestoreBound) {
