@@ -62,8 +62,14 @@ export async function renderHeart(root, language) {
       sessionStorage.setItem("heart-slider-pair", JSON.stringify([...pairs.keys()][slideIndex]));
     } catch { /* Storage may be unavailable in private browsing. */ }
   }
-  previous.addEventListener("click", () => showSlide(slideIndex - 1));
-  next.addEventListener("click", () => showSlide(slideIndex + 1));
+  previous.addEventListener("click", () => {
+    clearCategorySelection();
+    showSlide(slideIndex - 1);
+  });
+  next.addEventListener("click", () => {
+    clearCategorySelection();
+    showSlide(slideIndex + 1);
+  });
   let touchStart = null;
   let suppressClick = false;
   categories.addEventListener("touchstart", event => {
@@ -78,6 +84,7 @@ export async function renderHeart(root, language) {
     touchStart = null;
     if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
       suppressClick = true;
+      clearCategorySelection();
       showSlide(slideIndex + (dx < 0 ? 1 : -1));
     }
   }, { passive: true });
@@ -89,9 +96,8 @@ export async function renderHeart(root, language) {
     event.stopImmediatePropagation();
   }, { capture: true });
 
-  function closeCategory() {
+  function clearCategorySelection() {
     chooser.classList.remove("is-collapsed");
-    const selected = buttons.find(button => button.getAttribute("aria-pressed") === "true");
     content.hidden = true;
     content.replaceChildren();
     for (const button of buttons) {
@@ -101,6 +107,11 @@ export async function renderHeart(root, language) {
     const url = new URL(window.location.href);
     url.searchParams.set("heart", "");
     history.replaceState(null, "", url);
+  }
+
+  function closeCategory() {
+    const selected = buttons.find(button => button.getAttribute("aria-pressed") === "true");
+    clearCategorySelection();
     selected?.focus();
   }
 
@@ -159,7 +170,6 @@ export async function renderHeart(root, language) {
       closeButton.addEventListener("click", closeCategory);
       content.replaceChildren(closeButton, title);
       content.hidden = false;
-      chooser.classList.add("is-collapsed");
       const list = document.createElement("ul");
       list.className = "scripture-related-list";
       content.append(list);
