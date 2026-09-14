@@ -5346,9 +5346,28 @@ body.daily-verse-search-open {
 
 @media (min-width: 391px) and (max-width: 480px) {
   html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-title {
-    width: calc(100% + 1rem);
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    width: 11rem;
+    justify-self: center;
+  }
+
+  html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-title br {
+    display: inline-block;
+    width: 0.25em;
+    height: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-title {
+    width: 11rem;
+    max-width: calc(100vw - 8rem);
+    justify-self: center;
+  }
+
+  html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-title br {
+    display: inline-block;
+    width: 0.25em;
+    height: 0;
   }
 }
 
