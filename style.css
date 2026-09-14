@@ -5295,6 +5295,20 @@ body.daily-verse-search-open {
   }
 
 @media (max-width: 480px) {
+  body:has(#index-page #heart:not([hidden])) #header .top-bar {
+    margin-bottom: 0.35rem;
+  }
+
+  #index-page:has(#heart:not([hidden])) .hero-title {
+    margin-top: 0;
+    margin-bottom: 0.35rem;
+  }
+
+  #index-page:has(#heart:not([hidden])) .daily-question-row {
+    margin-top: 0.35rem;
+    margin-bottom: 0.45rem;
+  }
+
   #index-page:has(#heart:not([hidden])) #loadDailyVerseBtn,
   #index-page:has(#heart:not([hidden])) #loadQuestionBtn {
     position: relative;
@@ -5327,6 +5341,14 @@ body.daily-verse-search-open {
   .heart-pair .dv-reopen-btn {
     white-space: nowrap;
     overflow-wrap: normal;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 480px) {
+  html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-title {
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
 }
 
