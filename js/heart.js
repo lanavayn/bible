@@ -58,6 +58,9 @@ export async function renderHeart(root, language) {
     dots.forEach((dot, i) => dot.setAttribute("aria-current", String(i === slideIndex)));
     previous.disabled = slideIndex === 0;
     next.disabled = slideIndex >= slides.length - 1;
+    try {
+      sessionStorage.setItem("heart-slider-pair", JSON.stringify([...pairs.keys()][slideIndex]));
+    } catch { /* Storage may be unavailable in private browsing. */ }
   }
   previous.addEventListener("click", () => showSlide(slideIndex - 1));
   next.addEventListener("click", () => showSlide(slideIndex + 1));
@@ -231,7 +234,13 @@ export async function renderHeart(root, language) {
     buttons.push(button);
     pairs.get(category.pair).append(button);
   }
-  showSlide(0);
+  let restoredIndex = 0;
+  try {
+    const savedPair = JSON.parse(sessionStorage.getItem("heart-slider-pair"));
+    const index = [...pairs.keys()].indexOf(savedPair);
+    if (index >= 0) restoredIndex = index;
+  } catch { /* Start at the first pair if storage is unavailable. */ }
+  showSlide(restoredIndex);
   controls.hidden = slides.length < 2;
   root.replaceChildren(chooser, content);
   const mainButton = document.getElementById("loadHeartBtn");
