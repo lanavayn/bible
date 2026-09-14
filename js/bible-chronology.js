@@ -141,6 +141,7 @@
       psa: "psalms",
       псалом: "псалтирь",
       псалмы: "псалтирь",
+      михея: "михей",
       song: "song of songs",
       "song of solomon": "song of songs",
       revelation: "revelation",

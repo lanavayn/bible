@@ -125,7 +125,10 @@ export async function renderHeart(root, language) {
       const dot = document.createElement("button");
       dot.type = "button";
       dot.setAttribute("aria-label", `${lang === "ru" ? "Пара" : "Pair"} ${index + 1}`);
-      dot.addEventListener("click", () => showSlide(index));
+      dot.addEventListener("click", () => {
+        clearCategorySelection();
+        showSlide(index);
+      });
       dots.push(dot);
       pagination.append(dot);
       categories.append(pair);
@@ -187,7 +190,9 @@ export async function renderHeart(root, language) {
         const reference = document.createElement("span");
         reference.className = "scripture-related-ref";
         reference.innerHTML = window.BibleChronology.renderReference(ref, null, { lang });
-        item.append(reference, document.createTextNode(" "));
+        const lineAnchor = document.createElement("span");
+        lineAnchor.className = "scripture-related-line-anchor";
+        lineAnchor.append(reference, document.createTextNode(" "));
         const url = buildBibleLink(verseRef, lang);
         if (url) {
           const link = document.createElement("a");
@@ -198,18 +203,20 @@ export async function renderHeart(root, language) {
           link.textContent = "📖";
           link.title = lang === "ru" ? "Открыть стих в Библии" : "Open verse in Bible";
           link.addEventListener("click", () => window.BibleChronology.closeOpenDetails());
-          item.append(link);
+          lineAnchor.append(link);
         }
+        lineAnchor.append(document.createTextNode(" — "));
+        item.append(lineAnchor);
         const text = document.createElement("span");
         text.className = "scripture-related-text";
         text.innerHTML = addInlineWordHelp(verse[`text_${lang}`], {
           lang, verseRef, shownDefinitions, includeQuestionTerms: true,
           classes: { button: "daily-help-btn", inline: "daily-help-inline", box: "daily-help-box", close: "daily-help-close" }
         });
-        item.append(document.createTextNode(" — "), text);
+        item.append(text);
         list.append(item);
         const bookName = reference.querySelector(".bible-chronology-book-link");
-        const openBook = () => window.BibleChronology.showReferenceDetails(ref, reference, { insertAfter: text });
+        const openBook = () => window.BibleChronology.showReferenceDetails(ref, reference, { insertAfter: lineAnchor });
         bookName?.addEventListener("click", openBook);
         bookName?.addEventListener("keydown", event => {
           if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openBook(); }
