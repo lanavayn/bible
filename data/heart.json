@@ -164,7 +164,7 @@
       "id": "lord-near",
       "icon": "🙏",
       "color": "#245c35",
-      "pair": 3,
+      "pair": 3,   
       "title_ru": "Господь рядом",
       "title_en": "The Lord Is Near",
       "verses": [
@@ -269,6 +269,62 @@
           "reference_en": "Luke 6:27-28",
           "text_ru": "Но вам, слушающим, говорю: любите врагов ваших, благотворите ненавидящим вас, благословляйте проклинающих вас и молитесь за обижающих вас.",
           "text_en": "But I tell you who hear: love your enemies, do good to those who hate you, bless those who curse you, and pray for those who mistreat you."
+        }
+      ]
+    },
+    {
+      "id": "forgiving",
+      "icon": "🤍",
+      "color": "#245c35",
+      "pair": 5,
+      "title_ru": "Прощаю",
+      "title_en": "Forgiving",
+      "verses": [
+        {
+          "reference_ru": "Михея 6:8",
+          "reference_en": "Micah 6:8",
+          "text_ru": "О, человек! сказано тебе, что — добро и чего требует от тебя Господь: действовать справедливо, любить дела милосердия и смиренномудренно ходить пред Богом твоим.",
+          "text_en": "He has shown you, O man, what is good. What does the LORD require of you, but to act justly, to love mercy, and to walk humbly with your God?"
+        },
+        {
+          "reference_ru": "Псалом 31:1",
+          "reference_en": "Psalm 32:1",
+          "text_ru": "Блажен, кому отпущены беззакония, и чьи грехи покрыты!",
+          "text_en": "Blessed is he whose disobedience is forgiven, whose sin is covered."
+        },
+        {
+          "reference_ru": "Притчи 19:11",
+          "reference_en": "Proverbs 19:11",
+          "text_ru": "Благоразумие делает человека медленным на гнев, и слава для него — быть снисходительным к проступкам.",
+          "text_en": "The discretion of a man makes him slow to anger. It is his glory to overlook an offense."
+        }
+      ]
+    },
+    {
+      "id": "hard-to-forgive",
+      "icon": "💔",
+      "color": "#8a3946",
+      "pair": 5,
+      "title_ru": "Трудно простить",
+      "title_en": "Hard to Forgive",
+      "verses": [
+        {
+          "reference_ru": "Матфея 18:21-22",
+          "reference_en": "Matthew 18:21-22",
+          "text_ru": "Тогда Петр приступил к Нему и сказал: Господи! сколько раз прощать брату моему, согрешающему против меня? до семи ли раз? Иисус говорит ему: не говорю тебе: до семи раз, но до седмижды семидесяти раз.",
+          "text_en": "Then Peter came and said to him, “Lord, how often will my brother sin against me, and I forgive him? Until seven times?” Jesus said to him, “I don’t tell you until seven times, but, until seventy times seven.”"
+        },
+        {
+          "reference_ru": "Марка 11:25",
+          "reference_en": "Mark 11:25",
+          "text_ru": "И когда стоите на молитве, прощайте, если что имеете на кого, дабы и Отец ваш Небесный простил вам согрешения ваши.",
+          "text_en": "Whenever you stand praying, forgive, if you have anything against anyone; so that your Father, who is in heaven, may also forgive you your transgressions."
+        },
+        {
+          "reference_ru": "Римлянам 12:19",
+          "reference_en": "Romans 12:19",
+          "text_ru": "Не мстите за себя, возлюбленные, но дайте место гневу Божию. Ибо написано: Мне отмщение, Я воздам, говорит Господь.",
+          "text_en": "Don’t seek revenge yourselves, beloved, but give place to God’s wrath. For it is written, “Vengeance belongs to me; I will repay, says the Lord.”"
         }
       ]
     }
