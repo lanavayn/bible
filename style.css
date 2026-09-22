@@ -136,6 +136,32 @@ a {
   border-radius: var(--radius-lg);
 }
 
+body:has(#index-page) > .container {
+  position: relative;
+  isolation: isolate;
+}
+
+body:has(#index-page) > .container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.07;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1600'%3E%3Cg fill='none' stroke='%2362683b' stroke-width='5' stroke-linecap='round' opacity='.95'%3E%3Cpath d='M45 1550Q75 1320 205 1160M955 260Q925 430 810 560M28 900Q78 820 155 760M972 1010Q925 1060 852 1090M30 515Q76 470 126 420'/%3E%3Cpath d='M61 1480Q66 1435 74 1390M91 1360Q101 1335 105 1320M126 1280Q139 1260 142 1248M927 350Q907 370 895 390M883 425Q866 449 858 470M58 866Q91 856 112 834M910 1038Q885 1055 868 1076M59 487Q82 466 98 449' stroke-width='2' opacity='.75'/%3E%3C/g%3E%3Cg fill='%2362683b' opacity='.95'%3E%3Cpath d='M74 1390Q32 1350 45 1294Q92 1310 74 1390M105 1320Q110 1262 168 1250Q164 1308 105 1320M142 1248Q102 1208 123 1160Q164 1188 142 1248M895 390Q850 354 864 304Q912 326 895 390M858 470Q862 414 914 402Q912 457 858 470M112 834Q74 802 91 761Q132 779 112 834M868 1076Q832 1044 849 1004Q889 1021 868 1076M98 449Q62 420 78 382Q116 400 98 449'/%3E%3C/g%3E%3Cg fill='%23d8b76a' opacity='.95'%3E%3Cg transform='translate(180 620)'%3E%3Cpath d='M0-17C5-17 7-9 4-4C10-8 17-5 17 0C17 5 9 7 4 4C8 10 5 17 0 17C-5 17-7 9-4 4C-10 8-17 5-17 0C-17-5-9-7-4-4C-8-10-5-17 0-17Z'/%3E%3Ccircle r='4' fill='%23a78442'/%3E%3C/g%3E%3Cg transform='translate(790 1390) scale(.8)'%3E%3Cpath d='M0-17C5-17 7-9 4-4C10-8 17-5 17 0C17 5 9 7 4 4C8 10 5 17 0 17C-5 17-7 9-4 4C-10 8-17 5-17 0C-17-5-9-7-4-4C-8-10-5-17 0-17Z'/%3E%3Ccircle r='4' fill='%23a78442'/%3E%3C/g%3E%3Ccircle cx='935' cy='710' r='3'/%3E%3Ccircle cx='950' cy='710' r='2'/%3E%3Ccircle cx='942' cy='697' r='2'/%3E%3C/g%3E%3Cg fill='%23d98e9a'%3E%3Cpath d='M895 145C872 125 840 102 840 76C840 48 876 42 895 67C914 42 950 48 950 76C950 102 918 125 895 145Z'/%3E%3Cpath d='M120 1030C104 1016 82 1000 82 982C82 963 106 959 120 976C134 959 158 963 158 982C158 1000 136 1016 120 1030Z'/%3E%3Cpath d='M820 1180C804 1166 782 1150 782 1132C782 1113 806 1109 820 1126C834 1109 858 1113 858 1132C858 1150 836 1166 820 1180Z'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+body:has(#index-page) > .container > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  body:has(#index-page) > .container::before {
+    opacity: 0.035;
+  }
+}
+
 .page-container {
   max-width: 56.25rem;
   margin: 0 auto;
