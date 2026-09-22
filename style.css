@@ -5257,6 +5257,7 @@ body.daily-verse-search-open {
   margin-bottom: 0.35rem;
 }
 
+.heart-chooser > .dv-close,
 .heart-verses > .dv-close {
   position: absolute;
   top: 0.5rem;

@@ -22,7 +22,22 @@ export async function renderHeart(root, language) {
   categories.className = "heart-categories";
   const chooser = document.createElement("div");
   chooser.className = "heart-card heart-chooser";
-  chooser.append(heading, categories);
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "dv-close";
+  closeButton.textContent = "×";
+  closeButton.setAttribute("aria-label", lang === "ru" ? "Закрыть" : "Close");
+  closeButton.setAttribute("title", lang === "ru" ? "Закрыть" : "Close");
+  closeButton.addEventListener("click", () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete("heart");
+    history.replaceState(null, "", url);
+    root.hidden = true;
+    const mainButton = document.getElementById("loadHeartBtn");
+    mainButton?.classList.remove("is-active");
+    mainButton?.setAttribute("aria-selected", "false");
+  });
+  chooser.append(closeButton, heading, categories);
   const content = document.createElement("div");
   content.className = "heart-card heart-verses text-size-content";
   content.hidden = true;
