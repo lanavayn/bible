@@ -242,6 +242,49 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-09-07",
+        "day": 156,
+        "topic": {
+          "ru": "Господь не меняется",
+          "en": "The Lord Does Not Change"
+        },
+        "reference_ru": "Второзаконие 32:4",
+        "reference_en": "Deuteronomy 32:4",
+        "text_ru": "Он твердыня; совершенны дела Его, и все пути Его праведны; Бог верен, и нет неправды в Нём; Он праведен и истинен.",
+        "text_en": "The Rock: his work is perfect, for all his ways are just. A God of faithfulness who does no wrong, just and right is he.",
+        "verse_ref": {
+          "book": "deuteronomy",
+          "chapter": 32,
+          "verse": "4"
+        },
+        "interpretation_ru": "Господь не меняется. Мы можем доверять Ему и Его обещаниям во все времена.",
+        "interpretation_en": "The Lord does not change. We can trust him and his promises at all times.",
+        "related": [
+          {
+            "reference_ru": "Числа 23:19",
+            "reference_en": "Numbers 23:19",
+            "text_ru": "Бог не человек, чтоб Ему лгать, и не сын человеческий, чтоб Ему изменяться. Он ли скажет и не сделает? будет говорить и не исполнит?",
+            "text_en": "God is not a man, that he should lie, nor a son of man, that he should repent. Has he said, and will he not do it? Or has he spoken, and will he not make it good?",
+            "verse_ref": {
+              "book": "numbers",
+              "chapter": 23,
+              "verse": "19"
+            }
+          },
+          {
+            "reference_ru": "Второзаконие 32:4",
+            "reference_en": "Deuteronomy 32:4",
+            "text_ru": "Он твердыня; совершенны дела Его, и все пути Его праведны; Бог верен, и нет неправды в Нем; Он праведен и истинен.",
+            "text_en": "The Rock: his work is perfect, for all his ways are just. A God of faithfulness who does no wrong, just and right is he.",
+            "verse_ref": {
+              "book": "deuteronomy",
+              "chapter": 32,
+              "verse": "4"
+            }
+          }
+        ]
       }
     ]
   }
