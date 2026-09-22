@@ -5323,6 +5323,12 @@ body.daily-verse-search-open {
     padding-bottom: 0.35rem;
   }
 
+  .heart-chooser > .dv-close {
+    top: 0.15rem;
+    right: 0.15rem;
+    z-index: 2;
+  }
+
   .heart-card > h2 {
     margin-top: 0.25rem;
   }
