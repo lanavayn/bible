@@ -5329,6 +5329,11 @@ body.daily-verse-search-open {
     z-index: 2;
   }
 
+  html[lang="en"] .heart-chooser-subtitle {
+    white-space: normal;
+    box-sizing: border-box;
+  }
+
   .heart-card > h2 {
     margin-top: 0.25rem;
   }
