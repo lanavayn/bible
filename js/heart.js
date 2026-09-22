@@ -16,7 +16,7 @@ export async function renderHeart(root, language) {
   subtitle.className = "heart-chooser-subtitle";
   subtitle.textContent = lang === "ru"
     ? "Листай и выбери, что на сердце"
-    : "Browse and choose what’s on your heart";
+    : "Choose what’s on your heart";
   heading.append(subtitle);
   const categories = document.createElement("div");
   categories.className = "heart-categories";
