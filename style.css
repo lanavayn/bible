@@ -156,6 +156,10 @@ body:has(#index-page) > .container > * {
   z-index: 1;
 }
 
+body:has(#index-page) > .container > #header {
+  z-index: 2;
+}
+
 @media (max-width: 600px) {
   body:has(#index-page) > .container::before {
     opacity: 0.035;
