@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   
     const TEXT_SIZE_STORAGE_KEY = "bibleTextSize";
-    const TEXT_SIZE_OPTIONS = ["85", "100", "115"];
+    const TEXT_SIZE_OPTIONS = ["85", "100", "115", "130"];
 
     const pageMap = {
       "10-commandments.html": "10-commandments.html",
