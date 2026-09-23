@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Leave feedback",
         askQuestion: "💬 Ask a Question",
         about: "ℹ️ About the Bible",
-        dailyVerseSubscription: "🔔 Verse subscription",
+        dailyVerseSubscription: "🔔 Get Daily Verse",
+        dailyVerseSubscriptionActive: "✅ Daily Verse connected",
         textSize: "Text size",
         english: "English",
         russian: "Русский"
@@ -21,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: "✍️ Оставить отзыв",
         askQuestion: "💬 Задать вопрос",
         about: "ℹ️ О Библии",
-        dailyVerseSubscription: "🔔 Подписка на стих",
+        dailyVerseSubscription: "🔔 Получать стих",
+        dailyVerseSubscriptionActive: "✅ Стих дня подключён",
         textSize: "Размер текста",
         english: "English",
         russian: "Русский"
@@ -188,6 +190,28 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     const dailyVerseSubscriptionLink = document.getElementById("menuDailyVerseSubscription");
+    if (dailyVerseSubscriptionLink && currentPage === "index.html") {
+      const updateDailyVerseSubscriptionLabel = () => {
+        const notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
+        const isSubscribed = notificationBox?.dataset.notificationState === "enabled";
+        const label = isSubscribed
+          ? t.dailyVerseSubscriptionActive
+          : t.dailyVerseSubscription;
+
+        if (dailyVerseSubscriptionLink.textContent !== label) {
+          dailyVerseSubscriptionLink.textContent = label;
+        }
+      };
+
+      updateDailyVerseSubscriptionLabel();
+      new MutationObserver(updateDailyVerseSubscriptionLabel).observe(document.body, {
+        attributes: true,
+        attributeFilter: ["data-notification-state"],
+        childList: true,
+        subtree: true
+      });
+    }
+
     if (dailyVerseSubscriptionLink && currentPage === "index.html") {
       dailyVerseSubscriptionLink.addEventListener("click", async (event) => {
         event.preventDefault();
