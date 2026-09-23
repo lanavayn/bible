@@ -5424,6 +5424,18 @@ body.daily-verse-search-open {
   }
 }
 
+@media (max-width: 480px) {
+  html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-bar {
+    grid-template-columns: 3.25rem minmax(0, 1fr) 3.25rem;
+  }
+
+  html[lang="ru"] body:has(#index-page #heart:not([hidden])) #header .top-title {
+    width: min(11rem, 100%);
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
 .daily-question-row .dv-reopen-btn {
   flex: 0 0 auto;
   min-width: 0;
