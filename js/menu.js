@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const dropdowns = document.querySelectorAll(".dropdown");
+    let waitingForDailyVerseDropdown = null;
   
     dropdowns.forEach((dropdown) => {
       const button = dropdown.querySelector(".dropbtn");
@@ -10,10 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
       button.setAttribute("aria-haspopup", "true");
       button.setAttribute("aria-expanded", "false");
   
-      button.addEventListener("click", (e) => {
+      button.addEventListener("click", async (e) => {
         e.preventDefault();
         e.stopPropagation();
-  
+
+        if (waitingForDailyVerseDropdown === dropdown) return;
+        const wasOpen = dropdown.classList.contains("is-open");
+        if (!wasOpen && dropdown.classList.contains("top-left")
+          && typeof window.waitForDailyVerseSubscriptionState === "function") {
+          waitingForDailyVerseDropdown = dropdown;
+          try {
+            await window.waitForDailyVerseSubscriptionState();
+          } finally {
+            waitingForDailyVerseDropdown = null;
+          }
+        }
+
         const isOpen = dropdown.classList.contains("is-open");
   
         dropdowns.forEach((d) => {

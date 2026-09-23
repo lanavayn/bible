@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         about: "ℹ️ About the Bible",
         dailyVerseSubscription: "🔔 Get Daily Verse",
         dailyVerseSubscriptionActive: "✅ Daily Verse connected",
+        dailyVerseSubscriptionChecking: "🔔 Checking Daily Verse…",
         textSize: "Text size",
         english: "English",
         russian: "Русский"
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         about: "ℹ️ О Библии",
         dailyVerseSubscription: "🔔 Получать стих",
         dailyVerseSubscriptionActive: "✅ Стих дня подключён",
+        dailyVerseSubscriptionChecking: "🔔 Проверяем подписку…",
         textSize: "Размер текста",
         english: "English",
         russian: "Русский"
@@ -193,14 +195,48 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dailyVerseSubscriptionLink && currentPage === "index.html") {
       const updateDailyVerseSubscriptionLabel = () => {
         const notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
-        const isSubscribed = notificationBox?.dataset.notificationState === "enabled";
-        const label = isSubscribed
+        const state = notificationBox?.dataset.notificationState;
+        const label = state === "enabled"
           ? t.dailyVerseSubscriptionActive
-          : t.dailyVerseSubscription;
+          : state === "disabled"
+            ? t.dailyVerseSubscription
+            : t.dailyVerseSubscriptionChecking;
 
         if (dailyVerseSubscriptionLink.textContent !== label) {
           dailyVerseSubscriptionLink.textContent = label;
         }
+      };
+
+      window.waitForDailyVerseSubscriptionState = () => {
+        const notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
+        if (!notificationBox || notificationBox.dataset.notificationState !== "checking") {
+          return Promise.resolve();
+        }
+
+        const status = notificationBox.querySelector("[data-notification-status]");
+        if (status?.textContent.trim()) return Promise.resolve();
+
+        return new Promise((resolve) => {
+          const observer = new MutationObserver(() => {
+            if (notificationBox.dataset.notificationState !== "checking" || status?.textContent.trim()) {
+              observer.disconnect();
+              clearTimeout(timeoutId);
+              resolve();
+            }
+          });
+          const timeoutId = setTimeout(() => {
+            observer.disconnect();
+            resolve();
+          }, 15000);
+
+          observer.observe(notificationBox, {
+            attributes: true,
+            attributeFilter: ["data-notification-state"],
+            childList: true,
+            characterData: true,
+            subtree: true
+          });
+        });
       };
 
       updateDailyVerseSubscriptionLabel();
