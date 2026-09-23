@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dailyVerseSubscription: "🔔 Get Daily Verse",
         dailyVerseSubscriptionActive: "✅ Daily Verse connected",
         dailyVerseSubscriptionChecking: "🔔 Checking Daily Verse…",
+        dailyVerseSubscriptionUnavailable: "🔔 Daily Verse status unavailable",
         textSize: "Text size",
         english: "English",
         russian: "Русский"
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dailyVerseSubscription: "🔔 Получать стих",
         dailyVerseSubscriptionActive: "✅ Стих дня подключён",
         dailyVerseSubscriptionChecking: "🔔 Проверяем подписку…",
+        dailyVerseSubscriptionUnavailable: "🔔 Статус подписки недоступен",
         textSize: "Размер текста",
         english: "English",
         russian: "Русский"
@@ -195,12 +197,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dailyVerseSubscriptionLink && currentPage === "index.html") {
       const updateDailyVerseSubscriptionLabel = () => {
         const notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
-        const state = notificationBox?.dataset.notificationState;
+        const state = document.documentElement.dataset.dailyVerseNotificationState
+          || notificationBox?.dataset.notificationState;
         const label = state === "enabled"
           ? t.dailyVerseSubscriptionActive
           : state === "disabled"
             ? t.dailyVerseSubscription
-            : t.dailyVerseSubscriptionChecking;
+            : state === "unavailable"
+              ? t.dailyVerseSubscriptionUnavailable
+              : t.dailyVerseSubscriptionChecking;
 
         if (dailyVerseSubscriptionLink.textContent !== label) {
           dailyVerseSubscriptionLink.textContent = label;
@@ -209,40 +214,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
       window.waitForDailyVerseSubscriptionState = () => {
         const notificationBox = document.querySelector('[data-notification-feature="daily-verse"]');
-        if (!notificationBox || notificationBox.dataset.notificationState !== "checking") {
+        const getState = () => document.documentElement.dataset.dailyVerseNotificationState
+          || notificationBox?.dataset.notificationState;
+        if (getState() !== "checking") {
           return Promise.resolve();
         }
 
-        const status = notificationBox.querySelector("[data-notification-status]");
-        if (status?.textContent.trim()) return Promise.resolve();
-
         return new Promise((resolve) => {
           const observer = new MutationObserver(() => {
-            if (notificationBox.dataset.notificationState !== "checking" || status?.textContent.trim()) {
+            if (getState() !== "checking") {
               observer.disconnect();
-              clearTimeout(timeoutId);
               resolve();
             }
           });
-          const timeoutId = setTimeout(() => {
-            observer.disconnect();
-            resolve();
-          }, 15000);
 
-          observer.observe(notificationBox, {
+          observer.observe(document.documentElement, {
             attributes: true,
-            attributeFilter: ["data-notification-state"],
-            childList: true,
-            characterData: true,
-            subtree: true
+            attributeFilter: ["data-daily-verse-notification-state"]
           });
         });
       };
 
       updateDailyVerseSubscriptionLabel();
-      new MutationObserver(updateDailyVerseSubscriptionLabel).observe(document.body, {
+      new MutationObserver(updateDailyVerseSubscriptionLabel).observe(document.documentElement, {
         attributes: true,
-        attributeFilter: ["data-notification-state"],
+        attributeFilter: ["data-notification-state", "data-daily-verse-notification-state"],
         childList: true,
         subtree: true
       });

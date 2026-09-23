@@ -77,15 +77,21 @@ let sdkPromise = null;
 let initPromise = null;
 let activeConfig = null;
 const refreshingBoxes = new WeakSet();
+let dailyVerseSubscriptionState = null;
+let dailyVerseSubscriptionStatePromise = null;
 let resumeListenerInstalled = false;
 let lastResumeCheck = 0;
 
 function refreshVisibleNotificationControls() {
-  document.querySelectorAll('[data-notification-feature][data-bound="true"]').forEach(box => {
+  const boxes = document.querySelectorAll('[data-notification-feature][data-bound="true"]');
+  boxes.forEach(box => {
     if (!getUnavailableMessage(getNotificationEnvironment(), getNotificationCopy(getBoxFeature(box), getBoxLanguage(box)))) {
-      refreshNotificationState(box);
+      refreshNotificationState(box, true);
     }
   });
+  if (!document.querySelector('[data-notification-feature="daily-verse"]')) {
+    getDailyVerseSubscriptionState({ force: true });
+  }
 }
 
 function installNotificationResumeListener() {
@@ -102,6 +108,10 @@ function installNotificationResumeListener() {
 
 export function renderDailyVerseNotificationControls({ language } = {}) {
   return renderNotificationControls({ feature: "daily-verse", language });
+}
+
+export function initDailyVerseSubscriptionState() {
+  return getDailyVerseSubscriptionState();
 }
 
 function renderNotificationControls({ feature, language } = {}) {
@@ -350,11 +360,15 @@ function initNotificationControls(root = document, feature) {
 
 }
 
-async function refreshNotificationState(box) {
+async function refreshNotificationState(box, force = false) {
   if (!box.isConnected || refreshingBoxes.has(box) || box.dataset.notificationBusy === "true") return;
   const feature = getBoxFeature(box);
   const language = getBoxLanguage(box);
   const copy = getNotificationCopy(feature, language);
+
+  if (feature === "daily-verse") {
+    return refreshDailyVerseNotificationState(box, copy, force);
+  }
 
   console.info("[OneSignal Subscribe] page initialization started", {
     timestamp: new Date().toISOString(),
@@ -428,6 +442,136 @@ async function refreshNotificationState(box) {
     if (box.isConnected && box.dataset.notificationBusy !== "true") setStatus(box, copy.stateUnavailable);
   } finally {
     refreshingBoxes.delete(box);
+  }
+}
+
+async function refreshDailyVerseNotificationState(box, copy, force) {
+  if (!box.isConnected || refreshingBoxes.has(box) || box.dataset.notificationBusy === "true") return;
+
+  console.info("[OneSignal Subscribe] page initialization started", {
+    timestamp: new Date().toISOString(),
+    feature: "daily-verse",
+    language: getBoxLanguage(box),
+    notificationPermission: getNotificationPermission()
+  });
+
+  if (getNotificationPermission() !== "granted") {
+    setLocalPreference(false);
+    setState(box, STATUS_DISABLED);
+    if (getNotificationPermission() === "denied") {
+      setStatus(box, copy.permissionDenied, STATUS_ERROR);
+    }
+    return;
+  }
+
+  refreshingBoxes.add(box);
+  if (force || !dailyVerseSubscriptionState || dailyVerseSubscriptionState.state === "unavailable") {
+    setState(box, STATUS_CHECKING);
+  }
+  setStatus(box, "");
+  try {
+    const result = await getDailyVerseSubscriptionState({ force });
+    if (!box.isConnected || box.dataset.notificationBusy === "true") return;
+
+    if (result.state === STATUS_ENABLED) {
+      setLocalPreference(true);
+      setState(box, STATUS_ENABLED);
+      try {
+        const tags = await withSubscriptionTimeout(getOneSignalTags(result.oneSignal));
+        if (box.isConnected && box.dataset.notificationBusy !== "true"
+          && isConfirmedActiveSubscription(result.oneSignal, getPushSubscriptionState(result.oneSignal))) {
+          setState(box, STATUS_ENABLED, getSubscriptionLanguage(tags));
+        }
+      } catch (error) {
+        console.info("[Bible for All] Subscription active; language metadata unavailable.", error);
+      }
+    } else if (result.state === STATUS_DISABLED) {
+      setLocalPreference(false);
+      setState(box, STATUS_DISABLED);
+    } else {
+      setStatus(box, copy.stateUnavailable);
+    }
+  } finally {
+    refreshingBoxes.delete(box);
+  }
+}
+
+function getDailyVerseSubscriptionState({ force = false } = {}) {
+  if (!force && dailyVerseSubscriptionState && dailyVerseSubscriptionState.state !== "unavailable") {
+    return Promise.resolve(dailyVerseSubscriptionState);
+  }
+  if (dailyVerseSubscriptionStatePromise) return dailyVerseSubscriptionStatePromise;
+
+  publishDailyVerseSubscriptionState(STATUS_CHECKING);
+  dailyVerseSubscriptionStatePromise = resolveDailyVerseSubscriptionState()
+    .catch(error => {
+      console.info("[Bible for All] Subscription state could not be confirmed.", error);
+      return { state: "unavailable" };
+    })
+    .then(result => {
+      dailyVerseSubscriptionState = result;
+      publishDailyVerseSubscriptionState(result.state);
+      return result;
+    })
+    .finally(() => {
+      dailyVerseSubscriptionStatePromise = null;
+    });
+
+  return dailyVerseSubscriptionStatePromise;
+}
+
+async function resolveDailyVerseSubscriptionState() {
+  const permission = getNotificationPermission();
+  if (permission !== "granted") {
+    return { state: STATUS_DISABLED };
+  }
+
+  const environment = getNotificationEnvironment();
+  const copy = getNotificationCopy("daily-verse", document.documentElement.lang?.startsWith("ru") ? "ru" : "en");
+  if (getUnavailableMessage(environment, copy)) {
+    return { state: STATUS_DISABLED };
+  }
+
+  const oneSignal = await withSubscriptionTimeout(initializeOneSignal());
+  const startedAt = Date.now();
+  while (getNotificationPermission() === "granted"
+    && !isConfirmedActiveSubscription(oneSignal, getPushSubscriptionState(oneSignal))
+    && Date.now() - startedAt < SUBSCRIPTION_WAIT_MS) {
+    await delay(SUBSCRIPTION_POLL_MS);
+  }
+
+  const subscription = getPushSubscriptionState(oneSignal);
+  if (isConfirmedActiveSubscription(oneSignal, subscription)) {
+    return { state: STATUS_ENABLED, oneSignal };
+  }
+
+  const registration = await withSubscriptionTimeout(
+    navigator.serviceWorker.getRegistration(activeConfig.serviceWorkerScope)
+  );
+  const browserSubscription = registration
+    ? await withSubscriptionTimeout(registration.pushManager.getSubscription())
+    : undefined;
+  const current = getPushSubscriptionState(oneSignal);
+  if (isConfirmedActiveSubscription(oneSignal, current)) {
+    return { state: STATUS_ENABLED, oneSignal };
+  }
+  if (getNotificationPermission() !== "granted"
+    || ((current.id || browserSubscription === null)
+      && oneSignal.User?.PushSubscription?.optedIn === false)) {
+    return { state: STATUS_DISABLED, oneSignal };
+  }
+  return { state: "unavailable", oneSignal };
+}
+
+function publishDailyVerseSubscriptionState(state) {
+  if (!document.documentElement) return;
+  document.documentElement.dataset.dailyVerseNotificationState = state;
+  if (state === STATUS_ENABLED || state === STATUS_DISABLED) {
+    dailyVerseSubscriptionState = { ...(dailyVerseSubscriptionState || {}), state };
+  } else if (state === STATUS_CHECKING) {
+    dailyVerseSubscriptionState = null;
+  } else {
+    dailyVerseSubscriptionState = { state };
   }
 }
 
@@ -991,6 +1135,9 @@ function setState(box, state, subscriptionLanguage = null) {
   const copy = getNotificationCopy(getBoxFeature(box), getBoxLanguage(box));
 
   box.dataset.notificationState = state;
+  if (getBoxFeature(box) === "daily-verse") {
+    publishDailyVerseSubscriptionState(state === STATUS_ERROR ? "unavailable" : state);
+  }
 
   if (state === STATUS_CHECKING) {
     title.textContent = copy.checking;

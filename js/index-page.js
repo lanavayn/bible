@@ -169,6 +169,14 @@ function getIndexLang() {
 
     const root = document.getElementById("index-page");
     if (!root) return;
+
+    document.documentElement.dataset.dailyVerseNotificationState = "checking";
+    import("/js/onesignal-notifications.js")
+      .then(({ initDailyVerseSubscriptionState }) => initDailyVerseSubscriptionState())
+      .catch(error => {
+        console.info("[Bible for All] Daily Verse subscription state could not be loaded.", error);
+        document.documentElement.dataset.dailyVerseNotificationState = "unavailable";
+      });
   
     const lang = getIndexLang();
     const t = getIndexPageContent(lang);
