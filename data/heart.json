@@ -327,6 +327,62 @@
           "text_en": "Don’t seek revenge yourselves, beloved, but give place to God’s wrath. For it is written, “Vengeance belongs to me; I will repay, says the Lord.”"
         }
       ]
+    },
+    {
+      "id": "strength",
+      "icon": "✨",
+      "color": "#245c35",
+      "pair": 6,
+      "title_ru": "Бодрость",
+      "title_en": "Strength",
+      "verses": [
+        {
+          "reference_ru": "Псалом 137:3",
+          "reference_en": "Psalm 138:3",
+          "text_ru": "В день, когда я воззвал, Ты услышал меня, вселил в душу мою бодрость.",
+          "text_en": "In the day that I called, you answered me. You encouraged me with strength in my soul."
+        },
+        {
+          "reference_ru": "Псалом 27:7",
+          "reference_en": "Psalm 28:7",
+          "text_ru": "Господь — крепость моя и щит мой; на Него уповало сердце мое, и Он помог мне, и возрадовалось сердце мое; и я прославлю Его песнью моею.",
+          "text_en": "The LORD is my strength and my shield. My heart has trusted in him, and I am helped. Therefore my heart greatly rejoices. With my song I will thank him."
+        },
+        {
+          "reference_ru": "Филиппийцам 4:13",
+          "reference_en": "Philippians 4:13",
+          "text_ru": "Все могу в укрепляющем меня Иисусе Христе.",
+          "text_en": "I can do all things through Christ, who strengthens me."
+        }
+      ]
+    },
+    {
+      "id": "weariness",
+      "icon": "😩",
+      "color": "#8a3946",
+      "pair": 6,
+      "title_ru": "Усталость",
+      "title_en": "Weariness",
+      "verses": [
+        {
+          "reference_ru": "Исаия 40:29",
+          "reference_en": "Isaiah 40:29",
+          "text_ru": "Он дает утомленному силу, и изнемогшему дарует крепость.",
+          "text_en": "He gives power to the weak. He increases the strength of him who has no might."
+        },
+        {
+          "reference_ru": "Псалом 72:26",
+          "reference_en": "Psalm 73:26",
+          "text_ru": "Изнемогает плоть моя и сердце мое: Бог твердыня сердца моего и часть моя вовек.",
+          "text_en": "My flesh and my heart fails, but God is the strength of my heart and my portion forever."
+        },
+        {
+          "reference_ru": "Исаия 40:31",
+          "reference_en": "Isaiah 40:31",
+          "text_ru": "А надеющиеся на Господа обновятся в силе: поднимут крылья, как орлы, потекут — и не устанут, пойдут — и не утомятся.",
+          "text_en": "But those who wait for the LORD will renew their strength. They will mount up with wings like eagles. They will run and not be weary. They will walk and not faint."
+        }
+      ]
     }
   ]
 }
