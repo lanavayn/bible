@@ -285,6 +285,49 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-09-08",
+        "day": 157,
+        "topic": {
+          "ru": "Терпение",
+          "en": "Patience"
+        },
+        "reference_ru": "Римлянам 8:25",
+        "reference_en": "Romans 8:25",
+        "text_ru": "Но когда надеемся того, чего не видим, тогда ожидаем в терпении.",
+        "text_en": "But if we hope for that which we don’t see, we wait for it with patience.",
+        "verse_ref": {
+          "book": "romans",
+          "chapter": 8,
+          "verse": "25"
+        },
+        "interpretation_ru": "Не всегда мы сразу видим результат. Надейся на Господа и терпеливо жди.",
+        "interpretation_en": "We do not always see the result right away. Hope in the Lord and wait patiently.",
+        "related": [
+          {
+            "reference_ru": "Екклесиаст 7:8",
+            "reference_en": "Ecclesiastes 7:8",
+            "text_ru": "Конец дела лучше начала его; терпеливый лучше высокомерного.",
+            "text_en": "Better is the end of a thing than its beginning. The patient in spirit is better than the proud in spirit.",
+            "verse_ref": {
+              "book": "ecclesiastes",
+              "chapter": 7,
+              "verse": "8"
+            }
+          },
+          {
+            "reference_ru": "Иакова 1:3-4",
+            "reference_en": "James 1:3-4",
+            "text_ru": "Зная, что испытание вашей веры производит терпение; терпение же должно иметь совершенное действие, чтобы вы были совершенны во всей полноте, без всякого недостатка.",
+            "text_en": "Knowing that the testing of your faith produces endurance. Let endurance have its perfect work, that you may be perfect and complete, lacking in nothing.",
+            "verse_ref": {
+              "book": "james",
+              "chapter": 1,
+              "verse": "3-4"
+            }
+          }
+        ]
       }
     ]
   }

@@ -37,7 +37,7 @@
   "reserved": {
     "RESERVED_01": { "verseId": 155, "activeFrom": "2026-09-08" },
     "RESERVED_02": { "verseId": 156, "activeFrom": "2026-09-17" },
-    "RESERVED_03": { "verseId": null, "activeFrom": null },
+    "RESERVED_03": { "verseId": 157, "activeFrom": "2026-09-23" },
     "RESERVED_04": { "verseId": null, "activeFrom": null },
     "RESERVED_05": { "verseId": null, "activeFrom": null },
     "RESERVED_06": { "verseId": null, "activeFrom": null },
