@@ -64,7 +64,8 @@ export async function renderAnimatedHeart(root, language) {
   function closeResult({ resetPosition = true } = {}) {
     result.hidden = true;
     result.replaceChildren();
-    viewport.classList.remove("has-selection", "is-focus-paused");
+    viewport.classList.remove("has-selection");
+    chooser.classList.remove("is-focus-paused");
     chooser.classList.toggle("is-paused", manuallyPaused);
     if (resetPosition) track.style.marginLeft = "0px";
     track.querySelectorAll("[data-heart-category]").forEach(card => {
@@ -243,7 +244,7 @@ export async function renderAnimatedHeart(root, language) {
   viewport.addEventListener("focusout", event => {
     if (viewport.contains(event.relatedTarget)) return;
     chooser.classList.toggle("is-paused", manuallyPaused || !result.hidden);
-    viewport.classList.remove("is-focus-paused");
+    chooser.classList.remove("is-focus-paused");
   });
   track.addEventListener("mouseenter", () => chooser.classList.add("is-hover-paused"));
   track.addEventListener("mouseleave", () => chooser.classList.remove("is-hover-paused"));
