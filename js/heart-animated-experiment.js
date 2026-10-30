@@ -61,11 +61,12 @@ export async function renderAnimatedHeart(root, language) {
       : (lang === "ru" ? "Приостановить движение" : "Pause movement"));
   };
 
-  function closeResult() {
+  function closeResult({ resetPosition = true } = {}) {
     result.hidden = true;
     result.replaceChildren();
     viewport.classList.remove("has-selection", "is-focus-paused");
     chooser.classList.toggle("is-paused", manuallyPaused);
+    if (resetPosition) track.style.marginLeft = "0px";
     track.querySelectorAll("[data-heart-category]").forEach(card => {
       card.classList.remove("is-active");
       card.setAttribute("aria-pressed", "false");
@@ -110,13 +111,21 @@ export async function renderAnimatedHeart(root, language) {
   }
 
   function showResult(category) {
-    closeResult();
+    closeResult({ resetPosition: false });
     viewport.classList.add("has-selection");
     chooser.classList.add("is-paused");
     const matchingCards = track.querySelectorAll(`[data-heart-category="${CSS.escape(category.id)}"]`);
     matchingCards.forEach(card => {
       card.classList.add("is-active");
       card.setAttribute("aria-pressed", "true");
+    });
+    const selectedCard = [...matchingCards].find(card => card.closest(".heart-experiment-group:not([aria-hidden='true'])"));
+    requestAnimationFrame(() => {
+      if (!selectedCard?.isConnected || result.hidden) return;
+      const viewportRect = viewport.getBoundingClientRect();
+      const cardRect = selectedCard.getBoundingClientRect();
+      const offset = viewportRect.left + viewport.clientWidth / 2 - (cardRect.left + cardRect.width / 2);
+      track.style.marginLeft = `${offset}px`;
     });
     const url = new URL(window.location.href);
     url.searchParams.set("heart", category.id);
