@@ -1,8 +1,18 @@
 import { buildBibleLink, BOOK_MAP } from "./bibleLinks.js";
 import "./bible-chronology.js";
 import { addInlineWordHelp } from "./inline-word-help.js";
+import { renderAnimatedHeart } from "./heart-animated-experiment.js";
+
+// Flip this off to restore the original paired-card carousel below.
+const USE_ANIMATED_HEART_EXPERIMENT = true;
 
 export async function renderHeart(root, language) {
+  return USE_ANIMATED_HEART_EXPERIMENT
+    ? renderAnimatedHeart(root, language)
+    : renderLegacyHeart(root, language);
+}
+
+async function renderLegacyHeart(root, language) {
   const lang = language === "ru" ? "ru" : "en";
   const response = await fetch("/data/heart.json", { cache: "no-cache" });
   if (!response.ok) throw new Error(`Heart data: ${response.status}`);

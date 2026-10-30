@@ -5308,6 +5308,131 @@ body.daily-verse-search-open {
   margin-bottom: 0.9rem;
 }
 
+/* Local-only animated Heart carousel experiment; toggle via heart.js feature flag. */
+.heart-experiment > h2 {
+  top: -0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.heart-experiment-viewport {
+  overflow: hidden;
+  margin: 0 -0.25rem;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+
+.heart-experiment-track {
+  display: flex;
+  width: max-content;
+  animation: heart-experiment-drift linear infinite;
+  will-change: transform;
+}
+
+.heart-experiment:is(.is-paused, .is-hover-paused, .is-focus-paused) .heart-experiment-track,
+.heart-experiment-viewport.has-selection .heart-experiment-track {
+  animation-play-state: paused;
+}
+
+@media (hover: hover) {
+  .heart-experiment-viewport:hover .heart-experiment-track {
+    animation-play-state: paused;
+  }
+}
+
+.heart-experiment-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.65rem;
+  padding-right: 0.65rem;
+}
+
+.heart-experiment-card {
+  flex: 0 0 clamp(9rem, 22vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  min-height: 6rem;
+  padding: 0.5rem;
+  white-space: normal;
+  line-height: 1.25;
+  color: var(--heart-category-color, #245c35);
+}
+
+.heart-experiment-card.is-active {
+  background: #e8f5e3;
+  border-color: #8ab780;
+}
+
+.heart-experiment-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.heart-experiment-control {
+  border: 1px solid #e5cfb3;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  background: #fffdf8;
+  color: #5b4532;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+@keyframes heart-experiment-drift {
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 800px) {
+  .heart-experiment-card {
+    flex-basis: clamp(8.5rem, 30vw, 10rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .heart-experiment-card {
+    flex-basis: clamp(8rem, 42vw, 10rem);
+  }
+
+  .heart-experiment-control {
+    min-height: 2.5rem;
+  }
+}
+
+.heart-experiment-viewport.is-focus-paused,
+.heart-experiment.is-paused .heart-experiment-viewport {
+  overflow-x: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart-experiment-viewport {
+    overflow-x: auto;
+  }
+
+  .heart-experiment-play {
+    display: none;
+  }
+
+  .heart-experiment-track {
+    width: 100%;
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .heart-experiment-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .heart-experiment-group:not([aria-hidden="true"]) {
+    width: max-content;
+  }
+}
+
   .heart-chooser.is-collapsed {
     background: none;
     border-color: transparent;
