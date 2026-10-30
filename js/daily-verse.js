@@ -393,7 +393,7 @@ window.renderDailyVerse = async function renderDailyVerse(rootId = "daily-verse"
                   ? `
                   <p class="scripture-interpretation">
                     <strong>${detailsTitle}</strong>
-                    ${addCreationHelp(interpretation, lang, verseRef, { shownDefinitions: shownHelpDefinitions })}
+                    ${addCreationHelp(interpretation, lang, verseRef, { suppressOldTestamentLordHelp: true, shownDefinitions: shownHelpDefinitions })}
                   </p>
                   `
                   : ""

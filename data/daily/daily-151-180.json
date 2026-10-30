@@ -328,6 +328,65 @@
             }
           }
         ]
+      },
+      {
+        "id": "daily-2026-09-09",
+        "day": 158,
+        "topic": {"ru": "Господь слышит молитву", "en": "The Lord Hears Prayer"},
+        "reference_ru": "Псалом 64:3",
+        "reference_en": "Psalm 65:2",
+        "text_ru": "Ты слышишь молитву; к Тебе прибегает всякая плоть.",
+        "text_en": "You who hear prayer, to you all men will come.",
+        "verse_ref_lang": {
+          "ru": {"book": "psalms", "chapter": 64, "verse": "3"},
+          "en": {"book": "psalms", "chapter": 65, "verse": "2"}
+        },
+        "interpretation_ru": "Господь слышит наши молитвы. Обращайся к Нему с доверием и знай, что Он слышит.",
+        "interpretation_en": "The Lord hears our prayers. Turn to him with confidence and know that he listens.",
+        "related": [
+          {
+            "reference_ru": "1 Петра 3:12",
+            "reference_en": "1 Peter 3:12",
+            "text_ru": "Потому что очи Господа обращены к праведным и уши Его к молитве их, но лице Господне против делающих зло.",
+            "text_en": "For the eyes of the Lord are on the righteous, and his ears open to their prayer; but the face of the Lord is against those who do evil.",
+            "verse_ref": {"book": "1-peter", "chapter": 3, "verse": "12"}
+          },
+          {
+            "reference_ru": "1 Иоанна 5:15",
+            "reference_en": "1 John 5:15",
+            "text_ru": "А когда мы знаем, что Он слушает нас во всем, чего бы мы ни просили, — знаем и то, что получаем просимое от Него.",
+            "text_en": "And if we know that he listens to us, whatever we ask, we know that we have the petitions which we have asked of him.",
+            "verse_ref": {"book": "1-john", "chapter": 5, "verse": "15"}
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-09-10",
+        "day": 159,
+        "topic": {"ru": "Мудрость свыше", "en": "Wisdom from Above"},
+        "reference_ru": "Иакова 3:17",
+        "reference_en": "James 3:17",
+        "text_ru": "Но мудрость, сходящая свыше, во-первых, чиста, потом мирна, скромна, послушлива, полна милосердия и добрых плодов, беспристрастна и нелицемерна.",
+        "text_en": "But the wisdom that is from above is first pure, then peaceful, gentle, reasonable, full of mercy and good fruits, without partiality, and without hypocrisy.",
+        "verse_ref": {"book": "james", "chapter": 3, "verse": "17"},
+        "interpretation_ru": "Истинная мудрость проявляется в мире, милосердии и добрых делах.",
+        "interpretation_en": "True wisdom is shown through peace, mercy, and good deeds.",
+        "related": [
+          {
+            "reference_ru": "Притчи 4:7",
+            "reference_en": "Proverbs 4:7",
+            "text_ru": "Главное — мудрость: приобретай мудрость, и всем имением твоим приобретай разум.",
+            "text_en": "Wisdom is supreme. Get wisdom. Yes, though it costs all your possessions, get understanding.",
+            "verse_ref": {"book": "proverbs", "chapter": 4, "verse": "7"}
+          },
+          {
+            "reference_ru": "Иакова 3:18",
+            "reference_en": "James 3:18",
+            "text_ru": "Плод же правды в мире сеется у тех, которые хранят мир.",
+            "text_en": "Now the fruit of righteousness is sown in peace by those who make peace.",
+            "verse_ref": {"book": "james", "chapter": 3, "verse": "18"}
+          }
+        ]
       }
     ]
   }

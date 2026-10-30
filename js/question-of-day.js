@@ -326,7 +326,7 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
         <div class="scripture-note-box">
           <p class="scripture-interpretation">
             <strong>${lang === "ru" ? "Размышление:" : "Reflection:"}</strong>
-            ${addQuestionCreationHelp(answer, lang, verseRef, { shownDefinitions: shownHelpDefinitions })}
+            ${addQuestionCreationHelp(answer, lang, verseRef, { suppressOldTestamentLordHelp: true, shownDefinitions: shownHelpDefinitions })}
           </p>
     
           ${
