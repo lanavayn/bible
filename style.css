@@ -5315,9 +5315,10 @@ body.daily-verse-search-open {
 }
 
 .heart-experiment-viewport {
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   margin: 0 -0.25rem;
-  padding: 1.6rem 0.25rem 0.25rem;
+  padding: 0 0.25rem 0.25rem;
   border-radius: 1rem;
 }
 
@@ -5413,8 +5414,8 @@ body.daily-verse-search-open {
   }
 }
 
-.heart-experiment-viewport.is-focus-paused,
-.heart-experiment.is-paused .heart-experiment-viewport {
+.heart-experiment-viewport.is-focus-paused:not(.has-selection),
+.heart-experiment.is-paused:not(:has(.heart-experiment-viewport.has-selection)) .heart-experiment-viewport {
   overflow-x: auto;
 }
 
@@ -5426,6 +5427,11 @@ body.daily-verse-search-open {
 
   .heart-experiment-viewport {
     overflow-x: auto;
+  }
+
+  .heart-experiment-viewport.has-selection {
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   .heart-experiment-play {
