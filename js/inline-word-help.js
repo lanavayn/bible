@@ -33,6 +33,12 @@ function findDefinitionMatches(text, definitions, options = {}) {
       const word = match[2] || match[1] || match[0];
       const start = match.index + (match[2] ? before.length : 0);
       const end = start + word.length;
+      const isWordCharacter = character => character != null && /[A-Za-zА-Яа-яЁё0-9_]/.test(character);
+
+      if (isWordCharacter(text[start - 1]) || isWordCharacter(text[end])) {
+        if (match[0] === "") pattern.lastIndex += 1;
+        continue;
+      }
 
       matches.push({ start, end, definition, order });
       definitionMatchCount += 1;
@@ -153,6 +159,12 @@ const RU_COMMON_DEFINITIONS = [
     closeLabel: "Закрыть",
     text: "Незаслуженная любовь, милость и помощь Бога, которые Он дарит человеку через Иисуса Христа.",
     pattern: /(^|[^А-Яа-яЁё])(благодать|благодати|благодатью)(?=$|[^А-Яа-яЁё])/gi
+  },
+  {
+    label: "Подробнее о выражении «страх Господень»",
+    closeLabel: "Закрыть",
+    text: "Благоговение перед Богом, уважение к Нему и желание жить по Его воле.",
+    pattern: /страх(?:а|у|ом|е)?\s+Господ(?:ень|ня|ню|ним|нем)/i
   },
   {
     label: "Подробнее о слове «спасение»",
@@ -326,7 +338,7 @@ const RU_COMMON_DEFINITIONS = [
     label: "Подробнее о слове «блажен»",
     closeLabel: "Закрыть",
     text: "В Синодальном переводе означает «счастлив» или «благословен Богом». Речь идёт о глубоком счастье, которое приходит от жизни с Богом.",
-    pattern: /(Блаженны|Блажен|блаженны|блаженство|блажен|блаженства)/
+    pattern: /(^|[^А-Яа-яЁё])(Блаженны|Блажен|блаженны|блаженство|блаженства|блаженного|блажен)(?=$|[^А-Яа-яЁё])/g
   },
   {
     label: "Подробнее о слове «твердь»",
