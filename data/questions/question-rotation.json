@@ -32,7 +32,7 @@
     "RESERVED_03": { "questionId": null, "activeFrom": null },
     "RESERVED_04": { "questionId": null, "activeFrom": null },
     "RESERVED_05": { "questionId": null, "activeFrom": null },
-    "RESERVED_06": { "questionId": null, "activeFrom": null },
+    "RESERVED_06": { "questionId": 121, "activeFrom": "2026-10-31" },
     "RESERVED_07": { "questionId": null, "activeFrom": null },
     "RESERVED_08": { "questionId": null, "activeFrom": null },
     "RESERVED_09": { "questionId": null, "activeFrom": null },
