@@ -1,0 +1,50 @@
+{
+    "questions": [
+      {
+        "id": "question-day-121",
+        "day": 121,
+        "topic_ru": "Как найти мудрость",
+        "topic_en": "Finding Wisdom",
+        "question_ru": "Как найти мудрость?",
+        "question_en": "How Can We Find Wisdom?",
+        "reference_ru": "Притчи 9:10",
+        "reference_en": "Proverbs 9:10",
+        "text_ru": "Начало мудрости — страх Господень, и познание Святаго — разум.",
+        "text_en": "The fear of the LORD is the beginning of wisdom. The knowledge of the Holy One is understanding.",
+        "verse_ref": {
+          "book": "Proverbs",
+          "chapter": 9,
+          "verse": "10"
+        },
+        "answer_ru": "Мудрость приходит через познание Бога и следование Его наставлениям.",
+        "answer_en": "Wisdom comes through knowing God and following His teachings.",
+        "reflection_ru": "Истинная мудрость — это не только знания, но и жизнь по Божьему Слову. Когда мы познаём Господа, принимаем Его наставления и удаляемся от зла, мы учимся поступать мудро.",
+        "reflection_en": "True wisdom is more than knowledge; it is living according to God's Word. As we come to know the Lord, accept His instruction, and turn away from evil, we learn to act wisely.",
+        "related": [
+          {
+            "reference_ru": "Притчи 8:33",
+            "reference_en": "Proverbs 8:33",
+            "text_ru": "Послушайте наставления и будьте мудры, и не отступайте от него.",
+            "text_en": "Hear instruction, and be wise. Don't refuse it.",
+            "verse_ref": {
+              "book": "Proverbs",
+              "chapter": 8,
+              "verse": "33"
+            }
+          },
+          {
+            "reference_ru": "Иов 28:28",
+            "reference_en": "Job 28:28",
+            "text_ru": "И сказал человеку: вот, страх Господень есть истинная премудрость, и удаление от зла — разум.",
+            "text_en": "To man he said, 'Behold, the fear of the Lord, that is wisdom. To depart from evil is understanding.'",
+            "verse_ref": {
+              "book": "Job",
+              "chapter": 28,
+              "verse": "28"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

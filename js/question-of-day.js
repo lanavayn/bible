@@ -51,7 +51,8 @@ window.renderQuestionOfDay = async function renderQuestionOfDay(rootId = "questi
       "/data/questions/question-1-30.json",
       "/data/questions/question-31-60.json",
       "/data/questions/question-61-90.json",      
-      "/data/questions/question-91-120.json"
+      "/data/questions/question-91-120.json",
+      "/data/questions/question-121-150.json"
     ];
     
     let questions = [];
