@@ -5320,6 +5320,16 @@ body.daily-verse-search-open {
   margin: 0 -0.25rem;
   padding: 0 0.25rem 0.25rem;
   border-radius: 1rem;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.heart-experiment-viewport.is-drag-resume {
+  cursor: grab;
+}
+
+.heart-experiment.is-dragging .heart-experiment-viewport {
+  cursor: grabbing;
 }
 
 .heart-experiment-track {
@@ -5332,12 +5342,22 @@ body.daily-verse-search-open {
 }
 
 .heart-experiment:is(.is-paused, .is-hover-paused, .is-focus-paused) .heart-experiment-track,
+.heart-experiment.is-dragging .heart-experiment-track,
 .heart-experiment-viewport.has-selection .heart-experiment-track {
   animation-play-state: paused;
 }
 
+.heart-experiment.is-dragging .heart-experiment-track {
+  transition: none;
+}
+
+.heart-experiment.is-dragging {
+  user-select: none;
+  cursor: grabbing;
+}
+
 @media (hover: hover) {
-  .heart-experiment-viewport:hover .heart-experiment-track {
+  .heart-experiment-viewport:hover:not(.is-drag-resume) .heart-experiment-track {
     animation-play-state: paused;
   }
 }

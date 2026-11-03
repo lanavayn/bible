@@ -49,6 +49,8 @@ export async function renderAnimatedHeart(root, language) {
   let order = [...categories];
   let manuallyPaused = false;
   let shuffleInProgress = false;
+  let pointerGesture = null;
+  let suppressDraggedClick = false;
 
   const updatePlayButton = () => {
     const paused = manuallyPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -248,6 +250,78 @@ export async function renderAnimatedHeart(root, language) {
   });
   track.addEventListener("mouseenter", () => chooser.classList.add("is-hover-paused"));
   track.addEventListener("mouseleave", () => chooser.classList.remove("is-hover-paused"));
+  viewport.addEventListener("pointerdown", event => {
+    if (!event.isPrimary || event.button !== 0 || shuffleInProgress) return;
+    pointerGesture = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startScrollLeft: viewport.scrollLeft,
+      dragging: false,
+      resumeAfter: !manuallyPaused && result.hidden
+        && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    };
+  });
+  viewport.addEventListener("pointermove", event => {
+    if (!pointerGesture || event.pointerId !== pointerGesture.pointerId) return;
+    const deltaX = event.clientX - pointerGesture.startX;
+    const deltaY = event.clientY - pointerGesture.startY;
+    if (!pointerGesture.dragging) {
+      if (Math.abs(deltaY) > 8 && Math.abs(deltaY) > Math.abs(deltaX)) {
+        pointerGesture = null;
+        return;
+      }
+      if (Math.abs(deltaX) < 8 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+      pointerGesture.dragging = true;
+      pointerGesture.animation = track.getAnimations().find(animation =>
+        animation.animationName === "heart-experiment-drift");
+      pointerGesture.startTime = Number(pointerGesture.animation?.currentTime || 0);
+      pointerGesture.period = Number(pointerGesture.animation?.effect?.getComputedTiming().duration || 0);
+      pointerGesture.distance = track.querySelector(".heart-experiment-group")?.getBoundingClientRect().width || 0;
+      viewport.setPointerCapture(event.pointerId);
+      chooser.classList.remove("is-hover-paused");
+      chooser.classList.add("is-dragging");
+    }
+    event.preventDefault();
+    const { animation, period, distance, startTime } = pointerGesture;
+    if (!animation || !Number.isFinite(period) || !distance) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        viewport.scrollLeft = pointerGesture.startScrollLeft - deltaX;
+      }
+      return;
+    }
+    const nextTime = startTime - (deltaX / distance) * period;
+    animation.currentTime = ((nextTime % period) + period) % period;
+  });
+  const finishPointerGesture = event => {
+    if (!pointerGesture || event.pointerId !== pointerGesture.pointerId) return;
+    const { dragging, resumeAfter } = pointerGesture;
+    pointerGesture = null;
+    if (!dragging) return;
+    suppressDraggedClick = true;
+    requestAnimationFrame(() => { suppressDraggedClick = false; });
+    chooser.classList.remove("is-dragging");
+    if (resumeAfter && !manuallyPaused && result.hidden) {
+      requestAnimationFrame(() => {
+        if (manuallyPaused || !result.hidden) return;
+        chooser.classList.remove("is-focus-paused", "is-hover-paused", "is-paused");
+        if (viewport.matches(":hover")) viewport.classList.add("is-drag-resume");
+      });
+    }
+    if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+  };
+  viewport.addEventListener("pointerup", finishPointerGesture);
+  viewport.addEventListener("pointercancel", finishPointerGesture);
+  viewport.addEventListener("lostpointercapture", finishPointerGesture);
+  viewport.addEventListener("click", event => {
+    if (!suppressDraggedClick) return;
+    suppressDraggedClick = false;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, { capture: true });
+  viewport.addEventListener("pointerleave", () => {
+    viewport.classList.remove("is-drag-resume");
+  });
   updatePlayButton();
   renderTrack();
 
