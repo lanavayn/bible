@@ -51,6 +51,7 @@ export async function renderAnimatedHeart(root, language) {
   let shuffleInProgress = false;
   let pointerGesture = null;
   let suppressDraggedClick = false;
+  let selectionFrame = null;
 
   const updatePlayButton = () => {
     const paused = manuallyPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -64,6 +65,8 @@ export async function renderAnimatedHeart(root, language) {
   };
 
   function closeResult({ resetPosition = true } = {}) {
+    if (selectionFrame !== null) cancelAnimationFrame(selectionFrame);
+    selectionFrame = null;
     result.hidden = true;
     result.replaceChildren();
     viewport.classList.remove("has-selection");
@@ -123,7 +126,8 @@ export async function renderAnimatedHeart(root, language) {
       card.setAttribute("aria-pressed", "true");
     });
     const selectedCard = [...matchingCards].find(card => card.closest(".heart-experiment-group:not([aria-hidden='true'])"));
-    requestAnimationFrame(() => {
+    selectionFrame = requestAnimationFrame(() => {
+      selectionFrame = null;
       if (!selectedCard?.isConnected || result.hidden) return;
       const viewportRect = viewport.getBoundingClientRect();
       const cardRect = selectedCard.getBoundingClientRect();
@@ -222,6 +226,7 @@ export async function renderAnimatedHeart(root, language) {
   });
   playButton.addEventListener("click", () => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (manuallyPaused && !result.hidden) closeResult({ resetPosition: false });
     manuallyPaused = !manuallyPaused;
     chooser.classList.toggle("is-paused", manuallyPaused);
     updatePlayButton();
