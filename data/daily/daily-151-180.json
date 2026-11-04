@@ -387,6 +387,135 @@
             "verse_ref": {"book": "james", "chapter": 3, "verse": "18"}
           }
         ]
+      },
+      {
+        "id": "daily-2026-09-11",
+        "day": 160,
+        "topic": {
+          "ru": "Бог не навязывает Себя",
+          "en": "God Does Not Force Himself on Us"
+        },
+        "reference_ru": "Матфея 23:37",
+        "reference_en": "Matthew 23:37",
+        "text_ru": "Иерусалим, Иерусалим, избивающий пророков и камнями побивающий посланных к тебе! сколько раз хотел Я собрать детей твоих, как птица собирает птенцов своих под крылья, и вы не захотели!",
+        "text_en": "Jerusalem, Jerusalem, who kills the prophets and stones those who are sent to her! How often I would have gathered your children together, even as a hen gathers her chicks under her wings, and you would not!",
+        "verse_ref": {
+          "book": "matthew",
+          "chapter": 23,
+          "verse": "37"
+        },
+        "interpretation_ru": "Бог приглашает нас к Себе, но оставляет каждому свободу выбора.",
+        "interpretation_en": "God invites us to come to him, but leaves each person free to choose.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 5:40",
+            "reference_en": "John 5:40",
+            "text_ru": "Но вы не хотите прийти ко Мне, чтобы иметь жизнь.",
+            "text_en": "Yet you will not come to me, that you may have life.",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 5,
+              "verse": "40"
+            }
+          },
+          {
+            "reference_ru": "Луки 9:23",
+            "reference_en": "Luke 9:23",
+            "text_ru": "Ко всем же сказал: если кто хочет идти за Мною, отвергнись себя, и возьми крест свой, и следуй за Мною.",
+            "text_en": "He said to all, “If anyone desires to come after me, let him deny himself, take up his cross, and follow me.”",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 9,
+              "verse": "23"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-09-12",
+        "day": 161,
+        "topic": {
+          "ru": "Господь не отвергает сомневающихся",
+          "en": "The Lord Does Not Reject Those Who Doubt"
+        },
+        "reference_ru": "Иоанна 20:27",
+        "reference_en": "John 20:27",
+        "text_ru": "Потом говорит Фоме: подай перст твой сюда и посмотри руки Мои; подай руку твою и вложи в ребра Мои; и не будь неверующим, но верующим.",
+        "text_en": "Then he said to Thomas, “Reach here your finger, and see my hands. Reach here your hand, and put it into my side. Don’t be unbelieving, but believing.”",
+        "verse_ref": {
+          "book": "john",
+          "chapter": 20,
+          "verse": "27"
+        },
+        "interpretation_ru": "Иисус не отвергает нас за сомнения, а помогает укрепляться в вере.",
+        "interpretation_en": "Jesus does not reject us for our doubts, but helps us grow stronger in faith.",
+        "related": [
+          {
+            "reference_ru": "Иоанна 20:29",
+            "reference_en": "John 20:29",
+            "text_ru": "Иисус говорит ему: ты поверил, потому что увидел Меня; блаженны невидевшие и уверовавшие.",
+            "text_en": "Jesus said to him, “Because you have seen me, you have believed. Blessed are those who have not seen, and have believed.”",
+            "verse_ref": {
+              "book": "john",
+              "chapter": 20,
+              "verse": "29"
+            }
+          },
+          {
+            "reference_ru": "Луки 17:5",
+            "reference_en": "Luke 17:5",
+            "text_ru": "И сказали Апостолы Господу: умножь в нас веру.",
+            "text_en": "The apostles said to the Lord, “Increase our faith.”",
+            "verse_ref": {
+              "book": "luke",
+              "chapter": 17,
+              "verse": "5"
+            }
+          }
+        ]
+      },
+      {
+        "id": "daily-2026-09-13",
+        "day": 162,
+        "topic": {
+          "ru": "Бог любит тебя, даже если ты Его не знаешь",
+          "en": "God Loves You Even If You Don't Know Him"
+        },
+        "reference_ru": "1 Иоанна 4:10",
+        "reference_en": "1 John 4:10",
+        "text_ru": "В том любовь, что не мы возлюбили Бога, но Он возлюбил нас и послал Сына Своего в умилостивление за грехи наши.",
+        "text_en": "In this is love, not that we loved God, but that he loved us, and sent his Son as the atoning sacrifice for our sins.",
+        "verse_ref": {
+          "book": "1-john",
+          "chapter": 4,
+          "verse": "10"
+        },
+        "interpretation_ru": "Бог любит нас ещё до того, как мы начинаем искать и познавать Его.",
+        "interpretation_en": "God loves us even before we begin to seek and know him.",
+        "related": [
+          {
+            "reference_ru": "Римлянам 5:6",
+            "reference_en": "Romans 5:6",
+            "text_ru": "Ибо Христос, когда еще мы были немощны, в определенное время умер за нечестивых.",
+            "text_en": "For while we were yet weak, at the right time Christ died for the ungodly.",
+            "verse_ref": {
+              "book": "romans",
+              "chapter": 5,
+              "verse": "6"
+            }
+          },
+          {
+            "reference_ru": "1 Тимофею 2:4",
+            "reference_en": "1 Timothy 2:4",
+            "text_ru": "Который хочет, чтобы все люди спаслись и достигли познания истины.",
+            "text_en": "Who desires all people to be saved and come to full knowledge of the truth.",
+            "verse_ref": {
+              "book": "1-timothy",
+              "chapter": 2,
+              "verse": "4"
+            }
+          }
+        ]
       }
     ]
   }
