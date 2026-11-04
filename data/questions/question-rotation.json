@@ -33,10 +33,10 @@
     "RESERVED_04": { "questionId": null, "activeFrom": null },
     "RESERVED_05": { "questionId": null, "activeFrom": null },
     "RESERVED_06": { "questionId": 121, "activeFrom": "2026-10-31" },
-    "RESERVED_07": { "questionId": null, "activeFrom": null },
-    "RESERVED_08": { "questionId": null, "activeFrom": null },
-    "RESERVED_09": { "questionId": null, "activeFrom": null },
-    "RESERVED_10": { "questionId": null, "activeFrom": null },
+    "RESERVED_07": { "questionId": 122, "activeFrom": "2026-11-04" },
+    "RESERVED_08": { "questionId": 123, "activeFrom": "2026-11-07" },
+    "RESERVED_09": { "questionId": 124, "activeFrom": "2026-11-10" },
+    "RESERVED_10": { "questionId": 125, "activeFrom": "2026-11-13" },
     "RESERVED_11": { "questionId": null, "activeFrom": null }
   }
 }

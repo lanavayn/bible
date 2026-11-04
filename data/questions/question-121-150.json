@@ -44,6 +44,270 @@
             }
           }
         ]
+      },
+      {
+        "id": "question-day-122",
+        "day": 122,
+        "topic_ru": "Доверие Богу после утраты",
+        "topic_en": "Trusting God After Loss",
+        "question_ru": "На кого положиться, когда теряешь близких?",
+        "question_en": "Whom Can We Rely On When We Lose Loved Ones?",
+        "reference_ru": "Псалом 67:6–7",
+        "reference_en": "Psalm 68:5–6",
+        "text_ru": "Отец сирот и судия вдов Бог во святом Своём жилище. Бог одиноких вводит в дом, освобождает узников от оков, а непокорные остаются в знойной пустыне.",
+        "text_en": "A father of the fatherless, and a defender of the widows, is God in his holy habitation. God sets the lonely in families. He brings out the prisoners with singing, but the rebellious dwell in a sun-scorched land.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Psalms",
+            "chapter": 67,
+            "verse": "6-7"
+          },
+          "en": {
+            "book": "Psalms",
+            "chapter": 68,
+            "verse": "5-6"
+          }
+        },
+        "answer_ru": "Бог остаётся нашей опорой и заботится об одиноких.",
+        "answer_en": "God remains our refuge and cares for those who are alone.",
+        "reflection_ru": "Потеря близкого человека приносит боль, но Господь не оставляет нас без Своей заботы. Мы можем обращаться к Нему и доверять Его верности.",
+        "reflection_en": "Losing someone we love brings pain, but the Lord does not leave us without his care. We can turn to him and trust his faithfulness.",
+        "related": [
+          {
+            "reference_ru": "Псалом 145:9",
+            "reference_en": "Psalm 146:9",
+            "text_ru": "Господь хранит пришельцев, поддерживает сироту и вдову; а путь нечестивых извращает.",
+            "text_en": "The Lord preserves the foreigners. He upholds the fatherless and widow, but he turns the way of the wicked upside down.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 145,
+                "verse": "9"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 146,
+                "verse": "9"
+              }
+            }
+          },
+          {
+            "reference_ru": "Псалом 70:5",
+            "reference_en": "Psalm 71:5",
+            "text_ru": "Ибо Ты — надежда моя, Господи Боже, упование моё от юности моей.",
+            "text_en": "For you are my hope, Lord Yahweh; my confidence from my youth.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 70,
+                "verse": "5"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 71,
+                "verse": "5"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-123",
+        "day": 123,
+        "topic_ru": "Доверие в неизвестности",
+        "topic_en": "Trusting God in Uncertainty",
+        "question_ru": "Как доверять Богу, когда не знаешь, что будет дальше?",
+        "question_en": "How Can We Trust God When We Do Not Know What Lies Ahead?",
+        "reference_ru": "Исаия 42:16",
+        "reference_en": "Isaiah 42:16",
+        "text_ru": "И поведу слепых дорогою, которой они не знают, неизвестными путями буду вести их; мрак сделаю светом пред ними, и кривые пути — прямыми: вот что Я сделаю для них и не оставлю их.",
+        "text_en": "I will bring the blind by a way that they don’t know. I will lead them in paths that they don’t know. I will make darkness light before them, and crooked places straight. I will do these things, and I will not forsake them.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Isaiah",
+            "chapter": 42,
+            "verse": "16"
+          },
+          "en": {
+            "book": "Isaiah",
+            "chapter": 42,
+            "verse": "16"
+          }
+        },
+        "answer_ru": "Даже в неизвестности можно доверять Богу: Он верен и не оставляет Своих.",
+        "answer_en": "Even in uncertainty, we can trust God: he is faithful and does not forsake his people.",
+        "reflection_ru": "Мы не всегда знаем, что ждёт нас впереди. Но Божья верность даёт нам надежду идти дальше, даже когда путь неясен.",
+        "reflection_en": "We do not always know what lies ahead. Yet God’s faithfulness gives us hope to keep going, even when the path is unclear.",
+        "related": [
+          {
+            "reference_ru": "Псалом 72:23",
+            "reference_en": "Psalm 73:23",
+            "text_ru": "Но я всегда с Тобою: Ты держишь меня за правую руку.",
+            "text_en": "Nevertheless, I am continually with you. You have held my right hand.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 72,
+                "verse": "23"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 73,
+                "verse": "23"
+              }
+            }
+          },
+          {
+            "reference_ru": "Псалом 24:10",
+            "reference_en": "Psalm 25:10",
+            "text_ru": "Все пути Господни — милость и истина к хранящим завет Его и откровения Его.",
+            "text_en": "All the paths of the Lord are loving kindness and truth to such as keep his covenant and his testimonies.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 24,
+                "verse": "10"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 25,
+                "verse": "10"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-124",
+        "day": 124,
+        "topic_ru": "Бог помнит о нас",
+        "topic_en": "God Does Not Forget Us",
+        "question_ru": "Может ли Бог забыть человека, оставшегося в одиночестве?",
+        "question_en": "Can God Forget Someone Who Is Left Alone?",
+        "reference_ru": "Исаия 49:15–16",
+        "reference_en": "Isaiah 49:15–16",
+        "text_ru": "Забудет ли женщина грудное дитя своё, чтобы не пожалеть сына чрева своего? но если бы и она забыла, то Я не забуду тебя. Вот, Я начертал тебя на дланях Моих; стены твои всегда предо Мною.",
+        "text_en": "Can a woman forget her nursing child, that she should not have compassion on the son of her womb? Yes, these may forget, yet I will not forget you! Behold, I have engraved you on the palms of my hands. Your walls are continually before me.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Isaiah",
+            "chapter": 49,
+            "verse": "15-16"
+          },
+          "en": {
+            "book": "Isaiah",
+            "chapter": 49,
+            "verse": "15-16"
+          }
+        },
+        "answer_ru": "Бог не забывает Своих и видит их скорбь.",
+        "answer_en": "God does not forget his people and sees their sorrow.",
+        "reflection_ru": "Даже когда рядом нет самого близкого человека, Божья верность остаётся неизменной. Он знает наши слёзы и поддерживает нас.",
+        "reflection_en": "Even when the person closest to us is no longer here, God’s faithfulness remains. He knows our tears and sustains us.",
+        "related": [
+          {
+            "reference_ru": "Псалом 55:9",
+            "reference_en": "Psalm 56:8",
+            "text_ru": "У Тебя исчислены мои скитания; положи слёзы мои в сосуд у Тебя, — не в книге ли они Твоей?",
+            "text_en": "You count my wanderings. You put my tears into your container. Aren’t they in your book?",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 55,
+                "verse": "9"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 56,
+                "verse": "8"
+              }
+            }
+          },
+          {
+            "reference_ru": "Исаия 46:4",
+            "reference_en": "Isaiah 46:4",
+            "text_ru": "И до старости вашей Я тот же буду, и до седины вашей Я же буду носить вас; Я создал и буду носить, поддерживать и охранять вас.",
+            "text_en": "Even to old age I am he, and even to gray hairs I will carry you. I have made, and I will bear. Yes, I will carry, and will deliver.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Isaiah",
+                "chapter": 46,
+                "verse": "4"
+              },
+              "en": {
+                "book": "Isaiah",
+                "chapter": 46,
+                "verse": "4"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "question-day-125",
+        "day": 125,
+        "topic_ru": "Покой после утраты",
+        "topic_en": "Peace After Loss",
+        "question_ru": "Как найти покой после тяжёлой утраты?",
+        "question_en": "How Can We Find Peace After a Painful Loss?",
+        "reference_ru": "Псалом 114:7",
+        "reference_en": "Psalm 116:7",
+        "text_ru": "Возвратись, душа моя, в покой твой, ибо Господь облагодетельствовал тебя.",
+        "text_en": "Return to your rest, my soul, for the Lord has dealt bountifully with you.",
+        "verse_ref_lang": {
+          "ru": {
+            "book": "Psalms",
+            "chapter": 114,
+            "verse": "7"
+          },
+          "en": {
+            "book": "Psalms",
+            "chapter": 116,
+            "verse": "7"
+          }
+        },
+        "answer_ru": "Мы можем найти покой, обращаясь к Господу и доверяя Его заботе.",
+        "answer_en": "We can find rest by turning to the Lord and trusting his care.",
+        "reflection_ru": "Скорбь не исчезает сразу, но Божье Слово утешает нас. Господь помогает сердцу вновь обрести покой.",
+        "reflection_en": "Grief does not disappear at once, but God’s Word comforts us. The Lord helps our hearts find rest again.",
+        "related": [
+          {
+            "reference_ru": "Псалом 118:50",
+            "reference_en": "Psalm 119:50",
+            "text_ru": "Это — утешение в бедствии моём, что слово Твоё оживляет меня.",
+            "text_en": "This is my comfort in my affliction, for your word has revived me.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 118,
+                "verse": "50"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 119,
+                "verse": "50"
+              }
+            }
+          },
+          {
+            "reference_ru": "Псалом 62:8",
+            "reference_en": "Psalm 63:7",
+            "text_ru": "Ибо Ты помощь моя, и в тени крыл Твоих я возрадуюсь.",
+            "text_en": "For you have been my help. I will rejoice in the shadow of your wings.",
+            "verse_ref_lang": {
+              "ru": {
+                "book": "Psalms",
+                "chapter": 62,
+                "verse": "8"
+              },
+              "en": {
+                "book": "Psalms",
+                "chapter": 63,
+                "verse": "7"
+              }
+            }
+          }
+        ]
       }
     ]
   }
