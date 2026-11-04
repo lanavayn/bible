@@ -274,7 +274,7 @@
     },
     {
       "id": "forgiving",
-      "icon": "🤍",
+      "icon": "🌿",
       "color": "#245c35",
       "pair": 5,
       "title_ru": "Прощаю",
@@ -302,7 +302,7 @@
     },
     {
       "id": "hard-to-forgive",
-      "icon": "💔",
+      "icon": "🥀",
       "color": "#8a3946",
       "pair": 5,
       "title_ru": "Трудно простить",
