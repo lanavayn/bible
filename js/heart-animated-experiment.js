@@ -50,6 +50,7 @@ export async function renderAnimatedHeart(root, language) {
   let manuallyPaused = false;
   let shuffleInProgress = false;
   let pointerGesture = null;
+  let touchGesture = null;
   let suppressDraggedClick = false;
   let selectionFrame = null;
 
@@ -256,6 +257,7 @@ export async function renderAnimatedHeart(root, language) {
   track.addEventListener("mouseenter", () => chooser.classList.add("is-hover-paused"));
   track.addEventListener("mouseleave", () => chooser.classList.remove("is-hover-paused"));
   viewport.addEventListener("pointerdown", event => {
+    if (event.pointerType === "touch") return;
     if (!event.isPrimary || event.button !== 0 || shuffleInProgress) return;
     pointerGesture = {
       pointerId: event.pointerId,
@@ -315,6 +317,75 @@ export async function renderAnimatedHeart(root, language) {
   viewport.addEventListener("pointerup", finishPointerGesture);
   viewport.addEventListener("pointercancel", finishPointerGesture);
   viewport.addEventListener("lostpointercapture", finishPointerGesture);
+
+  const finishTouchGesture = (event, force = false) => {
+    if (!touchGesture) return;
+    if (!force && ![...event.changedTouches].some(touch => touch.identifier === touchGesture.identifier)) return;
+    const { dragging, resumeAfter } = touchGesture;
+    touchGesture = null;
+    if (!dragging) return;
+    suppressDraggedClick = true;
+    requestAnimationFrame(() => { suppressDraggedClick = false; });
+    chooser.classList.remove("is-dragging");
+    if (resumeAfter && !manuallyPaused && result.hidden) {
+      requestAnimationFrame(() => {
+        if (manuallyPaused || !result.hidden) return;
+        chooser.classList.remove("is-focus-paused", "is-hover-paused", "is-paused");
+        if (viewport.matches(":hover")) viewport.classList.add("is-drag-resume");
+      });
+    }
+  };
+  viewport.addEventListener("touchstart", event => {
+    if (event.touches.length !== 1 || shuffleInProgress) {
+      finishTouchGesture(event, true);
+      return;
+    }
+    const touch = event.changedTouches[0];
+    touchGesture = {
+      identifier: touch.identifier,
+      startX: touch.clientX,
+      startY: touch.clientY,
+      startScrollLeft: viewport.scrollLeft,
+      dragging: false,
+      resumeAfter: !manuallyPaused
+        && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    };
+  }, { passive: true });
+  viewport.addEventListener("touchmove", event => {
+    if (!touchGesture) return;
+    if (event.touches.length !== 1) {
+      finishTouchGesture(event, true);
+      return;
+    }
+    const touch = [...event.touches].find(item => item.identifier === touchGesture.identifier);
+    if (!touch) return;
+    const deltaX = touch.clientX - touchGesture.startX;
+    const deltaY = touch.clientY - touchGesture.startY;
+    if (!touchGesture.dragging) {
+      if (Math.abs(deltaX) < 8 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+      touchGesture.dragging = true;
+      touchGesture.animation = track.getAnimations().find(animation =>
+        animation.animationName === "heart-experiment-drift");
+      touchGesture.startTime = Number(touchGesture.animation?.currentTime || 0);
+      touchGesture.period = Number(touchGesture.animation?.effect?.getComputedTiming().duration || 0);
+      touchGesture.distance = track.querySelector(".heart-experiment-group")?.getBoundingClientRect().width || 0;
+      chooser.classList.remove("is-hover-paused");
+      chooser.classList.add("is-dragging");
+      if (!result.hidden) closeResult({ resetPosition: false });
+    }
+    event.preventDefault();
+    const { animation, period, distance, startTime } = touchGesture;
+    if (!animation || !Number.isFinite(period) || !distance) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        viewport.scrollLeft = touchGesture.startScrollLeft - deltaX;
+      }
+      return;
+    }
+    const nextTime = startTime - (deltaX / distance) * period;
+    animation.currentTime = ((nextTime % period) + period) % period;
+  }, { passive: false });
+  viewport.addEventListener("touchend", finishTouchGesture, { passive: true });
+  viewport.addEventListener("touchcancel", finishTouchGesture, { passive: true });
   viewport.addEventListener("click", event => {
     if (!suppressDraggedClick) return;
     suppressDraggedClick = false;

@@ -5381,6 +5381,7 @@ body.daily-verse-search-open {
   white-space: normal;
   line-height: 1.25;
   color: var(--heart-category-color, #245c35);
+  touch-action: pan-y;
 }
 
 .heart-experiment-card .heart-category-icon {
