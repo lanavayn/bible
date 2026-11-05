@@ -263,22 +263,16 @@ export async function renderAnimatedHeart(root, language) {
       startY: event.clientY,
       startScrollLeft: viewport.scrollLeft,
       dragging: false,
-      cancelled: false,
       resumeAfter: !manuallyPaused
         && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
     };
   });
   viewport.addEventListener("pointermove", event => {
     if (!pointerGesture || event.pointerId !== pointerGesture.pointerId) return;
-    if (pointerGesture.cancelled) return;
     const deltaX = event.clientX - pointerGesture.startX;
     const deltaY = event.clientY - pointerGesture.startY;
     if (!pointerGesture.dragging) {
-      if (Math.abs(deltaY) >= 10 && Math.abs(deltaY) > Math.abs(deltaX)) {
-        pointerGesture.cancelled = true;
-        return;
-      }
-      if (Math.abs(deltaX) < 10 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+      if (Math.abs(deltaX) < 8 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
       pointerGesture.dragging = true;
       pointerGesture.animation = track.getAnimations().find(animation =>
         animation.animationName === "heart-experiment-drift");
@@ -303,15 +297,11 @@ export async function renderAnimatedHeart(root, language) {
   });
   const finishPointerGesture = event => {
     if (!pointerGesture || event.pointerId !== pointerGesture.pointerId) return;
-    const { dragging, cancelled, resumeAfter } = pointerGesture;
+    const { dragging, resumeAfter } = pointerGesture;
     pointerGesture = null;
-    if (!dragging && !cancelled) return;
+    if (!dragging) return;
     suppressDraggedClick = true;
     requestAnimationFrame(() => { suppressDraggedClick = false; });
-    if (!dragging) {
-      if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
-      return;
-    }
     chooser.classList.remove("is-dragging");
     if (resumeAfter && !manuallyPaused && result.hidden) {
       requestAnimationFrame(() => {
