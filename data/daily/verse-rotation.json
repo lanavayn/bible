@@ -45,9 +45,9 @@
     "RESERVED_08": { "verseId": 160, "activeFrom": "2026-11-04" },
     "RESERVED_09": { "verseId": 161, "activeFrom": "2026-11-04" },
     "RESERVED_10": { "verseId": 162, "activeFrom": "2026-11-04" },
-    "RESERVED_11": { "verseId": null, "activeFrom": null },
-    "RESERVED_12": { "verseId": null, "activeFrom": null },
-    "RESERVED_13": { "verseId": null, "activeFrom": null },
+    "RESERVED_11": { "verseId": 163, "activeFrom": "2026-11-06" },
+    "RESERVED_12": { "verseId": 164, "activeFrom": "2026-11-06" },
+    "RESERVED_13": { "verseId": 165, "activeFrom": "2026-11-06" },
     "RESERVED_14": { "verseId": null, "activeFrom": null },
     "RESERVED_15": { "verseId": null, "activeFrom": null }
   }
