@@ -69,6 +69,20 @@
       </table>`;
   }
 
+  function testamentTotalHTML(arr) {
+    const lang = getLang();
+    const verseKey = lang === "ru" ? "verses_ru" : "verses_en";
+    const verseTotal = arr.reduce((total, book) => {
+      const count = book[verseKey];
+      return total + (Number.isFinite(count) ? count : 0);
+    }, 0);
+    const bookLabel = lang === "ru" ? "книг" : "books";
+    const verseLabel = lang === "ru" ? "стихов" : "verses";
+    const locale = lang === "ru" ? "ru-RU" : "en-US";
+
+    return `${arr.length} ${bookLabel} · ${verseTotal.toLocaleString(locale)} ${verseLabel}`;
+  }
+
   window.initBookDates = async function initBookDates(selector = "#book-dates", jsonPath = "/data/bible-books.json") {
     const root = document.querySelector(selector);
     if (!root) return;
@@ -81,12 +95,18 @@
         <h1 class="hero-title">${t.title}</h1>
 
           <details id="old-testament">
-            <summary><strong>${t.ot}</strong></summary>
+            <summary>
+              <span class="bd-testament-heading">${t.ot}</span>
+              <span class="bd-testament-total"></span>
+            </summary>
             <div class="bd-ot">Загрузка…</div>
           </details>
 
           <details id="new-testament">
-            <summary><strong>${t.nt}</strong></summary>
+            <summary>
+              <span class="bd-testament-heading">${t.nt}</span>
+              <span class="bd-testament-total"></span>
+            </summary>
             <div class="bd-nt">Загрузка…</div>
           </details>
     `;
@@ -104,6 +124,8 @@
 
     try {
       DATA = await chronology.loadBibleBooks(jsonPath);
+      root.querySelector("#old-testament .bd-testament-total").textContent = testamentTotalHTML(DATA.ot);
+      root.querySelector("#new-testament .bd-testament-total").textContent = testamentTotalHTML(DATA.nt);
       root.querySelector(".bd-ot").innerHTML = tableHTML(DATA.ot, chronology);
       root.querySelector(".bd-nt").innerHTML = tableHTML(DATA.nt, chronology);
     } catch (e) {

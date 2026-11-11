@@ -205,6 +205,7 @@
     const place = isRu ? book.place_ru : book.place_en;
     const language = isRu ? book.language?.ru : book.language?.en;
     const chapters = book.chapters;
+    const verses = isRu ? book.verses_ru : book.verses_en;
     const author = isRu ? (book.author_ru || "—") : (book.author_en || book.author_ru || "—");
     const anno = isRu ? (book.anno_ru || "") : (book.anno_en || book.anno_ru || "");
 
@@ -221,7 +222,8 @@
         ${place ? `<strong>${isRu ? 'Место' : 'Place'}:</strong> ${place}<br>` : ""}
         ${language ? `<strong>${isRu ? 'Язык' : 'Language'}:</strong> ${language}<br>` : ""}
         ${anno ? `<strong>${t.annoLabel}:</strong> ${anno}<br>` : ""}
-        ${Number.isFinite(chapters) ? `<strong>${isRu ? 'Количество глав' : 'Number of chapters'}:</strong> ${chapters}` : ""}      
+        ${Number.isFinite(chapters) ? `<strong>${isRu ? 'Количество глав' : 'Number of chapters'}:</strong> ${chapters}<br>` : ""}
+        ${Number.isFinite(verses) ? `<strong>${isRu ? 'Количество стихов' : 'Number of verses'}:</strong> ${verses}` : ""}
       </div>
     `;
   }
