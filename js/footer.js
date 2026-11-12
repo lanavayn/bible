@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
   
       <p>${t.copyright}</p>
+      <p class="footer-credit">Website by <a href="https://lanawebstudio.netlify.app/" target="_blank" rel="noopener noreferrer">Lana Web Studio</a></p>
     </footer>
   `;
   const helpBtn = footer.querySelector(".footer-help-btn");

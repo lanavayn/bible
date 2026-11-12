@@ -1084,6 +1084,18 @@ li {
 .footer p {
   margin: 6px 0;
 }
+.footer-credit {
+  margin-top: 10px !important;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #888;
+}
+.footer-credit a {
+  color: inherit;
+}
+.footer-credit a:hover {
+  color: #666;
+}
 .footer strong {
   color: #444;
 }
